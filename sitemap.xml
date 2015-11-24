@@ -8,17 +8,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo/</loc>
-    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://tutswiki.com/commands/hugo_config/</loc>
-    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/commands/hugo_check/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -28,7 +18,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_convert_totoml/</loc>
+    <loc>http://tutswiki.com/commands/hugo/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -38,7 +28,17 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_convert_toyaml/</loc>
+    <loc>http://tutswiki.com/commands/hugo_check/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_convert_totoml/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_genautocomplete/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -53,6 +53,11 @@
   </url>
   
   <url>
+    <loc>http://tutswiki.com/commands/hugo_convert_toyaml/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tutswiki.com/commands/hugo_help/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
@@ -63,17 +68,12 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_genautocomplete/</loc>
+    <loc>http://tutswiki.com/commands/hugo_list_future/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://tutswiki.com/commands/hugo_list_drafts/</loc>
-    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/commands/hugo_list_future/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -98,12 +98,12 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_undraft/</loc>
+    <loc>http://tutswiki.com/commands/hugo_version/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_version/</loc>
+    <loc>http://tutswiki.com/commands/hugo_undraft/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
