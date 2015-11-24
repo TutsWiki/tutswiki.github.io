@@ -3,13 +3,618 @@
   
   <url>
     <loc>http://tutswiki.com/</loc>
-    <lastmod>2015-11-08T15:59:46+05:30</lastmod>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/about/</loc>
-    <lastmod>2015-11-08T15:59:46+05:30</lastmod>
+    <loc>http://tutswiki.com/commands/hugo/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_check/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_benchmark/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_convert/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_config/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_convert_totoml/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_convert_tojson/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_convert_toyaml/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_genautocomplete/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_gendoc/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_list_drafts/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_list_future/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_list/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_help/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_new/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_new_site/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_new_theme/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_undraft/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_version/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/commands/hugo_server/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/consequently/</loc>
+    <lastmod>2015-02-11T13:21:27+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/troubleshooting/overview/</loc>
+    <lastmod>2015-01-18T02:41:52-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/thehome/</loc>
+    <lastmod>2014-12-27T20:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/stou/</loc>
+    <lastmod>2014-11-23T01:28:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/launchcode5/</loc>
+    <lastmod>2014-11-01T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/ucsb/</loc>
+    <lastmod>2014-08-26T14:12:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/nickoneill/</loc>
+    <lastmod>2014-08-26T12:15:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/vurt.co/</loc>
+    <lastmod>2014-08-26T12:09:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/michaelwhatcott/</loc>
+    <lastmod>2014-08-26T11:47:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/devmonk/</loc>
+    <lastmod>2014-08-26T11:31:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/peteraba/</loc>
+    <lastmod>2014-08-26T11:30:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/chingli/</loc>
+    <lastmod>2014-08-26T11:20:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/danmux/</loc>
+    <lastmod>2014-08-26T10:55:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/ninya.io/</loc>
+    <lastmod>2014-08-26T09:47:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/tendermint/</loc>
+    <lastmod>2014-08-26T09:34:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/minodisk/</loc>
+    <lastmod>2014-08-26T09:07:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/lk4d4.darth.io/</loc>
+    <lastmod>2014-08-25T18:59:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/hackmeeting/</loc>
+    <lastmod>2014-08-25T18:30:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/npf/</loc>
+    <lastmod>2014-08-21T12:21:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/techmadeplain/</loc>
+    <lastmod>2014-05-22T19:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/yslow-rules/</loc>
+    <lastmod>2014-04-07T10:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/cloudshark/</loc>
+    <lastmod>2014-03-27T09:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/heyitsalex/</loc>
+    <lastmod>2014-03-09T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/kieranhealy/</loc>
+    <lastmod>2014-02-27T20:35:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/antzucaro/</loc>
+    <lastmod>2014-02-03T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/asc/</loc>
+    <lastmod>2014-01-22T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/ifup/</loc>
+    <lastmod>2013-11-02T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/davidepetilli/</loc>
+    <lastmod>2013-11-01T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/gogb/</loc>
+    <lastmod>2013-11-01T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/chimera-art-space/</loc>
+    <lastmod>2013-10-02T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/gophercon/</loc>
+    <lastmod>2013-10-01T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/hugo/</loc>
+    <lastmod>2013-07-01T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/showcase/spf13/</loc>
+    <lastmod>2013-07-01T07:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/troubleshooting/strange-eof-error/</loc>
+    <lastmod>2015-01-08T16:11:23-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/overview/introduction/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tutorials/installing-on-windows/</loc>
+    <lastmod>2015-03-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tutorials/installing-on-mac/</loc>
+    <lastmod>2015-02-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tutorials/automated-deployments/</loc>
+    <lastmod>2015-01-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/troubleshooting/categories-with-accented-characters/</loc>
+    <lastmod>2015-01-08T16:32:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tutorials/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/themes/overview/</loc>
+    <lastmod>2014-05-12T10:03:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tutorials/github-pages-blog/</loc>
+    <lastmod>2014-03-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tutorials/mathjax/</loc>
+    <lastmod>2014-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tutorials/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/aliases/</loc>
+    <lastmod>2013-07-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/community/mailing-list/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/organization/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/meta/release-notes/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/overview/quickstart/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/taxonomies/overview/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/overview/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/taxonomies/usage/</loc>
+    <lastmod>2014-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/go-templates/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/ace/</loc>
+    <lastmod>2014-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/builders/</loc>
+    <lastmod>2014-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/themes/installing/</loc>
+    <lastmod>2014-05-12T10:09:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/community/press/</loc>
+    <lastmod>2014-03-24T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/front-matter/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/meta/roadmap/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/overview/installing/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/taxonomies/displaying/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/functions/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/variables/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/comments/</loc>
+    <lastmod>2014-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/themes/usage/</loc>
+    <lastmod>2014-05-12T10:09:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/community/contributing/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/sections/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/overview/usage/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/taxonomies/templates/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/content/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/crossreferences/</loc>
+    <lastmod>2014-11-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/themes/customizing/</loc>
+    <lastmod>2014-05-12T10:09:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/types/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/overview/configuration/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/list/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/livereload/</loc>
+    <lastmod>2014-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/archetypes/</loc>
+    <lastmod>2014-05-14T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/themes/creation/</loc>
+    <lastmod>2014-05-12T10:09:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/meta/license/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/overview/source-directory/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/homepage/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/terms/</loc>
+    <lastmod>2014-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/menus/</loc>
+    <lastmod>2014-05-14T02:36:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/ordering/</loc>
+    <lastmod>2014-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/taxonomies/ordering/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/summaries/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/permalinks/</loc>
+    <lastmod>2013-11-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/example/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/views/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/taxonomies/methods/</loc>
+    <lastmod>2014-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/scratch/</loc>
+    <lastmod>2015-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/pagination/</loc>
+    <lastmod>2014-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/shortcodes/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/partials/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/rss/</loc>
+    <lastmod>2015-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/datafiles/</loc>
+    <lastmod>2015-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/highlighting/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/dynamiccontent/</loc>
+    <lastmod>2015-02-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/sitemap/</loc>
+    <lastmod>2014-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/404/</loc>
+    <lastmod>2013-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/toc/</loc>
+    <lastmod>2013-07-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/extras/urls/</loc>
+    <lastmod>2014-01-03T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

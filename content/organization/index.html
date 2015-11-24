@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentation of Hugo, a fast and flexible static site generator built with love by spf13 and friends in Go">
+    <meta name="author" content="Steve Francia (spf13) and friends">
+    <meta name="generator" content="Hugo 0.14" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>Content Organization</title>
+
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+  
+  <section id="container" class="">
+
+      
+      <header class="header black-bg">
+            <div class="toggle-nav">
+                <i class="fa fa-bars"></i>
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            
+            <div class="top-nav notification-row">
+                
+                <div class="hidden-xs nav-github pull-right">
+                    <span rel="show-github" data-user="spf13" data-repo="hugo" data-type="follow"></span>
+                    <span rel="show-github" data-user="spf13" data-repo="hugo"></span>
+                    <span rel="show-github" data-user="spf13" data-repo="hugo" data-type="fork"></span>
+                </div>
+            </div>
+
+            <div class="nav title-row" id="top_menu">
+                <h1 class="nav top-menu">Content Organization</h1>
+            </div>
+      </header>
+      
+
+
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        
+        <ul class="sidebar-menu">
+          
+          
+              
+                <li>
+                <a class="" href="https://github.com/spf13/hugo/releases">
+                    <i class='fa fa-download'></i>
+                    
+                    <span>Download Hugo</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/showcase/">
+                    <i class='fa fa-cubes'></i>
+                    
+                    <span>Showcase</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/community/press/">
+                    <i class='fa fa-bullhorn'></i>
+                    
+                    <span>Press &amp; Articles</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="http://discuss.gohugo.io/">
+                    <i class='fa fa-comments'></i>
+                    
+                    <span>Discuss Hugo</span>
+                </a>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-heart'></i>
+                
+                <span>About Hugo</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/meta/release-notes/">Release Notes</a> </li>
+                    
+                    <li><a href="/meta/roadmap/">Hugo Roadmap</a> </li>
+                    
+                    <li><a href="/meta/license/">License</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-road'></i>
+                
+                <span>Getting Started</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/overview/introduction/">Introduction</a> </li>
+                    
+                    <li><a href="/overview/quickstart/">Quickstart</a> </li>
+                    
+                    <li><a href="/overview/installing/">Installing Hugo</a> </li>
+                    
+                    <li><a href="/overview/usage/">Using Hugo</a> </li>
+                    
+                    <li><a href="/overview/configuration/">Configuration</a> </li>
+                    
+                    <li><a href="/overview/source-directory/">Source Organization</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/commands/">
+                    <i class='fa fa-space-shuttle'></i>
+                    
+                    <span>Hugo Commands</span>
+                </a>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu active">
+            <a href="javascript:;" class="">
+                <i class='fa fa-file-text'></i>
+                
+                <span>Content</span>
+                <span class="menu-arrow fa fa-angle-down"></span>
+            </a>
+                <ul class="sub open">
+                    
+                    <li class="active"><a href="/content/organization/">Organization</a> </li>
+                    
+                    <li><a href="/content/front-matter/">Front Matter</a> </li>
+                    
+                    <li><a href="/content/sections/">Sections</a> </li>
+                    
+                    <li><a href="/content/types/">Types</a> </li>
+                    
+                    <li><a href="/content/archetypes/">Archetypes</a> </li>
+                    
+                    <li><a href="/content/ordering/">Ordering</a> </li>
+                    
+                    <li><a href="/content/summaries/">Summaries</a> </li>
+                    
+                    <li><a href="/content/example/">Example</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-desktop'></i>
+                
+                <span>Themes</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/themes/overview/">Themes Overview</a> </li>
+                    
+                    <li><a href="/themes/installing/">Installing Themes</a> </li>
+                    
+                    <li><a href="/themes/usage/">Using a Theme</a> </li>
+                    
+                    <li><a href="/themes/customizing/">Customizing a Theme</a> </li>
+                    
+                    <li><a href="/themes/creation/">Creating a Theme</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-columns'></i>
+                
+                <span>Templates</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/templates/overview/">Overview</a> </li>
+                    
+                    <li><a href="/templates/go-templates/">Go Template Primer</a> </li>
+                    
+                    <li><a href="/templates/ace/">Ace templates</a> </li>
+                    
+                    <li><a href="/templates/functions/">Functions</a> </li>
+                    
+                    <li><a href="/templates/variables/">Variables</a> </li>
+                    
+                    <li><a href="/templates/content/">Single Content</a> </li>
+                    
+                    <li><a href="/templates/list/">List of Content</a> </li>
+                    
+                    <li><a href="/templates/homepage/">Homepage</a> </li>
+                    
+                    <li><a href="/templates/terms/">Taxonomy Terms</a> </li>
+                    
+                    <li><a href="/templates/views/">Content Views</a> </li>
+                    
+                    <li><a href="/templates/partials/">Partial Templates</a> </li>
+                    
+                    <li><a href="/templates/rss/">RSS</a> </li>
+                    
+                    <li><a href="/templates/sitemap/">Sitemap</a> </li>
+                    
+                    <li><a href="/templates/404/">Custom 404 page</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-tags'></i>
+                
+                <span>Taxonomies</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/taxonomies/overview/">Overview</a> </li>
+                    
+                    <li><a href="/taxonomies/usage/">Usage</a> </li>
+                    
+                    <li><a href="/taxonomies/displaying/">Displaying</a> </li>
+                    
+                    <li><a href="/taxonomies/templates/">Templates</a> </li>
+                    
+                    <li><a href="/taxonomies/ordering/">Ordering</a> </li>
+                    
+                    <li><a href="/taxonomies/methods/">Structure &amp; Methods</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-gift'></i>
+                
+                <span>Extras</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/extras/aliases/">Aliases</a> </li>
+                    
+                    <li><a href="/extras/builders/">Builders</a> </li>
+                    
+                    <li><a href="/extras/comments/">Comments</a> </li>
+                    
+                    <li><a href="/extras/crossreferences/">Cross-References</a> </li>
+                    
+                    <li><a href="/extras/livereload/">LiveReload</a> </li>
+                    
+                    <li><a href="/extras/menus/">Menus</a> </li>
+                    
+                    <li><a href="/extras/permalinks/">Permalinks</a> </li>
+                    
+                    <li><a href="/extras/pagination/">Pagination</a> </li>
+                    
+                    <li><a href="/extras/scratch/">Scratch</a> </li>
+                    
+                    <li><a href="/extras/shortcodes/">Shortcodes</a> </li>
+                    
+                    <li><a href="/extras/datafiles/">Data Files</a> </li>
+                    
+                    <li><a href="/extras/highlighting/">Syntax Highlighting</a> </li>
+                    
+                    <li><a href="/extras/dynamiccontent/">Dynamic Content</a> </li>
+                    
+                    <li><a href="/extras/toc/">Table of Contents</a> </li>
+                    
+                    <li><a href="/extras/urls/">URLs</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-group'></i>
+                
+                <span>Community</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/community/mailing-list/">Mailing List</a> </li>
+                    
+                    <li><a href="/community/contributing/">Contributing to Hugo</a> </li>
+                    
+                    <li><a href="http://discuss.gohugo.io">Discussion Forum</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-book'></i>
+                
+                <span>Tutorials</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/tutorials/automated-deployments/">Automated deployments</a> </li>
+                    
+                    <li><a href="/tutorials/creating-a-new-theme/">Creating a New Theme</a> </li>
+                    
+                    <li><a href="/tutorials/github-pages-blog/">Hosting on GitHub</a> </li>
+                    
+                    <li><a href="/tutorials/installing-on-mac/">Installing on Mac</a> </li>
+                    
+                    <li><a href="/tutorials/installing-on-windows/">Installing on Windows</a> </li>
+                    
+                    <li><a href="/tutorials/mathjax/">MathJax Support</a> </li>
+                    
+                    <li><a href="/tutorials/migrate-from-jekyll/">Migrating from Jekyll</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-wrench'></i>
+                
+                <span>Troubleshooting</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/troubleshooting/overview/">Troubleshooting Overview</a> </li>
+                    
+                    <li><a href="/troubleshooting/strange-eof-error/">Strange EOF error</a> </li>
+                    
+                    <li><a href="/troubleshooting/categories-with-accented-characters/">Accented Categories</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+            <li> <a href="https://github.com/spf13/hugo/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a> </li>
+            
+              <li><a href="https://github.com/spf13/hugo/edit/master/docs/content/content/organization.md" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
+            
+        </ul>
+        
+    </div>
+</aside>
+
+
+
+      
+      <section id="main-content">
+          <section class="wrapper">
+
+              
+                  
+                      
+                      
+                          
+                          
+                          
+                      
+                      
+                  
+              
+
+              <div class="row">
+                  <div class="col-md-1">
+                      
+                      
+                      <a class="navigation prev" href="/overview/source-directory">
+                      <i class="fa fa-angle-left"></i>
+                      </a>
+                      
+                      
+                  </div>
+                <div class="col-md-10">
+                    <section class="panel">
+                          
+                              
+                          
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 cse">
+                                <script>
+  (function() {
+    var cx = '004940163756227230940:9tdbvl9bwk4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search linktarget="_parent"></gcse:search>
+
+                            </div>
+                        </div>
+
+
+<div class="col-lg-8 col-md-12">
+
+
+<p>Hugo uses Markdown files with headers commonly called the <em>front matter</em>. Hugo
+respects the organization that you provide for your content to minimize any
+extra configuration, though this can be overridden by additional configuration
+in the front matter.</p>
+
+<h2 id="organization:19db6eb03b89c4dee67501d629682824">Organization</h2>
+
+<p>In Hugo, the content should be arranged in the same way they are intended for
+the rendered website. Without any additional configuration, the following will
+just work. Hugo supports content nested at any level. The top level is special
+in Hugo and is used as the <a href="/content/sections/">section</a>.</p>
+
+<pre><code>.
+└── content
+    ├── post
+    |   ├── firstpost.md   // &lt;- http://1.com/post/firstpost/
+    |   ├── happy
+    |   |   └── ness.md    // &lt;- http://1.com/post/happy/ness/
+    |   └── secondpost.md  // &lt;- http://1.com/post/secondpost/
+    └── quote
+        ├── first.md       // &lt;- http://1.com/quote/first/
+        └── second.md      // &lt;- http://1.com/quote/second/
+</code></pre>
+
+<p><strong>Here&rsquo;s the same organization run with <code>hugo --uglyUrls</code></strong></p>
+
+<pre><code>.
+└── content
+    ├── post
+    |   ├── firstpost.md   // &lt;- http://1.com/post/firstpost.html
+    |   ├── happy
+    |   |   └── ness.md    // &lt;- http://1.com/post/happy/ness.html
+    |   └── secondpost.md  // &lt;- http://1.com/post/secondpost.html
+    └── quote
+        ├── first.md       // &lt;- http://1.com/quote/first.html
+        └── second.md      // &lt;- http://1.com/quote/second.html
+</code></pre>
+
+<h2 id="destinations:19db6eb03b89c4dee67501d629682824">Destinations</h2>
+
+<p>Hugo believes that you organize your content with a purpose. The same structure
+that works to organize your source content is used to organize the rendered
+site. As displayed above, the organization of the source content will be
+mirrored in the destination.</p>
+
+<p>There are times when one would need more control over their content. In these
+cases, there are a variety of things that can be specified in the front matter
+to determine the destination of a specific piece of content.</p>
+
+<p>The following items are defined in order, latter items in the list will override
+earlier settings.</p>
+
+<h3 id="filename:19db6eb03b89c4dee67501d629682824">filename</h3>
+
+<p>This isn&rsquo;t in the front matter, but is the actual name of the file minus the
+extension. This will be the name of the file in the destination.</p>
+
+<h3 id="slug:19db6eb03b89c4dee67501d629682824">slug</h3>
+
+<p>Defined in the front matter, the <code>slug</code> can take the place of the filename for the
+destination.</p>
+
+<h3 id="filepath:19db6eb03b89c4dee67501d629682824">filepath</h3>
+
+<p>The actual path to the file on disk. Destination will create the destination
+with the same path. Includes <a href="/content/sections/">section</a>.</p>
+
+<h3 id="section:19db6eb03b89c4dee67501d629682824">section</h3>
+
+<p><code>section</code> can be provided in the front matter overriding the section derived from
+the source content location on disk. See <a href="/content/sections/">section</a>.</p>
+
+<h3 id="path:19db6eb03b89c4dee67501d629682824">path</h3>
+
+<p><code>path</code> can be provided in the front matter. This will replace the actual
+path to the file on disk. Destination will create the destination with the same
+path. Includes <a href="/content/sections/">section</a>.</p>
+
+<h3 id="url:19db6eb03b89c4dee67501d629682824">url</h3>
+
+<p>A complete URL can be provided. This will override all the above as it pertains
+to the end destination. This must be the path from the baseURL (starting with a &ldquo;/&rdquo;).
+When a <code>url</code> is provided, it will be used exactly. Using <code>url</code> will ignore the
+<code>--uglyUrls</code> setting.</p>
+
+<h2 id="path-breakdown-in-hugo:19db6eb03b89c4dee67501d629682824">Path breakdown in Hugo</h2>
+
+<h3 id="content:19db6eb03b89c4dee67501d629682824">Content</h3>
+
+<pre><code>.             path           slug
+.       ⊢-------^----⊣ ⊢------^-------⊣
+content/extras/indexes/category-example/index.html
+
+
+.       section              slug
+.       ⊢--^--⊣        ⊢------^-------⊣
+content/extras/indexes/category-example/index.html
+
+
+.       section  slug
+.       ⊢--^--⊣⊢--^--⊣
+content/extras/indexes/index.html
+</code></pre>
+
+<h3 id="destination:19db6eb03b89c4dee67501d629682824">Destination</h3>
+
+<pre><code>           permalink
+⊢--------------^-------------⊣
+http://spf13.com/projects/hugo
+
+
+   baseURL       section  slug
+⊢-----^--------⊣ ⊢--^---⊣ ⊢-^⊣
+http://spf13.com/projects/hugo
+
+
+   baseURL       section          slug
+⊢-----^--------⊣ ⊢--^--⊣        ⊢--^--⊣
+http://spf13.com/extras/indexes/example
+
+
+   baseURL            path       slug
+⊢-----^--------⊣ ⊢------^-----⊣ ⊢--^--⊣
+http://spf13.com/extras/indexes/example
+
+
+   baseURL            url
+⊢-----^--------⊣ ⊢-----^-----⊣
+http://spf13.com/projects/hugo
+
+
+   baseURL               url
+⊢-----^--------⊣ ⊢--------^-----------⊣
+http://spf13.com/extras/indexes/example
+</code></pre>
+
+<p><strong>section</strong> = which type the content is by default</p>
+
+<ul>
+<li>based on content location</li>
+<li>front matter overrides</li>
+</ul>
+
+<p><strong>slug</strong> = name.ext or name/</p>
+
+<ul>
+<li>based on content-name.md</li>
+<li>front matter overrides</li>
+</ul>
+
+<p><strong>path</strong> = section + path to file excluding slug</p>
+
+<ul>
+<li>based on path to content location</li>
+</ul>
+
+<p><strong>url</strong> = relative URL</p>
+
+<ul>
+<li>defined in front matter</li>
+<li>overrides all the above</li>
+</ul>
+
+</div>
+<div id="toc" class="col-lg-offset-6 toc ">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#organization:19db6eb03b89c4dee67501d629682824">Organization</a></li>
+<li><a href="#destinations:19db6eb03b89c4dee67501d629682824">Destinations</a>
+<ul>
+<li><a href="#filename:19db6eb03b89c4dee67501d629682824">filename</a></li>
+<li><a href="#slug:19db6eb03b89c4dee67501d629682824">slug</a></li>
+<li><a href="#filepath:19db6eb03b89c4dee67501d629682824">filepath</a></li>
+<li><a href="#section:19db6eb03b89c4dee67501d629682824">section</a></li>
+<li><a href="#path:19db6eb03b89c4dee67501d629682824">path</a></li>
+<li><a href="#url:19db6eb03b89c4dee67501d629682824">url</a></li>
+</ul></li>
+<li><a href="#path-breakdown-in-hugo:19db6eb03b89c4dee67501d629682824">Path breakdown in Hugo</a>
+<ul>
+<li><a href="#content:19db6eb03b89c4dee67501d629682824">Content</a></li>
+<li><a href="#destination:19db6eb03b89c4dee67501d629682824">Destination</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+
+
+                    </div>
+                    </section>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+
+                    </div>
+
+                <div class="col-md-1">
+                    
+                    
+                    <a class="navigation next" href="/content/front-matter">
+                        <i class="fa fa-angle-right"> </i>
+                    </a>
+                    
+                    
+                </div>
+              </div>
+              
+          </section>
+      </section>
+     
+  </section>
+  
+    
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/scripts.js"></script>
+    <script async defer id="github-bjs" src="/js/buttons.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7131036-4', 'spf13.com');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
+

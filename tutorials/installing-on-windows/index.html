@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentation of Hugo, a fast and flexible static site generator built with love by spf13 and friends in Go">
+    <meta name="author" content="Steve Francia (spf13) and friends">
+    <meta name="generator" content="Hugo 0.14" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>Installing on Windows</title>
+
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+  
+  <section id="container" class="">
+
+      
+      <header class="header black-bg">
+            <div class="toggle-nav">
+                <i class="fa fa-bars"></i>
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            
+            <div class="top-nav notification-row">
+                
+                <div class="hidden-xs nav-github pull-right">
+                    <span rel="show-github" data-user="spf13" data-repo="hugo" data-type="follow"></span>
+                    <span rel="show-github" data-user="spf13" data-repo="hugo"></span>
+                    <span rel="show-github" data-user="spf13" data-repo="hugo" data-type="fork"></span>
+                </div>
+            </div>
+
+            <div class="nav title-row" id="top_menu">
+                <h1 class="nav top-menu">Installing on Windows</h1>
+            </div>
+      </header>
+      
+
+
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        
+        <ul class="sidebar-menu">
+          
+          
+              
+                <li>
+                <a class="" href="https://github.com/spf13/hugo/releases">
+                    <i class='fa fa-download'></i>
+                    
+                    <span>Download Hugo</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/showcase/">
+                    <i class='fa fa-cubes'></i>
+                    
+                    <span>Showcase</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/community/press/">
+                    <i class='fa fa-bullhorn'></i>
+                    
+                    <span>Press &amp; Articles</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="http://discuss.gohugo.io/">
+                    <i class='fa fa-comments'></i>
+                    
+                    <span>Discuss Hugo</span>
+                </a>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-heart'></i>
+                
+                <span>About Hugo</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/meta/release-notes/">Release Notes</a> </li>
+                    
+                    <li><a href="/meta/roadmap/">Hugo Roadmap</a> </li>
+                    
+                    <li><a href="/meta/license/">License</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-road'></i>
+                
+                <span>Getting Started</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/overview/introduction/">Introduction</a> </li>
+                    
+                    <li><a href="/overview/quickstart/">Quickstart</a> </li>
+                    
+                    <li><a href="/overview/installing/">Installing Hugo</a> </li>
+                    
+                    <li><a href="/overview/usage/">Using Hugo</a> </li>
+                    
+                    <li><a href="/overview/configuration/">Configuration</a> </li>
+                    
+                    <li><a href="/overview/source-directory/">Source Organization</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/commands/">
+                    <i class='fa fa-space-shuttle'></i>
+                    
+                    <span>Hugo Commands</span>
+                </a>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-file-text'></i>
+                
+                <span>Content</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/content/organization/">Organization</a> </li>
+                    
+                    <li><a href="/content/front-matter/">Front Matter</a> </li>
+                    
+                    <li><a href="/content/sections/">Sections</a> </li>
+                    
+                    <li><a href="/content/types/">Types</a> </li>
+                    
+                    <li><a href="/content/archetypes/">Archetypes</a> </li>
+                    
+                    <li><a href="/content/ordering/">Ordering</a> </li>
+                    
+                    <li><a href="/content/summaries/">Summaries</a> </li>
+                    
+                    <li><a href="/content/example/">Example</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-desktop'></i>
+                
+                <span>Themes</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/themes/overview/">Themes Overview</a> </li>
+                    
+                    <li><a href="/themes/installing/">Installing Themes</a> </li>
+                    
+                    <li><a href="/themes/usage/">Using a Theme</a> </li>
+                    
+                    <li><a href="/themes/customizing/">Customizing a Theme</a> </li>
+                    
+                    <li><a href="/themes/creation/">Creating a Theme</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-columns'></i>
+                
+                <span>Templates</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/templates/overview/">Overview</a> </li>
+                    
+                    <li><a href="/templates/go-templates/">Go Template Primer</a> </li>
+                    
+                    <li><a href="/templates/ace/">Ace templates</a> </li>
+                    
+                    <li><a href="/templates/functions/">Functions</a> </li>
+                    
+                    <li><a href="/templates/variables/">Variables</a> </li>
+                    
+                    <li><a href="/templates/content/">Single Content</a> </li>
+                    
+                    <li><a href="/templates/list/">List of Content</a> </li>
+                    
+                    <li><a href="/templates/homepage/">Homepage</a> </li>
+                    
+                    <li><a href="/templates/terms/">Taxonomy Terms</a> </li>
+                    
+                    <li><a href="/templates/views/">Content Views</a> </li>
+                    
+                    <li><a href="/templates/partials/">Partial Templates</a> </li>
+                    
+                    <li><a href="/templates/rss/">RSS</a> </li>
+                    
+                    <li><a href="/templates/sitemap/">Sitemap</a> </li>
+                    
+                    <li><a href="/templates/404/">Custom 404 page</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-tags'></i>
+                
+                <span>Taxonomies</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/taxonomies/overview/">Overview</a> </li>
+                    
+                    <li><a href="/taxonomies/usage/">Usage</a> </li>
+                    
+                    <li><a href="/taxonomies/displaying/">Displaying</a> </li>
+                    
+                    <li><a href="/taxonomies/templates/">Templates</a> </li>
+                    
+                    <li><a href="/taxonomies/ordering/">Ordering</a> </li>
+                    
+                    <li><a href="/taxonomies/methods/">Structure &amp; Methods</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-gift'></i>
+                
+                <span>Extras</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/extras/aliases/">Aliases</a> </li>
+                    
+                    <li><a href="/extras/builders/">Builders</a> </li>
+                    
+                    <li><a href="/extras/comments/">Comments</a> </li>
+                    
+                    <li><a href="/extras/crossreferences/">Cross-References</a> </li>
+                    
+                    <li><a href="/extras/livereload/">LiveReload</a> </li>
+                    
+                    <li><a href="/extras/menus/">Menus</a> </li>
+                    
+                    <li><a href="/extras/permalinks/">Permalinks</a> </li>
+                    
+                    <li><a href="/extras/pagination/">Pagination</a> </li>
+                    
+                    <li><a href="/extras/scratch/">Scratch</a> </li>
+                    
+                    <li><a href="/extras/shortcodes/">Shortcodes</a> </li>
+                    
+                    <li><a href="/extras/datafiles/">Data Files</a> </li>
+                    
+                    <li><a href="/extras/highlighting/">Syntax Highlighting</a> </li>
+                    
+                    <li><a href="/extras/dynamiccontent/">Dynamic Content</a> </li>
+                    
+                    <li><a href="/extras/toc/">Table of Contents</a> </li>
+                    
+                    <li><a href="/extras/urls/">URLs</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-group'></i>
+                
+                <span>Community</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/community/mailing-list/">Mailing List</a> </li>
+                    
+                    <li><a href="/community/contributing/">Contributing to Hugo</a> </li>
+                    
+                    <li><a href="http://discuss.gohugo.io">Discussion Forum</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu active">
+            <a href="javascript:;" class="">
+                <i class='fa fa-book'></i>
+                
+                <span>Tutorials</span>
+                <span class="menu-arrow fa fa-angle-down"></span>
+            </a>
+                <ul class="sub open">
+                    
+                    <li><a href="/tutorials/automated-deployments/">Automated deployments</a> </li>
+                    
+                    <li><a href="/tutorials/creating-a-new-theme/">Creating a New Theme</a> </li>
+                    
+                    <li><a href="/tutorials/github-pages-blog/">Hosting on GitHub</a> </li>
+                    
+                    <li><a href="/tutorials/installing-on-mac/">Installing on Mac</a> </li>
+                    
+                    <li class="active"><a href="/tutorials/installing-on-windows/">Installing on Windows</a> </li>
+                    
+                    <li><a href="/tutorials/mathjax/">MathJax Support</a> </li>
+                    
+                    <li><a href="/tutorials/migrate-from-jekyll/">Migrating from Jekyll</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-wrench'></i>
+                
+                <span>Troubleshooting</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/troubleshooting/overview/">Troubleshooting Overview</a> </li>
+                    
+                    <li><a href="/troubleshooting/strange-eof-error/">Strange EOF error</a> </li>
+                    
+                    <li><a href="/troubleshooting/categories-with-accented-characters/">Accented Categories</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+            <li> <a href="https://github.com/spf13/hugo/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a> </li>
+            
+              <li><a href="https://github.com/spf13/hugo/edit/master/docs/content/tutorials/installing-on-windows.md" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
+            
+        </ul>
+        
+    </div>
+</aside>
+
+
+
+      
+      <section id="main-content">
+          <section class="wrapper">
+
+              
+                  
+                      
+                      
+                          
+                          
+                          
+                      
+                      
+                  
+              
+
+              <div class="row">
+                  <div class="col-md-1">
+                      
+                      
+                      <a class="navigation prev" href="/tutorials/installing-on-mac">
+                      <i class="fa fa-angle-left"></i>
+                      </a>
+                      
+                      
+                  </div>
+                <div class="col-md-10">
+                    <section class="panel">
+                          
+                              
+                          
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 cse">
+                                <script>
+  (function() {
+    var cx = '004940163756227230940:9tdbvl9bwk4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search linktarget="_parent"></gcse:search>
+
+                            </div>
+                        </div>
+
+
+<div class="col-lg-8 col-md-12">
+
+
+<h1 id="installing-hugo-on-windows:03043c30033231787da6500681bc16fe">Installing Hugo on Windows</h1>
+
+<p>This tutorial aims to be a complete guide to installing Hugo on your Windows computer.</p>
+
+<h2 id="assumptions:03043c30033231787da6500681bc16fe">Assumptions</h2>
+
+<ol>
+<li>You know how to open a command prompt window.</li>
+<li>You&rsquo;re running a 64-bit version of Windows.</li>
+<li>Your website is <code>example.com</code>.</li>
+<li>You will use <code>D:\Hugo\Sites</code> as the starting point for your site.</li>
+<li>You will use <code>D:\Hugo\bin</code> to store executable files.</li>
+</ol>
+
+<h2 id="setup-your-directories:03043c30033231787da6500681bc16fe">Setup Your Directories</h2>
+
+<p>You will need a place to store the Hugo executable, your content (the files that you build), and the generated files (the HTML that Hugo builds for you).</p>
+
+<ol>
+<li>Open up Windows Explorer.</li>
+<li>Create a new folder, <code>D:\Hugo</code>.</li>
+<li>Create a new folder, <code>D:\Hugo\bin</code>.</li>
+<li>Create a new folder, <code>D:\Hugo\Sites</code>.</li>
+</ol>
+
+<h2 id="download-the-pre-built-hugo-executable-for-windows:03043c30033231787da6500681bc16fe">Download the pre-built Hugo executable for Windows</h2>
+
+<p>One advantage of building Hugo in go is that there is just a single binary file to use. You don&rsquo;t need to run an installer to use it. Instead, you need to copy the binary to your hard drive. I&rsquo;m assuming that you&rsquo;ll put it in <code>D:\Hugo\bin</code>. If you chose to place it somewhere else, you&rsquo;ll need to substitute that path in the commands.</p>
+
+<ol>
+<li>Open <a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a> in your browser.</li>
+<li>The current version is hugo_0.13_windows_amd64.zip.</li>
+<li>Download that ZIP file and save it in your <code>D:\Hugo\bin</code> folder.</li>
+<li>Find that ZIP file in Windows Explorer and extract all the files from it.</li>
+<li>You should see a <code>hugo_0.13_windows_amd64.exe</code> file.</li>
+<li>Rename that file to <code>hugo.exe</code>.</li>
+<li>Verify that the <code>hugo.exe</code> file is in the <code>D:\Hugo\bin</code> folder. (It&rsquo;s possible that the extract put it in a sub-directory. If it did, use Windows Explorer to move it to <code>D:\Hugo\bin</code>.)</li>
+<li>Add the hugo.exe executable to your PATH with: <code>D:\Hugo\bin&gt;set PATH=%PATH%;D:\Hugo\bin</code></li>
+</ol>
+
+<h2 id="verify-the-executable:03043c30033231787da6500681bc16fe">Verify the executable</h2>
+
+<p>Run a few commands to verify that the executable is ready to run and then build a sample site to get started.</p>
+
+<ol>
+<li>Open a command prompt window.</li>
+<li>At the prompt, type <code>hugo help</code> and press the Enter key. You should see output that starts with:</li>
+</ol>
+
+<pre><code>A Fast and Flexible Static Site Generator built with love by spf13 and friends in Go. Complete documentation is available at http://gohugo.io
+</code></pre>
+
+<p>If you do, then the installation is complete. If you don&rsquo;t, double-check the path that you placed the <code>hugo.exe</code> file in and that you typed that path correctly when you added it to your PATH variable. If you&rsquo;re still not getting the output, post a note on the Hugo discussion list (in the <code>Support</code> topic) with your command and the output.
+3. At the prompt, change your directory to the <code>Sites</code> directory.</p>
+
+<pre><code>C:\Program Files&gt; cd D:\Hugo\Sites
+C:\Program Files&gt; D:
+D:\Hugo\Sites&gt;
+</code></pre>
+
+<ol>
+<li>Run the command to generate a new site. I&rsquo;m using <code>example.com</code> as the name of the site.</li>
+</ol>
+
+<pre><code>D:\Hugo\Sites&gt; hugo new site example.com
+</code></pre>
+
+<ol>
+<li>You should now have a directory at D:\Hugo\Sites\example.com.  Change into that directory and list the contents. You should get output similar to the following:</li>
+</ol>
+
+<pre><code>D:\Hugo\Sites&gt;cd example.com
+D:\Hugo\Sites\example.com&gt;dir
+ Directory of D:\hugo\sites\example.com
+
+04/13/2015  10:44 PM    &lt;DIR&gt;          .
+04/13/2015  10:44 PM    &lt;DIR&gt;          ..
+04/13/2015  10:44 PM    &lt;DIR&gt;          archetypes
+04/13/2015  10:44 PM                83 config.toml
+04/13/2015  10:44 PM    &lt;DIR&gt;          content
+04/13/2015  10:44 PM    &lt;DIR&gt;          data
+04/13/2015  10:44 PM    &lt;DIR&gt;          layouts
+04/13/2015  10:44 PM    &lt;DIR&gt;          static
+               1 File(s)             83 bytes
+               7 Dir(s)   6,273,331,200 bytes free
+
+</code></pre>
+
+<p>You now have Hugo installed and a site to work with. You need to add a layout (or theme), then create some content. Go to <a href="http://gohugo.io/overview/quickstart/">http://gohugo.io/overview/quickstart/</a> for steps on doing that.</p>
+
+<h2 id="troubleshooting:03043c30033231787da6500681bc16fe">Troubleshooting</h2>
+
+<p>@dhersam has a nice video on common issues at <a href="https://www.youtube.com/watch?v=c8fJIRNChmU">https://www.youtube.com/watch?v=c8fJIRNChmU</a></p>
+
+</div>
+<div id="toc" class="col-lg-offset-6 toc ">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#installing-hugo-on-windows:03043c30033231787da6500681bc16fe">Installing Hugo on Windows</a>
+<ul>
+<li><a href="#assumptions:03043c30033231787da6500681bc16fe">Assumptions</a></li>
+<li><a href="#setup-your-directories:03043c30033231787da6500681bc16fe">Setup Your Directories</a></li>
+<li><a href="#download-the-pre-built-hugo-executable-for-windows:03043c30033231787da6500681bc16fe">Download the pre-built Hugo executable for Windows</a></li>
+<li><a href="#verify-the-executable:03043c30033231787da6500681bc16fe">Verify the executable</a></li>
+<li><a href="#troubleshooting:03043c30033231787da6500681bc16fe">Troubleshooting</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+
+
+                    </div>
+                    </section>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+
+                    </div>
+
+                <div class="col-md-1">
+                    
+                    
+                    <a class="navigation next" href="/tutorials/mathjax">
+                        <i class="fa fa-angle-right"> </i>
+                    </a>
+                    
+                    
+                </div>
+              </div>
+              
+          </section>
+      </section>
+     
+  </section>
+  
+    
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/scripts.js"></script>
+    <script async defer id="github-bjs" src="/js/buttons.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7131036-4', 'spf13.com');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
+

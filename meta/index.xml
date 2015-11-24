@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on </title>
+    <link>http://tutswiki.com/meta/</link>
+    <description>Recent content in Meta on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://tutswiki.com/meta/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Release Notes</title>
+      <link>http://tutswiki.com/meta/release-notes/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/meta/release-notes/</guid>
+      <description>
+
+&lt;h2 id=&#34;0-14-0-may-25-2015:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.14.0&lt;/strong&gt; May 25, 2015&lt;/h2&gt;
+
+&lt;p&gt;The v0.14.0 Hugo release brings of the most demanded features to Hugo. The
+foundation of Hugo is stabilizing nicely and a lot of polish has been added.
+We’ve expanded support for additional content types with support for AsciiDoc,
+Restructured Text, HTML and Markdown. Some of these types depend on external
+libraries as there does not currently exist native support in Go. We’ve tried
+to make the experience as seamless as possible. Look for more improvements here
+in upcoming releases.&lt;/p&gt;
+
+&lt;p&gt;A lot of work has been done to improve the user experience, with extra polish
+to the Windows experience. Hugo errors are more helpful overall and Hugo now
+can detect if it’s being run in Windows Explorer and provide additional
+instructions to run it via the command prompt.&lt;/p&gt;
+
+&lt;p&gt;The Hugo community continues to grow. Hugo has over 4000 stars on github, 165
+contributors, 35 themes and 1000s of happy users. It is now the 5th most
+popular static site generator (by Stars) and has the 3rd largest contributor
+community.&lt;/p&gt;
+
+&lt;p&gt;This release represents over &lt;strong&gt;240 contributions by 36 contributors&lt;/strong&gt; to the main
+Hugo codebase.&lt;/p&gt;
+
+&lt;p&gt;Big shout out to &lt;a href=&#34;https://github.com/bep&#34;&gt;@bep&lt;/a&gt; who led the development of Hugo
+this release, &lt;a href=&#34;https://github.com/anthonyfok&#34;&gt;@anthonyfok&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/eparis&#34;&gt;@eparis&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/SchumacherFM&#34;&gt;@SchumacherFM&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/RickCogley&#34;&gt;@RickCogley&lt;/a&gt; &amp;amp;
+&lt;a href=&#34;https://github.com/mdhender&#34;&gt;@mdhender&lt;/a&gt; for their significant contributions
+and &lt;a href=&#34;https://github.com/tatsushid&#34;&gt;@tatsushid&lt;/a&gt; for his continuous improvements
+to the templates. Also a big thanks to all the theme creators. 11 new themes
+have been added since last release and the &lt;a href=&#34;https://github.com/spf13/hugoThemes/blob/master/README.md#theme-list&#34;&gt;hugoThemes repo now has previews of
+all of
+them&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hugo also depends on a lot of other great projects. A big thanks to all of our dependencies inclding:
+&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;cobra&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;viper&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/russross/blackfriday&#34;&gt;blackfriday&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/spf13/pflag&#34;&gt;pflag&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/spf13/hugothemes&#34;&gt;HugoThemes&lt;/a&gt;,
+&lt;a href=&#34;github.com/BurntSushi/toml&#34;&gt;BurntSushi&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/go-yaml/yaml/tree/v2&#34;&gt;goYaml&lt;/a&gt;, and the Go standard library.&lt;/p&gt;
+
+&lt;h2 id=&#34;new-features:066aa012c0230cd32faa0776e0a81250&#34;&gt;New features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for all file types in content directory.
+
+&lt;ul&gt;
+&lt;li&gt;If dedicated file type handler isn’t found it will be copied to the destination.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;AsciiDoc&lt;/code&gt; support using external helpers.&lt;/li&gt;
+&lt;li&gt;Add experimental support for &lt;a href=&#34;https://github.com/miekg/mmark&#34;&gt;&lt;code&gt;Mmark&lt;/code&gt;&lt;/a&gt; markdown processor&lt;/li&gt;
+&lt;li&gt;Bash autocomplete support via &lt;code&gt;genautocomplete&lt;/code&gt; command&lt;/li&gt;
+&lt;li&gt;Add section menu support for a &lt;a href=&#34;http://tutswiki.com/extras/menus/#section-menu-for-the-lazy-blogger:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Section Menu for &amp;ldquo;the Lazy Blogger&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add support for &lt;code&gt;Ace&lt;/code&gt; base templates&lt;/li&gt;
+&lt;li&gt;Adding &lt;code&gt;RelativeURLs = true&lt;/code&gt; to site config will now make all the relative URLs relative to the content root.&lt;/li&gt;
+&lt;li&gt;New template functions:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;getenv&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The string functions &lt;code&gt;substr&lt;/code&gt; and &lt;code&gt;slicestr&lt;/code&gt;
+*&lt;code&gt;seq&lt;/code&gt;, a sequence generator very similar to its Gnu countepart&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;absURL&lt;/code&gt; and &lt;code&gt;relURL&lt;/code&gt;, both of which takes the &lt;code&gt;BaseURL&lt;/code&gt; setting into account&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;improvements:066aa012c0230cd32faa0776e0a81250&#34;&gt;Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Highlighting with &lt;code&gt;Pygments&lt;/code&gt; is now cached to disk &amp;ndash; expect a major speed boost if you use it!&lt;/li&gt;
+&lt;li&gt;More Pygments highlighting options, including &lt;code&gt;line numbers&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Show help information to Windows users who try to double click on &lt;code&gt;hugo.exe&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;bind&lt;/code&gt; flag to &lt;code&gt;hugo server&lt;/code&gt; to set the interface to which the server will bind&lt;/li&gt;
+&lt;li&gt;Add support for &lt;code&gt;canonifyurls&lt;/code&gt; in &lt;code&gt;srcset&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add shortcode support for HTML (content) files&lt;/li&gt;
+&lt;li&gt;Allow the same &lt;code&gt;shortcode&lt;/code&gt; to  be used with or without inline content&lt;/li&gt;
+&lt;li&gt;Configurable RSS output filename&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;bugfixes:066aa012c0230cd32faa0776e0a81250&#34;&gt;Bugfixes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fix panic with paginator and zero pages in result set.&lt;/li&gt;
+&lt;li&gt;Fix crossrefs on Windows.&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;eq&lt;/code&gt; and &lt;code&gt;ne&lt;/code&gt; template functions when used with a raw number combined with the result of &lt;code&gt;add&lt;/code&gt;, &lt;code&gt;sub&lt;/code&gt; etc.&lt;/li&gt;
+&lt;li&gt;Fix paginator with uglyurls&lt;/li&gt;
+&lt;li&gt;Fix &lt;a href=&#34;https://github.com/spf13/hugo/issues/988&#34;&gt;#998&lt;/a&gt;, supporting UTF8 characters in Permalinks.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;notices:066aa012c0230cd32faa0776e0a81250&#34;&gt;Notices&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To get variable and function names in line with the rest of the Go community,
+a set of variable and function names has been deprecated: These will still
+work in 0.14, but will be removed in 0.15. What to do should be obvious by
+the build log; &lt;code&gt;getJson&lt;/code&gt; to &lt;code&gt;getJSON&lt;/code&gt;, &lt;code&gt;getCsv&lt;/code&gt; to &lt;code&gt;getCSV&lt;/code&gt;, &lt;code&gt;safeHtml&lt;/code&gt; to
+&lt;code&gt;safeHTML&lt;/code&gt;, &lt;code&gt;safeCss&lt;/code&gt; to &lt;code&gt;safeCSS&lt;/code&gt;, &lt;code&gt;safeUrl&lt;/code&gt; to &lt;code&gt;safeURL&lt;/code&gt;, &lt;code&gt;Url&lt;/code&gt; to &lt;code&gt;URL&lt;/code&gt;,
+&lt;code&gt;UrlPath&lt;/code&gt; to &lt;code&gt;URLPath&lt;/code&gt;, &lt;code&gt;BaseUrl&lt;/code&gt; to &lt;code&gt;BaseURL&lt;/code&gt;, &lt;code&gt;Recent&lt;/code&gt; to &lt;code&gt;Pages&lt;/code&gt;,
+&lt;code&gt;Indexes&lt;/code&gt; to &lt;code&gt;Taxonomies&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-13-0-feb-21-2015:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.13.0&lt;/strong&gt; Feb 21, 2015&lt;/h2&gt;
+
+&lt;p&gt;The v0.13.0 release is the largest Hugo release to date. The release introduced
+some long sought after features (pagination, sequencing, data loading, tons of
+template improvements) as well as major internal improvements. In addition to
+the code changes, the Hugo community has grown significantly and now has over
+3000 stars on github, 134 contributors, 24 themes and 1000s of happy users.&lt;/p&gt;
+
+&lt;p&gt;This release represents &lt;strong&gt;448 contributions by 65 contributors&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A special shout out to &lt;a href=&#34;https://github.com/bep&#34;&gt;@bep&lt;/a&gt; and
+&lt;a href=&#34;https://github.com/anthonyfok&#34;&gt;@anthonyfok&lt;/a&gt; for their new role as Hugo
+maintainers and their tremendous contributions this release.&lt;/p&gt;
+
+&lt;h3 id=&#34;new-major-features:066aa012c0230cd32faa0776e0a81250&#34;&gt;New major features&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for &lt;a href=&#34;http://tutswiki.com/extras/datafiles/&#34;&gt;data files&lt;/a&gt; in &lt;a href=&#34;http://yaml.org/&#34;&gt;YAML&lt;/a&gt;,
+&lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt;, or &lt;a href=&#34;https://github.com/toml-lang/toml&#34;&gt;TOML&lt;/a&gt;
+located in the &lt;code&gt;data&lt;/code&gt; directory (&lt;a href=&#34;https://github.com/spf13/hugo/issues/885&#34; title=&#34;Feature/datadir&#34;&gt;#885&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Support for &lt;a href=&#34;http://tutswiki.com/extras/dynamiccontent/&#34;&gt;dynamic content&lt;/a&gt; by loading JSON &amp;amp; CSV
+from remote sources via GetJson and GetCsv in short codes or other layout
+files (&lt;a href=&#34;https://github.com/spf13/hugo/issues/748&#34; title=&#34;Feature: GetJson and GetJson in short codes or other layout files&#34;&gt;#748&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/pagination/&#34;&gt;Pagination support&lt;/a&gt; for home page, sections and
+taxonomies (&lt;a href=&#34;https://github.com/spf13/hugo/issues/750&#34; title=&#34;Pull Request: Add pagination support for home page, sections and taxonomies&#34;&gt;#750&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Universal sequencing support
+
+&lt;ul&gt;
+&lt;li&gt;A new, generic Next/Prev functionality is added to all lists of pages
+(sections, taxonomies, etc.)&lt;/li&gt;
+&lt;li&gt;Add in-section &lt;a href=&#34;http://tutswiki.com/templates/variables/&#34;&gt;Next/Prev&lt;/a&gt; content pointers&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Scratch&lt;/code&gt; &amp;ndash; &lt;a href=&#34;http://tutswiki.com/extras/scratch&#34;&gt;a &amp;ldquo;scratchpad&amp;rdquo;&lt;/a&gt; for your node- and page-scoped
+variables&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/crossreferences/&#34;&gt;Cross Reference&lt;/a&gt; support to easily link documents
+together with the ref and relref shortcodes.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ace.yoss.si/&#34;&gt;Ace&lt;/a&gt; template engine support (&lt;a href=&#34;https://github.com/spf13/hugo/pull/541&#34; title=&#34;Pull Request #541: Add Ace template engine support&#34;&gt;#541&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;A new &lt;a href=&#34;http://tutswiki.com/extras/shortcodes/&#34;&gt;shortcode&lt;/a&gt; token of &lt;code&gt;{{&amp;lt; &amp;gt;}}&lt;/code&gt; (raw HTML)
+alongside the existing &lt;code&gt;{{% %}}&lt;/code&gt; (Markdown)&lt;/li&gt;
+&lt;li&gt;A top level &lt;code&gt;Hugo&lt;/code&gt; variable (on Page &amp;amp; Node) is added with various build
+information&lt;/li&gt;
+&lt;li&gt;Several new ways to order and group content:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ByPublishDate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GroupByPublishDate(format, order)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GroupByParam(key, order)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GroupByParamDate(key, format, order)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Hugo has undergone a major refactoring, with a new handler system and a
+generic file system. This sounds and is technical, but will pave the way for
+new features and make Hugo even speedier&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;notable-enhancements-to-existing-features:066aa012c0230cd32faa0776e0a81250&#34;&gt;Notable enhancements to existing features&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href=&#34;http://tutswiki.com/extras/shortcodes/&#34;&gt;shortcode&lt;/a&gt; handling is rewritten for speed and
+better error messages.&lt;/li&gt;
+&lt;li&gt;Several improvements to the &lt;a href=&#34;http://tutswiki.com/templates/functions/&#34;&gt;template functions&lt;/a&gt;:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;where&lt;/code&gt; is now even more powerful and accepts SQL-like syntax with the
+operators &lt;code&gt;==&lt;/code&gt;, &lt;code&gt;eq&lt;/code&gt;; &lt;code&gt;!=&lt;/code&gt;, &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;, &lt;code&gt;ne&lt;/code&gt;; &lt;code&gt;&amp;gt;=&lt;/code&gt;, &lt;code&gt;ge&lt;/code&gt;; &lt;code&gt;&amp;gt;&lt;/code&gt;, &lt;code&gt;gt&lt;/code&gt;; &lt;code&gt;&amp;lt;=&lt;/code&gt;,
+&lt;code&gt;le&lt;/code&gt;; &lt;code&gt;&amp;lt;&lt;/code&gt;, &lt;code&gt;lt&lt;/code&gt;; &lt;code&gt;in&lt;/code&gt;, &lt;code&gt;not in&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;where&lt;/code&gt; template function now also accepts dot chaining key argument
+(e.g. &lt;code&gt;&amp;quot;Params.foo.bar&amp;quot;&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;New template functions:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;apply&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chomp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;delimit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sort&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;markdownify&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;in&lt;/code&gt; and &lt;code&gt;intersect&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trim&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;replace&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dateFormat&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Several &lt;a href=&#34;http://tutswiki.com/overview/configuration/#configure-blackfriday-rendering:a66b35d20295cb764719ac8bd35837ec&#34;&gt;configurable improvements related to Markdown
+rendering&lt;/a&gt;:
+
+&lt;ul&gt;
+&lt;li&gt;Configuration of footnote rendering&lt;/li&gt;
+&lt;li&gt;Optional support for smart angled quotes, e.g. &lt;code&gt;&amp;quot;Hugo&amp;quot;&lt;/code&gt; → «Hugo»&lt;/li&gt;
+&lt;li&gt;Enable descriptive header IDs&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;URLs in XML output is now correctly canonified (&lt;a href=&#34;https://github.com/spf13/hugo/issues/725&#34; title=&#34;Issue #725: CanonifyUrls does not canonicalize urls in RSS&#34;&gt;#725&lt;/a&gt;, &lt;a href=&#34;https://github.com/spf13/hugo/issues/728&#34; title=&#34;Pull Request #728: Add ability to canonify URLs in rendered XML output.&#34;&gt;#728&lt;/a&gt;, and part
+of &lt;a href=&#34;https://github.com/spf13/hugo/issues/789&#34; title=&#34;Issue #789: RSS feeds do not validate&#34;&gt;#789&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;other-improvements:066aa012c0230cd32faa0776e0a81250&#34;&gt;Other improvements&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Internal change to use byte buffer pool significantly lowering memory usage
+and providing measurable performance improvements overall&lt;/li&gt;
+&lt;li&gt;Changes to docs:
+
+&lt;ul&gt;
+&lt;li&gt;A new &lt;a href=&#34;http://tutswiki.com/troubleshooting/overview/&#34;&gt;Troubleshooting&lt;/a&gt; section is added&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s now searchable through Google Custom Search (&lt;a href=&#34;https://github.com/spf13/hugo/issues/753&#34; title=&#34;Add search to documentation&#34;&gt;#753&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Some new great tutorials:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/tutorials/automated-deployments/&#34;&gt;Automated deployments with
+Wercker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/tutorials/creating-a-new-theme/&#34;&gt;Creating a new theme&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/content/archetypes/&#34;&gt;&lt;code&gt;hugo new&lt;/code&gt;&lt;/a&gt; now copies the content in addition to the front matter&lt;/li&gt;
+&lt;li&gt;Improved unit test coverage&lt;/li&gt;
+&lt;li&gt;Fixed a lot of Windows-related path issues&lt;/li&gt;
+&lt;li&gt;Improved error messages for template and rendering errors&lt;/li&gt;
+&lt;li&gt;Enabled soft LiveReload of CSS and images (&lt;a href=&#34;https://github.com/spf13/hugo/pull/490&#34; title=&#34;Pull Request #490: Livereload CSS and images without browser refresh&#34;&gt;#490&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Various fixes in RSS feed generation (&lt;a href=&#34;https://github.com/spf13/hugo/issues/789&#34; title=&#34;Issue #789: RSS feeds do not validate&#34;&gt;#789&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HasMenuCurrent&lt;/code&gt; and &lt;code&gt;IsMenuCurrent&lt;/code&gt; is now supported on Nodes&lt;/li&gt;
+&lt;li&gt;A bunch of &lt;a href=&#34;https://github.com/spf13/hugo/commits/master&#34;&gt;bug fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-12-0-sept-1-2014:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.12.0&lt;/strong&gt; Sept 1, 2014&lt;/h2&gt;
+
+&lt;p&gt;A lot has happened since Hugo v0.11.0 was released. Most of the work has been
+focused on polishing the theme engine and adding critical functionality to the
+templates.&lt;/p&gt;
+
+&lt;p&gt;This release represents over 90 code commits from 28 different contributors.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;10 &lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;new themes&lt;/a&gt; created by the community&lt;/li&gt;
+&lt;li&gt;Fully themable &lt;a href=&#34;http://tutswiki.com/templates/partials/&#34;&gt;Partials&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/templates/404/&#34;&gt;404 template&lt;/a&gt; support in themes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/shortcodes/&#34;&gt;Shortcode&lt;/a&gt; support in themes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/templates/views/&#34;&gt;Views&lt;/a&gt; support in themes&lt;/li&gt;
+&lt;li&gt;Inner &lt;a href=&#34;http://tutswiki.com/extras/shortcodes/&#34;&gt;shortcode&lt;/a&gt; content now treated as Markdown&lt;/li&gt;
+&lt;li&gt;Support for header ids in Markdown (# Header {#myid})&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/templates/list/&#34;&gt;Where&lt;/a&gt; template function to filter lists of content, taxonomies, etc.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/templates/list/&#34;&gt;GroupBy&lt;/a&gt; &amp;amp; &lt;a href=&#34;http://tutswiki.com/templates/list/&#34;&gt;GroupByDate&lt;/a&gt; methods to group pages&lt;/li&gt;
+&lt;li&gt;Taxonomy &lt;a href=&#34;http://tutswiki.com/taxonomies/methods/&#34;&gt;pages list&lt;/a&gt; now sortable, filterable, limitable &amp;amp; groupable&lt;/li&gt;
+&lt;li&gt;General cleanup to taxonomies &amp;amp; documentation to make it more clear and consistent&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/showcase/&#34;&gt;Showcase&lt;/a&gt; returned and has been expanded&lt;/li&gt;
+&lt;li&gt;Pretty links now always have trailing slashes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/overview/configuration/&#34;&gt;BaseUrl&lt;/a&gt; can now include a subdirectory&lt;/li&gt;
+&lt;li&gt;Better feedback about draft &amp;amp; future post rendering&lt;/li&gt;
+&lt;li&gt;A variety of improvements to &lt;a href=&#34;http://gohugo.io/&#34;&gt;the website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-11-0-may-28-2014:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.11.0&lt;/strong&gt; May 28, 2014&lt;/h2&gt;
+
+&lt;p&gt;This release represents over 110 code commits from 29 different contributors.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Considerably faster&amp;hellip; about 3 - 4x faster on average&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/livereload/&#34;&gt;LiveReload&lt;/a&gt;. Hugo will automatically reload the browser when the build is complete&lt;/li&gt;
+&lt;li&gt;Theme engine w/&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;Theme Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/menus/&#34;&gt;Menu system&lt;/a&gt; with support for active page&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/builders/&#34;&gt;Builders&lt;/a&gt; to quickly create a new site, content or theme&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/templates/sitemap/&#34;&gt;XML sitemap&lt;/a&gt; generation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/comments/&#34;&gt;Integrated Disqus&lt;/a&gt; support&lt;/li&gt;
+&lt;li&gt;Streamlined &lt;a href=&#34;http://tutswiki.com/templates/overview/&#34;&gt;template organization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Brand new docs site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Support for publishDate which allows for posts to be dated in the future&lt;/li&gt;
+&lt;li&gt;More &lt;a href=&#34;http://tutswiki.com/content/ordering/&#34;&gt;sort&lt;/a&gt; options&lt;/li&gt;
+&lt;li&gt;Logging support&lt;/li&gt;
+&lt;li&gt;Much better error handling&lt;/li&gt;
+&lt;li&gt;More informative verbose output&lt;/li&gt;
+&lt;li&gt;Renamed Indexes &amp;gt; &lt;a href=&#34;http://tutswiki.com/taxonomies/overview/&#34;&gt;Taxonomies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Renamed Chrome &amp;gt; &lt;a href=&#34;http://tutswiki.com/templates/partials/&#34;&gt;Partials&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-10-0-march-1-2014:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.10.0&lt;/strong&gt; March 1, 2014&lt;/h2&gt;
+
+&lt;p&gt;This release represents over 110 code commits from 29 different contributors.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/highlighting/&#34;&gt;Syntax highlighting&lt;/a&gt; powered by pygments (&lt;strong&gt;slow&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Ability to &lt;a href=&#34;http://tutswiki.com/content/ordering/&#34;&gt;sort content&lt;/a&gt; many more ways&lt;/li&gt;
+&lt;li&gt;Automatic &lt;a href=&#34;http://tutswiki.com/extras/toc/&#34;&gt;table of contents&lt;/a&gt; generation&lt;/li&gt;
+&lt;li&gt;Support for Unicode URLs, aliases and indexes&lt;/li&gt;
+&lt;li&gt;Configurable per-section &lt;a href=&#34;http://tutswiki.com/extras/permalinks/&#34;&gt;permalink&lt;/a&gt; pattern support&lt;/li&gt;
+&lt;li&gt;Support for &lt;a href=&#34;http://tutswiki.com/extras/shortcodes/&#34;&gt;paired shortcodes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Shipping with some &lt;a href=&#34;http://tutswiki.com/extras/shortcodes/&#34;&gt;shortcodes&lt;/a&gt; (highlight &amp;amp; figure)&lt;/li&gt;
+&lt;li&gt;Adding &lt;a href=&#34;http://tutswiki.com/extras/urls/&#34;&gt;canonify&lt;/a&gt; option to keep urls relative&lt;/li&gt;
+&lt;li&gt;A bunch of &lt;a href=&#34;http://tutswiki.com/layout/functions/&#34;&gt;additional template functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Watching very large sites now works on Mac&lt;/li&gt;
+&lt;li&gt;RSS generation improved. Limited to 50 items by default, can limit further in &lt;a href=&#34;http://tutswiki.com/layout/rss/&#34;&gt;template&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Boolean params now supported in &lt;a href=&#34;http://tutswiki.com/content/front-matter/&#34;&gt;frontmatter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Launched website &lt;a href=&#34;http://tutswiki.com/showcase/&#34;&gt;showcase&lt;/a&gt;. Show off your own hugo site!&lt;/li&gt;
+&lt;li&gt;A bunch of &lt;a href=&#34;https://github.com/spf13/hugo/commits/master&#34;&gt;bug fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-9-0-november-15-2013:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.9.0&lt;/strong&gt; November 15, 2013&lt;/h2&gt;
+
+&lt;p&gt;This release represents over 220 code commits from 22 different contributors.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New &lt;a href=&#34;http://tutswiki.com/overview/usage/&#34;&gt;command based interface&lt;/a&gt; similar to git (&lt;code&gt;hugo server -s ./&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Amber template support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/aliases/&#34;&gt;Aliases&lt;/a&gt; (redirects)&lt;/li&gt;
+&lt;li&gt;Support for top level pages (in addition to homepage)&lt;/li&gt;
+&lt;li&gt;Complete overhaul of the documentation site&lt;/li&gt;
+&lt;li&gt;Full Windows support&lt;/li&gt;
+&lt;li&gt;Better index support including &lt;a href=&#34;http://tutswiki.com/content/ordering/&#34;&gt;ordering by content weight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add params to site config, available in .Site.Params from templates&lt;/li&gt;
+&lt;li&gt;Friendlier json support&lt;/li&gt;
+&lt;li&gt;Support for html &amp;amp; xml content (with frontmatter support)&lt;/li&gt;
+&lt;li&gt;Support for &lt;a href=&#34;http://tutswiki.com/content/summaries/&#34;&gt;summary&lt;/a&gt; content divider (&lt;code&gt;&amp;lt;!&amp;#45;&amp;#45;more&amp;#45;&amp;#45;&amp;gt;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;HTML in &lt;a href=&#34;http://tutswiki.com/content/summaries/&#34;&gt;summary&lt;/a&gt; (when using divider)&lt;/li&gt;
+&lt;li&gt;Added &lt;a href=&#34;http://tutswiki.com/layout/variables/&#34;&gt;&amp;ldquo;Minutes to Read&amp;rdquo;&lt;/a&gt; functionality&lt;/li&gt;
+&lt;li&gt;Support for a custom 404 page&lt;/li&gt;
+&lt;li&gt;Cleanup of how content organization is handled&lt;/li&gt;
+&lt;li&gt;Loads of unit and performance tests&lt;/li&gt;
+&lt;li&gt;Integration with travis ci&lt;/li&gt;
+&lt;li&gt;Static directory now watched and copied on any addition or modification&lt;/li&gt;
+&lt;li&gt;Support for relative permalinks&lt;/li&gt;
+&lt;li&gt;Fixed watching being triggered multiple times for the same event&lt;/li&gt;
+&lt;li&gt;Watch now ignores temp files (as created by Vim)&lt;/li&gt;
+&lt;li&gt;Configurable number of posts on &lt;a href=&#34;http://tutswiki.com/layout/homepage/&#34;&gt;homepage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tutswiki.com/content/front-matter/&#34;&gt;Front matter&lt;/a&gt; supports multiple types (int, string, date, float)&lt;/li&gt;
+&lt;li&gt;Indexes can now use a default template&lt;/li&gt;
+&lt;li&gt;Addition of truncated bool to content to determine if should show &amp;lsquo;more&amp;rsquo; link&lt;/li&gt;
+&lt;li&gt;Support for &lt;a href=&#34;http://tutswiki.com/layout/variables/&#34;&gt;linkTitles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Better handling of most errors with directions on how to resolve&lt;/li&gt;
+&lt;li&gt;Support for more date / time formats&lt;/li&gt;
+&lt;li&gt;Support for go 1.2&lt;/li&gt;
+&lt;li&gt;Support for &lt;code&gt;first&lt;/code&gt; in templates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-8-0-august-2-2013:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.8.0&lt;/strong&gt; August 2, 2013&lt;/h2&gt;
+
+&lt;p&gt;This release represents over 65 code commits from 6 different contributors.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Added support for pretty urls (filename/index.html vs filename.html)&lt;/li&gt;
+&lt;li&gt;Hugo supports a destination directory&lt;/li&gt;
+&lt;li&gt;Will efficiently sync content in static to destination directory&lt;/li&gt;
+&lt;li&gt;Cleaned up options.. now with support for short and long options&lt;/li&gt;
+&lt;li&gt;Added support for TOML&lt;/li&gt;
+&lt;li&gt;Added support for YAML&lt;/li&gt;
+&lt;li&gt;Added support for Previous &amp;amp; Next&lt;/li&gt;
+&lt;li&gt;Added support for indexes for the indexes&lt;/li&gt;
+&lt;li&gt;Better Windows compatibility&lt;/li&gt;
+&lt;li&gt;Support for series&lt;/li&gt;
+&lt;li&gt;Adding verbose output&lt;/li&gt;
+&lt;li&gt;Loads of bugfixes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-7-0-july-4-2013:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.7.0&lt;/strong&gt; July 4, 2013&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugo now includes a simple server&lt;/li&gt;
+&lt;li&gt;First public release&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-6-0-july-2-2013:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.6.0&lt;/strong&gt; July 2, 2013&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugo includes an example documentation site which it builds&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;0-5-0-june-25-2013:066aa012c0230cd32faa0776e0a81250&#34;&gt;&lt;strong&gt;0.5.0&lt;/strong&gt; June 25, 2013&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugo is quite usable and able to build spf13.com&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Roadmap</title>
+      <link>http://tutswiki.com/meta/roadmap/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/meta/roadmap/</guid>
+      <description>&lt;p&gt;In no particular order, here is what we are working on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Intelligently Related Posts&lt;/li&gt;
+&lt;li&gt;Even easier deployment to S3, SSH, GitHub, rsync&lt;/li&gt;
+&lt;li&gt;Import from other website systems
+
+&lt;ul&gt;
+&lt;li&gt;from Drupal (See &lt;a href=&#34;https://bitbucket.org/rickb777/drupal2hugo&#34;&gt;https://bitbucket.org/rickb777/drupal2hugo&lt;/a&gt; by Rick Beton (@rickb777))&lt;/li&gt;
+&lt;li&gt;from WordPress (See &lt;a href=&#34;https://github.com/spf13/hugo/issues/100&#34; title=&#34;hugo import from wordpress · Issue #100 · spf13/hugo&#34;&gt;#100&lt;/a&gt;, especially &lt;a href=&#34;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&#34;&gt;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&lt;/a&gt; by Cyrill Schumacher (@SchumacherFM), but volunteers are needed to make it work with latest versions of WordPress.)&lt;/li&gt;
+&lt;li&gt;from Jekyll (See &lt;a href=&#34;https://github.com/spf13/hugo/issues/101&#34; title=&#34;hugo import from jekyll · Issue #101 · spf13/hugo&#34;&gt;#101&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;An interactive web based editor (See &lt;a href=&#34;http://discuss.gohugo.io/t/web-based-editor/155&#34;&gt;http://discuss.gohugo.io/t/web-based-editor/155&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Additional &lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;themes&lt;/a&gt; (always on-going, contributions welcome!)&lt;/li&gt;
+&lt;li&gt;Dynamic image resizing via shortcodes&lt;/li&gt;
+&lt;li&gt;Support for additional formats (AsciiDoc (&lt;a href=&#34;https://github.com/spf13/hugo/issues/470&#34; title=&#34;Support for AsciiDoc · Issue #470 · spf13/hugo&#34;&gt;#470&lt;/a&gt;, &lt;a href=&#34;https://github.com/spf13/hugo/pull/826&#34; title=&#34;Experimental AsciiDoc support with external helpers by anthonyfok · Pull Request #826 · spf13/hugo&#34;&gt;#826&lt;/a&gt;), reST &lt;a href=&#34;https://github.com/spf13/hugo/issues/472&#34; title=&#34;support for using reST · Issue #472 · spf13/hugo&#34;&gt;#472&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Pagination (See &lt;a href=&#34;https://github.com/spf13/hugo/issues/96&#34; title=&#34;Support for pagination · Issue #96 · spf13/hugo&#34;&gt;#96&lt;/a&gt;, &lt;a href=&#34;https://github.com/spf13/hugo/pull/750&#34; title=&#34;Add pagination support for home page, sections and taxonomies by bep · Pull Request #750 · spf13/hugo&#34;&gt;#750&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;And, last but not least, &lt;strong&gt;&lt;em&gt;Your best ideas&lt;/em&gt;&lt;/strong&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>http://tutswiki.com/meta/license/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/meta/license/</guid>
+      <description>
+
+&lt;p&gt;Hugo is released under the Simple Public License.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Note: There is a plan to switch to &lt;a href=&#34;http://www.apache.org/licenses/LICENSE-2.0&#34;&gt;Apache License, Version 2.0&lt;/a&gt;, for future Hugo releases.  This change would only apply forward.  Existing versions of Hugo will remain released under the SimPL-2.0 license.  For more information, see &lt;a href=&#34;http://discuss.gohugo.io/t/switching-to-apache-2-license/173&#34;&gt;the &amp;ldquo;Switching to Apache 2 license&amp;rdquo; thread in the public forum&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;simple-public-license-simpl-2-0:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;Simple Public License (SimPL-2.0)&lt;/h2&gt;
+
+&lt;h3 id=&#34;preamble:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;Preamble&lt;/h3&gt;
+
+&lt;p&gt;This Simple Public License 2.0 (SimPL-2.0 for short) is a plain language
+implementation of GPL 2.0.  The words are different, but the goal is the
+same - to guarantee for all users the freedom to share and change
+software.  If anyone wonders about the meaning of the SimPL, they should
+interpret it as consistent with GPL 2.0.&lt;/p&gt;
+
+&lt;h2 id=&#34;simple-public-license-simpl-2-0-1:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;Simple Public License (SimPL) 2.0&lt;/h2&gt;
+
+&lt;p&gt;The SimPL applies to the software&amp;rsquo;s source and object code and comes
+with any rights that I have in it (other than trademarks). You agree to
+the SimPL by copying, distributing, or making a derivative work of the
+software.&lt;/p&gt;
+
+&lt;p&gt;You get the royalty free right to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use the software for any purpose;&lt;/li&gt;
+&lt;li&gt;Make derivative works of it (this is called a &amp;ldquo;Derived Work&amp;rdquo;);&lt;/li&gt;
+&lt;li&gt;Copy and distribute it and any Derived Work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you distribute the software or a Derived Work, you must give back to
+the community by:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Prominently noting the date of any changes you make;&lt;/li&gt;
+&lt;li&gt;Leaving other people&amp;rsquo;s copyright notices, warranty disclaimers, and
+license terms in place;&lt;/li&gt;
+&lt;li&gt;Providing the source code, build scripts, installation scripts, and
+interface definitions in a form that is easy to get and best to
+modify;&lt;/li&gt;
+&lt;li&gt;Licensing it to everyone under SimPL, or substantially similar terms
+(such as GPL 2.0), without adding further restrictions to the rights
+provided;&lt;/li&gt;
+&lt;li&gt;Conspicuously announcing that it is available under that license.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are some things that you must shoulder:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You get NO WARRANTIES. None of any kind;&lt;/li&gt;
+&lt;li&gt;If the software damages you in any way, you may only recover direct
+damages up to the amount you paid for it (that is zero if you did
+not pay anything). You may not recover any other damages, including
+those called &amp;ldquo;consequential damages.&amp;rdquo; (The state or country where
+you live may not allow you to limit your liability in this way, so
+this may not apply to you);&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The SimPL continues perpetually, except that your license rights end
+automatically if:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You do not abide by the &amp;ldquo;give back to the community&amp;rdquo; terms (your
+licensees get to keep their rights if they abide);&lt;/li&gt;
+&lt;li&gt;Anyone prevents you from distributing the software under the terms
+of the SimPL.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;license-for-the-license:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;License for the License&lt;/h2&gt;
+
+&lt;p&gt;You may do anything that you want with the SimPL text; it&amp;rsquo;s a license
+form to use in any way that you find helpful.  To avoid confusion,
+however, if you change the terms in any way then you may not call your
+license the Simple Public License or the SimPL (but feel free to
+acknowledge that your license is &amp;ldquo;based on the Simple Public License&amp;rdquo;).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
