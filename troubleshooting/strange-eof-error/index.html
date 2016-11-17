@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Strange EOF error</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -413,7 +413,7 @@
 
 
 
-<h2 id="trouble-hugo-new-aborts-with-cryptic-eof-error:45da4fa15a14f08362c502ea0b4283a1">Trouble: <code>hugo new</code> aborts with cryptic EOF error</h2>
+<h2 id="trouble-hugo-new-aborts-with-cryptic-eof-error">Trouble: <code>hugo new</code> aborts with cryptic EOF error</h2>
 
 <blockquote>
 <p>I&rsquo;m running into an issue where I cannot get archetypes working, when running <code>hugo new showcase/test.md</code>, for example, I see an <code>EOF</code> error thrown by Hugo.</p>
@@ -431,7 +431,7 @@ ERROR: 2015/01/04 EOF
 <p>Is there something that I am blatantly missing?</p>
 </blockquote>
 
-<h2 id="solution:45da4fa15a14f08362c502ea0b4283a1">Solution</h2>
+<h2 id="solution">Solution</h2>
 
 <p>Thank you for reporting this issue.  The solution is to add a final newline (i.e. EOL) to the end of your default.md archetype file of your theme.  More discussions happened on the forum here:</p>
 
@@ -447,7 +447,7 @@ in the upcoming v0.13 release,</p>
 
 <p>Until then, for us running the stable v0.12 release, please remember to add the final EOL diligently.  <i class="fa fa-smile-o"></i></p>
 
-<h2 id="references:45da4fa15a14f08362c502ea0b4283a1">References</h2>
+<h2 id="references">References</h2>
 
 <ul>
 <li><a href="https://github.com/spf13/hugo/issues/776">https://github.com/spf13/hugo/issues/776</a></li>
@@ -457,7 +457,7 @@ in the upcoming v0.13 release,</p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

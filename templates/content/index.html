@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Single Content Template</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -421,7 +421,7 @@
 <p>The primary view of content in Hugo is the single view. Hugo, for every
 Markdown file provided, will render it with a single template.</p>
 
-<h2 id="which-template-will-be-rendered:05301946b75cb988bc2be8549079b4fa">Which Template will be rendered?</h2>
+<h2 id="which-template-will-be-rendered">Which Template will be rendered?</h2>
 
 <p>Hugo uses a set of rules to figure out which template to use when
 rendering a specific page.</p>
@@ -436,7 +436,7 @@ the list will be needed.</p>
 is determined based on the content file’s location. If <code>type</code> is provide,
 it will be used instead of <code>section</code>.</p>
 
-<h3 id="single:05301946b75cb988bc2be8549079b4fa">Single</h3>
+<h3 id="single">Single</h3>
 
 <ul>
 <li>/layouts/<code>TYPE</code>-or-<code>SECTION</code>/<code>LAYOUT</code>.html</li>
@@ -447,7 +447,7 @@ it will be used instead of <code>section</code>.</p>
 <li>/themes/<code>THEME</code>/layouts/_default/single.html</li>
 </ul>
 
-<h2 id="example-single-template-file:05301946b75cb988bc2be8549079b4fa">Example Single Template File</h2>
+<h2 id="example-single-template-file">Example Single Template File</h2>
 
 <p>Content pages are of the type &ldquo;page&rdquo; and have all the <a href="/layout/variables/">page
 variables</a> and <a href="/templates/variables/">site
@@ -469,7 +469,7 @@ same as the other types, but the directory must be called &ldquo;_default&rdquo;
       single.html
 </code></pre>
 
-<h3 id="post-single-html:05301946b75cb988bc2be8549079b4fa">post/single.html</h3>
+<h3 id="post-single-html">post/single.html</h3>
 
 <p>This content template is used for <a href="http://spf13.com/">spf13.com</a>.
 It makes use of <a href="/templates/partials/">partial templates</a></p>
@@ -518,7 +518,7 @@ It makes use of <a href="/templates/partials/">partial templates</a></p>
 {{ partial &quot;footer.html&quot; . }}
 </code></pre>
 
-<h3 id="project-single-html:05301946b75cb988bc2be8549079b4fa">project/single.html</h3>
+<h3 id="project-single-html">project/single.html</h3>
 
 <p>This content template is used for <a href="http://spf13.com/">spf13.com</a>.
 It makes use of <a href="/templates/partials/">partial templates</a></p>
@@ -576,14 +576,14 @@ easily generate new content of this type with these keys ready use
 <ul>
 <li>
 <ul>
-<li><a href="#which-template-will-be-rendered:05301946b75cb988bc2be8549079b4fa">Which Template will be rendered?</a>
+<li><a href="#which-template-will-be-rendered">Which Template will be rendered?</a>
 <ul>
-<li><a href="#single:05301946b75cb988bc2be8549079b4fa">Single</a></li>
+<li><a href="#single">Single</a></li>
 </ul></li>
-<li><a href="#example-single-template-file:05301946b75cb988bc2be8549079b4fa">Example Single Template File</a>
+<li><a href="#example-single-template-file">Example Single Template File</a>
 <ul>
-<li><a href="#post-single-html:05301946b75cb988bc2be8549079b4fa">post/single.html</a></li>
-<li><a href="#project-single-html:05301946b75cb988bc2be8549079b4fa">project/single.html</a></li>
+<li><a href="#post-single-html">post/single.html</a></li>
+<li><a href="#project-single-html">project/single.html</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -593,7 +593,7 @@ easily generate new content of this type with these keys ready use
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

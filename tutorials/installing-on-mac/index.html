@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Installing on a Mac</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -418,11 +418,11 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="installing-hugo-on-a-mac:ae91b78ba83e227eb7057ce517cb99f9">Installing Hugo on a Mac</h1>
+<h1 id="installing-hugo-on-a-mac">Installing Hugo on a Mac</h1>
 
 <p>This tutorial aims to be a complete guide to installing Hugo on your Mac computer.</p>
 
-<h2 id="assumptions:ae91b78ba83e227eb7057ce517cb99f9">Assumptions</h2>
+<h2 id="assumptions">Assumptions</h2>
 
 <ol>
 <li>You know how to open a terminal window.</li>
@@ -430,7 +430,7 @@
 <li>You will use <code>~/Sites</code> as the starting point for your site.</li>
 </ol>
 
-<h2 id="pick-your-method:ae91b78ba83e227eb7057ce517cb99f9">Pick Your Method</h2>
+<h2 id="pick-your-method">Pick Your Method</h2>
 
 <p>There are three ways to install Hugo on your Mac computer: the <code>brew</code> utility, from the distribution, or from source.
 There&rsquo;s no &ldquo;best&rdquo; way to do this. You should use the method that works best for your use case.</p>
@@ -455,9 +455,9 @@ to update.</p></li>
 <p>Since this is a &ldquo;beginner&rdquo; how-to, I&rsquo;m going to cover the first two
 options in detail and go over the third more quickly.</p>
 
-<h2 id="brew:ae91b78ba83e227eb7057ce517cb99f9">Brew</h2>
+<h2 id="brew">Brew</h2>
 
-<h3 id="step-1-install-brew-if-you-haven-t-already:ae91b78ba83e227eb7057ce517cb99f9">Step 1: Install <code>brew</code> if you haven&rsquo;t already</h3>
+<h3 id="step-1-install-brew-if-you-haven-t-already">Step 1: Install <code>brew</code> if you haven&rsquo;t already</h3>
 
 <p>Go to the <code>brew</code> website, <a href="http://brew.sh/">http://brew.sh/</a>, and follow the directions there. The most important step is:</p>
 
@@ -466,7 +466,7 @@ options in detail and go over the third more quickly.</p>
 
 <p>When I did this, I had some problems with directory permissions. Searches on Google pointed me to pages that walked me through updating permissions on the <code>/usr/local</code> directory. Seemed scary, but it&rsquo;s worked well since.</p>
 
-<h3 id="step-2-run-the-brew-command-to-install-hugo:ae91b78ba83e227eb7057ce517cb99f9">Step 2: Run the <code>brew</code> command to install <code>hugo</code></h3>
+<h3 id="step-2-run-the-brew-command-to-install-hugo">Step 2: Run the <code>brew</code> command to install <code>hugo</code></h3>
 
 <p>Replace <code>brew install hugo</code> with <code>brew install hugo --HEAD</code> if you
 want the absolute latest version—there might be bugs!</p>
@@ -493,16 +493,16 @@ $ hugo version
 Hugo Static Site Generator v0.13 BuildDate: 2015-03-09T21:34:47-05:00
 </code></pre>
 
-<h3 id="step-3-you-re-done:ae91b78ba83e227eb7057ce517cb99f9">Step 3: You&rsquo;re Done</h3>
+<h3 id="step-3-you-re-done">Step 3: You&rsquo;re Done</h3>
 
 <p>You&rsquo;ve installed Hugo. Now you need to set up your site. Read the
 <a href="/overview/quickstart/">Quickstart guide</a>, explore the rest of the
 documentation, and if you still have questions
 <a href="http://discuss.gohugo.io/" title="Discussion forum">just ask!</a></p>
 
-<h2 id="from-tarball:ae91b78ba83e227eb7057ce517cb99f9">From Tarball</h2>
+<h2 id="from-tarball">From Tarball</h2>
 
-<h3 id="step-1-decide-on-the-location:ae91b78ba83e227eb7057ce517cb99f9">Step 1: Decide on the location</h3>
+<h3 id="step-1-decide-on-the-location">Step 1: Decide on the location</h3>
 
 <p>When installing from the tarball, you have to decide if you&rsquo;re going to install the binary in <code>/usr/local/bin</code> or in your home directory. There are three camps on this:</p>
 
@@ -516,7 +516,7 @@ documentation, and if you still have questions
 
 <p>All three locations will work for you. I&rsquo;m going to document the second option, mostly because I&rsquo;m comfortable with it.</p>
 
-<h3 id="step-2-download-the-tarball:ae91b78ba83e227eb7057ce517cb99f9">Step 2: Download the Tarball</h3>
+<h3 id="step-2-download-the-tarball">Step 2: Download the Tarball</h3>
 
 <ol>
 <li><p>Open <a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a> in your browser.</p></li>
@@ -528,7 +528,7 @@ documentation, and if you still have questions
 <li><p>By default, the tarball will be saved to your <code>~/Downloads</code> directory. If you chose to use a different location, you&rsquo;ll need to change that in the following steps.</p></li>
 </ol>
 
-<h3 id="step-3-confirm-your-download:ae91b78ba83e227eb7057ce517cb99f9">Step 3: Confirm your download</h3>
+<h3 id="step-3-confirm-your-download">Step 3: Confirm your download</h3>
 
 <p>Verify that the tarball wasn&rsquo;t corrupted during the download:</p>
 
@@ -540,7 +540,7 @@ documentation, and if you still have questions
 
 <p>The <code>.md</code> files are documentation. The other file is the executable.</p>
 
-<h3 id="step-4-install-into-your-bin-directory:ae91b78ba83e227eb7057ce517cb99f9">Step 4: Install into your bin directory</h3>
+<h3 id="step-4-install-into-your-bin-directory">Step 4: Install into your bin directory</h3>
 
 <pre><code>$ # create the directory if needed
 $ mkdir -p ~/bin
@@ -606,20 +606,20 @@ $ which hugo
 
 <p>Close the terminal and then open a new terminal to pick up the changes to your profile. Verify by running the <code>which hugo</code> command again.</p>
 
-<h3 id="step-5-you-re-done:ae91b78ba83e227eb7057ce517cb99f9">Step 5: You&rsquo;re Done</h3>
+<h3 id="step-5-you-re-done">Step 5: You&rsquo;re Done</h3>
 
 <p>You&rsquo;ve installed Hugo. Now you need to set up your site. Read the
 <a href="/overview/quickstart/">Quickstart guide</a>, explore the rest of the
 documentation, and if you still have questions
 <a href="http://discuss.gohugo.io/" title="Discussion forum">just ask!</a></p>
 
-<h2 id="building-from-source:ae91b78ba83e227eb7057ce517cb99f9">Building from Source</h2>
+<h2 id="building-from-source">Building from Source</h2>
 
 <p>If you want to compile Hugo yourself, you&rsquo;ll need
 <a href="http://golang.org">Go</a>, which is also available from Homebrew: <code>brew
 install go</code>.</p>
 
-<h3 id="step-1-get-the-source:ae91b78ba83e227eb7057ce517cb99f9">Step 1: Get the Source</h3>
+<h3 id="step-1-get-the-source">Step 1: Get the Source</h3>
 
 <p>If you want to compile a specific version, go to
 <a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a> and download the source code
@@ -630,7 +630,7 @@ repository:</p>
 <pre><code>git clone https://github.com/spf13/hugo
 </code></pre>
 
-<h3 id="step-2-compiling:ae91b78ba83e227eb7057ce517cb99f9">Step 2: Compiling</h3>
+<h3 id="step-2-compiling">Step 2: Compiling</h3>
 
 <p>Make the directory containing the source your working directory, then
 fetch Hugo&rsquo;s dependencies:</p>
@@ -655,7 +655,7 @@ introduced a breaking change.</p>
 
 <p>Then place the <code>hugo</code> executable somewhere in your <code>$PATH</code>.</p>
 
-<h3 id="step-3-you-re-done-1:ae91b78ba83e227eb7057ce517cb99f9">Step 3: You&rsquo;re Done</h3>
+<h3 id="step-3-you-re-done-1">Step 3: You&rsquo;re Done</h3>
 
 <p>You probably know where to go from here.</p>
 
@@ -663,29 +663,29 @@ introduced a breaking change.</p>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#installing-hugo-on-a-mac:ae91b78ba83e227eb7057ce517cb99f9">Installing Hugo on a Mac</a>
+<li><a href="#installing-hugo-on-a-mac">Installing Hugo on a Mac</a>
 <ul>
-<li><a href="#assumptions:ae91b78ba83e227eb7057ce517cb99f9">Assumptions</a></li>
-<li><a href="#pick-your-method:ae91b78ba83e227eb7057ce517cb99f9">Pick Your Method</a></li>
-<li><a href="#brew:ae91b78ba83e227eb7057ce517cb99f9">Brew</a>
+<li><a href="#assumptions">Assumptions</a></li>
+<li><a href="#pick-your-method">Pick Your Method</a></li>
+<li><a href="#brew">Brew</a>
 <ul>
-<li><a href="#step-1-install-brew-if-you-haven-t-already:ae91b78ba83e227eb7057ce517cb99f9">Step 1: Install <code>brew</code> if you haven&rsquo;t already</a></li>
-<li><a href="#step-2-run-the-brew-command-to-install-hugo:ae91b78ba83e227eb7057ce517cb99f9">Step 2: Run the <code>brew</code> command to install <code>hugo</code></a></li>
-<li><a href="#step-3-you-re-done:ae91b78ba83e227eb7057ce517cb99f9">Step 3: You&rsquo;re Done</a></li>
+<li><a href="#step-1-install-brew-if-you-haven-t-already">Step 1: Install <code>brew</code> if you haven&rsquo;t already</a></li>
+<li><a href="#step-2-run-the-brew-command-to-install-hugo">Step 2: Run the <code>brew</code> command to install <code>hugo</code></a></li>
+<li><a href="#step-3-you-re-done">Step 3: You&rsquo;re Done</a></li>
 </ul></li>
-<li><a href="#from-tarball:ae91b78ba83e227eb7057ce517cb99f9">From Tarball</a>
+<li><a href="#from-tarball">From Tarball</a>
 <ul>
-<li><a href="#step-1-decide-on-the-location:ae91b78ba83e227eb7057ce517cb99f9">Step 1: Decide on the location</a></li>
-<li><a href="#step-2-download-the-tarball:ae91b78ba83e227eb7057ce517cb99f9">Step 2: Download the Tarball</a></li>
-<li><a href="#step-3-confirm-your-download:ae91b78ba83e227eb7057ce517cb99f9">Step 3: Confirm your download</a></li>
-<li><a href="#step-4-install-into-your-bin-directory:ae91b78ba83e227eb7057ce517cb99f9">Step 4: Install into your bin directory</a></li>
-<li><a href="#step-5-you-re-done:ae91b78ba83e227eb7057ce517cb99f9">Step 5: You&rsquo;re Done</a></li>
+<li><a href="#step-1-decide-on-the-location">Step 1: Decide on the location</a></li>
+<li><a href="#step-2-download-the-tarball">Step 2: Download the Tarball</a></li>
+<li><a href="#step-3-confirm-your-download">Step 3: Confirm your download</a></li>
+<li><a href="#step-4-install-into-your-bin-directory">Step 4: Install into your bin directory</a></li>
+<li><a href="#step-5-you-re-done">Step 5: You&rsquo;re Done</a></li>
 </ul></li>
-<li><a href="#building-from-source:ae91b78ba83e227eb7057ce517cb99f9">Building from Source</a>
+<li><a href="#building-from-source">Building from Source</a>
 <ul>
-<li><a href="#step-1-get-the-source:ae91b78ba83e227eb7057ce517cb99f9">Step 1: Get the Source</a></li>
-<li><a href="#step-2-compiling:ae91b78ba83e227eb7057ce517cb99f9">Step 2: Compiling</a></li>
-<li><a href="#step-3-you-re-done-1:ae91b78ba83e227eb7057ce517cb99f9">Step 3: You&rsquo;re Done</a></li>
+<li><a href="#step-1-get-the-source">Step 1: Get the Source</a></li>
+<li><a href="#step-2-compiling">Step 2: Compiling</a></li>
+<li><a href="#step-3-you-re-done-1">Step 3: You&rsquo;re Done</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -695,7 +695,7 @@ introduced a breaking change.</p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

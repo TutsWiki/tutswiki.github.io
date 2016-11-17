@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Cross-References</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -420,7 +420,7 @@
 
 <p>Hugo makes it easy to link documents together with the <code>ref</code> and <code>relref</code> shortcodes. These shortcodes are also used to safely provide links to headings inside of your content, whether across documents or within a document. The only difference between <code>ref</code> and <code>relref</code> is whether the resulting URL is absolute (<code>http://1.com/about/</code>) or relative (<code>/about/</code>).</p>
 
-<h2 id="using-ref-and-relref:f9181d98331131b1d3ed696c0dc6a868">Using <code>ref</code> and <code>relref</code></h2>
+<h2 id="using-ref-and-relref">Using <code>ref</code> and <code>relref</code></h2>
 
 <pre><code>{{&lt; ref &quot;document&quot; &gt;}}
 {{&lt; ref &quot;#anchor&quot; &gt;}}
@@ -432,7 +432,7 @@
 
 <p>The single parameter to <code>ref</code> is a string with a content <em>document name</em> (<code>about.md</code>), an in-document <em>anchor</em> (<code>#who</code>), or both (<code>about.md#who</code>).</p>
 
-<h3 id="document-names:f9181d98331131b1d3ed696c0dc6a868">Document Names</h3>
+<h3 id="document-names">Document Names</h3>
 
 <p>The <em>document name</em> is the name of a document including the format extension; this may be just the filename, or the relative path from the <code>content/</code> directory. With a document <code>content/blog/post.md</code>, either format will produce the same result.</p>
 
@@ -453,7 +453,7 @@
 <pre><code>{{&lt; relref &quot;/blog/post.md&quot; &gt;}} ⇒ `&quot;&quot;`
 </code></pre>
 
-<h3 id="anchors:f9181d98331131b1d3ed696c0dc6a868">Anchors</h3>
+<h3 id="anchors">Anchors</h3>
 
 <p>When an <em>anchor</em> is provided by itself, the current page’s unique identifier will be appended; when an <em>anchor</em> is provided with a document name, the found page&rsquo;s unique identifier will be appended.</p>
 
@@ -461,9 +461,9 @@
 {{&lt; relref &quot;blog/post.md#who&quot; &gt;}} ⇒ `/blog/post/#who:badcafe`
 </code></pre>
 
-<p>More information about document unique identifiers and headings can be found <a href="#hugo-heading-anchors:f9181d98331131b1d3ed696c0dc6a868">below</a>.</p>
+<p>More information about document unique identifiers and headings can be found <a href="#hugo-heading-anchors">below</a>.</p>
 
-<h3 id="examples:f9181d98331131b1d3ed696c0dc6a868">Examples</h3>
+<h3 id="examples">Examples</h3>
 
 <ul>
 <li><code>{{&lt; ref &quot;blog/post.md&quot; &gt;}}</code> ⇒ <code>http://1.com/blog/post/</code></li>
@@ -474,7 +474,7 @@
 <li><code>{{&lt; relref &quot;#tldr&quot; &gt;}}</code> ⇒ <code>#tldr:badcaffe</code></li>
 </ul>
 
-<h2 id="hugo-heading-anchors:f9181d98331131b1d3ed696c0dc6a868">Hugo Heading Anchors</h2>
+<h2 id="hugo-heading-anchors">Hugo Heading Anchors</h2>
 
 <p>When using Markdown document types, Hugo generates heading anchors automatically. The generated anchor for this section is <code>hugo-heading-anchors</code>. Because the heading anchors are generated automatically, Hugo takes some effort to ensure that heading anchors are unique both inside a document and across the entire site.</p>
 
@@ -490,7 +490,7 @@
 <p>What follows is a deeper discussion of <em>why</em> and <em>how</em> Hugo generates heading anchors. It is not necessary to know this to use <code>ref</code> and <code>relref</code>, but it may be useful in understanding how some anchors may not match your expectations.</p>
 </blockquote>
 
-<h3 id="how-to-generate-a-heading-anchor:f9181d98331131b1d3ed696c0dc6a868">How to Generate a Heading Anchor</h3>
+<h3 id="how-to-generate-a-heading-anchor">How to Generate a Heading Anchor</h3>
 
 <p>Convert the text of the heading to lowercase.</p>
 
@@ -512,7 +512,7 @@ hugo-a-fast-modern-static-web-engine
 
 <p>You have just converting the text of a heading to a suitable anchor. If your document has unique heading text, all of the anchors will be unique, too.</p>
 
-<h4 id="specifying-heading-anchors:f9181d98331131b1d3ed696c0dc6a868">Specifying Heading Anchors</h4>
+<h4 id="specifying-heading-anchors">Specifying Heading Anchors</h4>
 
 <p>You can also tell Hugo to use a particular heading anchor.</p>
 
@@ -521,7 +521,7 @@ hugo-a-fast-modern-static-web-engine
 
 <p>Hugo will use <code>hugo-main</code> as the heading anchor.</p>
 
-<h3 id="what-about-duplicate-heading-anchors:f9181d98331131b1d3ed696c0dc6a868">What About Duplicate Heading Anchors?</h3>
+<h3 id="what-about-duplicate-heading-anchors">What About Duplicate Heading Anchors?</h3>
 
 <p>The technique outlined above works well enough, but some documents have headings with identical text, like the <a href="/extras/shortcodes/">shortcodes</a> page—there are three headings with the text &ldquo;Example&rdquo;. You can specify heading anchors manually:</p>
 
@@ -561,7 +561,7 @@ hugo-a-fast-modern-static-web-engine
 
 <p>This technique works well for documents rendered on individual pages, like blog posts. What about on Hugo list pages?</p>
 
-<h3 id="unique-heading-anchors-in-lists:f9181d98331131b1d3ed696c0dc6a868">Unique Heading Anchors in Lists</h3>
+<h3 id="unique-heading-anchors-in-lists">Unique Heading Anchors in Lists</h3>
 
 <p>Hugo converts each document from Markdown independently. it doesn’t know that <code>blog/post.md</code> has an &ldquo;Example&rdquo; heading that will collide with the &ldquo;Example&rdquo; heading in <code>blog/post2.md</code>. Even if it did know this, the addition of <code>blog/post3.md</code> should not cause the anchors for the headings in the other blog posts to change.</p>
 
@@ -588,20 +588,20 @@ rest for you.</p>
 <ul>
 <li>
 <ul>
-<li><a href="#using-ref-and-relref:f9181d98331131b1d3ed696c0dc6a868">Using <code>ref</code> and <code>relref</code></a>
+<li><a href="#using-ref-and-relref">Using <code>ref</code> and <code>relref</code></a>
 <ul>
-<li><a href="#document-names:f9181d98331131b1d3ed696c0dc6a868">Document Names</a></li>
-<li><a href="#anchors:f9181d98331131b1d3ed696c0dc6a868">Anchors</a></li>
-<li><a href="#examples:f9181d98331131b1d3ed696c0dc6a868">Examples</a></li>
+<li><a href="#document-names">Document Names</a></li>
+<li><a href="#anchors">Anchors</a></li>
+<li><a href="#examples">Examples</a></li>
 </ul></li>
-<li><a href="#hugo-heading-anchors:f9181d98331131b1d3ed696c0dc6a868">Hugo Heading Anchors</a>
+<li><a href="#hugo-heading-anchors">Hugo Heading Anchors</a>
 <ul>
-<li><a href="#how-to-generate-a-heading-anchor:f9181d98331131b1d3ed696c0dc6a868">How to Generate a Heading Anchor</a>
+<li><a href="#how-to-generate-a-heading-anchor">How to Generate a Heading Anchor</a>
 <ul>
-<li><a href="#specifying-heading-anchors:f9181d98331131b1d3ed696c0dc6a868">Specifying Heading Anchors</a></li>
+<li><a href="#specifying-heading-anchors">Specifying Heading Anchors</a></li>
 </ul></li>
-<li><a href="#what-about-duplicate-heading-anchors:f9181d98331131b1d3ed696c0dc6a868">What About Duplicate Heading Anchors?</a></li>
-<li><a href="#unique-heading-anchors-in-lists:f9181d98331131b1d3ed696c0dc6a868">Unique Heading Anchors in Lists</a></li>
+<li><a href="#what-about-duplicate-heading-anchors">What About Duplicate Heading Anchors?</a></li>
+<li><a href="#unique-heading-anchors-in-lists">Unique Heading Anchors in Lists</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -611,7 +611,7 @@ rest for you.</p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

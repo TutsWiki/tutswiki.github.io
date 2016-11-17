@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Installing on Windows</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -418,11 +418,11 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="installing-hugo-on-windows:03043c30033231787da6500681bc16fe">Installing Hugo on Windows</h1>
+<h1 id="installing-hugo-on-windows">Installing Hugo on Windows</h1>
 
 <p>This tutorial aims to be a complete guide to installing Hugo on your Windows computer.</p>
 
-<h2 id="assumptions:03043c30033231787da6500681bc16fe">Assumptions</h2>
+<h2 id="assumptions">Assumptions</h2>
 
 <ol>
 <li>You know how to open a command prompt window.</li>
@@ -432,7 +432,7 @@
 <li>You will use <code>D:\Hugo\bin</code> to store executable files.</li>
 </ol>
 
-<h2 id="setup-your-directories:03043c30033231787da6500681bc16fe">Setup Your Directories</h2>
+<h2 id="setup-your-directories">Setup Your Directories</h2>
 
 <p>You will need a place to store the Hugo executable, your content (the files that you build), and the generated files (the HTML that Hugo builds for you).</p>
 
@@ -443,7 +443,7 @@
 <li>Create a new folder, <code>D:\Hugo\Sites</code>.</li>
 </ol>
 
-<h2 id="download-the-pre-built-hugo-executable-for-windows:03043c30033231787da6500681bc16fe">Download the pre-built Hugo executable for Windows</h2>
+<h2 id="download-the-pre-built-hugo-executable-for-windows">Download the pre-built Hugo executable for Windows</h2>
 
 <p>One advantage of building Hugo in go is that there is just a single binary file to use. You don&rsquo;t need to run an installer to use it. Instead, you need to copy the binary to your hard drive. I&rsquo;m assuming that you&rsquo;ll put it in <code>D:\Hugo\bin</code>. If you chose to place it somewhere else, you&rsquo;ll need to substitute that path in the commands.</p>
 
@@ -458,57 +458,52 @@
 <li>Add the hugo.exe executable to your PATH with: <code>D:\Hugo\bin&gt;set PATH=%PATH%;D:\Hugo\bin</code></li>
 </ol>
 
-<h2 id="verify-the-executable:03043c30033231787da6500681bc16fe">Verify the executable</h2>
+<h2 id="verify-the-executable">Verify the executable</h2>
 
 <p>Run a few commands to verify that the executable is ready to run and then build a sample site to get started.</p>
 
 <ol>
 <li>Open a command prompt window.</li>
-<li>At the prompt, type <code>hugo help</code> and press the Enter key. You should see output that starts with:</li>
-</ol>
-
-<pre><code>A Fast and Flexible Static Site Generator built with love by spf13 and friends in Go. Complete documentation is available at http://gohugo.io
-</code></pre>
-
-<p>If you do, then the installation is complete. If you don&rsquo;t, double-check the path that you placed the <code>hugo.exe</code> file in and that you typed that path correctly when you added it to your PATH variable. If you&rsquo;re still not getting the output, post a note on the Hugo discussion list (in the <code>Support</code> topic) with your command and the output.
-3. At the prompt, change your directory to the <code>Sites</code> directory.</p>
-
-<pre><code>C:\Program Files&gt; cd D:\Hugo\Sites
+<li>At the prompt, type <code>hugo help</code> and press the Enter key. You should see output that starts with:
+<code>
+A Fast and Flexible Static Site Generator built with love by spf13 and friends in Go. Complete documentation is available at http://gohugo.io
+</code>
+If you do, then the installation is complete. If you don&rsquo;t, double-check the path that you placed the <code>hugo.exe</code> file in and that you typed that path correctly when you added it to your PATH variable. If you&rsquo;re still not getting the output, post a note on the Hugo discussion list (in the <code>Support</code> topic) with your command and the output.</li>
+<li>At the prompt, change your directory to the <code>Sites</code> directory.
+<code>
+C:\Program Files&gt; cd D:\Hugo\Sites
 C:\Program Files&gt; D:
 D:\Hugo\Sites&gt;
-</code></pre>
+</code></li>
 
-<ol>
-<li>Run the command to generate a new site. I&rsquo;m using <code>example.com</code> as the name of the site.</li>
-</ol>
+<li><p>Run the command to generate a new site. I&rsquo;m using <code>example.com</code> as the name of the site.</p>
 
 <pre><code>D:\Hugo\Sites&gt; hugo new site example.com
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>You should now have a directory at D:\Hugo\Sites\example.com.  Change into that directory and list the contents. You should get output similar to the following:</li>
+<li><p>You should now have a directory at D:\Hugo\Sites\example.com.  Change into that directory and list the contents. You should get output similar to the following:
+```
+D:\Hugo\Sites&gt;cd example.com
+D:\Hugo\Sites\example.com&gt;dir
+Directory of D:\hugo\sites\example.com</p></li>
 </ol>
 
-<pre><code>D:\Hugo\Sites&gt;cd example.com
-D:\Hugo\Sites\example.com&gt;dir
- Directory of D:\hugo\sites\example.com
-
-04/13/2015  10:44 PM    &lt;DIR&gt;          .
-04/13/2015  10:44 PM    &lt;DIR&gt;          ..
-04/13/2015  10:44 PM    &lt;DIR&gt;          archetypes
+<p>04/13/2015  10:44 PM    <DIR>          .
+04/13/2015  10:44 PM    <DIR>          ..
+04/13/2015  10:44 PM    <DIR>          archetypes
 04/13/2015  10:44 PM                83 config.toml
-04/13/2015  10:44 PM    &lt;DIR&gt;          content
-04/13/2015  10:44 PM    &lt;DIR&gt;          data
-04/13/2015  10:44 PM    &lt;DIR&gt;          layouts
-04/13/2015  10:44 PM    &lt;DIR&gt;          static
+04/13/2015  10:44 PM    <DIR>          content
+04/13/2015  10:44 PM    <DIR>          data
+04/13/2015  10:44 PM    <DIR>          layouts
+04/13/2015  10:44 PM    <DIR>          static
                1 File(s)             83 bytes
-               7 Dir(s)   6,273,331,200 bytes free
+               7 Dir(s)   6,273,331,200 bytes free</p>
 
-</code></pre>
+<p>```</p>
 
 <p>You now have Hugo installed and a site to work with. You need to add a layout (or theme), then create some content. Go to <a href="http://gohugo.io/overview/quickstart/">http://gohugo.io/overview/quickstart/</a> for steps on doing that.</p>
 
-<h2 id="troubleshooting:03043c30033231787da6500681bc16fe">Troubleshooting</h2>
+<h2 id="troubleshooting">Troubleshooting</h2>
 
 <p>@dhersam has a nice video on common issues at <a href="https://www.youtube.com/watch?v=c8fJIRNChmU">https://www.youtube.com/watch?v=c8fJIRNChmU</a></p>
 
@@ -516,13 +511,13 @@ D:\Hugo\Sites\example.com&gt;dir
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#installing-hugo-on-windows:03043c30033231787da6500681bc16fe">Installing Hugo on Windows</a>
+<li><a href="#installing-hugo-on-windows">Installing Hugo on Windows</a>
 <ul>
-<li><a href="#assumptions:03043c30033231787da6500681bc16fe">Assumptions</a></li>
-<li><a href="#setup-your-directories:03043c30033231787da6500681bc16fe">Setup Your Directories</a></li>
-<li><a href="#download-the-pre-built-hugo-executable-for-windows:03043c30033231787da6500681bc16fe">Download the pre-built Hugo executable for Windows</a></li>
-<li><a href="#verify-the-executable:03043c30033231787da6500681bc16fe">Verify the executable</a></li>
-<li><a href="#troubleshooting:03043c30033231787da6500681bc16fe">Troubleshooting</a></li>
+<li><a href="#assumptions">Assumptions</a></li>
+<li><a href="#setup-your-directories">Setup Your Directories</a></li>
+<li><a href="#download-the-pre-built-hugo-executable-for-windows">Download the pre-built Hugo executable for Windows</a></li>
+<li><a href="#verify-the-executable">Verify the executable</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -531,7 +526,7 @@ D:\Hugo\Sites\example.com&gt;dir
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

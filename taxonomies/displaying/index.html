@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Displaying Taxonomies</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -430,7 +430,7 @@ term</li>
 <li>You can list all taxonomies (with their terms)</li>
 </ol>
 
-<h2 id="1-displaying-taxonomy-terms-assigned-to-this-content:bb66d83b0ec41d28c4ebb43a87a7711a">1. Displaying taxonomy terms assigned to this content</h2>
+<h2 id="1-displaying-taxonomy-terms-assigned-to-this-content">1. Displaying taxonomy terms assigned to this content</h2>
 
 <p>Within your content templates, you may wish to display
 the taxonomies that that piece of content is assigned to.</p>
@@ -440,7 +440,7 @@ define taxonomies for content, the taxonomies assigned to
 each content piece are located in the usual place
 (.Params.<code>plural</code>).</p>
 
-<h3 id="example:bb66d83b0ec41d28c4ebb43a87a7711a">Example</h3>
+<h3 id="example">Example</h3>
 
 <pre><code>&lt;ul id=&quot;tags&quot;&gt;
   {{ range .Params.tags }}
@@ -449,14 +449,14 @@ each content piece are located in the usual place
 &lt;/ul&gt;
 </code></pre>
 
-<h2 id="2-listing-content-with-the-same-taxonomy-term:bb66d83b0ec41d28c4ebb43a87a7711a">2. Listing content with the same taxonomy term</h2>
+<h2 id="2-listing-content-with-the-same-taxonomy-term">2. Listing content with the same taxonomy term</h2>
 
 <p>First, you may be asking why you would use this. If you are using a
 taxonomy for something like a series of posts, this is exactly how you
 would do it. It’s also an quick and dirty way to show some related
 content.</p>
 
-<h3 id="example-1:bb66d83b0ec41d28c4ebb43a87a7711a">Example</h3>
+<h3 id="example-1">Example</h3>
 
 <pre><code>&lt;ul&gt;
   {{ range .Site.Taxonomies.series.golang }}
@@ -465,13 +465,13 @@ content.</p>
 &lt;/ul&gt;
 </code></pre>
 
-<h2 id="3-listing-all-content-in-a-given-taxonomy:bb66d83b0ec41d28c4ebb43a87a7711a">3. Listing all content in a given taxonomy</h2>
+<h2 id="3-listing-all-content-in-a-given-taxonomy">3. Listing all content in a given taxonomy</h2>
 
 <p>This would be very useful in a sidebar as “featured content”. You could
 even have different sections of “featured content” by assigning
 different terms to the content.</p>
 
-<h3 id="example-2:bb66d83b0ec41d28c4ebb43a87a7711a">Example</h3>
+<h3 id="example-2">Example</h3>
 
 <pre><code>&lt;section id=&quot;menu&quot;&gt;
     &lt;ul&gt;
@@ -487,7 +487,7 @@ different terms to the content.</p>
 &lt;/section&gt;
 </code></pre>
 
-<h2 id="4-rendering-a-site-s-taxonomies:bb66d83b0ec41d28c4ebb43a87a7711a">4. Rendering a Site&rsquo;s Taxonomies</h2>
+<h2 id="4-rendering-a-site-s-taxonomies">4. Rendering a Site&rsquo;s Taxonomies</h2>
 
 <p>If you wish to display the list of all keys for a taxonomy, you can find retrieve
 them from the <code>.Site</code> variable which is available on every page.</p>
@@ -496,7 +496,7 @@ them from the <code>.Site</code> variable which is available on every page.</p>
 
 <p>The following example displays all tag keys:</p>
 
-<h3 id="example-3:bb66d83b0ec41d28c4ebb43a87a7711a">Example</h3>
+<h3 id="example-3">Example</h3>
 
 <pre><code>&lt;ul id=&quot;all-tags&quot;&gt;
   {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
@@ -505,7 +505,7 @@ them from the <code>.Site</code> variable which is available on every page.</p>
 &lt;/ul&gt;
 </code></pre>
 
-<h3 id="complete-example:bb66d83b0ec41d28c4ebb43a87a7711a">Complete Example</h3>
+<h3 id="complete-example">Complete Example</h3>
 
 <p>This example will list all taxonomies, each of their keys and all the content assigned to each key.</p>
 
@@ -535,22 +535,22 @@ them from the <code>.Site</code> variable which is available on every page.</p>
 <ul>
 <li>
 <ul>
-<li><a href="#1-displaying-taxonomy-terms-assigned-to-this-content:bb66d83b0ec41d28c4ebb43a87a7711a">1. Displaying taxonomy terms assigned to this content</a>
+<li><a href="#1-displaying-taxonomy-terms-assigned-to-this-content">1. Displaying taxonomy terms assigned to this content</a>
 <ul>
-<li><a href="#example:bb66d83b0ec41d28c4ebb43a87a7711a">Example</a></li>
+<li><a href="#example">Example</a></li>
 </ul></li>
-<li><a href="#2-listing-content-with-the-same-taxonomy-term:bb66d83b0ec41d28c4ebb43a87a7711a">2. Listing content with the same taxonomy term</a>
+<li><a href="#2-listing-content-with-the-same-taxonomy-term">2. Listing content with the same taxonomy term</a>
 <ul>
-<li><a href="#example-1:bb66d83b0ec41d28c4ebb43a87a7711a">Example</a></li>
+<li><a href="#example-1">Example</a></li>
 </ul></li>
-<li><a href="#3-listing-all-content-in-a-given-taxonomy:bb66d83b0ec41d28c4ebb43a87a7711a">3. Listing all content in a given taxonomy</a>
+<li><a href="#3-listing-all-content-in-a-given-taxonomy">3. Listing all content in a given taxonomy</a>
 <ul>
-<li><a href="#example-2:bb66d83b0ec41d28c4ebb43a87a7711a">Example</a></li>
+<li><a href="#example-2">Example</a></li>
 </ul></li>
-<li><a href="#4-rendering-a-site-s-taxonomies:bb66d83b0ec41d28c4ebb43a87a7711a">4. Rendering a Site&rsquo;s Taxonomies</a>
+<li><a href="#4-rendering-a-site-s-taxonomies">4. Rendering a Site&rsquo;s Taxonomies</a>
 <ul>
-<li><a href="#example-3:bb66d83b0ec41d28c4ebb43a87a7711a">Example</a></li>
-<li><a href="#complete-example:bb66d83b0ec41d28c4ebb43a87a7711a">Complete Example</a></li>
+<li><a href="#example-3">Example</a></li>
+<li><a href="#complete-example">Complete Example</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -560,7 +560,7 @@ them from the <code>.Site</code> variable which is available on every page.</p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

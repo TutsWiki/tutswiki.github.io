@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Overviews on </title>
-    <link>http://tutswiki.com/overview/</link>
-    <description>Recent content in Overviews on </description>
+    <title>Overview-rsses on </title>
+    <link>http://tutswiki.com/overview/index.xml</link>
+    <description>Recent content in Overview-rsses on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 01 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://tutswiki.com/overview/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <guid>http://tutswiki.com/overview/introduction/</guid>
       <description>
 
-&lt;h2 id=&#34;what-is-hugo:2767292a573dc549b9b4297b701af3ab&#34;&gt;What is Hugo?&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h2&gt;
 
 &lt;p&gt;Hugo is a general-purpose website framework. Technically speaking, Hugo is
 a static site generator. This means that, unlike systems like WordPress,
@@ -37,7 +37,7 @@ build times and the ability to rebuild whenever a change is made, Hugo
 provides a very fast feedback loop. This is essential when you are
 designing websites, but also very useful when creating content.&lt;/p&gt;
 
-&lt;h2 id=&#34;what-makes-hugo-different:2767292a573dc549b9b4297b701af3ab&#34;&gt;What makes Hugo different?&lt;/h2&gt;
+&lt;h2 id=&#34;what-makes-hugo-different&#34;&gt;What makes Hugo different?&lt;/h2&gt;
 
 &lt;p&gt;Web site generators render content into HTML files. Most are &amp;ldquo;dynamic
 site generators.&amp;rdquo; That means the HTTP
@@ -78,22 +78,22 @@ actions will rebuild your entire web site using the &lt;code&gt;baseurl&lt;/code
 from your site&amp;rsquo;s configuration file. That&amp;rsquo;s required to have your page
 links work properly with most hosting companies.&lt;/p&gt;
 
-&lt;h2 id=&#34;how-fast-is-hugo:2767292a573dc549b9b4297b701af3ab&#34;&gt;How fast is Hugo?&lt;/h2&gt;
+&lt;h2 id=&#34;how-fast-is-hugo&#34;&gt;How fast is Hugo?&lt;/h2&gt;
 
-&lt;p&gt;&lt;div class=&#34;video-container&#34;&gt;
+&lt;div class=&#34;video-container&#34;&gt;
 &lt;iframe class=&#34;youtube-player&#34; type=&#34;text/html&#34; width=&#34;100%&#34; height=&#34;auto&#34; src=&#34;http://www.youtube.com/embed/CdiDYZ51a2o&#34; allowfullscreen frameborder=&#34;0&#34;&gt;
 &lt;/iframe&gt;
 &lt;/div&gt;
-&lt;/p&gt;
 
-&lt;h2 id=&#34;what-does-hugo-do:2767292a573dc549b9b4297b701af3ab&#34;&gt;What does Hugo do?&lt;/h2&gt;
+
+&lt;h2 id=&#34;what-does-hugo-do&#34;&gt;What does Hugo do?&lt;/h2&gt;
 
 &lt;p&gt;In technical terms, Hugo takes a source directory of Markdown files and
 templates and uses these as input to create a complete website.&lt;/p&gt;
 
 &lt;p&gt;Hugo boasts the following features:&lt;/p&gt;
 
-&lt;h3 id=&#34;general:2767292a573dc549b9b4297b701af3ab&#34;&gt;General&lt;/h3&gt;
+&lt;h3 id=&#34;general&#34;&gt;General&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Extremely fast build times (~1&amp;nbsp;ms per page)&lt;/li&gt;
@@ -104,7 +104,7 @@ templates and uses these as input to create a complete website.&lt;/p&gt;
 &lt;li&gt;Host your site anywhere&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;organization:2767292a573dc549b9b4297b701af3ab&#34;&gt;Organization&lt;/h3&gt;
+&lt;h3 id=&#34;organization&#34;&gt;Organization&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Straightforward &lt;a href=&#34;http://tutswiki.com/content/organization/&#34;&gt;organization&lt;/a&gt;&lt;/li&gt;
@@ -119,7 +119,7 @@ templates and uses these as input to create a complete website.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://tutswiki.com/extras/aliases/&#34;&gt;Aliases&lt;/a&gt; (redirects)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;content:2767292a573dc549b9b4297b701af3ab&#34;&gt;Content&lt;/h3&gt;
+&lt;h3 id=&#34;content&#34;&gt;Content&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Content written in &lt;a href=&#34;http://tutswiki.com/content/example/&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
@@ -132,7 +132,7 @@ templates and uses these as input to create a complete website.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://tutswiki.com/layout/variables/&#34;&gt;&amp;ldquo;Wordcount&amp;rdquo;&lt;/a&gt; functionality&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;additional-features:2767292a573dc549b9b4297b701af3ab&#34;&gt;Additional Features&lt;/h3&gt;
+&lt;h3 id=&#34;additional-features&#34;&gt;Additional Features&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Integrated &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus&lt;/a&gt; comment support&lt;/li&gt;
@@ -143,7 +143,7 @@ templates and uses these as input to create a complete website.&lt;/p&gt;
 
 &lt;p&gt;See what&amp;rsquo;s coming next in the &lt;a href=&#34;http://tutswiki.com/meta/roadmap/&#34;&gt;roadmap&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;who-should-use-hugo:2767292a573dc549b9b4297b701af3ab&#34;&gt;Who should use Hugo?&lt;/h2&gt;
+&lt;h2 id=&#34;who-should-use-hugo&#34;&gt;Who should use Hugo?&lt;/h2&gt;
 
 &lt;p&gt;Hugo is for people that prefer writing in a text editor over
 a browser.&lt;/p&gt;
@@ -156,7 +156,7 @@ databases.&lt;/p&gt;
 documentation, single page site or a site with thousands of
 pages.&lt;/p&gt;
 
-&lt;h2 id=&#34;why-did-you-write-hugo:2767292a573dc549b9b4297b701af3ab&#34;&gt;Why did you write Hugo?&lt;/h2&gt;
+&lt;h2 id=&#34;why-did-you-write-hugo&#34;&gt;Why did you write Hugo?&lt;/h2&gt;
 
 &lt;p&gt;I wrote Hugo ultimately for a few reasons. First, I was disappointed with
 WordPress, my then website solution. It rendered slowly. I couldn&amp;rsquo;t create
@@ -180,7 +180,7 @@ in a language. I began developing Hugo in Go and fell in love with the
 language. I hope you will enjoy using (and contributing to) Hugo as much
 as I have writing it.&lt;/p&gt;
 
-&lt;h2 id=&#34;next-steps:2767292a573dc549b9b4297b701af3ab&#34;&gt;Next Steps&lt;/h2&gt;
+&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://tutswiki.com/overview/installing/&#34;&gt;Install Hugo&lt;/a&gt;&lt;/li&gt;
@@ -204,13 +204,13 @@ as I have writing it.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note: This quickstart depends on features introduced in Hugo v0.11.  If you have an earlier version of Hugo, you will need to &lt;a href=&#34;http://tutswiki.com/overview/installing/&#34;&gt;upgrade&lt;/a&gt; before proceeding.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;div class=&#34;video-container&#34;&gt;
+&lt;div class=&#34;video-container&#34;&gt;
 &lt;iframe class=&#34;youtube-player&#34; type=&#34;text/html&#34; width=&#34;100%&#34; height=&#34;auto&#34; src=&#34;http://www.youtube.com/embed/w7Ft2ymGmfc&#34; allowfullscreen frameborder=&#34;0&#34;&gt;
 &lt;/iframe&gt;
 &lt;/div&gt;
-&lt;/p&gt;
 
-&lt;h2 id=&#34;step-1-install-hugo:09c84f91027bd18b03251c05a0da4abb&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
+
+&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
 
 &lt;p&gt;Go to &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;Hugo Releases&lt;/a&gt; and download the
 appropriate version for your OS and architecture.&lt;/p&gt;
@@ -219,7 +219,7 @@ appropriate version for your OS and architecture.&lt;/p&gt;
 
 &lt;p&gt;More complete instructions are available at &lt;a href=&#34;http://tutswiki.com/overview/installing/&#34;&gt;Installing Hugo&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;step-2-have-hugo-create-a-site-for-you:09c84f91027bd18b03251c05a0da4abb&#34;&gt;Step 2. Have Hugo Create a site for you&lt;/h2&gt;
+&lt;h2 id=&#34;step-2-have-hugo-create-a-site-for-you&#34;&gt;Step 2. Have Hugo Create a site for you&lt;/h2&gt;
 
 &lt;p&gt;Hugo has the ability to create a skeleton site:&lt;/p&gt;
 
@@ -242,7 +242,7 @@ appropriate version for your OS and architecture.&lt;/p&gt;
 
 &lt;p&gt;Currently the site doesn’t have any content, nor is it configured.&lt;/p&gt;
 
-&lt;h2 id=&#34;step-3-create-some-content:09c84f91027bd18b03251c05a0da4abb&#34;&gt;Step 3. Create Some Content&lt;/h2&gt;
+&lt;h2 id=&#34;step-3-create-some-content&#34;&gt;Step 3. Create Some Content&lt;/h2&gt;
 
 &lt;p&gt;Hugo also has the ability to create a skeleton content page:&lt;/p&gt;
 
@@ -279,7 +279,7 @@ Some Content
 
 &lt;p&gt;We still lack any templates to tell us how to display the content.&lt;/p&gt;
 
-&lt;h2 id=&#34;step-4-install-some-themes:09c84f91027bd18b03251c05a0da4abb&#34;&gt;Step 4. Install some themes&lt;/h2&gt;
+&lt;h2 id=&#34;step-4-install-some-themes&#34;&gt;Step 4. Install some themes&lt;/h2&gt;
 
 &lt;p&gt;Hugo has rich theme support and a growing set of themes to choose from.
 To install all of the available Hugo themes, simply clone the entire &lt;strong&gt;hugoThemes&lt;/strong&gt; repository from within your working directory:&lt;/p&gt;
@@ -287,7 +287,7 @@ To install all of the available Hugo themes, simply clone the entire &lt;strong&
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git clone --recursive https://github.com/spf13/hugoThemes themes
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;step-5-run-hugo:09c84f91027bd18b03251c05a0da4abb&#34;&gt;Step 5. Run Hugo&lt;/h2&gt;
+&lt;h2 id=&#34;step-5-run-hugo&#34;&gt;Step 5. Run Hugo&lt;/h2&gt;
 
 &lt;p&gt;Hugo contains its own high-performance web server. Simply run &lt;code&gt;hugo
 server&lt;/code&gt; and Hugo will find an available port and run a server with
@@ -320,7 +320,7 @@ Press Ctrl+C to stop
 &lt;pre&gt;&lt;code&gt;$ hugo help server
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;step-6-edit-content:09c84f91027bd18b03251c05a0da4abb&#34;&gt;Step 6. Edit Content&lt;/h2&gt;
+&lt;h2 id=&#34;step-6-edit-content&#34;&gt;Step 6. Edit Content&lt;/h2&gt;
 
 &lt;p&gt;Not only can Hugo run a server, but it can also watch your files for
 changes and automatically rebuild your site. Hugo will then
@@ -357,7 +357,7 @@ you can look at the browser in most cases.&lt;/p&gt;
 in 5 ms
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;step-7-have-fun:09c84f91027bd18b03251c05a0da4abb&#34;&gt;Step 7. Have fun&lt;/h2&gt;
+&lt;h2 id=&#34;step-7-have-fun&#34;&gt;Step 7. Have fun&lt;/h2&gt;
 
 &lt;p&gt;The best way to learn something is to play with it.&lt;/p&gt;
 
@@ -395,7 +395,7 @@ for x64, i386 and ARM architectures.&lt;/p&gt;
 
 &lt;p&gt;Hugo may also be compiled from source wherever the Go compiler tool chain can run, e.g. for other operating systems including DragonFly BSD, OpenBSD, Plan&amp;nbsp;9 and Solaris.  See &lt;a href=&#34;http://golang.org/doc/install/source&#34;&gt;http://golang.org/doc/install/source&lt;/a&gt; for the full set of supported combinations of target operating systems and compilation architectures.&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-hugo-binary:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Installing Hugo (binary)&lt;/h2&gt;
+&lt;h2 id=&#34;installing-hugo-binary&#34;&gt;Installing Hugo (binary)&lt;/h2&gt;
 
 &lt;p&gt;Installation is very easy. Simply download the appropriate version for your
 platform from &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;Hugo Releases&lt;/a&gt;.
@@ -409,21 +409,21 @@ where you don&amp;rsquo;t have a privileged account.&lt;/p&gt;
 &lt;p&gt;On OS&amp;nbsp;X, if you have &lt;a href=&#34;http://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;, installation is even
 easier: just run &lt;code&gt;brew install hugo&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;installing-pygments-optional:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Installing Pygments (optional)&lt;/h3&gt;
+&lt;h3 id=&#34;installing-pygments-optional&#34;&gt;Installing Pygments (optional)&lt;/h3&gt;
 
 &lt;p&gt;The Hugo executable has one &lt;em&gt;optional&lt;/em&gt; external dependency for source code highlighting (Pygments).&lt;/p&gt;
 
 &lt;p&gt;If you want to have source code highlighting using the &lt;a href=&#34;http://tutswiki.com/extras/highlighting/&#34;&gt;highlight shortcode&lt;/a&gt;,
 you need to install the Python-based Pygments program. The procedure is outlined on the &lt;a href=&#34;http://pygments.org/&#34;&gt;Pygments home page&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;upgrading-hugo:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Upgrading Hugo&lt;/h2&gt;
+&lt;h2 id=&#34;upgrading-hugo&#34;&gt;Upgrading Hugo&lt;/h2&gt;
 
 &lt;p&gt;Upgrading Hugo is as easy as downloading and replacing the executable you’ve
 placed in your &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-from-source:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Installing from source&lt;/h2&gt;
+&lt;h2 id=&#34;installing-from-source&#34;&gt;Installing from source&lt;/h2&gt;
 
-&lt;h3 id=&#34;prerequisite-tools-for-downloading-and-building-source-code:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Prerequisite tools for downloading and building source code&lt;/h3&gt;
+&lt;h3 id=&#34;prerequisite-tools-for-downloading-and-building-source-code&#34;&gt;Prerequisite tools for downloading and building source code&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://git-scm.com/&#34;&gt;Git&lt;/a&gt;&lt;/li&gt;
@@ -431,7 +431,7 @@ placed in your &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; 1.3+ (Go 1.4+ on Windows, see Go &lt;a href=&#34;https://code.google.com/p/go/issues/detail?id=8090&#34;&gt;Issue #8090&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;get-directly-from-github:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Get directly from GitHub&lt;/h3&gt;
+&lt;h3 id=&#34;get-directly-from-github&#34;&gt;Get directly from GitHub&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ export GOPATH=$HOME/go
 $ go get -v github.com/spf13/hugo
@@ -447,7 +447,7 @@ $ go get -v github.com/spf13/hugo
 &lt;pre&gt;&lt;code&gt;$ go get -u -v github.com/spf13/hugo
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;contributing:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Contributing&lt;/h2&gt;
+&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;
 
 &lt;p&gt;Please see the &lt;a href=&#34;http://tutswiki.com/doc/contributing/&#34;&gt;contributing guide&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -510,7 +510,7 @@ Global Flags:
 Use &#34;hugo help [command]&#34; for more information about a command.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;common-usage-example:dc32fe45042973266ca60588597e0b66&#34;&gt;Common Usage Example&lt;/h2&gt;
+&lt;h2 id=&#34;common-usage-example&#34;&gt;Common Usage Example&lt;/h2&gt;
 
 &lt;p&gt;The most common use is probably to run &lt;code&gt;hugo&lt;/code&gt; with your current directory being the input directory:&lt;/p&gt;
 
@@ -527,7 +527,7 @@ in 120 ms
 &lt;p&gt;This generates your web site to the &lt;code&gt;public/&lt;/code&gt; directory,
 ready to be deployed to your web server.&lt;/p&gt;
 
-&lt;h2 id=&#34;instant-feedback-as-you-develop-your-web-site:dc32fe45042973266ca60588597e0b66&#34;&gt;Instant feedback as you develop your web site&lt;/h2&gt;
+&lt;h2 id=&#34;instant-feedback-as-you-develop-your-web-site&#34;&gt;Instant feedback as you develop your web site&lt;/h2&gt;
 
 &lt;p&gt;If you are working on things and want to see the changes immediately, tell Hugo to watch for changes.
 Hugo will watch the filesystem for changes, and rebuild your site as soon as a file is saved:&lt;/p&gt;
@@ -563,7 +563,7 @@ Web Server is available at http://localhost:1313/
 Press Ctrl+C to stop
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;deploying-your-web-site:dc32fe45042973266ca60588597e0b66&#34;&gt;Deploying your web site&lt;/h2&gt;
+&lt;h2 id=&#34;deploying-your-web-site&#34;&gt;Deploying your web site&lt;/h2&gt;
 
 &lt;p&gt;After running &lt;code&gt;hugo server&lt;/code&gt; for local web development,
 you need to do a final &lt;code&gt;hugo&lt;/code&gt; run &lt;strong&gt;without the &lt;code&gt;server&lt;/code&gt; command&lt;/strong&gt;
@@ -578,7 +578,7 @@ static web hosting services.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://httpd.apache.org/&#34; title=&#34;Apache HTTP Server&#34;&gt;Apache&lt;/a&gt;, &lt;a href=&#34;http://nginx.org/&#34;&gt;nginx&lt;/a&gt;, &lt;a href=&#34;http://www.iis.net/&#34;&gt;IIS&lt;/a&gt;&amp;hellip;  Any web server software would do!&lt;/p&gt;
 
-&lt;h3 id=&#34;alternatively-serve-your-web-site-with-hugo:dc32fe45042973266ca60588597e0b66&#34;&gt;Alternatively, serve your web site with Hugo!&lt;/h3&gt;
+&lt;h3 id=&#34;alternatively-serve-your-web-site-with-hugo&#34;&gt;Alternatively, serve your web site with Hugo!&lt;/h3&gt;
 
 &lt;p&gt;Yes, that&amp;rsquo;s right!  Because Hugo is so blazingly fast both in web site creation
 &lt;em&gt;and&lt;/em&gt; in web serving (thanks to its concurrent and multi-threaded design and
@@ -629,7 +629,7 @@ then look for a &lt;code&gt;config.yaml&lt;/code&gt; file, followed by a &lt;cod
 &lt;p&gt;The config file is a site-wide config. The config file provides directions to
 hugo on how to build the site as well as site-wide parameters and menus.&lt;/p&gt;
 
-&lt;h2 id=&#34;examples:a66b35d20295cb764719ac8bd35837ec&#34;&gt;Examples&lt;/h2&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 
 &lt;p&gt;The following is an example of a typical yaml config file:&lt;/p&gt;
 
@@ -675,7 +675,7 @@ params:
 ...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;configuration-variables:a66b35d20295cb764719ac8bd35837ec&#34;&gt;Configuration variables&lt;/h2&gt;
+&lt;h2 id=&#34;configuration-variables&#34;&gt;Configuration variables&lt;/h2&gt;
 
 &lt;p&gt;Following is a list of Hugo-defined variables that you can configure and their current default values:&lt;/p&gt;
 
@@ -748,7 +748,7 @@ watch:                      false
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;configure-blackfriday-rendering:a66b35d20295cb764719ac8bd35837ec&#34;&gt;Configure Blackfriday rendering&lt;/h2&gt;
+&lt;h2 id=&#34;configure-blackfriday-rendering&#34;&gt;Configure Blackfriday rendering&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/russross/blackfriday&#34;&gt;Blackfriday&lt;/a&gt; is the &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt; rendering engine used in Hugo. The Blackfriday configuration in Hugo is mostly a set of sane defaults that should fit most use cases.&lt;/p&gt;
 
@@ -846,7 +846,7 @@ but only these three.&lt;/small&gt;&lt;/td&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&#34;notes:a66b35d20295cb764719ac8bd35837ec&#34;&gt;Notes&lt;/h2&gt;
+&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
 
 &lt;p&gt;Config changes are not reflected with &lt;a href=&#34;http://tutswiki.com/extras/livereload/&#34;&gt;LiveReload&lt;/a&gt;.&lt;/p&gt;
 
@@ -888,7 +888,7 @@ website.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://tutswiki.com/themes/overview/&#34;&gt;themes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;example:eda897de2e1d9fdedc0a3929693cea10&#34;&gt;Example&lt;/h2&gt;
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
 
 &lt;p&gt;An example directory may look like:&lt;/p&gt;
 

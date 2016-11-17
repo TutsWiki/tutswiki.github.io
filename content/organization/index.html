@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Content Organization</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -423,7 +423,7 @@ respects the organization that you provide for your content to minimize any
 extra configuration, though this can be overridden by additional configuration
 in the front matter.</p>
 
-<h2 id="organization:19db6eb03b89c4dee67501d629682824">Organization</h2>
+<h2 id="organization">Organization</h2>
 
 <p>In Hugo, the content should be arranged in the same way they are intended for
 the rendered website. Without any additional configuration, the following will
@@ -456,7 +456,7 @@ in Hugo and is used as the <a href="/content/sections/">section</a>.</p>
         └── second.md      // &lt;- http://1.com/quote/second.html
 </code></pre>
 
-<h2 id="destinations:19db6eb03b89c4dee67501d629682824">Destinations</h2>
+<h2 id="destinations">Destinations</h2>
 
 <p>Hugo believes that you organize your content with a purpose. The same structure
 that works to organize your source content is used to organize the rendered
@@ -470,42 +470,42 @@ to determine the destination of a specific piece of content.</p>
 <p>The following items are defined in order, latter items in the list will override
 earlier settings.</p>
 
-<h3 id="filename:19db6eb03b89c4dee67501d629682824">filename</h3>
+<h3 id="filename">filename</h3>
 
 <p>This isn&rsquo;t in the front matter, but is the actual name of the file minus the
 extension. This will be the name of the file in the destination.</p>
 
-<h3 id="slug:19db6eb03b89c4dee67501d629682824">slug</h3>
+<h3 id="slug">slug</h3>
 
 <p>Defined in the front matter, the <code>slug</code> can take the place of the filename for the
 destination.</p>
 
-<h3 id="filepath:19db6eb03b89c4dee67501d629682824">filepath</h3>
+<h3 id="filepath">filepath</h3>
 
 <p>The actual path to the file on disk. Destination will create the destination
 with the same path. Includes <a href="/content/sections/">section</a>.</p>
 
-<h3 id="section:19db6eb03b89c4dee67501d629682824">section</h3>
+<h3 id="section">section</h3>
 
 <p><code>section</code> can be provided in the front matter overriding the section derived from
 the source content location on disk. See <a href="/content/sections/">section</a>.</p>
 
-<h3 id="path:19db6eb03b89c4dee67501d629682824">path</h3>
+<h3 id="path">path</h3>
 
 <p><code>path</code> can be provided in the front matter. This will replace the actual
 path to the file on disk. Destination will create the destination with the same
 path. Includes <a href="/content/sections/">section</a>.</p>
 
-<h3 id="url:19db6eb03b89c4dee67501d629682824">url</h3>
+<h3 id="url">url</h3>
 
 <p>A complete URL can be provided. This will override all the above as it pertains
 to the end destination. This must be the path from the baseURL (starting with a &ldquo;/&rdquo;).
 When a <code>url</code> is provided, it will be used exactly. Using <code>url</code> will ignore the
 <code>--uglyUrls</code> setting.</p>
 
-<h2 id="path-breakdown-in-hugo:19db6eb03b89c4dee67501d629682824">Path breakdown in Hugo</h2>
+<h2 id="path-breakdown-in-hugo">Path breakdown in Hugo</h2>
 
-<h3 id="content:19db6eb03b89c4dee67501d629682824">Content</h3>
+<h3 id="content">Content</h3>
 
 <pre><code>.             path           slug
 .       ⊢-------^----⊣ ⊢------^-------⊣
@@ -522,7 +522,7 @@ content/extras/indexes/category-example/index.html
 content/extras/indexes/index.html
 </code></pre>
 
-<h3 id="destination:19db6eb03b89c4dee67501d629682824">Destination</h3>
+<h3 id="destination">Destination</h3>
 
 <pre><code>           permalink
 ⊢--------------^-------------⊣
@@ -587,20 +587,20 @@ http://spf13.com/extras/indexes/example
 <ul>
 <li>
 <ul>
-<li><a href="#organization:19db6eb03b89c4dee67501d629682824">Organization</a></li>
-<li><a href="#destinations:19db6eb03b89c4dee67501d629682824">Destinations</a>
+<li><a href="#organization">Organization</a></li>
+<li><a href="#destinations">Destinations</a>
 <ul>
-<li><a href="#filename:19db6eb03b89c4dee67501d629682824">filename</a></li>
-<li><a href="#slug:19db6eb03b89c4dee67501d629682824">slug</a></li>
-<li><a href="#filepath:19db6eb03b89c4dee67501d629682824">filepath</a></li>
-<li><a href="#section:19db6eb03b89c4dee67501d629682824">section</a></li>
-<li><a href="#path:19db6eb03b89c4dee67501d629682824">path</a></li>
-<li><a href="#url:19db6eb03b89c4dee67501d629682824">url</a></li>
+<li><a href="#filename">filename</a></li>
+<li><a href="#slug">slug</a></li>
+<li><a href="#filepath">filepath</a></li>
+<li><a href="#section">section</a></li>
+<li><a href="#path">path</a></li>
+<li><a href="#url">url</a></li>
 </ul></li>
-<li><a href="#path-breakdown-in-hugo:19db6eb03b89c4dee67501d629682824">Path breakdown in Hugo</a>
+<li><a href="#path-breakdown-in-hugo">Path breakdown in Hugo</a>
 <ul>
-<li><a href="#content:19db6eb03b89c4dee67501d629682824">Content</a></li>
-<li><a href="#destination:19db6eb03b89c4dee67501d629682824">Destination</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#destination">Destination</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -610,7 +610,7 @@ http://spf13.com/extras/indexes/example
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

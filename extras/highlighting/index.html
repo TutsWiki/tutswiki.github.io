@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Syntax Highlighting</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -424,11 +424,11 @@
 
 <p><strong>The advantage of client side</strong> is that it doesn’t cost anything when building your site and some of the highlighting scripts available cover more languages than Pygments does.</p>
 
-<h2 id="server-side:c4210b265c792cac9a6cf6a5f53b671d">Server-side</h2>
+<h2 id="server-side">Server-side</h2>
 
 <p>For the pre-processed approach, highlighting is performed by an external Python-based program called <a href="http://pygments.org/">Pygments</a> and is triggered via an embedded Hugo shortcode (see example below). If Pygments is absent from the path, it will silently simply pass the content along unhighlighted.</p>
 
-<h3 id="pygments:c4210b265c792cac9a6cf6a5f53b671d">Pygments</h3>
+<h3 id="pygments">Pygments</h3>
 
 <p>If you have never worked with Pygments before, here is a brief primer:</p>
 
@@ -446,11 +446,11 @@
 <li>If you choose <code>pygmentsuseclasses = true</code>, Hugo includes class names in your code instead of color-codes. For class-names to be meaningful, you need to include a <code>.css</code>-file in your website representing your color-scheme. You can either generate this <code>.css</code>-files according to this <a href="http://pygments.org/docs/cmdline/">description</a> or download the standard ones from the <a href="https://github.com/richleland/pygments-css">GitHub pygments-css repository</a>.</li>
 </ol>
 
-<h3 id="usage:c4210b265c792cac9a6cf6a5f53b671d">Usage</h3>
+<h3 id="usage">Usage</h3>
 
 <p>Highlighting is carried out via the in-built shortcode <code>highlight</code>. <code>highlight</code> takes exactly one required parameter of language, and requires a closing shortcode. Note that <code>highlight</code> is <em>not</em> used for client-side javascript highlighting.</p>
 
-<h3 id="example:c4210b265c792cac9a6cf6a5f53b671d">Example</h3>
+<h3 id="example">Example</h3>
 
 <pre><code>{{&lt; highlight html &gt;}}
 &lt;section id=&quot;main&quot;&gt;
@@ -464,7 +464,7 @@
 {{&lt; /highlight &gt;}}
 </code></pre>
 
-<h3 id="example-output:c4210b265c792cac9a6cf6a5f53b671d">Example Output</h3>
+<h3 id="example-output">Example Output</h3>
 
 <pre><code>&lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span style=&quot;color: #a6e22e&quot;&gt;id=&lt;/span&gt;&lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
@@ -476,7 +476,7 @@
 &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
 </code></pre>
 
-<h3 id="options:c4210b265c792cac9a6cf6a5f53b671d">Options</h3>
+<h3 id="options">Options</h3>
 
 <p>Options to control highlighting can be added as a quoted, comma separated key-value list as the second argument in the shortcode. The example below will highlight as language <code>go</code> with inline line numbers, with line number 2 and 3 highlighted.</p>
 
@@ -492,14 +492,14 @@ var d string
 
 <p>The keywords are the same you would using with Pygments from the command line, see the <a href="http://pygments.org/docs/">Pygments doc</a> for more info.</p>
 
-<h3 id="disclaimers:c4210b265c792cac9a6cf6a5f53b671d">Disclaimers</h3>
+<h3 id="disclaimers">Disclaimers</h3>
 
 <ul>
 <li>Pygments is relatively slow and <em>causes a performance hit when building your site</em>, but Hugo has been designed to cache the results to disk.</li>
 <li>Languages available depends on your Pygments installation.</li>
 </ul>
 
-<h2 id="client-side:c4210b265c792cac9a6cf6a5f53b671d">Client-side</h2>
+<h2 id="client-side">Client-side</h2>
 
 <p>Alternatively, code highlighting can be done in client-side JavaScript.</p>
 
@@ -514,7 +514,7 @@ a library and a corresponding theme. Some popular libraries are:</p>
 <li><a href="https://code.google.com/p/google-code-prettify/">Google Prettify</a></li>
 </ul>
 
-<h3 id="highlight-js-example:c4210b265c792cac9a6cf6a5f53b671d">Highlight.js example</h3>
+<h3 id="highlight-js-example">Highlight.js example</h3>
 
 <p>This example uses the popular <a href="http://highlightjs.org/">Highlight.js</a> library, hosted by <a href="http://yandex.ru/">Yandex</a>, a popular Russian search engine.</p>
 
@@ -525,7 +525,7 @@ a library and a corresponding theme. Some popular libraries are:</p>
 &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
 </code></pre>
 
-<h3 id="prism-example:c4210b265c792cac9a6cf6a5f53b671d">Prism example</h3>
+<h3 id="prism-example">Prism example</h3>
 
 <p>Prism is another popular highlighter library, used on some major sites. Similar to Highlight.js, you simply load <code>prism.css</code> in your <code>&lt;head&gt;</code> via whatever Hugo partial template is creating that part of your pages, like so:</p>
 
@@ -544,7 +544,7 @@ a library and a corresponding theme. Some popular libraries are:</p>
 
 <p>In this example, the local paths indicate that your own copy of these files are being added to the site, typically under <code>./static/</code>.</p>
 
-<h3 id="using-client-side-highlighting:c4210b265c792cac9a6cf6a5f53b671d">Using Client-side highlighting</h3>
+<h3 id="using-client-side-highlighting">Using Client-side highlighting</h3>
 
 <p>To use client-side highlighting, most of these javascript libraries expect your code to be wrapped in semantically correct <code>&lt;code&gt;</code> tags, with the language expressed in a class attribute on the <code>&lt;code&gt;</code> tag, such as <code>class=&quot;language-abc&quot;</code>, where the <code>abc</code> is the code the highlighter script uses to represent that language.</p>
 
@@ -582,20 +582,20 @@ body {
 <ul>
 <li>
 <ul>
-<li><a href="#server-side:c4210b265c792cac9a6cf6a5f53b671d">Server-side</a>
+<li><a href="#server-side">Server-side</a>
 <ul>
-<li><a href="#pygments:c4210b265c792cac9a6cf6a5f53b671d">Pygments</a></li>
-<li><a href="#usage:c4210b265c792cac9a6cf6a5f53b671d">Usage</a></li>
-<li><a href="#example:c4210b265c792cac9a6cf6a5f53b671d">Example</a></li>
-<li><a href="#example-output:c4210b265c792cac9a6cf6a5f53b671d">Example Output</a></li>
-<li><a href="#options:c4210b265c792cac9a6cf6a5f53b671d">Options</a></li>
-<li><a href="#disclaimers:c4210b265c792cac9a6cf6a5f53b671d">Disclaimers</a></li>
+<li><a href="#pygments">Pygments</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#example-output">Example Output</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#disclaimers">Disclaimers</a></li>
 </ul></li>
-<li><a href="#client-side:c4210b265c792cac9a6cf6a5f53b671d">Client-side</a>
+<li><a href="#client-side">Client-side</a>
 <ul>
-<li><a href="#highlight-js-example:c4210b265c792cac9a6cf6a5f53b671d">Highlight.js example</a></li>
-<li><a href="#prism-example:c4210b265c792cac9a6cf6a5f53b671d">Prism example</a></li>
-<li><a href="#using-client-side-highlighting:c4210b265c792cac9a6cf6a5f53b671d">Using Client-side highlighting</a></li>
+<li><a href="#highlight-js-example">Highlight.js example</a></li>
+<li><a href="#prism-example">Prism example</a></li>
+<li><a href="#using-client-side-highlighting">Using Client-side highlighting</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -605,7 +605,7 @@ body {
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

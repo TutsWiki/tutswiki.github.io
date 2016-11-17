@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Comments in Hugo</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -423,16 +423,16 @@
 
 <p>Your theme may already support Disqus, but even it if doesn’t, it is easy to add.</p>
 
-<h1 id="disqus-support:03e7713c1e56da666eeab8dfbbf51091">Disqus Support</h1>
+<h1 id="disqus-support">Disqus Support</h1>
 
-<h2 id="adding-disqus-to-a-template:03e7713c1e56da666eeab8dfbbf51091">Adding Disqus to a template</h2>
+<h2 id="adding-disqus-to-a-template">Adding Disqus to a template</h2>
 
 <p>Hugo comes with all the code you would need to include load Disqus. Simply include the following line where you want your comments to appear:</p>
 
 <pre><code>{{ template &quot;_internal/disqus.html&quot; . }}
 </code></pre>
 
-<h2 id="configuring-disqus:03e7713c1e56da666eeab8dfbbf51091">Configuring Disqus</h2>
+<h2 id="configuring-disqus">Configuring Disqus</h2>
 
 <p>That template requires you to set a single value in your site config file, e.g. config.yaml.</p>
 
@@ -448,7 +448,7 @@ for a given piece of content:</p>
 <li><strong>disqus_url</strong></li>
 </ul>
 
-<h2 id="conditional-loading-of-disqus-comments:03e7713c1e56da666eeab8dfbbf51091">Conditional Loading of Disqus Comments</h2>
+<h2 id="conditional-loading-of-disqus-comments">Conditional Loading of Disqus Comments</h2>
 
 <p>Users have noticed that enabling Disqus comments when running the Hugo web server on localhost causes the creation of unwanted discussions on the associated Disqus account. In order to prevent this, a slightly tweaked partial template is required. So, rather than using the built-in <code>&quot;_internal/disqus.html&quot;</code> template referenced above, create a template in your <code>partials</code> folder that looks like this:</p>
 
@@ -478,7 +478,7 @@ for a given piece of content:</p>
 <pre><code>{{ partial &quot;disqus.html&quot; . }}
 </code></pre>
 
-<h1 id="alternatives:03e7713c1e56da666eeab8dfbbf51091">Alternatives</h1>
+<h1 id="alternatives">Alternatives</h1>
 
 <p>A few alternatives exist to <a href="https://disqus.com/">Disqus</a>:</p>
 
@@ -492,7 +492,7 @@ for a given piece of content:</p>
 <li><a href="https://github.com/spf13/kaiju">Kaiju</a></li>
 </ul>
 
-<h2 id="kaiju:03e7713c1e56da666eeab8dfbbf51091">Kaiju</h2>
+<h2 id="kaiju">Kaiju</h2>
 
 <p><a href="https://github.com/spf13/kaiju">Kaiju</a> is an open-source project started by <a href="http://spf13.com/">spf13</a> (Hugo’s author) to bring easy and fast real time discussions to the web.</p>
 
@@ -500,7 +500,7 @@ for a given piece of content:</p>
 
 <p>It is in early development but shows promise. If you have interest, please help by contributing whether via a pull request, an issue or even just a tweet. Everything helps.</p>
 
-<h2 id="discourse:03e7713c1e56da666eeab8dfbbf51091">Discourse</h2>
+<h2 id="discourse">Discourse</h2>
 
 <p>Additionally, you may recognize <a href="http://www.discourse.org">Discourse</a> as the system that powers the <a href="http://discuss.gohugo.io">Hugo Discussion Forum</a>.</p>
 
@@ -508,7 +508,7 @@ for a given piece of content:</p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

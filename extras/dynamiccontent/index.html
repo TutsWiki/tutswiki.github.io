@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Dynamic Content</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -429,9 +429,9 @@ from nearly any resource.</p>
 <p>&ldquo;Dynamic Content&rdquo; currently consists of two functions, <code>getJSON</code>
 and <code>getCSV</code>, which are available in <strong>all template files</strong>.</p>
 
-<h2 id="implementation-details:4bcb424a04054cc66b7ec68666812414">Implementation details</h2>
+<h2 id="implementation-details">Implementation details</h2>
 
-<h3 id="calling-the-functions-with-an-url:4bcb424a04054cc66b7ec68666812414">Calling the functions with an URL</h3>
+<h3 id="calling-the-functions-with-an-url">Calling the functions with an URL</h3>
 
 <p>In any HTML template or Markdown document, call the functions like this:</p>
 
@@ -474,7 +474,7 @@ first 5 gists for a GitHub user:</p>
 &lt;/ul&gt;
 </code></pre>
 
-<h3 id="example-for-csv-files:4bcb424a04054cc66b7ec68666812414">Example for CSV files</h3>
+<h3 id="example-for-csv-files">Example for CSV files</h3>
 
 <p>For <code>getCSV</code>, the one-character long separator must be placed in the
 first position followed by the URL.</p>
@@ -504,7 +504,7 @@ first position followed by the URL.</p>
 <p>The expression <code>{{index $r number}}</code> must be used to output the nth-column from
 the current row.</p>
 
-<h3 id="caching-of-urls:4bcb424a04054cc66b7ec68666812414">Caching of URLs</h3>
+<h3 id="caching-of-urls">Caching of URLs</h3>
 
 <p>Each downloaded URL will be cached in the default folder <code>$TMPDIR/hugo_cache/</code>.
 The variable <code>$TMPDIR</code> will be resolved to your system-dependent
@@ -517,13 +517,13 @@ your system as a caching directory.</p>
 cache with the command line flag <code>--ignoreCache</code>. However, Hugo will always
 write, on each build of the site, to the cache folder (silent backup).</p>
 
-<h3 id="authentication-when-using-rest-urls:4bcb424a04054cc66b7ec68666812414">Authentication when using REST URLs</h3>
+<h3 id="authentication-when-using-rest-urls">Authentication when using REST URLs</h3>
 
 <p>Currently, you can only use those authentication methods that can
 be put into an URL. <a href="http://en.wikipedia.org/wiki/OAuth">OAuth</a> or
 other authentication methods are not implemented.</p>
 
-<h3 id="loading-local-files:4bcb424a04054cc66b7ec68666812414">Loading local files</h3>
+<h3 id="loading-local-files">Loading local files</h3>
 
 <p>To load local files with the two functions <code>getJSON</code> and <code>getCSV</code>, the
 source files must reside within Hugo&rsquo;s working directory. The file
@@ -531,7 +531,7 @@ extension does not matter but the content.</p>
 
 <p>It applies the same output logic as in the topic: <em>Calling the functions with an URL</em>.</p>
 
-<h2 id="livereload:4bcb424a04054cc66b7ec68666812414">LiveReload</h2>
+<h2 id="livereload">LiveReload</h2>
 
 <p>There is no chance to trigger a <a href="/extras/livereload/">LiveReload</a> when
 the content of an URL changes. However, when a local JSON/CSV file changes,
@@ -545,7 +545,7 @@ This can create huge traffic and you may also reach API limits quickly.</p>
 <p>As downloading of content takes a while, Hugo stops with processing
 your Markdown files until the content has been downloaded.</p>
 
-<h2 id="examples:4bcb424a04054cc66b7ec68666812414">Examples</h2>
+<h2 id="examples">Examples</h2>
 
 <ul>
 <li>Photo gallery JSON powered: <a href="https://github.com/pcdummy/hugo-lightslider-example">https://github.com/pcdummy/hugo-lightslider-example</a></li>
@@ -559,16 +559,16 @@ your Markdown files until the content has been downloaded.</p>
 <ul>
 <li>
 <ul>
-<li><a href="#implementation-details:4bcb424a04054cc66b7ec68666812414">Implementation details</a>
+<li><a href="#implementation-details">Implementation details</a>
 <ul>
-<li><a href="#calling-the-functions-with-an-url:4bcb424a04054cc66b7ec68666812414">Calling the functions with an URL</a></li>
-<li><a href="#example-for-csv-files:4bcb424a04054cc66b7ec68666812414">Example for CSV files</a></li>
-<li><a href="#caching-of-urls:4bcb424a04054cc66b7ec68666812414">Caching of URLs</a></li>
-<li><a href="#authentication-when-using-rest-urls:4bcb424a04054cc66b7ec68666812414">Authentication when using REST URLs</a></li>
-<li><a href="#loading-local-files:4bcb424a04054cc66b7ec68666812414">Loading local files</a></li>
+<li><a href="#calling-the-functions-with-an-url">Calling the functions with an URL</a></li>
+<li><a href="#example-for-csv-files">Example for CSV files</a></li>
+<li><a href="#caching-of-urls">Caching of URLs</a></li>
+<li><a href="#authentication-when-using-rest-urls">Authentication when using REST URLs</a></li>
+<li><a href="#loading-local-files">Loading local files</a></li>
 </ul></li>
-<li><a href="#livereload:4bcb424a04054cc66b7ec68666812414">LiveReload</a></li>
-<li><a href="#examples:4bcb424a04054cc66b7ec68666812414">Examples</a></li>
+<li><a href="#livereload">LiveReload</a></li>
+<li><a href="#examples">Examples</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -577,7 +577,7 @@ your Markdown files until the content has been downloaded.</p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

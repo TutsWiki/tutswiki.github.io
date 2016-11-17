@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Communities on </title>
-    <link>http://tutswiki.com/community/</link>
-    <description>Recent content in Communities on </description>
+    <title>Community-rsses on </title>
+    <link>http://tutswiki.com/community/index.xml</link>
+    <description>Recent content in Community-rsses on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 01 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://tutswiki.com/community/index.xml" rel="self" type="application/rss+xml" />
@@ -16,23 +16,23 @@
       <guid>http://tutswiki.com/community/mailing-list/</guid>
       <description>
 
-&lt;h2 id=&#34;discussion-forum:d3f5bfe80773e9cb94f62cf6b7642307&#34;&gt;Discussion Forum&lt;/h2&gt;
+&lt;h2 id=&#34;discussion-forum&#34;&gt;Discussion Forum&lt;/h2&gt;
 
 &lt;p&gt;Hugo has its own &lt;a href=&#34;http://discuss.gohugo.io/&#34;&gt;discussion forum&lt;/a&gt; powered by &lt;a href=&#34;http://www.discourse.org/&#34;&gt;Discourse&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Please use this for all discussions, questions, etc.&lt;/p&gt;
 
-&lt;h2 id=&#34;mailing-list:d3f5bfe80773e9cb94f62cf6b7642307&#34;&gt;Mailing List&lt;/h2&gt;
+&lt;h2 id=&#34;mailing-list&#34;&gt;Mailing List&lt;/h2&gt;
 
 &lt;p&gt;Hugo has two mailing lists:&lt;/p&gt;
 
-&lt;h3 id=&#34;announcements:d3f5bfe80773e9cb94f62cf6b7642307&#34;&gt;Announcements&lt;/h3&gt;
+&lt;h3 id=&#34;announcements&#34;&gt;Announcements&lt;/h3&gt;
 
 &lt;p&gt;Very low traffic. Only releases will be emailed here.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://groups.google.com/forum/#!forum/hugo-announce&#34;&gt;https://groups.google.com/forum/#!forum/hugo-announce&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;discussion-archive:d3f5bfe80773e9cb94f62cf6b7642307&#34;&gt;Discussion (Archive)&lt;/h3&gt;
+&lt;h3 id=&#34;discussion-archive&#34;&gt;Discussion (Archive)&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;This has been replaced with the &lt;a href=&#34;http://discuss.gohugo.io/&#34;&gt;Hugo discussion forum&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 
@@ -40,19 +40,19 @@
 
 &lt;p&gt;&lt;a href=&#34;https://groups.google.com/forum/#!forum/hugo-discuss&#34;&gt;https://groups.google.com/forum/#!forum/hugo-discuss&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;other-resources:d3f5bfe80773e9cb94f62cf6b7642307&#34;&gt;Other Resources&lt;/h2&gt;
+&lt;h2 id=&#34;other-resources&#34;&gt;Other Resources&lt;/h2&gt;
 
-&lt;h3 id=&#34;gonuts:d3f5bfe80773e9cb94f62cf6b7642307&#34;&gt;GoNuts&lt;/h3&gt;
+&lt;h3 id=&#34;gonuts&#34;&gt;GoNuts&lt;/h3&gt;
 
 &lt;p&gt;For general Go questions or discussion please refer to the Go mailing list.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://groups.google.com/forum/#!forum/golang-nuts&#34;&gt;https://groups.google.com/forum/#!forum/golang-nuts&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;github-issues:d3f5bfe80773e9cb94f62cf6b7642307&#34;&gt;GitHub Issues&lt;/h3&gt;
+&lt;h3 id=&#34;github-issues&#34;&gt;GitHub Issues&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/issues&#34;&gt;https://github.com/spf13/hugo/issues&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;twitter:d3f5bfe80773e9cb94f62cf6b7642307&#34;&gt;Twitter&lt;/h3&gt;
+&lt;h3 id=&#34;twitter&#34;&gt;Twitter&lt;/h3&gt;
 
 &lt;p&gt;Hugo doesn&amp;rsquo;t have its own Twitter handle, but feel free to tweet &lt;a href=&#34;http://twitter.com/spf13&#34;&gt;@spf13&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -66,11 +66,11 @@
       <guid>http://tutswiki.com/community/press/</guid>
       <description>
 
-&lt;h3 id=&#34;help-keep-this-list-up-to-date:13f2c33e35789d3bcaffb9a540435f74&#34;&gt;Help keep this list up to date&lt;/h3&gt;
+&lt;h3 id=&#34;help-keep-this-list-up-to-date&#34;&gt;Help keep this list up to date&lt;/h3&gt;
 
 &lt;p&gt;Know of a post, article or tutorial on hugo? &lt;a href=&#34;https://github.com/spf13/hugo/edit/master/docs/content/community/press.md&#34;&gt;Add it to this list&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;press-and-articles:13f2c33e35789d3bcaffb9a540435f74&#34;&gt;Press and Articles&lt;/h2&gt;
+&lt;h2 id=&#34;press-and-articles&#34;&gt;Press and Articles&lt;/h2&gt;
 
 &lt;p&gt;Hugo has been featured in the following Blog Posts, Press and Media.&lt;/p&gt;
 
@@ -609,7 +609,7 @@ to do next.&lt;/p&gt;
 &lt;li&gt;Make sure &lt;code&gt;go test ./...&lt;/code&gt; passes, and &lt;code&gt;go build&lt;/code&gt; completes.  Our &lt;a href=&#34;https://travis-ci.org/spf13/hugo&#34;&gt;Travis CI loop&lt;/a&gt; will catch most things that are missing.  The exception: Windows.  We run on Windows from time to time, but if you have access, please check on a Windows machine too.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;contribution-overview:cc4aac3e9be04e0413c9520f223b493c&#34;&gt;Contribution Overview&lt;/h2&gt;
+&lt;h2 id=&#34;contribution-overview&#34;&gt;Contribution Overview&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Fork Hugo from &lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;https://github.com/spf13/hugo&lt;/a&gt;&lt;/li&gt;
@@ -622,9 +622,9 @@ to do next.&lt;/p&gt;
 &lt;li&gt;Create new Pull Request&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1 id=&#34;building-from-source:cc4aac3e9be04e0413c9520f223b493c&#34;&gt;Building from source&lt;/h1&gt;
+&lt;h1 id=&#34;building-from-source&#34;&gt;Building from source&lt;/h1&gt;
 
-&lt;h2 id=&#34;clone-locally-for-contributors:cc4aac3e9be04e0413c9520f223b493c&#34;&gt;Clone locally (for contributors):&lt;/h2&gt;
+&lt;h2 id=&#34;clone-locally-for-contributors&#34;&gt;Clone locally (for contributors):&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;git clone https://github.com/spf13/hugo
 cd hugo
@@ -640,14 +640,14 @@ of the following paths:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;ln -s /path/to/your/hugo $GOROOT/src/pkg/github.com/spf13/hugo&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;running-hugo:cc4aac3e9be04e0413c9520f223b493c&#34;&gt;Running Hugo&lt;/h2&gt;
+&lt;h2 id=&#34;running-hugo&#34;&gt;Running Hugo&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;cd /path/to/hugo
 go install github.com/spf13/hugo/hugo
 go run main.go
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;building-hugo:cc4aac3e9be04e0413c9520f223b493c&#34;&gt;Building Hugo&lt;/h2&gt;
+&lt;h2 id=&#34;building-hugo&#34;&gt;Building Hugo&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;cd /path/to/hugo
 go build -o hugo main.go

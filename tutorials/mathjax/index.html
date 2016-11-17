@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>MathJax Support</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -418,13 +418,13 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h2 id="what-is-mathjax:d97e838dbdddd8f0d2665b07f195e51f">What is MathJax?</h2>
+<h2 id="what-is-mathjax">What is MathJax?</h2>
 
 <p><a href="http://www.mathjax.org/">MathJax</a> is a JavaScript library that allows the display of mathematical expressions described via a LaTeX-style syntax in the HTML (or Markdown) source of a web page. As it is a pure a JavaScript library, getting it to work within Hugo is fairly straightforward, but does have some oddities that will be discussed here.</p>
 
 <p>This is not an introduction into actually using MathJax to render typeset mathematics on your website. Instead, this page is a collection of tips and hints for one way to get MathJax working on a website built with Hugo.</p>
 
-<h2 id="enabling-mathjax:d97e838dbdddd8f0d2665b07f195e51f">Enabling MathJax</h2>
+<h2 id="enabling-mathjax">Enabling MathJax</h2>
 
 <p>The first step is to enable MathJax on pages that you would like to have typeset math. There are multiple ways to do this (adventurous readers can consult the <a href="http://docs.mathjax.org/en/latest/configuration.html">Loading and Configuring</a> section of the MathJax documentation for additional methods of including MathJax), but the easiest way is to use the secure MathJax CDN by including the following HTML snippet in the source of a page:</p>
 
@@ -435,15 +435,15 @@
 
 <p>One way to ensure that this code is included in all pages is to put it in one of the templates that live in the <code>layouts/partials/</code> directory. For example, I have included this in the bottom of my template <code>footer.html</code> because I know that the footer will be included in every page of my website.</p>
 
-<h3 id="options-and-features:d97e838dbdddd8f0d2665b07f195e51f">Options and Features</h3>
+<h3 id="options-and-features">Options and Features</h3>
 
 <p>MathJax is a stable open-source library with many features. I encourage the interested reader to view the <a href="http://docs.mathjax.org/en/latest/index.html">MathJax Documentation</a>, specifically the sections on <a href="http://docs.mathjax.org/en/latest/index.html#basic-usage">Basic Usage</a> and <a href="http://docs.mathjax.org/en/latest/index.html#mathjax-configuration-options">MathJax Configuration Options</a>.</p>
 
-<h2 id="issues-with-markdown:d97e838dbdddd8f0d2665b07f195e51f">Issues with Markdown</h2>
+<h2 id="issues-with-markdown">Issues with Markdown</h2>
 
 <p>After enabling MathJax, any math entered in-between proper markers (see documentation) will be processed and typeset in the web page. One issue that comes up, however, with Markdown is that the underscore character (<code>_</code>) is interpreted by Markdown as a way to wrap text in <code>emph</code> blocks while LaTeX (MathJax) interprets the underscore as a way to create a subscript. This &ldquo;double speak&rdquo; of the underscore can result in some unexpected and unwanted behavior.</p>
 
-<h3 id="solution:d97e838dbdddd8f0d2665b07f195e51f">Solution</h3>
+<h3 id="solution">Solution</h3>
 
 <p>There are multiple ways to remedy this problem. One solution is to simply escape each underscore in your math code by entering <code>\_</code> instead of <code>_</code>. This can become quite tedious if the equations you are entering are full of subscripts.</p>
 
@@ -487,7 +487,7 @@ MathJax.Hub.Config({
 
 <p>In the CSS snippet, notice the line <code>color: #515151;</code>. <code>#515151</code> is the value assigned to the <code>color</code> attribute of the <code>body</code> class in my CSS. In order for the equations to fit in with the body of a web page, this value should be the same as the color of the body.</p>
 
-<h3 id="usage:d97e838dbdddd8f0d2665b07f195e51f">Usage</h3>
+<h3 id="usage">Usage</h3>
 
 <p>With this setup, everything is in place for a natural usage of MathJax on pages generated using Hugo. In order to include inline mathematics, just put LaTeX code in between <code>`$ TeX Code $`</code> or <code>`\( TeX Code \)`</code>. To include display style mathematics, just put LaTeX code in between <code>&lt;div&gt;$$TeX Code$$&lt;/div&gt;</code>. All the math will be properly typeset and displayed within your Hugo generated web page!</p>
 
@@ -497,15 +497,15 @@ MathJax.Hub.Config({
 <ul>
 <li>
 <ul>
-<li><a href="#what-is-mathjax:d97e838dbdddd8f0d2665b07f195e51f">What is MathJax?</a></li>
-<li><a href="#enabling-mathjax:d97e838dbdddd8f0d2665b07f195e51f">Enabling MathJax</a>
+<li><a href="#what-is-mathjax">What is MathJax?</a></li>
+<li><a href="#enabling-mathjax">Enabling MathJax</a>
 <ul>
-<li><a href="#options-and-features:d97e838dbdddd8f0d2665b07f195e51f">Options and Features</a></li>
+<li><a href="#options-and-features">Options and Features</a></li>
 </ul></li>
-<li><a href="#issues-with-markdown:d97e838dbdddd8f0d2665b07f195e51f">Issues with Markdown</a>
+<li><a href="#issues-with-markdown">Issues with Markdown</a>
 <ul>
-<li><a href="#solution:d97e838dbdddd8f0d2665b07f195e51f">Solution</a></li>
-<li><a href="#usage:d97e838dbdddd8f0d2665b07f195e51f">Usage</a></li>
+<li><a href="#solution">Solution</a></li>
+<li><a href="#usage">Usage</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -515,7 +515,7 @@ MathJax.Hub.Config({
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

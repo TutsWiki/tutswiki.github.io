@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on </title>
-    <link>http://tutswiki.com/tags/blog/</link>
-    <description>Recent content in Blog on </description>
+    <title></title>
+    <link>http://tutswiki.com/tags/blog/index.xml</link>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 11 Feb 2015 13:21:27 +1100</lastBuildDate>
     <atom:link href="http://tutswiki.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -46,10 +45,10 @@
     
     <item>
       <title>vurt.co.uk</title>
-      <link>http://tutswiki.com/showcase/vurt.co/</link>
+      <link>http://tutswiki.com/showcase/vurt/</link>
       <pubDate>Tue, 26 Aug 2014 12:09:39 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/vurt.co/</guid>
+      <guid>http://tutswiki.com/showcase/vurt/</guid>
       <description></description>
     </item>
     
@@ -91,10 +90,10 @@
     
     <item>
       <title>ninya.io</title>
-      <link>http://tutswiki.com/showcase/ninya.io/</link>
+      <link>http://tutswiki.com/showcase/ninya/</link>
       <pubDate>Tue, 26 Aug 2014 09:47:00 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/ninya.io/</guid>
+      <guid>http://tutswiki.com/showcase/ninya/</guid>
       <description></description>
     </item>
     
@@ -109,10 +108,10 @@
     
     <item>
       <title>lk4d4.darth.io</title>
-      <link>http://tutswiki.com/showcase/lk4d4.darth.io/</link>
+      <link>http://tutswiki.com/showcase/lk4d4/</link>
       <pubDate>Mon, 25 Aug 2014 18:59:30 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/lk4d4.darth.io/</guid>
+      <guid>http://tutswiki.com/showcase/lk4d4/</guid>
       <description></description>
     </item>
     

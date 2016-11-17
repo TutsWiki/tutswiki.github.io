@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Extras on </title>
-    <link>http://tutswiki.com/extras/</link>
-    <description>Recent content in Extras on </description>
+    <title>Extras-rsses on </title>
+    <link>http://tutswiki.com/extras/index.xml</link>
+    <description>Recent content in Extras-rsses on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 09 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://tutswiki.com/extras/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +20,7 @@
 
 &lt;p&gt;Luckily, redirects can be handled easily with &lt;em&gt;aliases&lt;/em&gt; in Hugo.&lt;/p&gt;
 
-&lt;h2 id=&#34;example:86c3b43f52adb2002b6f349546284b0a&#34;&gt;Example&lt;/h2&gt;
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
 
 &lt;p&gt;Given a post on your current Hugo site, with a path of:&lt;/p&gt;
 
@@ -28,7 +28,7 @@
 
 &lt;p&gt;&amp;hellip; you create an &amp;ldquo;aliases&amp;rdquo; section in the frontmatter of your post, and add previous paths to that.&lt;/p&gt;
 
-&lt;h3 id=&#34;toml-frontmatter:86c3b43f52adb2002b6f349546284b0a&#34;&gt;TOML frontmatter&lt;/h3&gt;
+&lt;h3 id=&#34;toml-frontmatter&#34;&gt;TOML frontmatter&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;+++
         ...
@@ -40,7 +40,7 @@ aliases = [
 +++
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;yaml-frontmatter:86c3b43f52adb2002b6f349546284b0a&#34;&gt;YAML frontmatter&lt;/h3&gt;
+&lt;h3 id=&#34;yaml-frontmatter&#34;&gt;YAML frontmatter&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;---
         ...
@@ -53,7 +53,7 @@ aliases:
 
 &lt;p&gt;Now when you visit any of the locations specified in aliases, &lt;em&gt;assuming the same site domain&lt;/em&gt;, you&amp;rsquo;ll be redirected to the page they are specified on.&lt;/p&gt;
 
-&lt;h2 id=&#34;important-behaviors:86c3b43f52adb2002b6f349546284b0a&#34;&gt;Important Behaviors&lt;/h2&gt;
+&lt;h2 id=&#34;important-behaviors&#34;&gt;Important Behaviors&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;em&gt;Hugo makes no assumptions about aliases. They also don&amp;rsquo;t change based
@@ -64,7 +64,7 @@ complete filename or directory.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 any content with the same location.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;how-hugo-aliases-work:86c3b43f52adb2002b6f349546284b0a&#34;&gt;How Hugo Aliases Work&lt;/h2&gt;
+&lt;h2 id=&#34;how-hugo-aliases-work&#34;&gt;How Hugo Aliases Work&lt;/h2&gt;
 
 &lt;p&gt;When aliases are specified, Hugo creates a physical folder structure to match the alias entry, and, an html file specifying the canonical URL for the page, and a redirect target.&lt;/p&gt;
 
@@ -95,7 +95,7 @@ any content with the same location.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Hugo provides the functionality to quickly get a site, theme or page
 started.&lt;/p&gt;
 
-&lt;h2 id=&#34;new-site:37270f2fc999ab1e18b3647fc537a653&#34;&gt;New Site&lt;/h2&gt;
+&lt;h2 id=&#34;new-site&#34;&gt;New Site&lt;/h2&gt;
 
 &lt;p&gt;Want to get a site built quickly?&lt;/p&gt;
 
@@ -109,7 +109,7 @@ quickly.&lt;/p&gt;
 places), &lt;a href=&#34;http://tutswiki.com/overview/configuration/&#34;&gt;configuration&lt;/a&gt; and content are up to
 you&amp;hellip; but luckily we have builders for content (see below).&lt;/p&gt;
 
-&lt;h2 id=&#34;new-theme:37270f2fc999ab1e18b3647fc537a653&#34;&gt;New Theme&lt;/h2&gt;
+&lt;h2 id=&#34;new-theme&#34;&gt;New Theme&lt;/h2&gt;
 
 &lt;p&gt;Want to design a new theme?&lt;/p&gt;
 
@@ -123,7 +123,7 @@ license and theme.toml file with most of the work done for you.&lt;/p&gt;
 &lt;p&gt;Follow the &lt;a href=&#34;http://tutswiki.com/themes/creation/&#34;&gt;Theme Creation Guide&lt;/a&gt; once the builder is
 done.&lt;/p&gt;
 
-&lt;h2 id=&#34;new-content:37270f2fc999ab1e18b3647fc537a653&#34;&gt;New Content&lt;/h2&gt;
+&lt;h2 id=&#34;new-content&#34;&gt;New Content&lt;/h2&gt;
 
 &lt;p&gt;You will use this builder the most of all. Every time you want to create
 a new piece of content, the content builder will get you started right.&lt;/p&gt;
@@ -157,16 +157,16 @@ path starts from your content directory.&lt;/p&gt;
 
 &lt;p&gt;Your theme may already support Disqus, but even it if doesn’t, it is easy to add.&lt;/p&gt;
 
-&lt;h1 id=&#34;disqus-support:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Disqus Support&lt;/h1&gt;
+&lt;h1 id=&#34;disqus-support&#34;&gt;Disqus Support&lt;/h1&gt;
 
-&lt;h2 id=&#34;adding-disqus-to-a-template:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Adding Disqus to a template&lt;/h2&gt;
+&lt;h2 id=&#34;adding-disqus-to-a-template&#34;&gt;Adding Disqus to a template&lt;/h2&gt;
 
 &lt;p&gt;Hugo comes with all the code you would need to include load Disqus. Simply include the following line where you want your comments to appear:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ template &amp;quot;_internal/disqus.html&amp;quot; . }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;configuring-disqus:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Configuring Disqus&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-disqus&#34;&gt;Configuring Disqus&lt;/h2&gt;
 
 &lt;p&gt;That template requires you to set a single value in your site config file, e.g. config.yaml.&lt;/p&gt;
 
@@ -182,7 +182,7 @@ for a given piece of content:&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;disqus_url&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;conditional-loading-of-disqus-comments:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Conditional Loading of Disqus Comments&lt;/h2&gt;
+&lt;h2 id=&#34;conditional-loading-of-disqus-comments&#34;&gt;Conditional Loading of Disqus Comments&lt;/h2&gt;
 
 &lt;p&gt;Users have noticed that enabling Disqus comments when running the Hugo web server on localhost causes the creation of unwanted discussions on the associated Disqus account. In order to prevent this, a slightly tweaked partial template is required. So, rather than using the built-in &lt;code&gt;&amp;quot;_internal/disqus.html&amp;quot;&lt;/code&gt; template referenced above, create a template in your &lt;code&gt;partials&lt;/code&gt; folder that looks like this:&lt;/p&gt;
 
@@ -212,7 +212,7 @@ for a given piece of content:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;disqus.html&amp;quot; . }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;alternatives:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Alternatives&lt;/h1&gt;
+&lt;h1 id=&#34;alternatives&#34;&gt;Alternatives&lt;/h1&gt;
 
 &lt;p&gt;A few alternatives exist to &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus&lt;/a&gt;:&lt;/p&gt;
 
@@ -226,7 +226,7 @@ for a given piece of content:&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/kaiju&#34;&gt;Kaiju&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;kaiju:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Kaiju&lt;/h2&gt;
+&lt;h2 id=&#34;kaiju&#34;&gt;Kaiju&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/spf13/kaiju&#34;&gt;Kaiju&lt;/a&gt; is an open-source project started by &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13&lt;/a&gt; (Hugo’s author) to bring easy and fast real time discussions to the web.&lt;/p&gt;
 
@@ -234,7 +234,7 @@ for a given piece of content:&lt;/p&gt;
 
 &lt;p&gt;It is in early development but shows promise. If you have interest, please help by contributing whether via a pull request, an issue or even just a tweet. Everything helps.&lt;/p&gt;
 
-&lt;h2 id=&#34;discourse:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Discourse&lt;/h2&gt;
+&lt;h2 id=&#34;discourse&#34;&gt;Discourse&lt;/h2&gt;
 
 &lt;p&gt;Additionally, you may recognize &lt;a href=&#34;http://www.discourse.org&#34;&gt;Discourse&lt;/a&gt; as the system that powers the &lt;a href=&#34;http://discuss.gohugo.io&#34;&gt;Hugo Discussion Forum&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -250,7 +250,7 @@ for a given piece of content:&lt;/p&gt;
 
 &lt;p&gt;Hugo makes it easy to link documents together with the &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; shortcodes. These shortcodes are also used to safely provide links to headings inside of your content, whether across documents or within a document. The only difference between &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; is whether the resulting URL is absolute (&lt;code&gt;http://1.com/about/&lt;/code&gt;) or relative (&lt;code&gt;/about/&lt;/code&gt;).&lt;/p&gt;
 
-&lt;h2 id=&#34;using-ref-and-relref:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Using &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;using-ref-and-relref&#34;&gt;Using &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt;&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; ref &amp;quot;document&amp;quot; &amp;gt;}}
 {{&amp;lt; ref &amp;quot;#anchor&amp;quot; &amp;gt;}}
@@ -262,7 +262,7 @@ for a given piece of content:&lt;/p&gt;
 
 &lt;p&gt;The single parameter to &lt;code&gt;ref&lt;/code&gt; is a string with a content &lt;em&gt;document name&lt;/em&gt; (&lt;code&gt;about.md&lt;/code&gt;), an in-document &lt;em&gt;anchor&lt;/em&gt; (&lt;code&gt;#who&lt;/code&gt;), or both (&lt;code&gt;about.md#who&lt;/code&gt;).&lt;/p&gt;
 
-&lt;h3 id=&#34;document-names:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Document Names&lt;/h3&gt;
+&lt;h3 id=&#34;document-names&#34;&gt;Document Names&lt;/h3&gt;
 
 &lt;p&gt;The &lt;em&gt;document name&lt;/em&gt; is the name of a document including the format extension; this may be just the filename, or the relative path from the &lt;code&gt;content/&lt;/code&gt; directory. With a document &lt;code&gt;content/blog/post.md&lt;/code&gt;, either format will produce the same result.&lt;/p&gt;
 
@@ -283,7 +283,7 @@ for a given piece of content:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;/blog/post.md&amp;quot; &amp;gt;}} ⇒ `&amp;quot;&amp;quot;`
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Anchors&lt;/h3&gt;
+&lt;h3 id=&#34;anchors&#34;&gt;Anchors&lt;/h3&gt;
 
 &lt;p&gt;When an &lt;em&gt;anchor&lt;/em&gt; is provided by itself, the current page’s unique identifier will be appended; when an &lt;em&gt;anchor&lt;/em&gt; is provided with a document name, the found page&amp;rsquo;s unique identifier will be appended.&lt;/p&gt;
 
@@ -291,9 +291,9 @@ for a given piece of content:&lt;/p&gt;
 {{&amp;lt; relref &amp;quot;blog/post.md#who&amp;quot; &amp;gt;}} ⇒ `/blog/post/#who:badcafe`
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;More information about document unique identifiers and headings can be found &lt;a href=&#34;#hugo-heading-anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;below&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More information about document unique identifiers and headings can be found &lt;a href=&#34;#hugo-heading-anchors&#34;&gt;below&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;examples:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Examples&lt;/h3&gt;
+&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;{{&amp;lt; ref &amp;quot;blog/post.md&amp;quot; &amp;gt;}}&lt;/code&gt; ⇒ &lt;code&gt;http://1.com/blog/post/&lt;/code&gt;&lt;/li&gt;
@@ -304,7 +304,7 @@ for a given piece of content:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;#tldr&amp;quot; &amp;gt;}}&lt;/code&gt; ⇒ &lt;code&gt;#tldr:badcaffe&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;hugo-heading-anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Hugo Heading Anchors&lt;/h2&gt;
+&lt;h2 id=&#34;hugo-heading-anchors&#34;&gt;Hugo Heading Anchors&lt;/h2&gt;
 
 &lt;p&gt;When using Markdown document types, Hugo generates heading anchors automatically. The generated anchor for this section is &lt;code&gt;hugo-heading-anchors&lt;/code&gt;. Because the heading anchors are generated automatically, Hugo takes some effort to ensure that heading anchors are unique both inside a document and across the entire site.&lt;/p&gt;
 
@@ -320,7 +320,7 @@ for a given piece of content:&lt;/p&gt;
 &lt;p&gt;What follows is a deeper discussion of &lt;em&gt;why&lt;/em&gt; and &lt;em&gt;how&lt;/em&gt; Hugo generates heading anchors. It is not necessary to know this to use &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt;, but it may be useful in understanding how some anchors may not match your expectations.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;how-to-generate-a-heading-anchor:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;How to Generate a Heading Anchor&lt;/h3&gt;
+&lt;h3 id=&#34;how-to-generate-a-heading-anchor&#34;&gt;How to Generate a Heading Anchor&lt;/h3&gt;
 
 &lt;p&gt;Convert the text of the heading to lowercase.&lt;/p&gt;
 
@@ -342,7 +342,7 @@ hugo-a-fast-modern-static-web-engine
 
 &lt;p&gt;You have just converting the text of a heading to a suitable anchor. If your document has unique heading text, all of the anchors will be unique, too.&lt;/p&gt;
 
-&lt;h4 id=&#34;specifying-heading-anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Specifying Heading Anchors&lt;/h4&gt;
+&lt;h4 id=&#34;specifying-heading-anchors&#34;&gt;Specifying Heading Anchors&lt;/h4&gt;
 
 &lt;p&gt;You can also tell Hugo to use a particular heading anchor.&lt;/p&gt;
 
@@ -351,7 +351,7 @@ hugo-a-fast-modern-static-web-engine
 
 &lt;p&gt;Hugo will use &lt;code&gt;hugo-main&lt;/code&gt; as the heading anchor.&lt;/p&gt;
 
-&lt;h3 id=&#34;what-about-duplicate-heading-anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;What About Duplicate Heading Anchors?&lt;/h3&gt;
+&lt;h3 id=&#34;what-about-duplicate-heading-anchors&#34;&gt;What About Duplicate Heading Anchors?&lt;/h3&gt;
 
 &lt;p&gt;The technique outlined above works well enough, but some documents have headings with identical text, like the &lt;a href=&#34;http://tutswiki.com/extras/shortcodes/&#34;&gt;shortcodes&lt;/a&gt; page—there are three headings with the text &amp;ldquo;Example&amp;rdquo;. You can specify heading anchors manually:&lt;/p&gt;
 
@@ -391,7 +391,7 @@ hugo-a-fast-modern-static-web-engine
 
 &lt;p&gt;This technique works well for documents rendered on individual pages, like blog posts. What about on Hugo list pages?&lt;/p&gt;
 
-&lt;h3 id=&#34;unique-heading-anchors-in-lists:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Unique Heading Anchors in Lists&lt;/h3&gt;
+&lt;h3 id=&#34;unique-heading-anchors-in-lists&#34;&gt;Unique Heading Anchors in Lists&lt;/h3&gt;
 
 &lt;p&gt;Hugo converts each document from Markdown independently. it doesn’t know that &lt;code&gt;blog/post.md&lt;/code&gt; has an &amp;ldquo;Example&amp;rdquo; heading that will collide with the &amp;ldquo;Example&amp;rdquo; heading in &lt;code&gt;blog/post2.md&lt;/code&gt;. Even if it did know this, the addition of &lt;code&gt;blog/post3.md&lt;/code&gt; should not cause the anchors for the headings in the other blog posts to change.&lt;/p&gt;
 
@@ -429,7 +429,7 @@ technology, but it’s the first to do it right.&lt;/p&gt;
 crafting your content pure joy. Virtually instantly after you hit save
 your rebuilt content will appear in your browser.&lt;/p&gt;
 
-&lt;h2 id=&#34;using-livereload:8af1ea668632c6d0f95688c7177cb178&#34;&gt;Using LiveReload&lt;/h2&gt;
+&lt;h2 id=&#34;using-livereload&#34;&gt;Using LiveReload&lt;/h2&gt;
 
 &lt;p&gt;Hugo comes with LiveReload built in. There are no additional packages to
 install. A common way to use Hugo while developing a site is to have
@@ -460,7 +460,7 @@ browser and you will see the change already there.&lt;/p&gt;
 half of your current monitor) allows you to see exactly what your
 content looks like without even leaving your text editor.&lt;/p&gt;
 
-&lt;h2 id=&#34;disabling-livereload:8af1ea668632c6d0f95688c7177cb178&#34;&gt;Disabling LiveReload&lt;/h2&gt;
+&lt;h2 id=&#34;disabling-livereload&#34;&gt;Disabling LiveReload&lt;/h2&gt;
 
 &lt;p&gt;LiveReload works by injecting JavaScript into the pages it
 creates that creates a web socket client to the hugo web socket server.&lt;/p&gt;
@@ -486,7 +486,7 @@ LiveReload functionality.&lt;/p&gt;
 &lt;p&gt;Hugo has a simple yet powerful menu system that permits content to be
 placed in menus with a good degree of control without a lot of work.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;TIP:&lt;/em&gt; If all you want is a simple menu for your sections, see &lt;a href=&#34;#section-menu-for-the-lazy-blogger:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Section Menu for &amp;ldquo;the Lazy Blogger&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;TIP:&lt;/em&gt; If all you want is a simple menu for your sections, see &lt;a href=&#34;#section-menu-for-the-lazy-blogger&#34;&gt;Section Menu for &amp;ldquo;the Lazy Blogger&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Some of the features of Hugo Menus:&lt;/p&gt;
 
@@ -497,7 +497,7 @@ placed in menus with a good degree of control without a lot of work.&lt;/p&gt;
 &lt;li&gt;Distinguish active element (and active branch)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;what-is-a-menu:4044c7430755cd64e5b7c48e836cea57&#34;&gt;What is a menu?&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-a-menu&#34;&gt;What is a menu?&lt;/h2&gt;
 
 &lt;p&gt;A menu is a named array of menu entries accessible on the site under
 &lt;code&gt;.Site.Menus&lt;/code&gt; by name. For example, if I have a menu called &lt;code&gt;main&lt;/code&gt;, I would
@@ -530,12 +530,12 @@ access it via &lt;code&gt;.Site.Menus.main&lt;/code&gt;.&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;HasMenuCurrent&lt;/strong&gt; (menu string, menuEntry *MenuEntry) bool&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;adding-content-to-menus:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Adding content to menus&lt;/h2&gt;
+&lt;h2 id=&#34;adding-content-to-menus&#34;&gt;Adding content to menus&lt;/h2&gt;
 
 &lt;p&gt;Hugo supports a couple of different methods of adding a piece of content
 to the front matter.&lt;/p&gt;
 
-&lt;h3 id=&#34;simple:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Simple&lt;/h3&gt;
+&lt;h3 id=&#34;simple&#34;&gt;Simple&lt;/h3&gt;
 
 &lt;p&gt;If all you need to do is add an entry to a menu, the simple form works
 well.&lt;/p&gt;
@@ -554,7 +554,7 @@ menu: [&amp;quot;main&amp;quot;, &amp;quot;footer&amp;quot;]
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;advanced:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Advanced&lt;/h3&gt;
+&lt;h3 id=&#34;advanced&#34;&gt;Advanced&lt;/h3&gt;
 
 &lt;p&gt;If more control is required, then the advanced approach gives you the
 control you want. All of the menu entry properties listed above are
@@ -568,7 +568,7 @@ menu:
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;adding-non-content-entries-to-a-menu:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Adding (non-content) entries to a menu&lt;/h2&gt;
+&lt;h2 id=&#34;adding-non-content-entries-to-a-menu&#34;&gt;Adding (non-content) entries to a menu&lt;/h2&gt;
 
 &lt;p&gt;You can also add entries to menus that aren’t attached to a piece of
 content. This takes place in the sitewide &lt;a href=&#34;http://tutswiki.com/overview/configuration/&#34;&gt;config file&lt;/a&gt;.&lt;/p&gt;
@@ -607,7 +607,7 @@ menu:
 
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; The URLs must be relative to the context root. If the &lt;code&gt;BaseURL&lt;/code&gt; is &lt;code&gt;http://example.com/mysite/&lt;/code&gt;, then the URLs in the menu must not include the context root &lt;code&gt;mysite&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;nesting:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Nesting&lt;/h2&gt;
+&lt;h2 id=&#34;nesting&#34;&gt;Nesting&lt;/h2&gt;
 
 &lt;p&gt;All nesting of content is done via the &lt;code&gt;parent&lt;/code&gt; field.&lt;/p&gt;
 
@@ -623,7 +623,7 @@ displayed and only used to structure relationships.&lt;/p&gt;
 and all content entries are attached to one of these entries via the
 &lt;code&gt;parent&lt;/code&gt; field.&lt;/p&gt;
 
-&lt;h2 id=&#34;rendering-menus:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Rendering menus&lt;/h2&gt;
+&lt;h2 id=&#34;rendering-menus&#34;&gt;Rendering menus&lt;/h2&gt;
 
 &lt;p&gt;Hugo makes no assumptions about how your rendered HTML will be
 structured. Instead, it provides all of the functions you will need to be
@@ -669,7 +669,7 @@ able to build your menu however you want.&lt;/p&gt;
 &amp;lt;!--sidebar end--&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;section-menu-for-the-lazy-blogger:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Section Menu for &amp;ldquo;the Lazy Blogger&amp;rdquo;&lt;/h2&gt;
+&lt;h2 id=&#34;section-menu-for-the-lazy-blogger&#34;&gt;Section Menu for &amp;ldquo;the Lazy Blogger&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;To enable this menu, add this to your site config, i.e. &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
 
@@ -769,7 +769,7 @@ All references to time are dependent on the content&amp;rsquo;s date.&lt;/p&gt;
 
 &lt;p&gt;The scope of the backing data is global for the given &lt;code&gt;Node&lt;/code&gt; or &lt;code&gt;Page&lt;/code&gt;, and spans partial and shortcode includes.&lt;/p&gt;
 
-&lt;h2 id=&#34;sample-usage:3bac06a8e9407e5288df1fa9a0b291fa&#34;&gt;Sample usage&lt;/h2&gt;
+&lt;h2 id=&#34;sample-usage&#34;&gt;Sample usage&lt;/h2&gt;
 
 &lt;p&gt;The usage is best illustrated with some samples:&lt;/p&gt;
 
@@ -801,7 +801,7 @@ All references to time are dependent on the content&amp;rsquo;s date.&lt;/p&gt;
 
 &lt;p&gt;Hugo supports pagination for the home page, sections and taxonomies. It&amp;rsquo;s built to be easy use, but with loads of flexibility when needed. The real power shines when you combine it with &lt;a href=&#34;http://tutswiki.com/templates/functions/&#34;&gt;&lt;code&gt;where&lt;/code&gt;&lt;/a&gt;, with its SQL-like operators, &lt;code&gt;first&lt;/code&gt; and others &amp;mdash; you can even &lt;a href=&#34;http://tutswiki.com/templates/list/&#34;&gt;order the content&lt;/a&gt; the way you&amp;rsquo;ve become used to with Hugo.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuration:8933c44b45493d40d2007cdf0ce43109&#34;&gt;Configuration&lt;/h2&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
 
 &lt;p&gt;Pagination can be configured in the site configuration (e.g. &lt;code&gt;config.toml&lt;/code&gt;):&lt;/p&gt;
 
@@ -814,7 +814,7 @@ All references to time are dependent on the content&amp;rsquo;s date.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;PaginatePath&lt;/code&gt; is used to adapt the &lt;code&gt;URL&lt;/code&gt; to the pages in the paginator (the default setting will produce URLs on the form &lt;code&gt;/page/1/&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;list-the-pages:8933c44b45493d40d2007cdf0ce43109&#34;&gt;List the pages&lt;/h2&gt;
+&lt;h2 id=&#34;list-the-pages&#34;&gt;List the pages&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;A &lt;code&gt;.Paginator&lt;/code&gt; is provided to help building a pager menu. This is only relevant for the templates for the home page and the list pages (sections and taxonomies).&lt;/strong&gt;&lt;/p&gt;
 
@@ -834,7 +834,7 @@ All references to time are dependent on the content&amp;rsquo;s date.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;{{ $paginator := .Paginate (where .Data.Pages &amp;quot;Type&amp;quot; &amp;quot;post&amp;quot;) 5 }}&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;build-the-navigation:8933c44b45493d40d2007cdf0ce43109&#34;&gt;Build the navigation&lt;/h2&gt;
+&lt;h2 id=&#34;build-the-navigation&#34;&gt;Build the navigation&lt;/h2&gt;
 
 &lt;p&gt;The &lt;code&gt;.Paginator&lt;/code&gt; contains enough information to build a paginator interface.&lt;/p&gt;
 
@@ -879,7 +879,7 @@ All references to time are dependent on the content&amp;rsquo;s date.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;TotalNumberOfElements&lt;/code&gt;: The number of elements on all pages in this paginator&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;additional-information:8933c44b45493d40d2007cdf0ce43109&#34;&gt;Additional information&lt;/h2&gt;
+&lt;h2 id=&#34;additional-information&#34;&gt;Additional information&lt;/h2&gt;
 
 &lt;p&gt;The pages are built on the following form (&lt;code&gt;BLANK&lt;/code&gt; means no value):&lt;/p&gt;
 
@@ -915,7 +915,7 @@ using a predefined template. Note that shortcodes will not work in template
 files&amp;mdash;if you need a functionality like that in a template, you most likely
 want a &lt;a href=&#34;http://tutswiki.com/templates/partials/&#34;&gt;partial template&lt;/a&gt; instead.&lt;/p&gt;
 
-&lt;h2 id=&#34;using-a-shortcode:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Using a shortcode&lt;/h2&gt;
+&lt;h2 id=&#34;using-a-shortcode&#34;&gt;Using a shortcode&lt;/h2&gt;
 
 &lt;p&gt;In your content files, a shortcode can be called by using &amp;lsquo;&lt;code&gt;{{% name parameters
 %}}&lt;/code&gt;&amp;rsquo; respectively. Shortcodes are space delimited (parameters with spaces
@@ -935,35 +935,35 @@ shortcodes match (name only), the closing being prepended with a slash.&lt;/p&gt
 
 &lt;p&gt;The examples above use two different delimiters, the difference being the &lt;code&gt;%&lt;/code&gt; and the &lt;code&gt;&amp;lt;&lt;/code&gt; character:&lt;/p&gt;
 
-&lt;h3 id=&#34;shortcodes-with-markdown:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Shortcodes with Markdown&lt;/h3&gt;
+&lt;h3 id=&#34;shortcodes-with-markdown&#34;&gt;Shortcodes with Markdown&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;%&lt;/code&gt; characters indicates that the shortcode&amp;rsquo;s inner content needs further processing by the page&amp;rsquo;s rendering processor (i.e. Markdown), needed to get the &lt;strong&gt;bold&lt;/strong&gt; text in the example below:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{% myshortcode %}}Hello **World!**{{% /myshortcode %}}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;shortcodes-without-markdown:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Shortcodes without Markdown&lt;/h3&gt;
+&lt;h3 id=&#34;shortcodes-without-markdown&#34;&gt;Shortcodes without Markdown&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;&amp;lt;&lt;/code&gt; character indicates that the shortcode&amp;rsquo;s inner content doesn&amp;rsquo;t need any further rendering, this will typically be pure HTML:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; myshortcode &amp;gt;}}&amp;lt;p&amp;gt;Hello &amp;lt;strong&amp;gt;World!&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;{{&amp;lt; /myshortcode &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;hugo-shortcodes:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Hugo Shortcodes&lt;/h2&gt;
+&lt;h2 id=&#34;hugo-shortcodes&#34;&gt;Hugo Shortcodes&lt;/h2&gt;
 
 &lt;p&gt;Hugo ships with a set of predefined shortcodes.&lt;/p&gt;
 
-&lt;h3 id=&#34;highlight:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;highlight&lt;/h3&gt;
+&lt;h3 id=&#34;highlight&#34;&gt;highlight&lt;/h3&gt;
 
 &lt;p&gt;This shortcode will convert the source code provided into syntax highlighted
 HTML. Read more on &lt;a href=&#34;http://tutswiki.com/extras/highlighting/&#34;&gt;highlighting&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;usage:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Usage&lt;/h4&gt;
+&lt;h4 id=&#34;usage&#34;&gt;Usage&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;highlight&lt;/code&gt; takes exactly one required parameter of &lt;em&gt;language&lt;/em&gt; and requires a
 closing shortcode.&lt;/p&gt;
 
-&lt;h4 id=&#34;example:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example&lt;/h4&gt;
+&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; highlight html &amp;gt;}}
 &amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
@@ -977,7 +977,7 @@ closing shortcode.&lt;/p&gt;
 {{&amp;lt; /highlight &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;example-output:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example Output&lt;/h4&gt;
+&lt;h4 id=&#34;example-output&#34;&gt;Example Output&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;section&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color: #a6e22e&amp;quot;&amp;gt;id=&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #e6db74&amp;quot;&amp;gt;&amp;amp;quot;main&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;
   &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;lt;/span&amp;gt;
@@ -989,12 +989,12 @@ closing shortcode.&lt;/p&gt;
 &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/section&amp;amp;gt;&amp;lt;/span&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;figure:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;figure&lt;/h3&gt;
+&lt;h3 id=&#34;figure&#34;&gt;figure&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;figure&lt;/code&gt; is simply an extension of the image capabilities present with Markdown.
 &lt;code&gt;figure&lt;/code&gt; provides the ability to add captions, CSS classes, alt text, links etc.&lt;/p&gt;
 
-&lt;h4 id=&#34;usage-1:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Usage&lt;/h4&gt;
+&lt;h4 id=&#34;usage-1&#34;&gt;Usage&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;figure&lt;/code&gt; can use the following parameters:&lt;/p&gt;
 
@@ -1009,12 +1009,12 @@ closing shortcode.&lt;/p&gt;
 &lt;li&gt;alt&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;example-1:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example&lt;/h4&gt;
+&lt;h4 id=&#34;example-1&#34;&gt;Example&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; figure src=&amp;quot;/media/spf13.jpg&amp;quot; title=&amp;quot;Steve Francia&amp;quot; &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;example-output-1:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example output&lt;/h4&gt;
+&lt;h4 id=&#34;example-output-1&#34;&gt;Example output&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;figure&amp;gt;
     &amp;lt;img src=&amp;quot;/media/spf13.jpg&amp;quot;  /&amp;gt;
@@ -1024,7 +1024,7 @@ closing shortcode.&lt;/p&gt;
 &amp;lt;/figure&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;ref-relref:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;ref, relref&lt;/h3&gt;
+&lt;h3 id=&#34;ref-relref&#34;&gt;ref, relref&lt;/h3&gt;
 
 &lt;p&gt;These shortcodes will look up the pages by their relative path (e.g.,
 &lt;code&gt;blog/post.md&lt;/code&gt;) or their logical name (&lt;code&gt;post.md&lt;/code&gt;) and return the permalink
@@ -1035,17 +1035,17 @@ for the header links generated by Hugo.&lt;/p&gt;
 
 &lt;p&gt;Read more on &lt;a href=&#34;http://tutswiki.com/extras/crossreferences/&#34;&gt;cross-references&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;usage-2:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Usage&lt;/h4&gt;
+&lt;h4 id=&#34;usage-2&#34;&gt;Usage&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; take exactly one required parameter of &lt;em&gt;reference&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;example-2:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example&lt;/h4&gt;
+&lt;h4 id=&#34;example-2&#34;&gt;Example&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;[Neat]({{&amp;lt; ref &amp;quot;blog/neat.md&amp;quot; &amp;gt;}})
 [Who]({{&amp;lt; relref &amp;quot;about.md#who&amp;quot; &amp;gt;}})
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;example-output-2:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example Output&lt;/h4&gt;
+&lt;h4 id=&#34;example-output-2&#34;&gt;Example Output&lt;/h4&gt;
 
 &lt;p&gt;Assuming that standard Hugo pretty URLs are turned on.&lt;/p&gt;
 
@@ -1053,7 +1053,7 @@ for the header links generated by Hugo.&lt;/p&gt;
 &amp;lt;a href=&amp;quot;/about/#who:c28654c202e73453784cfd2c5ab356c0&amp;quot;&amp;gt;Who&amp;lt;/a&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;creating-your-own-shortcodes:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Creating your own shortcodes&lt;/h2&gt;
+&lt;h2 id=&#34;creating-your-own-shortcodes&#34;&gt;Creating your own shortcodes&lt;/h2&gt;
 
 &lt;p&gt;To create a shortcode, place a template in the layouts/shortcodes directory. The
 template name will be the name of the shortcode.&lt;/p&gt;
@@ -1102,7 +1102,7 @@ to the user.&lt;/p&gt;
 
 &lt;p&gt;You can also use the variable &lt;code&gt;.Page&lt;/code&gt; to access all the normal &lt;a href=&#34;http://tutswiki.com/templates/variables/&#34;&gt;Page Variables&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;single-positional-example-youtube:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Single Positional Example: youtube&lt;/h2&gt;
+&lt;h2 id=&#34;single-positional-example-youtube&#34;&gt;Single Positional Example: youtube&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; youtube 09jf3ow9jfw &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
@@ -1126,7 +1126,7 @@ to the user.&lt;/p&gt;
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;single-named-example-image-with-caption:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Single Named Example: image with caption&lt;/h2&gt;
+&lt;h2 id=&#34;single-named-example-image-with-caption&#34;&gt;Single Named Example: image with caption&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; img src=&amp;quot;/media/spf13.jpg&amp;quot; title=&amp;quot;Steve Francia&amp;quot; &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
@@ -1163,7 +1163,7 @@ to the user.&lt;/p&gt;
 &amp;lt;/figure&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;paired-example-highlight:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Paired Example: Highlight&lt;/h2&gt;
+&lt;h2 id=&#34;paired-example-highlight&#34;&gt;Paired Example: Highlight&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Hugo already ships with the &lt;code&gt;highlight&lt;/code&gt; shortcode&lt;/em&gt;&lt;/p&gt;
 
@@ -1210,7 +1210,7 @@ called &lt;code&gt;highlight&lt;/code&gt; which uses Pygments to add the highlig
 
 &lt;p&gt;Data Files can also be used in &lt;a href=&#34;http://tutswiki.com/themes/overview/&#34;&gt;themes&lt;/a&gt;, but note: If the same &lt;code&gt;key&lt;/code&gt; is used in both the main data folder and in the theme&amp;rsquo;s data folder, the main one will win. So, for theme authors,  for theme specific data items that shouldn&amp;rsquo;t be overridden, it can be wise to prefix the folder structure with a namespace, e.g. &lt;code&gt;mytheme/data/mytheme/somekey/...&lt;/code&gt;. To check if any such duplicate exists, run hugo with the &lt;code&gt;-v&lt;/code&gt; flag, e.g. &lt;code&gt;hugo -v&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;the-data-folder:b7483484c046f999a03a52bf9f841f0a&#34;&gt;The Data Folder&lt;/h2&gt;
+&lt;h2 id=&#34;the-data-folder&#34;&gt;The Data Folder&lt;/h2&gt;
 
 &lt;p&gt;As explained in &lt;a href=&#34;http://tutswiki.com/overview/source-directory/&#34;&gt;Source Organization&lt;/a&gt;, the &lt;code&gt;data&lt;/code&gt; folder is where you can store additional data for Hugo to use when generating your site. These files must be YAML, JSON or TOML files (using either the &lt;code&gt;.yml&lt;/code&gt;, &lt;code&gt;.yaml&lt;/code&gt;, &lt;code&gt;.json&lt;/code&gt; or &lt;code&gt;toml&lt;/code&gt; extension) and the data will be accessible as a &lt;code&gt;map&lt;/code&gt; in &lt;code&gt;.Site.Data&lt;/code&gt;.&lt;/p&gt;
 
@@ -1218,7 +1218,7 @@ called &lt;code&gt;highlight&lt;/code&gt; which uses Pygments to add the highlig
 
 &lt;p&gt;This is best explained with an example:&lt;/p&gt;
 
-&lt;h2 id=&#34;example-jaco-pastorius-solo-discography:b7483484c046f999a03a52bf9f841f0a&#34;&gt;Example: Jaco Pastorius&amp;rsquo; Solo Discography&lt;/h2&gt;
+&lt;h2 id=&#34;example-jaco-pastorius-solo-discography&#34;&gt;Example: Jaco Pastorius&amp;rsquo; Solo Discography&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Jaco_Pastorius_discography&#34;&gt;Jaco Pastorius&lt;/a&gt; was a great bass player, but his solo discography is short enough to use as an example. &lt;a href=&#34;http://en.wikipedia.org/wiki/John_Patitucci&#34;&gt;John Patitucci&lt;/a&gt; is another bass giant.&lt;/p&gt;
 
@@ -1288,11 +1288,11 @@ called &lt;code&gt;highlight&lt;/code&gt; which uses Pygments to add the highlig
 
 &lt;p&gt;&lt;strong&gt;The advantage of client side&lt;/strong&gt; is that it doesn’t cost anything when building your site and some of the highlighting scripts available cover more languages than Pygments does.&lt;/p&gt;
 
-&lt;h2 id=&#34;server-side:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Server-side&lt;/h2&gt;
+&lt;h2 id=&#34;server-side&#34;&gt;Server-side&lt;/h2&gt;
 
 &lt;p&gt;For the pre-processed approach, highlighting is performed by an external Python-based program called &lt;a href=&#34;http://pygments.org/&#34;&gt;Pygments&lt;/a&gt; and is triggered via an embedded Hugo shortcode (see example below). If Pygments is absent from the path, it will silently simply pass the content along unhighlighted.&lt;/p&gt;
 
-&lt;h3 id=&#34;pygments:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Pygments&lt;/h3&gt;
+&lt;h3 id=&#34;pygments&#34;&gt;Pygments&lt;/h3&gt;
 
 &lt;p&gt;If you have never worked with Pygments before, here is a brief primer:&lt;/p&gt;
 
@@ -1310,11 +1310,11 @@ called &lt;code&gt;highlight&lt;/code&gt; which uses Pygments to add the highlig
 &lt;li&gt;If you choose &lt;code&gt;pygmentsuseclasses = true&lt;/code&gt;, Hugo includes class names in your code instead of color-codes. For class-names to be meaningful, you need to include a &lt;code&gt;.css&lt;/code&gt;-file in your website representing your color-scheme. You can either generate this &lt;code&gt;.css&lt;/code&gt;-files according to this &lt;a href=&#34;http://pygments.org/docs/cmdline/&#34;&gt;description&lt;/a&gt; or download the standard ones from the &lt;a href=&#34;https://github.com/richleland/pygments-css&#34;&gt;GitHub pygments-css repository&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;usage:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Usage&lt;/h3&gt;
+&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
 
 &lt;p&gt;Highlighting is carried out via the in-built shortcode &lt;code&gt;highlight&lt;/code&gt;. &lt;code&gt;highlight&lt;/code&gt; takes exactly one required parameter of language, and requires a closing shortcode. Note that &lt;code&gt;highlight&lt;/code&gt; is &lt;em&gt;not&lt;/em&gt; used for client-side javascript highlighting.&lt;/p&gt;
 
-&lt;h3 id=&#34;example:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Example&lt;/h3&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; highlight html &amp;gt;}}
 &amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
@@ -1328,7 +1328,7 @@ called &lt;code&gt;highlight&lt;/code&gt; which uses Pygments to add the highlig
 {{&amp;lt; /highlight &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;example-output:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Example Output&lt;/h3&gt;
+&lt;h3 id=&#34;example-output&#34;&gt;Example Output&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;section&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color: #a6e22e&amp;quot;&amp;gt;id=&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #e6db74&amp;quot;&amp;gt;&amp;amp;quot;main&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;
   &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;lt;/span&amp;gt;
@@ -1340,7 +1340,7 @@ called &lt;code&gt;highlight&lt;/code&gt; which uses Pygments to add the highlig
 &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/section&amp;amp;gt;&amp;lt;/span&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;options:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Options&lt;/h3&gt;
+&lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;
 
 &lt;p&gt;Options to control highlighting can be added as a quoted, comma separated key-value list as the second argument in the shortcode. The example below will highlight as language &lt;code&gt;go&lt;/code&gt; with inline line numbers, with line number 2 and 3 highlighted.&lt;/p&gt;
 
@@ -1356,14 +1356,14 @@ var d string
 
 &lt;p&gt;The keywords are the same you would using with Pygments from the command line, see the &lt;a href=&#34;http://pygments.org/docs/&#34;&gt;Pygments doc&lt;/a&gt; for more info.&lt;/p&gt;
 
-&lt;h3 id=&#34;disclaimers:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Disclaimers&lt;/h3&gt;
+&lt;h3 id=&#34;disclaimers&#34;&gt;Disclaimers&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Pygments is relatively slow and &lt;em&gt;causes a performance hit when building your site&lt;/em&gt;, but Hugo has been designed to cache the results to disk.&lt;/li&gt;
 &lt;li&gt;Languages available depends on your Pygments installation.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;client-side:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Client-side&lt;/h2&gt;
+&lt;h2 id=&#34;client-side&#34;&gt;Client-side&lt;/h2&gt;
 
 &lt;p&gt;Alternatively, code highlighting can be done in client-side JavaScript.&lt;/p&gt;
 
@@ -1378,7 +1378,7 @@ a library and a corresponding theme. Some popular libraries are:&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://code.google.com/p/google-code-prettify/&#34;&gt;Google Prettify&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;highlight-js-example:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Highlight.js example&lt;/h3&gt;
+&lt;h3 id=&#34;highlight-js-example&#34;&gt;Highlight.js example&lt;/h3&gt;
 
 &lt;p&gt;This example uses the popular &lt;a href=&#34;http://highlightjs.org/&#34;&gt;Highlight.js&lt;/a&gt; library, hosted by &lt;a href=&#34;http://yandex.ru/&#34;&gt;Yandex&lt;/a&gt;, a popular Russian search engine.&lt;/p&gt;
 
@@ -1389,7 +1389,7 @@ a library and a corresponding theme. Some popular libraries are:&lt;/p&gt;
 &amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;prism-example:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Prism example&lt;/h3&gt;
+&lt;h3 id=&#34;prism-example&#34;&gt;Prism example&lt;/h3&gt;
 
 &lt;p&gt;Prism is another popular highlighter library, used on some major sites. Similar to Highlight.js, you simply load &lt;code&gt;prism.css&lt;/code&gt; in your &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; via whatever Hugo partial template is creating that part of your pages, like so:&lt;/p&gt;
 
@@ -1408,7 +1408,7 @@ a library and a corresponding theme. Some popular libraries are:&lt;/p&gt;
 
 &lt;p&gt;In this example, the local paths indicate that your own copy of these files are being added to the site, typically under &lt;code&gt;./static/&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;using-client-side-highlighting:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Using Client-side highlighting&lt;/h3&gt;
+&lt;h3 id=&#34;using-client-side-highlighting&#34;&gt;Using Client-side highlighting&lt;/h3&gt;
 
 &lt;p&gt;To use client-side highlighting, most of these javascript libraries expect your code to be wrapped in semantically correct &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tags, with the language expressed in a class attribute on the &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tag, such as &lt;code&gt;class=&amp;quot;language-abc&amp;quot;&lt;/code&gt;, where the &lt;code&gt;abc&lt;/code&gt; is the code the highlighter script uses to represent that language.&lt;/p&gt;
 
@@ -1461,9 +1461,9 @@ from nearly any resource.&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;Dynamic Content&amp;rdquo; currently consists of two functions, &lt;code&gt;getJSON&lt;/code&gt;
 and &lt;code&gt;getCSV&lt;/code&gt;, which are available in &lt;strong&gt;all template files&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;implementation-details:4bcb424a04054cc66b7ec68666812414&#34;&gt;Implementation details&lt;/h2&gt;
+&lt;h2 id=&#34;implementation-details&#34;&gt;Implementation details&lt;/h2&gt;
 
-&lt;h3 id=&#34;calling-the-functions-with-an-url:4bcb424a04054cc66b7ec68666812414&#34;&gt;Calling the functions with an URL&lt;/h3&gt;
+&lt;h3 id=&#34;calling-the-functions-with-an-url&#34;&gt;Calling the functions with an URL&lt;/h3&gt;
 
 &lt;p&gt;In any HTML template or Markdown document, call the functions like this:&lt;/p&gt;
 
@@ -1506,7 +1506,7 @@ first 5 gists for a GitHub user:&lt;/p&gt;
 &amp;lt;/ul&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;example-for-csv-files:4bcb424a04054cc66b7ec68666812414&#34;&gt;Example for CSV files&lt;/h3&gt;
+&lt;h3 id=&#34;example-for-csv-files&#34;&gt;Example for CSV files&lt;/h3&gt;
 
 &lt;p&gt;For &lt;code&gt;getCSV&lt;/code&gt;, the one-character long separator must be placed in the
 first position followed by the URL.&lt;/p&gt;
@@ -1536,7 +1536,7 @@ first position followed by the URL.&lt;/p&gt;
 &lt;p&gt;The expression &lt;code&gt;{{index $r number}}&lt;/code&gt; must be used to output the nth-column from
 the current row.&lt;/p&gt;
 
-&lt;h3 id=&#34;caching-of-urls:4bcb424a04054cc66b7ec68666812414&#34;&gt;Caching of URLs&lt;/h3&gt;
+&lt;h3 id=&#34;caching-of-urls&#34;&gt;Caching of URLs&lt;/h3&gt;
 
 &lt;p&gt;Each downloaded URL will be cached in the default folder &lt;code&gt;$TMPDIR/hugo_cache/&lt;/code&gt;.
 The variable &lt;code&gt;$TMPDIR&lt;/code&gt; will be resolved to your system-dependent
@@ -1549,13 +1549,13 @@ your system as a caching directory.&lt;/p&gt;
 cache with the command line flag &lt;code&gt;--ignoreCache&lt;/code&gt;. However, Hugo will always
 write, on each build of the site, to the cache folder (silent backup).&lt;/p&gt;
 
-&lt;h3 id=&#34;authentication-when-using-rest-urls:4bcb424a04054cc66b7ec68666812414&#34;&gt;Authentication when using REST URLs&lt;/h3&gt;
+&lt;h3 id=&#34;authentication-when-using-rest-urls&#34;&gt;Authentication when using REST URLs&lt;/h3&gt;
 
 &lt;p&gt;Currently, you can only use those authentication methods that can
 be put into an URL. &lt;a href=&#34;http://en.wikipedia.org/wiki/OAuth&#34;&gt;OAuth&lt;/a&gt; or
 other authentication methods are not implemented.&lt;/p&gt;
 
-&lt;h3 id=&#34;loading-local-files:4bcb424a04054cc66b7ec68666812414&#34;&gt;Loading local files&lt;/h3&gt;
+&lt;h3 id=&#34;loading-local-files&#34;&gt;Loading local files&lt;/h3&gt;
 
 &lt;p&gt;To load local files with the two functions &lt;code&gt;getJSON&lt;/code&gt; and &lt;code&gt;getCSV&lt;/code&gt;, the
 source files must reside within Hugo&amp;rsquo;s working directory. The file
@@ -1563,7 +1563,7 @@ extension does not matter but the content.&lt;/p&gt;
 
 &lt;p&gt;It applies the same output logic as in the topic: &lt;em&gt;Calling the functions with an URL&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;livereload:4bcb424a04054cc66b7ec68666812414&#34;&gt;LiveReload&lt;/h2&gt;
+&lt;h2 id=&#34;livereload&#34;&gt;LiveReload&lt;/h2&gt;
 
 &lt;p&gt;There is no chance to trigger a &lt;a href=&#34;http://tutswiki.com/extras/livereload/&#34;&gt;LiveReload&lt;/a&gt; when
 the content of an URL changes. However, when a local JSON/CSV file changes,
@@ -1577,7 +1577,7 @@ This can create huge traffic and you may also reach API limits quickly.&lt;/p&gt
 &lt;p&gt;As downloading of content takes a while, Hugo stops with processing
 your Markdown files until the content has been downloaded.&lt;/p&gt;
 
-&lt;h2 id=&#34;examples:4bcb424a04054cc66b7ec68666812414&#34;&gt;Examples&lt;/h2&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Photo gallery JSON powered: &lt;a href=&#34;https://github.com/pcdummy/hugo-lightslider-example&#34;&gt;https://github.com/pcdummy/hugo-lightslider-example&lt;/a&gt;&lt;/li&gt;
@@ -1599,7 +1599,7 @@ your Markdown files until the content has been downloaded.&lt;/p&gt;
 a Table of Contents you can use to guide readers to the sections within
 your content.&lt;/p&gt;
 
-&lt;h2 id=&#34;usage:238ab96260bdf422aa9a88a86db1dda8&#34;&gt;Usage&lt;/h2&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
 &lt;p&gt;Simply create content like you normally would with the appropriate
 headers.&lt;/p&gt;
@@ -1607,7 +1607,7 @@ headers.&lt;/p&gt;
 &lt;p&gt;Hugo will take this Markdown and create a table of contents stored in the
 &lt;a href=&#34;http://tutswiki.com/layout/variables/&#34;&gt;content variable&lt;/a&gt; &lt;code&gt;.TableOfContents&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;template-example:238ab96260bdf422aa9a88a86db1dda8&#34;&gt;Template Example&lt;/h2&gt;
+&lt;h2 id=&#34;template-example&#34;&gt;Template Example&lt;/h2&gt;
 
 &lt;p&gt;This is example code of a &lt;a href=&#34;http://tutswiki.com/layout/content/&#34;&gt;single.html template&lt;/a&gt;.&lt;/p&gt;
 
@@ -1630,7 +1630,7 @@ headers.&lt;/p&gt;
       <guid>http://tutswiki.com/extras/urls/</guid>
       <description>
 
-&lt;h2 id=&#34;pretty-urls:99d81047217b3d4c05529f0b727e6e5e&#34;&gt;Pretty URLs&lt;/h2&gt;
+&lt;h2 id=&#34;pretty-urls&#34;&gt;Pretty URLs&lt;/h2&gt;
 
 &lt;p&gt;By default, Hugo create content with &amp;lsquo;pretty&amp;rsquo; URLs. For example,
 content created at &lt;code&gt;/content/extras/urls.md&lt;/code&gt; will be rendered at
@@ -1648,7 +1648,7 @@ or use the &lt;code&gt;--uglyUrls=true&lt;/code&gt; flag on the command line.&lt
 specify this in the front matter under the &lt;code&gt;url&lt;/code&gt; key. See &lt;a href=&#34;http://tutswiki.com/content/organization/&#34;&gt;Content
 Organization&lt;/a&gt; for more details.&lt;/p&gt;
 
-&lt;h2 id=&#34;canonicalization:99d81047217b3d4c05529f0b727e6e5e&#34;&gt;Canonicalization&lt;/h2&gt;
+&lt;h2 id=&#34;canonicalization&#34;&gt;Canonicalization&lt;/h2&gt;
 
 &lt;p&gt;By default, all relative URLs encountered in the input are left unmodified,
 e.g. &lt;code&gt;/css/foo.css&lt;/code&gt; would stay as &lt;code&gt;/css/foo.css&lt;/code&gt;,

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Ordering Taxonomies</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -425,11 +425,11 @@
 <li>Order the way taxonomyed content appears</li>
 </ol>
 
-<h2 id="ordering-taxonomies:561853832019df340acf603aaa8ed39a">Ordering Taxonomies</h2>
+<h2 id="ordering-taxonomies">Ordering Taxonomies</h2>
 
 <p>Taxonomies can be ordered by either alphabetical key or by the number of content pieces assigned to that key.</p>
 
-<h3 id="order-alphabetically-example:561853832019df340acf603aaa8ed39a">Order Alphabetically Example</h3>
+<h3 id="order-alphabetically-example">Order Alphabetically Example</h3>
 
 <pre><code>&lt;ul&gt;
 {{ $data := .Data }}
@@ -439,7 +439,7 @@
 &lt;/ul&gt;
 </code></pre>
 
-<h3 id="order-by-popularity-example:561853832019df340acf603aaa8ed39a">Order by Popularity Example</h3>
+<h3 id="order-by-popularity-example">Order by Popularity Example</h3>
 
 <pre><code>&lt;ul&gt;
 {{ $data := .Data }}
@@ -451,7 +451,7 @@
 
 <p><a href="/taxonomies/lists/">See Also Taxonomy Lists</a></p>
 
-<h2 id="ordering-content-within-taxonomies:561853832019df340acf603aaa8ed39a">Ordering Content within Taxonomies</h2>
+<h2 id="ordering-content-within-taxonomies">Ordering Content within Taxonomies</h2>
 
 <p>Hugo uses both <strong>Date</strong> and <strong>Weight</strong> to order content within taxonomies.</p>
 
@@ -460,7 +460,7 @@ It can also be assigned a weight for each taxonomy it is assigned to.</p>
 
 <p>When iterating over content within taxonomies the default sort is first by weight then by date. This means that if the weights for two pieces of content are the same, than the more recent content will be displayed first. The default weight for any piece of content is 0.</p>
 
-<h3 id="assigning-weight:561853832019df340acf603aaa8ed39a">Assigning Weight</h3>
+<h3 id="assigning-weight">Assigning Weight</h3>
 
 <p>Content can be assigned weight for each taxonomy that it&rsquo;s assigned to.</p>
 
@@ -490,14 +490,14 @@ Front Matter with weighted tags and categories
 <ul>
 <li>
 <ul>
-<li><a href="#ordering-taxonomies:561853832019df340acf603aaa8ed39a">Ordering Taxonomies</a>
+<li><a href="#ordering-taxonomies">Ordering Taxonomies</a>
 <ul>
-<li><a href="#order-alphabetically-example:561853832019df340acf603aaa8ed39a">Order Alphabetically Example</a></li>
-<li><a href="#order-by-popularity-example:561853832019df340acf603aaa8ed39a">Order by Popularity Example</a></li>
+<li><a href="#order-alphabetically-example">Order Alphabetically Example</a></li>
+<li><a href="#order-by-popularity-example">Order by Popularity Example</a></li>
 </ul></li>
-<li><a href="#ordering-content-within-taxonomies:561853832019df340acf603aaa8ed39a">Ordering Content within Taxonomies</a>
+<li><a href="#ordering-content-within-taxonomies">Ordering Content within Taxonomies</a>
 <ul>
-<li><a href="#assigning-weight:561853832019df340acf603aaa8ed39a">Assigning Weight</a></li>
+<li><a href="#assigning-weight">Assigning Weight</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -507,7 +507,7 @@ Front Matter with weighted tags and categories
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

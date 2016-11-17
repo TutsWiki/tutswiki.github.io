@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tutorials on </title>
-    <link>http://tutswiki.com/tutorials/</link>
-    <description>Recent content in Tutorials on </description>
+    <title>Tutorials-rsses on </title>
+    <link>http://tutswiki.com/tutorials/index.xml</link>
+    <description>Recent content in Tutorials-rsses on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 30 Mar 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://tutswiki.com/tutorials/index.xml" rel="self" type="application/rss+xml" />
@@ -16,11 +16,11 @@
       <guid>http://tutswiki.com/tutorials/installing-on-windows/</guid>
       <description>
 
-&lt;h1 id=&#34;installing-hugo-on-windows:03043c30033231787da6500681bc16fe&#34;&gt;Installing Hugo on Windows&lt;/h1&gt;
+&lt;h1 id=&#34;installing-hugo-on-windows&#34;&gt;Installing Hugo on Windows&lt;/h1&gt;
 
 &lt;p&gt;This tutorial aims to be a complete guide to installing Hugo on your Windows computer.&lt;/p&gt;
 
-&lt;h2 id=&#34;assumptions:03043c30033231787da6500681bc16fe&#34;&gt;Assumptions&lt;/h2&gt;
+&lt;h2 id=&#34;assumptions&#34;&gt;Assumptions&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;You know how to open a command prompt window.&lt;/li&gt;
@@ -30,7 +30,7 @@
 &lt;li&gt;You will use &lt;code&gt;D:\Hugo\bin&lt;/code&gt; to store executable files.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;setup-your-directories:03043c30033231787da6500681bc16fe&#34;&gt;Setup Your Directories&lt;/h2&gt;
+&lt;h2 id=&#34;setup-your-directories&#34;&gt;Setup Your Directories&lt;/h2&gt;
 
 &lt;p&gt;You will need a place to store the Hugo executable, your content (the files that you build), and the generated files (the HTML that Hugo builds for you).&lt;/p&gt;
 
@@ -41,7 +41,7 @@
 &lt;li&gt;Create a new folder, &lt;code&gt;D:\Hugo\Sites&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;download-the-pre-built-hugo-executable-for-windows:03043c30033231787da6500681bc16fe&#34;&gt;Download the pre-built Hugo executable for Windows&lt;/h2&gt;
+&lt;h2 id=&#34;download-the-pre-built-hugo-executable-for-windows&#34;&gt;Download the pre-built Hugo executable for Windows&lt;/h2&gt;
 
 &lt;p&gt;One advantage of building Hugo in go is that there is just a single binary file to use. You don&amp;rsquo;t need to run an installer to use it. Instead, you need to copy the binary to your hard drive. I&amp;rsquo;m assuming that you&amp;rsquo;ll put it in &lt;code&gt;D:\Hugo\bin&lt;/code&gt;. If you chose to place it somewhere else, you&amp;rsquo;ll need to substitute that path in the commands.&lt;/p&gt;
 
@@ -56,57 +56,52 @@
 &lt;li&gt;Add the hugo.exe executable to your PATH with: &lt;code&gt;D:\Hugo\bin&amp;gt;set PATH=%PATH%;D:\Hugo\bin&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;verify-the-executable:03043c30033231787da6500681bc16fe&#34;&gt;Verify the executable&lt;/h2&gt;
+&lt;h2 id=&#34;verify-the-executable&#34;&gt;Verify the executable&lt;/h2&gt;
 
 &lt;p&gt;Run a few commands to verify that the executable is ready to run and then build a sample site to get started.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Open a command prompt window.&lt;/li&gt;
-&lt;li&gt;At the prompt, type &lt;code&gt;hugo help&lt;/code&gt; and press the Enter key. You should see output that starts with:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;A Fast and Flexible Static Site Generator built with love by spf13 and friends in Go. Complete documentation is available at http://gohugo.io
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you do, then the installation is complete. If you don&amp;rsquo;t, double-check the path that you placed the &lt;code&gt;hugo.exe&lt;/code&gt; file in and that you typed that path correctly when you added it to your PATH variable. If you&amp;rsquo;re still not getting the output, post a note on the Hugo discussion list (in the &lt;code&gt;Support&lt;/code&gt; topic) with your command and the output.
-3. At the prompt, change your directory to the &lt;code&gt;Sites&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C:\Program Files&amp;gt; cd D:\Hugo\Sites
+&lt;li&gt;At the prompt, type &lt;code&gt;hugo help&lt;/code&gt; and press the Enter key. You should see output that starts with:
+&lt;code&gt;
+A Fast and Flexible Static Site Generator built with love by spf13 and friends in Go. Complete documentation is available at http://gohugo.io
+&lt;/code&gt;
+If you do, then the installation is complete. If you don&amp;rsquo;t, double-check the path that you placed the &lt;code&gt;hugo.exe&lt;/code&gt; file in and that you typed that path correctly when you added it to your PATH variable. If you&amp;rsquo;re still not getting the output, post a note on the Hugo discussion list (in the &lt;code&gt;Support&lt;/code&gt; topic) with your command and the output.&lt;/li&gt;
+&lt;li&gt;At the prompt, change your directory to the &lt;code&gt;Sites&lt;/code&gt; directory.
+&lt;code&gt;
+C:\Program Files&amp;gt; cd D:\Hugo\Sites
 C:\Program Files&amp;gt; D:
 D:\Hugo\Sites&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Run the command to generate a new site. I&amp;rsquo;m using &lt;code&gt;example.com&lt;/code&gt; as the name of the site.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;Run the command to generate a new site. I&amp;rsquo;m using &lt;code&gt;example.com&lt;/code&gt; as the name of the site.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;D:\Hugo\Sites&amp;gt; hugo new site example.com
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;You should now have a directory at D:\Hugo\Sites\example.com.  Change into that directory and list the contents. You should get output similar to the following:&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;You should now have a directory at D:\Hugo\Sites\example.com.  Change into that directory and list the contents. You should get output similar to the following:
+```
+D:\Hugo\Sites&amp;gt;cd example.com
+D:\Hugo\Sites\example.com&amp;gt;dir
+Directory of D:\hugo\sites\example.com&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;pre&gt;&lt;code&gt;D:\Hugo\Sites&amp;gt;cd example.com
-D:\Hugo\Sites\example.com&amp;gt;dir
- Directory of D:\hugo\sites\example.com
-
-04/13/2015  10:44 PM    &amp;lt;DIR&amp;gt;          .
-04/13/2015  10:44 PM    &amp;lt;DIR&amp;gt;          ..
-04/13/2015  10:44 PM    &amp;lt;DIR&amp;gt;          archetypes
+&lt;p&gt;04/13/2015  10:44 PM    &lt;DIR&gt;          .
+04/13/2015  10:44 PM    &lt;DIR&gt;          ..
+04/13/2015  10:44 PM    &lt;DIR&gt;          archetypes
 04/13/2015  10:44 PM                83 config.toml
-04/13/2015  10:44 PM    &amp;lt;DIR&amp;gt;          content
-04/13/2015  10:44 PM    &amp;lt;DIR&amp;gt;          data
-04/13/2015  10:44 PM    &amp;lt;DIR&amp;gt;          layouts
-04/13/2015  10:44 PM    &amp;lt;DIR&amp;gt;          static
+04/13/2015  10:44 PM    &lt;DIR&gt;          content
+04/13/2015  10:44 PM    &lt;DIR&gt;          data
+04/13/2015  10:44 PM    &lt;DIR&gt;          layouts
+04/13/2015  10:44 PM    &lt;DIR&gt;          static
                1 File(s)             83 bytes
-               7 Dir(s)   6,273,331,200 bytes free
+               7 Dir(s)   6,273,331,200 bytes free&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;```&lt;/p&gt;
 
 &lt;p&gt;You now have Hugo installed and a site to work with. You need to add a layout (or theme), then create some content. Go to &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;http://gohugo.io/overview/quickstart/&lt;/a&gt; for steps on doing that.&lt;/p&gt;
 
-&lt;h2 id=&#34;troubleshooting:03043c30033231787da6500681bc16fe&#34;&gt;Troubleshooting&lt;/h2&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
 
 &lt;p&gt;@dhersam has a nice video on common issues at &lt;a href=&#34;https://www.youtube.com/watch?v=c8fJIRNChmU&#34;&gt;https://www.youtube.com/watch?v=c8fJIRNChmU&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -120,11 +115,11 @@ D:\Hugo\Sites\example.com&amp;gt;dir
       <guid>http://tutswiki.com/tutorials/installing-on-mac/</guid>
       <description>
 
-&lt;h1 id=&#34;installing-hugo-on-a-mac:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Installing Hugo on a Mac&lt;/h1&gt;
+&lt;h1 id=&#34;installing-hugo-on-a-mac&#34;&gt;Installing Hugo on a Mac&lt;/h1&gt;
 
 &lt;p&gt;This tutorial aims to be a complete guide to installing Hugo on your Mac computer.&lt;/p&gt;
 
-&lt;h2 id=&#34;assumptions:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Assumptions&lt;/h2&gt;
+&lt;h2 id=&#34;assumptions&#34;&gt;Assumptions&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;You know how to open a terminal window.&lt;/li&gt;
@@ -132,7 +127,7 @@ D:\Hugo\Sites\example.com&amp;gt;dir
 &lt;li&gt;You will use &lt;code&gt;~/Sites&lt;/code&gt; as the starting point for your site.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;pick-your-method:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Pick Your Method&lt;/h2&gt;
+&lt;h2 id=&#34;pick-your-method&#34;&gt;Pick Your Method&lt;/h2&gt;
 
 &lt;p&gt;There are three ways to install Hugo on your Mac computer: the &lt;code&gt;brew&lt;/code&gt; utility, from the distribution, or from source.
 There&amp;rsquo;s no &amp;ldquo;best&amp;rdquo; way to do this. You should use the method that works best for your use case.&lt;/p&gt;
@@ -157,9 +152,9 @@ to update.&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Since this is a &amp;ldquo;beginner&amp;rdquo; how-to, I&amp;rsquo;m going to cover the first two
 options in detail and go over the third more quickly.&lt;/p&gt;
 
-&lt;h2 id=&#34;brew:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Brew&lt;/h2&gt;
+&lt;h2 id=&#34;brew&#34;&gt;Brew&lt;/h2&gt;
 
-&lt;h3 id=&#34;step-1-install-brew-if-you-haven-t-already:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 1: Install &lt;code&gt;brew&lt;/code&gt; if you haven&amp;rsquo;t already&lt;/h3&gt;
+&lt;h3 id=&#34;step-1-install-brew-if-you-haven-t-already&#34;&gt;Step 1: Install &lt;code&gt;brew&lt;/code&gt; if you haven&amp;rsquo;t already&lt;/h3&gt;
 
 &lt;p&gt;Go to the &lt;code&gt;brew&lt;/code&gt; website, &lt;a href=&#34;http://brew.sh/&#34;&gt;http://brew.sh/&lt;/a&gt;, and follow the directions there. The most important step is:&lt;/p&gt;
 
@@ -168,7 +163,7 @@ options in detail and go over the third more quickly.&lt;/p&gt;
 
 &lt;p&gt;When I did this, I had some problems with directory permissions. Searches on Google pointed me to pages that walked me through updating permissions on the &lt;code&gt;/usr/local&lt;/code&gt; directory. Seemed scary, but it&amp;rsquo;s worked well since.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-2-run-the-brew-command-to-install-hugo:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 2: Run the &lt;code&gt;brew&lt;/code&gt; command to install &lt;code&gt;hugo&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;step-2-run-the-brew-command-to-install-hugo&#34;&gt;Step 2: Run the &lt;code&gt;brew&lt;/code&gt; command to install &lt;code&gt;hugo&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;Replace &lt;code&gt;brew install hugo&lt;/code&gt; with &lt;code&gt;brew install hugo --HEAD&lt;/code&gt; if you
 want the absolute latest version—there might be bugs!&lt;/p&gt;
@@ -195,16 +190,16 @@ $ hugo version
 Hugo Static Site Generator v0.13 BuildDate: 2015-03-09T21:34:47-05:00
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;step-3-you-re-done:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 3: You&amp;rsquo;re Done&lt;/h3&gt;
+&lt;h3 id=&#34;step-3-you-re-done&#34;&gt;Step 3: You&amp;rsquo;re Done&lt;/h3&gt;
 
 &lt;p&gt;You&amp;rsquo;ve installed Hugo. Now you need to set up your site. Read the
 &lt;a href=&#34;http://tutswiki.com/overview/quickstart/&#34;&gt;Quickstart guide&lt;/a&gt;, explore the rest of the
 documentation, and if you still have questions
 &lt;a href=&#34;http://discuss.gohugo.io/&#34; title=&#34;Discussion forum&#34;&gt;just ask!&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;from-tarball:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;From Tarball&lt;/h2&gt;
+&lt;h2 id=&#34;from-tarball&#34;&gt;From Tarball&lt;/h2&gt;
 
-&lt;h3 id=&#34;step-1-decide-on-the-location:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 1: Decide on the location&lt;/h3&gt;
+&lt;h3 id=&#34;step-1-decide-on-the-location&#34;&gt;Step 1: Decide on the location&lt;/h3&gt;
 
 &lt;p&gt;When installing from the tarball, you have to decide if you&amp;rsquo;re going to install the binary in &lt;code&gt;/usr/local/bin&lt;/code&gt; or in your home directory. There are three camps on this:&lt;/p&gt;
 
@@ -218,7 +213,7 @@ documentation, and if you still have questions
 
 &lt;p&gt;All three locations will work for you. I&amp;rsquo;m going to document the second option, mostly because I&amp;rsquo;m comfortable with it.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-2-download-the-tarball:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 2: Download the Tarball&lt;/h3&gt;
+&lt;h3 id=&#34;step-2-download-the-tarball&#34;&gt;Step 2: Download the Tarball&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Open &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;https://github.com/spf13/hugo/releases&lt;/a&gt; in your browser.&lt;/p&gt;&lt;/li&gt;
@@ -230,7 +225,7 @@ documentation, and if you still have questions
 &lt;li&gt;&lt;p&gt;By default, the tarball will be saved to your &lt;code&gt;~/Downloads&lt;/code&gt; directory. If you chose to use a different location, you&amp;rsquo;ll need to change that in the following steps.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;step-3-confirm-your-download:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 3: Confirm your download&lt;/h3&gt;
+&lt;h3 id=&#34;step-3-confirm-your-download&#34;&gt;Step 3: Confirm your download&lt;/h3&gt;
 
 &lt;p&gt;Verify that the tarball wasn&amp;rsquo;t corrupted during the download:&lt;/p&gt;
 
@@ -242,7 +237,7 @@ documentation, and if you still have questions
 
 &lt;p&gt;The &lt;code&gt;.md&lt;/code&gt; files are documentation. The other file is the executable.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-4-install-into-your-bin-directory:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 4: Install into your bin directory&lt;/h3&gt;
+&lt;h3 id=&#34;step-4-install-into-your-bin-directory&#34;&gt;Step 4: Install into your bin directory&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ # create the directory if needed
 $ mkdir -p ~/bin
@@ -308,20 +303,20 @@ $ which hugo
 
 &lt;p&gt;Close the terminal and then open a new terminal to pick up the changes to your profile. Verify by running the &lt;code&gt;which hugo&lt;/code&gt; command again.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-5-you-re-done:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 5: You&amp;rsquo;re Done&lt;/h3&gt;
+&lt;h3 id=&#34;step-5-you-re-done&#34;&gt;Step 5: You&amp;rsquo;re Done&lt;/h3&gt;
 
 &lt;p&gt;You&amp;rsquo;ve installed Hugo. Now you need to set up your site. Read the
 &lt;a href=&#34;http://tutswiki.com/overview/quickstart/&#34;&gt;Quickstart guide&lt;/a&gt;, explore the rest of the
 documentation, and if you still have questions
 &lt;a href=&#34;http://discuss.gohugo.io/&#34; title=&#34;Discussion forum&#34;&gt;just ask!&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;building-from-source:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Building from Source&lt;/h2&gt;
+&lt;h2 id=&#34;building-from-source&#34;&gt;Building from Source&lt;/h2&gt;
 
 &lt;p&gt;If you want to compile Hugo yourself, you&amp;rsquo;ll need
 &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;, which is also available from Homebrew: &lt;code&gt;brew
 install go&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-1-get-the-source:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 1: Get the Source&lt;/h3&gt;
+&lt;h3 id=&#34;step-1-get-the-source&#34;&gt;Step 1: Get the Source&lt;/h3&gt;
 
 &lt;p&gt;If you want to compile a specific version, go to
 &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;https://github.com/spf13/hugo/releases&lt;/a&gt; and download the source code
@@ -332,7 +327,7 @@ repository:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git clone https://github.com/spf13/hugo
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;step-2-compiling:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 2: Compiling&lt;/h3&gt;
+&lt;h3 id=&#34;step-2-compiling&#34;&gt;Step 2: Compiling&lt;/h3&gt;
 
 &lt;p&gt;Make the directory containing the source your working directory, then
 fetch Hugo&amp;rsquo;s dependencies:&lt;/p&gt;
@@ -357,7 +352,7 @@ introduced a breaking change.&lt;/p&gt;
 
 &lt;p&gt;Then place the &lt;code&gt;hugo&lt;/code&gt; executable somewhere in your &lt;code&gt;$PATH&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-3-you-re-done-1:ae91b78ba83e227eb7057ce517cb99f9&#34;&gt;Step 3: You&amp;rsquo;re Done&lt;/h3&gt;
+&lt;h3 id=&#34;step-3-you-re-done-1&#34;&gt;Step 3: You&amp;rsquo;re Done&lt;/h3&gt;
 
 &lt;p&gt;You probably know where to go from here.&lt;/p&gt;
 </description>
@@ -371,13 +366,13 @@ introduced a breaking change.&lt;/p&gt;
       <guid>http://tutswiki.com/tutorials/automated-deployments/</guid>
       <description>
 
-&lt;h1 id=&#34;automated-deployments-with-wercker:b122a196014951ebab85fff56cc6436b&#34;&gt;Automated deployments with Wercker&lt;/h1&gt;
+&lt;h1 id=&#34;automated-deployments-with-wercker&#34;&gt;Automated deployments with Wercker&lt;/h1&gt;
 
 &lt;p&gt;In this tutorial we will set up a basic Hugo project and then configure a free tool called Wercker to automatically deploy the generated site any time we add an article. We will deploy it to GitHub pages as that is easiest to set up, but you will see that we can use anything. This tutorial takes you through every step of the process, complete with screenshots, and is fairly long.&lt;/p&gt;
 
 &lt;p&gt;The  assumptions made for this tutorial are that you know how to use git for version control, and have a GitHub account. In case you are unfamiliar with these, in their &lt;a href=&#34;https://help.github.com/articles/set-up-git/&#34;&gt;help section&lt;/a&gt; GitHub has an explanation of how to install and use git and you can easily sign up for a free GitHub account as well.&lt;/p&gt;
 
-&lt;h2 id=&#34;creating-a-basic-hugo-site:b122a196014951ebab85fff56cc6436b&#34;&gt;Creating a basic Hugo site&lt;/h2&gt;
+&lt;h2 id=&#34;creating-a-basic-hugo-site&#34;&gt;Creating a basic Hugo site&lt;/h2&gt;
 
 &lt;p&gt;There are already &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;pages&lt;/a&gt; dedicated to describing how to set up a Hugo site so we will only go through the most basic steps required to get a site up and running before we dive into the Wercker configuration. All the work for setting up the project is done using the command line, and kept as simple as possible.&lt;/p&gt;
 
@@ -411,10 +406,9 @@ git clone https://github.com/spf13/herring-cove.git
 
 &lt;p&gt;If everything is fine, you should be able to see something similar to the image below when you go to localhost:1313 in your browser.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/creating-a-basic-hugo-site.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/creating-a-basic-hugo-site.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-version-control:b122a196014951ebab85fff56cc6436b&#34;&gt;Setting up version control&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-version-control&#34;&gt;Setting up version control&lt;/h2&gt;
 
 &lt;p&gt;Adding git to our project is done by running the &lt;code&gt;git init&lt;/code&gt; command from the root directory of the project.&lt;/p&gt;
 
@@ -437,7 +431,7 @@ git clone https://github.com/spf13/herring-cove.git
 git commit -m &amp;quot;Initial commit&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;adding-the-project-to-github:b122a196014951ebab85fff56cc6436b&#34;&gt;Adding the project to GitHub&lt;/h2&gt;
+&lt;h2 id=&#34;adding-the-project-to-github&#34;&gt;Adding the project to GitHub&lt;/h2&gt;
 
 &lt;p&gt;First we&amp;rsquo;ll create a new repository. You can do this by clicking on the &lt;strong&gt;+&lt;/strong&gt; sign at the top right, or by going to &lt;a href=&#34;https://github.com/new&#34;&gt;https://github.com/new&lt;/a&gt;&lt;/p&gt;
 
@@ -447,80 +441,69 @@ git commit -m &amp;quot;Initial commit&amp;quot;
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/adding-the-project-to-github.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/adding-the-project-to-github.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;welcome-to-wercker:b122a196014951ebab85fff56cc6436b&#34;&gt;Welcome to wercker&lt;/h2&gt;
+&lt;h2 id=&#34;welcome-to-wercker&#34;&gt;Welcome to wercker&lt;/h2&gt;
 
 &lt;p&gt;Let&amp;rsquo;s start by setting up an account for Wercker. To do so we&amp;rsquo;ll go to &lt;a href=&#34;http://wercker.com&#34;&gt;http://wercker.com&lt;/a&gt; and click on the &lt;strong&gt;register&lt;/strong&gt; link at the top-right corner.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/welcome-to-wercker.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/welcome-to-wercker.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;register:b122a196014951ebab85fff56cc6436b&#34;&gt;Register&lt;/h2&gt;
+&lt;h2 id=&#34;register&#34;&gt;Register&lt;/h2&gt;
 
 &lt;p&gt;To make life easier for ourselves, we will then register using GitHub. If you don&amp;rsquo;t have a GitHub account, or don&amp;rsquo;t want to use it for your account, you can of course register with a username and password as well.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/register.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/register.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;connect-github-bitbucket:b122a196014951ebab85fff56cc6436b&#34;&gt;Connect GitHub/Bitbucket&lt;/h2&gt;
+&lt;h2 id=&#34;connect-github-bitbucket&#34;&gt;Connect GitHub/Bitbucket&lt;/h2&gt;
 
 &lt;p&gt;After you are registered, you will need to link your GitHub and/or Bitbucket account to Wercker. You do this by going to your profile settings, and then &amp;ldquo;Git connections&amp;rdquo; If you registered using GitHub it will most likely look like the below. To connect a missing service, simply click on the connect button which will then send you to either GitHub or Bitbucket where you might need to log in and approve their access to your account.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/connect-github-bitbucket.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/connect-github-bitbucket.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;add-your-project:b122a196014951ebab85fff56cc6436b&#34;&gt;Add your project&lt;/h2&gt;
+&lt;h2 id=&#34;add-your-project&#34;&gt;Add your project&lt;/h2&gt;
 
 &lt;p&gt;Now that we&amp;rsquo;ve got all the preliminaries out of the way, it&amp;rsquo;s time to set up our application. For this we click on the &lt;strong&gt;+ Add&lt;/strong&gt; button next to Apps, and then we&amp;rsquo;ll choose to use GitHub as our provider.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/add-your-project.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/add-your-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;select-a-repository:b122a196014951ebab85fff56cc6436b&#34;&gt;Select a repository&lt;/h2&gt;
+&lt;h2 id=&#34;select-a-repository&#34;&gt;Select a repository&lt;/h2&gt;
 
 &lt;p&gt;Clicking this will make Wercker show you all the repositories you have on GitHub, but you can easily filter them as well. So we search for our repository, select it, and then click on &amp;ldquo;Use selected repo&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/select-a-repository.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/select-a-repository.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;configure-access:b122a196014951ebab85fff56cc6436b&#34;&gt;Configure access&lt;/h2&gt;
+&lt;h2 id=&#34;configure-access&#34;&gt;Configure access&lt;/h2&gt;
 
 &lt;p&gt;This step can be slightly tricky. As Wercker doesn&amp;rsquo;t access to check out your private projects by default it will ask you what you want to do. When your project is public, as needs to be the case if you wish to use GitHub Pages, the top choice is recommended. When you use this it will simply check out the code in the same way anybody visiting the project on GitHub can do.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/configure-access.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/configure-access.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;wercker-yml:b122a196014951ebab85fff56cc6436b&#34;&gt;Wercker.yml&lt;/h2&gt;
+&lt;h2 id=&#34;wercker-yml&#34;&gt;Wercker.yml&lt;/h2&gt;
 
 &lt;p&gt;Wercker will now attempt to create an initial wercker.yml file for you. Or rather, it will create the code you can copy into it yourself. Because there is nothing special about our project according to Wercker, we will simply get the &lt;code&gt;wercker/default&lt;/code&gt; box. So what we do now is create a wercker.yml file in the root of our project that contains the provided configuration, and after we finish setting up the app we will expand this file to make it actually do something.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/werckeryml.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/werckeryml.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;public-or-not:b122a196014951ebab85fff56cc6436b&#34;&gt;Public or not&lt;/h2&gt;
+&lt;h2 id=&#34;public-or-not&#34;&gt;Public or not&lt;/h2&gt;
 
 &lt;p&gt;This is a personal choice, you can make an app public so that everyone can see more details about it. This doesn&amp;rsquo;t give you any real benefits either way in general, although as part of the tutorial I have of course made this app public so you can see it in action &lt;a href=&#34;https://app.wercker.com/#applications/54b1e45eda3a4af76406ece6&#34;&gt;yourself&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/public-or-not.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/public-or-not.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;and-we-ve-got-an-app:b122a196014951ebab85fff56cc6436b&#34;&gt;And we&amp;rsquo;ve got an app&lt;/h2&gt;
+&lt;h2 id=&#34;and-we-ve-got-an-app&#34;&gt;And we&amp;rsquo;ve got an app&lt;/h2&gt;
 
 &lt;p&gt;The application is added now, and Wercker will be offering you the chance to trigger a build. As we haven&amp;rsquo;t pushed up the &lt;strong&gt;wercker.yml&lt;/strong&gt; file however, we will politely decline this option.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/and-we-ve-got-an-app.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/and-we-ve-got-an-app.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;adding-steps:b122a196014951ebab85fff56cc6436b&#34;&gt;Adding steps&lt;/h2&gt;
+&lt;h2 id=&#34;adding-steps&#34;&gt;Adding steps&lt;/h2&gt;
 
 &lt;p&gt;And now we&amp;rsquo;re going to add the steps themselves. First, we go to the &amp;ldquo;Steps&amp;rdquo; action in the sidebar and then search for hugo. The first result is the &lt;strong&gt;Hugo-Build&lt;/strong&gt; task, which we select.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/adding-steps.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/adding-steps.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;using-hugo-build:b122a196014951ebab85fff56cc6436b&#34;&gt;Using Hugo-Build&lt;/h2&gt;
+&lt;h2 id=&#34;using-hugo-build&#34;&gt;Using Hugo-Build&lt;/h2&gt;
 
 &lt;p&gt;Inside the details of this step you will see how to use it. At the top is a summary for the very basic usage, but when scrolling down you go through the README of the step which will usually contain more details about how to use it including a full example of using the step. So we return to our project, and while making it fit our project better we add these details to our wercker.yml file so it looks like this. Wercker also has a &lt;a href=&#34;http://devcenter.wercker.com/articles/werckeryml/validate.html&#34;&gt;page&lt;/a&gt; for validating wercker.yml files, and it&amp;rsquo;s usually a good idea to do so before committing changes.&lt;/p&gt;
 
@@ -542,10 +525,9 @@ git push origin master
 
 &lt;p&gt;Once completed a nice tick should have appeared in front of your first build, and if you want you can look at the details by clicking on it. However, we&amp;rsquo;re not done yet as we still need to deploy it to GitHub Pages.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/using-hugo-build.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/using-hugo-build.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;adding-a-github-pages-step:b122a196014951ebab85fff56cc6436b&#34;&gt;Adding a GitHub Pages step&lt;/h2&gt;
+&lt;h2 id=&#34;adding-a-github-pages-step&#34;&gt;Adding a GitHub Pages step&lt;/h2&gt;
 
 &lt;p&gt;In order to deploy to GitHub Pages we need to add a deploy step. Once again searching through the Steps repository we find that the most popular step is the &lt;strong&gt;lukevevier/gh-pages&lt;/strong&gt; step so we add the configuration for that to our wercker.yml file, which then becomes this:&lt;/p&gt;
 
@@ -570,17 +552,15 @@ deploy:
 
 &lt;p&gt;And lastly, you can see here that this has a &lt;strong&gt;$GIT_TOKEN&lt;/strong&gt; variable. This is used for pushing our changes up to GitHub and we will need to configure this before we can do that. We do this by going to our app&amp;rsquo;s settings and clicking on &lt;strong&gt;Deploy targets&lt;/strong&gt;. Now, we &lt;strong&gt;Add deploy target&lt;/strong&gt; and select &lt;strong&gt;Custom deploy&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/adding-a-github-pages-step.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/adding-a-github-pages-step.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;configure-the-deploy-step:b122a196014951ebab85fff56cc6436b&#34;&gt;Configure the deploy step&lt;/h2&gt;
+&lt;h2 id=&#34;configure-the-deploy-step&#34;&gt;Configure the deploy step&lt;/h2&gt;
 
 &lt;p&gt;Simply fill in the name, and make sure you enable &lt;strong&gt;auto deploy&lt;/strong&gt; from the &lt;strong&gt;master&lt;/strong&gt; branch. Next you add a variable for the &lt;strong&gt;GIT_TOKEN&lt;/strong&gt;, for this you&amp;rsquo;ll need to create an access token in GitHub. How to do that is described on a &lt;a href=&#34;https://help.github.com/articles/creating-an-access-token-for-command-line-use/&#34;&gt;GitHub help page&lt;/a&gt;. With the deploy step configured in Wercker, we can push the updated wercker.yml file to GitHub and it will create the GitHub pages site for us. The example site we used here is accessible under hugo-wercker.ig.nore.me&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/configure-the-deploy-step.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tutswiki.com/img/tutorials/configure-the-deploy-step.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion:b122a196014951ebab85fff56cc6436b&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;From now on, any time you want to put a new post on your blog all you need to do is push your new page to GitHub and the rest will happen automatically. The source code for the example site used here is available on &lt;a href=&#34;https://github.com/ArjenSchwarz/hugo-wercker-example&#34;&gt;GitHub&lt;/a&gt;, as is the &lt;a href=&#34;https://github.com/ArjenSchwarz/wercker-step-hugo-build&#34;&gt;Hugo Build step&lt;/a&gt; itself.&lt;/p&gt;
 
@@ -596,7 +576,7 @@ deploy:
       <guid>http://tutswiki.com/tutorials/creating-a-new-theme/</guid>
       <description>
 
-&lt;h2 id=&#34;introduction:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&lt;/p&gt;
 
@@ -631,11 +611,11 @@ bah and humbug
 $
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;some-definitions:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Some Definitions&lt;/h2&gt;
+&lt;h2 id=&#34;some-definitions&#34;&gt;Some Definitions&lt;/h2&gt;
 
 &lt;p&gt;There are a few concepts that you need to understand before creating a theme.&lt;/p&gt;
 
-&lt;h3 id=&#34;skins:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Skins&lt;/h3&gt;
+&lt;h3 id=&#34;skins&#34;&gt;Skins&lt;/h3&gt;
 
 &lt;p&gt;Skins are the files responsible for the look and feel of your site. It’s the CSS that controls colors and fonts, it’s the Javascript that determines actions and reactions. It’s also the rules that Hugo uses to transform your content into the HTML that the site will serve to visitors.&lt;/p&gt;
 
@@ -649,31 +629,31 @@ $
 
 &lt;p&gt;Note that you can use this tutorial to create a skin in the &lt;code&gt;layouts/&lt;/code&gt; directory if you wish to. The main difference will be that you won’t need to update the site’s configuration file to use a theme.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-home-page:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;The Home Page&lt;/h3&gt;
+&lt;h3 id=&#34;the-home-page&#34;&gt;The Home Page&lt;/h3&gt;
 
 &lt;p&gt;The home page, or landing page, is the first page that many visitors to a site see. It is the index.html file in the root directory of the web site. Since Hugo writes files to the public/ directory, our home page is public/index.html.&lt;/p&gt;
 
-&lt;h3 id=&#34;site-configuration-file:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Site Configuration File&lt;/h3&gt;
+&lt;h3 id=&#34;site-configuration-file&#34;&gt;Site Configuration File&lt;/h3&gt;
 
 &lt;p&gt;When Hugo runs, it looks for a configuration file that contains settings that override default values for the entire site. The file can use TOML, YAML, or JSON. I prefer to use TOML for my configuration files. If you prefer to use JSON or YAML, you’ll need to translate my examples. You’ll also need to change the name of the file since Hugo uses the extension to determine how to process it.&lt;/p&gt;
 
 &lt;p&gt;Hugo translates Markdown files into HTML. By default, Hugo expects to find Markdown files in your &lt;code&gt;content/&lt;/code&gt; directory and template files in your &lt;code&gt;themes/&lt;/code&gt; directory. It will create HTML files in your &lt;code&gt;public/&lt;/code&gt; directory. You can change this by specifying alternate locations in the configuration file.&lt;/p&gt;
 
-&lt;h3 id=&#34;content:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Content&lt;/h3&gt;
+&lt;h3 id=&#34;content&#34;&gt;Content&lt;/h3&gt;
 
 &lt;p&gt;Content is stored in text files that contain two sections. The first section is the “front matter,” which is the meta-information on the content. The second section contains Markdown that will be converted to HTML.&lt;/p&gt;
 
-&lt;h4 id=&#34;front-matter:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Front Matter&lt;/h4&gt;
+&lt;h4 id=&#34;front-matter&#34;&gt;Front Matter&lt;/h4&gt;
 
 &lt;p&gt;The front matter is information about the content. Like the configuration file, it can be written in TOML, YAML, or JSON. Unlike the configuration file, Hugo doesn’t use the file’s extension to know the format. It looks for markers to signal the type. TOML is surrounded by “&lt;code&gt;+++&lt;/code&gt;”, YAML by “&lt;code&gt;---&lt;/code&gt;”, and JSON is enclosed in curly braces. I prefer to use TOML, so you’ll need to translate my examples if you prefer YAML or JSON.&lt;/p&gt;
 
 &lt;p&gt;The information in the front matter is passed into the template before the content is rendered into HTML.&lt;/p&gt;
 
-&lt;h4 id=&#34;markdown:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Markdown&lt;/h4&gt;
+&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
 
 &lt;p&gt;Content is written in Markdown which makes it easier to create the content. Hugo runs the content through a Markdown engine to create the HTML which will be written to the output file.&lt;/p&gt;
 
-&lt;h3 id=&#34;template-files:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Template Files&lt;/h3&gt;
+&lt;h3 id=&#34;template-files&#34;&gt;Template Files&lt;/h3&gt;
 
 &lt;p&gt;Hugo uses template files to render content into HTML. Template files are a bridge between the content and presentation. Rules in the template define what content is published, where it&amp;rsquo;s published to, and how it will rendered to the HTML file. The template guides the presentation by specifying the style to use.&lt;/p&gt;
 
@@ -683,21 +663,21 @@ $
 
 &lt;p&gt;Please note that you can use the front matter to influence Hugo’s choice of templates.&lt;/p&gt;
 
-&lt;h4 id=&#34;single-template:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Single Template&lt;/h4&gt;
+&lt;h4 id=&#34;single-template&#34;&gt;Single Template&lt;/h4&gt;
 
 &lt;p&gt;A single template is used to render a single piece of content. For example, an article or post would be a single piece of content and use a single template.&lt;/p&gt;
 
-&lt;h4 id=&#34;list-template:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;List Template&lt;/h4&gt;
+&lt;h4 id=&#34;list-template&#34;&gt;List Template&lt;/h4&gt;
 
 &lt;p&gt;A list template renders a group of related content. That could be a summary of recent postings or all articles in a category. List templates can contain multiple groups.&lt;/p&gt;
 
 &lt;p&gt;The homepage template is a special type of list template. Hugo assumes that the home page of your site will act as the portal for the rest of the content in the site.&lt;/p&gt;
 
-&lt;h4 id=&#34;partial-template:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Partial Template&lt;/h4&gt;
+&lt;h4 id=&#34;partial-template&#34;&gt;Partial Template&lt;/h4&gt;
 
 &lt;p&gt;A partial template is a template that can be included in other templates. Partial templates must be called using the “partial” template command. They are very handy for rolling up common behavior. For example, your site may have a banner that all pages use. Instead of copying the text of the banner into every single and list template, you could create a partial with the banner in it. That way if you decide to change the banner, you only have to change the partial template.&lt;/p&gt;
 
-&lt;h2 id=&#34;create-a-new-site:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Create a New Site&lt;/h2&gt;
+&lt;h2 id=&#34;create-a-new-site&#34;&gt;Create a New Site&lt;/h2&gt;
 
 &lt;p&gt;Let&amp;rsquo;s use Hugo to create a new web site. I&amp;rsquo;m a Mac user, so I&amp;rsquo;ll create mine in my home directory, in the Sites folder. If you&amp;rsquo;re using Linux, you might have to create the folder first.&lt;/p&gt;
 
@@ -721,7 +701,7 @@ $
 
 &lt;p&gt;The other directories (archetypes/, layouts/, and static/) are used when customizing a theme. That&amp;rsquo;s a topic for a different tutorial, so please ignore them for now.&lt;/p&gt;
 
-&lt;h3 id=&#34;generate-the-html-for-the-new-site:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Generate the HTML For the New Site&lt;/h3&gt;
+&lt;h3 id=&#34;generate-the-html-for-the-new-site&#34;&gt;Generate the HTML For the New Site&lt;/h3&gt;
 
 &lt;p&gt;Running the &lt;code&gt;hugo&lt;/code&gt; command with no options will read all the available content and generate the HTML files. It will also copy all static files (that&amp;rsquo;s everything that&amp;rsquo;s not content). Since we have an empty site, it won&amp;rsquo;t do much, but it will do it very quickly.&lt;/p&gt;
 
@@ -765,7 +745,7 @@ $
 
 &lt;p&gt;Hugo created two XML files, which is standard, but there are no HTML files.&lt;/p&gt;
 
-&lt;h3 id=&#34;test-the-new-site:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Test the New Site&lt;/h3&gt;
+&lt;h3 id=&#34;test-the-new-site&#34;&gt;Test the New Site&lt;/h3&gt;
 
 &lt;p&gt;Verify that you can run the built-in web server. It will dramatically shorten your development cycle if you do. Start it by running the &amp;ldquo;server&amp;rdquo; command. If it is successful, you will see output similar to the following:&lt;/p&gt;
 
@@ -807,7 +787,7 @@ WARN: 2014/09/29 Unable to locate layout: [404.html]
 
 &lt;p&gt;At this point, you&amp;rsquo;ve got a working installation and site that we can build upon. All that’s left is to add some content and a theme to display it.&lt;/p&gt;
 
-&lt;h2 id=&#34;create-a-new-theme:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Create a New Theme&lt;/h2&gt;
+&lt;h2 id=&#34;create-a-new-theme&#34;&gt;Create a New Theme&lt;/h2&gt;
 
 &lt;p&gt;Hugo doesn&amp;rsquo;t ship with a default theme. There are a few available (I counted a dozen when I first installed Hugo) and Hugo comes with a command to create new themes.&lt;/p&gt;
 
@@ -815,7 +795,7 @@ WARN: 2014/09/29 Unable to locate layout: [404.html]
 
 &lt;p&gt;All themes have opinions on content and layout. For example, Zafta uses &amp;ldquo;post&amp;rdquo; over &amp;ldquo;blog&amp;rdquo;. Strong opinions make for simpler templates but differing opinions make it tougher to use themes. When you build a theme, consider using the terms that other themes do.&lt;/p&gt;
 
-&lt;h3 id=&#34;create-a-skeleton:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Create a Skeleton&lt;/h3&gt;
+&lt;h3 id=&#34;create-a-skeleton&#34;&gt;Create a Skeleton&lt;/h3&gt;
 
 &lt;p&gt;Use the hugo &amp;ldquo;new&amp;rdquo; command to create the skeleton of a theme. This creates the directory structure and places empty files for you to fill out.&lt;/p&gt;
 
@@ -871,7 +851,7 @@ tags = [&amp;quot;tags&amp;quot;, &amp;quot;categories&amp;quot;]
 $
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;update-the-configuration-file-to-use-the-theme:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Update the Configuration File to Use the Theme&lt;/h3&gt;
+&lt;h3 id=&#34;update-the-configuration-file-to-use-the-theme&#34;&gt;Update the Configuration File to Use the Theme&lt;/h3&gt;
 
 &lt;p&gt;Now that we&amp;rsquo;ve got a theme to work with, it&amp;rsquo;s a good idea to add the theme name to the configuration file. This is optional, because you can always add &amp;ldquo;-t zafta&amp;rdquo; on all your commands. I like to put it the configuration file because I like shorter command lines. If you don&amp;rsquo;t put it in the configuration file or specify it on the command line, you won&amp;rsquo;t use the template that you&amp;rsquo;re expecting to.&lt;/p&gt;
 
@@ -888,7 +868,7 @@ MetaDataFormat = &amp;quot;toml&amp;quot;
 $
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;generate-the-site:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Generate the Site&lt;/h3&gt;
+&lt;h3 id=&#34;generate-the-site&#34;&gt;Generate the Site&lt;/h3&gt;
 
 &lt;p&gt;Now that we have an empty theme, let&amp;rsquo;s generate the site again.&lt;/p&gt;
 
@@ -929,7 +909,7 @@ $
 &lt;li&gt;Hugo claimed that it created 0 pages. It created a file and copied over static files, but didn&amp;rsquo;t create any pages. That&amp;rsquo;s because it considers a &amp;ldquo;page&amp;rdquo; to be a file created directly from a content file. It doesn&amp;rsquo;t count things like the index.html files that it creates automatically.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&#34;the-home-page-1:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;The Home Page&lt;/h4&gt;
+&lt;h4 id=&#34;the-home-page-1&#34;&gt;The Home Page&lt;/h4&gt;
 
 &lt;p&gt;Hugo supports many different types of templates. The home page is special because it gets its own type of template and its own template file. The file, layouts/index.html, is used to generate the HTML for the home page. The Hugo documentation says that this is the only required template, but that depends. Hugo&amp;rsquo;s warning message shows that it looks for three different templates:&lt;/p&gt;
 
@@ -946,7 +926,7 @@ $
 $ 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;the-magic-of-static:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;The Magic of Static&lt;/h4&gt;
+&lt;h4 id=&#34;the-magic-of-static&#34;&gt;The Magic of Static&lt;/h4&gt;
 
 &lt;p&gt;Hugo does two things when generating the site. It uses templates to transform content into HTML and it copies static files into the site. Unlike content, static files are not transformed. They are copied exactly as they are.&lt;/p&gt;
 
@@ -964,7 +944,7 @@ drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/js
 $ 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;the-theme-development-cycle:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;The Theme Development Cycle&lt;/h2&gt;
+&lt;h2 id=&#34;the-theme-development-cycle&#34;&gt;The Theme Development Cycle&lt;/h2&gt;
 
 &lt;p&gt;When you&amp;rsquo;re working on a theme, you will make changes in the theme&amp;rsquo;s directory, rebuild the site, and check your changes in the browser. Hugo makes this very easy:&lt;/p&gt;
 
@@ -981,21 +961,21 @@ $
 
 &lt;p&gt;Check the main Hugo site for information on using Git with Hugo.&lt;/p&gt;
 
-&lt;h3 id=&#34;purge-the-public-directory:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Purge the public/ Directory&lt;/h3&gt;
+&lt;h3 id=&#34;purge-the-public-directory&#34;&gt;Purge the public/ Directory&lt;/h3&gt;
 
 &lt;p&gt;When generating the site, Hugo will create new files and update existing ones in the &lt;code&gt;public/&lt;/code&gt; directory. It will not delete files that are no longer used. For example, files that were created in the wrong directory or with the wrong title will remain. If you leave them, you might get confused by them later. I recommend cleaning out your site prior to generating it.&lt;/p&gt;
 
 &lt;p&gt;Note: If you&amp;rsquo;re building on an SSD, you should ignore this. Churning on a SSD can be costly.&lt;/p&gt;
 
-&lt;h3 id=&#34;hugo-s-watch-option:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Hugo&amp;rsquo;s Watch Option&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-s-watch-option&#34;&gt;Hugo&amp;rsquo;s Watch Option&lt;/h3&gt;
 
 &lt;p&gt;Hugo&amp;rsquo;s &amp;ldquo;&lt;code&gt;--watch&lt;/code&gt;&amp;rdquo; option will monitor the content/ and your theme directories for changes and rebuild the site automatically.&lt;/p&gt;
 
-&lt;h3 id=&#34;live-reload:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Live Reload&lt;/h3&gt;
+&lt;h3 id=&#34;live-reload&#34;&gt;Live Reload&lt;/h3&gt;
 
 &lt;p&gt;Hugo&amp;rsquo;s built in web server supports live reload. As pages are saved on the server, the browser is told to refresh the page. Usually, this happens faster than you can say, &amp;ldquo;Wow, that&amp;rsquo;s totally amazing.&amp;rdquo;&lt;/p&gt;
 
-&lt;h3 id=&#34;development-commands:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Development Commands&lt;/h3&gt;
+&lt;h3 id=&#34;development-commands&#34;&gt;Development Commands&lt;/h3&gt;
 
 &lt;p&gt;Use the following commands as the basis for your workflow.&lt;/p&gt;
 
@@ -1038,7 +1018,7 @@ WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
 in 1 ms
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;update-the-home-page-template:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Update the Home Page Template&lt;/h2&gt;
+&lt;h2 id=&#34;update-the-home-page-template&#34;&gt;Update the Home Page Template&lt;/h2&gt;
 
 &lt;p&gt;The home page is one of a few special pages that Hugo creates automatically. As mentioned earlier, it looks for one of three files in the theme&amp;rsquo;s layout/ directory:&lt;/p&gt;
 
@@ -1050,7 +1030,7 @@ in 1 ms
 
 &lt;p&gt;We could update one of the default templates, but a good design decision is to update the most specific template available. That&amp;rsquo;s not a hard and fast rule (in fact, we&amp;rsquo;ll break it a few times in this tutorial), but it is a good generalization.&lt;/p&gt;
 
-&lt;h3 id=&#34;make-a-static-home-page:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Make a Static Home Page&lt;/h3&gt;
+&lt;h3 id=&#34;make-a-static-home-page&#34;&gt;Make a Static Home Page&lt;/h3&gt;
 
 &lt;p&gt;Right now, that page is empty because we don&amp;rsquo;t have any content and we don&amp;rsquo;t have any logic in the template. Let&amp;rsquo;s change that by adding some text to the template.&lt;/p&gt;
 
@@ -1091,7 +1071,7 @@ $ cat public/index.html
 &amp;lt;/html&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;live-reload-1:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Live Reload&lt;/h4&gt;
+&lt;h4 id=&#34;live-reload-1&#34;&gt;Live Reload&lt;/h4&gt;
 
 &lt;p&gt;Note: If you&amp;rsquo;re running the server with the &lt;code&gt;--watch&lt;/code&gt; option, you&amp;rsquo;ll see different content in the file:&lt;/p&gt;
 
@@ -1109,11 +1089,11 @@ $ cat public/index.html
 
 &lt;p&gt;When you use &lt;code&gt;--watch&lt;/code&gt;, the Live Reload script is added by Hugo. Look for live reload in the documentation to see what it does and how to disable it.&lt;/p&gt;
 
-&lt;h3 id=&#34;build-a-dynamic-home-page:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Build a &amp;ldquo;Dynamic&amp;rdquo; Home Page&lt;/h3&gt;
+&lt;h3 id=&#34;build-a-dynamic-home-page&#34;&gt;Build a &amp;ldquo;Dynamic&amp;rdquo; Home Page&lt;/h3&gt;
 
 &lt;p&gt;&amp;ldquo;Dynamic home page?&amp;rdquo; Hugo&amp;rsquo;s a static web site generator, so this seems an odd thing to say. I mean let&amp;rsquo;s have the home page automatically reflect the content in the site every time Hugo builds it. We&amp;rsquo;ll use iteration in the template to do that.&lt;/p&gt;
 
-&lt;h4 id=&#34;create-new-posts:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Create New Posts&lt;/h4&gt;
+&lt;h4 id=&#34;create-new-posts&#34;&gt;Create New Posts&lt;/h4&gt;
 
 &lt;p&gt;Now that we have the home page generating static content, let&amp;rsquo;s add some content to the site. We&amp;rsquo;ll display these posts as a list on the home page and on their own page, too.&lt;/p&gt;
 
@@ -1218,7 +1198,7 @@ $
 
 &lt;p&gt;The new files are empty because because the templates used to generate the content are empty. The homepage doesn&amp;rsquo;t show the new content, either. We have to update the templates to add the posts.&lt;/p&gt;
 
-&lt;h3 id=&#34;list-and-single-templates:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;List and Single Templates&lt;/h3&gt;
+&lt;h3 id=&#34;list-and-single-templates&#34;&gt;List and Single Templates&lt;/h3&gt;
 
 &lt;p&gt;In Hugo, we have three major kinds of templates. There&amp;rsquo;s the home page template that we updated previously. It is used only by the home page. We also have &amp;ldquo;single&amp;rdquo; templates which are used to generate output for a single content file. We also have &amp;ldquo;list&amp;rdquo; templates that are used to group multiple pieces of content before generating output.&lt;/p&gt;
 
@@ -1226,7 +1206,7 @@ $
 
 &lt;p&gt;There are three other types of templates: partials, content views, and terms. We will not go into much detail on these.&lt;/p&gt;
 
-&lt;h3 id=&#34;add-content-to-the-homepage:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Add Content to the Homepage&lt;/h3&gt;
+&lt;h3 id=&#34;add-content-to-the-homepage&#34;&gt;Add Content to the Homepage&lt;/h3&gt;
 
 &lt;p&gt;The home page will contain a list of posts. Let&amp;rsquo;s update its template to add the posts that we just created. The logic in the template will run every time we build the site.&lt;/p&gt;
 
@@ -1298,7 +1278,7 @@ $
 
 &lt;p&gt;And, if that were entirely true, this tutorial would be much shorter. There are a few things to know that will make creating a new template much easier. Don&amp;rsquo;t worry, though, that&amp;rsquo;s all to come.&lt;/p&gt;
 
-&lt;h3 id=&#34;add-content-to-the-posts:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Add Content to the Posts&lt;/h3&gt;
+&lt;h3 id=&#34;add-content-to-the-posts&#34;&gt;Add Content to the Posts&lt;/h3&gt;
 
 &lt;p&gt;We&amp;rsquo;re working with posts, which are in the content/post/ directory. That means that their section is &amp;ldquo;post&amp;rdquo; (and if we don&amp;rsquo;t do something weird, their type is also &amp;ldquo;post&amp;rdquo;).&lt;/p&gt;
 
@@ -1316,7 +1296,7 @@ $
 
 &lt;p&gt;Please see the Hugo documentation on template rendering for all the details on determining which template to use. And, as the docs mention, if you&amp;rsquo;re building a single page application (SPA) web site, you can delete all of the other templates and work with just the default single page. That&amp;rsquo;s a refreshing amount of joy right there.&lt;/p&gt;
 
-&lt;h4 id=&#34;update-the-template-file:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Update the Template File&lt;/h4&gt;
+&lt;h4 id=&#34;update-the-template-file&#34;&gt;Update the Template File&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;$ vi themes/zafta/layouts/_default/single.html 
 &amp;lt;!DOCTYPE html&amp;gt;
@@ -1386,7 +1366,7 @@ $
 
 &lt;p&gt;Notice that the posts now have content. You can go to localhost:1313/post/first to verify.&lt;/p&gt;
 
-&lt;h3 id=&#34;linking-to-content:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Linking to Content&lt;/h3&gt;
+&lt;h3 id=&#34;linking-to-content&#34;&gt;Linking to Content&lt;/h3&gt;
 
 &lt;p&gt;The posts are on the home page. Let&amp;rsquo;s add a link from there to the post. Since this is the home page, we&amp;rsquo;ll update its template.&lt;/p&gt;
 
@@ -1438,7 +1418,7 @@ $ cat public/index.html
 $
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;create-a-post-listing:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Create a Post Listing&lt;/h3&gt;
+&lt;h3 id=&#34;create-a-post-listing&#34;&gt;Create a Post Listing&lt;/h3&gt;
 
 &lt;p&gt;We have the posts displaying on the home page and on their own page. We also have a file public/post/index.html that is empty. Let&amp;rsquo;s make it show a list of all posts (not just the first ten).&lt;/p&gt;
 
@@ -1450,7 +1430,7 @@ $
 
 &lt;p&gt;As with the single post, we have to decide to update _default/list.html or create post/list.html. We still don&amp;rsquo;t have multiple content types, so let&amp;rsquo;s stay consistent and update the default list template.&lt;/p&gt;
 
-&lt;h2 id=&#34;creating-top-level-pages:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Creating Top Level Pages&lt;/h2&gt;
+&lt;h2 id=&#34;creating-top-level-pages&#34;&gt;Creating Top Level Pages&lt;/h2&gt;
 
 &lt;p&gt;Let&amp;rsquo;s add an &amp;ldquo;about&amp;rdquo; page and display it at the top level (as opposed to a sub-level like we did with posts).&lt;/p&gt;
 
@@ -1545,13 +1525,13 @@ i&#39;m speechless
 
 &lt;p&gt;Generate the web site and verify that this didn&amp;rsquo;t work. Hugo lets &amp;ldquo;slug&amp;rdquo; or &amp;ldquo;URL&amp;rdquo; override the permalinks setting in the configuration file. Go ahead and comment out the slug in content/about.md, then generate the web site to get it to be created in the right place.&lt;/p&gt;
 
-&lt;h2 id=&#34;sharing-templates:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Sharing Templates&lt;/h2&gt;
+&lt;h2 id=&#34;sharing-templates&#34;&gt;Sharing Templates&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;ve been following along, you probably noticed that posts have titles in the browser and the home page doesn&amp;rsquo;t. That&amp;rsquo;s because we didn&amp;rsquo;t put the title in the home page&amp;rsquo;s template (layouts/index.html). That&amp;rsquo;s an easy thing to do, but let&amp;rsquo;s look at a different option.&lt;/p&gt;
 
 &lt;p&gt;We can put the common bits into a shared template that&amp;rsquo;s stored in the themes/zafta/layouts/partials/ directory.&lt;/p&gt;
 
-&lt;h3 id=&#34;create-the-header-and-footer-partials:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Create the Header and Footer Partials&lt;/h3&gt;
+&lt;h3 id=&#34;create-the-header-and-footer-partials&#34;&gt;Create the Header and Footer Partials&lt;/h3&gt;
 
 &lt;p&gt;In Hugo, a partial is a sugar-coated template. Normally a template reference has a path specified. Partials are different. Hugo searches for them along a TODO defined search path. This makes it easier for end-users to override the theme&amp;rsquo;s presentation.&lt;/p&gt;
 
@@ -1570,7 +1550,7 @@ $ vi themes/zafta/layouts/partials/footer.html
 :wq
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;update-the-home-page-template-to-use-the-partials:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Update the Home Page Template to Use the Partials&lt;/h3&gt;
+&lt;h3 id=&#34;update-the-home-page-template-to-use-the-partials&#34;&gt;Update the Home Page Template to Use the Partials&lt;/h3&gt;
 
 &lt;p&gt;The most noticeable difference between a template call and a partials call is the lack of path:&lt;/p&gt;
 
@@ -1609,7 +1589,7 @@ $ vi themes/zafta/layouts/partials/footer.html
 
 &lt;p&gt;Generate the web site and verify the results. The title on the home page is now &amp;ldquo;your title here&amp;rdquo;, which comes from the &amp;ldquo;title&amp;rdquo; variable in the config.toml file.&lt;/p&gt;
 
-&lt;h3 id=&#34;update-the-default-single-template-to-use-the-partials:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Update the Default Single Template to Use the Partials&lt;/h3&gt;
+&lt;h3 id=&#34;update-the-default-single-template-to-use-the-partials&#34;&gt;Update the Default Single Template to Use the Partials&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ vi themes/zafta/layouts/_default/single.html
 {{ partial &amp;quot;header.html&amp;quot; . }}
@@ -1623,11 +1603,11 @@ $ vi themes/zafta/layouts/partials/footer.html
 
 &lt;p&gt;Generate the web site and verify the results. The title on the posts and the about page should both reflect the value in the markdown file.&lt;/p&gt;
 
-&lt;h2 id=&#34;add-date-published-to-posts:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Add “Date Published” to Posts&lt;/h2&gt;
+&lt;h2 id=&#34;add-date-published-to-posts&#34;&gt;Add “Date Published” to Posts&lt;/h2&gt;
 
 &lt;p&gt;It&amp;rsquo;s common to have posts display the date that they were written or published, so let&amp;rsquo;s add that. The front matter of our posts has a variable named &amp;ldquo;date.&amp;rdquo; It&amp;rsquo;s usually the date the content was created, but let&amp;rsquo;s pretend that&amp;rsquo;s the value we want to display.&lt;/p&gt;
 
-&lt;h3 id=&#34;add-date-published-to-the-template:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Add “Date Published” to the Template&lt;/h3&gt;
+&lt;h3 id=&#34;add-date-published-to-the-template&#34;&gt;Add “Date Published” to the Template&lt;/h3&gt;
 
 &lt;p&gt;We&amp;rsquo;ll start by updating the template used to render the posts. The template code will look like:&lt;/p&gt;
 
@@ -1684,7 +1664,7 @@ $ vi themes/zafta/layouts/_default/single.html
 
 &lt;p&gt;Note that we removed the date logic from the default template and put it in the post template. Generate the web site and verify the results. Posts have dates and the about page doesn&amp;rsquo;t.&lt;/p&gt;
 
-&lt;h3 id=&#34;don-t-repeat-yourself:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Don&amp;rsquo;t Repeat Yourself&lt;/h3&gt;
+&lt;h3 id=&#34;don-t-repeat-yourself&#34;&gt;Don&amp;rsquo;t Repeat Yourself&lt;/h3&gt;
 
 &lt;p&gt;DRY is a good design goal and Hugo does a great job supporting it. Part of the art of a good template is knowing when to add a new template and when to update an existing one. While you&amp;rsquo;re figuring that out, accept that you&amp;rsquo;ll be doing some refactoring. Hugo makes that easy and fast, so it&amp;rsquo;s okay to delay splitting up a template.&lt;/p&gt;
 </description>
@@ -1702,19 +1682,19 @@ $ vi themes/zafta/layouts/_default/single.html
 &lt;p&gt;&lt;em&gt;This tutorial was contributed by &lt;a href=&#34;http://sglyon.com/&#34;&gt;Spencer Lyon&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;introduction:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;Many Hugo users have expressed interest in seeing a tutorial for how to set up a blog that is generated by Hugo and hosted on GitHub Pages. This tutorial will do just that. We only require that the reader has Hugo installed correctly and is comfortable with git and GitHub.&lt;/p&gt;
 
 &lt;p&gt;During this tutorial, I will walk you through the main steps I took to create an example blog available at &lt;a href=&#34;http://spencerlyon2.github.io/hugo_gh_blog&#34;&gt;http://spencerlyon2.github.io/hugo_gh_blog&lt;/a&gt;. The source code for this blog is on &lt;a href=&#34;https://github.com/spencerlyon2/hugo_gh_blog&#34;&gt;GitHub&lt;/a&gt;. Readers are encouraged to download the example repository and follow along.&lt;/p&gt;
 
-&lt;h3 id=&#34;find-a-home-for-your-files:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Find a Home for Your Files&lt;/h3&gt;
+&lt;h3 id=&#34;find-a-home-for-your-files&#34;&gt;Find a Home for Your Files&lt;/h3&gt;
 
 &lt;p&gt;As our goal is to host a website using GitHub Pages, it is natural for us to host the content of the page in a GitHub repository. Thus, the first step is to either create a new repository on GitHub or create a new directory within an existing repository where the content of the website will live. To do this, I created the repository &lt;a href=&#34;https://github.com/spencerlyon2/hugo_gh_blog&#34;&gt;spencerlyon2/hugo_gh_blog&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;create-the-blog:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Create the Blog&lt;/h2&gt;
+&lt;h2 id=&#34;create-the-blog&#34;&gt;Create the Blog&lt;/h2&gt;
 
-&lt;h3 id=&#34;write-a-config-yaml-file:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Write a &lt;code&gt;config.yaml&lt;/code&gt; File&lt;/h3&gt;
+&lt;h3 id=&#34;write-a-config-yaml-file&#34;&gt;Write a &lt;code&gt;config.yaml&lt;/code&gt; File&lt;/h3&gt;
 
 &lt;p&gt;The very first step in creating a new Hugo site is to &lt;a href=&#34;http://tutswiki.com/overview/configuration/&#34;&gt;write the config file&lt;/a&gt;. This config file is important for at least two reasons: (1) this is where site-wide settings (like the websites &lt;code&gt;baseurl&lt;/code&gt;) go, and (2) the config file dictates to some extent how Hugo will generate the website. For the example website I created a file &lt;code&gt;config.yaml&lt;/code&gt; with the following contents&lt;/p&gt;
 
@@ -1741,7 +1721,7 @@ run into problems such as the CSS files not loading.&lt;/p&gt;
 for more information.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;define-structure-of-website:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Define Structure of Website&lt;/h3&gt;
+&lt;h3 id=&#34;define-structure-of-website&#34;&gt;Define Structure of Website&lt;/h3&gt;
 
 &lt;p&gt;Hugo assumes that you organize the content of your site in a meaningful way and uses the same structure to render the website. Notice that we have the line &lt;code&gt;contentdir: &amp;quot;content&amp;quot;&lt;/code&gt; in our configuration file. This means that all the actual content of the website should be placed somewhere within a folder named &lt;code&gt;content&lt;/code&gt;. Hugo treats all directories in &lt;code&gt;content&lt;/code&gt; as sections. For our example we only need one section: a place to hold our blog posts. So we created two new folders:&lt;/p&gt;
 
@@ -1750,7 +1730,7 @@ for more information.&lt;/p&gt;
         ▾ posts/
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;create-html-templates:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Create HTML Templates&lt;/h3&gt;
+&lt;h3 id=&#34;create-html-templates&#34;&gt;Create HTML Templates&lt;/h3&gt;
 
 &lt;p&gt;The next step is to define the look and feel of your new website. Because Hugo will generate the site using HTML templates written by the user (you), this step is very subjective. I will merely present one possible theme that could be used to generate a blog. I decided to base the example project on a Jekyll theme called &lt;a href=&#34;http://lanyon.getpoole.com/&#34;&gt;Lanyon&lt;/a&gt;. The Lanyon theme is pure CSS and a slightly modified version of the CSS is in the &lt;code&gt;/static/css&lt;/code&gt; directory of the example repository. If you are following along, you should grab the &lt;code&gt;static&lt;/code&gt; folder from the example repository and put it alongside the &lt;code&gt;content&lt;/code&gt; folder you just created.&lt;/p&gt;
 
@@ -1781,7 +1761,7 @@ for more information.&lt;/p&gt;
 
 &lt;p&gt;Each of the files in the example repository is well commented with a description of what the file as a whole does as well as an explanation of all major components in the file. If you are new to web development and/or Hugo, I encourage you to search through these files to get a feel for how Hugo templates work and how the site is stitched together.&lt;/p&gt;
 
-&lt;h3 id=&#34;add-some-content:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Add Some Content&lt;/h3&gt;
+&lt;h3 id=&#34;add-some-content&#34;&gt;Add Some Content&lt;/h3&gt;
 
 &lt;p&gt;The final step in creating the blog is to add some actual blog posts. To do this, simply create one Markdown file (with extension &lt;code&gt;.md&lt;/code&gt;) for each new blog post. At the top of each file you should include a metadata section that tells Hugo some things about the post (see &lt;a href=&#34;http://tutswiki.com/content/front-matter/&#34;&gt;docs&lt;/a&gt;). For example, consider the yaml metadata section from the top of the file &lt;code&gt;/content/posts/newest.md&lt;/code&gt; from the example repository:&lt;/p&gt;
 
@@ -1798,7 +1778,7 @@ categories:
 
 &lt;p&gt;The keys set in this section are the mandatory &lt;code&gt;title&lt;/code&gt; and &lt;code&gt;date&lt;/code&gt; as well as the optional &lt;code&gt;description&lt;/code&gt; and &lt;code&gt;categories&lt;/code&gt;. Each of these items is used throughout the templates found in the &lt;code&gt;/layouts&lt;/code&gt; directory and gives Hugo information about the post from other pages in the website.&lt;/p&gt;
 
-&lt;h2 id=&#34;configure-git-workflow:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Configure &lt;code&gt;git&lt;/code&gt; Workflow&lt;/h2&gt;
+&lt;h2 id=&#34;configure-git-workflow&#34;&gt;Configure &lt;code&gt;git&lt;/code&gt; Workflow&lt;/h2&gt;
 
 &lt;p&gt;Once the site is set up and working properly, we need to push it to the correct branch of a GitHub repository so the website can be served through GitHub Pages. There are many ways to do this. Here I will show the workflow I currently use to manage my websites that are hosted through GitHub Pages.&lt;/p&gt;
 
@@ -1850,7 +1830,7 @@ git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh
 
 &lt;p&gt;After executing these commands and waiting for the GitHub servers to update, the website we just created was live at &lt;a href=&#34;http://spencerlyon2.github.io/hugo_gh_blog&#34;&gt;http://spencerlyon2.github.io/hugo_gh_blog&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;deploy-sh:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;&lt;code&gt;deploy.sh&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;deploy-sh&#34;&gt;&lt;code&gt;deploy.sh&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;Now, as you add new posts to your blog, you will follow steps that look something like the following:&lt;/p&gt;
 
@@ -1905,7 +1885,7 @@ git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh
 
 &lt;p&gt;Now I can replace the last four items from our workflow list with a single command &lt;code&gt;bash deploy.sh&lt;/code&gt;. This script accepts as an optional argument the commit message that git should use when committing your changes. If you wish to include a custom commit message, do so by putting it quotes after calling bash on the script: &lt;code&gt;bash deploy.sh &amp;quot;&amp;lt;my commit msg&amp;gt;&amp;quot;&lt;/code&gt;. If you choose not to specify the commit message, one will be generated for you using the current time.&lt;/p&gt;
 
-&lt;h2 id=&#34;configure-git-workflow-the-alternate-way:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Configure &lt;code&gt;git&lt;/code&gt; Workflow, the Alternate Way&lt;/h2&gt;
+&lt;h2 id=&#34;configure-git-workflow-the-alternate-way&#34;&gt;Configure &lt;code&gt;git&lt;/code&gt; Workflow, the Alternate Way&lt;/h2&gt;
 
 &lt;p&gt;The above uses a &lt;code&gt;git subtree&lt;/code&gt; to deploy to Gits &lt;code&gt;gh-pages&lt;/code&gt; branch. This works great, but with one drawback: It requires the generated content to be committed to the source branch.&lt;/p&gt;
 
@@ -1934,7 +1914,7 @@ hugo -d dist
 
 &lt;p&gt;For more information about the deployment script, see this &lt;a href=&#34;https://github.com/X1011/git-directory-deploy&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;hosting-personal-organization-pages:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Hosting Personal/Organization Pages&lt;/h2&gt;
+&lt;h2 id=&#34;hosting-personal-organization-pages&#34;&gt;Hosting Personal/Organization Pages&lt;/h2&gt;
 
 &lt;p&gt;As mentioned &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;in this GitHub&amp;rsquo;s article&lt;/a&gt;, besides project pages, you may also want to host a user/organization page. Here are the key differences:&lt;/p&gt;
 
@@ -1991,7 +1971,7 @@ cd ..
 
 &lt;p&gt;That&amp;rsquo;s it! Your personal page is running at &lt;a href=&#34;http://username.github.io/&#34;&gt;http://username.github.io/&lt;/a&gt; (after up to 10 minutes delay).&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion:fcefb200141ace3e7bfd6542457b7a72&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Hopefully this tutorial helped you get your website off its feet and out into the open! If you have any further questions, feel free to contact the community through the &lt;a href=&#34;http://tutswiki.com/community/mailing-list/&#34;&gt;discussion forum&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -2005,13 +1985,13 @@ cd ..
       <guid>http://tutswiki.com/tutorials/mathjax/</guid>
       <description>
 
-&lt;h2 id=&#34;what-is-mathjax:d97e838dbdddd8f0d2665b07f195e51f&#34;&gt;What is MathJax?&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-mathjax&#34;&gt;What is MathJax?&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; is a JavaScript library that allows the display of mathematical expressions described via a LaTeX-style syntax in the HTML (or Markdown) source of a web page. As it is a pure a JavaScript library, getting it to work within Hugo is fairly straightforward, but does have some oddities that will be discussed here.&lt;/p&gt;
 
 &lt;p&gt;This is not an introduction into actually using MathJax to render typeset mathematics on your website. Instead, this page is a collection of tips and hints for one way to get MathJax working on a website built with Hugo.&lt;/p&gt;
 
-&lt;h2 id=&#34;enabling-mathjax:d97e838dbdddd8f0d2665b07f195e51f&#34;&gt;Enabling MathJax&lt;/h2&gt;
+&lt;h2 id=&#34;enabling-mathjax&#34;&gt;Enabling MathJax&lt;/h2&gt;
 
 &lt;p&gt;The first step is to enable MathJax on pages that you would like to have typeset math. There are multiple ways to do this (adventurous readers can consult the &lt;a href=&#34;http://docs.mathjax.org/en/latest/configuration.html&#34;&gt;Loading and Configuring&lt;/a&gt; section of the MathJax documentation for additional methods of including MathJax), but the easiest way is to use the secure MathJax CDN by including the following HTML snippet in the source of a page:&lt;/p&gt;
 
@@ -2022,15 +2002,15 @@ cd ..
 
 &lt;p&gt;One way to ensure that this code is included in all pages is to put it in one of the templates that live in the &lt;code&gt;layouts/partials/&lt;/code&gt; directory. For example, I have included this in the bottom of my template &lt;code&gt;footer.html&lt;/code&gt; because I know that the footer will be included in every page of my website.&lt;/p&gt;
 
-&lt;h3 id=&#34;options-and-features:d97e838dbdddd8f0d2665b07f195e51f&#34;&gt;Options and Features&lt;/h3&gt;
+&lt;h3 id=&#34;options-and-features&#34;&gt;Options and Features&lt;/h3&gt;
 
 &lt;p&gt;MathJax is a stable open-source library with many features. I encourage the interested reader to view the &lt;a href=&#34;http://docs.mathjax.org/en/latest/index.html&#34;&gt;MathJax Documentation&lt;/a&gt;, specifically the sections on &lt;a href=&#34;http://docs.mathjax.org/en/latest/index.html#basic-usage&#34;&gt;Basic Usage&lt;/a&gt; and &lt;a href=&#34;http://docs.mathjax.org/en/latest/index.html#mathjax-configuration-options&#34;&gt;MathJax Configuration Options&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;issues-with-markdown:d97e838dbdddd8f0d2665b07f195e51f&#34;&gt;Issues with Markdown&lt;/h2&gt;
+&lt;h2 id=&#34;issues-with-markdown&#34;&gt;Issues with Markdown&lt;/h2&gt;
 
 &lt;p&gt;After enabling MathJax, any math entered in-between proper markers (see documentation) will be processed and typeset in the web page. One issue that comes up, however, with Markdown is that the underscore character (&lt;code&gt;_&lt;/code&gt;) is interpreted by Markdown as a way to wrap text in &lt;code&gt;emph&lt;/code&gt; blocks while LaTeX (MathJax) interprets the underscore as a way to create a subscript. This &amp;ldquo;double speak&amp;rdquo; of the underscore can result in some unexpected and unwanted behavior.&lt;/p&gt;
 
-&lt;h3 id=&#34;solution:d97e838dbdddd8f0d2665b07f195e51f&#34;&gt;Solution&lt;/h3&gt;
+&lt;h3 id=&#34;solution&#34;&gt;Solution&lt;/h3&gt;
 
 &lt;p&gt;There are multiple ways to remedy this problem. One solution is to simply escape each underscore in your math code by entering &lt;code&gt;\_&lt;/code&gt; instead of &lt;code&gt;_&lt;/code&gt;. This can become quite tedious if the equations you are entering are full of subscripts.&lt;/p&gt;
 
@@ -2074,7 +2054,7 @@ MathJax.Hub.Config({
 
 &lt;p&gt;In the CSS snippet, notice the line &lt;code&gt;color: #515151;&lt;/code&gt;. &lt;code&gt;#515151&lt;/code&gt; is the value assigned to the &lt;code&gt;color&lt;/code&gt; attribute of the &lt;code&gt;body&lt;/code&gt; class in my CSS. In order for the equations to fit in with the body of a web page, this value should be the same as the color of the body.&lt;/p&gt;
 
-&lt;h3 id=&#34;usage:d97e838dbdddd8f0d2665b07f195e51f&#34;&gt;Usage&lt;/h3&gt;
+&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
 
 &lt;p&gt;With this setup, everything is in place for a natural usage of MathJax on pages generated using Hugo. In order to include inline mathematics, just put LaTeX code in between &lt;code&gt;`$ TeX Code $`&lt;/code&gt; or &lt;code&gt;`\( TeX Code \)`&lt;/code&gt;. To include display style mathematics, just put LaTeX code in between &lt;code&gt;&amp;lt;div&amp;gt;$$TeX Code$$&amp;lt;/div&amp;gt;&lt;/code&gt;. All the math will be properly typeset and displayed within your Hugo generated web page!&lt;/p&gt;
 </description>
@@ -2088,7 +2068,7 @@ MathJax.Hub.Config({
       <guid>http://tutswiki.com/tutorials/migrate-from-jekyll/</guid>
       <description>
 
-&lt;h2 id=&#34;move-static-content-to-static:964c172ef5e837f03573891408d8d631&#34;&gt;Move static content to &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;move-static-content-to-static&#34;&gt;Move static content to &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;Jekyll has a rule that any directory not starting with &lt;code&gt;_&lt;/code&gt; will be copied as-is to the &lt;code&gt;_site&lt;/code&gt; output. Hugo keeps all static content under &lt;code&gt;static&lt;/code&gt;. You should therefore move it all there.
 With Jekyll, something that looked like&lt;/p&gt;
@@ -2108,11 +2088,11 @@ With Jekyll, something that looked like&lt;/p&gt;
 
 &lt;p&gt;Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as &lt;code&gt;CNAME&lt;/code&gt;) to be moved to &lt;code&gt;static&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;create-your-hugo-configuration-file:964c172ef5e837f03573891408d8d631&#34;&gt;Create your Hugo configuration file&lt;/h2&gt;
+&lt;h2 id=&#34;create-your-hugo-configuration-file&#34;&gt;Create your Hugo configuration file&lt;/h2&gt;
 
 &lt;p&gt;Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the &lt;a href=&#34;http://tutswiki.com/overview/configuration/&#34;&gt;Hugo configuration documentation&lt;/a&gt; for details.&lt;/p&gt;
 
-&lt;h2 id=&#34;set-your-configuration-publish-folder-to-site:964c172ef5e837f03573891408d8d631&#34;&gt;Set your configuration publish folder to &lt;code&gt;_site&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;set-your-configuration-publish-folder-to-site&#34;&gt;Set your configuration publish folder to &lt;code&gt;_site&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;The default is for Jekyll to publish to &lt;code&gt;_site&lt;/code&gt; and for Hugo to publish to &lt;code&gt;public&lt;/code&gt;. If, like me, you have &lt;a href=&#34;http://blog.blindgaenger.net/generate_github_pages_in_a_submodule.html&#34;&gt;&lt;code&gt;_site&lt;/code&gt; mapped to a git submodule on the &lt;code&gt;gh-pages&lt;/code&gt; branch&lt;/a&gt;, you&amp;rsquo;ll want to do one of two alternatives:&lt;/p&gt;
 
@@ -2134,17 +2114,17 @@ git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;convert-jekyll-templates-to-hugo-templates:964c172ef5e837f03573891408d8d631&#34;&gt;Convert Jekyll templates to Hugo templates&lt;/h2&gt;
+&lt;h2 id=&#34;convert-jekyll-templates-to-hugo-templates&#34;&gt;Convert Jekyll templates to Hugo templates&lt;/h2&gt;
 
 &lt;p&gt;That&amp;rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to &lt;a href=&#34;http://jekyllrb.com/docs/templates/&#34;&gt;Jekyll&amp;rsquo;s template documentation&lt;/a&gt; if you need to refresh your memory on how you built your blog and &lt;a href=&#34;http://tutswiki.com/layout/templates/&#34;&gt;Hugo&amp;rsquo;s template&lt;/a&gt; to learn Hugo&amp;rsquo;s way.&lt;/p&gt;
 
 &lt;p&gt;As a single reference data point, converting my templates for &lt;a href=&#34;http://heyitsalex.net/&#34;&gt;heyitsalex.net&lt;/a&gt; took me no more than a few hours.&lt;/p&gt;
 
-&lt;h2 id=&#34;convert-jekyll-plugins-to-hugo-shortcodes:964c172ef5e837f03573891408d8d631&#34;&gt;Convert Jekyll plugins to Hugo shortcodes&lt;/h2&gt;
+&lt;h2 id=&#34;convert-jekyll-plugins-to-hugo-shortcodes&#34;&gt;Convert Jekyll plugins to Hugo shortcodes&lt;/h2&gt;
 
 &lt;p&gt;Jekyll has &lt;a href=&#34;http://jekyllrb.com/docs/plugins/&#34;&gt;plugins&lt;/a&gt;; Hugo has &lt;a href=&#34;http://tutswiki.com/doc/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;. It&amp;rsquo;s fairly trivial to do a port.&lt;/p&gt;
 
-&lt;h3 id=&#34;implementation:964c172ef5e837f03573891408d8d631&#34;&gt;Implementation&lt;/h3&gt;
+&lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;
 
 &lt;p&gt;As an example, I was using a custom &lt;a href=&#34;https://github.com/alexandre-normand/alexandre-normand/blob/74bb12036a71334fdb7dba84e073382fc06908ec/_plugins/image_tag.rb&#34;&gt;&lt;code&gt;image_tag&lt;/code&gt;&lt;/a&gt; plugin to generate figures with caption when running Jekyll. As I read about shortcodes, I found Hugo had a nice built-in shortcode that does exactly the same thing.&lt;/p&gt;
 
@@ -2227,7 +2207,7 @@ Liquid::Template.register_tag(&#39;image&#39;, Jekyll::ImageTag)
 &amp;lt;!-- image --&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;usage:964c172ef5e837f03573891408d8d631&#34;&gt;Usage&lt;/h3&gt;
+&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
 
 &lt;p&gt;I simply changed:&lt;/p&gt;
 
@@ -2241,17 +2221,17 @@ Liquid::Template.register_tag(&#39;image&#39;, Jekyll::ImageTag)
 
 &lt;p&gt;As a bonus, the shortcode named parameters are, arguably, more readable.&lt;/p&gt;
 
-&lt;h2 id=&#34;finishing-touches:964c172ef5e837f03573891408d8d631&#34;&gt;Finishing touches&lt;/h2&gt;
+&lt;h2 id=&#34;finishing-touches&#34;&gt;Finishing touches&lt;/h2&gt;
 
-&lt;h3 id=&#34;fix-content:964c172ef5e837f03573891408d8d631&#34;&gt;Fix content&lt;/h3&gt;
+&lt;h3 id=&#34;fix-content&#34;&gt;Fix content&lt;/h3&gt;
 
 &lt;p&gt;Depending on the amount of customization that was done with each post with Jekyll, this step will require more or less effort. There are no hard and fast rules here except that &lt;code&gt;hugo server --watch&lt;/code&gt; is your friend. Test your changes and fix errors as needed.&lt;/p&gt;
 
-&lt;h3 id=&#34;clean-up:964c172ef5e837f03573891408d8d631&#34;&gt;Clean up&lt;/h3&gt;
+&lt;h3 id=&#34;clean-up&#34;&gt;Clean up&lt;/h3&gt;
 
 &lt;p&gt;You&amp;rsquo;ll want to remove the Jekyll configuration at this point. If you have anything else that isn&amp;rsquo;t used, delete it.&lt;/p&gt;
 
-&lt;h2 id=&#34;a-practical-example-in-a-diff:964c172ef5e837f03573891408d8d631&#34;&gt;A practical example in a diff&lt;/h2&gt;
+&lt;h2 id=&#34;a-practical-example-in-a-diff&#34;&gt;A practical example in a diff&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://heyitsalex.net/&#34;&gt;Hey, it&amp;rsquo;s Alex&lt;/a&gt; was migrated in less than a &lt;em&gt;father-with-kids day&lt;/em&gt; from Jekyll to Hugo. You can see all the changes (and screw-ups) by looking at this &lt;a href=&#34;https://github.com/alexandre-normand/alexandre-normand/compare/869d69435bd2665c3fbf5b5c78d4c22759d7613a...b7f6605b1265e83b4b81495423294208cc74d610&#34;&gt;diff&lt;/a&gt;.&lt;/p&gt;
 </description>

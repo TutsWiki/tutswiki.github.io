@@ -4,7 +4,6 @@
   <url>
     <loc>http://tutswiki.com/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -18,12 +17,12 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_config/</loc>
+    <loc>http://tutswiki.com/commands/hugo_check/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_check/</loc>
+    <loc>http://tutswiki.com/commands/hugo_config/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -33,12 +32,17 @@
   </url>
   
   <url>
+    <loc>http://tutswiki.com/commands/hugo_convert_tojson/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tutswiki.com/commands/hugo_convert_totoml/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_convert_tojson/</loc>
+    <loc>http://tutswiki.com/commands/hugo_convert_toyaml/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -53,7 +57,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_convert_toyaml/</loc>
+    <loc>http://tutswiki.com/commands/hugo_help/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -63,17 +67,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_help/</loc>
-    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://tutswiki.com/commands/hugo_list_drafts/</loc>
-    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/commands/hugo_new/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -83,17 +77,22 @@
   </url>
   
   <url>
+    <loc>http://tutswiki.com/commands/hugo_new/</loc>
+    <lastmod>2015-05-21T20:03:19+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tutswiki.com/commands/hugo_new_site/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_server/</loc>
+    <loc>http://tutswiki.com/commands/hugo_new_theme/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/commands/hugo_new_theme/</loc>
+    <loc>http://tutswiki.com/commands/hugo_server/</loc>
     <lastmod>2015-05-21T20:03:19+02:00</lastmod>
   </url>
   
@@ -143,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/showcase/vurt.co/</loc>
+    <loc>http://tutswiki.com/showcase/vurt/</loc>
     <lastmod>2014-08-26T12:09:39-04:00</lastmod>
   </url>
   
@@ -173,7 +172,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/showcase/ninya.io/</loc>
+    <loc>http://tutswiki.com/showcase/ninya/</loc>
     <lastmod>2014-08-26T09:47:00-04:00</lastmod>
   </url>
   
@@ -188,7 +187,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/showcase/lk4d4.darth.io/</loc>
+    <loc>http://tutswiki.com/showcase/lk4d4/</loc>
     <lastmod>2014-08-25T18:59:30-04:00</lastmod>
   </url>
   
@@ -343,7 +342,12 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/meta/release-notes/</loc>
+    <loc>http://tutswiki.com/taxonomies/overview/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/overview/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -353,12 +357,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/taxonomies/overview/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/templates/overview/</loc>
+    <loc>http://tutswiki.com/meta/release-notes/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -393,7 +392,17 @@
   </url>
   
   <url>
+    <loc>http://tutswiki.com/taxonomies/displaying/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tutswiki.com/content/front-matter/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/templates/functions/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -404,16 +413,6 @@
   
   <url>
     <loc>http://tutswiki.com/overview/installing/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/taxonomies/displaying/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/templates/functions/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -443,7 +442,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/overview/usage/</loc>
+    <loc>http://tutswiki.com/templates/content/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -453,7 +452,7 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/templates/content/</loc>
+    <loc>http://tutswiki.com/overview/usage/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -468,17 +467,17 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/content/types/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://tutswiki.com/overview/configuration/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://tutswiki.com/templates/list/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/content/types/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -498,17 +497,17 @@
   </url>
   
   <url>
+    <loc>http://tutswiki.com/templates/homepage/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tutswiki.com/meta/license/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://tutswiki.com/overview/source-directory/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/templates/homepage/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -543,12 +542,12 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/content/example/</loc>
+    <loc>http://tutswiki.com/templates/views/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/templates/views/</loc>
+    <loc>http://tutswiki.com/content/example/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -568,12 +567,12 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/extras/shortcodes/</loc>
+    <loc>http://tutswiki.com/templates/partials/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/templates/partials/</loc>
+    <loc>http://tutswiki.com/extras/shortcodes/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   

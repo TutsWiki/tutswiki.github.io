@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Shortcodes</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -434,7 +434,7 @@ using a predefined template. Note that shortcodes will not work in template
 files&mdash;if you need a functionality like that in a template, you most likely
 want a <a href="/templates/partials/">partial template</a> instead.</p>
 
-<h2 id="using-a-shortcode:10ef41a6c37b90d6a6452868d5ba00ba">Using a shortcode</h2>
+<h2 id="using-a-shortcode">Using a shortcode</h2>
 
 <p>In your content files, a shortcode can be called by using &lsquo;<code>{{% name parameters
 %}}</code>&rsquo; respectively. Shortcodes are space delimited (parameters with spaces
@@ -454,35 +454,35 @@ shortcodes match (name only), the closing being prepended with a slash.</p>
 
 <p>The examples above use two different delimiters, the difference being the <code>%</code> and the <code>&lt;</code> character:</p>
 
-<h3 id="shortcodes-with-markdown:10ef41a6c37b90d6a6452868d5ba00ba">Shortcodes with Markdown</h3>
+<h3 id="shortcodes-with-markdown">Shortcodes with Markdown</h3>
 
 <p>The <code>%</code> characters indicates that the shortcode&rsquo;s inner content needs further processing by the page&rsquo;s rendering processor (i.e. Markdown), needed to get the <strong>bold</strong> text in the example below:</p>
 
 <pre><code>{{% myshortcode %}}Hello **World!**{{% /myshortcode %}}
 </code></pre>
 
-<h3 id="shortcodes-without-markdown:10ef41a6c37b90d6a6452868d5ba00ba">Shortcodes without Markdown</h3>
+<h3 id="shortcodes-without-markdown">Shortcodes without Markdown</h3>
 
 <p>The <code>&lt;</code> character indicates that the shortcode&rsquo;s inner content doesn&rsquo;t need any further rendering, this will typically be pure HTML:</p>
 
 <pre><code>{{&lt; myshortcode &gt;}}&lt;p&gt;Hello &lt;strong&gt;World!&lt;/strong&gt;&lt;/p&gt;{{&lt; /myshortcode &gt;}}
 </code></pre>
 
-<h2 id="hugo-shortcodes:10ef41a6c37b90d6a6452868d5ba00ba">Hugo Shortcodes</h2>
+<h2 id="hugo-shortcodes">Hugo Shortcodes</h2>
 
 <p>Hugo ships with a set of predefined shortcodes.</p>
 
-<h3 id="highlight:10ef41a6c37b90d6a6452868d5ba00ba">highlight</h3>
+<h3 id="highlight">highlight</h3>
 
 <p>This shortcode will convert the source code provided into syntax highlighted
 HTML. Read more on <a href="/extras/highlighting/">highlighting</a>.</p>
 
-<h4 id="usage:10ef41a6c37b90d6a6452868d5ba00ba">Usage</h4>
+<h4 id="usage">Usage</h4>
 
 <p><code>highlight</code> takes exactly one required parameter of <em>language</em> and requires a
 closing shortcode.</p>
 
-<h4 id="example:10ef41a6c37b90d6a6452868d5ba00ba">Example</h4>
+<h4 id="example">Example</h4>
 
 <pre><code>{{&lt; highlight html &gt;}}
 &lt;section id=&quot;main&quot;&gt;
@@ -496,7 +496,7 @@ closing shortcode.</p>
 {{&lt; /highlight &gt;}}
 </code></pre>
 
-<h4 id="example-output:10ef41a6c37b90d6a6452868d5ba00ba">Example Output</h4>
+<h4 id="example-output">Example Output</h4>
 
 <pre><code>&lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span style=&quot;color: #a6e22e&quot;&gt;id=&lt;/span&gt;&lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
@@ -508,12 +508,12 @@ closing shortcode.</p>
 &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
 </code></pre>
 
-<h3 id="figure:10ef41a6c37b90d6a6452868d5ba00ba">figure</h3>
+<h3 id="figure">figure</h3>
 
 <p><code>figure</code> is simply an extension of the image capabilities present with Markdown.
 <code>figure</code> provides the ability to add captions, CSS classes, alt text, links etc.</p>
 
-<h4 id="usage-1:10ef41a6c37b90d6a6452868d5ba00ba">Usage</h4>
+<h4 id="usage-1">Usage</h4>
 
 <p><code>figure</code> can use the following parameters:</p>
 
@@ -528,12 +528,12 @@ closing shortcode.</p>
 <li>alt</li>
 </ul>
 
-<h4 id="example-1:10ef41a6c37b90d6a6452868d5ba00ba">Example</h4>
+<h4 id="example-1">Example</h4>
 
 <pre><code>{{&lt; figure src=&quot;/media/spf13.jpg&quot; title=&quot;Steve Francia&quot; &gt;}}
 </code></pre>
 
-<h4 id="example-output-1:10ef41a6c37b90d6a6452868d5ba00ba">Example output</h4>
+<h4 id="example-output-1">Example output</h4>
 
 <pre><code>&lt;figure&gt;
     &lt;img src=&quot;/media/spf13.jpg&quot;  /&gt;
@@ -543,7 +543,7 @@ closing shortcode.</p>
 &lt;/figure&gt;
 </code></pre>
 
-<h3 id="ref-relref:10ef41a6c37b90d6a6452868d5ba00ba">ref, relref</h3>
+<h3 id="ref-relref">ref, relref</h3>
 
 <p>These shortcodes will look up the pages by their relative path (e.g.,
 <code>blog/post.md</code>) or their logical name (<code>post.md</code>) and return the permalink
@@ -554,17 +554,17 @@ for the header links generated by Hugo.</p>
 
 <p>Read more on <a href="http://tutswiki.com/extras/crossreferences/">cross-references</a>.</p>
 
-<h4 id="usage-2:10ef41a6c37b90d6a6452868d5ba00ba">Usage</h4>
+<h4 id="usage-2">Usage</h4>
 
 <p><code>ref</code> and <code>relref</code> take exactly one required parameter of <em>reference</em>.</p>
 
-<h4 id="example-2:10ef41a6c37b90d6a6452868d5ba00ba">Example</h4>
+<h4 id="example-2">Example</h4>
 
 <pre><code>[Neat]({{&lt; ref &quot;blog/neat.md&quot; &gt;}})
 [Who]({{&lt; relref &quot;about.md#who&quot; &gt;}})
 </code></pre>
 
-<h4 id="example-output-2:10ef41a6c37b90d6a6452868d5ba00ba">Example Output</h4>
+<h4 id="example-output-2">Example Output</h4>
 
 <p>Assuming that standard Hugo pretty URLs are turned on.</p>
 
@@ -572,7 +572,7 @@ for the header links generated by Hugo.</p>
 &lt;a href=&quot;/about/#who:c28654c202e73453784cfd2c5ab356c0&quot;&gt;Who&lt;/a&gt;
 </code></pre>
 
-<h2 id="creating-your-own-shortcodes:10ef41a6c37b90d6a6452868d5ba00ba">Creating your own shortcodes</h2>
+<h2 id="creating-your-own-shortcodes">Creating your own shortcodes</h2>
 
 <p>To create a shortcode, place a template in the layouts/shortcodes directory. The
 template name will be the name of the shortcode.</p>
@@ -621,7 +621,7 @@ to the user.</p>
 
 <p>You can also use the variable <code>.Page</code> to access all the normal <a href="/templates/variables/">Page Variables</a>.</p>
 
-<h2 id="single-positional-example-youtube:10ef41a6c37b90d6a6452868d5ba00ba">Single Positional Example: youtube</h2>
+<h2 id="single-positional-example-youtube">Single Positional Example: youtube</h2>
 
 <pre><code>{{&lt; youtube 09jf3ow9jfw &gt;}}
 </code></pre>
@@ -645,7 +645,7 @@ to the user.</p>
 &lt;/div&gt;
 </code></pre>
 
-<h2 id="single-named-example-image-with-caption:10ef41a6c37b90d6a6452868d5ba00ba">Single Named Example: image with caption</h2>
+<h2 id="single-named-example-image-with-caption">Single Named Example: image with caption</h2>
 
 <pre><code>{{&lt; img src=&quot;/media/spf13.jpg&quot; title=&quot;Steve Francia&quot; &gt;}}
 </code></pre>
@@ -682,7 +682,7 @@ to the user.</p>
 &lt;/figure&gt;
 </code></pre>
 
-<h2 id="paired-example-highlight:10ef41a6c37b90d6a6452868d5ba00ba">Paired Example: Highlight</h2>
+<h2 id="paired-example-highlight">Paired Example: Highlight</h2>
 
 <p><em>Hugo already ships with the <code>highlight</code> shortcode</em></p>
 
@@ -717,36 +717,36 @@ called <code>highlight</code> which uses Pygments to add the highlighting code.<
 <ul>
 <li>
 <ul>
-<li><a href="#using-a-shortcode:10ef41a6c37b90d6a6452868d5ba00ba">Using a shortcode</a>
+<li><a href="#using-a-shortcode">Using a shortcode</a>
 <ul>
-<li><a href="#shortcodes-with-markdown:10ef41a6c37b90d6a6452868d5ba00ba">Shortcodes with Markdown</a></li>
-<li><a href="#shortcodes-without-markdown:10ef41a6c37b90d6a6452868d5ba00ba">Shortcodes without Markdown</a></li>
+<li><a href="#shortcodes-with-markdown">Shortcodes with Markdown</a></li>
+<li><a href="#shortcodes-without-markdown">Shortcodes without Markdown</a></li>
 </ul></li>
-<li><a href="#hugo-shortcodes:10ef41a6c37b90d6a6452868d5ba00ba">Hugo Shortcodes</a>
+<li><a href="#hugo-shortcodes">Hugo Shortcodes</a>
 <ul>
-<li><a href="#highlight:10ef41a6c37b90d6a6452868d5ba00ba">highlight</a>
+<li><a href="#highlight">highlight</a>
 <ul>
-<li><a href="#usage:10ef41a6c37b90d6a6452868d5ba00ba">Usage</a></li>
-<li><a href="#example:10ef41a6c37b90d6a6452868d5ba00ba">Example</a></li>
-<li><a href="#example-output:10ef41a6c37b90d6a6452868d5ba00ba">Example Output</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#example-output">Example Output</a></li>
 </ul></li>
-<li><a href="#figure:10ef41a6c37b90d6a6452868d5ba00ba">figure</a>
+<li><a href="#figure">figure</a>
 <ul>
-<li><a href="#usage-1:10ef41a6c37b90d6a6452868d5ba00ba">Usage</a></li>
-<li><a href="#example-1:10ef41a6c37b90d6a6452868d5ba00ba">Example</a></li>
-<li><a href="#example-output-1:10ef41a6c37b90d6a6452868d5ba00ba">Example output</a></li>
+<li><a href="#usage-1">Usage</a></li>
+<li><a href="#example-1">Example</a></li>
+<li><a href="#example-output-1">Example output</a></li>
 </ul></li>
-<li><a href="#ref-relref:10ef41a6c37b90d6a6452868d5ba00ba">ref, relref</a>
+<li><a href="#ref-relref">ref, relref</a>
 <ul>
-<li><a href="#usage-2:10ef41a6c37b90d6a6452868d5ba00ba">Usage</a></li>
-<li><a href="#example-2:10ef41a6c37b90d6a6452868d5ba00ba">Example</a></li>
-<li><a href="#example-output-2:10ef41a6c37b90d6a6452868d5ba00ba">Example Output</a></li>
+<li><a href="#usage-2">Usage</a></li>
+<li><a href="#example-2">Example</a></li>
+<li><a href="#example-output-2">Example Output</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#creating-your-own-shortcodes:10ef41a6c37b90d6a6452868d5ba00ba">Creating your own shortcodes</a></li>
-<li><a href="#single-positional-example-youtube:10ef41a6c37b90d6a6452868d5ba00ba">Single Positional Example: youtube</a></li>
-<li><a href="#single-named-example-image-with-caption:10ef41a6c37b90d6a6452868d5ba00ba">Single Named Example: image with caption</a></li>
-<li><a href="#paired-example-highlight:10ef41a6c37b90d6a6452868d5ba00ba">Paired Example: Highlight</a></li>
+<li><a href="#creating-your-own-shortcodes">Creating your own shortcodes</a></li>
+<li><a href="#single-positional-example-youtube">Single Positional Example: youtube</a></li>
+<li><a href="#single-named-example-image-with-caption">Single Named Example: image with caption</a></li>
+<li><a href="#paired-example-highlight">Paired Example: Highlight</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -755,7 +755,7 @@ called <code>highlight</code> which uses Pygments to add the highlighting code.<
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

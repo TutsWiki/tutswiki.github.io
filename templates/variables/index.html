@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Template Variables</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -421,7 +421,7 @@
 <p>Hugo makes a set of values available to the templates. Go templates are context based. The following
 are available in the context for the templates.</p>
 
-<h2 id="page-variables:2b8b8ac4006be88c769f5e3fd99b009a">Page Variables</h2>
+<h2 id="page-variables">Page Variables</h2>
 
 <p>The following is a list of most of the accessible variables which can be
 defined for a piece of content. Many of these will be defined in the front
@@ -455,10 +455,10 @@ matter, content or derived from file location.</p>
 <strong>.Weight</strong> Assigned weight (in the front matter) to this content, used in sorting.<br>
 <strong>.IsNode</strong> Always false for pages.<br>
 <strong>.IsPage</strong> Always true for page.<br>
-<strong>.Site</strong> See <a href="#site-variables:2b8b8ac4006be88c769f5e3fd99b009a">Site Variables</a> below.<br>
-<strong>.Hugo</strong> See <a href="#hugo-variables:2b8b8ac4006be88c769f5e3fd99b009a">Hugo Variables</a> below.<br></p>
+<strong>.Site</strong> See <a href="#site-variables">Site Variables</a> below.<br>
+<strong>.Hugo</strong> See <a href="#hugo-variables">Hugo Variables</a> below.<br></p>
 
-<h2 id="page-params:2b8b8ac4006be88c769f5e3fd99b009a">Page Params</h2>
+<h2 id="page-params">Page Params</h2>
 
 <p>Any other value defined in the front matter, including taxonomies, will be made available under <code>.Params</code>.
 Take for example I&rsquo;m using <em>tags</em> and <em>categories</em> as my taxonomies. The following would be how I would access them:</p>
@@ -470,7 +470,7 @@ Take for example I&rsquo;m using <em>tags</em> and <em>categories</em> as my tax
 
 <p><strong>All Params are only accessible using all lowercase characters.</strong></p>
 
-<h2 id="node-variables:2b8b8ac4006be88c769f5e3fd99b009a">Node Variables</h2>
+<h2 id="node-variables">Node Variables</h2>
 
 <p>In Hugo, a node is any page not rendered directly by a content file. This
 includes taxonomies, lists and the homepage.</p>
@@ -487,10 +487,10 @@ includes taxonomies, lists and the homepage.</p>
 <strong>.Data</strong> The data specific to this type of node.<br>
 <strong>.IsNode</strong> Always true for nodes.<br>
 <strong>.IsPage</strong> Always false for nodes.<br>
-<strong>.Site</strong> See <a href="#site-variables:2b8b8ac4006be88c769f5e3fd99b009a">Site Variables</a> below.<br>
-<strong>.Hugo</strong> See <a href="#hugo-variables:2b8b8ac4006be88c769f5e3fd99b009a">Hugo Variables</a> below.<br></p>
+<strong>.Site</strong> See <a href="#site-variables">Site Variables</a> below.<br>
+<strong>.Hugo</strong> See <a href="#hugo-variables">Hugo Variables</a> below.<br></p>
 
-<h3 id="taxonomy-term-variables:2b8b8ac4006be88c769f5e3fd99b009a">Taxonomy Term Variables</h3>
+<h3 id="taxonomy-term-variables">Taxonomy Term Variables</h3>
 
 <p><a href="/templates/terms/">Taxonomy Terms</a> pages are of the type &ldquo;node&rdquo; and have the following additional variables.</p>
 
@@ -504,7 +504,7 @@ includes taxonomies, lists and the homepage.</p>
 
 <p>The last two can also be reversed: <strong>.Data.Terms.Alphabetical.Reverse</strong>, <strong>.Data.Terms.ByCount.Reverse</strong>.</p>
 
-<h2 id="site-variables:2b8b8ac4006be88c769f5e3fd99b009a">Site Variables</h2>
+<h2 id="site-variables">Site Variables</h2>
 
 <p>Also available is <code>.Site</code> which has the following:</p>
 
@@ -535,7 +535,7 @@ includes taxonomies, lists and the homepage.</p>
 <strong>.Site.BuildDrafts</strong> A boolean (Default: false) to indicate whether to build drafts. Defined in the site configuration.<br>
 <strong>.Site.Data</strong>  Custom data, see <a href="/extras/datafiles/">Data Files</a>.<br></p>
 
-<h2 id="hugo-variables:2b8b8ac4006be88c769f5e3fd99b009a">Hugo Variables</h2>
+<h2 id="hugo-variables">Hugo Variables</h2>
 
 <p>Also available is <code>.Hugo</code> which has the following:</p>
 
@@ -550,14 +550,14 @@ includes taxonomies, lists and the homepage.</p>
 <ul>
 <li>
 <ul>
-<li><a href="#page-variables:2b8b8ac4006be88c769f5e3fd99b009a">Page Variables</a></li>
-<li><a href="#page-params:2b8b8ac4006be88c769f5e3fd99b009a">Page Params</a></li>
-<li><a href="#node-variables:2b8b8ac4006be88c769f5e3fd99b009a">Node Variables</a>
+<li><a href="#page-variables">Page Variables</a></li>
+<li><a href="#page-params">Page Params</a></li>
+<li><a href="#node-variables">Node Variables</a>
 <ul>
-<li><a href="#taxonomy-term-variables:2b8b8ac4006be88c769f5e3fd99b009a">Taxonomy Term Variables</a></li>
+<li><a href="#taxonomy-term-variables">Taxonomy Term Variables</a></li>
 </ul></li>
-<li><a href="#site-variables:2b8b8ac4006be88c769f5e3fd99b009a">Site Variables</a></li>
-<li><a href="#hugo-variables:2b8b8ac4006be88c769f5e3fd99b009a">Hugo Variables</a></li>
+<li><a href="#site-variables">Site Variables</a></li>
+<li><a href="#hugo-variables">Hugo Variables</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -566,7 +566,7 @@ includes taxonomies, lists and the homepage.</p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

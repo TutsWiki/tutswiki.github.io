@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Automated deployments with Wercker</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -418,13 +418,13 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="automated-deployments-with-wercker:b122a196014951ebab85fff56cc6436b">Automated deployments with Wercker</h1>
+<h1 id="automated-deployments-with-wercker">Automated deployments with Wercker</h1>
 
 <p>In this tutorial we will set up a basic Hugo project and then configure a free tool called Wercker to automatically deploy the generated site any time we add an article. We will deploy it to GitHub pages as that is easiest to set up, but you will see that we can use anything. This tutorial takes you through every step of the process, complete with screenshots, and is fairly long.</p>
 
 <p>The  assumptions made for this tutorial are that you know how to use git for version control, and have a GitHub account. In case you are unfamiliar with these, in their <a href="https://help.github.com/articles/set-up-git/">help section</a> GitHub has an explanation of how to install and use git and you can easily sign up for a free GitHub account as well.</p>
 
-<h2 id="creating-a-basic-hugo-site:b122a196014951ebab85fff56cc6436b">Creating a basic Hugo site</h2>
+<h2 id="creating-a-basic-hugo-site">Creating a basic Hugo site</h2>
 
 <p>There are already <a href="http://gohugo.io/overview/quickstart/">pages</a> dedicated to describing how to set up a Hugo site so we will only go through the most basic steps required to get a site up and running before we dive into the Wercker configuration. All the work for setting up the project is done using the command line, and kept as simple as possible.</p>
 
@@ -458,10 +458,9 @@ git clone https://github.com/spf13/herring-cove.git
 
 <p>If everything is fine, you should be able to see something similar to the image below when you go to localhost:1313 in your browser.</p>
 
-<p><img src="/img/tutorials/creating-a-basic-hugo-site.png" alt="" />
-</p>
+<p><img src="/img/tutorials/creating-a-basic-hugo-site.png" alt="" /></p>
 
-<h2 id="setting-up-version-control:b122a196014951ebab85fff56cc6436b">Setting up version control</h2>
+<h2 id="setting-up-version-control">Setting up version control</h2>
 
 <p>Adding git to our project is done by running the <code>git init</code> command from the root directory of the project.</p>
 
@@ -484,7 +483,7 @@ git clone https://github.com/spf13/herring-cove.git
 git commit -m &quot;Initial commit&quot;
 </code></pre>
 
-<h2 id="adding-the-project-to-github:b122a196014951ebab85fff56cc6436b">Adding the project to GitHub</h2>
+<h2 id="adding-the-project-to-github">Adding the project to GitHub</h2>
 
 <p>First we&rsquo;ll create a new repository. You can do this by clicking on the <strong>+</strong> sign at the top right, or by going to <a href="https://github.com/new">https://github.com/new</a></p>
 
@@ -494,80 +493,69 @@ git commit -m &quot;Initial commit&quot;
 git push -u origin master
 </code></pre>
 
-<p><img src="/img/tutorials/adding-the-project-to-github.png" alt="" />
-</p>
+<p><img src="/img/tutorials/adding-the-project-to-github.png" alt="" /></p>
 
-<h2 id="welcome-to-wercker:b122a196014951ebab85fff56cc6436b">Welcome to wercker</h2>
+<h2 id="welcome-to-wercker">Welcome to wercker</h2>
 
 <p>Let&rsquo;s start by setting up an account for Wercker. To do so we&rsquo;ll go to <a href="http://wercker.com">http://wercker.com</a> and click on the <strong>register</strong> link at the top-right corner.</p>
 
-<p><img src="/img/tutorials/welcome-to-wercker.png" alt="" />
-</p>
+<p><img src="/img/tutorials/welcome-to-wercker.png" alt="" /></p>
 
-<h2 id="register:b122a196014951ebab85fff56cc6436b">Register</h2>
+<h2 id="register">Register</h2>
 
 <p>To make life easier for ourselves, we will then register using GitHub. If you don&rsquo;t have a GitHub account, or don&rsquo;t want to use it for your account, you can of course register with a username and password as well.</p>
 
-<p><img src="/img/tutorials/register.png" alt="" />
-</p>
+<p><img src="/img/tutorials/register.png" alt="" /></p>
 
-<h2 id="connect-github-bitbucket:b122a196014951ebab85fff56cc6436b">Connect GitHub/Bitbucket</h2>
+<h2 id="connect-github-bitbucket">Connect GitHub/Bitbucket</h2>
 
 <p>After you are registered, you will need to link your GitHub and/or Bitbucket account to Wercker. You do this by going to your profile settings, and then &ldquo;Git connections&rdquo; If you registered using GitHub it will most likely look like the below. To connect a missing service, simply click on the connect button which will then send you to either GitHub or Bitbucket where you might need to log in and approve their access to your account.</p>
 
-<p><img src="/img/tutorials/connect-github-bitbucket.png" alt="" />
-</p>
+<p><img src="/img/tutorials/connect-github-bitbucket.png" alt="" /></p>
 
-<h2 id="add-your-project:b122a196014951ebab85fff56cc6436b">Add your project</h2>
+<h2 id="add-your-project">Add your project</h2>
 
 <p>Now that we&rsquo;ve got all the preliminaries out of the way, it&rsquo;s time to set up our application. For this we click on the <strong>+ Add</strong> button next to Apps, and then we&rsquo;ll choose to use GitHub as our provider.</p>
 
-<p><img src="/img/tutorials/add-your-project.png" alt="" />
-</p>
+<p><img src="/img/tutorials/add-your-project.png" alt="" /></p>
 
-<h2 id="select-a-repository:b122a196014951ebab85fff56cc6436b">Select a repository</h2>
+<h2 id="select-a-repository">Select a repository</h2>
 
 <p>Clicking this will make Wercker show you all the repositories you have on GitHub, but you can easily filter them as well. So we search for our repository, select it, and then click on &ldquo;Use selected repo&rdquo;.</p>
 
-<p><img src="/img/tutorials/select-a-repository.png" alt="" />
-</p>
+<p><img src="/img/tutorials/select-a-repository.png" alt="" /></p>
 
-<h2 id="configure-access:b122a196014951ebab85fff56cc6436b">Configure access</h2>
+<h2 id="configure-access">Configure access</h2>
 
 <p>This step can be slightly tricky. As Wercker doesn&rsquo;t access to check out your private projects by default it will ask you what you want to do. When your project is public, as needs to be the case if you wish to use GitHub Pages, the top choice is recommended. When you use this it will simply check out the code in the same way anybody visiting the project on GitHub can do.</p>
 
-<p><img src="/img/tutorials/configure-access.png" alt="" />
-</p>
+<p><img src="/img/tutorials/configure-access.png" alt="" /></p>
 
-<h2 id="wercker-yml:b122a196014951ebab85fff56cc6436b">Wercker.yml</h2>
+<h2 id="wercker-yml">Wercker.yml</h2>
 
 <p>Wercker will now attempt to create an initial wercker.yml file for you. Or rather, it will create the code you can copy into it yourself. Because there is nothing special about our project according to Wercker, we will simply get the <code>wercker/default</code> box. So what we do now is create a wercker.yml file in the root of our project that contains the provided configuration, and after we finish setting up the app we will expand this file to make it actually do something.</p>
 
-<p><img src="/img/tutorials/werckeryml.png" alt="" />
-</p>
+<p><img src="/img/tutorials/werckeryml.png" alt="" /></p>
 
-<h2 id="public-or-not:b122a196014951ebab85fff56cc6436b">Public or not</h2>
+<h2 id="public-or-not">Public or not</h2>
 
 <p>This is a personal choice, you can make an app public so that everyone can see more details about it. This doesn&rsquo;t give you any real benefits either way in general, although as part of the tutorial I have of course made this app public so you can see it in action <a href="https://app.wercker.com/#applications/54b1e45eda3a4af76406ece6">yourself</a>.</p>
 
-<p><img src="/img/tutorials/public-or-not.png" alt="" />
-</p>
+<p><img src="/img/tutorials/public-or-not.png" alt="" /></p>
 
-<h2 id="and-we-ve-got-an-app:b122a196014951ebab85fff56cc6436b">And we&rsquo;ve got an app</h2>
+<h2 id="and-we-ve-got-an-app">And we&rsquo;ve got an app</h2>
 
 <p>The application is added now, and Wercker will be offering you the chance to trigger a build. As we haven&rsquo;t pushed up the <strong>wercker.yml</strong> file however, we will politely decline this option.</p>
 
-<p><img src="/img/tutorials/and-we-ve-got-an-app.png" alt="" />
-</p>
+<p><img src="/img/tutorials/and-we-ve-got-an-app.png" alt="" /></p>
 
-<h2 id="adding-steps:b122a196014951ebab85fff56cc6436b">Adding steps</h2>
+<h2 id="adding-steps">Adding steps</h2>
 
 <p>And now we&rsquo;re going to add the steps themselves. First, we go to the &ldquo;Steps&rdquo; action in the sidebar and then search for hugo. The first result is the <strong>Hugo-Build</strong> task, which we select.</p>
 
-<p><img src="/img/tutorials/adding-steps.png" alt="" />
-</p>
+<p><img src="/img/tutorials/adding-steps.png" alt="" /></p>
 
-<h2 id="using-hugo-build:b122a196014951ebab85fff56cc6436b">Using Hugo-Build</h2>
+<h2 id="using-hugo-build">Using Hugo-Build</h2>
 
 <p>Inside the details of this step you will see how to use it. At the top is a summary for the very basic usage, but when scrolling down you go through the README of the step which will usually contain more details about how to use it including a full example of using the step. So we return to our project, and while making it fit our project better we add these details to our wercker.yml file so it looks like this. Wercker also has a <a href="http://devcenter.wercker.com/articles/werckeryml/validate.html">page</a> for validating wercker.yml files, and it&rsquo;s usually a good idea to do so before committing changes.</p>
 
@@ -589,10 +577,9 @@ git push origin master
 
 <p>Once completed a nice tick should have appeared in front of your first build, and if you want you can look at the details by clicking on it. However, we&rsquo;re not done yet as we still need to deploy it to GitHub Pages.</p>
 
-<p><img src="/img/tutorials/using-hugo-build.png" alt="" />
-</p>
+<p><img src="/img/tutorials/using-hugo-build.png" alt="" /></p>
 
-<h2 id="adding-a-github-pages-step:b122a196014951ebab85fff56cc6436b">Adding a GitHub Pages step</h2>
+<h2 id="adding-a-github-pages-step">Adding a GitHub Pages step</h2>
 
 <p>In order to deploy to GitHub Pages we need to add a deploy step. Once again searching through the Steps repository we find that the most popular step is the <strong>lukevevier/gh-pages</strong> step so we add the configuration for that to our wercker.yml file, which then becomes this:</p>
 
@@ -617,17 +604,15 @@ deploy:
 
 <p>And lastly, you can see here that this has a <strong>$GIT_TOKEN</strong> variable. This is used for pushing our changes up to GitHub and we will need to configure this before we can do that. We do this by going to our app&rsquo;s settings and clicking on <strong>Deploy targets</strong>. Now, we <strong>Add deploy target</strong> and select <strong>Custom deploy</strong>.</p>
 
-<p><img src="/img/tutorials/adding-a-github-pages-step.png" alt="" />
-</p>
+<p><img src="/img/tutorials/adding-a-github-pages-step.png" alt="" /></p>
 
-<h2 id="configure-the-deploy-step:b122a196014951ebab85fff56cc6436b">Configure the deploy step</h2>
+<h2 id="configure-the-deploy-step">Configure the deploy step</h2>
 
 <p>Simply fill in the name, and make sure you enable <strong>auto deploy</strong> from the <strong>master</strong> branch. Next you add a variable for the <strong>GIT_TOKEN</strong>, for this you&rsquo;ll need to create an access token in GitHub. How to do that is described on a <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">GitHub help page</a>. With the deploy step configured in Wercker, we can push the updated wercker.yml file to GitHub and it will create the GitHub pages site for us. The example site we used here is accessible under hugo-wercker.ig.nore.me</p>
 
-<p><img src="/img/tutorials/configure-the-deploy-step.png" alt="" />
-</p>
+<p><img src="/img/tutorials/configure-the-deploy-step.png" alt="" /></p>
 
-<h2 id="conclusion:b122a196014951ebab85fff56cc6436b">Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>From now on, any time you want to put a new post on your blog all you need to do is push your new page to GitHub and the rest will happen automatically. The source code for the example site used here is available on <a href="https://github.com/ArjenSchwarz/hugo-wercker-example">GitHub</a>, as is the <a href="https://github.com/ArjenSchwarz/wercker-step-hugo-build">Hugo Build step</a> itself.</p>
 
@@ -637,25 +622,25 @@ deploy:
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#automated-deployments-with-wercker:b122a196014951ebab85fff56cc6436b">Automated deployments with Wercker</a>
+<li><a href="#automated-deployments-with-wercker">Automated deployments with Wercker</a>
 <ul>
-<li><a href="#creating-a-basic-hugo-site:b122a196014951ebab85fff56cc6436b">Creating a basic Hugo site</a></li>
-<li><a href="#setting-up-version-control:b122a196014951ebab85fff56cc6436b">Setting up version control</a></li>
-<li><a href="#adding-the-project-to-github:b122a196014951ebab85fff56cc6436b">Adding the project to GitHub</a></li>
-<li><a href="#welcome-to-wercker:b122a196014951ebab85fff56cc6436b">Welcome to wercker</a></li>
-<li><a href="#register:b122a196014951ebab85fff56cc6436b">Register</a></li>
-<li><a href="#connect-github-bitbucket:b122a196014951ebab85fff56cc6436b">Connect GitHub/Bitbucket</a></li>
-<li><a href="#add-your-project:b122a196014951ebab85fff56cc6436b">Add your project</a></li>
-<li><a href="#select-a-repository:b122a196014951ebab85fff56cc6436b">Select a repository</a></li>
-<li><a href="#configure-access:b122a196014951ebab85fff56cc6436b">Configure access</a></li>
-<li><a href="#wercker-yml:b122a196014951ebab85fff56cc6436b">Wercker.yml</a></li>
-<li><a href="#public-or-not:b122a196014951ebab85fff56cc6436b">Public or not</a></li>
-<li><a href="#and-we-ve-got-an-app:b122a196014951ebab85fff56cc6436b">And we&rsquo;ve got an app</a></li>
-<li><a href="#adding-steps:b122a196014951ebab85fff56cc6436b">Adding steps</a></li>
-<li><a href="#using-hugo-build:b122a196014951ebab85fff56cc6436b">Using Hugo-Build</a></li>
-<li><a href="#adding-a-github-pages-step:b122a196014951ebab85fff56cc6436b">Adding a GitHub Pages step</a></li>
-<li><a href="#configure-the-deploy-step:b122a196014951ebab85fff56cc6436b">Configure the deploy step</a></li>
-<li><a href="#conclusion:b122a196014951ebab85fff56cc6436b">Conclusion</a></li>
+<li><a href="#creating-a-basic-hugo-site">Creating a basic Hugo site</a></li>
+<li><a href="#setting-up-version-control">Setting up version control</a></li>
+<li><a href="#adding-the-project-to-github">Adding the project to GitHub</a></li>
+<li><a href="#welcome-to-wercker">Welcome to wercker</a></li>
+<li><a href="#register">Register</a></li>
+<li><a href="#connect-github-bitbucket">Connect GitHub/Bitbucket</a></li>
+<li><a href="#add-your-project">Add your project</a></li>
+<li><a href="#select-a-repository">Select a repository</a></li>
+<li><a href="#configure-access">Configure access</a></li>
+<li><a href="#wercker-yml">Wercker.yml</a></li>
+<li><a href="#public-or-not">Public or not</a></li>
+<li><a href="#and-we-ve-got-an-app">And we&rsquo;ve got an app</a></li>
+<li><a href="#adding-steps">Adding steps</a></li>
+<li><a href="#using-hugo-build">Using Hugo-Build</a></li>
+<li><a href="#adding-a-github-pages-step">Adding a GitHub Pages step</a></li>
+<li><a href="#configure-the-deploy-step">Configure the deploy step</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -664,7 +649,7 @@ deploy:
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

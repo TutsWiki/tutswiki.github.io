@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Hugo Template Functions</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -430,9 +430,9 @@ functions to the basic template logic.</p>
 and other basic tools; these are listed in the
 <a href="http://golang.org/pkg/text/template/#hdr-Functions">Go template documentation</a>.)</p>
 
-<h2 id="general:904d9cf85d985550c869e6d9741448cc">General</h2>
+<h2 id="general">General</h2>
 
-<h3 id="delimit:904d9cf85d985550c869e6d9741448cc">delimit</h3>
+<h3 id="delimit">delimit</h3>
 
 <p>Loops through any array, slice or map and returns a string of all the values separated by the delimiter. There is an optional third parameter that lets you choose a different delimiter to go between the last two values.
 Maps will be sorted by the keys, and only a slice of the values will be returned, keeping a consistent output order.</p>
@@ -457,13 +457,13 @@ Tags: {{ delimit .Params.tags &quot;, &quot; &quot; and &quot; }}
 // Outputs Tags: tag1, tag2 and tag3
 </code></pre>
 
-<h3 id="echoparam:904d9cf85d985550c869e6d9741448cc">echoParam</h3>
+<h3 id="echoparam">echoParam</h3>
 
 <p>If parameter is set, then echo it.</p>
 
 <p>e.g. <code>{{echoParam .Params &quot;project_url&quot; }}</code></p>
 
-<h3 id="eq:904d9cf85d985550c869e6d9741448cc">eq</h3>
+<h3 id="eq">eq</h3>
 
 <p>Return true if the parameters are equal.</p>
 
@@ -472,7 +472,7 @@ Tags: {{ delimit .Params.tags &quot;, &quot; &quot; and &quot; }}
 <pre><code>{{ if eq .Section &quot;blog&quot; }}current{{ end }}
 </code></pre>
 
-<h3 id="first:904d9cf85d985550c869e6d9741448cc">first</h3>
+<h3 id="first">first</h3>
 
 <p>Slices an array to only the first X elements.</p>
 
@@ -485,7 +485,7 @@ Tags: {{ delimit .Params.tags &quot;, &quot; &quot; and &quot; }}
 {{ end }}
 </code></pre>
 
-<h3 id="getenv:904d9cf85d985550c869e6d9741448cc">getenv</h3>
+<h3 id="getenv">getenv</h3>
 
 <p>Returns the value of an environment variable.</p>
 
@@ -499,7 +499,7 @@ variable must also be exported in order to be seen by <code>hugo</code>.</p>
 <pre><code>{{ getenv &quot;HOME&quot; }}
 </code></pre>
 
-<h3 id="in:904d9cf85d985550c869e6d9741448cc">in</h3>
+<h3 id="in">in</h3>
 
 <p>Checks if an element is in an array (or slice) and returns a boolean.  The elements supported are strings, integers and floats (only float64 will match as expected).  In addition, it can also check if a substring exists in a string.</p>
 
@@ -513,7 +513,7 @@ variable must also be exported in order to be seen by <code>hugo</code>.</p>
 <pre><code>{{ if in &quot;this string contains a substring&quot; &quot;substring&quot; }}Substring found!{{ end }}
 </code></pre>
 
-<h3 id="intersect:904d9cf85d985550c869e6d9741448cc">intersect</h3>
+<h3 id="intersect">intersect</h3>
 
 <p>Given two arrays (or slices), this function will return the common elements in the arrays.  The elements supported are strings, integers and floats (only float64).</p>
 
@@ -534,14 +534,14 @@ variable must also be exported in order to be seen by <code>hugo</code>.</p>
 &lt;/ul&gt;
 </code></pre>
 
-<h3 id="isset:904d9cf85d985550c869e6d9741448cc">isset</h3>
+<h3 id="isset">isset</h3>
 
 <p>Return true if the parameter is set.
 Takes either a slice, array or channel and an index or a map and a key as input.</p>
 
 <p>e.g. <code>{{ if isset .Params &quot;project_url&quot; }} {{ index .Params &quot;project_url&quot; }}{{ end }}</code></p>
 
-<h3 id="seq:904d9cf85d985550c869e6d9741448cc">seq</h3>
+<h3 id="seq">seq</h3>
 
 <p>Seq creates a sequence of integers. It&rsquo;s named and used as GNU&rsquo;s seq.</p>
 
@@ -555,7 +555,7 @@ Takes either a slice, array or channel and an index or a map and a key as input.
 <li><code>1 -2</code> =&gt; <code>1, 0, -1, -2</code></li>
 </ul>
 
-<h3 id="sort:904d9cf85d985550c869e6d9741448cc">sort</h3>
+<h3 id="sort">sort</h3>
 
 <p>Sorts maps, arrays and slices, returning a sorted slice. A sorted array of map values will be returned, with the keys eliminated. There are two optional arguments, which are <code>sortByField</code> and <code>sortAsc</code>. If left blank, sort will sort by keys (for maps) in ascending order.</p>
 
@@ -603,7 +603,7 @@ Authors: {{ range sort .Site.Params.authors &quot;lastName&quot; &quot;desc&quot
 // Outputs Authors: Perkins Linsley Bergevin
 </code></pre>
 
-<h3 id="where:904d9cf85d985550c869e6d9741448cc">where</h3>
+<h3 id="where">where</h3>
 
 <p>Filters an array to only elements containing a matching value for a given field.</p>
 
@@ -659,7 +659,7 @@ series: golang
 {{ end }}
 </code></pre>
 
-<h2 id="math:904d9cf85d985550c869e6d9741448cc">Math</h2>
+<h2 id="math">Math</h2>
 
 <table class="table table-bordered">
 <thead>
@@ -710,43 +710,43 @@ series: golang
 </tbody>
 </table>
 
-<h2 id="strings:904d9cf85d985550c869e6d9741448cc">Strings</h2>
+<h2 id="strings">Strings</h2>
 
-<h3 id="chomp:904d9cf85d985550c869e6d9741448cc">chomp</h3>
+<h3 id="chomp">chomp</h3>
 
 <p>Removes any trailing newline characters. Useful in a pipeline to remove newlines added by other processing (including <code>markdownify</code>).</p>
 
 <p>e.g., <code>{{chomp &quot;&lt;p&gt;Blockhead&lt;/p&gt;\n&quot;</code> → <code>&quot;&lt;p&gt;Blockhead&lt;/p&gt;&quot;</code></p>
 
-<h3 id="dateformat:904d9cf85d985550c869e6d9741448cc">dateFormat</h3>
+<h3 id="dateformat">dateFormat</h3>
 
 <p>Converts the textual representation of the datetime into the other form or returns it of Go <code>time.Time</code> type value. These are formatted with the layout string.</p>
 
 <p>e.g. <code>{{ dateFormat &quot;Monday, Jan 2, 2006&quot; &quot;2015-01-21&quot; }}</code> →&rdquo;Wednesday, Jan 21, 2015&rdquo;</p>
 
-<h3 id="highlight:904d9cf85d985550c869e6d9741448cc">highlight</h3>
+<h3 id="highlight">highlight</h3>
 
 <p>Take a string of code and a language, uses Pygments to return the syntax highlighted code in HTML. Used in the <a href="/extras/highlighting/">highlight shortcode</a>.</p>
 
-<h3 id="lower:904d9cf85d985550c869e6d9741448cc">lower</h3>
+<h3 id="lower">lower</h3>
 
 <p>Convert all characters in string to lowercase.</p>
 
 <p>e.g. <code>{{lower &quot;BatMan&quot;}}</code> → &ldquo;batman&rdquo;</p>
 
-<h3 id="markdownify:904d9cf85d985550c869e6d9741448cc">markdownify</h3>
+<h3 id="markdownify">markdownify</h3>
 
 <p>This will run the string through the Markdown processesor. The result will be declared as &ldquo;safe&rdquo; so Go templates will not filter it.</p>
 
 <p>e.g. <code>{{ .Title | markdownify }}</code></p>
 
-<h3 id="replace:904d9cf85d985550c869e6d9741448cc">replace</h3>
+<h3 id="replace">replace</h3>
 
 <p>Replace all occurences of the search string with the replacement string.</p>
 
 <p>e.g. <code>{{ replace &quot;Batman and Robin&quot; &quot;Robin&quot; &quot;Catwoman&quot; }}</code> → &ldquo;Batman and Catwoman&rdquo;</p>
 
-<h3 id="safehtml:904d9cf85d985550c869e6d9741448cc">safeHTML</h3>
+<h3 id="safehtml">safeHTML</h3>
 
 <p>Declares the provided string as a &ldquo;safe&rdquo; HTML document fragment
 so Go html/template will not filter it.  It should not be used
@@ -787,7 +787,7 @@ Example: Given a site-wide `config.toml` that contains this menu entry:
 * `<a {{ printf "href=%q" .URL | safeHTMLAttr }}>` ⇒ `<a href="irc://irc.freenode.net/#golang">` (Good!)
 -->
 
-<h3 id="safecss:904d9cf85d985550c869e6d9741448cc">safeCSS</h3>
+<h3 id="safecss">safeCSS</h3>
 
 <p>Declares the provided string as a known &ldquo;safe&rdquo; CSS string
 so Go html/templates will not filter it.
@@ -810,7 +810,7 @@ so Go html/templates will not filter it.
 <p>Note: &ldquo;ZgotmplZ&rdquo; is a special value that indicates that unsafe content reached a
 CSS or URL context.</p>
 
-<h3 id="slicestr:904d9cf85d985550c869e6d9741448cc">slicestr</h3>
+<h3 id="slicestr">slicestr</h3>
 
 <p>Slicing in Slicestr is done by specifying a half-open range with two indices, start and end. 1 and 4 creates a slice including elements 1 through 3.
 The end index can be omitted, it defaults to the string&rsquo;s length.</p>
@@ -822,7 +822,7 @@ The end index can be omitted, it defaults to the string&rsquo;s length.</p>
 <li><code>{{slicestr &quot;BatMan&quot; 0 3}}</code> → &ldquo;Bat&rdquo;</li>
 </ul>
 
-<h3 id="substr:904d9cf85d985550c869e6d9741448cc">substr</h3>
+<h3 id="substr">substr</h3>
 
 <p>Substr extracts parts of a string, beginning at the character at the specified
  position, and returns the specified number of characters.</p>
@@ -844,27 +844,27 @@ The end index can be omitted, it defaults to the string&rsquo;s length.</p>
 <li><code>{{substr &quot;BatMan&quot; 3 3}}</code> → &ldquo;Man&rdquo;</li>
 </ul>
 
-<h3 id="title:904d9cf85d985550c869e6d9741448cc">title</h3>
+<h3 id="title">title</h3>
 
 <p>Convert all characters in string to titlecase.</p>
 
 <p>e.g. <code>{{title &quot;BatMan&quot;}}</code> → &ldquo;Batman&rdquo;</p>
 
-<h3 id="trim:904d9cf85d985550c869e6d9741448cc">trim</h3>
+<h3 id="trim">trim</h3>
 
 <p>Trim returns a slice of the string with all leading and trailing characters contained in cutset removed.</p>
 
 <p>e.g. <code>{{ trim &quot;++Batman--&quot; &quot;+-&quot; }}</code> → &ldquo;Batman&rdquo;</p>
 
-<h3 id="upper:904d9cf85d985550c869e6d9741448cc">upper</h3>
+<h3 id="upper">upper</h3>
 
 <p>Convert all characters in string to uppercase.</p>
 
 <p>e.g. <code>{{upper &quot;BatMan&quot;}}</code> → &ldquo;BATMAN&rdquo;</p>
 
-<h2 id="urls:904d9cf85d985550c869e6d9741448cc">Urls</h2>
+<h2 id="urls">Urls</h2>
 
-<h3 id="absurl-relurl:904d9cf85d985550c869e6d9741448cc">absURL, relURL</h3>
+<h3 id="absurl-relurl">absURL, relURL</h3>
 
 <p>Both <code>absURL</code> and <code>relURL</code> considers the configured value of <code>baseURL</code>, so given a <code>baseURL</code> set to <code>http://mysite.com/hugo/</code>:</p>
 
@@ -890,13 +890,13 @@ The end index can be omitted, it defaults to the string&rsquo;s length.</p>
 
 <p><strong>Note:</strong> These functions are smart about missing slashes, but will not add one to the end if not present.</p>
 
-<h3 id="ref-relref:904d9cf85d985550c869e6d9741448cc">ref, relref</h3>
+<h3 id="ref-relref">ref, relref</h3>
 
 <p>Looks up a content page by relative path or logical name to return the permalink (<code>ref</code>) or relative permalink (<code>relref</code>). Requires a Node or Page object (usually satisfied with <code>.</code>). Used in the <a href="http://tutswiki.com/extras/crossreferences/"><code>ref</code> and <code>relref</code> shortcodes</a>.</p>
 
 <p>e.g. {{ ref . &ldquo;about.md&rdquo; }}</p>
 
-<h3 id="safeurl:904d9cf85d985550c869e6d9741448cc">safeURL</h3>
+<h3 id="safeurl">safeURL</h3>
 
 <p>Declares the provided string as a &ldquo;safe&rdquo; URL or URL substring (see <a href="http://tools.ietf.org/html/rfc3986">RFC 3986</a>).
 A URL like <code>javascript:checkThatFormNotEditedBeforeLeavingPage()</code> from a trusted
@@ -936,15 +936,15 @@ for the <code>irc://…</code> URL.</p>
 <p>With this change, we finally get <code>&lt;li&gt;&lt;a href=&quot;irc://irc.freenode.net/#golang&quot;&gt;IRC: #golang at freenode&lt;/a&gt;&lt;/li&gt;</code>
 as intended.</p>
 
-<h3 id="urlize:904d9cf85d985550c869e6d9741448cc">urlize</h3>
+<h3 id="urlize">urlize</h3>
 
 <p>Takes a string and sanitizes it for usage in URLs, converts spaces to &ldquo;-&rdquo;.</p>
 
 <p>e.g. <code>&lt;a href=&quot;/tags/{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt;</code></p>
 
-<h2 id="content-views:904d9cf85d985550c869e6d9741448cc">Content Views</h2>
+<h2 id="content-views">Content Views</h2>
 
-<h3 id="render:904d9cf85d985550c869e6d9741448cc">Render</h3>
+<h3 id="render">Render</h3>
 
 <p>Takes a view to render the content with.  The view is an alternate layout, and should be a file name that points to a template in one of the locations specified in the documentation for <a href="/templates/views">Content Views</a>.</p>
 
@@ -957,9 +957,9 @@ as intended.</p>
 {{ end }}
 </code></pre>
 
-<h2 id="advanced:904d9cf85d985550c869e6d9741448cc">Advanced</h2>
+<h2 id="advanced">Advanced</h2>
 
-<h3 id="apply:904d9cf85d985550c869e6d9741448cc">apply</h3>
+<h3 id="apply">apply</h3>
 
 <p>Given a map, array, or slice, returns a new slice with a function applied over it. Expects at least three parameters, depending on the function being applied. The first parameter is the sequence to operate on; the second is the name of the function as a string, which must be in the Hugo function map (generally, it is these functions documented here). After that, the parameters to the applied function are provided, with the string <code>&quot;.&quot;</code> standing in for each element of the sequence the function is to be applied against. An example is in order:</p>
 
@@ -1029,56 +1029,56 @@ names: [ &quot;Derek Perkins&quot;, &quot;Joe Bergevin&quot;, &quot;Tanner Linsl
 <p><code>apply</code> does not work when receiving the sequence as an argument through a pipeline.</p>
 
 </div>
-<div id="toc" class="col-lg-offset-6 toc compact">
+<div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
 <li>
 <ul>
-<li><a href="#general:904d9cf85d985550c869e6d9741448cc">General</a>
+<li><a href="#general">General</a>
 <ul>
-<li><a href="#delimit:904d9cf85d985550c869e6d9741448cc">delimit</a></li>
-<li><a href="#echoparam:904d9cf85d985550c869e6d9741448cc">echoParam</a></li>
-<li><a href="#eq:904d9cf85d985550c869e6d9741448cc">eq</a></li>
-<li><a href="#first:904d9cf85d985550c869e6d9741448cc">first</a></li>
-<li><a href="#getenv:904d9cf85d985550c869e6d9741448cc">getenv</a></li>
-<li><a href="#in:904d9cf85d985550c869e6d9741448cc">in</a></li>
-<li><a href="#intersect:904d9cf85d985550c869e6d9741448cc">intersect</a></li>
-<li><a href="#isset:904d9cf85d985550c869e6d9741448cc">isset</a></li>
-<li><a href="#seq:904d9cf85d985550c869e6d9741448cc">seq</a></li>
-<li><a href="#sort:904d9cf85d985550c869e6d9741448cc">sort</a></li>
-<li><a href="#where:904d9cf85d985550c869e6d9741448cc">where</a></li>
+<li><a href="#delimit">delimit</a></li>
+<li><a href="#echoparam">echoParam</a></li>
+<li><a href="#eq">eq</a></li>
+<li><a href="#first">first</a></li>
+<li><a href="#getenv">getenv</a></li>
+<li><a href="#in">in</a></li>
+<li><a href="#intersect">intersect</a></li>
+<li><a href="#isset">isset</a></li>
+<li><a href="#seq">seq</a></li>
+<li><a href="#sort">sort</a></li>
+<li><a href="#where">where</a></li>
 </ul></li>
-<li><a href="#math:904d9cf85d985550c869e6d9741448cc">Math</a></li>
-<li><a href="#strings:904d9cf85d985550c869e6d9741448cc">Strings</a>
+<li><a href="#math">Math</a></li>
+<li><a href="#strings">Strings</a>
 <ul>
-<li><a href="#chomp:904d9cf85d985550c869e6d9741448cc">chomp</a></li>
-<li><a href="#dateformat:904d9cf85d985550c869e6d9741448cc">dateFormat</a></li>
-<li><a href="#highlight:904d9cf85d985550c869e6d9741448cc">highlight</a></li>
-<li><a href="#lower:904d9cf85d985550c869e6d9741448cc">lower</a></li>
-<li><a href="#markdownify:904d9cf85d985550c869e6d9741448cc">markdownify</a></li>
-<li><a href="#replace:904d9cf85d985550c869e6d9741448cc">replace</a></li>
-<li><a href="#safehtml:904d9cf85d985550c869e6d9741448cc">safeHTML</a></li>
-<li><a href="#safecss:904d9cf85d985550c869e6d9741448cc">safeCSS</a></li>
-<li><a href="#slicestr:904d9cf85d985550c869e6d9741448cc">slicestr</a></li>
-<li><a href="#substr:904d9cf85d985550c869e6d9741448cc">substr</a></li>
-<li><a href="#title:904d9cf85d985550c869e6d9741448cc">title</a></li>
-<li><a href="#trim:904d9cf85d985550c869e6d9741448cc">trim</a></li>
-<li><a href="#upper:904d9cf85d985550c869e6d9741448cc">upper</a></li>
+<li><a href="#chomp">chomp</a></li>
+<li><a href="#dateformat">dateFormat</a></li>
+<li><a href="#highlight">highlight</a></li>
+<li><a href="#lower">lower</a></li>
+<li><a href="#markdownify">markdownify</a></li>
+<li><a href="#replace">replace</a></li>
+<li><a href="#safehtml">safeHTML</a></li>
+<li><a href="#safecss">safeCSS</a></li>
+<li><a href="#slicestr">slicestr</a></li>
+<li><a href="#substr">substr</a></li>
+<li><a href="#title">title</a></li>
+<li><a href="#trim">trim</a></li>
+<li><a href="#upper">upper</a></li>
 </ul></li>
-<li><a href="#urls:904d9cf85d985550c869e6d9741448cc">Urls</a>
+<li><a href="#urls">Urls</a>
 <ul>
-<li><a href="#absurl-relurl:904d9cf85d985550c869e6d9741448cc">absURL, relURL</a></li>
-<li><a href="#ref-relref:904d9cf85d985550c869e6d9741448cc">ref, relref</a></li>
-<li><a href="#safeurl:904d9cf85d985550c869e6d9741448cc">safeURL</a></li>
-<li><a href="#urlize:904d9cf85d985550c869e6d9741448cc">urlize</a></li>
+<li><a href="#absurl-relurl">absURL, relURL</a></li>
+<li><a href="#ref-relref">ref, relref</a></li>
+<li><a href="#safeurl">safeURL</a></li>
+<li><a href="#urlize">urlize</a></li>
 </ul></li>
-<li><a href="#content-views:904d9cf85d985550c869e6d9741448cc">Content Views</a>
+<li><a href="#content-views">Content Views</a>
 <ul>
-<li><a href="#render:904d9cf85d985550c869e6d9741448cc">Render</a></li>
+<li><a href="#render">Render</a></li>
 </ul></li>
-<li><a href="#advanced:904d9cf85d985550c869e6d9741448cc">Advanced</a>
+<li><a href="#advanced">Advanced</a>
 <ul>
-<li><a href="#apply:904d9cf85d985550c869e6d9741448cc">apply</a></li>
+<li><a href="#apply">apply</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1088,7 +1088,7 @@ names: [ &quot;Derek Perkins&quot;, &quot;Joe Bergevin&quot;, &quot;Tanner Linsl
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

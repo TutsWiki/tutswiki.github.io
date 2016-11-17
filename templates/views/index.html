@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Content Views</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -427,7 +427,7 @@ list page you would only want a bulleted list of your content. Views
 make this very straightforward by delegating the rendering of each
 different type of content to the content itself.</p>
 
-<h2 id="creating-a-content-view:26ec5f5c36efaeaee4a3ac86cdec358e">Creating a content view</h2>
+<h2 id="creating-a-content-view">Creating a content view</h2>
 
 <p>To create a new view, simply create a template in each of your different
 content type directories with the view name. In the following example, we
@@ -460,7 +460,7 @@ Content views can also be defined in the &ldquo;_default&rdquo; directory.</p>
       summary.html
 </code></pre>
 
-<h2 id="which-template-will-be-rendered:26ec5f5c36efaeaee4a3ac86cdec358e">Which Template will be rendered?</h2>
+<h2 id="which-template-will-be-rendered">Which Template will be rendered?</h2>
 
 <p>Hugo uses a set of rules to figure out which template to use when
 rendering a specific page.</p>
@@ -478,9 +478,9 @@ the list will be needed.</p>
 <li>/themes/<code>THEME</code>/layouts/_default/<code>view</code>.html</li>
 </ul>
 
-<h2 id="example-using-views:26ec5f5c36efaeaee4a3ac86cdec358e">Example using views</h2>
+<h2 id="example-using-views">Example using views</h2>
 
-<h3 id="rendering-view-inside-of-a-list:26ec5f5c36efaeaee4a3ac86cdec358e">rendering view inside of a list</h3>
+<h3 id="rendering-view-inside-of-a-list">rendering view inside of a list</h3>
 
 <p>Using the summary view (defined below) inside of a (<a href="/templates/list/">list
 templates</a>).</p>
@@ -501,7 +501,7 @@ a content which tells the content to render itself with the provided view templa
 In this example, we are not using the li view. To use this we would
 change the render line to <code>{{ .Render &quot;li&quot; }}</code>.</p>
 
-<h3 id="li-html:26ec5f5c36efaeaee4a3ac86cdec358e">li.html</h3>
+<h3 id="li-html">li.html</h3>
 
 <p>Hugo will pass the entire page object to the view template. See <a href="/templates/variables/">page
 variables</a> for a complete list.</p>
@@ -514,7 +514,7 @@ variables</a> for a complete list.</p>
 &lt;/li&gt;
 </code></pre>
 
-<h3 id="summary-html:26ec5f5c36efaeaee4a3ac86cdec358e">summary.html</h3>
+<h3 id="summary-html">summary.html</h3>
 
 <p>Hugo will pass the entire page object to the view template. See <a href="/templates/variables/">page
 variables</a> for a complete list.</p>
@@ -540,13 +540,13 @@ variables</a> for a complete list.</p>
 <ul>
 <li>
 <ul>
-<li><a href="#creating-a-content-view:26ec5f5c36efaeaee4a3ac86cdec358e">Creating a content view</a></li>
-<li><a href="#which-template-will-be-rendered:26ec5f5c36efaeaee4a3ac86cdec358e">Which Template will be rendered?</a></li>
-<li><a href="#example-using-views:26ec5f5c36efaeaee4a3ac86cdec358e">Example using views</a>
+<li><a href="#creating-a-content-view">Creating a content view</a></li>
+<li><a href="#which-template-will-be-rendered">Which Template will be rendered?</a></li>
+<li><a href="#example-using-views">Example using views</a>
 <ul>
-<li><a href="#rendering-view-inside-of-a-list:26ec5f5c36efaeaee4a3ac86cdec358e">rendering view inside of a list</a></li>
-<li><a href="#li-html:26ec5f5c36efaeaee4a3ac86cdec358e">li.html</a></li>
-<li><a href="#summary-html:26ec5f5c36efaeaee4a3ac86cdec358e">summary.html</a></li>
+<li><a href="#rendering-view-inside-of-a-list">rendering view inside of a list</a></li>
+<li><a href="#li-html">li.html</a></li>
+<li><a href="#summary-html">summary.html</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -556,7 +556,7 @@ variables</a> for a complete list.</p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

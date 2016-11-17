@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Accented Categories</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -413,7 +413,7 @@
 
 
 
-<h2 id="trouble-categories-with-accented-characters:4991e3b1a73c18d62800431513a9f742">Trouble: Categories with accented characters</h2>
+<h2 id="trouble-categories-with-accented-characters">Trouble: Categories with accented characters</h2>
 
 <p>One of my categories is named &ldquo;Le-carré,&rdquo; but the link ends up being generated like this:</p>
 
@@ -422,7 +422,7 @@
 
 <p>And not working. Is there an easy fix for this that I&rsquo;m overlooking?</p>
 
-<h2 id="solution:4991e3b1a73c18d62800431513a9f742">Solution</h2>
+<h2 id="solution">Solution</h2>
 
 <p>Mac OS X user?  If so, you are likely a victim of HFS Plus file system&rsquo;s insistence to store the &ldquo;é&rdquo; (U+00E9) character in Normal Form Decomposed (NFD) mode, i.e. as &ldquo;e&rdquo; + &ldquo;  ́&rdquo; (U+0065 U+0301).</p>
 
@@ -430,7 +430,7 @@
 
 <p>This is unique to OS X.  The rest of the world does not do this, and most certainly not your web server which is most likely running Linux.  This is not a Hugo-specific problem either.  Other people have been bitten by this when they have accented characters in their HTML files.</p>
 
-<p>Nor is this problem specific to Latin scripts.  Japanese Mac users often run into the same issue, e.g. with <code>だ</code> decomposing into <code>た</code> and <code>&#x3099;</code>.<sup class="footnote-ref" id="fnref:4991e3b1a73c18d62800431513a9f742:1"><a rel="footnote" href="#fn:4991e3b1a73c18d62800431513a9f742:1">1</a></sup></p>
+<p>Nor is this problem specific to Latin scripts.  Japanese Mac users often run into the same issue, e.g. with <code>だ</code> decomposing into <code>た</code> and <code>&#x3099;</code>.<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup></p>
 
 <p>Rsync 3.x to the rescue!  From <a href="http://serverfault.com/questions/397420/converting-utf-8-nfd-filenames-to-utf-8-nfc-in-either-rsync-or-afpd">an answer posted on Server Fault</a>:</p>
 
@@ -444,7 +444,7 @@
 
 <p>Please make sure you have the latest version rsync 3.x installed.  The rsync that ships with OS X (even the latest 10.10 Yosemite) is the horribly old at version 2.6.9 protocol version 29.  The <code>--iconv</code> flag is new in rsync 3.x.</p>
 
-<h3 id="references:4991e3b1a73c18d62800431513a9f742">References</h3>
+<h3 id="references">References</h3>
 
 <ul>
 <li><a href="http://discuss.gohugo.io/t/categories-with-accented-characters/505">http://discuss.gohugo.io/t/categories-with-accented-characters/505</a></li>
@@ -459,8 +459,8 @@
 <hr />
 
 <ol>
-<li id="fn:4991e3b1a73c18d62800431513a9f742:1">As explained in the Japanese Perl Users article <a href="http://perl-users.jp/articles/advent-calendar/2010/english/24">Encode::UTF8Mac makes you happy while handling file names on MacOSX</a>.
- <a class="footnote-return" href="#fnref:4991e3b1a73c18d62800431513a9f742:1"><sup>[return]</sup></a></li>
+<li id="fn:1">As explained in the Japanese Perl Users article <a href="http://perl-users.jp/articles/advent-calendar/2010/english/24">Encode::UTF8Mac makes you happy while handling file names on MacOSX</a>.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
 </ol>
 </div>
 
@@ -468,7 +468,7 @@
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

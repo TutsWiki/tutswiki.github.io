@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Contributing to Hugo</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -432,7 +432,7 @@ to do next.</p>
 <li>Make sure <code>go test ./...</code> passes, and <code>go build</code> completes.  Our <a href="https://travis-ci.org/spf13/hugo">Travis CI loop</a> will catch most things that are missing.  The exception: Windows.  We run on Windows from time to time, but if you have access, please check on a Windows machine too.</li>
 </ul>
 
-<h2 id="contribution-overview:cc4aac3e9be04e0413c9520f223b493c">Contribution Overview</h2>
+<h2 id="contribution-overview">Contribution Overview</h2>
 
 <ol>
 <li>Fork Hugo from <a href="https://github.com/spf13/hugo">https://github.com/spf13/hugo</a></li>
@@ -445,9 +445,9 @@ to do next.</p>
 <li>Create new Pull Request</li>
 </ol>
 
-<h1 id="building-from-source:cc4aac3e9be04e0413c9520f223b493c">Building from source</h1>
+<h1 id="building-from-source">Building from source</h1>
 
-<h2 id="clone-locally-for-contributors:cc4aac3e9be04e0413c9520f223b493c">Clone locally (for contributors):</h2>
+<h2 id="clone-locally-for-contributors">Clone locally (for contributors):</h2>
 
 <pre><code>git clone https://github.com/spf13/hugo
 cd hugo
@@ -463,14 +463,14 @@ of the following paths:</p>
 <li><code>ln -s /path/to/your/hugo $GOROOT/src/pkg/github.com/spf13/hugo</code></li>
 </ul>
 
-<h2 id="running-hugo:cc4aac3e9be04e0413c9520f223b493c">Running Hugo</h2>
+<h2 id="running-hugo">Running Hugo</h2>
 
 <pre><code>cd /path/to/hugo
 go install github.com/spf13/hugo/hugo
 go run main.go
 </code></pre>
 
-<h2 id="building-hugo:cc4aac3e9be04e0413c9520f223b493c">Building Hugo</h2>
+<h2 id="building-hugo">Building Hugo</h2>
 
 <pre><code>cd /path/to/hugo
 go build -o hugo main.go
@@ -481,7 +481,7 @@ mv hugo /usr/local/bin/
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Archetypes</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -427,14 +427,14 @@ While this is a welcome feature, active writers need more.</p>
 with pre-configured <a href="content/front-matter">front matter</a> which will
 populate each new content file whenever you run the <code>hugo new</code> command.</p>
 
-<h2 id="example:07fa24dbf391d975a05d4ef88e247309">Example</h2>
+<h2 id="example">Example</h2>
 
-<h3 id="step-1-creating-an-archetype:07fa24dbf391d975a05d4ef88e247309">Step 1. Creating an archetype</h3>
+<h3 id="step-1-creating-an-archetype">Step 1. Creating an archetype</h3>
 
 <p>In this example scenario, we have a blog with a single content type (blog post).
 We will use ‘tags’ and ‘categories’ for our taxonomies, so let&rsquo;s create an archetype file with ‘tags’ and ‘categories’ pre-defined, as follows:</p>
 
-<h4 id="archetypes-default-md:07fa24dbf391d975a05d4ef88e247309">archetypes/default.md</h4>
+<h4 id="archetypes-default-md">archetypes/default.md</h4>
 
 <pre><code>+++
 tags = [&quot;x&quot;, &quot;y&quot;]
@@ -446,7 +446,7 @@ categories = [&quot;x&quot;, &quot;y&quot;]
 <p><strong>CAVEAT:</strong>  Some editors (e.g. Sublime, Emacs) do not insert an EOL (end-of-line) character at the end of the file (i.e. EOF).  If you get a <a href="/troubleshooting/strange-eof-error/">strange EOF error</a> when using <code>hugo new</code>, please open each archetype file (i.e.&nbsp;<code>archetypes/*.md</code>) and press <kbd>Enter</kbd> to type a carriage return after the closing <code>+++</code> or <code>---</code> as necessary.</p>
 </blockquote>
 
-<h3 id="step-2-using-the-archetype:07fa24dbf391d975a05d4ef88e247309">Step 2. Using the archetype</h3>
+<h3 id="step-2-using-the-archetype">Step 2. Using the archetype</h3>
 
 <p>Now, with <code>archetypes/default.md</code> in place, let&rsquo;s create a new post in the <code>post</code> section with the <code>hugo new</code> command:</p>
 
@@ -455,7 +455,7 @@ categories = [&quot;x&quot;, &quot;y&quot;]
 
 <p>Hugo would create the file with the following contents:</p>
 
-<h4 id="content-post-my-new-post-md:07fa24dbf391d975a05d4ef88e247309">content/post/my-new-post.md</h4>
+<h4 id="content-post-my-new-post-md">content/post/my-new-post.md</h4>
 
 <pre><code>+++
 title = &quot;my new post&quot;
@@ -469,7 +469,7 @@ categories = [&quot;x&quot;, &quot;y&quot;]
 
 <p>Congratulations!  We have successfully created an archetype and used it for our new contents.  That&rsquo;s all there is to it!</p>
 
-<h2 id="using-a-different-front-matter-format:07fa24dbf391d975a05d4ef88e247309">Using a different front matter format</h2>
+<h2 id="using-a-different-front-matter-format">Using a different front matter format</h2>
 
 <p>By default, the front matter will be created in the TOML format
 regardless of what format the archetype is using.</p>
@@ -478,7 +478,7 @@ regardless of what format the archetype is using.</p>
 (e.g. <code>config.toml</code>) using the <code>MetaDataFormat</code> directive.
 Possible values are <code>&quot;toml&quot;</code>, <code>&quot;yaml&quot;</code> and <code>&quot;json&quot;</code>.</p>
 
-<h2 id="which-archetype-is-being-used:07fa24dbf391d975a05d4ef88e247309">Which archetype is being used</h2>
+<h2 id="which-archetype-is-being-used">Which archetype is being used</h2>
 
 <p>The following rules apply:</p>
 
@@ -514,19 +514,19 @@ are the sole exceptions.</em></p>
 <ul>
 <li>
 <ul>
-<li><a href="#example:07fa24dbf391d975a05d4ef88e247309">Example</a>
+<li><a href="#example">Example</a>
 <ul>
-<li><a href="#step-1-creating-an-archetype:07fa24dbf391d975a05d4ef88e247309">Step 1. Creating an archetype</a>
+<li><a href="#step-1-creating-an-archetype">Step 1. Creating an archetype</a>
 <ul>
-<li><a href="#archetypes-default-md:07fa24dbf391d975a05d4ef88e247309">archetypes/default.md</a></li>
+<li><a href="#archetypes-default-md">archetypes/default.md</a></li>
 </ul></li>
-<li><a href="#step-2-using-the-archetype:07fa24dbf391d975a05d4ef88e247309">Step 2. Using the archetype</a>
+<li><a href="#step-2-using-the-archetype">Step 2. Using the archetype</a>
 <ul>
-<li><a href="#content-post-my-new-post-md:07fa24dbf391d975a05d4ef88e247309">content/post/my-new-post.md</a></li>
+<li><a href="#content-post-my-new-post-md">content/post/my-new-post.md</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#using-a-different-front-matter-format:07fa24dbf391d975a05d4ef88e247309">Using a different front matter format</a></li>
-<li><a href="#which-archetype-is-being-used:07fa24dbf391d975a05d4ef88e247309">Which archetype is being used</a></li>
+<li><a href="#using-a-different-front-matter-format">Using a different front matter format</a></li>
+<li><a href="#which-archetype-is-being-used">Which archetype is being used</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -535,7 +535,7 @@ are the sole exceptions.</em></p>
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

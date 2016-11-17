@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>RSS (feed) Templates</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -424,13 +424,13 @@
 
 <p>RSS pages are of the <strong>type &ldquo;node&rdquo;</strong> and have all the <a href="/layout/variables/">node variables</a> available to use in the templates.</p>
 
-<h2 id="which-template-will-be-rendered:eceb479b7b3b2077408a2878a29e1320">Which Template will be rendered?</h2>
+<h2 id="which-template-will-be-rendered">Which Template will be rendered?</h2>
 
 <p>Hugo uses a set of rules to figure out which template to use when rendering a specific page.</p>
 
 <p>Hugo will use the following prioritized list. If a file isn’t present, then the next one in the list will be used. This enables you to craft specific layouts when you want to without creating more templates than necessary. For most sites only the <code>\_default</code> file at the end of the list will be needed.</p>
 
-<h3 id="main-rss:eceb479b7b3b2077408a2878a29e1320">Main RSS</h3>
+<h3 id="main-rss">Main RSS</h3>
 
 <ul>
 <li>/layouts/rss.xml</li>
@@ -438,7 +438,7 @@
 <li>__internal/rss.xml</li>
 </ul>
 
-<h3 id="section-rss:eceb479b7b3b2077408a2878a29e1320">Section RSS</h3>
+<h3 id="section-rss">Section RSS</h3>
 
 <ul>
 <li>/layouts/section/<code>SECTION</code>.rss.xml</li>
@@ -448,7 +448,7 @@
 <li>__internal/rss.xml</li>
 </ul>
 
-<h3 id="taxonomy-rss:eceb479b7b3b2077408a2878a29e1320">Taxonomy RSS</h3>
+<h3 id="taxonomy-rss">Taxonomy RSS</h3>
 
 <ul>
 <li>/layouts/taxonomy/<code>SINGULAR</code>.rss.xml</li>
@@ -458,7 +458,7 @@
 <li>__internal/rss.xml</li>
 </ul>
 
-<h2 id="configuring-rss:eceb479b7b3b2077408a2878a29e1320">Configuring RSS</h2>
+<h2 id="configuring-rss">Configuring RSS</h2>
 
 <p>If the following values are specified in the site’s config file (<code>config.toml</code>), then they will be included in the RSS output. Example values are provided.</p>
 
@@ -469,7 +469,7 @@ copyright = &quot;This work is licensed under a Creative Commons Attribution-Sha
     name = &quot;My Name Here&quot;
 </code></pre>
 
-<h2 id="the-embedded-rss-xml:eceb479b7b3b2077408a2878a29e1320">The Embedded rss.xml</h2>
+<h2 id="the-embedded-rss-xml">The Embedded rss.xml</h2>
 
 <p>This is the default RSS template that ships with Hugo. It adheres to the <a href="http://cyber.law.harvard.edu/rss/rss.html" title="RSS 2.0 Specification">RSS 2.0 Specification</a>.</p>
 
@@ -504,7 +504,7 @@ copyright = &quot;This work is licensed under a Creative Commons Attribution-Sha
 <pre><code class="language-css">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot; ?&gt;
 </code></pre>
 
-<h2 id="referencing-your-rss-feed-in-head:eceb479b7b3b2077408a2878a29e1320">Referencing your RSS Feed in <code>&lt;head&gt;</code></h2>
+<h2 id="referencing-your-rss-feed-in-head">Referencing your RSS Feed in <code>&lt;head&gt;</code></h2>
 
 <p>In your <code>header.html</code> template, you can specify your RSS feed in your <code>&lt;head&gt;&lt;/head&gt;</code> tag like this:</p>
 
@@ -529,15 +529,15 @@ copyright = &quot;This work is licensed under a Creative Commons Attribution-Sha
 <ul>
 <li>
 <ul>
-<li><a href="#which-template-will-be-rendered:eceb479b7b3b2077408a2878a29e1320">Which Template will be rendered?</a>
+<li><a href="#which-template-will-be-rendered">Which Template will be rendered?</a>
 <ul>
-<li><a href="#main-rss:eceb479b7b3b2077408a2878a29e1320">Main RSS</a></li>
-<li><a href="#section-rss:eceb479b7b3b2077408a2878a29e1320">Section RSS</a></li>
-<li><a href="#taxonomy-rss:eceb479b7b3b2077408a2878a29e1320">Taxonomy RSS</a></li>
+<li><a href="#main-rss">Main RSS</a></li>
+<li><a href="#section-rss">Section RSS</a></li>
+<li><a href="#taxonomy-rss">Taxonomy RSS</a></li>
 </ul></li>
-<li><a href="#configuring-rss:eceb479b7b3b2077408a2878a29e1320">Configuring RSS</a></li>
-<li><a href="#the-embedded-rss-xml:eceb479b7b3b2077408a2878a29e1320">The Embedded rss.xml</a></li>
-<li><a href="#referencing-your-rss-feed-in-head:eceb479b7b3b2077408a2878a29e1320">Referencing your RSS Feed in <code>&lt;head&gt;</code></a></li>
+<li><a href="#configuring-rss">Configuring RSS</a></li>
+<li><a href="#the-embedded-rss-xml">The Embedded rss.xml</a></li>
+<li><a href="#referencing-your-rss-feed-in-head">Referencing your RSS Feed in <code>&lt;head&gt;</code></a></li>
 </ul></li>
 </ul>
 </nav>
@@ -546,7 +546,7 @@ copyright = &quot;This work is licensed under a Creative Commons Attribution-Sha
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

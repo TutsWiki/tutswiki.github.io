@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Creating a Theme</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -426,13 +426,13 @@ using the <code>hugo new</code> command.</p>
 would need. Hugo themes are written in the Go template language. If you are new
 to Go, the <a href="/layout/go-templates/">Go template primer</a> will help you get started.</p>
 
-<h2 id="theme-components:e2f4d16490492eca6fd5eb1f0df60240">Theme Components</h2>
+<h2 id="theme-components">Theme Components</h2>
 
 <p>A theme consists of templates and static assets such as javascript and css
 files. Themes can also optionally provide <a href="/content/archetypes/">archetypes</a>
 which are archetypal content types used by the <code>hugo new</code> command.</p>
 
-<h3 id="layouts:e2f4d16490492eca6fd5eb1f0df60240">Layouts</h3>
+<h3 id="layouts">Layouts</h3>
 
 <p>Hugo is built around the concept that things should be as simple as possible.
 Fundamentally website content is displayed in two different ways, a single
@@ -441,15 +441,15 @@ with the defaults. As additional layouts are defined they are used for the
 content type or section they apply to. This keeps layouts simple, but permits
 a large amount of flexibility.</p>
 
-<h3 id="single-content:e2f4d16490492eca6fd5eb1f0df60240">Single Content</h3>
+<h3 id="single-content">Single Content</h3>
 
 <p>The default single file layout is located at <code>layouts/_default/single.html</code>.</p>
 
-<h3 id="list-of-contents:e2f4d16490492eca6fd5eb1f0df60240">List of Contents</h3>
+<h3 id="list-of-contents">List of Contents</h3>
 
 <p>The default list file layout is located at <code>layouts/_default/list.html</code>.</p>
 
-<h3 id="partial-templates:e2f4d16490492eca6fd5eb1f0df60240">Partial Templates</h3>
+<h3 id="partial-templates">Partial Templates</h3>
 
 <p>Theme creators should liberally use <a href="/templates/partials/">partial templates</a>
 throughout their theme files. Not only is a good DRY practice to include shared
@@ -459,7 +459,7 @@ theme from their local /layouts. These partial templates are perfect for easy
 injection into the theme with minimal maintenance to ensure future
 compatibility.</p>
 
-<h3 id="static:e2f4d16490492eca6fd5eb1f0df60240">Static</h3>
+<h3 id="static">Static</h3>
 
 <p>Everything in the static directory will be copied directly into the final site
 when rendered. No structure is provided here to enable complete freedom. It is
@@ -472,7 +472,7 @@ common to organize the static content into</p>
 
 <p>The actual structure is entirely up to you, the theme creator, on how you would like to organize your files.</p>
 
-<h3 id="archetypes:e2f4d16490492eca6fd5eb1f0df60240">Archetypes</h3>
+<h3 id="archetypes">Archetypes</h3>
 
 <p>If your theme makes use of specific keys in the front matter, it is a good idea
 to provide an archetype for each content type you have. Archetypes follow the
@@ -482,7 +482,7 @@ to provide an archetype for each content type you have. Archetypes follow the
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

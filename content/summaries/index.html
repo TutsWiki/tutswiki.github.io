@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Summaries</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -421,7 +421,7 @@
 
 <p>Content summaries may also provide links to the original content, usually in the form of a &ldquo;Read More&hellip;&rdquo; link, with the help of the <code>.RelPermalink</code> or <code>.Permalink</code> variable, as well as the <code>.Truncated</code> boolean variable to determine whether such &ldquo;Read More&hellip;&rdquo; link is necessary.</p>
 
-<h2 id="hugo-defined-automatic-summary-split:290e51f63230b622ab923206c092e46c">Hugo-defined: automatic summary split</h2>
+<h2 id="hugo-defined-automatic-summary-split">Hugo-defined: automatic summary split</h2>
 
 <p>By default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the <code>.Summary</code> variable, which you may use in your templates.</p>
 
@@ -430,9 +430,9 @@
 <li>Cons: All HTML tags are stripped from the summary, and the first 70 words, whether they belong to a heading or to different paragraphs, are all lumped into one paragraph.  Some people like it, but some people don&rsquo;t.</li>
 </ul>
 
-<h2 id="user-defined-manual-summary-split:290e51f63230b622ab923206c092e46c">User-defined: manual summary split:</h2>
+<h2 id="user-defined-manual-summary-split">User-defined: manual summary split:</h2>
 
-<p>Alternatively, you may add the <code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> summary divider<sup class="footnote-ref" id="fnref:290e51f63230b622ab923206c092e46c:1"><a rel="footnote" href="#fn:290e51f63230b622ab923206c092e46c:1">1</a></sup> where you want to split the article.  Content prior to the summary divider will be used as that content&rsquo;s summary, and stored into the <code>.Summary</code> variable with all HTML formatting intact.</p>
+<p>Alternatively, you may add the <code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> summary divider<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> where you want to split the article.  Content prior to the summary divider will be used as that content&rsquo;s summary, and stored into the <code>.Summary</code> variable with all HTML formatting intact.</p>
 
 <ul>
 <li>Pros: Freedom, precision, and improved rendering.  All formatting is preserved.</li>
@@ -441,7 +441,7 @@
 
 <p>Be careful to enter <code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> exactly, i.e. all lowercase with no whitespace, otherwise it would be treated as regular comment and ignored.</p>
 
-<h2 id="showing-summaries:290e51f63230b622ab923206c092e46c">Showing Summaries</h2>
+<h2 id="showing-summaries">Showing Summaries</h2>
 
 <p>You can show content summaries with the following code. You could do this, for example, on a <a href="/templates/list/">list</a> node.</p>
 
@@ -464,8 +464,8 @@
 <hr />
 
 <ol>
-<li id="fn:290e51f63230b622ab923206c092e46c:1">The <strong>summary divider</strong> is also called &ldquo;more tag&rdquo;, &ldquo;excerpt separator&rdquo;, etc. in other literature.
- <a class="footnote-return" href="#fnref:290e51f63230b622ab923206c092e46c:1"><sup>[return]</sup></a></li>
+<li id="fn:1">The <strong>summary divider</strong> is also called &ldquo;more tag&rdquo;, &ldquo;excerpt separator&rdquo;, etc. in other literature.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
 </ol>
 </div>
 
@@ -473,7 +473,7 @@
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

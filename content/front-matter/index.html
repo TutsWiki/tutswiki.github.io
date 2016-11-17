@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Front Matter</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -430,7 +430,7 @@ different formats, each with their own identifying tokens.</p>
 <li><strong><a href="http://www.json.org/" title="JavaScript Object Notation">JSON</a></strong>, a single JSON object which is surrounded by &lsquo;<code>{</code>&rsquo; and &lsquo;<code>}</code>&rsquo;, each on their own line.</li>
 </ul>
 
-<h2 id="toml-example:d8a1b1beb27369de117e34d907999758">TOML Example</h2>
+<h2 id="toml-example">TOML Example</h2>
 
 <pre><code>+++
 title = &quot;spf13-vim 3.0 release and new website&quot;
@@ -447,7 +447,7 @@ slug = &quot;spf13-vim-3-0-release-and-new-website&quot;
 Content of the file goes Here
 </code></pre>
 
-<h2 id="yaml-example:d8a1b1beb27369de117e34d907999758">YAML Example</h2>
+<h2 id="yaml-example">YAML Example</h2>
 
 <pre><code>---
 title: &quot;spf13-vim 3.0 release and new website&quot;
@@ -463,7 +463,7 @@ slug: &quot;spf13-vim-3-0-release-and-new-website&quot;
 Content of the file goes Here
 </code></pre>
 
-<h2 id="json-example:d8a1b1beb27369de117e34d907999758">JSON Example</h2>
+<h2 id="json-example">JSON Example</h2>
 
 <pre><code>{
     &quot;title&quot;: &quot;spf13-vim 3.0 release and new website&quot;,
@@ -480,13 +480,13 @@ Content of the file goes Here
 Content of the file goes Here
 </code></pre>
 
-<h2 id="variables:d8a1b1beb27369de117e34d907999758">Variables</h2>
+<h2 id="variables">Variables</h2>
 
 <p>There are a few predefined variables that Hugo is aware of and utilizes. The user can also create
 any variable they want to. These will be placed into the <code>.Params</code> variable available to the templates.
 Field names are always normalized to lowercase (e.g. <code>camelCase: true</code> is available as <code>.Params.camelcase</code>).</p>
 
-<h3 id="required-variables:d8a1b1beb27369de117e34d907999758">Required variables</h3>
+<h3 id="required-variables">Required variables</h3>
 
 <ul>
 <li><strong>title</strong> The title for the content</li>
@@ -495,7 +495,7 @@ Field names are always normalized to lowercase (e.g. <code>camelCase: true</code
 <li><strong>taxonomies</strong> These will use the field name of the plural form of the index (see tags and categories above)</li>
 </ul>
 
-<h3 id="optional-variables:d8a1b1beb27369de117e34d907999758">Optional variables</h3>
+<h3 id="optional-variables">Optional variables</h3>
 
 <ul>
 <li><strong>redirect</strong> Mark the post as a redirect post</li>
@@ -512,11 +512,11 @@ Field names are always normalized to lowercase (e.g. <code>camelCase: true</code
 
 <p><em>If neither <code>slug</code> or <code>url</code> is present, the filename will be used.</em></p>
 
-<h2 id="configure-blackfriday-rendering:d8a1b1beb27369de117e34d907999758">Configure Blackfriday rendering</h2>
+<h2 id="configure-blackfriday-rendering">Configure Blackfriday rendering</h2>
 
 <p>It&rsquo;s possible to set some options for Markdown rendering in the page&rsquo;s front matter, as an override to the site wide configuration.</p>
 
-<p>See <a href="http://tutswiki.com/overview/configuration/#configure-blackfriday-rendering:a66b35d20295cb764719ac8bd35837ec">Configuration</a> for more.</p>
+<p>See <a href="http://tutswiki.com/overview/configuration/#configure-blackfriday-rendering">Configuration</a> for more.</p>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
@@ -524,15 +524,15 @@ Field names are always normalized to lowercase (e.g. <code>camelCase: true</code
 <ul>
 <li>
 <ul>
-<li><a href="#toml-example:d8a1b1beb27369de117e34d907999758">TOML Example</a></li>
-<li><a href="#yaml-example:d8a1b1beb27369de117e34d907999758">YAML Example</a></li>
-<li><a href="#json-example:d8a1b1beb27369de117e34d907999758">JSON Example</a></li>
-<li><a href="#variables:d8a1b1beb27369de117e34d907999758">Variables</a>
+<li><a href="#toml-example">TOML Example</a></li>
+<li><a href="#yaml-example">YAML Example</a></li>
+<li><a href="#json-example">JSON Example</a></li>
+<li><a href="#variables">Variables</a>
 <ul>
-<li><a href="#required-variables:d8a1b1beb27369de117e34d907999758">Required variables</a></li>
-<li><a href="#optional-variables:d8a1b1beb27369de117e34d907999758">Optional variables</a></li>
+<li><a href="#required-variables">Required variables</a></li>
+<li><a href="#optional-variables">Optional variables</a></li>
 </ul></li>
-<li><a href="#configure-blackfriday-rendering:d8a1b1beb27369de117e34d907999758">Configure Blackfriday rendering</a></li>
+<li><a href="#configure-blackfriday-rendering">Configure Blackfriday rendering</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -541,7 +541,7 @@ Field names are always normalized to lowercase (e.g. <code>camelCase: true</code
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 

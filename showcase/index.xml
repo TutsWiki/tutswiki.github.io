@@ -1,145 +1,145 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Showcases on </title>
-    <link>http://tutswiki.com/showcase/</link>
-    <description>Recent content in Showcases on </description>
+    <title>Showcase-rsses on </title>
+    <link>http://tutswiki.com/showcase/index.xml</link>
+    <description>Recent content in Showcase-rsses on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 11 Feb 2015 13:21:27 +1100</lastBuildDate>
     <atom:link href="http://tutswiki.com/showcase/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Hugo</title>
-      <link>http://tutswiki.com/showcase/hugo/</link>
-      <pubDate>Mon, 01 Jul 2013 07:32:00 +0000</pubDate>
+      <title>consequently.org</title>
+      <link>http://tutswiki.com/showcase/consequently/</link>
+      <pubDate>Wed, 11 Feb 2015 13:21:27 +1100</pubDate>
       
-      <guid>http://tutswiki.com/showcase/hugo/</guid>
+      <guid>http://tutswiki.com/showcase/consequently/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>spf13.com</title>
-      <link>http://tutswiki.com/showcase/spf13/</link>
-      <pubDate>Mon, 01 Jul 2013 07:32:00 +0000</pubDate>
+      <title>thehome.dk</title>
+      <link>http://tutswiki.com/showcase/thehome/</link>
+      <pubDate>Sat, 27 Dec 2014 20:00:00 +0700</pubDate>
       
-      <guid>http://tutswiki.com/showcase/spf13/</guid>
+      <guid>http://tutswiki.com/showcase/thehome/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>GopherCon</title>
-      <link>http://tutswiki.com/showcase/gophercon/</link>
-      <pubDate>Tue, 01 Oct 2013 07:32:00 +0000</pubDate>
+      <title>stou.dk</title>
+      <link>http://tutswiki.com/showcase/stou/</link>
+      <pubDate>Sun, 23 Nov 2014 01:28:16 +0700</pubDate>
       
-      <guid>http://tutswiki.com/showcase/gophercon/</guid>
+      <guid>http://tutswiki.com/showcase/stou/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Chimera Art Space</title>
-      <link>http://tutswiki.com/showcase/chimera-art-space/</link>
-      <pubDate>Wed, 02 Oct 2013 07:32:00 +0000</pubDate>
+      <title>Launchcode Software Studios</title>
+      <link>http://tutswiki.com/showcase/launchcode5/</link>
+      <pubDate>Sat, 01 Nov 2014 07:32:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/showcase/chimera-art-space/</guid>
+      <guid>http://tutswiki.com/showcase/launchcode5/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Davide Petilli</title>
-      <link>http://tutswiki.com/showcase/davidepetilli/</link>
-      <pubDate>Fri, 01 Nov 2013 07:32:00 +0000</pubDate>
+      <title>ucsb</title>
+      <link>http://tutswiki.com/showcase/ucsb/</link>
+      <pubDate>Tue, 26 Aug 2014 14:12:55 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/davidepetilli/</guid>
+      <guid>http://tutswiki.com/showcase/ucsb/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>GoGB</title>
-      <link>http://tutswiki.com/showcase/gogb/</link>
-      <pubDate>Fri, 01 Nov 2013 07:32:00 +0000</pubDate>
+      <title>authenticgeek</title>
+      <link>http://tutswiki.com/showcase/nickoneill/</link>
+      <pubDate>Tue, 26 Aug 2014 12:15:48 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/gogb/</guid>
+      <guid>http://tutswiki.com/showcase/nickoneill/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ifup</title>
-      <link>http://tutswiki.com/showcase/ifup/</link>
-      <pubDate>Sat, 02 Nov 2013 07:32:00 +0000</pubDate>
+      <title>vurt.co.uk</title>
+      <link>http://tutswiki.com/showcase/vurt/</link>
+      <pubDate>Tue, 26 Aug 2014 12:09:39 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/ifup/</guid>
+      <guid>http://tutswiki.com/showcase/vurt/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Andrew S Codispoti</title>
-      <link>http://tutswiki.com/showcase/asc/</link>
-      <pubDate>Wed, 22 Jan 2014 07:32:00 +0000</pubDate>
+      <title>michaelwhatcott</title>
+      <link>http://tutswiki.com/showcase/michaelwhatcott/</link>
+      <pubDate>Tue, 26 Aug 2014 11:47:11 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/asc/</guid>
+      <guid>http://tutswiki.com/showcase/michaelwhatcott/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ant Zucaro</title>
-      <link>http://tutswiki.com/showcase/antzucaro/</link>
-      <pubDate>Mon, 03 Feb 2014 20:00:00 +0000</pubDate>
+      <title>devmonk</title>
+      <link>http://tutswiki.com/showcase/devmonk/</link>
+      <pubDate>Tue, 26 Aug 2014 11:31:02 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/antzucaro/</guid>
+      <guid>http://tutswiki.com/showcase/devmonk/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Kieran Healy</title>
-      <link>http://tutswiki.com/showcase/kieranhealy/</link>
-      <pubDate>Thu, 27 Feb 2014 20:35:00 +0000</pubDate>
+      <title>peteraba</title>
+      <link>http://tutswiki.com/showcase/peteraba/</link>
+      <pubDate>Tue, 26 Aug 2014 11:30:57 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/kieranhealy/</guid>
+      <guid>http://tutswiki.com/showcase/peteraba/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hey, it&#39;s Alex</title>
-      <link>http://tutswiki.com/showcase/heyitsalex/</link>
-      <pubDate>Sun, 09 Mar 2014 06:00:00 +0000</pubDate>
+      <title>青砾 (chingli)</title>
+      <link>http://tutswiki.com/showcase/chingli/</link>
+      <pubDate>Tue, 26 Aug 2014 11:20:02 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/heyitsalex/</guid>
+      <guid>http://tutswiki.com/showcase/chingli/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>CloudShark</title>
-      <link>http://tutswiki.com/showcase/cloudshark/</link>
-      <pubDate>Thu, 27 Mar 2014 09:45:00 +0000</pubDate>
+      <title>Danmux</title>
+      <link>http://tutswiki.com/showcase/danmux/</link>
+      <pubDate>Tue, 26 Aug 2014 10:55:23 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/cloudshark/</guid>
+      <guid>http://tutswiki.com/showcase/danmux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>YSlow Rules</title>
-      <link>http://tutswiki.com/showcase/yslow-rules/</link>
-      <pubDate>Mon, 07 Apr 2014 10:45:00 +0000</pubDate>
+      <title>ninya.io</title>
+      <link>http://tutswiki.com/showcase/ninya/</link>
+      <pubDate>Tue, 26 Aug 2014 09:47:00 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/yslow-rules/</guid>
+      <guid>http://tutswiki.com/showcase/ninya/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tech Made Plain</title>
-      <link>http://tutswiki.com/showcase/techmadeplain/</link>
-      <pubDate>Thu, 22 May 2014 19:54:00 +0000</pubDate>
+      <title>tendermint</title>
+      <link>http://tutswiki.com/showcase/tendermint/</link>
+      <pubDate>Tue, 26 Aug 2014 09:34:42 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/techmadeplain/</guid>
+      <guid>http://tutswiki.com/showcase/tendermint/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>npf.io</title>
-      <link>http://tutswiki.com/showcase/npf/</link>
-      <pubDate>Thu, 21 Aug 2014 12:21:18 -0400</pubDate>
+      <title>minodisk</title>
+      <link>http://tutswiki.com/showcase/minodisk/</link>
+      <pubDate>Tue, 26 Aug 2014 09:07:59 -0400</pubDate>
       
-      <guid>http://tutswiki.com/showcase/npf/</guid>
+      <guid>http://tutswiki.com/showcase/minodisk/</guid>
       <description></description>
     </item>
     

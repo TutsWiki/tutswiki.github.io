@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
-    <meta name="generator" content="Hugo 0.14" />
+    <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Content Types</title>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.14</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v0.17</span></a>
             
             <div class="top-nav notification-row">
                 
@@ -426,7 +426,7 @@ command through using content <a href="/content/archetypes/">archetypes</a>.</p>
 of content could be a photo, quote or post, each with different meta data and
 rendered differently.</p>
 
-<h2 id="assigning-a-content-type:3d59665407ad3f08f6bcaef4686926f7">Assigning a content type</h2>
+<h2 id="assigning-a-content-type">Assigning a content type</h2>
 
 <p>Hugo assumes that your site will be organized into <a href="/content/sections/">sections</a>
 and each section will use the corresponding type. If you are taking advantage of
@@ -435,7 +435,7 @@ inherit the type.</p>
 
 <p>Alternatively, you can set the type in the meta data under the key &ldquo;<code>type</code>&rdquo;.</p>
 
-<h2 id="creating-new-content-of-a-specific-type:3d59665407ad3f08f6bcaef4686926f7">Creating new content of a specific type</h2>
+<h2 id="creating-new-content-of-a-specific-type">Creating new content of a specific type</h2>
 
 <p>Hugo has the ability to create a new content file and populate the front matter
 with the data set corresponding to that type. Hugo does this by utilizing
@@ -451,7 +451,7 @@ with the data set corresponding to that type. Hugo does this by utilizing
 <pre><code>hugo new post/my-newest-post.md
 </code></pre>
 
-<h2 id="defining-a-content-type:3d59665407ad3f08f6bcaef4686926f7">Defining a content type</h2>
+<h2 id="defining-a-content-type">Defining a content type</h2>
 
 <p>Creating a new content type is easy in Hugo. You simply provide the templates and archetype
 that the new type will use. You only need to define the templates, archetypes and/or views
@@ -460,19 +460,19 @@ whenever a specific file is not present.</p>
 
 <p><em>Remember, all of the following are optional:</em></p>
 
-<h3 id="create-type-directory:3d59665407ad3f08f6bcaef4686926f7">Create Type Directory</h3>
+<h3 id="create-type-directory">Create Type Directory</h3>
 
 <p>Create a directory with the name of the type in <code>layouts</code>. Type is always singular.  <em>E.g. <code>/layouts/post</code></em>.</p>
 
-<h3 id="create-single-template:3d59665407ad3f08f6bcaef4686926f7">Create single template</h3>
+<h3 id="create-single-template">Create single template</h3>
 
 <p>Create a file called <code>single.html</code> inside your directory. <em>E.g. <code>/layouts/post/single.html</code></em>.</p>
 
-<h3 id="create-list-template:3d59665407ad3f08f6bcaef4686926f7">Create list template</h3>
+<h3 id="create-list-template">Create list template</h3>
 
 <p>Create a file called <code>list.html</code> inside your directory. <em>E.g. <code>/layouts/post/list.html</code></em>.</p>
 
-<h3 id="create-views:3d59665407ad3f08f6bcaef4686926f7">Create views</h3>
+<h3 id="create-views">Create views</h3>
 
 <p>Many sites support rendering content in a few different ways, for instance,
 a single page view and a summary view to be used when displaying a list
@@ -481,7 +481,7 @@ to display your content, and will support as many different views of a content
 type as your site requires. All that is required for these additional views is
 that a template exists in each layouts/<code>TYPE</code> directory with the same name.</p>
 
-<h3 id="create-a-corresponding-archetype:3d59665407ad3f08f6bcaef4686926f7">Create a corresponding archetype</h3>
+<h3 id="create-a-corresponding-archetype">Create a corresponding archetype</h3>
 
 <p>Create a file called <code><em>type</em>.md</code> in the <code>/archetypes</code> directory. <em>E.g. <code>/archetypes/post.md</code></em>.</p>
 
@@ -493,15 +493,15 @@ that a template exists in each layouts/<code>TYPE</code> directory with the same
 <ul>
 <li>
 <ul>
-<li><a href="#assigning-a-content-type:3d59665407ad3f08f6bcaef4686926f7">Assigning a content type</a></li>
-<li><a href="#creating-new-content-of-a-specific-type:3d59665407ad3f08f6bcaef4686926f7">Creating new content of a specific type</a></li>
-<li><a href="#defining-a-content-type:3d59665407ad3f08f6bcaef4686926f7">Defining a content type</a>
+<li><a href="#assigning-a-content-type">Assigning a content type</a></li>
+<li><a href="#creating-new-content-of-a-specific-type">Creating new content of a specific type</a></li>
+<li><a href="#defining-a-content-type">Defining a content type</a>
 <ul>
-<li><a href="#create-type-directory:3d59665407ad3f08f6bcaef4686926f7">Create Type Directory</a></li>
-<li><a href="#create-single-template:3d59665407ad3f08f6bcaef4686926f7">Create single template</a></li>
-<li><a href="#create-list-template:3d59665407ad3f08f6bcaef4686926f7">Create list template</a></li>
-<li><a href="#create-views:3d59665407ad3f08f6bcaef4686926f7">Create views</a></li>
-<li><a href="#create-a-corresponding-archetype:3d59665407ad3f08f6bcaef4686926f7">Create a corresponding archetype</a></li>
+<li><a href="#create-type-directory">Create Type Directory</a></li>
+<li><a href="#create-single-template">Create single template</a></li>
+<li><a href="#create-list-template">Create list template</a></li>
+<li><a href="#create-views">Create views</a></li>
+<li><a href="#create-a-corresponding-archetype">Create a corresponding archetype</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -511,7 +511,7 @@ that a template exists in each layouts/<code>TYPE</code> directory with the same
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.14 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
 
                     </div>
 
