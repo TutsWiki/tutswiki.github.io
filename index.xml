@@ -5,13 +5,13 @@
     <link>http://tutswiki.com/index.xml</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 01 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Dec 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://tutswiki.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Introduction to Perl</title>
       <link>http://tutswiki.com/overview/introduction/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/overview/introduction/</guid>
       <description>
@@ -25,7 +25,7 @@
     <item>
       <title>Installing Perl on Windows</title>
       <link>http://tutswiki.com/overview/installation/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/overview/installation/</guid>
       <description>&lt;p&gt;Explain how to install Perl on Windows. Cover both ActivePerl and Strawberry Perl.&lt;/p&gt;
