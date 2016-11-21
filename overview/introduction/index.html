@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.17" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Introduction to Hugo</title>
+    <title>Introduction to Perl</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -42,7 +42,7 @@
             </div>
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Introduction to Hugo</h1>
+                <h1 class="nav top-menu">Introduction to Perl</h1>
             </div>
       </header>
       
@@ -67,9 +67,7 @@
                     
                     <li class="active"><a href="/overview/introduction/">Introduction</a> </li>
                     
-                    <li><a href="/overview/quickstart/">Quickstart</a> </li>
-                    
-                    <li><a href="/overview/installing/">Installing Hugo</a> </li>
+                    <li><a href="/overview/installation/">Installation (Windows)</a> </li>
                     
                 </ul>
               
@@ -126,212 +124,29 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12 cse">
-                                <script>
-  (function() {
-    var cx = '004940163756227230940:9tdbvl9bwk4';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search linktarget="_parent"></gcse:search>
-
+                                
                             </div>
                         </div>
 
 
 
 
-<h2 id="what-is-hugo">What is Hugo?</h2>
+<h2 id="what-is-perl">What is Perl?</h2>
 
-<p>Hugo is a general-purpose website framework. Technically speaking, Hugo is
-a static site generator. This means that, unlike systems like WordPress,
-Ghost and Drupal, which run on your web server expensively building a page
-every time a visitor requests one, Hugo does the building when you create
-your content. Since websites are viewed far more often than they are
-edited, Hugo is optimized for website viewing while providing a great
-writing experience.</p>
-
-<p>Sites built with Hugo are extremely fast and very secure. Hugo sites can
-be hosted anywhere, including <a href="https://www.heroku.com/">Heroku</a>, <a href="https://www.godaddy.com/">GoDaddy</a>, <a href="http://www.dreamhost.com/">DreamHost</a>,
-<a href="https://pages.github.com/">GitHub Pages</a>, <a href="http://cloud.google.com/storage/">Google Cloud Storage</a>, <a href="http://aws.amazon.com/s3/">Amazon S3</a> and <a href="http://aws.amazon.com/cloudfront/" title="Amazon CloudFront">CloudFront</a>, and work well with CDNs.
-Hugo sites run without dependencies on expensive runtimes like Ruby,
-Python or PHP and without dependencies on any databases.</p>
-
-<p>We think of Hugo as the ideal website creation tool. With nearly instant
-build times and the ability to rebuild whenever a change is made, Hugo
-provides a very fast feedback loop. This is essential when you are
-designing websites, but also very useful when creating content.</p>
-
-<h2 id="what-makes-hugo-different">What makes Hugo different?</h2>
-
-<p>Web site generators render content into HTML files. Most are &ldquo;dynamic
-site generators.&rdquo; That means the HTTP
-server (which is the program running on your website that the user&rsquo;s
-browser talks to) runs the generator to create a new HTML file
-each and every time a user wants to view a page.</p>
-
-<p>Creating the page dynamically means that the computer hosting
-the HTTP server has to have enough memory and CPU to effectively run
-the generator around the clock. If not, then the user has to wait
-in a queue for the page to be generated.</p>
-
-<p>Nobody wants users to wait longer than needed, so the dynamic site
-generators programmed their systems to cache the HTML files. When
-a file is cached, a copy of it is temporarily stored on the computer.
-It is much faster for the HTTP server to send that copy the next time
-the page is requested than it is to generate it from scratch.</p>
-
-<p>Hugo takes cacheing a step further. All HTML files are rendered on your
-computer. You can review the files before you copy them to the computer
-hosting the HTTP server. Since the HTML files aren&rsquo;t generated dynamically,
-we say that Hugo is a &ldquo;static site generator.&rdquo;</p>
-
-<p>Not running a web site generator on your HTTP server has many benefits.
-The most noticeable is performance - HTTP servers are very good at
-sending files. So good that you can effectively serve the same number
-of pages with a fraction of the memory and CPU needed for a dynamic site.</p>
-
-<p>Hugo has two components to help you build and test your web site. The
-one that you&rsquo;ll probably use most often is the built-in HTTP server.
-When you run <code>hugo server</code>, Hugo renders all of your content into
-HTML files and then runs a HTTP server on your computer so that you
-can see what the pages look like.</p>
-
-<p>The second component is used when you&rsquo;re ready to publish your web
-site to the computer running your website. Running Hugo without any
-actions will rebuild your entire web site using the <code>baseurl</code> setting
-from your site&rsquo;s configuration file. That&rsquo;s required to have your page
-links work properly with most hosting companies.</p>
-
-<h2 id="how-fast-is-hugo">How fast is Hugo?</h2>
-
-<div class="video-container">
-<iframe class="youtube-player" type="text/html" width="100%" height="auto" src="http://www.youtube.com/embed/CdiDYZ51a2o" allowfullscreen frameborder="0">
-</iframe>
-</div>
-
-
-<h2 id="what-does-hugo-do">What does Hugo do?</h2>
-
-<p>In technical terms, Hugo takes a source directory of Markdown files and
-templates and uses these as input to create a complete website.</p>
-
-<p>Hugo boasts the following features:</p>
-
-<h3 id="general">General</h3>
-
-<ul>
-<li>Extremely fast build times (~1&nbsp;ms per page)</li>
-<li>Completely cross platform: Runs on <i class="fa fa-apple"></i>&nbsp;Mac OS&nbsp;X, <i class="fa fa-linux"></i>&nbsp;Linux, <i class="fa fa-windows"></i>&nbsp;Windows, and more!</li>
-<li>Easy <a href="/overview/installing/">installation</a></li>
-<li>Render changes <a href="/overview/usage/">on the fly</a> with <a href="/extras/livereload/">LiveReload</a> as you develop</li>
-<li>Complete theme support</li>
-<li>Host your site anywhere</li>
-</ul>
-
-<h3 id="organization">Organization</h3>
-
-<ul>
-<li>Straightforward <a href="/content/organization/">organization</a></li>
-<li>Support for <a href="/content/sections/">website sections</a></li>
-<li>Completely customizable <a href="/extras/urls/">URLs</a></li>
-<li>Support for configurable <a href="/taxonomies/overview/">taxonomies</a> which includes categories and tags.  Create your own custom organization of content</li>
-<li>Ability to <a href="/content/ordering/">sort content</a> as you desire</li>
-<li>Automatic <a href="/extras/toc/">table of contents</a> generation</li>
-<li>Dynamic menu creation</li>
-<li><a href="/extras/urls/">Pretty URLs</a> support</li>
-<li><a href="/extras/permalinks/">Permalink</a> pattern support</li>
-<li><a href="/extras/aliases/">Aliases</a> (redirects)</li>
-</ul>
-
-<h3 id="content">Content</h3>
-
-<ul>
-<li>Content written in <a href="/content/example/">Markdown</a></li>
-<li>Support for TOML, YAML and JSON metadata in <a href="/content/front-matter/">frontmatter</a></li>
-<li>Completely <a href="/layout/homepage/">customizable homepage</a></li>
-<li>Support for multiple <a href="/content/types/">content types</a></li>
-<li>Automatic and user defined <a href="/content/summaries/">summaries</a></li>
-<li><a href="/extras/shortcodes/">Shortcodes</a> to enable rich content inside of Markdown</li>
-<li><a href="/layout/variables/">&ldquo;Minutes to Read&rdquo;</a> functionality</li>
-<li><a href="/layout/variables/">&ldquo;Wordcount&rdquo;</a> functionality</li>
-</ul>
-
-<h3 id="additional-features">Additional Features</h3>
-
-<ul>
-<li>Integrated <a href="https://disqus.com/">Disqus</a> comment support</li>
-<li>Automatic <a href="/layout/rss/">RSS</a> creation</li>
-<li>Support for <a href="http://golang.org/pkg/html/template/">Go</a>, <a href="https://github.com/eknkc/amber">Amber</a> and <a href="http://ace.yoss.si/">Ace</a> HTML templates</li>
-<li>Syntax <a href="/extras/highlighting/">highlighting</a> powered by <a href="http://pygments.org/">Pygments</a></li>
-</ul>
-
-<p>See what&rsquo;s coming next in the <a href="/meta/roadmap/">roadmap</a>.</p>
-
-<h2 id="who-should-use-hugo">Who should use Hugo?</h2>
-
-<p>Hugo is for people that prefer writing in a text editor over
-a browser.</p>
-
-<p>Hugo is for people who want to hand code their own website without
-worrying about setting up complicated runtimes, dependencies and
-databases.</p>
-
-<p>Hugo is for people building a blog, company site, portfolio, tumblog,
-documentation, single page site or a site with thousands of
-pages.</p>
-
-<h2 id="why-did-you-write-hugo">Why did you write Hugo?</h2>
-
-<p>I wrote Hugo ultimately for a few reasons. First, I was disappointed with
-WordPress, my then website solution. It rendered slowly. I couldn&rsquo;t create
-content as efficiently as I wanted to and needed to be online to write
-posts. The constant security updates and the horror stories of people&rsquo;s
-hacked blogs. I hated how content was written in HTML instead of the much
-simpler Markdown. Overall, I felt like it got in my way more than it helped
-me from writing great content.</p>
-
-<p>I looked at existing static site generators like <a href="http://jekyllrb.com/">Jekyll</a>, <a href="https://middlemanapp.com/">Middleman</a> and <a href="http://nanoc.ws/">nanoc</a>.
-All had complicated dependencies to install and took far longer to render
-my blog with hundreds of posts than I felt was acceptable. I wanted
-a framework to be able to get rapid feedback while making changes to the
-templates, and the 5+-minute render times was just too slow. In general,
-they were also very blog minded and didn&rsquo;t have the ability to have
-different content types and flexible URLs.</p>
-
-<p>I wanted to develop a fast and full-featured website framework without
-dependencies. The <a href="http://golang.org/" title="The Go Programming Language">Go language</a> seemed to have all of the features I needed
-in a language. I began developing Hugo in Go and fell in love with the
-language. I hope you will enjoy using (and contributing to) Hugo as much
-as I have writing it.</p>
-
-<h2 id="next-steps">Next Steps</h2>
-
-<ul>
-<li><a href="/overview/installing/">Install Hugo</a></li>
-<li><a href="/overview/quickstart/">Quick start</a></li>
-<li><a href="/community/mailing-list/">Join the Mailing List</a></li>
-<li><a href="https://github.com/spf13/hugo">Star us on GitHub</a></li>
-<li><a href="http://discuss.gohugo.io/">Discussion Forum</a></li>
-</ul>
+<p>Introduction to Perl&hellip;.content goes here.</p>
 
 
 
                     </div>
                     </section>
-                    <div style="font-size: medium; font-style: italic; text-align: right;">Hugo v0.17 documentation</div>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">something in footer</div>
 
                     </div>
 
                 <div class="col-md-1">
                     
                     
-                    <a class="navigation next" href="/overview/quickstart">
+                    <a class="navigation next" href="/overview/installation">
                         <i class="fa fa-angle-right"> </i>
                     </a>
                     
