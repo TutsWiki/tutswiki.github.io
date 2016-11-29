@@ -10,10 +10,10 @@
     
     <item>
       <title>Introduction to Perl</title>
-      <link>http://tutswiki.com/overview/introduction/</link>
+      <link>http://tutswiki.com/perl/introduction</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/overview/introduction/</guid>
+      <guid>http://tutswiki.com/perl/introduction</guid>
       <description>
 
 &lt;h2 id=&#34;what-is-perl&#34;&gt;What is Perl?&lt;/h2&gt;
@@ -24,10 +24,10 @@
     
     <item>
       <title>Installing Perl on Windows</title>
-      <link>http://tutswiki.com/overview/installation/</link>
+      <link>http://tutswiki.com/perl/installation</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/overview/installation/</guid>
+      <guid>http://tutswiki.com/perl/installation</guid>
       <description>&lt;p&gt;Explain how to install Perl on Windows. Cover both ActivePerl and Strawberry Perl.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt; prose.io&lt;/p&gt;
