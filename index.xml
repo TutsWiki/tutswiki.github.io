@@ -20,7 +20,7 @@
 
 &lt;p&gt;You can read data from a CSV file using the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html&#34;&gt;read_csv&lt;/a&gt; function. By default, it assumes that the fields are comma-separated.&lt;/p&gt;
 
-&lt;p&gt;We&amp;rsquo;re going to be looking some cyclist data from Montréal. Here&amp;rsquo;s the &lt;a href=&#34;http://donnees.ville.montreal.qc.ca/dataset/velos-comptage&#34;&gt;original page&lt;/a&gt; (in French), you can get it from &lt;a href=&#34;http://tutswiki.com/bikes.csv&#34;&gt;this link&lt;/a&gt;. We&amp;rsquo;re using the data from 2012.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to be looking some cyclist data from Montréal. Here&amp;rsquo;s the &lt;a href=&#34;http://donnees.ville.montreal.qc.ca/dataset/velos-comptage&#34;&gt;original page&lt;/a&gt; (in French). We&amp;rsquo;re using the data from 2012. Download the &lt;a href=&#34;http://tutswiki.com/bikes.csv&#34;&gt;bikes.csv&lt;/a&gt; file to try out the below examples.&lt;/p&gt;
 
 &lt;p&gt;This dataset is a list of how many people were on 7 different bike paths in Montreal, each day.&lt;/p&gt;
 
