@@ -116,20 +116,27 @@
                         </div>
 
 
-<p>###1.1 Reading data from a csv file</p>
 
-<p>You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.</p>
 
-<p>We&rsquo;re going to be looking some cyclist data from Montréal. Here&rsquo;s the original page (in French), but it&rsquo;s already included in this repository. We&rsquo;re using the data from 2012.</p>
+<h2 id="1-1-reading-data-from-a-csv-file">1.1 Reading data from a CSV file</h2>
+
+<p>You can read data from a CSV file using the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">read_csv</a> function. By default, it assumes that the fields are comma-separated.</p>
+
+<p>We&rsquo;re going to be looking some cyclist data from Montréal. Here&rsquo;s the <a href="http://donnees.ville.montreal.qc.ca/dataset/velos-comptage">original page</a> (in French), but it&rsquo;s already included in this repository. We&rsquo;re using the data from 2012.</p>
 
 <p>This dataset is a list of how many people were on 7 different bike paths in Montreal, each day.</p>
+
+<pre><code class="language-python">broken_df = pd.read_csv('../data/bikes.csv')
+# Look at the first 3 rows
+broken_df[:3]
+</code></pre>
 
 
 
                     </div>
                     </section>
                     <div style="font-size: medium; font-style: italic; text-align: right;">
-                      <span style="font-size: medium; font-style: italic; text-align: left;">Last revision: December 1, 2016</span>
+                      <span style="font-size: medium; font-style: italic; text-align: left;">Last revision: May 10, 2017</span>
                     </div>
 
                     </div>
