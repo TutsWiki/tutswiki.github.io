@@ -40,8 +40,8 @@ print broken_df[:3]
 &lt;p&gt;You&amp;rsquo;ll notice that this is totally broken! read_csv has a bunch of options that will let us fix that, though. Here we&amp;rsquo;ll&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;change the column separator to a ;&lt;/li&gt;
-&lt;li&gt;Set the encoding to &amp;lsquo;latin1&amp;rsquo; (the default is &amp;lsquo;utf8&amp;rsquo;)&lt;/li&gt;
+&lt;li&gt;Change the column separator to a ;&lt;/li&gt;
+&lt;li&gt;Set the encoding to &amp;lsquo;&lt;em&gt;latin1&lt;/em&gt;&amp;rsquo; (the default is &amp;lsquo;&lt;em&gt;utf8&lt;/em&gt;&amp;rsquo;)&lt;/li&gt;
 &lt;li&gt;Parse the dates in the &amp;lsquo;Date&amp;rsquo; column&lt;/li&gt;
 &lt;li&gt;Tell it that our dates have the date first instead of the month first&lt;/li&gt;
 &lt;li&gt;Set the index to be the &amp;lsquo;Date&amp;rsquo; column&lt;/li&gt;
