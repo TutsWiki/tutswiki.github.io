@@ -7,7 +7,7 @@
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Introduction to Perl</title>
+    <title>Pandas Cookbook</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -41,7 +41,7 @@
             </div>
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Introduction to Perl</h1>
+                <h1 class="nav top-menu">Pandas Cookbook</h1>
             </div>
       </header>
       
@@ -57,16 +57,14 @@
 
             <li class="sub-menu active">
             <a href="javascript:;" class="">
-                <i class='fa perl'></i>
                 
-                <span>Perl</span>
+                
+                <span>Pandas Cookbook</span>
                 <span class="menu-arrow fa fa-angle-down"></span>
             </a>
                 <ul class="sub open">
                     
-                    <li class="active"><a href="/perl/introduction">Introduction</a> </li>
-                    
-                    <li><a href="/perl/installation">Installation (Windows)</a> </li>
+                    <li class="active"><a href="/pandas-cookbook/chapter1">Chapter 1</a> </li>
                     
                 </ul>
               
@@ -74,7 +72,7 @@
           
             <li> <a href="https://github.com/TutsWiki/source/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a> </li>
             
-              <li><a href="https://github.com/TutsWiki/source/edit/master/content/tutorials/perl/introduction.md" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
+              <li><a href="https://github.com/TutsWiki/source/edit/master/content/tutorials/pandas%20cookbook/chapter1.md" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
             
         </ul>
         
@@ -118,11 +116,13 @@
                         </div>
 
 
+<p>###1.1 Reading data from a csv file</p>
 
+<p>You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.</p>
 
-<h2 id="what-is-perl">What is Perl?</h2>
+<p>We&rsquo;re going to be looking some cyclist data from Montréal. Here&rsquo;s the original page (in French), but it&rsquo;s already included in this repository. We&rsquo;re using the data from 2012.</p>
 
-<p>Introduction to Perl&hellip;.content goes here.</p>
+<p>This dataset is a list of how many people were on 7 different bike paths in Montreal, each day.</p>
 
 
 
@@ -137,7 +137,7 @@
                 <div class="col-md-1">
                     
                     
-                    <a class="navigation next" href="/perl/installation">
+                    <a class="navigation next" href="/pandas-cookbook/chapter2">
                         <i class="fa fa-angle-right"> </i>
                     </a>
                     

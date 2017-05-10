@@ -9,28 +9,18 @@
     <atom:link href="http://tutswiki.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Introduction to Perl</title>
-      <link>http://tutswiki.com/perl/introduction</link>
+      <title>Pandas Cookbook</title>
+      <link>http://tutswiki.com/pandas-cookbook/chapter1</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/perl/introduction</guid>
-      <description>
+      <guid>http://tutswiki.com/pandas-cookbook/chapter1</guid>
+      <description>&lt;p&gt;###1.1 Reading data from a csv file&lt;/p&gt;
 
-&lt;h2 id=&#34;what-is-perl&#34;&gt;What is Perl?&lt;/h2&gt;
+&lt;p&gt;You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.&lt;/p&gt;
 
-&lt;p&gt;Introduction to Perl&amp;hellip;.content goes here.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Installing Perl on Windows</title>
-      <link>http://tutswiki.com/perl/installation</link>
-      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://tutswiki.com/perl/installation</guid>
-      <description>&lt;p&gt;Explain how to install Perl on Windows. Cover both ActivePerl and Strawberry Perl.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to be looking some cyclist data from Montréal. Here&amp;rsquo;s the original page (in French), but it&amp;rsquo;s already included in this repository. We&amp;rsquo;re using the data from 2012.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt; prose.io&lt;/p&gt;
+&lt;p&gt;This dataset is a list of how many people were on 7 different bike paths in Montreal, each day.&lt;/p&gt;
 </description>
     </item>
     
