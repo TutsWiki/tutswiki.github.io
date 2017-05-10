@@ -24,7 +24,9 @@
 
 &lt;p&gt;This dataset is a list of how many people were on 7 different bike paths in Montreal, each day.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;broken_df = pd.read_csv(&#39;bikes.csv&#39;)
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+broken_df = pd.read_csv(&#39;bikes.csv&#39;)
 # Look at the first 3 rows
 print broken_df[:3]
 &lt;/code&gt;&lt;/pre&gt;
