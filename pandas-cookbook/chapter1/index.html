@@ -144,11 +144,11 @@ print broken_df[:3]
 <p>You&rsquo;ll notice that this is totally broken! read_csv has a bunch of options that will let us fix that, though. Here we&rsquo;ll</p>
 
 <ul>
-<li>Change the column separator to a ;</li>
-<li>Set the encoding to &lsquo;<em>latin1</em>&rsquo; (the default is &lsquo;<em>utf8</em>&rsquo;)</li>
-<li>Parse the dates in the &lsquo;Date&rsquo; column</li>
+<li>Change the column separator to a <code>;</code></li>
+<li>Set the encoding to <code>'_latin1_'</code> (the default is <code>'_utf8_'</code>)</li>
+<li>Parse the dates in the <code>'Date'</code> column</li>
 <li>Tell it that our dates have the date first instead of the month first</li>
-<li>Set the index to be the &lsquo;Date&rsquo; column</li>
+<li>Set the index to be the <code>'Date'</code> column</li>
 </ul>
 
 <pre><code class="language-python">fixed_df = pd.read_csv('bikes.csv', sep=';', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
@@ -215,12 +215,101 @@ print fixed_df[:3]
 </tbody>
 </table>
 
+<h2 id="1-2-selecting-a-column">1.2 Selecting a column</h2>
+
+<p>When you read a CSV, you get a kind of object called a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">DataFrame</a>, which is made up of rows and columns. You get columns out of a DataFrame the same way you get elements out of a dictionary.</p>
+
+<p>Here&rsquo;s an example:</p>
+
+<pre><code class="language-python">print fixed_df['Berri 1']
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-bash">Date
+2012-01-01     35
+2012-01-02     83
+2012-01-03    135
+2012-01-04    144
+2012-01-05    197
+2012-01-06    146
+2012-01-07     98
+2012-01-08     95
+2012-01-09    244
+2012-01-10    397
+2012-01-11    273
+2012-01-12    157
+2012-01-13     75
+2012-01-14     32
+2012-01-15     54
+...
+2012-10-22    3650
+2012-10-23    4177
+2012-10-24    3744
+2012-10-25    3735
+2012-10-26    4290
+2012-10-27    1857
+2012-10-28    1310
+2012-10-29    2919
+2012-10-30    2887
+2012-10-31    2634
+2012-11-01    2405
+2012-11-02    1582
+2012-11-03     844
+2012-11-04     966
+2012-11-05    2247
+Name: Berri 1, Length: 310, dtype: int64
+</code></pre>
+
+<h2 id="1-3-plotting-a-column">1.3 Plotting a column</h2>
+
+<p>Just add <code>.plot()</code> to the end! How could it be easier? =)</p>
+
+<p>We can see that, unsurprisingly, not many people are biking in January, February, and March.</p>
+
+<pre><code class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+
+fixed_df = pd.read_csv('bikes.csv', sep=';', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
+fixed_df['Berri 1'].plot()
+plt.show()
+</code></pre>
+
+<p>Output:
+<div>
+<img src="/img/plot_single_column.png" alt="Plotting CSV column with Matplotlib" />
+</div>
+We can also plot all the columns just as easily. We&rsquo;ll make it a little bigger, too. You can see that it&rsquo;s more squished together, but all the bike paths behave basically the same &ndash; if it&rsquo;s a bad day for cyclists, it&rsquo;s a bad day everywhere.</p>
+
+<pre><code class="language-python">fixed_df.plot(figsize=(15, 10))
+plt.show()
+</code></pre>
+
+<p>Output:</p>
+
+<div>
+<img src="/img/plot_dataframe.png" alt="Plotting Dataframe with Matplotlib" />
+</div>
+
+<h2 id="1-4-putting-all-that-together">1.4 Putting all that together</h2>
+
+<p>Here&rsquo;s the code we needed to write do draw that graph, all together:</p>
+
+<pre><code class="language-python">df = pd.read_csv('bikes.csv', sep=';', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
+df['Berri 1'].plot()
+</code></pre>
+
+<p>Output:
+<div>
+<img src="/img/plot_single_column.png" alt="Plotting CSV column with Matplotlib" />
+</div></p>
+
 
 
                     </div>
                     </section>
                     <div style="font-size: medium; font-style: italic; text-align: right;">
-                      <span style="font-size: medium; font-style: italic; text-align: left;">Last revision: May 10, 2017</span>
+                      <span style="font-size: medium; font-style: italic; text-align: left;">Last revision: May 11, 2017</span>
                     </div>
 
                     </div>

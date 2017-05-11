@@ -5,13 +5,13 @@
     <link>http://tutswiki.com/index.xml</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 10 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://tutswiki.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Chapter 1 - Reading from a CSV</title>
       <link>http://tutswiki.com/pandas-cookbook/chapter1</link>
-      <pubDate>Wed, 10 May 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter1</guid>
       <description>
@@ -42,11 +42,11 @@ print broken_df[:3]
 &lt;p&gt;You&amp;rsquo;ll notice that this is totally broken! read_csv has a bunch of options that will let us fix that, though. Here we&amp;rsquo;ll&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Change the column separator to a ;&lt;/li&gt;
-&lt;li&gt;Set the encoding to &amp;lsquo;&lt;em&gt;latin1&lt;/em&gt;&amp;rsquo; (the default is &amp;lsquo;&lt;em&gt;utf8&lt;/em&gt;&amp;rsquo;)&lt;/li&gt;
-&lt;li&gt;Parse the dates in the &amp;lsquo;Date&amp;rsquo; column&lt;/li&gt;
+&lt;li&gt;Change the column separator to a &lt;code&gt;;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set the encoding to &lt;code&gt;&#39;_latin1_&#39;&lt;/code&gt; (the default is &lt;code&gt;&#39;_utf8_&#39;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Parse the dates in the &lt;code&gt;&#39;Date&#39;&lt;/code&gt; column&lt;/li&gt;
 &lt;li&gt;Tell it that our dates have the date first instead of the month first&lt;/li&gt;
-&lt;li&gt;Set the index to be the &amp;lsquo;Date&amp;rsquo; column&lt;/li&gt;
+&lt;li&gt;Set the index to be the &lt;code&gt;&#39;Date&#39;&lt;/code&gt; column&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fixed_df = pd.read_csv(&#39;bikes.csv&#39;, sep=&#39;;&#39;, encoding=&#39;latin1&#39;, parse_dates=[&#39;Date&#39;], dayfirst=True, index_col=&#39;Date&#39;)
@@ -112,6 +112,95 @@ print fixed_df[:3]
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h2 id=&#34;1-2-selecting-a-column&#34;&gt;1.2 Selecting a column&lt;/h2&gt;
+
+&lt;p&gt;When you read a CSV, you get a kind of object called a &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html&#34;&gt;DataFrame&lt;/a&gt;, which is made up of rows and columns. You get columns out of a DataFrame the same way you get elements out of a dictionary.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print fixed_df[&#39;Berri 1&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Date
+2012-01-01     35
+2012-01-02     83
+2012-01-03    135
+2012-01-04    144
+2012-01-05    197
+2012-01-06    146
+2012-01-07     98
+2012-01-08     95
+2012-01-09    244
+2012-01-10    397
+2012-01-11    273
+2012-01-12    157
+2012-01-13     75
+2012-01-14     32
+2012-01-15     54
+...
+2012-10-22    3650
+2012-10-23    4177
+2012-10-24    3744
+2012-10-25    3735
+2012-10-26    4290
+2012-10-27    1857
+2012-10-28    1310
+2012-10-29    2919
+2012-10-30    2887
+2012-10-31    2634
+2012-11-01    2405
+2012-11-02    1582
+2012-11-03     844
+2012-11-04     966
+2012-11-05    2247
+Name: Berri 1, Length: 310, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;1-3-plotting-a-column&#34;&gt;1.3 Plotting a column&lt;/h2&gt;
+
+&lt;p&gt;Just add &lt;code&gt;.plot()&lt;/code&gt; to the end! How could it be easier? =)&lt;/p&gt;
+
+&lt;p&gt;We can see that, unsurprisingly, not many people are biking in January, February, and March.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import matplotlib.pyplot as plt
+
+fixed_df = pd.read_csv(&#39;bikes.csv&#39;, sep=&#39;;&#39;, encoding=&#39;latin1&#39;, parse_dates=[&#39;Date&#39;], dayfirst=True, index_col=&#39;Date&#39;)
+fixed_df[&#39;Berri 1&#39;].plot()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/plot_single_column.png&#34; alt=&#34;Plotting CSV column with Matplotlib&#34; /&gt;
+&lt;/div&gt;
+We can also plot all the columns just as easily. We&amp;rsquo;ll make it a little bigger, too. You can see that it&amp;rsquo;s more squished together, but all the bike paths behave basically the same &amp;ndash; if it&amp;rsquo;s a bad day for cyclists, it&amp;rsquo;s a bad day everywhere.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fixed_df.plot(figsize=(15, 10))
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/plot_dataframe.png&#34; alt=&#34;Plotting Dataframe with Matplotlib&#34; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;1-4-putting-all-that-together&#34;&gt;1.4 Putting all that together&lt;/h2&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the code we needed to write do draw that graph, all together:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.read_csv(&#39;bikes.csv&#39;, sep=&#39;;&#39;, encoding=&#39;latin1&#39;, parse_dates=[&#39;Date&#39;], dayfirst=True, index_col=&#39;Date&#39;)
+df[&#39;Berri 1&#39;].plot()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/plot_single_column.png&#34; alt=&#34;Plotting CSV column with Matplotlib&#34; /&gt;
+&lt;/div&gt;&lt;/p&gt;
 </description>
     </item>
     
