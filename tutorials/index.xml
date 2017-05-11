@@ -4134,6 +4134,485 @@ Name: Complaint Type, dtype: object
 4                     Rodent
 Name: Complaint Type, dtype: object
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-3-selecting-multiple-columns&#34;&gt;2.3 Selecting multiple columns&lt;/h2&gt;
+
+&lt;p&gt;What if we just want to know the complaint type and the borough, but not the rest of the information? Pandas makes it really easy to select a subset of the columns: just index with list of columns you want.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[[&#39;Complaint Type&#39;, &#39;Borough&#39;]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Complaint Type&lt;/th&gt;
+      &lt;th&gt;Borough&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0 &lt;/th&gt;
+      &lt;td&gt;  Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1 &lt;/th&gt;
+      &lt;td&gt;          Illegal Parking&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2 &lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3 &lt;/th&gt;
+      &lt;td&gt;          Noise - Vehicle&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4 &lt;/th&gt;
+      &lt;td&gt;                   Rodent&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5 &lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6 &lt;/th&gt;
+      &lt;td&gt;         Blocked Driveway&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7 &lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8 &lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9 &lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;td&gt; Noise - House of Worship&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;11&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;12&lt;/th&gt;
+      &lt;td&gt;          Illegal Parking&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;13&lt;/th&gt;
+      &lt;td&gt;          Noise - Vehicle&lt;/td&gt;
+      &lt;td&gt;         BRONX&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;14&lt;/th&gt;
+      &lt;td&gt;                   Rodent&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;15&lt;/th&gt;
+      &lt;td&gt; Noise - House of Worship&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;  Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt; STATEN ISLAND&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;17&lt;/th&gt;
+      &lt;td&gt;          Illegal Parking&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;18&lt;/th&gt;
+      &lt;td&gt;   Street Light Condition&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;19&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;20&lt;/th&gt;
+      &lt;td&gt; Noise - House of Worship&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;21&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;22&lt;/th&gt;
+      &lt;td&gt;          Noise - Vehicle&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;23&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;24&lt;/th&gt;
+      &lt;td&gt;         Blocked Driveway&lt;/td&gt;
+      &lt;td&gt; STATEN ISLAND&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25&lt;/th&gt;
+      &lt;td&gt;  Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt; STATEN ISLAND&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;26&lt;/th&gt;
+      &lt;td&gt;   Street Light Condition&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;27&lt;/th&gt;
+      &lt;td&gt;     Harboring Bees/Wasps&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;28&lt;/th&gt;
+      &lt;td&gt;  Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;29&lt;/th&gt;
+      &lt;td&gt;   Street Light Condition&lt;/td&gt;
+      &lt;td&gt; STATEN ISLAND&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;30&lt;/th&gt;
+      &lt;td&gt;         Blocked Driveway&lt;/td&gt;
+      &lt;td&gt; STATEN ISLAND&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;31&lt;/th&gt;
+      &lt;td&gt;  Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;32&lt;/th&gt;
+      &lt;td&gt;           Taxi Complaint&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;33&lt;/th&gt;
+      &lt;td&gt; Noise - House of Worship&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;34&lt;/th&gt;
+      &lt;td&gt;      Homeless Encampment&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;35&lt;/th&gt;
+      &lt;td&gt;         Blocked Driveway&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;36&lt;/th&gt;
+      &lt;td&gt; Traffic Signal Condition&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;37&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;38&lt;/th&gt;
+      &lt;td&gt; Traffic Signal Condition&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;39&lt;/th&gt;
+      &lt;td&gt;         Blocked Driveway&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;40&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;        QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;41&lt;/th&gt;
+      &lt;td&gt;       Food Establishment&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;42&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;43&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;44&lt;/th&gt;
+      &lt;td&gt;             Noise - Park&lt;/td&gt;
+      &lt;td&gt;         BRONX&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;45&lt;/th&gt;
+      &lt;td&gt;  Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt;         BRONX&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;46&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;         BRONX&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;47&lt;/th&gt;
+      &lt;td&gt;           Taxi Complaint&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;48&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;49&lt;/th&gt;
+      &lt;td&gt;  Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;50&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;51&lt;/th&gt;
+      &lt;td&gt;        Broken Muni Meter&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;52&lt;/th&gt;
+      &lt;td&gt;         Blocked Driveway&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;53&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;54&lt;/th&gt;
+      &lt;td&gt; Benefit Card Replacement&lt;/td&gt;
+      &lt;td&gt;   Unspecified&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;55&lt;/th&gt;
+      &lt;td&gt;       Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;     MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;56&lt;/th&gt;
+      &lt;td&gt;     Sanitation Condition&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;57&lt;/th&gt;
+      &lt;td&gt;                 ELECTRIC&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;58&lt;/th&gt;
+      &lt;td&gt;                 PLUMBING&lt;/td&gt;
+      &lt;td&gt;      BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;59&lt;/th&gt;
+      &lt;td&gt;                  HEATING&lt;/td&gt;
+      &lt;td&gt;         BRONX&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;111069 rows × 2 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That showed us a summary, and then we can look at the first 10 rows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[[&#39;Complaint Type&#39;, &#39;Borough&#39;]][:10]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Complaint Type&lt;/th&gt;
+      &lt;th&gt;Borough&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt; Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;         Illegal Parking&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;      Noise - Commercial&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;         Noise - Vehicle&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;                  Rodent&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;      Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;        Blocked Driveway&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;      Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;      Noise - Commercial&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;      Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;  BROOKLYN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;10 rows × 2 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;2-4-what-s-the-most-common-complaint-type&#34;&gt;2.4 What&amp;rsquo;s the most common complaint type?&lt;/h2&gt;
+
+&lt;p&gt;This is a really easy question to answer! There&amp;rsquo;s a &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html&#34;&gt;.value_counts()&lt;/a&gt; method that we can use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[&#39;Complaint Type&#39;].value_counts()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HEATING                     14200
+GENERAL CONSTRUCTION         7471
+Street Light Condition       7117
+DOF Literature Request       5797
+PLUMBING                     5373
+PAINT - PLASTER              5149
+Blocked Driveway             4590
+NONCONST                     3998
+Street Condition             3473
+Illegal Parking              3343
+Noise                        3321
+Traffic Signal Condition     3145
+Dirty Conditions             2653
+Water System                 2636
+Noise - Commercial           2578
+...
+Opinion for the Mayor                2
+Window Guard                         2
+DFTA Literature Request              2
+Legal Services Provider Complaint    2
+Open Flame Permit                    1
+Snow                                 1
+Municipal Parking Facility           1
+X-Ray Machine/Equipment              1
+Stalled Sites                        1
+DHS Income Savings Requirement       1
+Tunnel Condition                     1
+Highway Sign - Damaged               1
+Ferry Permit                         1
+Trans Fat                            1
+DWD                                  1
+Length: 165, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we just wanted the top 10 most common complaints, we can do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaint_counts = complaints[&#39;Complaint Type&#39;].value_counts()
+print complaint_counts[:10]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HEATING                   14200
+GENERAL CONSTRUCTION       7471
+Street Light Condition     7117
+DOF Literature Request     5797
+PLUMBING                   5373
+PAINT - PLASTER            5149
+Blocked Driveway           4590
+NONCONST                   3998
+Street Condition           3473
+Illegal Parking            3343
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But it gets better! We can plot them!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaint_counts[:10].plot(kind=&#39;bar&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/plot_complaints.png&#34; alt=&#34;Plotting complaints with Matplotlib&#34; /&gt;
+&lt;/div&gt;&lt;/p&gt;
 </description>
     </item>
     
