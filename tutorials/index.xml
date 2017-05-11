@@ -275,7 +275,7 @@ plt.rcParams[&#39;figure.figsize&#39;] = (15, 5)
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints = pd.read_csv(&#39;311-service-requests.csv&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Depending on your pandas version, you might see an error like &amp;ldquo;DtypeWarning: Columns (8) have mixed types&amp;rdquo;. This means that it&amp;rsquo;s encountered a problem reading in our data. In this case it almost certainly means that it has columns where some of the entries are strings and some are integers.
+&lt;p&gt;Depending on your pandas version, you might see an error like &lt;code&gt;&amp;quot;DtypeWarning: Columns (8) have mixed types&amp;quot;&lt;/code&gt;. This means that it&amp;rsquo;s encountered a problem reading in our data. In this case it almost certainly means that it has columns where some of the entries are strings and some are integers.
 For now we&amp;rsquo;re going to ignore it and hope we don&amp;rsquo;t run into a problem, but in the long run we&amp;rsquo;d need to investigate this warning.&lt;/p&gt;
 
 &lt;h2 id=&#34;2-1-what-s-even-in-it-the-summary&#34;&gt;2.1 What&amp;rsquo;s even in it? (the summary)&lt;/h2&gt;
@@ -3709,6 +3709,430 @@ If you don&amp;rsquo;t see this, don&amp;rsquo;t panic! The default behavior for
 &lt;p&gt;111069 rows × 52 columns&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&#34;2-2-selecting-columns-and-rows&#34;&gt;2.2 Selecting columns and rows&lt;/h2&gt;
+
+&lt;p&gt;To select a column, we index with the name of the column, like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[&#39;Complaint Type&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+0      Noise - Street/Sidewalk
+1              Illegal Parking
+2           Noise - Commercial
+3              Noise - Vehicle
+4                       Rodent
+5           Noise - Commercial
+6             Blocked Driveway
+7           Noise - Commercial
+8           Noise - Commercial
+9           Noise - Commercial
+10    Noise - House of Worship
+11          Noise - Commercial
+12             Illegal Parking
+13             Noise - Vehicle
+14                      Rodent
+...
+111054    Noise - Street/Sidewalk
+111055         Noise - Commercial
+111056      Street Sign - Missing
+111057                      Noise
+111058         Noise - Commercial
+111059    Noise - Street/Sidewalk
+111060                      Noise
+111061         Noise - Commercial
+111062               Water System
+111063               Water System
+111064    Maintenance or Facility
+111065            Illegal Parking
+111066    Noise - Street/Sidewalk
+111067         Noise - Commercial
+111068           Blocked Driveway
+Name: Complaint Type, Length: 111069, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To get the first 5 rows of a dataframe, we can use a slice: df[:5].
+This is a great way to get a sense for what kind of information is in the dataframe &amp;ndash; take a minute to look at the contents and get a feel for this dataset.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Unique Key&lt;/th&gt;
+      &lt;th&gt;Created Date&lt;/th&gt;
+      &lt;th&gt;Closed Date&lt;/th&gt;
+      &lt;th&gt;Agency&lt;/th&gt;
+      &lt;th&gt;Agency Name&lt;/th&gt;
+      &lt;th&gt;Complaint Type&lt;/th&gt;
+      &lt;th&gt;Descriptor&lt;/th&gt;
+      &lt;th&gt;Location Type&lt;/th&gt;
+      &lt;th&gt;Incident Zip&lt;/th&gt;
+      &lt;th&gt;Incident Address&lt;/th&gt;
+      &lt;th&gt;Street Name&lt;/th&gt;
+      &lt;th&gt;Cross Street 1&lt;/th&gt;
+      &lt;th&gt;Cross Street 2&lt;/th&gt;
+      &lt;th&gt;Intersection Street 1&lt;/th&gt;
+      &lt;th&gt;Intersection Street 2&lt;/th&gt;
+      &lt;th&gt;Address Type&lt;/th&gt;
+      &lt;th&gt;City&lt;/th&gt;
+      &lt;th&gt;Landmark&lt;/th&gt;
+      &lt;th&gt;Facility Type&lt;/th&gt;
+      &lt;th&gt;Status&lt;/th&gt;
+      &lt;th&gt;Due Date&lt;/th&gt;
+      &lt;th&gt;Resolution Action Updated Date&lt;/th&gt;
+      &lt;th&gt;Community Board&lt;/th&gt;
+      &lt;th&gt;Borough&lt;/th&gt;
+      &lt;th&gt;X Coordinate (State Plane)&lt;/th&gt;
+      &lt;th&gt;Y Coordinate (State Plane)&lt;/th&gt;
+      &lt;th&gt;Park Facility Name&lt;/th&gt;
+      &lt;th&gt;Park Borough&lt;/th&gt;
+      &lt;th&gt;School Name&lt;/th&gt;
+      &lt;th&gt;School Number&lt;/th&gt;
+      &lt;th&gt;School Region&lt;/th&gt;
+      &lt;th&gt;School Code&lt;/th&gt;
+      &lt;th&gt;School Phone Number&lt;/th&gt;
+      &lt;th&gt;School Address&lt;/th&gt;
+      &lt;th&gt;School City&lt;/th&gt;
+      &lt;th&gt;School State&lt;/th&gt;
+      &lt;th&gt;School Zip&lt;/th&gt;
+      &lt;th&gt;School Not Found&lt;/th&gt;
+      &lt;th&gt;School or Citywide Complaint&lt;/th&gt;
+      &lt;th&gt;Vehicle Type&lt;/th&gt;
+      &lt;th&gt;Taxi Company Borough&lt;/th&gt;
+      &lt;th&gt;Taxi Pick Up Location&lt;/th&gt;
+      &lt;th&gt;Bridge Highway Name&lt;/th&gt;
+      &lt;th&gt;Bridge Highway Direction&lt;/th&gt;
+      &lt;th&gt;Road Ramp&lt;/th&gt;
+      &lt;th&gt;Bridge Highway Segment&lt;/th&gt;
+      &lt;th&gt;Garage Lot Name&lt;/th&gt;
+      &lt;th&gt;Ferry Direction&lt;/th&gt;
+      &lt;th&gt;Ferry Terminal Name&lt;/th&gt;
+      &lt;th&gt;Latitude&lt;/th&gt;
+      &lt;th&gt;Longitude&lt;/th&gt;
+      &lt;th&gt;Location&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt; 26589651&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 02:08:41 AM&lt;/td&gt;
+      &lt;td&gt;                    NaN&lt;/td&gt;
+      &lt;td&gt;  NYPD&lt;/td&gt;
+      &lt;td&gt;         New York City Police Department&lt;/td&gt;
+      &lt;td&gt; Noise - Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt;                 Loud Talking&lt;/td&gt;
+      &lt;td&gt;     Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt; 11432&lt;/td&gt;
+      &lt;td&gt; 90-03 169 STREET&lt;/td&gt;
+      &lt;td&gt;      169 STREET&lt;/td&gt;
+      &lt;td&gt;       90 AVENUE&lt;/td&gt;
+      &lt;td&gt;                        91 AVENUE&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt;   ADDRESS&lt;/td&gt;
+      &lt;td&gt;  JAMAICA&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; Precinct&lt;/td&gt;
+      &lt;td&gt; Assigned&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 10:08:41 AM&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 02:35:17 AM&lt;/td&gt;
+      &lt;td&gt;    12 QUEENS&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+      &lt;td&gt; 1042027&lt;/td&gt;
+      &lt;td&gt; 197389&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; N&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; 40.708275&lt;/td&gt;
+      &lt;td&gt;-73.791604&lt;/td&gt;
+      &lt;td&gt;  (40.70827532593202, -73.79160395779721)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt; 26593698&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 02:01:04 AM&lt;/td&gt;
+      &lt;td&gt;                    NaN&lt;/td&gt;
+      &lt;td&gt;  NYPD&lt;/td&gt;
+      &lt;td&gt;         New York City Police Department&lt;/td&gt;
+      &lt;td&gt;         Illegal Parking&lt;/td&gt;
+      &lt;td&gt; Commercial Overnight Parking&lt;/td&gt;
+      &lt;td&gt;     Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt; 11378&lt;/td&gt;
+      &lt;td&gt;        58 AVENUE&lt;/td&gt;
+      &lt;td&gt;       58 AVENUE&lt;/td&gt;
+      &lt;td&gt;        58 PLACE&lt;/td&gt;
+      &lt;td&gt;                        59 STREET&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; BLOCKFACE&lt;/td&gt;
+      &lt;td&gt;  MASPETH&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; Precinct&lt;/td&gt;
+      &lt;td&gt;     Open&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 10:01:04 AM&lt;/td&gt;
+      &lt;td&gt;                    NaN&lt;/td&gt;
+      &lt;td&gt;    05 QUEENS&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+      &lt;td&gt; 1009349&lt;/td&gt;
+      &lt;td&gt; 201984&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt;    QUEENS&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; N&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; 40.721041&lt;/td&gt;
+      &lt;td&gt;-73.909453&lt;/td&gt;
+      &lt;td&gt; (40.721040535628305, -73.90945306791765)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt; 26594139&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 02:00:24 AM&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 02:40:32 AM&lt;/td&gt;
+      &lt;td&gt;  NYPD&lt;/td&gt;
+      &lt;td&gt;         New York City Police Department&lt;/td&gt;
+      &lt;td&gt;      Noise - Commercial&lt;/td&gt;
+      &lt;td&gt;             Loud Music/Party&lt;/td&gt;
+      &lt;td&gt; Club/Bar/Restaurant&lt;/td&gt;
+      &lt;td&gt; 10032&lt;/td&gt;
+      &lt;td&gt;    4060 BROADWAY&lt;/td&gt;
+      &lt;td&gt;        BROADWAY&lt;/td&gt;
+      &lt;td&gt; WEST 171 STREET&lt;/td&gt;
+      &lt;td&gt;                  WEST 172 STREET&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt;   ADDRESS&lt;/td&gt;
+      &lt;td&gt; NEW YORK&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; Precinct&lt;/td&gt;
+      &lt;td&gt;   Closed&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 10:00:24 AM&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 02:39:42 AM&lt;/td&gt;
+      &lt;td&gt; 12 MANHATTAN&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+      &lt;td&gt; 1001088&lt;/td&gt;
+      &lt;td&gt; 246531&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; N&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; 40.843330&lt;/td&gt;
+      &lt;td&gt;-73.939144&lt;/td&gt;
+      &lt;td&gt;  (40.84332975466513, -73.93914371913482)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt; 26595721&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 01:56:23 AM&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 02:21:48 AM&lt;/td&gt;
+      &lt;td&gt;  NYPD&lt;/td&gt;
+      &lt;td&gt;         New York City Police Department&lt;/td&gt;
+      &lt;td&gt;         Noise - Vehicle&lt;/td&gt;
+      &lt;td&gt;               Car/Truck Horn&lt;/td&gt;
+      &lt;td&gt;     Street/Sidewalk&lt;/td&gt;
+      &lt;td&gt; 10023&lt;/td&gt;
+      &lt;td&gt;   WEST 72 STREET&lt;/td&gt;
+      &lt;td&gt;  WEST 72 STREET&lt;/td&gt;
+      &lt;td&gt; COLUMBUS AVENUE&lt;/td&gt;
+      &lt;td&gt;                 AMSTERDAM AVENUE&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; BLOCKFACE&lt;/td&gt;
+      &lt;td&gt; NEW YORK&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; Precinct&lt;/td&gt;
+      &lt;td&gt;   Closed&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 09:56:23 AM&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 02:21:10 AM&lt;/td&gt;
+      &lt;td&gt; 07 MANHATTAN&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+      &lt;td&gt;  989730&lt;/td&gt;
+      &lt;td&gt; 222727&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; N&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; 40.778009&lt;/td&gt;
+      &lt;td&gt;-73.980213&lt;/td&gt;
+      &lt;td&gt;   (40.7780087446372, -73.98021349023975)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt; 26590930&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 01:53:44 AM&lt;/td&gt;
+      &lt;td&gt;                    NaN&lt;/td&gt;
+      &lt;td&gt; DOHMH&lt;/td&gt;
+      &lt;td&gt; Department of Health and Mental Hygiene&lt;/td&gt;
+      &lt;td&gt;                  Rodent&lt;/td&gt;
+      &lt;td&gt; Condition Attracting Rodents&lt;/td&gt;
+      &lt;td&gt;          Vacant Lot&lt;/td&gt;
+      &lt;td&gt; 10027&lt;/td&gt;
+      &lt;td&gt;  WEST 124 STREET&lt;/td&gt;
+      &lt;td&gt; WEST 124 STREET&lt;/td&gt;
+      &lt;td&gt;    LENOX AVENUE&lt;/td&gt;
+      &lt;td&gt; ADAM CLAYTON POWELL JR BOULEVARD&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; BLOCKFACE&lt;/td&gt;
+      &lt;td&gt; NEW YORK&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt;      NaN&lt;/td&gt;
+      &lt;td&gt;  Pending&lt;/td&gt;
+      &lt;td&gt; 11/30/2013 01:53:44 AM&lt;/td&gt;
+      &lt;td&gt; 10/31/2013 01:59:54 AM&lt;/td&gt;
+      &lt;td&gt; 10 MANHATTAN&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+      &lt;td&gt;  998815&lt;/td&gt;
+      &lt;td&gt; 233545&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; MANHATTAN&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; Unspecified&lt;/td&gt;
+      &lt;td&gt; N&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; NaN&lt;/td&gt;
+      &lt;td&gt; 40.807691&lt;/td&gt;
+      &lt;td&gt;-73.947387&lt;/td&gt;
+      &lt;td&gt;  (40.80769092704951, -73.94738703491433)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5 rows × 52 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We can combine these to get the first 5 rows of a column:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[&#39;Complaint Type&#39;][:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;0    Noise - Street/Sidewalk
+1            Illegal Parking
+2         Noise - Commercial
+3            Noise - Vehicle
+4                     Rodent
+Name: Complaint Type, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and it doesn&amp;rsquo;t matter which direction we do it in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[&#39;Complaint Type&#39;][:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;0    Noise - Street/Sidewalk
+1            Illegal Parking
+2         Noise - Commercial
+3            Noise - Vehicle
+4                     Rodent
+Name: Complaint Type, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
