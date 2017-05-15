@@ -217,12 +217,12 @@ berri_bikes[:5]
 &lt;h2 id=&#34;4-2-adding-up-the-cyclists-by-weekday&#34;&gt;4.2 Adding up the cyclists by weekday&lt;/h2&gt;
 
 &lt;p&gt;This turns out to be really easy!
-Dataframes have a &lt;code&gt;.groupby()&lt;/code&gt; method that is similar to SQL groupby, if you&amp;rsquo;re familiar with that. I&amp;rsquo;m not going to explain more about it right now &amp;ndash; if you want to to know more, &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/groupby.html&#34;&gt;the documentation&lt;/a&gt; is really good.&lt;/p&gt;
+Dataframes have a &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html&#34;&gt;.groupby()&lt;/a&gt; method that is similar to &lt;a href=&#34;https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql&#34;&gt;SQL groupby&lt;/a&gt;, if you&amp;rsquo;re familiar with that. I&amp;rsquo;m not going to explain more about it right now &amp;ndash; if you want to to know more, &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/groupby.html&#34;&gt;the documentation&lt;/a&gt; is really good.&lt;/p&gt;
 
 &lt;p&gt;In this case, &lt;code&gt;berri_bikes.groupby(&#39;weekday&#39;).aggregate(sum)&lt;/code&gt; means&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Group the rows by weekday and then add up all the values with the same weekday.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Group the rows by weekday and then add up all the values with the same weekday.&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weekday_counts = berri_bikes.groupby(&#39;weekday&#39;).aggregate(sum)
