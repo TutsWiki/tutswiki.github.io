@@ -155,7 +155,7 @@ plt.rcParams['figure.figsize'] = (15, 5)
 <p>When you print a large dataframe, it will only show you the first few rows.
 If you don&rsquo;t see this, don&rsquo;t panic! The default behavior for large dataframes changed between pandas 0.12 and 0.13. Previous to 0.13 it would show you a summary of the dataframe. This includes all the columns, and how many non-null values there are in each column.</p>
 
-<pre><code class="language-python">print complaints
+<pre><code class="language-python">complaints
 </code></pre>
 
 <p>Output:</p>
@@ -3586,7 +3586,7 @@ If you don&rsquo;t see this, don&rsquo;t panic! The default behavior for large d
 
 <p>To select a column, we index with the name of the column, like this:</p>
 
-<pre><code class="language-python">print complaints['Complaint Type']
+<pre><code class="language-python">complaints['Complaint Type']
 </code></pre>
 
 <p>Output:</p>
@@ -3629,7 +3629,7 @@ Name: Complaint Type, Length: 111069, dtype: object
 <p>To get the first 5 rows of a dataframe, we can use a slice: df[:5].
 This is a great way to get a sense for what kind of information is in the dataframe &ndash; take a minute to look at the contents and get a feel for this dataset.</p>
 
-<pre><code class="language-python">print complaints[:5]
+<pre><code class="language-python">complaints[:5]
 </code></pre>
 
 <p>Output:</p>
@@ -3978,7 +3978,7 @@ This is a great way to get a sense for what kind of information is in the datafr
 
 <p>We can combine these to get the first 5 rows of a column:</p>
 
-<pre><code class="language-python">print complaints['Complaint Type'][:5]
+<pre><code class="language-python">complaints['Complaint Type'][:5]
 </code></pre>
 
 <p>Output:</p>
@@ -3993,7 +3993,7 @@ Name: Complaint Type, dtype: object
 
 <p>and it doesn&rsquo;t matter which direction we do it in:</p>
 
-<pre><code class="language-python">print complaints['Complaint Type'][:5]
+<pre><code class="language-python">complaints['Complaint Type'][:5]
 </code></pre>
 
 <p>Output:</p>
@@ -4010,7 +4010,7 @@ Name: Complaint Type, dtype: object
 
 <p>What if we just want to know the complaint type and the borough, but not the rest of the information? Pandas makes it really easy to select a subset of the columns: just index with list of columns you want.</p>
 
-<pre><code class="language-python">print complaints[['Complaint Type', 'Borough']]
+<pre><code class="language-python">complaints[['Complaint Type', 'Borough']]
 </code></pre>
 
 <p>Output:</p>
@@ -4339,7 +4339,7 @@ Name: Complaint Type, dtype: object
 
 <p>That showed us a summary, and then we can look at the first 10 rows:</p>
 
-<pre><code class="language-python">print complaints[['Complaint Type', 'Borough']][:10]
+<pre><code class="language-python">complaints[['Complaint Type', 'Borough']][:10]
 </code></pre>
 
 <p>Output:</p>
@@ -4415,7 +4415,7 @@ Name: Complaint Type, dtype: object
 
 <p>This is a really easy question to answer! There&rsquo;s a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html">.value_counts()</a> method that we can use:</p>
 
-<pre><code class="language-python">print complaints['Complaint Type'].value_counts()
+<pre><code class="language-python">complaints['Complaint Type'].value_counts()
 </code></pre>
 
 <p>Output:</p>
@@ -4457,7 +4457,7 @@ Length: 165, dtype: int64
 <p>If we just wanted the top 10 most common complaints, we can do this:</p>
 
 <pre><code class="language-python">complaint_counts = complaints['Complaint Type'].value_counts()
-print complaint_counts[:10]
+complaint_counts[:10]
 </code></pre>
 
 <p>Output:</p>

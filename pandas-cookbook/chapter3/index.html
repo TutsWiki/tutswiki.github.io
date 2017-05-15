@@ -151,7 +151,7 @@ pd.set_option('display.max_columns', 60)
 
 <p>I&rsquo;d like to know which borough has the most noise complaints. First, we&rsquo;ll take a look at the data to see what it looks like:</p>
 
-<pre><code class="language-python">print complaints[:5]
+<pre><code class="language-python">complaints[:5]
 </code></pre>
 
 <p>Output:</p>
@@ -501,7 +501,7 @@ pd.set_option('display.max_columns', 60)
 <p>To get the noise complaints, we need to find the rows where the &ldquo;Complaint Type&rdquo; column is &ldquo;Noise - Street/Sidewalk&rdquo;. I&rsquo;ll show you how to do that, and then explain what&rsquo;s going on.</p>
 
 <pre><code class="language-python">noise_complaints = complaints[complaints['Complaint Type'] == &quot;Noise - Street/Sidewalk&quot;]
-print noise_complaints[:3]
+noise_complaints[:3]
 </code></pre>
 
 <p>Output:</p>
@@ -785,7 +785,7 @@ Name: Complaint Type, Length: 111069, dtype: bool
 
 <pre><code class="language-python">is_noise = complaints['Complaint Type'] == &quot;Noise - Street/Sidewalk&quot;
 in_brooklyn = complaints['Borough'] == &quot;BROOKLYN&quot;
-print complaints[is_noise &amp; in_brooklyn][:5]
+complaints[is_noise &amp; in_brooklyn][:5]
 </code></pre>
 
 <p>Output:</p>
@@ -1134,7 +1134,7 @@ print complaints[is_noise &amp; in_brooklyn][:5]
 
 <p>Or if we just wanted a few columns:</p>
 
-<pre><code class="language-python">print complaints[is_noise &amp; in_brooklyn][['Complaint Type', 'Borough', 'Created Date', 'Descriptor']][:10]
+<pre><code class="language-python">complaints[is_noise &amp; in_brooklyn][['Complaint Type', 'Borough', 'Created Date', 'Descriptor']][:10]
 </code></pre>
 
 <p>Output:</p>
@@ -1232,7 +1232,7 @@ print complaints[is_noise &amp; in_brooklyn][:5]
 
 <p>On the inside, the type of a column is <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">pd.Series</a></p>
 
-<pre><code class="language-python">print pd.Series([1,2,3])
+<pre><code class="language-python">pd.Series([1,2,3])
 </code></pre>
 
 <p>Output:</p>
@@ -1245,7 +1245,7 @@ dtype: int64
 
 <p>and pandas Series are internally <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html">numpy arrays</a>. If you add <code>.values</code> to the end of any Series, you&rsquo;ll get its internal numpy array</p>
 
-<pre><code class="language-python">print np.array([1,2,3])
+<pre><code class="language-python">np.array([1,2,3])
 </code></pre>
 
 <p>Output:</p>
@@ -1253,7 +1253,7 @@ dtype: int64
 <pre><code class="language-bash">array([1, 2, 3])
 </code></pre>
 
-<pre><code class="language-python">print pd.Series([1,2,3]).values
+<pre><code class="language-python">pd.Series([1,2,3]).values
 </code></pre>
 
 <p>Output:</p>
@@ -1264,7 +1264,7 @@ dtype: int64
 <p>So this binary-array-selection business is actually something that works with any numpy array:</p>
 
 <pre><code class="language-python">arr = np.array([1,2,3])
-print arr != 2
+arr != 2
 </code></pre>
 
 <p>Output:</p>
@@ -1272,7 +1272,7 @@ print arr != 2
 <pre><code class="language-bash">array([ True, False,  True], dtype=bool)
 </code></pre>
 
-<pre><code class="language-python">print arr[arr != 2]
+<pre><code class="language-python">arr[arr != 2]
 </code></pre>
 
 <p>Output:</p>
@@ -1284,7 +1284,25 @@ print arr != 2
 
 <pre><code class="language-python">is_noise = complaints['Complaint Type'] == &quot;Noise - Street/Sidewalk&quot;
 noise_complaints = complaints[is_noise]
-print noise_complaints['Borough'].value_counts()
+noise_complaints['Borough'].value_counts()
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-bash">MANHATTAN        917
+BROOKLYN         456
+BRONX            292
+QUEENS           226
+STATEN ISLAND     36
+Unspecified        1
+dtype: int64
+</code></pre>
+
+<p>It&rsquo;s Manhattan! But what if we wanted to divide by the total number of complaints, to make it make a bit more sense? That would be easy too:</p>
+
+<pre><code class="language-python">noise_complaint_counts = noise_complaints['Borough'].value_counts()
+complaint_counts = complaints['Borough'].value_counts()
+noise_complaint_counts / complaint_counts
 </code></pre>
 
 <p>Output:</p>
@@ -1300,7 +1318,7 @@ dtype: int64
 
 <p>Oops, why was that zero? That&rsquo;s no good. This is because of integer division in Python 2. Let&rsquo;s fix it, by converting complaint_counts into an array of floats.</p>
 
-<pre><code class="language-python">print noise_complaint_counts / complaint_counts.astype(float)
+<pre><code class="language-python">noise_complaint_counts / complaint_counts.astype(float)
 </code></pre>
 
 <p>Output:</p>

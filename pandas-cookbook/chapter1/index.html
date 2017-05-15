@@ -143,7 +143,7 @@ plt.rcParams['figure.figsize'] = (15, 5)
 
 broken_df = pd.read_csv('bikes.csv')
 # Look at the first 3 rows
-print broken_df[:3]
+broken_df[:3]
 </code></pre>
 
 <p>Output:</p>
@@ -185,7 +185,7 @@ print broken_df[:3]
 </ul>
 
 <pre><code class="language-python">fixed_df = pd.read_csv('bikes.csv', sep=';', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
-print fixed_df[:3]
+fixed_df[:3]
 </code></pre>
 
 <p>Output:</p>
@@ -266,7 +266,7 @@ print fixed_df[:3]
 
 <p>Here&rsquo;s an example:</p>
 
-<pre><code class="language-python">print fixed_df['Berri 1']
+<pre><code class="language-python">fixed_df['Berri 1']
 </code></pre>
 
 <p>Output:</p>

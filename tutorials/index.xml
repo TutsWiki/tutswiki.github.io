@@ -42,7 +42,7 @@ pd.set_option(&#39;display.max_columns&#39;, 60)
 
 &lt;p&gt;I&amp;rsquo;d like to know which borough has the most noise complaints. First, we&amp;rsquo;ll take a look at the data to see what it looks like:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[:5]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[:5]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -392,7 +392,7 @@ pd.set_option(&#39;display.max_columns&#39;, 60)
 &lt;p&gt;To get the noise complaints, we need to find the rows where the &amp;ldquo;Complaint Type&amp;rdquo; column is &amp;ldquo;Noise - Street/Sidewalk&amp;rdquo;. I&amp;rsquo;ll show you how to do that, and then explain what&amp;rsquo;s going on.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;noise_complaints = complaints[complaints[&#39;Complaint Type&#39;] == &amp;quot;Noise - Street/Sidewalk&amp;quot;]
-print noise_complaints[:3]
+noise_complaints[:3]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -676,7 +676,7 @@ Name: Complaint Type, Length: 111069, dtype: bool
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;is_noise = complaints[&#39;Complaint Type&#39;] == &amp;quot;Noise - Street/Sidewalk&amp;quot;
 in_brooklyn = complaints[&#39;Borough&#39;] == &amp;quot;BROOKLYN&amp;quot;
-print complaints[is_noise &amp;amp; in_brooklyn][:5]
+complaints[is_noise &amp;amp; in_brooklyn][:5]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1025,7 +1025,7 @@ print complaints[is_noise &amp;amp; in_brooklyn][:5]
 
 &lt;p&gt;Or if we just wanted a few columns:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[is_noise &amp;amp; in_brooklyn][[&#39;Complaint Type&#39;, &#39;Borough&#39;, &#39;Created Date&#39;, &#39;Descriptor&#39;]][:10]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[is_noise &amp;amp; in_brooklyn][[&#39;Complaint Type&#39;, &#39;Borough&#39;, &#39;Created Date&#39;, &#39;Descriptor&#39;]][:10]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1123,7 +1123,7 @@ print complaints[is_noise &amp;amp; in_brooklyn][:5]
 
 &lt;p&gt;On the inside, the type of a column is &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html&#34;&gt;pd.Series&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print pd.Series([1,2,3])
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pd.Series([1,2,3])
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1136,7 +1136,7 @@ dtype: int64
 
 &lt;p&gt;and pandas Series are internally &lt;a href=&#34;https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html&#34;&gt;numpy arrays&lt;/a&gt;. If you add &lt;code&gt;.values&lt;/code&gt; to the end of any Series, you&amp;rsquo;ll get its internal numpy array&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print np.array([1,2,3])
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.array([1,2,3])
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1144,7 +1144,7 @@ dtype: int64
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;array([1, 2, 3])
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print pd.Series([1,2,3]).values
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pd.Series([1,2,3]).values
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1155,7 +1155,7 @@ dtype: int64
 &lt;p&gt;So this binary-array-selection business is actually something that works with any numpy array:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;arr = np.array([1,2,3])
-print arr != 2
+arr != 2
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1163,7 +1163,7 @@ print arr != 2
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;array([ True, False,  True], dtype=bool)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print arr[arr != 2]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;arr[arr != 2]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1175,7 +1175,25 @@ print arr != 2
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;is_noise = complaints[&#39;Complaint Type&#39;] == &amp;quot;Noise - Street/Sidewalk&amp;quot;
 noise_complaints = complaints[is_noise]
-print noise_complaints[&#39;Borough&#39;].value_counts()
+noise_complaints[&#39;Borough&#39;].value_counts()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;MANHATTAN        917
+BROOKLYN         456
+BRONX            292
+QUEENS           226
+STATEN ISLAND     36
+Unspecified        1
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s Manhattan! But what if we wanted to divide by the total number of complaints, to make it make a bit more sense? That would be easy too:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;noise_complaint_counts = noise_complaints[&#39;Borough&#39;].value_counts()
+complaint_counts = complaints[&#39;Borough&#39;].value_counts()
+noise_complaint_counts / complaint_counts
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1191,7 +1209,7 @@ dtype: int64
 
 &lt;p&gt;Oops, why was that zero? That&amp;rsquo;s no good. This is because of integer division in Python 2. Let&amp;rsquo;s fix it, by converting complaint_counts into an array of floats.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print noise_complaint_counts / complaint_counts.astype(float)
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;noise_complaint_counts / complaint_counts.astype(float)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1250,7 +1268,7 @@ plt.rcParams[&#39;figure.figsize&#39;] = (15, 5)
 
 broken_df = pd.read_csv(&#39;bikes.csv&#39;)
 # Look at the first 3 rows
-print broken_df[:3]
+broken_df[:3]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1292,7 +1310,7 @@ print broken_df[:3]
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fixed_df = pd.read_csv(&#39;bikes.csv&#39;, sep=&#39;;&#39;, encoding=&#39;latin1&#39;, parse_dates=[&#39;Date&#39;], dayfirst=True, index_col=&#39;Date&#39;)
-print fixed_df[:3]
+fixed_df[:3]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1373,7 +1391,7 @@ print fixed_df[:3]
 
 &lt;p&gt;Here&amp;rsquo;s an example:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print fixed_df[&#39;Berri 1&#39;]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fixed_df[&#39;Berri 1&#39;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1496,7 +1514,7 @@ plt.rcParams[&#39;figure.figsize&#39;] = (15, 5)
 &lt;p&gt;When you print a large dataframe, it will only show you the first few rows.
 If you don&amp;rsquo;t see this, don&amp;rsquo;t panic! The default behavior for large dataframes changed between pandas 0.12 and 0.13. Previous to 0.13 it would show you a summary of the dataframe. This includes all the columns, and how many non-null values there are in each column.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -4927,7 +4945,7 @@ If you don&amp;rsquo;t see this, don&amp;rsquo;t panic! The default behavior for
 
 &lt;p&gt;To select a column, we index with the name of the column, like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[&#39;Complaint Type&#39;]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[&#39;Complaint Type&#39;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -4970,7 +4988,7 @@ Name: Complaint Type, Length: 111069, dtype: object
 &lt;p&gt;To get the first 5 rows of a dataframe, we can use a slice: df[:5].
 This is a great way to get a sense for what kind of information is in the dataframe &amp;ndash; take a minute to look at the contents and get a feel for this dataset.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[:5]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[:5]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -5319,7 +5337,7 @@ This is a great way to get a sense for what kind of information is in the datafr
 
 &lt;p&gt;We can combine these to get the first 5 rows of a column:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[&#39;Complaint Type&#39;][:5]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[&#39;Complaint Type&#39;][:5]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -5334,7 +5352,7 @@ Name: Complaint Type, dtype: object
 
 &lt;p&gt;and it doesn&amp;rsquo;t matter which direction we do it in:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[&#39;Complaint Type&#39;][:5]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[&#39;Complaint Type&#39;][:5]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -5351,7 +5369,7 @@ Name: Complaint Type, dtype: object
 
 &lt;p&gt;What if we just want to know the complaint type and the borough, but not the rest of the information? Pandas makes it really easy to select a subset of the columns: just index with list of columns you want.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[[&#39;Complaint Type&#39;, &#39;Borough&#39;]]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[[&#39;Complaint Type&#39;, &#39;Borough&#39;]]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -5680,7 +5698,7 @@ Name: Complaint Type, dtype: object
 
 &lt;p&gt;That showed us a summary, and then we can look at the first 10 rows:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[[&#39;Complaint Type&#39;, &#39;Borough&#39;]][:10]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[[&#39;Complaint Type&#39;, &#39;Borough&#39;]][:10]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -5756,7 +5774,7 @@ Name: Complaint Type, dtype: object
 
 &lt;p&gt;This is a really easy question to answer! There&amp;rsquo;s a &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html&#34;&gt;.value_counts()&lt;/a&gt; method that we can use:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print complaints[&#39;Complaint Type&#39;].value_counts()
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaints[&#39;Complaint Type&#39;].value_counts()
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -5798,7 +5816,7 @@ Length: 165, dtype: int64
 &lt;p&gt;If we just wanted the top 10 most common complaints, we can do this:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;complaint_counts = complaints[&#39;Complaint Type&#39;].value_counts()
-print complaint_counts[:10]
+complaint_counts[:10]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
