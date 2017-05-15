@@ -213,6 +213,157 @@ berri_bikes[:5]
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&#34;4-2-adding-up-the-cyclists-by-weekday&#34;&gt;4.2 Adding up the cyclists by weekday&lt;/h2&gt;
+
+&lt;p&gt;This turns out to be really easy!
+Dataframes have a &lt;code&gt;.groupby()&lt;/code&gt; method that is similar to SQL groupby, if you&amp;rsquo;re familiar with that. I&amp;rsquo;m not going to explain more about it right now &amp;ndash; if you want to to know more, &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/groupby.html&#34;&gt;the documentation&lt;/a&gt; is really good.&lt;/p&gt;
+
+&lt;p&gt;In this case, &lt;code&gt;berri_bikes.groupby(&#39;weekday&#39;).aggregate(sum)&lt;/code&gt; means&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Group the rows by weekday and then add up all the values with the same weekday.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weekday_counts = berri_bikes.groupby(&#39;weekday&#39;).aggregate(sum)
+weekday_counts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Berri 1&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;weekday&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt; 134298&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt; 135305&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt; 152972&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt; 160131&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt; 141771&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt; 101578&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;  99310&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It&amp;rsquo;s hard to remember what 0, 1, 2, 3, 4, 5, 6 mean, so we can fix it up and graph it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weekday_counts.index = [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Saturday&#39;, &#39;Sunday&#39;]
+weekday_counts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Berri 1&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Monday&lt;/th&gt;
+      &lt;td&gt; 134298&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tuesday&lt;/th&gt;
+      &lt;td&gt; 135305&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Wednesday&lt;/th&gt;
+      &lt;td&gt; 152972&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Thursday&lt;/th&gt;
+      &lt;td&gt; 160131&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Friday&lt;/th&gt;
+      &lt;td&gt; 141771&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Saturday&lt;/th&gt;
+      &lt;td&gt; 101578&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Sunday&lt;/th&gt;
+      &lt;td&gt;  99310&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weekday_counts.plot(kind=&#39;bar&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div&gt;
+    &lt;img src=&#34;http://tutswiki.com/img/cycle_weeday_plot.png&#34; alt=&#34;Plot dataframe as per weekdays&#34; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So it looks like Montrealers are commuter cyclists &amp;ndash; they bike much more during the week. Neat!&lt;/p&gt;
+
+&lt;h2 id=&#34;4-3-putting-it-together&#34;&gt;4.3 Putting it together&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s put all that together, to prove how easy it is. 6 lines of magical pandas!
+If you want to play around, try changing sum to max, numpy.median, or any other function you like.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bikes = pd.read_csv(&#39;../data/bikes.csv&#39;, 
+                    sep=&#39;;&#39;, encoding=&#39;latin1&#39;, 
+                    parse_dates=[&#39;Date&#39;], dayfirst=True, 
+                    index_col=&#39;Date&#39;)
+# Add the weekday column
+berri_bikes = bikes[[&#39;Berri 1&#39;]].copy()
+berri_bikes.loc[:,&#39;weekday&#39;] = berri_bikes.index.weekday
+
+# Add up the number of cyclists by weekday, and plot!
+weekday_counts = berri_bikes.groupby(&#39;weekday&#39;).aggregate(sum)
+weekday_counts.index = [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Saturday&#39;, &#39;Sunday&#39;]
+weekday_counts.plot(kind=&#39;bar&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div&gt;
+    &lt;img src=&#34;http://tutswiki.com/img/cycle_weeday_plot.png&#34; alt=&#34;Plot dataframe as per weekdays&#34; /&gt;
+&lt;/div&gt;
 </description>
     </item>
     

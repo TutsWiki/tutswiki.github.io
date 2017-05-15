@@ -325,6 +325,157 @@ berri_bikes[:5]
 </div>
 </div>
 
+<h2 id="4-2-adding-up-the-cyclists-by-weekday">4.2 Adding up the cyclists by weekday</h2>
+
+<p>This turns out to be really easy!
+Dataframes have a <code>.groupby()</code> method that is similar to SQL groupby, if you&rsquo;re familiar with that. I&rsquo;m not going to explain more about it right now &ndash; if you want to to know more, <a href="http://pandas.pydata.org/pandas-docs/stable/groupby.html">the documentation</a> is really good.</p>
+
+<p>In this case, <code>berri_bikes.groupby('weekday').aggregate(sum)</code> means</p>
+
+<blockquote>
+<p>Group the rows by weekday and then add up all the values with the same weekday.</p>
+</blockquote>
+
+<pre><code class="language-python">weekday_counts = berri_bikes.groupby('weekday').aggregate(sum)
+weekday_counts
+</code></pre>
+
+<p>Output:</p>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Berri 1</th>
+    </tr>
+    <tr>
+      <th>weekday</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> 134298</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> 135305</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td> 152972</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> 160131</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td> 141771</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td> 101578</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>  99310</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<p>It&rsquo;s hard to remember what 0, 1, 2, 3, 4, 5, 6 mean, so we can fix it up and graph it:</p>
+
+<pre><code class="language-python">weekday_counts.index = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+weekday_counts
+</code></pre>
+
+<p>Output:</p>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Berri 1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Monday</th>
+      <td> 134298</td>
+    </tr>
+    <tr>
+      <th>Tuesday</th>
+      <td> 135305</td>
+    </tr>
+    <tr>
+      <th>Wednesday</th>
+      <td> 152972</td>
+    </tr>
+    <tr>
+      <th>Thursday</th>
+      <td> 160131</td>
+    </tr>
+    <tr>
+      <th>Friday</th>
+      <td> 141771</td>
+    </tr>
+    <tr>
+      <th>Saturday</th>
+      <td> 101578</td>
+    </tr>
+    <tr>
+      <th>Sunday</th>
+      <td>  99310</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<pre><code class="language-python">weekday_counts.plot(kind='bar')
+</code></pre>
+
+<p>Output:</p>
+
+<div>
+    <img src="/img/cycle_weeday_plot.png" alt="Plot dataframe as per weekdays" />
+</div>
+
+<p>So it looks like Montrealers are commuter cyclists &ndash; they bike much more during the week. Neat!</p>
+
+<h2 id="4-3-putting-it-together">4.3 Putting it together</h2>
+
+<p>Let&rsquo;s put all that together, to prove how easy it is. 6 lines of magical pandas!
+If you want to play around, try changing sum to max, numpy.median, or any other function you like.</p>
+
+<pre><code class="language-python">bikes = pd.read_csv('../data/bikes.csv', 
+                    sep=';', encoding='latin1', 
+                    parse_dates=['Date'], dayfirst=True, 
+                    index_col='Date')
+# Add the weekday column
+berri_bikes = bikes[['Berri 1']].copy()
+berri_bikes.loc[:,'weekday'] = berri_bikes.index.weekday
+
+# Add up the number of cyclists by weekday, and plot!
+weekday_counts = berri_bikes.groupby('weekday').aggregate(sum)
+weekday_counts.index = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+weekday_counts.plot(kind='bar')
+</code></pre>
+
+<p>Output:</p>
+
+<div>
+    <img src="/img/cycle_weeday_plot.png" alt="Plot dataframe as per weekdays" />
+</div>
+
 
 
                     </div>
