@@ -1622,7 +1622,7 @@ weather_mar2012 = pd.read_csv(url, skiprows=15, index_col=&#39;Date/Time&#39;, p
 
 &lt;p&gt;You&amp;rsquo;ll notice in the summary above that there are a few columns which are are either entirely empty or only have a few values in them. Let&amp;rsquo;s get rid of all of those with dropna.&lt;/p&gt;
 
-&lt;p&gt;The argument axis=1 to dropna means &amp;ldquo;drop columns&amp;rdquo;, not rows&amp;rdquo;, and how=&amp;lsquo;any&amp;rsquo; means &amp;ldquo;drop the column if any value is null&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;The argument &lt;code&gt;axis=1&lt;/code&gt; to &lt;code&gt;dropna&lt;/code&gt; means &amp;ldquo;drop columns&amp;rdquo;, not rows&amp;rdquo;, and &lt;code&gt;how=&#39;any&#39;&lt;/code&gt; means &amp;ldquo;drop the column if any value is null&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;This is much better now &amp;ndash; we only have columns with real data.&lt;/p&gt;
 
@@ -1840,6 +1840,8 @@ weather_mar2012[:5]
 &lt;/div&gt;
 
 &lt;p&gt;Awesome! We now only have the relevant columns, and it&amp;rsquo;s much more manageable.&lt;/p&gt;
+
+&lt;h2 id=&#34;5-2-plotting-the-temperature-by-hour-of-day&#34;&gt;5.2 Plotting the temperature by hour of day&lt;/h2&gt;
 </description>
     </item>
     
