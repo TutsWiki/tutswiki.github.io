@@ -4059,6 +4059,302 @@ requests[&#39;Incident Zip&#39;].unique()
     </item>
     
     <item>
+      <title>Chapter 8 - Parsing Unix timestamps</title>
+      <link>http://tutswiki.com/pandas-cookbook/chapter8</link>
+      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/pandas-cookbook/chapter8</guid>
+      <description>
+
+&lt;h2 id=&#34;8-1-parsing-unix-timestamps&#34;&gt;8.1 Parsing Unix timestamps&lt;/h2&gt;
+
+&lt;p&gt;It&amp;rsquo;s not obvious how to deal with Unix timestamps in pandas &amp;ndash; it took me quite a while to figure this out. The file we&amp;rsquo;re using here is a popularity-contest file I found on my system at &lt;a href=&#34;http://tutswiki.com/popularity-contest&#34;&gt;/var/log/popularity-contest&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an [explanation of how this file works](&lt;a href=&#34;http://popcon.ubuntu.com/README&#34;&gt;http://popcon.ubuntu.com/README&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to hope that nothing in it is sensitive :)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+# Read it, and remove the last row
+popcon = pd.read_csv(&#39;popularity-contest&#39;, sep=&#39; &#39;, )[:-1]
+popcon.columns = [&#39;atime&#39;, &#39;ctime&#39;, &#39;package-name&#39;, &#39;mru-program&#39;, &#39;tag&#39;]
+popcon[:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The colums are the access time, created time, package name, recently used program, and a tag&lt;/p&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;atime&lt;/th&gt;
+      &lt;th&gt;ctime&lt;/th&gt;
+      &lt;th&gt;package-name&lt;/th&gt;
+      &lt;th&gt;mru-program&lt;/th&gt;
+      &lt;th&gt;tag&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt; 1387295797&lt;/td&gt;
+      &lt;td&gt; 1367633260&lt;/td&gt;
+      &lt;td&gt;    perl-base&lt;/td&gt;
+      &lt;td&gt;                                /usr/bin/perl&lt;/td&gt;
+      &lt;td&gt;            NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt; 1387295796&lt;/td&gt;
+      &lt;td&gt; 1354370480&lt;/td&gt;
+      &lt;td&gt;        login&lt;/td&gt;
+      &lt;td&gt;                                      /bin/su&lt;/td&gt;
+      &lt;td&gt;            NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt; 1387295743&lt;/td&gt;
+      &lt;td&gt; 1354341275&lt;/td&gt;
+      &lt;td&gt;   libtalloc2&lt;/td&gt;
+      &lt;td&gt; /usr/lib/x86_64-linux-gnu/libtalloc.so.2.0.7&lt;/td&gt;
+      &lt;td&gt;            NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt; 1387295743&lt;/td&gt;
+      &lt;td&gt; 1387224204&lt;/td&gt;
+      &lt;td&gt; libwbclient0&lt;/td&gt;
+      &lt;td&gt;   /usr/lib/x86_64-linux-gnu/libwbclient.so.0&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt; 1387295742&lt;/td&gt;
+      &lt;td&gt; 1354341253&lt;/td&gt;
+      &lt;td&gt;  libselinux1&lt;/td&gt;
+      &lt;td&gt;        /lib/x86_64-linux-gnu/libselinux.so.1&lt;/td&gt;
+      &lt;td&gt;            NaN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The magical part about parsing timestamps in pandas is that numpy datetimes are already stored as Unix timestamps. So all we need to do is tell pandas that these integers are actually datetimes &amp;ndash; it doesn&amp;rsquo;t need to do any conversion at all.&lt;/p&gt;
+
+&lt;p&gt;We need to convert these to ints to start:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;popcon[&#39;atime&#39;] = popcon[&#39;atime&#39;].astype(int)
+popcon[&#39;ctime&#39;] = popcon[&#39;ctime&#39;].astype(int)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Every numpy array and pandas series has a dtype &amp;ndash; this is usually int64, float64, or object. Some of the time types available are datetime64[s], datetime64[ms], and datetime64[us]. There are also timedelta types, similarly.&lt;/p&gt;
+
+&lt;p&gt;We can use the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/version/0.20/generated/pandas.to_datetime.html&#34;&gt;pd.to_datetime&lt;/a&gt; function to convert our integer timestamps into datetimes. This is a constant-time operation &amp;ndash; we&amp;rsquo;re not actually changing any of the data, just how pandas thinks about it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;popcon[&#39;atime&#39;] = pd.to_datetime(popcon[&#39;atime&#39;], unit=&#39;s&#39;)
+popcon[&#39;ctime&#39;] = pd.to_datetime(popcon[&#39;ctime&#39;], unit=&#39;s&#39;)
+popcon[&#39;atime&#39;].dtype
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;dtype(&#39;&amp;lt;M8[ns]&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we look at the dtype now, it&amp;rsquo;s &amp;lt;M8[ns]. As far as I can tell M8 is secret code for datetime64.&lt;/p&gt;
+
+&lt;p&gt;So now we can look at our atime and ctime as dates!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;popcon[:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;atime&lt;/th&gt;
+      &lt;th&gt;ctime&lt;/th&gt;
+      &lt;th&gt;package-name&lt;/th&gt;
+      &lt;th&gt;mru-program&lt;/th&gt;
+      &lt;th&gt;tag&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;2013-12-17 15:56:37&lt;/td&gt;
+      &lt;td&gt;2013-05-04 02:07:40&lt;/td&gt;
+      &lt;td&gt;    perl-base&lt;/td&gt;
+      &lt;td&gt;                                /usr/bin/perl&lt;/td&gt;
+      &lt;td&gt;            NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2013-12-17 15:56:36&lt;/td&gt;
+      &lt;td&gt;2012-12-01 14:01:20&lt;/td&gt;
+      &lt;td&gt;        login&lt;/td&gt;
+      &lt;td&gt;                                      /bin/su&lt;/td&gt;
+      &lt;td&gt;            NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;2013-12-17 15:55:43&lt;/td&gt;
+      &lt;td&gt;2012-12-01 05:54:35&lt;/td&gt;
+      &lt;td&gt;   libtalloc2&lt;/td&gt;
+      &lt;td&gt; /usr/lib/x86_64-linux-gnu/libtalloc.so.2.0.7&lt;/td&gt;
+      &lt;td&gt;            NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2013-12-17 15:55:43&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:03:24&lt;/td&gt;
+      &lt;td&gt; libwbclient0&lt;/td&gt;
+      &lt;td&gt;   /usr/lib/x86_64-linux-gnu/libwbclient.so.0&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2013-12-17 15:55:42&lt;/td&gt;
+      &lt;td&gt;2012-12-01 05:54:13&lt;/td&gt;
+      &lt;td&gt;  libselinux1&lt;/td&gt;
+      &lt;td&gt;        /lib/x86_64-linux-gnu/libselinux.so.1&lt;/td&gt;
+      &lt;td&gt;            NaN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now suppose we want to look at all packages that aren&amp;rsquo;t libraries.&lt;/p&gt;
+
+&lt;p&gt;First, I want to get rid of everything with timestamp 0. Notice how we can just use a string in this comparison, even though it&amp;rsquo;s actually a timestamp on the inside? That is because pandas is amazing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;popcon = popcon[popcon[&#39;atime&#39;] &amp;gt; &#39;1970-01-01&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we can use pandas&amp;rsquo; magical string abilities to just look at rows where the package name doesn&amp;rsquo;t contain &amp;lsquo;lib&amp;rsquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;nonlibraries = popcon[~popcon[&#39;package-name&#39;].str.contains(&#39;lib&#39;)]
+nonlibraries.sort(&#39;ctime&#39;, ascending=False)[:10]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;atime&lt;/th&gt;
+      &lt;th&gt;ctime&lt;/th&gt;
+      &lt;th&gt;package-name&lt;/th&gt;
+      &lt;th&gt;mru-program&lt;/th&gt;
+      &lt;th&gt;tag&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;57 &lt;/th&gt;
+      &lt;td&gt;2013-12-17 04:55:39&lt;/td&gt;
+      &lt;td&gt;2013-12-17 04:55:42&lt;/td&gt;
+      &lt;td&gt;                       ddd&lt;/td&gt;
+      &lt;td&gt;                                      /usr/bin/ddd&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;450&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:03:20&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:05:13&lt;/td&gt;
+      &lt;td&gt;                    nodejs&lt;/td&gt;
+      &lt;td&gt;                                      /usr/bin/npm&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;454&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:03:20&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:05:04&lt;/td&gt;
+      &lt;td&gt; switchboard-plug-keyboard&lt;/td&gt;
+      &lt;td&gt;      /usr/lib/plugs/pantheon/keyboard/options.txt&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;445&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:03:20&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:05:04&lt;/td&gt;
+      &lt;td&gt;     thunderbird-locale-en&lt;/td&gt;
+      &lt;td&gt; /usr/lib/thunderbird-addons/extensions/langpac...&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;396&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:08:27&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:05:03&lt;/td&gt;
+      &lt;td&gt;           software-center&lt;/td&gt;
+      &lt;td&gt;                  /usr/sbin/update-software-center&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;449&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:03:20&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:05:00&lt;/td&gt;
+      &lt;td&gt;          samba-common-bin&lt;/td&gt;
+      &lt;td&gt;                               /usr/bin/net.samba3&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;397&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:08:25&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:04:59&lt;/td&gt;
+      &lt;td&gt;     postgresql-client-9.1&lt;/td&gt;
+      &lt;td&gt;                  /usr/lib/postgresql/9.1/bin/psql&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;398&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:08:23&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:04:58&lt;/td&gt;
+      &lt;td&gt;            postgresql-9.1&lt;/td&gt;
+      &lt;td&gt;            /usr/lib/postgresql/9.1/bin/postmaster&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;452&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:03:20&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:04:55&lt;/td&gt;
+      &lt;td&gt;                  php5-dev&lt;/td&gt;
+      &lt;td&gt;                 /usr/include/php5/main/snprintf.h&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;440&lt;/th&gt;
+      &lt;td&gt;2013-12-16 20:03:20&lt;/td&gt;
+      &lt;td&gt;2013-12-16 20:04:54&lt;/td&gt;
+      &lt;td&gt;                  php-pear&lt;/td&gt;
+      &lt;td&gt;                       /usr/share/php/XML/Util.php&lt;/td&gt;
+      &lt;td&gt; &amp;lt;RECENT-CTIME&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Okay, cool, it says that I I installed ddd recently. And postgresql! I remember installing those things. Neat.&lt;/p&gt;
+
+&lt;p&gt;The whole message here is that if you have a timestamp in seconds or milliseconds or nanoseconds, then you can just &amp;ldquo;cast&amp;rdquo; it to a &lt;code&gt;datetime64[the-right-thing]&lt;/code&gt; and pandas/numpy will take care of the rest.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Chapter 4 - Groupby and Aggregate</title>
       <link>http://tutswiki.com/pandas-cookbook/chapter4</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
