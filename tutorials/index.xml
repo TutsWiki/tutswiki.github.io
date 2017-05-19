@@ -4070,7 +4070,7 @@ requests[&#39;Incident Zip&#39;].unique()
 
 &lt;p&gt;It&amp;rsquo;s not obvious how to deal with Unix timestamps in pandas &amp;ndash; it took me quite a while to figure this out. The file we&amp;rsquo;re using here is a popularity-contest file I found on my system at &lt;a href=&#34;http://tutswiki.com/popularity-contest&#34;&gt;/var/log/popularity-contest&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Here&amp;rsquo;s an [explanation of how this file works](&lt;a href=&#34;http://popcon.ubuntu.com/README&#34;&gt;http://popcon.ubuntu.com/README&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an &lt;a href=&#34;http://popcon.ubuntu.com/README&#34;&gt;explanation of how this file works&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m going to hope that nothing in it is sensitive :)&lt;/p&gt;
 
