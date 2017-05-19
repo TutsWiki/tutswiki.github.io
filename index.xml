@@ -2699,6 +2699,342 @@ weather_2012
     </item>
     
     <item>
+      <title>Chapter 6 - String Operations</title>
+      <link>http://tutswiki.com/pandas-cookbook/chapter6</link>
+      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/pandas-cookbook/chapter6</guid>
+      <description>
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;)
+plt.rcParams[&#39;figure.figsize&#39;] = (15, 3)
+plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather_2012 = pd.read_csv(&#39;weather_2012.csv&#39;, parse_dates=True, index_col=&#39;Date/Time&#39;)
+weather_2012[:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Temp (C)&lt;/th&gt;
+      &lt;th&gt;Dew Point Temp (C)&lt;/th&gt;
+      &lt;th&gt;Rel Hum (%)&lt;/th&gt;
+      &lt;th&gt;Wind Spd (km/h)&lt;/th&gt;
+      &lt;th&gt;Visibility (km)&lt;/th&gt;
+      &lt;th&gt;Stn Press (kPa)&lt;/th&gt;
+      &lt;th&gt;Weather&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Date/Time&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-01-01 00:00:00&lt;/th&gt;
+      &lt;td&gt;-1.8&lt;/td&gt;
+      &lt;td&gt;-3.9&lt;/td&gt;
+      &lt;td&gt; 86&lt;/td&gt;
+      &lt;td&gt; 4&lt;/td&gt;
+      &lt;td&gt; 8.0&lt;/td&gt;
+      &lt;td&gt; 101.24&lt;/td&gt;
+      &lt;td&gt;                  Fog&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-01-01 01:00:00&lt;/th&gt;
+      &lt;td&gt;-1.8&lt;/td&gt;
+      &lt;td&gt;-3.7&lt;/td&gt;
+      &lt;td&gt; 87&lt;/td&gt;
+      &lt;td&gt; 4&lt;/td&gt;
+      &lt;td&gt; 8.0&lt;/td&gt;
+      &lt;td&gt; 101.24&lt;/td&gt;
+      &lt;td&gt;                  Fog&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-01-01 02:00:00&lt;/th&gt;
+      &lt;td&gt;-1.8&lt;/td&gt;
+      &lt;td&gt;-3.4&lt;/td&gt;
+      &lt;td&gt; 89&lt;/td&gt;
+      &lt;td&gt; 7&lt;/td&gt;
+      &lt;td&gt; 4.0&lt;/td&gt;
+      &lt;td&gt; 101.26&lt;/td&gt;
+      &lt;td&gt; Freezing Drizzle,Fog&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-01-01 03:00:00&lt;/th&gt;
+      &lt;td&gt;-1.5&lt;/td&gt;
+      &lt;td&gt;-3.2&lt;/td&gt;
+      &lt;td&gt; 88&lt;/td&gt;
+      &lt;td&gt; 6&lt;/td&gt;
+      &lt;td&gt; 4.0&lt;/td&gt;
+      &lt;td&gt; 101.27&lt;/td&gt;
+      &lt;td&gt; Freezing Drizzle,Fog&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-01-01 04:00:00&lt;/th&gt;
+      &lt;td&gt;-1.5&lt;/td&gt;
+      &lt;td&gt;-3.3&lt;/td&gt;
+      &lt;td&gt; 88&lt;/td&gt;
+      &lt;td&gt; 7&lt;/td&gt;
+      &lt;td&gt; 4.8&lt;/td&gt;
+      &lt;td&gt; 101.23&lt;/td&gt;
+      &lt;td&gt;                  Fog&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5 rows × 7 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;6-1-string-operations&#34;&gt;6.1 String operations&lt;/h2&gt;
+
+&lt;p&gt;You&amp;rsquo;ll see that the &amp;lsquo;Weather&amp;rsquo; column has a text description of the weather that was going on each hour. We&amp;rsquo;ll assume it&amp;rsquo;s snowing if the text description contains &amp;ldquo;Snow&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;pandas provides vectorized string functions, to make it easy to operate on columns containing text. There are some great &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/basics.html#vectorized-string-methods&#34;&gt;examples&lt;/a&gt; in the documentation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather_description = weather_2012[&#39;Weather&#39;]
+is_snowing = weather_description.str.contains(&#39;Snow&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This gives us a binary vector, which is a bit hard to look at, so we&amp;rsquo;ll plot it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Not super useful
+is_snowing[:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Date/Time
+2012-01-01 00:00:00    False
+2012-01-01 01:00:00    False
+2012-01-01 02:00:00    False
+2012-01-01 03:00:00    False
+2012-01-01 04:00:00    False
+Name: Weather, dtype: bool
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# More useful!
+is_snowing.plot()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/snow_plot.png&#34; alt=&#34;Plot which borough has the most noise complaints&#34; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;6-2-use-resampling-to-find-the-snowiest-month&#34;&gt;6.2 Use resampling to find the snowiest month&lt;/h2&gt;
+
+&lt;p&gt;If we wanted the median temperature each month, we could use the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html&#34;&gt;resample()&lt;/a&gt; method like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather_2012[&#39;Temp (C)&#39;].resample(&#39;M&#39;, how=np.median).plot(kind=&#39;bar&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/resample_plot.png&#34; alt=&#34;Plot which borough has the most noise complaints&#34; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Unsurprisingly, July and August are the warmest.&lt;/p&gt;
+
+&lt;p&gt;So we can think of snowiness as being a bunch of 1s and 0s instead of Trues and Falses:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;is_snowing.astype(float)[:10]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Date/Time
+2012-01-01 00:00:00    0
+2012-01-01 01:00:00    0
+2012-01-01 02:00:00    0
+2012-01-01 03:00:00    0
+2012-01-01 04:00:00    0
+2012-01-01 05:00:00    0
+2012-01-01 06:00:00    0
+2012-01-01 07:00:00    0
+2012-01-01 08:00:00    0
+2012-01-01 09:00:00    0
+Name: Weather, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and then use resample to find the percentage of time it was snowing each month&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;is_snowing.astype(float).resample(&#39;M&#39;, how=np.mean)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Date/Time
+2012-01-31    0.240591
+2012-02-29    0.162356
+2012-03-31    0.087366
+2012-04-30    0.015278
+2012-05-31    0.000000
+2012-06-30    0.000000
+2012-07-31    0.000000
+2012-08-31    0.000000
+2012-09-30    0.000000
+2012-10-31    0.000000
+2012-11-30    0.038889
+2012-12-31    0.251344
+Freq: M, Name: Weather, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;is_snowing.astype(float).resample(&#39;M&#39;, how=np.mean).plot(kind=&#39;bar&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/astype_resample_plot.png&#34; alt=&#34;Plot which borough has the most noise complaints&#34; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So now we know! In 2012, December was the snowiest month. Also, this graph suggests something that I feel &amp;ndash; it starts snowing pretty abruptly in November, and then tapers off slowly and takes a long time to stop, with the last snow usually being in April or May.&lt;/p&gt;
+
+&lt;h2 id=&#34;6-3-plotting-temperature-and-snowiness-stats-together&#34;&gt;6.3 Plotting temperature and snowiness stats together&lt;/h2&gt;
+
+&lt;p&gt;We can also combine these two statistics (temperature, and snowiness) into one dataframe and plot them together:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;temperature = weather_2012[&#39;Temp (C)&#39;].resample(&#39;M&#39;, how=np.median)
+is_snowing = weather_2012[&#39;Weather&#39;].str.contains(&#39;Snow&#39;)
+snowiness = is_snowing.astype(float).resample(&#39;M&#39;, how=np.mean)
+
+# Name the columns
+temperature.name = &amp;quot;Temperature&amp;quot;
+snowiness.name = &amp;quot;Snowiness&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll use concat again to combine the two statistics into a single dataframe.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;stats = pd.concat([temperature, snowiness], axis=1)
+stats
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&#34;output_html rendered_html output_subarea output_execute_result&#34;&gt;
+&lt;div style=&#34;max-height:1000px;max-width:1500px;overflow:auto;&#34;&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Temperature&lt;/th&gt;
+      &lt;th&gt;Snowiness&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-01-31&lt;/th&gt;
+      &lt;td&gt; -7.05&lt;/td&gt;
+      &lt;td&gt; 0.240591&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-02-29&lt;/th&gt;
+      &lt;td&gt; -4.10&lt;/td&gt;
+      &lt;td&gt; 0.162356&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-03-31&lt;/th&gt;
+      &lt;td&gt;  2.60&lt;/td&gt;
+      &lt;td&gt; 0.087366&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-04-30&lt;/th&gt;
+      &lt;td&gt;  6.30&lt;/td&gt;
+      &lt;td&gt; 0.015278&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-05-31&lt;/th&gt;
+      &lt;td&gt; 16.05&lt;/td&gt;
+      &lt;td&gt; 0.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-06-30&lt;/th&gt;
+      &lt;td&gt; 19.60&lt;/td&gt;
+      &lt;td&gt; 0.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-07-31&lt;/th&gt;
+      &lt;td&gt; 22.90&lt;/td&gt;
+      &lt;td&gt; 0.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-08-31&lt;/th&gt;
+      &lt;td&gt; 22.20&lt;/td&gt;
+      &lt;td&gt; 0.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-09-30&lt;/th&gt;
+      &lt;td&gt; 16.10&lt;/td&gt;
+      &lt;td&gt; 0.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-10-31&lt;/th&gt;
+      &lt;td&gt; 11.30&lt;/td&gt;
+      &lt;td&gt; 0.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-11-30&lt;/th&gt;
+      &lt;td&gt;  1.05&lt;/td&gt;
+      &lt;td&gt; 0.038889&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-12-31&lt;/th&gt;
+      &lt;td&gt; -2.85&lt;/td&gt;
+      &lt;td&gt; 0.251344&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;12 rows × 2 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;stats.plot(kind=&#39;bar&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/temp_snow.png&#34; alt=&#34;Plot which borough has the most noise complaints&#34; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Uh, that didn&amp;rsquo;t work so well because the scale was wrong. We can do better by plotting them on two separate graphs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;stats.plot(kind=&#39;bar&#39;, subplots=True, figsize=(15, 10))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;img src=&#34;http://tutswiki.com/img/temp_snow_subplots.png&#34; alt=&#34;Plot which borough has the most noise complaints&#34; /&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Chapter 4 - Groupby and Aggregate</title>
       <link>http://tutswiki.com/pandas-cookbook/chapter4</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>

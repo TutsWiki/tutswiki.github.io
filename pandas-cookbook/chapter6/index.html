@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="pandas, string">
+    <meta name="description" content="String Operations">
+    <meta name="author" content="Chankey Pathak (@chankeypathak)">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <title>Chapter 6 - String Operations</title>
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+  
+  <section id="container" class="">
+
+      
+      <header class="header black-bg">
+            <div class="toggle-nav">
+                <i class="fa fa-bars"></i>
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            
+            <a href="/" class="logo"><img src="/img/tutswiki-logo.png" style="height: 40px; vertical-align: bottom;"></a>
+            
+            <div class="top-nav notification-row">
+                
+                <div class="hidden-xs nav-github pull-right">
+                    <span rel="show-github" data-user="chankeypathak" data-repo="hugo" data-type="follow"></span>
+                    <span rel="show-github" data-user="tutswiki" data-repo="source"></span>
+                    <span rel="show-github" data-user="tutswiki" data-repo="source" data-type="fork"></span>
+                </div>
+            </div>
+
+            <div class="nav title-row" id="top_menu">
+                <h1 class="nav top-menu">Chapter 6 - String Operations</h1>
+            </div>
+      </header>
+      
+
+
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        
+        <ul class="sidebar-menu">
+          
+          
+              
+
+            <li class="sub-menu active">
+            <a href="javascript:;" class="">
+                
+                
+                <span>Pandas Cookbook</span>
+                <span class="menu-arrow fa fa-angle-down"></span>
+            </a>
+                <ul class="sub open">
+                    
+                    <li><a href="/pandas-cookbook/chapter1">Chapter 1</a> </li>
+                    
+                    <li><a href="/pandas-cookbook/chapter2">Chapter 2</a> </li>
+                    
+                    <li><a href="/pandas-cookbook/chapter3">Chapter 3</a> </li>
+                    
+                    <li><a href="/pandas-cookbook/chapter4">Chapter 4</a> </li>
+                    
+                    <li><a href="/pandas-cookbook/chapter5">Chapter 5</a> </li>
+                    
+                    <li class="active"><a href="/pandas-cookbook/chapter6">Chapter 6</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+            <li> <a href="https://github.com/TutsWiki/source/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a> </li>
+            
+              <li><a href="https://github.com/TutsWiki/source/edit/master/content/tutorials/pandas%20cookbook/chapter6.md" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
+            
+        </ul>
+        
+    </div>
+</aside>
+
+
+
+      
+      <section id="main-content">
+          <section class="wrapper">
+
+              
+                  
+                      
+                      
+                          
+                          
+                          
+                      
+                      
+                  
+              
+
+              <div class="row">
+                  <div class="col-md-1">
+                      
+                      
+                      <a class="navigation prev" href="/pandas-cookbook/chapter5">
+                      <i class="fa fa-angle-left"></i>
+                      </a>
+                      
+                      
+                  </div>
+                <div class="col-md-10">
+                    <section class="panel">
+                          
+                              
+                          
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 cse">
+                                
+                            </div>
+                        </div>
+
+
+
+
+<pre><code class="language-python">%matplotlib inline
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+pd.set_option('display.mpl_style', 'default')
+plt.rcParams['figure.figsize'] = (15, 3)
+plt.rcParams['font.family'] = 'sans-serif'
+</code></pre>
+
+<p>We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&rsquo;re going to go back to our weather data from Chapter 5, here.</p>
+
+<pre><code class="language-python">weather_2012 = pd.read_csv('weather_2012.csv', parse_dates=True, index_col='Date/Time')
+weather_2012[:5]
+</code></pre>
+
+<p>Output:</p>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temp (C)</th>
+      <th>Dew Point Temp (C)</th>
+      <th>Rel Hum (%)</th>
+      <th>Wind Spd (km/h)</th>
+      <th>Visibility (km)</th>
+      <th>Stn Press (kPa)</th>
+      <th>Weather</th>
+    </tr>
+    <tr>
+      <th>Date/Time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2012-01-01 00:00:00</th>
+      <td>-1.8</td>
+      <td>-3.9</td>
+      <td> 86</td>
+      <td> 4</td>
+      <td> 8.0</td>
+      <td> 101.24</td>
+      <td>                  Fog</td>
+    </tr>
+    <tr>
+      <th>2012-01-01 01:00:00</th>
+      <td>-1.8</td>
+      <td>-3.7</td>
+      <td> 87</td>
+      <td> 4</td>
+      <td> 8.0</td>
+      <td> 101.24</td>
+      <td>                  Fog</td>
+    </tr>
+    <tr>
+      <th>2012-01-01 02:00:00</th>
+      <td>-1.8</td>
+      <td>-3.4</td>
+      <td> 89</td>
+      <td> 7</td>
+      <td> 4.0</td>
+      <td> 101.26</td>
+      <td> Freezing Drizzle,Fog</td>
+    </tr>
+    <tr>
+      <th>2012-01-01 03:00:00</th>
+      <td>-1.5</td>
+      <td>-3.2</td>
+      <td> 88</td>
+      <td> 6</td>
+      <td> 4.0</td>
+      <td> 101.27</td>
+      <td> Freezing Drizzle,Fog</td>
+    </tr>
+    <tr>
+      <th>2012-01-01 04:00:00</th>
+      <td>-1.5</td>
+      <td>-3.3</td>
+      <td> 88</td>
+      <td> 7</td>
+      <td> 4.8</td>
+      <td> 101.23</td>
+      <td>                  Fog</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 7 columns</p>
+</div>
+</div>
+
+<h2 id="6-1-string-operations">6.1 String operations</h2>
+
+<p>You&rsquo;ll see that the &lsquo;Weather&rsquo; column has a text description of the weather that was going on each hour. We&rsquo;ll assume it&rsquo;s snowing if the text description contains &ldquo;Snow&rdquo;.</p>
+
+<p>pandas provides vectorized string functions, to make it easy to operate on columns containing text. There are some great <a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#vectorized-string-methods">examples</a> in the documentation.</p>
+
+<pre><code class="language-python">weather_description = weather_2012['Weather']
+is_snowing = weather_description.str.contains('Snow')
+</code></pre>
+
+<p>This gives us a binary vector, which is a bit hard to look at, so we&rsquo;ll plot it.</p>
+
+<pre><code class="language-python"># Not super useful
+is_snowing[:5]
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-bash">Date/Time
+2012-01-01 00:00:00    False
+2012-01-01 01:00:00    False
+2012-01-01 02:00:00    False
+2012-01-01 03:00:00    False
+2012-01-01 04:00:00    False
+Name: Weather, dtype: bool
+</code></pre>
+
+<pre><code class="language-python"># More useful!
+is_snowing.plot()
+</code></pre>
+
+<p>Output:</p>
+
+<div>
+<img src="/img/snow_plot.png" alt="Plot which borough has the most noise complaints" />
+</div>
+
+<h2 id="6-2-use-resampling-to-find-the-snowiest-month">6.2 Use resampling to find the snowiest month</h2>
+
+<p>If we wanted the median temperature each month, we could use the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html">resample()</a> method like this:</p>
+
+<pre><code class="language-python">weather_2012['Temp (C)'].resample('M', how=np.median).plot(kind='bar')
+</code></pre>
+
+<p>Output:</p>
+
+<div>
+<img src="/img/resample_plot.png" alt="Plot which borough has the most noise complaints" />
+</div>
+
+<p>Unsurprisingly, July and August are the warmest.</p>
+
+<p>So we can think of snowiness as being a bunch of 1s and 0s instead of Trues and Falses:</p>
+
+<pre><code class="language-python">is_snowing.astype(float)[:10]
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-bash">Date/Time
+2012-01-01 00:00:00    0
+2012-01-01 01:00:00    0
+2012-01-01 02:00:00    0
+2012-01-01 03:00:00    0
+2012-01-01 04:00:00    0
+2012-01-01 05:00:00    0
+2012-01-01 06:00:00    0
+2012-01-01 07:00:00    0
+2012-01-01 08:00:00    0
+2012-01-01 09:00:00    0
+Name: Weather, dtype: float64
+</code></pre>
+
+<p>and then use resample to find the percentage of time it was snowing each month</p>
+
+<pre><code class="language-python">is_snowing.astype(float).resample('M', how=np.mean)
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-bash">Date/Time
+2012-01-31    0.240591
+2012-02-29    0.162356
+2012-03-31    0.087366
+2012-04-30    0.015278
+2012-05-31    0.000000
+2012-06-30    0.000000
+2012-07-31    0.000000
+2012-08-31    0.000000
+2012-09-30    0.000000
+2012-10-31    0.000000
+2012-11-30    0.038889
+2012-12-31    0.251344
+Freq: M, Name: Weather, dtype: float64
+</code></pre>
+
+<pre><code class="language-python">is_snowing.astype(float).resample('M', how=np.mean).plot(kind='bar')
+</code></pre>
+
+<p>Output:</p>
+
+<div>
+<img src="/img/astype_resample_plot.png" alt="Plot which borough has the most noise complaints" />
+</div>
+
+<p>So now we know! In 2012, December was the snowiest month. Also, this graph suggests something that I feel &ndash; it starts snowing pretty abruptly in November, and then tapers off slowly and takes a long time to stop, with the last snow usually being in April or May.</p>
+
+<h2 id="6-3-plotting-temperature-and-snowiness-stats-together">6.3 Plotting temperature and snowiness stats together</h2>
+
+<p>We can also combine these two statistics (temperature, and snowiness) into one dataframe and plot them together:</p>
+
+<pre><code class="language-python">temperature = weather_2012['Temp (C)'].resample('M', how=np.median)
+is_snowing = weather_2012['Weather'].str.contains('Snow')
+snowiness = is_snowing.astype(float).resample('M', how=np.mean)
+
+# Name the columns
+temperature.name = &quot;Temperature&quot;
+snowiness.name = &quot;Snowiness&quot;
+</code></pre>
+
+<p>We&rsquo;ll use concat again to combine the two statistics into a single dataframe.</p>
+
+<pre><code class="language-python">stats = pd.concat([temperature, snowiness], axis=1)
+stats
+</code></pre>
+
+<p>Output:</p>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature</th>
+      <th>Snowiness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2012-01-31</th>
+      <td> -7.05</td>
+      <td> 0.240591</td>
+    </tr>
+    <tr>
+      <th>2012-02-29</th>
+      <td> -4.10</td>
+      <td> 0.162356</td>
+    </tr>
+    <tr>
+      <th>2012-03-31</th>
+      <td>  2.60</td>
+      <td> 0.087366</td>
+    </tr>
+    <tr>
+      <th>2012-04-30</th>
+      <td>  6.30</td>
+      <td> 0.015278</td>
+    </tr>
+    <tr>
+      <th>2012-05-31</th>
+      <td> 16.05</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <th>2012-06-30</th>
+      <td> 19.60</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <th>2012-07-31</th>
+      <td> 22.90</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <th>2012-08-31</th>
+      <td> 22.20</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <th>2012-09-30</th>
+      <td> 16.10</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <th>2012-10-31</th>
+      <td> 11.30</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <th>2012-11-30</th>
+      <td>  1.05</td>
+      <td> 0.038889</td>
+    </tr>
+    <tr>
+      <th>2012-12-31</th>
+      <td> -2.85</td>
+      <td> 0.251344</td>
+    </tr>
+  </tbody>
+</table>
+<p>12 rows × 2 columns</p>
+</div>
+</div>
+
+<pre><code class="language-python">stats.plot(kind='bar')
+</code></pre>
+
+<p>Output:</p>
+
+<div>
+<img src="/img/temp_snow.png" alt="Plot which borough has the most noise complaints" />
+</div>
+
+<p>Uh, that didn&rsquo;t work so well because the scale was wrong. We can do better by plotting them on two separate graphs:</p>
+
+<pre><code class="language-python">stats.plot(kind='bar', subplots=True, figsize=(15, 10))
+</code></pre>
+
+<p>Output:</p>
+
+<div>
+<img src="/img/temp_snow_subplots.png" alt="Plot which borough has the most noise complaints" />
+</div>
+
+
+
+                    </div>
+                    </section>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">
+                      <span style="font-size: medium; font-style: italic; text-align: left;">Last revision: May 18, 2017</span>
+                    </div>
+
+                    </div>
+
+                <div class="col-md-1">
+                    
+                    
+                    <a class="navigation next" href="/pandas-cookbook/chapter7">
+                        <i class="fa fa-angle-right"> </i>
+                    </a>
+                    
+                    
+                </div>
+              </div>
+              
+          </section>
+      </section>
+     
+  </section>
+  
+    
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/scripts.js"></script>
+    <script async defer id="github-bjs" src="/js/buttons.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12858299-25', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+
