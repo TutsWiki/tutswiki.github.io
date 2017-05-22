@@ -4351,6 +4351,10 @@ nonlibraries.sort(&#39;ctime&#39;, ascending=False)[:10]
 &lt;p&gt;Okay, cool, it says that I I installed ddd recently. And postgresql! I remember installing those things. Neat.&lt;/p&gt;
 
 &lt;p&gt;The whole message here is that if you have a timestamp in seconds or milliseconds or nanoseconds, then you can just &amp;ldquo;cast&amp;rdquo; it to a &lt;code&gt;datetime64[the-right-thing]&lt;/code&gt; and pandas/numpy will take care of the rest.&lt;/p&gt;
+
+&lt;h2 id=&#34;where-from-here&#34;&gt;Where from here?&lt;/h2&gt;
+
+&lt;p&gt;This was an attempt to provide concise cookbook with real life examples. We suggest you to have a look at the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/version/0.15.2/cookbook.html#cookbook&#34;&gt;official cookbook&lt;/a&gt; also.&lt;/p&gt;
 </description>
     </item>
     
