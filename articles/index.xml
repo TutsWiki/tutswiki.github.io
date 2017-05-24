@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles-rsses on </title>
+    <link>http://tutswiki.com/articles/index.xml</link>
+    <description>Recent content in Articles-rsses on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 25 May 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://tutswiki.com/articles/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>What is if __name__ == &#34;__main__&#34; in Python?</title>
+      <link>http://tutswiki.com/if-name-main-in-python</link>
+      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/if-name-main-in-python</guid>
+      <description>
+
+&lt;p&gt;If you are new to Python then you may have noticed &lt;code&gt;if __name__ == &amp;quot;__main__&amp;quot;&lt;/code&gt; line in some python codes.&lt;/p&gt;
+
+&lt;p&gt;You may be wondering:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What does that mean?&lt;/li&gt;
+&lt;li&gt;What purpose does it serve?&lt;/li&gt;
+&lt;li&gt;I don&amp;rsquo;t see it in all Python codes, so when should I use it exactly?&lt;/li&gt;
+&lt;li&gt;Can you give me some examples?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let me try to explain the above to you.&lt;/p&gt;
+
+&lt;p&gt;In Python all modules have some built-in attributes. &lt;code&gt;__name__&lt;/code&gt; is one of them. Now the question is what does &lt;code&gt;__name__&lt;/code&gt; contain?&lt;/p&gt;
+
+&lt;p&gt;Well, that depends actually. It depends on how you use the module.&lt;/p&gt;
+
+&lt;h2 id=&#34;case-1-running-the-module-directly&#34;&gt;Case 1: Running the module directly&lt;/h2&gt;
+
+&lt;p&gt;If you run the module directly in a standalone program then in that case the value of &lt;code&gt;__name__&lt;/code&gt; attribute is set to &lt;code&gt;__main__&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, create a file &lt;code&gt;main.py&lt;/code&gt; and enter below code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if __name__ == &amp;quot;__main__&amp;quot;:
+	print &amp;quot;Directly called from python interpreter&amp;quot;
+	print &amp;quot;Value of __name__ attribute is &amp;quot;+__name__
+else:
+	print &amp;quot;Not directly called&amp;quot;
+	print &amp;quot;Value of __name__ attribute is &amp;quot;+__name__
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now run the above code as below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ python main.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;Directly called from Python interpreter
+Value of __name__ attribute is __main__
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that when we ran the program directly from python interpreter the conditional &lt;code&gt;__name__ == __main__&lt;/code&gt; returned &lt;code&gt;True&lt;/code&gt; and the print statement inside the if block got executed.&lt;/p&gt;
+
+&lt;h2 id=&#34;case-2-using-the-module-with-import&#34;&gt;Case 2: Using the module with import&lt;/h2&gt;
+
+&lt;p&gt;If you use the module in another program (using the &lt;code&gt;import&lt;/code&gt; function), then in that case the value of &lt;code&gt;__name__&lt;/code&gt; attribute is set to the filename of the module.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s try to import the above created &lt;code&gt;main.py&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ python
+&amp;gt;&amp;gt;&amp;gt; import main.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;Not directly called
+Value of __name__ attribute is main
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3/library/__main__.html&#34;&gt;__main__ — Top-level script environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/419163/what-does-if-name-main-do&#34;&gt;What does if __name__ == “__main__”: do?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
