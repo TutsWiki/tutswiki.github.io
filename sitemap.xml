@@ -1,54 +1,78 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://tutswiki.com/</loc>
-    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
+    <loc>http://tutswiki.com/if-name-main-in-python/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/if-name-main-in-python</loc>
-    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter5</loc>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter5/</loc>
     <lastmod>2017-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter6</loc>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter6/</loc>
     <lastmod>2017-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter7</loc>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter7/</loc>
     <lastmod>2017-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter8</loc>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter8/</loc>
     <lastmod>2017-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter4</loc>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter4/</loc>
     <lastmod>2017-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter3</loc>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter3/</loc>
     <lastmod>2017-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter1</loc>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter1/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter2</loc>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter2/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/articles/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/groups/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tutorials/</loc>
+    <lastmod>2017-05-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
