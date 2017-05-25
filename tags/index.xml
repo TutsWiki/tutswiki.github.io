@@ -11,29 +11,11 @@
     
     
     <item>
-      <title>Content</title>
-      <link>http://tutswiki.com/tags/content/</link>
+      <title>Python</title>
+      <link>http://tutswiki.com/tags/python/</link>
       <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/tags/content/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>http://tutswiki.com/tags/hugo/</link>
-      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://tutswiki.com/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Static Site Generator</title>
-      <link>http://tutswiki.com/tags/static-site-generator/</link>
-      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://tutswiki.com/tags/static-site-generator/</guid>
+      <guid>http://tutswiki.com/tags/python/</guid>
       <description></description>
     </item>
     
