@@ -104,5 +104,14 @@ We&amp;rsquo;re going to be looking some cyclist data from Montréal. Here&amp;r
       <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt # Make the graphs a bit prettier, and bigger pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) # This is necessary to show lots of columns in pandas 0.12. # Not necessary in pandas 0.13. pd.set_option(&#39;display.width&#39;, 5000) pd.set_option(&#39;display.max_columns&#39;, 60) plt.rcParams[&#39;figure.figsize&#39;] = (15, 5)  We&amp;rsquo;re going to use a new dataset here, to demonstrate how to deal with larger datasets. This is a subset of the of 311 service requests from NYC Open Data.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://tutswiki.com/articles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/articles/</guid>
+      <description> {{ .Page.Title }} {{ .Page.Date }}  {{ end }}</description>
+    </item>
+    
   </channel>
 </rss>

@@ -55,17 +55,52 @@
   
   <url>
     <loc>http://tutswiki.com/articles/</loc>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/articles/</loc>
     <lastmod>2017-05-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tutswiki.com/groups/</loc>
+    <loc>http://tutswiki.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tags/content/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/categories/development/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tags/hugo/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/categories/publishing/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/tags/static-site-generator/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://tutswiki.com/tags/</loc>
+    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

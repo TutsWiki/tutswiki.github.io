@@ -5,9 +5,37 @@
     <link>http://tutswiki.com/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 24 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Content</title>
+      <link>http://tutswiki.com/tags/content/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/tags/content/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://tutswiki.com/tags/hugo/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static Site Generator</title>
+      <link>http://tutswiki.com/tags/static-site-generator/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/tags/static-site-generator/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="python, name, main, built in, module, import">
-    <meta name="description" content="If you are new to Python then you may have noticed if __name__ == &#34;__main__&#34; line in some python codes.">
+    <meta name="keywords" content="">
+    <meta name="description" content="Collaborative tutorials for the internet">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <title>What is if __name__ == &#34;__main__&#34; in Python?</title>
+    <title></title>
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet">
@@ -40,7 +40,7 @@
             </div>
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">What is if __name__ == &#34;__main__&#34; in Python?</h1>
+                <h1 class="nav top-menu"></h1>
             </div>
       </header>
       
@@ -85,7 +85,7 @@
           
             <li> <a href="https://github.com/TutsWiki/source/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a> </li>
             
-              <li><a href="https://github.com/TutsWiki/source/edit/master/content/articles/python/name-equals-main.md" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
+              <li><a href="https://github.com/TutsWiki/source/edit/master/content/articles/index.html" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
             
         </ul>
         
@@ -129,80 +129,11 @@
                         </div>
 
 
-
-
-<p>If you are new to Python then you may have noticed <code>if __name__ == &quot;__main__&quot;</code> line in some python codes.</p>
-
-<p>You may be wondering:</p>
-
-<ul>
-<li>What does that mean?</li>
-<li>What purpose does it serve?</li>
-<li>I don&rsquo;t see it in all Python codes, so when should I use it exactly?</li>
-<li>Can you give me some examples?</li>
-</ul>
-
-<p>Let me try to explain the above to you.</p>
-
-<p>In Python all modules have some built-in attributes. <code>__name__</code> is one of them. Now the question is what does <code>__name__</code> contain?</p>
-
-<p>Well, that depends actually. It depends on how you use the module.</p>
-
-<h2 id="case-1-running-the-module-directly">Case 1: Running the module directly</h2>
-
-<p>If you run the module directly in a standalone program then in that case the value of <code>__name__</code> attribute is set to <code>__main__</code>.</p>
-
-<p>For example, create a file <code>main.py</code> and enter below code.</p>
-
-<pre><code class="language-python">if __name__ == &quot;__main__&quot;:
-	print &quot;Directly called from python interpreter&quot;
-	print &quot;Value of __name__ attribute is &quot;+__name__
-else:
-	print &quot;Not directly called&quot;
-	print &quot;Value of __name__ attribute is &quot;+__name__
-</code></pre>
-
-<p>Now run the above code as below:</p>
-
-<pre><code class="language-sh">$ python main.py
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-sh">Directly called from Python interpreter
-Value of __name__ attribute is __main__
-</code></pre>
-
-<p>Notice that when we ran the program directly from python interpreter the conditional <code>__name__ == __main__</code> returned <code>True</code> and the print statement inside the if block got executed.</p>
-
-<h2 id="case-2-using-the-module-with-import">Case 2: Using the module with import</h2>
-
-<p>If you use the module in another program (using the <code>import</code> function), then in that case the value of <code>__name__</code> attribute is set to the filename of the module.</p>
-
-<p>Let&rsquo;s try to import the above created <code>main.py</code>.</p>
-
-<pre><code class="language-sh">$ python
-&gt;&gt;&gt; import main.py
-</code></pre>
-
-<p>Output:</p>
-
-<p>{ {&lt; highlight python &gt;}}
-Not directly called
-Value of <strong>name</strong> attribute is main
-{ {&lt; /highlight &gt;}}</p>
-
-<pre><code class="language-sh">Not directly called
-Value of __name__ attribute is main
-</code></pre>
-
-<h3 id="references">References</h3>
-
-<ul>
-<li><a href="https://docs.python.org/3/library/__main__.html">__main__ — Top-level script environment</a></li>
-<li><a href="https://stackoverflow.com/questions/419163/what-does-if-name-main-do">What does if __name__ == “__main__”: do?</a></li>
-</ul>
-
+<div>
+    <h5><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h5>
+    <time class="timeago" datetime='{{ .Page.Date.Format "2006-01-02T15:04:05-07:00" }}'>{{ .Page.Date }}</time>
+</div>
+{{ end }}
 
 <div class="row">
                         <div class="footer-panel">
