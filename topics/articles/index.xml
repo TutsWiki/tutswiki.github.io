@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Development on </title>
-    <link>http://tutswiki.com/categories/development/</link>
-    <description>Recent content in Development on </description>
+    <title>Articles on </title>
+    <link>http://tutswiki.com/topics/articles/</link>
+    <description>Recent content in Articles on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 24 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://tutswiki.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://tutswiki.com/topics/articles/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
