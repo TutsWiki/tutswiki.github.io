@@ -284,7 +284,7 @@ is_snowing.plot()
 
 <p>If we wanted the median temperature each month, we could use the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html">resample()</a> method like this:</p>
 
-<pre><code class="language-python">weather_2012['Temp (C)'].resample('M', how=np.median).plot(kind='bar')
+<pre><code class="language-python">weather_2012['Temp (C)'].resample('M').apply(np.median).plot(kind='bar')
 </code></pre>
 
 <p>Output:</p>
@@ -318,7 +318,7 @@ Name: Weather, dtype: float64
 
 <p>and then use resample to find the percentage of time it was snowing each month</p>
 
-<pre><code class="language-python">is_snowing.astype(float).resample('M', how=np.mean)
+<pre><code class="language-python">is_snowing.astype(float).resample('M').apply(np.mean)
 </code></pre>
 
 <p>Output:</p>
@@ -339,7 +339,7 @@ Name: Weather, dtype: float64
 Freq: M, Name: Weather, dtype: float64
 </code></pre>
 
-<pre><code class="language-python">is_snowing.astype(float).resample('M', how=np.mean).plot(kind='bar')
+<pre><code class="language-python">is_snowing.astype(float).resample('M').apply(np.mean).plot(kind='bar')
 </code></pre>
 
 <p>Output:</p>
@@ -354,9 +354,9 @@ Freq: M, Name: Weather, dtype: float64
 
 <p>We can also combine these two statistics (temperature, and snowiness) into one dataframe and plot them together:</p>
 
-<pre><code class="language-python">temperature = weather_2012['Temp (C)'].resample('M', how=np.median)
+<pre><code class="language-python">temperature = weather_2012['Temp (C)'].resample('M').apply(np.median)
 is_snowing = weather_2012['Weather'].str.contains('Snow')
-snowiness = is_snowing.astype(float).resample('M', how=np.mean)
+snowiness = is_snowing.astype(float).resample('M').apply(np.mean)
 
 # Name the columns
 temperature.name = &quot;Temperature&quot;
@@ -472,7 +472,7 @@ stats
 <div class="row">
     
     <div class="footer-panel">
-        <p>Words: 600, Read in about 3 minutes | Last revision: May 18, 2017
+        <p>Words: 600, Read in about 3 minutes | Last revision: May 31, 2017
             <span style="float: right;">TutsWiki Beta</span>
         </p>
     </div>

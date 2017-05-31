@@ -5,10 +5,21 @@
     <link>http://tutswiki.com/tutorials/</link>
     <description>Recent content in Tutorials on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chapter 6 - String Operations</title>
+      <link>http://tutswiki.com/pandas-cookbook/chapter6/</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/pandas-cookbook/chapter6/</guid>
+      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) plt.rcParams[&#39;figure.figsize&#39;] = (15, 3) plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39;  We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.
+weather_2012 = pd.read_csv(&#39;weather_2012.csv&#39;, parse_dates=True, index_col=&#39;Date/Time&#39;) weather_2012[:5]  Output:
+  Temp (C) Dew Point Temp (C) Rel Hum (%) Wind Spd (km/h) Visibility (km) Stn Press (kPa) Weather   Date/Time            2012-01-01 00:00:00 -1.</description>
+    </item>
     
     <item>
       <title>Chapter 5 - Web scraping with Pandas</title>
@@ -19,17 +30,6 @@
       <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) plt.rcParams[&#39;figure.figsize&#39;] = (15, 3) plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39;  Summary By the end of this chapter, we&amp;rsquo;re going to have downloaded all of Canada&amp;rsquo;s weather data for 2012, and saved it to a CSV.
 We&amp;rsquo;ll do this by downloading it one month at a time, and then combining all the months together.
 Here&amp;rsquo;s the temperature every hour for 2012!</description>
-    </item>
-    
-    <item>
-      <title>Chapter 6 - String Operations</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter6/</link>
-      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://tutswiki.com/pandas-cookbook/chapter6/</guid>
-      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) plt.rcParams[&#39;figure.figsize&#39;] = (15, 3) plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39;  We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.
-weather_2012 = pd.read_csv(&#39;weather_2012.csv&#39;, parse_dates=True, index_col=&#39;Date/Time&#39;) weather_2012[:5]  Output:
-  Temp (C) Dew Point Temp (C) Rel Hum (%) Wind Spd (km/h) Visibility (km) Stn Press (kPa) Weather   Date/Time            2012-01-01 00:00:00 -1.</description>
     </item>
     
     <item>

@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://tutswiki.com/pandas-cookbook/chapter6/</loc>
+    <lastmod>2017-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tutswiki.com/if-name-main-in-python/</loc>
     <lastmod>2017-05-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://tutswiki.com/pandas-cookbook/chapter5/</loc>
-    <lastmod>2017-05-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tutswiki.com/pandas-cookbook/chapter6/</loc>
     <lastmod>2017-05-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -49,7 +49,7 @@
   
   <url>
     <loc>http://tutswiki.com/</loc>
-    <lastmod>2017-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -82,7 +82,7 @@
   
   <url>
     <loc>http://tutswiki.com/tutorials/</loc>
-    <lastmod>2017-05-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
