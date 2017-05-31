@@ -5,7 +5,7 @@
     <link>http://tutswiki.com/articles/</link>
     <description>Recent content in Articles on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 24 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/articles/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,18 @@
       
       <guid>http://tutswiki.com/articles/</guid>
       <description>Articles on Python   </description>
+    </item>
+    
+    <item>
+      <title>How to run a Python module as script?</title>
+      <link>http://tutswiki.com/run-module-as-script-python/</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/run-module-as-script-python/</guid>
+      <description>Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
+def int_sum(a, b): print a+b def some_other_function(): pass  But, what if you want to run the module itself as a script?
+Well, if you want to use a Python module as script then you just have to use the conditional for __name__.
+def int_sum(a, b): print a+b if __name__ == &amp;quot;__main__&amp;quot;: import sys int_sum(int(sys.</description>
     </item>
     
     <item>
