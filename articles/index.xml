@@ -5,7 +5,7 @@
     <link>http://tutswiki.com/articles/</link>
     <description>Recent content in Articles on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 31 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/articles/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,16 @@
       
       <guid>http://tutswiki.com/articles/</guid>
       <description>Articles on Python   </description>
+    </item>
+    
+    <item>
+      <title>Writing and Reading config files in Python</title>
+      <link>http://tutswiki.com/read-write-config-files-in-python/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/read-write-config-files-in-python/</guid>
+      <description>I&amp;rsquo;m sure you must be aware about the importance of configuration files. Config files help creating the initial settings for any project, they help avoiding the hardcoded data.
+Imagine if you migrate your server to a new host and suddenly your application stops working, now you have to go through your code and search/replace IP address of host at all the places. Config file comes to the rescue in such situation.</description>
     </item>
     
     <item>

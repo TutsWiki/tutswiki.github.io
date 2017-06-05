@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="">
-    <meta name="description" content="Collaborative tutorials for the internet">
+    <meta name="keywords" content="python , config , read config file , write config file , configparser">
+    <meta name="description" content="Learn how to write and read config files in Python using configparser module.">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <title>Python</title>
+    <title>Writing and Reading config files in Python</title>
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="/css/style.css" rel="stylesheet">
@@ -43,7 +43,7 @@
         </div>
 
         <div class="nav title-row" id="top_menu">
-            <h1 class="nav top-menu">Python</h1>
+            <h1 class="nav top-menu">Writing and Reading config files in Python</h1>
         </div>
     </header>
     
@@ -89,6 +89,11 @@
         <li><a href="https://github.com/TutsWiki/source/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a>
         </li>
         
+         
+        <li><a href="https://github.com/TutsWiki/source/edit/master/content/articles/python/write-read-config-file-python.md"
+               target="blank"><i class='fa fa-edit'></i> Refine this Page</a></li>
+        
+        
         </ul>
         
     </div>
@@ -115,6 +120,8 @@
             <div class="row">
                 <div class="col-md-1">
                     
+                    
+                    
                 </div>
                 <div class="col-md-10">
                     <section class="panel">
@@ -128,64 +135,81 @@
                                 </div>
                             </div>
 
-<body lang="en">
 
-<section id="main">
-    <div>
-        
-        <article class="post">
-    <header>
-        <h2><a href="http://tutswiki.com/read-write-config-files-in-python/">Writing and Reading config files in Python </a></h2>
-        
-    </header>
 
-    I&rsquo;m sure you must be aware about the importance of configuration files. Config files help creating the initial settings for any project, they help avoiding the hardcoded data.
-Imagine if you migrate your server to a new host and suddenly your application stops working, now you have to go through your code and search/replace IP address of host at all the places. Config file comes to the rescue in such situation.
-    <footer>
-        <a href='http://tutswiki.com/read-write-config-files-in-python/'>
-            <nobr>Read more →</nobr>
-        </a> [400 Words, 2 minutes]
-    </footer>
-</article>
-        
-        <article class="post">
-    <header>
-        <h2><a href="http://tutswiki.com/run-module-as-script-python/">How to run a Python module as script? </a></h2>
-        
-    </header>
 
-    Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
-def int_sum(a, b): print a+b def some_other_function(): pass  But, what if you want to run the module itself as a script?
-Well, if you want to use a Python module as script then you just have to use the conditional for __name__.
-def int_sum(a, b): print a+b if __name__ == &quot;__main__&quot;: import sys int_sum(int(sys.
-    <footer>
-        <a href='http://tutswiki.com/run-module-as-script-python/'>
-            <nobr>Read more →</nobr>
-        </a> [200 Words, 1 minutes]
-    </footer>
-</article>
-        
-        <article class="post">
-    <header>
-        <h2><a href="http://tutswiki.com/if-name-main-in-python/">What is if __name__ == &#34;__main__&#34; in Python? </a></h2>
-        
-    </header>
+<p>I&rsquo;m sure you must be aware about the importance of <a href="https://www.wikiwand.com/en/Configuration_file">configuration files</a>. Config files help creating the initial settings for any project, they help avoiding the hardcoded data.</p>
 
-    If you are new to Python then you may have noticed if __name__ == &quot;__main__&quot; line in some python codes.
-You may be wondering:
- What does that mean? What purpose does it serve? I don&rsquo;t see it in all Python codes, so when should I use it exactly? Can you give me some examples?  Let me try to explain the above to you.
-In Python all modules have some built-in attributes.
-    <footer>
-        <a href='http://tutswiki.com/if-name-main-in-python/'>
-            <nobr>Read more →</nobr>
-        </a> [300 Words, 2 minutes]
-    </footer>
-</article>
-        
-    </div>
-</section>
+<p>Imagine if you migrate your server to a new host and suddenly your application stops working, now you have to go through your code and search/replace IP address of host at all the places. Config file comes to the rescue in such situation. You define the IP address key in config file and use it throughout your code. Later when you want to change any attribute, just change it in the config file. So helpful, isn&rsquo;t it?</p>
 
-<aside id="meta"></aside>
+<p>Let&rsquo;s see how can we create and read config files in Python.</p>
+
+<h2 id="creating-config-file-in-python">Creating config file in Python</h2>
+
+<p>In Python we have <a href="https://docs.python.org/3/library/configparser.html">configparser</a> module which can help us with creation of config files (.ini format).</p>
+
+<pre><code class="language-python">from configparser import ConfigParser
+
+#Get the configparser object
+config_object = ConfigParser()
+
+#Assume we need 2 sections in the config file, let's call them USERINFO and SERVERCONFIG
+config_object[&quot;USERINFO&quot;] = {
+    &quot;admin&quot;: &quot;Chankey Pathak&quot;,
+    &quot;loginid&quot;: &quot;chankeypathak&quot;,
+    &quot;password&quot;: &quot;tutswiki&quot;
+}
+
+config_object[&quot;SERVERCONFIG&quot;] = {
+    &quot;host&quot;: &quot;tutswiki.com&quot;,
+    &quot;port&quot;: &quot;8080&quot;,
+    &quot;ipaddr&quot;: &quot;8.8.8.8&quot;
+}
+
+#Write the above sections to config.ini file
+with open('config.ini', 'w') as conf:
+    config_object.write(conf)
+</code></pre>
+
+<p>Now if you check the working directory, you will notice <code>config.ini</code> file has been created, below is its content.</p>
+
+<pre><code class="language-text">[USERINFO]
+admin = Chankey Pathak
+password = tutswiki
+loginid = chankeypathak
+
+[SERVERCONFIG]
+host = tutswiki.com
+ipaddr = 8.8.8.8
+port = 8080
+</code></pre>
+
+<h2 id="reading-a-key-from-config-file">Reading a key from config file</h2>
+
+<p>So we have created a config file, now in your code you have to read the configuration data so that you can use it by &ldquo;keyname&rdquo; to avoid hardcoded data, let&rsquo;s see how to do that.</p>
+
+<pre><code class="language-python">userinfo = config_object[&quot;USERINFO&quot;]
+print &quot;Password is {}&quot;.format(userinfo[&quot;password&quot;])
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">Password is tutswiki
+</code></pre>
+
+<h2 id="updating-a-key-in-config-file">Updating a key in config file</h2>
+
+<p>Suppose you have updated the password for chankeypathak user. You can update the same in config file using below:</p>
+
+<pre><code class="language-python">userinfo = config_object[&quot;USERINFO&quot;]
+userinfo[&quot;password&quot;] = &quot;newpassword&quot;
+
+with open('config.ini', 'w') as conf:
+    config_object.write(conf)
+</code></pre>
+
+<p>Now if you open the <code>config.ini</code> file, you will notice that the password has been updated.</p>
+
 
 <div class="row">
     
@@ -205,6 +229,8 @@ In Python all modules have some built-in attributes.
 </div>
 
 <div class="col-md-1">
+    
+    
     
 </div>
 </div>
@@ -236,3 +262,4 @@ In Python all modules have some built-in attributes.
 </script>
 </body>
 </html>
+
