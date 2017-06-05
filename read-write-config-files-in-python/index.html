@@ -188,7 +188,14 @@ port = 8080
 
 <p>So we have created a config file, now in your code you have to read the configuration data so that you can use it by &ldquo;keyname&rdquo; to avoid hardcoded data, let&rsquo;s see how to do that.</p>
 
-<pre><code class="language-python">userinfo = config_object[&quot;USERINFO&quot;]
+<pre><code class="language-python">from configparser import ConfigParser
+
+#Read config.ini file
+config_object = ConfigParser()
+config_object.read(&quot;config.ini&quot;)
+
+#Get the password
+userinfo = config_object[&quot;USERINFO&quot;]
 print &quot;Password is {}&quot;.format(userinfo[&quot;password&quot;])
 </code></pre>
 
@@ -201,9 +208,19 @@ print &quot;Password is {}&quot;.format(userinfo[&quot;password&quot;])
 
 <p>Suppose you have updated the password for chankeypathak user. You can update the same in config file using below:</p>
 
-<pre><code class="language-python">userinfo = config_object[&quot;USERINFO&quot;]
+<pre><code class="language-python">from configparser import ConfigParser
+
+#Read config.ini file
+config_object = ConfigParser()
+config_object.read(&quot;config.ini&quot;)
+
+#Get the USERINFO section
+userinfo = config_object[&quot;USERINFO&quot;]
+
+#Update the password
 userinfo[&quot;password&quot;] = &quot;newpassword&quot;
 
+#Write changes back to file
 with open('config.ini', 'w') as conf:
     config_object.write(conf)
 </code></pre>
