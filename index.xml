@@ -11,6 +11,19 @@
     
     
     <item>
+      <title>How to print on same line with print in Python</title>
+      <link>http://tutswiki.com/print-same-line-python/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/print-same-line-python/</guid>
+      <description>In Python, when you use the print function, it prints a new line at the end.
+For example:
+print &amp;quot;This is some line.&amp;quot; print &amp;quot;This is another line.&amp;quot;  Output:
+This is some line. This is another line.  What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
+Add comma at the end of print print &amp;quot;This is some line.</description>
+    </item>
+    
+    <item>
       <title>Writing and Reading config files in Python</title>
       <link>http://tutswiki.com/read-write-config-files-in-python/</link>
       <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
