@@ -5,10 +5,22 @@
     <link>http://tutswiki.com/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 05 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Difference between append and extend in Python</title>
+      <link>http://tutswiki.com/append-vs-extend-python/</link>
+      <pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/append-vs-extend-python/</guid>
+      <description>append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&amp;rsquo;s find out.
+The official documentation describes them as:
+ list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
+ list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
+    </item>
     
     <item>
       <title>How to print on same line with print in Python</title>

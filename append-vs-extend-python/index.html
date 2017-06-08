@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="">
-    <meta name="description" content="Collaborative tutorials for the internet">
+    <meta name="keywords" content="python,list,append,extend,combine,merge">
+    <meta name="description" content="What is the difference between list methods append and extend in Python?">
     <meta name="author" content="Chankey Pathak (@chankeypathak)">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <title>Python</title>
+    <title>Difference between append and extend in Python</title>
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="/css/style.css" rel="stylesheet">
@@ -43,7 +43,7 @@
         </div>
 
         <div class="nav title-row" id="top_menu">
-            <h1 class="nav top-menu">Python</h1>
+            <h1 class="nav top-menu">Difference between append and extend in Python</h1>
         </div>
     </header>
     
@@ -89,6 +89,11 @@
         <li><a href="https://github.com/TutsWiki/source/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a>
         </li>
         
+         
+        <li><a href="https://github.com/TutsWiki/source/edit/master/content/articles/python/appned-vs-extend-python.md"
+               target="blank"><i class='fa fa-edit'></i> Refine this Page</a></li>
+        
+        
         </ul>
         
     </div>
@@ -115,6 +120,8 @@
             <div class="row">
                 <div class="col-md-1">
                     
+                    
+                    
                 </div>
                 <div class="col-md-10">
                     <section class="panel">
@@ -128,99 +135,79 @@
                                 </div>
                             </div>
 
-<body lang="en">
 
-<section id="main">
-    <div>
-        
-        <article class="post">
-    <header>
-        <h2><a href="http://tutswiki.com/append-vs-extend-python/">Difference between append and extend in Python </a></h2>
-        
-    </header>
 
-    append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&rsquo;s find out.
-The official documentation describes them as:
- list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
- list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.
-    <footer>
-        <a href='http://tutswiki.com/append-vs-extend-python/'>
-            <nobr>Read more →</nobr>
-        </a> [400 Words, 2 minutes]
-    </footer>
-</article>
-        
-        <article class="post">
-    <header>
-        <h2><a href="http://tutswiki.com/print-same-line-python/">How to print on same line with print in Python </a></h2>
-        
-    </header>
 
-    In Python, when you use the print function, it prints a new line at the end.
-For example:
-print &quot;This is some line.&quot; print &quot;This is another line.&quot;  Output:
-This is some line. This is another line.  What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
-Add comma at the end of print print &quot;This is some line.
-    <footer>
-        <a href='http://tutswiki.com/print-same-line-python/'>
-            <nobr>Read more →</nobr>
-        </a> [200 Words, 1 minutes]
-    </footer>
-</article>
-        
-        <article class="post">
-    <header>
-        <h2><a href="http://tutswiki.com/read-write-config-files-in-python/">Writing and Reading config files in Python </a></h2>
-        
-    </header>
+<p><code>append</code> and <code>extend</code> are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&rsquo;s find out.</p>
 
-    I&rsquo;m sure you must be aware about the importance of configuration files. Config files help creating the initial settings for any project, they help avoiding the hardcoded data.
-Imagine if you migrate your server to a new host and suddenly your application stops working, now you have to go through your code and search/replace IP address of host at all the places. Config file comes to the rescue in such situation.
-    <footer>
-        <a href='http://tutswiki.com/read-write-config-files-in-python/'>
-            <nobr>Read more →</nobr>
-        </a> [400 Words, 2 minutes]
-    </footer>
-</article>
-        
-        <article class="post">
-    <header>
-        <h2><a href="http://tutswiki.com/run-module-as-script-python/">How to run a Python module as script? </a></h2>
-        
-    </header>
+<p>The <a href="https://docs.python.org/2/tutorial/datastructures.html#more-on-lists">official documentation</a> describes them as:</p>
 
-    Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
-def int_sum(a, b): print a+b def some_other_function(): pass  But, what if you want to run the module itself as a script?
-Well, if you want to use a Python module as script then you just have to use the conditional for __name__.
-def int_sum(a, b): print a+b if __name__ == &quot;__main__&quot;: import sys int_sum(int(sys.
-    <footer>
-        <a href='http://tutswiki.com/run-module-as-script-python/'>
-            <nobr>Read more →</nobr>
-        </a> [200 Words, 1 minutes]
-    </footer>
-</article>
-        
-        <article class="post">
-    <header>
-        <h2><a href="http://tutswiki.com/if-name-main-in-python/">What is if __name__ == &#34;__main__&#34; in Python? </a></h2>
-        
-    </header>
+<ul>
+<li><p><code>list.append(x)</code>: Add <strong>an item</strong> to the end of the list; equivalent to <code>a[len(a):] = [x]</code>.</p></li>
 
-    If you are new to Python then you may have noticed if __name__ == &quot;__main__&quot; line in some python codes.
-You may be wondering:
- What does that mean? What purpose does it serve? I don&rsquo;t see it in all Python codes, so when should I use it exactly? Can you give me some examples?  Let me try to explain the above to you.
-In Python all modules have some built-in attributes.
-    <footer>
-        <a href='http://tutswiki.com/if-name-main-in-python/'>
-            <nobr>Read more →</nobr>
-        </a> [300 Words, 2 minutes]
-    </footer>
-</article>
-        
-    </div>
-</section>
+<li><p><code>list.extend(L)</code>: Extend the list by appending <strong>all the items</strong> in the given list; equivalent to <code>a[len(a):] = L</code>.</p></li>
+</ul>
 
-<aside id="meta"></aside>
+<p>Notice the bold words in the definition. append adds <code>an item</code> and extend <code>appends all the items of the given list</code>.</p>
+
+<p>Let&rsquo;s take an example:</p>
+
+<h2 id="append-a-list-to-another-list-in-python">append a list to another list in Python</h2>
+
+<pre><code class="language-python">some_list = ['string', 1, 'another string', 6.5]
+another_list = ['new data', 12]
+some_list.append(another_list)
+print some_list
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">['string', 1, 'another string', 6.5, ['new data', 12]]
+</code></pre>
+
+<p>As you can see, the <code>append</code> method took <code>an item</code> i.e. the object of another list and added it to <code>some_list</code> as it is.</p>
+
+<h2 id="extend-a-list-with-another-list-in-python">extend a list with another list in Python</h2>
+
+<pre><code class="language-python">some_list = ['string', 1, 'another string', 6.5]
+another_list = ['new data', 12]
+some_list.extend(another_list)
+print some_list
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">['string', 1, 'another string', 6.5, 'new data', 12]
+</code></pre>
+
+<p>In case of <code>extend</code> you can see that all the items from <code>another_list</code> were appended to <code>some_list</code> one by one. So you can say extend method concatenates one list with another list.</p>
+
+<h2 id="quiz">Quiz</h2>
+
+<p>Q: What will be the output of below code:</p>
+
+<pre><code class="language-python">some_list = ['string', 1, 'another string', 6.5]
+data = 'hello'
+some_list.extend(data)
+print some_list
+</code></pre>
+
+<p>A: Output is</p>
+
+<pre><code class="language-sh">['string', 1, 'another string', 6.5, 'h', 'e', 'l', 'l', 'o']
+</code></pre>
+
+<p>Explanation: If you notice carefully, <code>data</code> is a string and <code>strings in Python are iterable</code>. Therefore the <code>extend</code> method iterated over all characters in the string one by one and appended them to the list.</p>
+
+<p>So based on above we can say that below 2 code snippets are equivalent:</p>
+
+<pre><code class="language-python">for data in iterator:
+    some_list.append(data)
+</code></pre>
+
+<pre><code class="language-python">some_list.extend(iterator)
+</code></pre>
+
 
 <div class="row">
     
@@ -240,6 +227,8 @@ In Python all modules have some built-in attributes.
 </div>
 
 <div class="col-md-1">
+    
+    
     
 </div>
 </div>
@@ -271,3 +260,4 @@ In Python all modules have some built-in attributes.
 </script>
 </body>
 </html>
+
