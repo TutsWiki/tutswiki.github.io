@@ -6,10 +6,21 @@
     <description>Recent content on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GitHub Alternatives (Free, Paid, Self-Hosted)</title>
+      <link>http://tutswiki.com/github-alternatives/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/github-alternatives/</guid>
+      <description>The trending news of yesterday was the acquisition of GitHub (the world&amp;rsquo;s leading software development platform) by Microsoft. This is a great deal for Microsoft which might put it in the position it was about 10 years ago in the software market. But a lot of open-source fans are unhappy with this.
+A couple of years ago Microsoft was anti-open-source.
+ &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.</description>
+    </item>
     
     <item>
       <title>What is the use of yield in Python?</title>
