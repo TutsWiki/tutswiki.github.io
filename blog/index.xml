@@ -17,9 +17,8 @@
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/github-alternatives/</guid>
-      <description>The trending news of yesterday was the acquisition of GitHub (the world&amp;rsquo;s leading software development platform) by Microsoft. This is a great deal for Microsoft which might put it in the position it was about 10 years ago in the software market. But a lot of open-source fans are unhappy with this.
-A couple of years ago Microsoft was anti-open-source.
- &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.</description>
+      <description>&amp;ldquo; {{ with .Site.Language }}{{ end }} {{ with .Site.Params.facebook.appid }}{{ end }} The trending news of yesterday was the acquisition of GitHub (the world&amp;rsquo;s leading software development platform) by Microsoft. This is a great deal for Microsoft which might put it in the position it was about 10 years ago in the software market. But a lot of open-source fans are unhappy with this.
+A couple of years ago Microsoft was anti-open-source.</description>
     </item>
     
     <item>
