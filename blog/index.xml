@@ -6,10 +6,20 @@
     <description>Recent content in Blog on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What&#39;s new in Angular 6 (Features List)</title>
+      <link>http://tutswiki.com/angular6-features/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/angular6-features/</guid>
+      <description>Angular 6 is out with all new features. It is a major release in which Angular team has synchronized many of the important framework packages to make most out of cross compatibility. All the major framework packages like @angular/core, @angular/compiler, @angular/common etc. are reworked and released as version 6.0.0. Below is the list of major changes in Angular 6, let&amp;rsquo;s explore them one by one.
+Angular 6 Features:  New CLI commands  ng update ng add  Referencing providers Angular Elements Angular Material + CDK Components  Tree Badge Bottom-Sheet Overlay  Starter Components  Dashboard Side-Nav Datatable  Library Support CLI Workspaces RxJS v6 Long Term Support  ng update A new command is introduced in Angular CLI which analyzes package.</description>
+    </item>
     
     <item>
       <title>GitHub Alternatives (Free, Paid, Self-Hosted)</title>
