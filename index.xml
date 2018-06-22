@@ -6,10 +6,19 @@
     <description>Recent content on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google Engineers Boycott Against Security Tool for Military</title>
+      <link>http://tutswiki.com/google-engineers-boycott-security-tool-military/</link>
+      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/google-engineers-boycott-security-tool-military/</guid>
+      <description>A group of 9 cloud engineers at Google has refused to work on a project called air-gap due to which Google may lose a deal worth $10 billion. Google needs air-gap if it has to do some sensitive work with government agencies involving sensitive data (obviously military implications there). So this group of 9 basically just said they weren&amp;rsquo;t gonna do it. About 10-12 employees have resigned so far as part of this work strike.</description>
+    </item>
     
     <item>
       <title>How to deploy Node.js app on Google App Engine</title>
