@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.41" />
-    <meta name="description" content="Find out on which weekday people bike the most with groupby and aggregate">
+    <meta name="description" content="New software based on deep learning algorithms automatically and accurately calculates LVEF">
 	<meta name="author" content="Chankey Pathak">
-	<meta name="keywords" content="pandas,Groupby,Aggregate,numpy,matplotlib">
+	<meta name="keywords" content="deeplearning,deep-learning,data-science,cardiovascular,health,artificial-intelligence,machinelearning,radiology">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-	<meta property="og:title" content="Chapter 4 - Groupby and Aggregate" />
-	<meta property="og:description" content="Find out on which weekday people bike the most with groupby and aggregate" />
+	<meta property="og:title" content="New Study Demonstrates Deep learning Helps Reducing Variability In Cardiovascular Imaging" />
+	<meta property="og:description" content="New software based on deep learning algorithms automatically and accurately calculates LVEF" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="http://tutswiki.com/pandas-cookbook/chapter4/" />
+	<meta property="og:url" content="http://tutswiki.com/deep-learning-cardiovascular-imaging/" />
 	<meta property="og:locale" content="en" />
-    <title>Chapter 4 - Groupby and Aggregate - TutsWiki Beta</title>
+    <title>New Study Demonstrates Deep learning Helps Reducing Variability In Cardiovascular Imaging - TutsWiki Beta</title>
     
     
     <link href="/css/nucleus.css?1530121969" rel="stylesheet">
@@ -46,7 +46,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/pandas-cookbook/chapter4/">
+  <body class="" data-url="/deep-learning-cardiovascular-imaging/">
     <nav id="sidebar" class="">
 
 
@@ -86,7 +86,7 @@
   
     
     <li data-nav-id="/blog/" title="Blog" class="dd-item 
-        
+        parent
         
         
         ">
@@ -110,7 +110,7 @@
  
   
     
-      <li data-nav-id="/deep-learning-cardiovascular-imaging" title="New Study Demonstrates Deep learning Helps Reducing Variability In Cardiovascular Imaging" class="dd-item ">
+      <li data-nav-id="/deep-learning-cardiovascular-imaging" title="New Study Demonstrates Deep learning Helps Reducing Variability In Cardiovascular Imaging" class="dd-item active">
         <a href="/deep-learning-cardiovascular-imaging/">
         Deep Learning helps reducing variability in Cardiovascular Imaging
         
@@ -327,7 +327,7 @@
   
     
     <li data-nav-id="/pandas-cookbook/" title="Pandas Cookbook" class="dd-item 
-        parent
+        
         
         
         ">
@@ -408,7 +408,7 @@
  
   
     
-      <li data-nav-id="/pandas-cookbook/chapter4" title="Chapter 4 - Groupby and Aggregate" class="dd-item active">
+      <li data-nav-id="/pandas-cookbook/chapter4" title="Chapter 4 - Groupby and Aggregate" class="dd-item ">
         <a href="/pandas-cookbook/chapter4/">
         Chapter 4
         
@@ -562,7 +562,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/pandas%20cookbook/chapter4.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/deep-learning-cardiovascular-imaging.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -591,7 +591,7 @@
             
           
           
-            <a href='/'>TutsWiki Beta</a> > <a href='/pandas-cookbook/'>Pandas Cookbook</a> > Chapter 4 - Groupby and Aggregate
+            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > New Study Demonstrates Deep learning Helps Reducing Variability In Cardiovascular Imaging
           
          
           
@@ -607,9 +607,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#4-1-adding-a-weekday-column-to-our-dataframe">4.1 Adding a &lsquo;weekday&rsquo; column to our dataframe</a></li>
-<li><a href="#4-2-adding-up-the-cyclists-by-weekday">4.2 Adding up the cyclists by weekday</a></li>
-<li><a href="#4-3-putting-it-together">4.3 Putting it together</a></li>
+<li><a href="#what-is-ejection-fraction">What is Ejection Fraction?</a></li>
+<li><a href="#measuring-ef">Measuring EF</a></li>
+<li><a href="#how-deep-learning-helps">How Deep Learning Helps?</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -624,7 +624,7 @@
         
         <div id="body-inner">
           
-            <h1>Chapter 4 - Groupby and Aggregate</h1>
+            <h1>New Study Demonstrates Deep learning Helps Reducing Variability In Cardiovascular Imaging</h1>
           
 
         
@@ -632,354 +632,42 @@
 
 
 
-<pre><code class="language-python">%matplotlib inline
+<p><meta property="og:image" content="https://tutswiki.com/images/deep-learning-cardiovascular.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Deep Learning helps reducing variability in Cardiovascular Imaging" />
+<meta name=”twitter:description” content="New software based on deep learning algorithms automatically and accurately calculates LVEF" /></p>
 
-import pandas as pd
-import matplotlib.pyplot as plt
+<p><a href="https://baylabs.io/">Bay Labs</a>, a San Francisco-based medical technology company which focuses on using artificial intelligence to improve cardiovascular imaging, has released a new software EchoMD AutoEF. It is being claimed that this software will help to reduce the variability in cardiovascular imaging.</p>
 
-pd.set_option('display.mpl_style', 'default') # Make the graphs a bit prettier
-plt.rcParams['figure.figsize'] = (15, 5)
-plt.rcParams['font.family'] = 'sans-serif'
+<p>The software uses deep learning techniques to accurately calculate the <code>left ventricular ejection fraction</code>.</p>
 
-# This is necessary to show lots of columns in pandas 0.12. 
-# Not necessary in pandas 0.13.
-pd.set_option('display.width', 5000) 
-pd.set_option('display.max_columns', 60)
-</code></pre>
+<h2 id="what-is-ejection-fraction">What is Ejection Fraction?</h2>
 
-<p>Okay! We&rsquo;re going back to our bike path dataset here. I live in Montreal, and I was curious about whether we&rsquo;re more of a commuter city or a biking-for-fun city &ndash; do people bike more on weekends, or on weekdays?</p>
+<p>During each pumping cycle of our heart, it contracts and relaxes. When it contracts it passes the blood to ventricles. Ventricles are basically the pumping chambers. Ejection Fraction is the amount of blood withdrawn from the heart when it contracts. Medical professionals use EF to identify the health of a heart. They generally measure the EF from left ventricle because it is the main pumping chamber of the heart which passes the oxygenated blood through the ascending (upward) aorta to the rest of the body.</p>
 
-<h2 id="4-1-adding-a-weekday-column-to-our-dataframe">4.1 Adding a &lsquo;weekday&rsquo; column to our dataframe</h2>
+<p><img src="/images/deep-learning-cardiovascular.png" alt="Cardiovascular Imaging with Deep Learning" title="Cardiovascular Imaging with Deep Learning" /></p>
 
-<p>First, we need to load up the data. We&rsquo;ve done this before.</p>
+<h2 id="measuring-ef">Measuring EF</h2>
 
-<pre><code class="language-python">bikes = pd.read_csv('bikes.csv', sep=';', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
-bikes['Berri 1'].plot()
-</code></pre>
+<p>There are various methods available to measure LVEF, out of which <a href="http://web.stanford.edu/group/ccm_echocardio/cgi-bin/mediawiki/index.php/Left_ventricle_systolic_function">Simpson’s biplane method</a> is used widely. This method has about <code>9.2%</code> average variability. The EchoMD AutoEF software by Bay Labs has an average variability of <code>8.2%</code>. Moreover, EchoMD AutoEF doesn&rsquo;t require any user intervention, it&rsquo;s fully automatic. It calculates LVEF from complete echocardiographic patient studies, automatically.</p>
 
-<p>Output:
-<div>
-<img src="/img/plot_single_column.png" alt="Plotting CSV column with Matplotlib" />
-</div></p>
+<h2 id="how-deep-learning-helps">How Deep Learning Helps?</h2>
 
-<p>Next up, we&rsquo;re just going to look at the Berri bike path. Berri is a street in Montreal, with a pretty important bike path. I use it mostly on my way to the library now, but I used to take it to work sometimes when I worked in Old Montreal.
-So we&rsquo;re going to create a dataframe with just the Berri bikepath in it</p>
+<p>At present Human intervention is required to calculate LVEF. Medical professionals have to go through the recorded clips. They watch them carefully and pick the best ones then they manipulate them for quantification. This is a very time consuming and prone-to-error process (as it is done by humans). The deep learning algorithms helped in this case by totally eliminating the need to do all of the above manually. The training set included 4,000,000 images from about 9,000 patients.</p>
 
-<pre><code class="language-python">berri_bikes = bikes[['Berri 1']].copy()
-berri_bikes[:5]
-</code></pre>
-
-<p>Output:</p>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Berri 1</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2012-01-01</th>
-      <td>  35</td>
-    </tr>
-    <tr>
-      <th>2012-01-02</th>
-      <td>  83</td>
-    </tr>
-    <tr>
-      <th>2012-01-03</th>
-      <td> 135</td>
-    </tr>
-    <tr>
-      <th>2012-01-04</th>
-      <td> 144</td>
-    </tr>
-    <tr>
-      <th>2012-01-05</th>
-      <td> 197</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-<p>Next, we need to add a &lsquo;weekday&rsquo; column. Firstly, we can get the weekday from the index. We haven&rsquo;t talked about indexes yet, but the index is what&rsquo;s on the left on the above dataframe, under &lsquo;Date&rsquo;. It&rsquo;s basically all the days of the year.</p>
-
-<pre><code class="language-python">berri_bikes.index
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-bash">&lt;class 'pandas.tseries.index.DatetimeIndex'&gt;
-[2012-01-01, ..., 2012-11-05]
-Length: 310, Freq: None, Timezone: None
-</code></pre>
-
-<p>You can see that actually some of the days are missing &ndash; only 310 days of the year are actually there. Who knows why.
-Pandas has a bunch of really great time series functionality, so if we wanted to get the day of the month for each row, we could do it like this:</p>
-
-<pre><code class="language-python">berri_bikes.index.day
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-bash">array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
-       18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,  1,  2,  3,
-        4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-       21, 22, 23, 24, 25, 26, 27, 28, 29,  1,  2,  3,  4,  5,  6,  7,  8,
-        9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
-       26, 27, 28, 29, 30, 31,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11,
-       12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
-       29, 30,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
-       16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,  1,
-        2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-       19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,  1,  2,  3,  4,  5,
-        6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-       23, 24, 25, 26, 27, 28, 29, 30, 31,  1,  2,  3,  4,  5,  6,  7,  8,
-        9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
-       26, 27, 28, 29, 30, 31,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11,
-       12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
-       29, 30,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
-       16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,  1,
-        2,  3,  4,  5], dtype=int32)
-</code></pre>
-
-<p>We actually want the weekday, though:</p>
-
-<pre><code class="language-python">berri_bikes.index.weekday
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-bash">array([6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0,
-       1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2,
-       3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4,
-       5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6,
-       0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1,
-       2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3,
-       4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5,
-       6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0,
-       1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2,
-       3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4,
-       5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6,
-       0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1,
-       2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3,
-       4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0], dtype=int32)
-</code></pre>
-
-<p>These are the days of the week, where 0 is Monday. I found out that 0 was Monday by checking on a calendar.</p>
-
-<p>Now that we know how to get the weekday, we can add it as a column in our dataframe like this:</p>
-
-<pre><code class="language-python">berri_bikes.loc[:,'weekday'] = berri_bikes.index.weekday
-berri_bikes[:5]
-</code></pre>
-
-<p>Output:</p>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Berri 1</th>
-      <th>weekday</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2012-01-01</th>
-      <td>  35</td>
-      <td> 6</td>
-    </tr>
-    <tr>
-      <th>2012-01-02</th>
-      <td>  83</td>
-      <td> 0</td>
-    </tr>
-    <tr>
-      <th>2012-01-03</th>
-      <td> 135</td>
-      <td> 1</td>
-    </tr>
-    <tr>
-      <th>2012-01-04</th>
-      <td> 144</td>
-      <td> 2</td>
-    </tr>
-    <tr>
-      <th>2012-01-05</th>
-      <td> 197</td>
-      <td> 3</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-<h2 id="4-2-adding-up-the-cyclists-by-weekday">4.2 Adding up the cyclists by weekday</h2>
-
-<p>This turns out to be really easy!
-Dataframes have a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html">.groupby()</a> method that is similar to <a href="https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql">SQL groupby</a>, if you&rsquo;re familiar with that. I&rsquo;m not going to explain more about it right now &ndash; if you want to to know more, <a href="http://pandas.pydata.org/pandas-docs/stable/groupby.html">the documentation</a> is really good.</p>
-
-<p>In this case, <code>berri_bikes.groupby('weekday').aggregate(sum)</code> means</p>
+<p>Quoting Richard Bae, who is the Director of the <a href="https://www.nhlbi.nih.gov/science/echocardiography-laboratory">Echocardiography Laboratory</a> at the Minneapolis Heart Institute:</p>
 
 <blockquote>
-<p>&ldquo;Group the rows by weekday and then add up all the values with the same weekday.&rdquo;</p>
+<p>&ldquo;Historically there have been challenges with variability and reproducibility in reporting of the ejection fraction, especially when the EF is not normal; our study showed that the EchoMD AutoEF algorithms can aid interpretation enormously and have less variability than cardiologists reported in the literature.”</p>
+
+<p>&ldquo;By supporting fast, efficient and accurate AI-assisted echocardiogram analysis, the algorithms can allow physicians to focus on putting results into the context for the patient - guiding prognosis and course of management.”</p>
 </blockquote>
 
-<pre><code class="language-python">weekday_counts = berri_bikes.groupby('weekday').aggregate(sum)
-weekday_counts
-</code></pre>
+<p>This is a great innovation in the medical field. It will help cardiologists in better decision making.</p>
 
-<p>Output:</p>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Berri 1</th>
-    </tr>
-    <tr>
-      <th>weekday</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td> 134298</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td> 135305</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td> 152972</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td> 160131</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td> 141771</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td> 101578</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>  99310</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<div class="notices note" ><p>U.S. Food and Drug Administration (FDA) has given <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPMN/pmn.cfm">510(k) clearance</a> to this product. Which means that the device is safe and effective in automatically selecting clips and calculating LVEF.</p>
 </div>
 
-<p>It&rsquo;s hard to remember what 0, 1, 2, 3, 4, 5, 6 mean, so we can fix it up and graph it:</p>
-
-<pre><code class="language-python">weekday_counts.index = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-weekday_counts
-</code></pre>
-
-<p>Output:</p>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Berri 1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Monday</th>
-      <td> 134298</td>
-    </tr>
-    <tr>
-      <th>Tuesday</th>
-      <td> 135305</td>
-    </tr>
-    <tr>
-      <th>Wednesday</th>
-      <td> 152972</td>
-    </tr>
-    <tr>
-      <th>Thursday</th>
-      <td> 160131</td>
-    </tr>
-    <tr>
-      <th>Friday</th>
-      <td> 141771</td>
-    </tr>
-    <tr>
-      <th>Saturday</th>
-      <td> 101578</td>
-    </tr>
-    <tr>
-      <th>Sunday</th>
-      <td>  99310</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-<pre><code class="language-python">weekday_counts.plot(kind='bar')
-</code></pre>
-
-<p>Output:</p>
-
-<div>
-    <img src="/img/cycle_weeday_plot.png" alt="Plot dataframe as per weekdays" />
-</div>
-
-<p>So it looks like Montrealers are commuter cyclists &ndash; they bike much more during the week. Neat!</p>
-
-<h2 id="4-3-putting-it-together">4.3 Putting it together</h2>
-
-<p>Let&rsquo;s put all that together, to prove how easy it is. 6 lines of magical pandas!
-If you want to play around, try changing sum to max, numpy.median, or any other function you like.</p>
-
-<pre><code class="language-python">bikes = pd.read_csv('../data/bikes.csv', 
-                    sep=';', encoding='latin1', 
-                    parse_dates=['Date'], dayfirst=True, 
-                    index_col='Date')
-# Add the weekday column
-berri_bikes = bikes[['Berri 1']].copy()
-berri_bikes.loc[:,'weekday'] = berri_bikes.index.weekday
-
-# Add up the number of cyclists by weekday, and plot!
-weekday_counts = berri_bikes.groupby('weekday').aggregate(sum)
-weekday_counts.index = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-weekday_counts.plot(kind='bar')
-</code></pre>
-
-<p>Output:</p>
-
-<div>
-    <img src="/img/cycle_weeday_plot.png" alt="Plot dataframe as per weekdays" />
-</div>
 
 
 
@@ -1072,6 +760,7 @@ weekday_counts.plot(kind='bar')
             
                 
                     
+                    
                 
                 
 
@@ -1082,6 +771,185 @@ weekday_counts.plot(kind='bar')
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             
@@ -1211,190 +1079,6 @@ weekday_counts.plot(kind='bar')
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1405,10 +1089,10 @@ weekday_counts.plot(kind='bar')
 
 
         
-            <a class="nav nav-prev" href="/pandas-cookbook/chapter3" title="Chapter 3 - Filtering dataframes"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/pandas-cookbook/chapter5" title="Chapter 5 - Web scraping with Pandas" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/google-engineers-boycott-security-tool-military" title="Google Engineers Boycott Against Security Tool for Military" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
