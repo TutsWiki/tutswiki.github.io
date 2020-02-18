@@ -17,17 +17,17 @@
     <title>Chapter 5 - Web scraping with Pandas - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1539138937" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1539138937" rel="stylesheet">
-    <link href="/css/hybrid.css?1539138937" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1539138937" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1539138937" rel="stylesheet">
-    <link href="/css/auto-complete.css?1539138937" rel="stylesheet">
-    <link href="/css/theme.css?1539138937" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1539138937" rel="stylesheet">
+    <link href="/css/nucleus.css?1582044604" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1582044604" rel="stylesheet">
+    <link href="/css/hybrid.css?1582044604" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1582044604" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1582044604" rel="stylesheet">
+    <link href="/css/auto-complete.css?1582044604" rel="stylesheet">
+    <link href="/css/theme.css?1582044604" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1582044604" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1539138937"></script>
+    <script src="/js/jquery-2.x.min.js?1582044604"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -62,14 +62,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1539138937"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1539138937"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1582044604"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1582044604"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1539138937"></script>
+<script type="text/javascript" src="/js/search.js?1582044604"></script>
 
     
   </div>
@@ -670,13 +670,13 @@ weather_2012_final['Temp (C)'].plot(figsize=(15, 6))
 
 <p>Here&rsquo;s an URL template you can use to get data in Montreal.</p>
 
-<pre><code class="language-python">url_template = &quot;http://climate.weather.gc.ca/climateData/bulkdata_e.html?format=csv&amp;stationID=5415&amp;Year={year}&amp;Month={month}&amp;timeframe=1&amp;submit=Download+Data&quot;
+<pre><code class="language-python">url_template = &quot;http://climate.weather.gc.ca/climate_data/bulk_data_e.html?format=csv&amp;stationID=5415&amp;Year={year}&amp;Month={month}&amp;timeframe=1&amp;submit=Download+Data&quot;
 </code></pre>
 
 <p>To get the data for March 2013, we need to format it with month=3, year=2012.</p>
 
 <pre><code class="language-python">url = url_template.format(month=3, year=2012)
-weather_mar2012 = pd.read_csv(url, skiprows=15, index_col='Date/Time', parse_dates=True, encoding='latin1', header=True)
+weather_mar2012 = pd.read_csv(url, index_col='Date/Time', parse_dates=True)
 </code></pre>
 
 <p>This is super great! We can just use the same read_csv function as before, and just give it a URL as a filename. Awesome.</p>
@@ -3730,20 +3730,20 @@ weather_2012
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1539138937"></script>
-    <script src="/js/perfect-scrollbar.min.js?1539138937"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1539138937"></script>
-    <script src="/js/jquery.sticky.js?1539138937"></script>
-    <script src="/js/featherlight.min.js?1539138937"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1539138937"></script>
-    <script src="/js/highlight.pack.js?1539138937"></script>
+    <script src="/js/clipboard.min.js?1582044604"></script>
+    <script src="/js/perfect-scrollbar.min.js?1582044604"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1582044604"></script>
+    <script src="/js/jquery.sticky.js?1582044604"></script>
+    <script src="/js/featherlight.min.js?1582044604"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1582044604"></script>
+    <script src="/js/highlight.pack.js?1582044604"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1539138937"></script>
-    <script src="/js/learn.js?1539138937"></script>
-    <script src="/js/hugo-learn.js?1539138937"></script>
+    <script src="/js/modernizr.custom.71422.js?1582044604"></script>
+    <script src="/js/learn.js?1582044604"></script>
+    <script src="/js/hugo-learn.js?1582044604"></script>
 
-    <link href="/mermaid/mermaid.css?1539138937" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1539138937"></script>
+    <link href="/mermaid/mermaid.css?1582044604" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1582044604"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
