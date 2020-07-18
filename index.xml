@@ -6,10 +6,20 @@
     <description>Recent content on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Abstract classes and interfaces in Python</title>
+      <link>http://tutswiki.com/abstract-classes-and-interfaces-in-python/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/abstract-classes-and-interfaces-in-python/</guid>
+      <description>Abstract base classes and interfaces are entities that are similar in purpose and meaning. Both the first and second are a peculiar way of documenting the code and help to limit (decouple) the interaction of individual abstractions in the program (classes).
+Python is a very flexible language. One facet of this flexibility is the possibilities provided by metaprogramming. And although abstract classes and interfaces are not represented in the core of the language, the former were implemented in the standard abc module, and the latter in the Zope project (the zope.</description>
+    </item>
     
     <item>
       <title>How Deep Learning Helped Reducing Variability in Cardiovascular Imaging</title>

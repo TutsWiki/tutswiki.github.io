@@ -4,12 +4,17 @@
   
   <url>
     <loc>http://tutswiki.com/blog/</loc>
-    <lastmod>2018-06-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://tutswiki.com/pandas-cookbook/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/abstract-classes-and-interfaces-in-python/</loc>
+    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -126,7 +131,7 @@
   
   <url>
     <loc>http://tutswiki.com/</loc>
-    <lastmod>2018-06-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
