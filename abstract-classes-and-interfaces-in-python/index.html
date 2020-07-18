@@ -17,17 +17,17 @@
     <title>Abstract classes and interfaces in Python - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595068402" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595068402" rel="stylesheet">
-    <link href="/css/hybrid.css?1595068402" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595068402" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595068402" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595068402" rel="stylesheet">
-    <link href="/css/theme.css?1595068402" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595068402" rel="stylesheet">
+    <link href="/css/nucleus.css?1595069274" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595069274" rel="stylesheet">
+    <link href="/css/hybrid.css?1595069274" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595069274" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595069274" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595069274" rel="stylesheet">
+    <link href="/css/theme.css?1595069274" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595069274" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595068402"></script>
+    <script src="/js/jquery-2.x.min.js?1595069274"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -62,14 +62,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595068402"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595068402"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595069274"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595069274"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595068402"></script>
+<script type="text/javascript" src="/js/search.js?1595069274"></script>
 
     
   </div>
@@ -718,11 +718,11 @@ inherited classes necessary for definition.</p>
 
 <h2 id="interfaces-zope-interfaces">Interfaces (zope.interfaces)</h2>
 
-<p>The implementation of the Zope project in work on Zope3 decided to focus on component architecture; the framework has evolved into a set of almost independent components. The glue that holds the components together is the interfaces and the adapters based on them.</p>
+<p>The Zope Toolkit (ZTK) is a set of libraries intended for reuse by projects to develop web applications or web frameworks. It is developed by the contributors of the Zope Foundation. The zope framework has evolved into a set of almost independent components. The glue that holds the components together is the interfaces and the adapters based on them.</p>
 
 <p>The zope.interfaces module is the result of this work.</p>
 
-<p>In the simplest case, using interfaces is like trying on ABK:</p>
+<p>In the simplest case, using interfaces is similar to ABC:</p>
 
 <pre><code class="language-python">import zope.interface
 
@@ -747,50 +747,47 @@ assert IVehicle.implementedBy (Car)
 assert IVehicle.providedBy (Car ())
 </code></pre>
 
-<p>The interface declaratively shows what attributes and methods the object should have. Moreover, the class implements (implements) the interface, and the object of the class provides (provides). You should pay attention to the difference between these concepts!</p>
+<p>The interface declaratively shows what attributes and methods the object should have. Moreover, the class implements the interface, and the object of the class provides. You should pay attention to the difference between these concepts!</p>
 
-<p>“Implementing” an interface means that only the “produced” entity will have the required properties; and “providing” an interface speaks of the specific capabilities of the entity being evaluated. Accordingly, in Python, classes, by the way, can both implement and provide an interface.</p>
+<p>&ldquo;Implementing&rdquo; an interface means that only the &ldquo;produced&rdquo; entity will have the required properties; and &ldquo;providing&rdquo; an interface speaks of the specific capabilities of the entity being evaluated. Accordingly, in Python, classes, by the way, can both implement and provide an interface.</p>
 
-<p>In fact, the implementation declaration (IVehicle) is a convention; just a promise that a given class and its objects behave that way. No real checks will be made</p>
+<p>In fact, the implementation declaration (IVehicle) is a convention; just a promise that a given class and its objects behave that way. No real checks will be made.</p>
 
 <pre><code class="language-python">class IVehicle (zope.interface.Interface):
     &quot;&quot;&quot;Any moving thing&quot;&quot;&quot;
-    speed = zope.interface.Attribute (&quot;&quot;&quot;Movement speed&quot;&quot;&quot;)
+    speed = zope.interface.Attribute(&quot;&quot;&quot;Movement speed&quot;&quot;&quot;)
 
     def move():
         &quot;&quot;&quot;Make a single step&quot;&quot;&quot;
 
 class Car(object):
-    zope.interface.implements (IVehicle)
+    zope.interface.implements(IVehicle)
 
-assert IVehicle.implementedBy (Car)
-assert IVehicle.providedBy (Car ())
+assert IVehicle.implementedBy(Car)
+assert IVehicle.providedBy(Car())
 </code></pre>
 
-<p>It can be seen that in the simplest cases, the interfaces only complicate the code, as, however, the ABK.</p>
-
-<p>The component architecture of Zope includes another important concept - adapters. Generally speaking, this is a simple design pattern that corrects one class for use somewhere where a different set of methods and attributes is required. So,</p>
+<p>The component architecture of Zope includes another important concept - adapters. Generally speaking, this is a simple design pattern that corrects one class for use somewhere where a different set of methods and attributes is required.</p>
 
 <h2 id="adapters">Adapters</h2>
 
-<p>Consider, greatly simplifying, an example from the Comprehensive Guide to Zope Component Architecture.</p>
+<p>Consider a simple an example from the <a href="https://bluebream.zope.org/doc/1.0/manual/componentarchitecture.html">Comprehensive Guide to Zope Component Architecture</a>.</p>
 
 <p>Suppose there are a couple of classes, Guest and Desk. Let&rsquo;s define interfaces to them, plus a class that implements the Guest interface:</p>
 
 <pre><code class="language-python">import zope.interface
 from zope.interface import implements
-
 from zope.component import adapts, getGlobalSiteManager
 
-class IDesk (zope.interface.Interface):
-    def register ():
+class IDesk(zope.interface.Interface):
+    def register():
         &quot;Register a person&quot;
 
-class IGuest (zope.interface.Interface):
-    name = zope.interface.Attribute (&quot;&quot; &quot;Person`s name&quot; &quot;&quot;)
+class IGuest(zope.interface.Interface):
+    name = zope.interface.Attribute (&quot;&quot;&quot;Person`s name&quot;&quot;&quot;)
 
 class Guest (object):
-    implements (IGuest)
+    implements(IGuest)
 
     def __init __ (self, name):
         self.name = name
@@ -799,8 +796,8 @@ class Guest (object):
 <p>The adapter must account for the anonymous guest by registering in the list of names:</p>
 
 <pre><code class="language-python">class GuestToDeskAdapter (object):
-    adapts (IGuest)
-    implements (IDesk)
+    adapts(IGuest)
+    implements(IDesk)
     
     def __init __ (self, guest):
         self.guest = guest
@@ -835,7 +832,7 @@ print adapter
 
 <p>Abstract classes basically hardcode the required front-end part. Checking an object against the interface of an abstract class is checked using the built-in isinstance function; class - issubclass. An abstract base class should be included in the hierarchy as a base class or mixin.</p>
 
-<p>The downside is the semantics of checks issubclass, isinstance, which intersect with ordinary classes (their inheritance hierarchy). No additional abstractions are built on the ABK.</p>
+<p>The downside is the semantics of checks issubclass, isinstance, which intersect with ordinary classes (their inheritance hierarchy). No additional abstractions are built on the ABC.</p>
 
 <p>Interfaces are a declarative entity, they do not set any boundaries; simply asserts that the class implements and its object provides the interface. Semantically, the statements implementedBy, providedBy are more correct. On such a simple basis, it is convenient to build a component architecture using adapters and other derived entities, which is what the large Zope and Twisted frameworks do.</p>
 
@@ -1269,20 +1266,20 @@ print adapter
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595068402"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595068402"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595068402"></script>
-    <script src="/js/jquery.sticky.js?1595068402"></script>
-    <script src="/js/featherlight.min.js?1595068402"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595068402"></script>
-    <script src="/js/highlight.pack.js?1595068402"></script>
+    <script src="/js/clipboard.min.js?1595069274"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595069274"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595069274"></script>
+    <script src="/js/jquery.sticky.js?1595069274"></script>
+    <script src="/js/featherlight.min.js?1595069274"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595069274"></script>
+    <script src="/js/highlight.pack.js?1595069274"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595068402"></script>
-    <script src="/js/learn.js?1595068402"></script>
-    <script src="/js/hugo-learn.js?1595068402"></script>
+    <script src="/js/modernizr.custom.71422.js?1595069274"></script>
+    <script src="/js/learn.js?1595069274"></script>
+    <script src="/js/hugo-learn.js?1595069274"></script>
 
-    <link href="/mermaid/mermaid.css?1595068402" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595068402"></script>
+    <link href="/mermaid/mermaid.css?1595069274" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595069274"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
