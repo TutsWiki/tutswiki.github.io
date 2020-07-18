@@ -165,7 +165,7 @@ We&amp;rsquo;re going to be looking some cyclist data from Montréal.</descripti
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter3/</guid>
       <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np # Make the graphs a bit prettier, and bigger pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) plt.rcParams[&#39;figure.figsize&#39;] = (15, 5) # This is necessary to show lots of columns in pandas 0.12. # Not necessary in pandas 0.13. pd.set_option(&#39;display.width&#39;, 5000) pd.set_option(&#39;display.max_columns&#39;, 60)  Let&amp;rsquo;s continue with our NYC 311 service requests example.
-complaints = pd.read_csv(&#39;311-service-requests.csv&#39;)  3.</description>
+complaints = pd.read_csv(&#39;311-service-requests.csv&#39;)     (adsbygoogle = window.</description>
     </item>
     
     <item>
