@@ -17,8 +17,8 @@
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter1/</guid>
-      <description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) # Make the graphs a bit prettier plt.rcParams[&#39;figure.figsize&#39;] = (15, 5)  1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
-We&amp;rsquo;re going to be looking some cyclist data from Montréal. Here&amp;rsquo;s the original page (in French).</description>
+      <description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) # Make the graphs a bit prettier plt.rcParams[&#39;figure.figsize&#39;] = (15, 5)     (adsbygoogle = window.adsbygoogle || []).push({});  1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
+We&amp;rsquo;re going to be looking some cyclist data from Montréal.</description>
     </item>
     
     <item>
