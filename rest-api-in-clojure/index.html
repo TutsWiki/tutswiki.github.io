@@ -17,17 +17,17 @@
     <title>A REST API in Clojure - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595307364" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595307364" rel="stylesheet">
-    <link href="/css/hybrid.css?1595307364" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595307364" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595307364" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595307364" rel="stylesheet">
-    <link href="/css/theme.css?1595307364" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595307364" rel="stylesheet">
+    <link href="/css/nucleus.css?1595307525" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595307525" rel="stylesheet">
+    <link href="/css/hybrid.css?1595307525" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595307525" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595307525" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595307525" rel="stylesheet">
+    <link href="/css/theme.css?1595307525" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595307525" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595307364"></script>
+    <script src="/js/jquery-2.x.min.js?1595307525"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -62,14 +62,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595307364"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595307364"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595307525"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595307525"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595307364"></script>
+<script type="text/javascript" src="/js/search.js?1595307525"></script>
 
     
   </div>
@@ -687,9 +687,9 @@
 <p>A document looks like this (JSON encoded):</p>
 
 <pre><code class="language-json">{
-      &quot;id&quot; : &quot;some id&quot;
-      , &quot;title&quot; : &quot;some title&quot;
-      , &quot;text&quot; : &quot;some text&quot;
+      &quot;id&quot; : &quot;some id&quot;,
+      &quot;title&quot; : &quot;some title&quot;
+      &quot;text&quot; : &quot;some text&quot;
 }
 </code></pre>
 
@@ -708,7 +708,7 @@
 <pre><code class="language-bash">lein new compojure clojure-rest
 </code></pre>
 
-<p>We’re creating a new <a href="https://compojure.org/">Compojure</a> project called clojure-rest. Compojure is the library that maps URLs to functions in our program. Compojure (and our project) builds on Ring is the basic Server API. To start the new project run:</p>
+<p>We’re creating a new <a href="https://github.com/weavejester/compojure/wiki">Compojure</a> project called clojure-rest. Compojure is the library that maps URLs to functions in our program. Compojure (and our project) builds on Ring is the basic Server API. To start the new project run:</p>
 
 <pre><code class="language-bash">lein ring server
 </code></pre>
@@ -717,7 +717,7 @@
 
 <p>The <code>new</code> command generates two very important files for us:</p>
 
-<p><code>project.clj</code> is the project configuration. It states dependencies, the entry point etc. (read the whole documentation on <a href="Leiningen.org">Leiningen.org</a>, and <code>src/clojure_rest/handler.clj</code> which contains a starting point for our application.</p>
+<p><code>project.clj</code> is the project configuration. It states dependencies, the entry point etc. (read the whole documentation on <a href="https://leiningen.org">Leiningen.org</a>, and <code>src/clojure_rest/handler.clj</code> which contains a starting point for our application.</p>
 
 <h2 id="project-configuration-project-clj">Project configuration (project.clj)</h2>
 
@@ -1415,20 +1415,20 @@ Since we deal with a in-memory database, we need to create our table now.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595307364"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595307364"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595307364"></script>
-    <script src="/js/jquery.sticky.js?1595307364"></script>
-    <script src="/js/featherlight.min.js?1595307364"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595307364"></script>
-    <script src="/js/highlight.pack.js?1595307364"></script>
+    <script src="/js/clipboard.min.js?1595307525"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595307525"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595307525"></script>
+    <script src="/js/jquery.sticky.js?1595307525"></script>
+    <script src="/js/featherlight.min.js?1595307525"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595307525"></script>
+    <script src="/js/highlight.pack.js?1595307525"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595307364"></script>
-    <script src="/js/learn.js?1595307364"></script>
-    <script src="/js/hugo-learn.js?1595307364"></script>
+    <script src="/js/modernizr.custom.71422.js?1595307525"></script>
+    <script src="/js/learn.js?1595307525"></script>
+    <script src="/js/hugo-learn.js?1595307525"></script>
 
-    <link href="/mermaid/mermaid.css?1595307364" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595307364"></script>
+    <link href="/mermaid/mermaid.css?1595307525" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595307525"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
