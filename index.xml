@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>A REST API in Clojure</title>
+      <link>http://tutswiki.com/rest-api-in-clojure/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/rest-api-in-clojure/</guid>
+      <description>Clojure is one of the most interesting new languages targeting the JVM. Initially only the JVM, in the meantime it is also available for JavaScript. Essentially, you can write Clojure and either execute it as Java program or JavaScript program, of course each flavor has its unique features as well.
+Clojure is a Lisp, thus the syntax may be foreign, but it is really, really easy since there are very few syntactic variations.</description>
+    </item>
+    
+    <item>
       <title>Abstract classes and interfaces in Python</title>
       <link>http://tutswiki.com/abstract-classes-and-interfaces-in-python/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>

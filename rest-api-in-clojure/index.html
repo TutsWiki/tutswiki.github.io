@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.41" />
-    <meta name="description" content="Learn how to deploy your Node.js app on the Google App Engine.">
+    <meta name="description" content="A newbie friendly introduction to REST API in Clojure.">
 	<meta name="author" content="Chankey Pathak">
-	<meta name="keywords" content="nodejs,node,npm,google cloud,app engine,gcloud,deploy">
+	<meta name="keywords" content="clojure,restapi,programming">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-	<meta property="og:title" content="How to deploy Node.js app on Google App Engine" />
-	<meta property="og:description" content="Learn how to deploy your Node.js app on the Google App Engine." />
+	<meta property="og:title" content="A REST API in Clojure" />
+	<meta property="og:description" content="A newbie friendly introduction to REST API in Clojure." />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="http://tutswiki.com/nodejs-google-app-engine/" />
+	<meta property="og:url" content="http://tutswiki.com/rest-api-in-clojure/" />
 	<meta property="og:locale" content="en" />
-    <title>How to deploy Node.js app on Google App Engine - TutsWiki Beta</title>
+    <title>A REST API in Clojure - TutsWiki Beta</title>
     
     
     <link href="/css/nucleus.css?1595307218" rel="stylesheet">
@@ -46,7 +46,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/nodejs-google-app-engine/">
+  <body class="" data-url="/rest-api-in-clojure/">
     <nav id="sidebar" class="">
 
 
@@ -110,7 +110,7 @@
  
   
     
-      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
+      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item active">
         <a href="/rest-api-in-clojure/">
         A REST API in Clojure
         
@@ -186,7 +186,7 @@
  
   
     
-      <li data-nav-id="/nodejs-google-app-engine" title="How to deploy Node.js app on Google App Engine" class="dd-item active">
+      <li data-nav-id="/nodejs-google-app-engine" title="How to deploy Node.js app on Google App Engine" class="dd-item ">
         <a href="/nodejs-google-app-engine/">
         Node.js on Google App Engine
         
@@ -600,7 +600,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/nodejs-app-engine.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/rest-api-in-clojure.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -629,7 +629,7 @@
             
           
           
-            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > How to deploy Node.js app on Google App Engine
+            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > A REST API in Clojure
           
          
           
@@ -645,12 +645,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#steps-to-deploy-node-js-web-service-on-app-engine">Steps to deploy Node.js web service on App Engine</a>
-<ul>
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#hello-world">Hello world!</a></li>
-<li><a href="#deploy-on-app-engine">Deploy on App Engine</a></li>
-</ul></li>
+<li><a href="#creating-the-project-scaffolding">Creating the project scaffolding</a></li>
+<li><a href="#project-configuration-project-clj">Project configuration (project.clj)</a></li>
+<li><a href="#the-request-handler-handler-clj">The request handler (handler.clj)</a></li>
+<li><a href="#the-complete-handler-clj">The complete handler.clj</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -665,7 +663,7 @@
         
         <div id="body-inner">
           
-            <h1>How to deploy Node.js app on Google App Engine</h1>
+            <h1>A REST API in Clojure</h1>
           
 
         
@@ -673,150 +671,315 @@
 
 
 
-<p><meta property="og:image" content="https://tutswiki.com/images/nodejs-google-cloud.png"/>
-<a href="https://cloud.google.com/appengine/">Google App Engine</a> is a part of the Google Cloud Suite which provides a cloud platform for developers where they can develop and host their apps. It provides easily configurable, fast and secure programming environments/tools with the help of which developers can setup a development environment in just a few minutes. Therefore developers don&rsquo;t need to worry about configuring the environment, they can just focus on writing code. It supports all the popular programming languages Java, PHP, Node.js, Python, C#, .Net, Ruby and Go.</p>
+<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="A REST API in Clojure" />
+<meta name=”twitter:description” content="A newbie friendly introduction to REST API in Clojure." /></p>
 
+<p>Clojure is one of the most interesting new languages targeting the JVM. Initially only the JVM, in the meantime it is also available for JavaScript. Essentially, you can write Clojure and either execute it as Java program or JavaScript program, of course each flavor has its unique features as well.</p>
 
-<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/2PRciDpqpko" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
-</div>
+<p>Clojure is a Lisp, thus the syntax may be foreign, but it is really, really easy since there are very few syntactic variations. The language “Lisp” is very lean and usually easily learned.</p>
 
+<p>In this post, we’re going to create a complete REST application from scratch. There are already some (very) good tutorials available, but some are not quite up to date (see <a href="https://devcenter.heroku.com/articles/clojure-web-application">Heroku’s Devcenter</a> or Mark McGranaghan for good ones). Clojure itself is still a young language, Lisp of course has a lot of history.</p>
 
-<p>Till now there was no support for Node.js, but Google has just <a href="https://cloudplatform.googleblog.com/2018/06/Now-you-can-deploy-your-Node-js-app-to-App-Engine-standard-environment.html">announced</a> that developers will now be able to deploy their <a href="https://cloud.google.com/nodejs/">Node.js apps to the App Engine</a>.
-<img src="/images/nodejs-google-cloud.png" alt="NodeJS on Google Cloud App Engine" title="NodeJs on Google Cloud" /></p>
+<p>Our application should allow creating, listing, fetching, updating, and deleting of documents.</p>
 
-<h2 id="steps-to-deploy-node-js-web-service-on-app-engine">Steps to deploy Node.js web service on App Engine</h2>
+<p>A document looks like this (JSON encoded):</p>
 
-<h3 id="prerequisites">Prerequisites</h3>
-
-<ol>
-<li><p>You must have a project on the Google Cloud Platform. If you don&rsquo;t, create one using the <a href="https://console.cloud.google.com/projectselector/appengine/create?lang=nodejs&amp;st=true&amp;_ga=2.136419507.-245729952.1528854239">GCP Console</a>.</p></li>
-
-<li><p>The development environment should be configured. You have 2 options here.</p>
-
-<ul>
-<li>Configure it on the cloud using <a href="https://console.cloud.google.com/appengine?cloudshell=true&amp;_ga=2.72119440.-245729952.1528854239">Cloud Shell</a></li>
-<li>Setup your local machine
+<pre><code class="language-json">{
+      &quot;id&quot; : &quot;some id&quot;
+      , &quot;title&quot; : &quot;some title&quot;
+      , &quot;text&quot; : &quot;some text&quot;
+}
+</code></pre>
 
 <ul>
-<li>Download and install Node.js and Node Package Manager <a  href="https://nodejs.org/en/download/" target="_blank"  class="btn btn-default">
-  
-  
-  
-    
-  
-  Get Node.js and npm
-  
-  <i class="fa fa-download"></i>
-  
-</a>
+<li>A GET call to /documents should return a list of these documents.</li>
+<li>A POST call to /documents with a documents as body shall create a new document, assigning a new id (ignoreing the posted one).</li>
+<li>A GET to /documents/[ID] should return the document with the given id, or 404 if the document does not exist.</li>
+<li>A PUT to /documents/[ID] should update the document with the given id and replace title and text with those from the document in the uploaded body.</li>
+<li>A DELETE to /documents/[ID] should delete the document with the given id and return 204 (NO CONTENT) in any case.</li>
+</ul>
 
-<div class="notices note" ><p>Only Node.js version 8 or greater is supported on App Engine.</p>
-</div>
-</li>
-<li>Download and install Google Cloud SDK <a  href="https://cloud.google.com/sdk/docs/#install_the_latest_cloud_tools_version_cloudsdk_current_version" target="_blank"  class="btn btn-default">
-  
-  
-  
-    
-  
-  Get Google Cloud SDK
-  
-  <i class="fa fa-download"></i>
-  
-</a>
+<h2 id="creating-the-project-scaffolding">Creating the project scaffolding</h2>
 
-<div class="notices note" ><p>Google Cloud SDK also installs gcloud command line tool.</p>
-</div>
-</li>
-</ul></li>
-</ul></li>
-</ol>
+<p>We’re going to use <a href="http://leiningen.org/">Leiningen</a>, the defacto build system and dependency manager for Clojure projects. Download and install it, then execute:</p>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="5842766387"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<pre><code class="language-bash">lein new compojure clojure-rest
+</code></pre>
 
-<h3 id="hello-world">Hello world!</h3>
+<p>We’re creating a new <a href="http://compojure.org/">Compojure</a> project called clojure-rest. Compojure is the library that maps URLs to functions in our program. Compojure (and our project) builds on Ring is the basic Server API. To start the new project run:</p>
 
-<ol>
-<li><p>There&rsquo;s a sample Node.js repository on GitHub. Either clone it using <a href="https://www.youtube.com/watch?v=kTXksoxWClw&amp;list=PLndX_e9bdotV7vq2NoTwR0OPCNaA9jBEN&amp;index=10">git</a> or <a href="https://github.com/GoogleCloudPlatform/nodejs-docs-samples/archive/master.zip">download the zip</a>.</p>
+<pre><code class="language-bash">lein ring server
+</code></pre>
 
-<!-- language: lang-sh -->
+<p>This starts the server on localhost:3000 and automatically restarts the server if any of the project files change. Thus, you can leave it running while we develop our application.</p>
 
-<pre><code>git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples
-</code></pre></li>
+<p>The <code>new</code> command generates two very important files for us:</p>
 
-<li><p>Navigate to the below directory</p>
+<p><code>project.clj</code> is the project configuration. It states dependencies, the entry point etc. (read the whole documentation on <a href="Leiningen.org">Leiningen.org</a>, and <code>src/clojure_rest/handler.clj</code> which contains a starting point for our application.</p>
 
-<!-- language: lang-sh -->
+<h2 id="project-configuration-project-clj">Project configuration (project.clj)</h2>
 
-<pre><code>cd nodejs-docs-samples/appengine/hello-world/standard
-</code></pre></li>
+<pre><code class="language-clojure">(defproject clojure-rest &quot;0.1.0-SNAPSHOT&quot;
+      :description &quot;FIXME: write description&quot;
+      :url &quot;http://example.com/FIXME&quot;
+      :dependencies [[org.clojure/clojure &quot;1.4.0&quot;]
+                     [compojure &quot;1.1.1&quot;]]
+      :plugins [[lein-ring &quot;0.7.3&quot;]]
+      :ring {:handler clojure-rest.handler/app}
+      :profiles
+      {:dev {:dependencies [[ring-mock &quot;0.1.3&quot;]]}})
+Update the file to look like this:
 
-<li><p>Install the required dependencies using npm utility</p>
+(defproject clojure-rest &quot;0.1.0-SNAPSHOT&quot;
+      :description &quot;REST service for documents&quot;
+      :url &quot;http://blog.interlinked.org&quot;
+      :dependencies [[org.clojure/clojure &quot;1.4.0&quot;]
+                     [compojure &quot;1.1.1&quot;]
+                     [ring/ring-json &quot;0.1.2&quot;]
+                     [c3p0/c3p0 &quot;0.9.1.2&quot;]
+                     [org.clojure/java.jdbc &quot;0.2.3&quot;]
+                     [com.h2database/h2 &quot;1.3.168&quot;]
+                     [cheshire &quot;4.0.3&quot;]]
+      :plugins [[lein-ring &quot;0.7.3&quot;]]
+      :ring {:handler clojure-rest.handler/app}
+      :profiles
+      {:dev {:dependencies [[ring-mock &quot;0.1.3&quot;]]}})
+</code></pre>
 
-<!-- language: lang-js -->
+<p>Besides the JSON parsing library <a href="https://web.archive.org/web/20180627154136/https://github.com/dakrone/cheshire">Cheshire</a>, we added the <a href="https://web.archive.org/web/20180627154136/http://sourceforge.net/projects/c3p0/">C3P0 Connection Pool</a>, the <a href="https://web.archive.org/web/20180627154136/http://h2database.com/">H2 Database</a> JDBC driver and Clojure’s <a href="https://web.archive.org/web/20180627154136/https://github.com/clojure/java.jdbc">java.jdbc</a> contrib-library.</p>
 
-<pre><code>npm install
-</code></pre></li>
+<p>I also updated the <code>:url</code> and <code>:description</code> fields.</p>
 
-<li><p>Start the web server</p>
+<h2 id="the-request-handler-handler-clj">The request handler (handler.clj)</h2>
 
-<!-- language: lang-js -->
+<p>Next let’s have a look at the generated request handler <code>src/clojure_rest/handler.clj</code>:</p>
 
-<pre><code>npm start
-</code></pre></li>
+<pre><code class="language-clojure">(ns clojure-rest.handler
+      (:use compojure.core)
+      (:require [compojure.handler :as handler]
+                [compojure.route :as route]))
 
-<li><p>Check output</p>
+    (defroutes app-routes
+      (GET &quot;/&quot; [] &quot;Hello World&quot;)
+      (route/not-found &quot;Not Found&quot;))
 
-<ul>
-<li>If you are using Cloud Shell then click on Web preview</li>
-<li>If you are on Local Machine then navigate to <a href="http://localhost:8080/">http://localhost:8080/</a>
-<br /></li>
-</ul></li>
-</ol>
+    (def app
+      (handler/site app-routes))
+</code></pre>
 
-<h3 id="deploy-on-app-engine">Deploy on App Engine</h3>
+<p>The route <code>GET &quot;/&quot; [] &quot;Hello World&quot;</code> is responsible for our result we saw in the browser. It maps all GET requests to / without parameters to &ldquo;Hello World&rdquo;. The (<code>def app (handler/site app-routes)</code>) part configures our application (registering the routes).</p>
 
-<p>Since we have verified that our Hello World program is working fine, it&rsquo;s time to deploy it.</p>
+<p>Our first step is to update the configuration. We’re going to work with JSON, so let’s include some Ring middlewares to setup response headers (wrap-json-response) and parse request bodies (<code>wrap-json-body</code>) for us. A middleware is just a wrapper around a handler, thus it can pre- and post-process the whole request/response cycle.</p>
 
-<ol>
-<li><p>If you had installed <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a> properly (as mentioned in <a href="#prerequisites">Prerequisites</a>), you&rsquo;ll have access to the gcloud command. Run it as below</p>
+<pre><code class="language-clojure">(def app
+      (-&gt; (handler/api app-routes)
+        (middleware/wrap-json-body)
+        (middleware/wrap-json-response)))
+</code></pre>
 
-<!-- language: lang-sh -->
+<p>We switched also from the <code>handler/site</code> template to <code>handler/api</code> which is more appropriate for REST APIs (<a href="https://weavejester.github.com/compojure/compojure.handler.html">documentation</a>).</p>
 
-<pre><code>gcloud app deploy
-</code></pre></li>
+<p>Next let’s define the routes for our application:</p>
 
-<li><p>Your app should now be live at https://&lt;PROJECT_ID&gt;.appspot.com/</p>
+<pre><code class="language-clojure">(defroutes app-routes
+      (context &quot;/documents&quot; [] (defroutes documents-routes
+        (GET  &quot;/&quot; [] (get-all-documents))
+        (POST &quot;/&quot; {body :body} (create-new-document body))
+        (context &quot;/:id&quot; [id] (defroutes document-routes
+          (GET    &quot;/&quot; [] (get-document id))
+          (PUT    &quot;/&quot; {body :body} (update-document id body))
+          (DELETE &quot;/&quot; [] (delete-document id))))))
+      (route/not-found &quot;Not Found&quot;))
+</code></pre>
 
-<!-- language: lang-sh -->
+<p>We define GET and POST for the context &ldquo;/documents, and GET, PUT, DELETE for the context &ldquo;:id&rdquo; on top of that. :id is a placeholder and can then be injected into our parameter vector. The POST and PUT request have a special parameter body for the parsed body (this parameter is provided by the wrap-json-body middleware. For more on routes, take a look at <a href="https://web.archive.org/web/20180627154136/https://github.com/weavejester/compojure/wiki/Routes-In-Detail">Compojure’s documentation</a>.</p>
 
-<pre><code>gcloud app browse   
-</code></pre></li>
-</ol>
+<p>Before we define the functions to carry out the requests, let’s fix the imports and open a pool of database connections to work with.</p>
 
-<p>That&rsquo;s it. You have successfully deployed your sample Node.js app on the Google App Engine.</p>
+<p>The namespace declaration is used to define which namespaces shall be made available by Clojure.</p>
 
-<p><div class="notices tip" ><p>Refer Google&rsquo;s official guide on <a href="https://cloud.google.com/appengine/docs/standard/nodejs/building-app/">Building a Node.js App on App Engine</a></p>
-</div>
+<pre><code class="language-clojure">(ns clojure-rest.handler
+      (:import com.mchange.v2.c3p0.ComboPooledDataSource)
+      (:use compojure.core)
+      (:use cheshire.core)
+      (:use ring.util.response)
+      (:require [compojure.handler :as handler]
+                [ring.middleware.json :as middleware]
+                [clojure.java.jdbc :as sql]
+                [compojure.route :as route]))
+</code></pre>
 
-<div class="notices info" ><p>You can try out <a href="https://cloud.google.com/free/docs/always-free-usage-limits">Google App Engine&rsquo;s free tier</a> to deploy your Node.js app and see if you like it.</p>
-</div>
-</p>
+<p>We import C3P0’s <code>ComboPooledDataSource</code>, a plain Java class. Next, we fetch the functions defined in <code>compojure.core</code>, <code>cheshire.core</code>, and <code>ring.util.response</code> into our namespace, they can be used without qualifying. Finally we require some more libraries, this time with a qualifier to prevent name clashes or to support nicer separation. I’m not sure when to make the cut between <code>:use</code> and <code>:require</code> yet, so the cut is abitrary.</p>
 
-<style>
-div.notices {
-margin: 0.3rem 0;
-</style>
+<pre><code class="language-clojure">(def db-config
+      {:classname &quot;org.h2.Driver&quot;
+       :subprotocol &quot;h2&quot;
+       :subname &quot;mem:documents&quot;
+       :user &quot;&quot;
+       :password &quot;&quot;})
+```	   
+Note, we use a in-memory database. If you’d like to keep your database between restarts, you could use :subname &quot;/tmp/documents&quot; for example.
+
+Next we open a pool of connections. C3P0 has no Clojure wrapper, so we deal with Java classes and objects directly (hence a bit more code).
+```clojure
+(defn pool
+      [config]
+      (let [cpds (doto (ComboPooledDataSource.)
+                   (.setDriverClass (:classname config))
+                   (.setJdbcUrl (str &quot;jdbc:&quot; (:subprotocol config) &quot;:&quot; (:subname config)))
+                   (.setUser (:user config))
+                   (.setPassword (:password config))
+                   (.setMaxPoolSize 6)
+                   (.setMinPoolSize 1)
+                   (.setInitialPoolSize 1))]
+        {:datasource cpds}))
+
+    (def pooled-db (delay (pool db-config)))
+
+    (defn db-connection [] @pooled-db)
+```	
+Since we deal with a in-memory database, we need to create our table now.
+```clojure
+(sql/with-connection (db-connection)
+      (sql/create-table :documents [:id &quot;varchar(256)&quot; &quot;primary key&quot;]
+                                   [:title &quot;varchar(1024)&quot;]
+                                   [:text :varchar]))
+</code></pre>
+
+<p>The intent should be easy to understand, for the details take a look at the <a href="https://clojure.github.com/java.jdbc/">java.jdbc documentation</a>. We create a table documents with a :id, :title, and :text column. Note that the database column is called id, not :id.</p>
+
+<p>The only thing missing are the functions to actually perform the actions requested by our clients.</p>
+
+<p>To return a single document with a given id, we could come up with this:</p>
+
+<pre><code class="language-clojure">(defn get-document [id]
+      (sql/with-connection (db-connection)
+        (sql/with-query-results results
+          [&quot;select * from documents where id = ?&quot; id]
+          (cond
+            (empty? results) {:status 404}
+            :else (response (first results))))))
+</code></pre>
+
+<p>It reads like this: when called with an id, open a database connection, perform <code>select * from documents where id = ?</code> with the given id as parameter. If the result is empty, return 404, otherwise return the first (and only) document as response.</p>
+
+<p>The response call will convert the document into JSON, this functionality is provided by wrap-json-response, which also sets the correct Content-Type etc.</p>
+
+<p>Another nice one is the creation of new documents:</p>
+
+<pre><code class="language-clojure">(defn uuid [] (str (java.util.UUID/randomUUID)))
+
+    (defn create-new-document [doc]
+      (let [id (uuid)]
+        (sql/with-connection (db-connection)
+          (let [document (assoc doc &quot;id&quot; id)]
+            (sql/insert-record :documents document)))
+        (get-document id)))
+</code></pre>
+
+<p>Here we use Java’s UUID generator (without import, hence the full package name) to generate a new id for each document created. The second let statement is responsible to replace the user-provided id (if any) with our generated one. Remember that Clojure’s datastructures are immutable, so we need to use the document variable thereafter, instead of the doc which still contains the old (or no) id.</p>
+
+<p>Returning the document is delegated to the get-document function.</p>
+
+<h2 id="the-complete-handler-clj">The complete handler.clj</h2>
+
+<p>To round the post up, here is the whole program:</p>
+
+<pre><code class="language-clojure">(ns clojure-rest.handler
+      (:import com.mchange.v2.c3p0.ComboPooledDataSource)
+      (:use compojure.core)
+      (:use cheshire.core)
+      (:use ring.util.response)
+      (:require [compojure.handler :as handler]
+                [ring.middleware.json :as middleware]
+                [clojure.java.jdbc :as sql]
+                [compojure.route :as route]))
+
+    (def db-config
+      {:classname &quot;org.h2.Driver&quot;
+       :subprotocol &quot;h2&quot;
+       :subname &quot;mem:documents&quot;
+       :user &quot;&quot;
+       :password &quot;&quot;})
+
+    (defn pool
+      [config]
+      (let [cpds (doto (ComboPooledDataSource.)
+                   (.setDriverClass (:classname config))
+                   (.setJdbcUrl (str &quot;jdbc:&quot; (:subprotocol config) &quot;:&quot; (:subname config)))
+                   (.setUser (:user config))
+                   (.setPassword (:password config))
+                   (.setMaxPoolSize 1)
+                   (.setMinPoolSize 1)
+                   (.setInitialPoolSize 1))]
+        {:datasource cpds}))
+
+    (def pooled-db (delay (pool db-config)))
+
+    (defn db-connection [] @pooled-db)
+
+    (sql/with-connection (db-connection)
+    ;  (sql/drop-table :documents) ; no need to do that for in-memory databases
+      (sql/create-table :documents [:id &quot;varchar(256)&quot; &quot;primary key&quot;]
+                                   [:title &quot;varchar(1024)&quot;]
+                                   [:text :varchar]))
+
+    (defn uuid [] (str (java.util.UUID/randomUUID)))
+
+    (defn get-all-documents []
+      (response
+        (sql/with-connection (db-connection)
+          (sql/with-query-results results
+            [&quot;select * from documents&quot;]
+            (into [] results)))))
+
+    (defn get-document [id]
+      (sql/with-connection (db-connection)
+        (sql/with-query-results results
+          [&quot;select * from documents where id = ?&quot; id]
+          (cond
+            (empty? results) {:status 404}
+            :else (response (first results))))))
+
+    (defn create-new-document [doc]
+      (let [id (uuid)]
+        (sql/with-connection (db-connection)
+          (let [document (assoc doc &quot;id&quot; id)]
+            (sql/insert-record :documents document)))
+        (get-document id)))
+
+    (defn update-document [id doc]
+        (sql/with-connection (db-connection)
+          (let [document (assoc doc &quot;id&quot; id)]
+            (sql/update-values :documents [&quot;id=?&quot; id] document)))
+        (get-document id))
+
+    (defn delete-document [id]
+      (sql/with-connection (db-connection)
+        (sql/delete-rows :documents [&quot;id=?&quot; id]))
+      {:status 204})
+
+    (defroutes app-routes
+      (context &quot;/documents&quot; [] (defroutes documents-routes
+        (GET  &quot;/&quot; [] (get-all-documents))
+        (POST &quot;/&quot; {body :body} (create-new-document body))
+        (context &quot;/:id&quot; [id] (defroutes document-routes
+          (GET    &quot;/&quot; [] (get-document id))
+          (PUT    &quot;/&quot; {body :body} (update-document id body))
+          (DELETE &quot;/&quot; [] (delete-document id))))))
+      (route/not-found &quot;Not Found&quot;))
+
+    (def app
+        (-&gt; (handler/api app-routes)
+            (middleware/wrap-json-body)
+            (middleware/wrap-json-response)))
+</code></pre>
+
+<p>Yeah, the whole program with connection pooling, JSON de/encoding in roughly 90 lines of (admittedly dense) code.</p>
+
+<p>To sum it up: Clojure is fun, concise, and very powerful. Together with the excellent Java integration it ranks very high on my “languages I adore” list.</p>
 
 
 
@@ -879,70 +1042,6 @@ margin: 0.3rem 0;
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1086,6 +1185,70 @@ margin: 0.3rem 0;
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1240,10 +1403,10 @@ margin: 0.3rem 0;
 
 
         
-            <a class="nav nav-prev" href="/google-engineers-boycott-security-tool-military" title="Google Engineers Boycott Against Security Tool for Military"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/angular6-features" title="What&#39;s new in Angular 6 (Features List)" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
