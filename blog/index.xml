@@ -32,6 +32,18 @@
     </item>
     
     <item>
+      <title>How to fix sudo node command not found error</title>
+      <link>http://tutswiki.com/how-to-fix-sudo-node-command-not-found-error/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/how-to-fix-sudo-node-command-not-found-error/</guid>
+      <description>Getting permission errors when installing a module?
+Are &amp;lsquo;sudo: node: command not found&amp;rsquo; errors taking away your precious sleeping hours?
+How to fix? You have to remove any trace of node on your system, and reinstall it. It will soothe your pain:
+echo &#39;export PATH=$HOME/local/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install  You are one/two steps/commands away from success.</description>
+    </item>
+    
+    <item>
       <title>A REST API in Clojure</title>
       <link>http://tutswiki.com/rest-api-in-clojure/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
