@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.41" />
-    <meta name="description" content="Learn how to write and read config files in Python using configparser module.">
+    <meta name="description" content="Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that.">
 	<meta name="author" content="Chankey Pathak">
-	<meta name="keywords" content="python,config,read config file,write config file,configparser">
+	<meta name="keywords" content="ruby,enumerable,each_cons">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-	<meta property="og:title" content="Writing and Reading config files in Python" />
-	<meta property="og:description" content="Learn how to write and read config files in Python using configparser module." />
+	<meta property="og:title" content="A Deeper Look at Ruby&#39;s Enumerable" />
+	<meta property="og:description" content="Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that." />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="http://tutswiki.com/read-write-config-files-in-python/" />
+	<meta property="og:url" content="http://tutswiki.com/ruby-enumerable/" />
 	<meta property="og:locale" content="en" />
-    <title>Writing and Reading config files in Python - TutsWiki Beta</title>
+    <title>A Deeper Look at Ruby&#39;s Enumerable - TutsWiki Beta</title>
     
     
     <link href="/css/nucleus.css?1595412897" rel="stylesheet">
@@ -50,7 +50,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/read-write-config-files-in-python/">
+  <body class="" data-url="/ruby-enumerable/">
     <nav id="sidebar" class="">
 
 
@@ -171,7 +171,7 @@
  
   
     
-      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
+      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item active">
         <a href="/ruby-enumerable/">
         A Deeper Look at Ruby&#39;s Enumerable
         
@@ -380,7 +380,7 @@
  
   
     
-      <li data-nav-id="/read-write-config-files-in-python" title="Writing and Reading config files in Python" class="dd-item active">
+      <li data-nav-id="/read-write-config-files-in-python" title="Writing and Reading config files in Python" class="dd-item ">
         <a href="/read-write-config-files-in-python/">
         Writing and Reading config files in Python
         
@@ -680,7 +680,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/python/write-read-config-file-python.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/ruby-enumerable.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -709,7 +709,7 @@
             
           
           
-            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > Writing and Reading config files in Python
+            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > A Deeper Look at Ruby's Enumerable
           
          
           
@@ -725,9 +725,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#creating-config-file-in-python">Creating config file in Python</a></li>
-<li><a href="#reading-a-key-from-config-file">Reading a key from config file</a></li>
-<li><a href="#updating-a-key-in-config-file">Updating a key in config file</a></li>
+<li>
+<ul>
+<li><a href="#each-cons-any-all-none">each_cons, any?, all?, none?</a></li>
+<li><a href="#any-all-none">any? all? none?</a></li>
+<li><a href="#weird-things-like-look-ahead">Weird things like look-ahead?</a></li>
+</ul></li>
+<li><a href="#help-improve-this-content">Help improve this content</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -742,7 +746,7 @@
         
         <div id="body-inner">
           
-            <h1>Writing and Reading config files in Python</h1>
+            <h1>A Deeper Look at Ruby&#39;s Enumerable</h1>
           
 
         
@@ -750,11 +754,18 @@
 
 
 
-<p>I&rsquo;m sure you must be aware about the importance of <a href="https://www.wikiwand.com/en/Configuration_file">configuration files</a>. Config files help creating the initial settings for any project, they help avoiding the hardcoded data.</p>
+<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="A Deeper Look at Ruby's Enumerable" />
+<meta name=”twitter:description” content="Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that." /></p>
 
-<p>Imagine if you migrate your server to a new host and suddenly your application stops working, now you have to go through your code and search/replace IP address of host at all the places. Config file comes to the rescue in such situation. You define the IP address key in config file and use it throughout your code. Later when you want to change any attribute, just change it in the config file. So helpful, isn&rsquo;t it?</p>
+<p>Have you ever needed to load a VERY large file in ruby? No I don’t mean your 500 line rails model. I mean a several gig binary or text file.</p>
 
-<p>Let&rsquo;s see how can we create and read config files in Python.</p>
+<p>Try it. Watch your machine become unresponsive. Cry a little inside. Then reach for enumerable.</p>
+
+<p>Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that.</p>
+
+<p>Today I am going to walk you through a couple of highly useful methods from Enumerable that has come up in a few coding challenges I have done over the years.</p>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -767,88 +778,73 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<h2 id="creating-config-file-in-python">Creating config file in Python</h2>
+<h3 id="each-cons-any-all-none">each_cons, any?, all?, none?</h3>
 
-<p>In Python we have <a href="https://docs.python.org/3/library/configparser.html">configparser</a> module which can help us with creation of config files (.ini format).</p>
+<p>I use these methods when I need to determine the &lsquo;distance or difference&rsquo; in a set of numbers or objects. <code>each_cons</code> simply gives us a &lsquo;sliding&rsquo; window of our list so we can compare multiple items in our list.</p>
 
-<pre><code class="language-python">from configparser import ConfigParser
+<pre><code class="language-ruby">numbers = [1,3,5,8,10,54,99]
+cards   = [5,3,4,6,2]
 
-#Get the configparser object
-config_object = ConfigParser()
+# get only the values where the distance is greater than 10
+numbers.each_cons(2).select {|a,b| b-a&gt;10 } #=&gt; [[10, 54], [54, 99]]
 
-#Assume we need 2 sections in the config file, let's call them USERINFO and SERVERCONFIG
-config_object[&quot;USERINFO&quot;] = {
-    &quot;admin&quot;: &quot;Chankey Pathak&quot;,
-    &quot;loginid&quot;: &quot;chankeypathak&quot;,
-    &quot;password&quot;: &quot;tutswiki&quot;
-}
-
-config_object[&quot;SERVERCONFIG&quot;] = {
-    &quot;host&quot;: &quot;tutswiki.com&quot;,
-    &quot;port&quot;: &quot;8080&quot;,
-    &quot;ipaddr&quot;: &quot;8.8.8.8&quot;
-}
-
-#Write the above sections to config.ini file
-with open('config.ini', 'w') as conf:
-    config_object.write(conf)
+# determine if the hand is a straight
+cards.sort.each_cons(5).all? do |series| 
+             (series.first..series.last).to_a == series
+           end #=&gt; true
 </code></pre>
 
-<p>Now if you check the working directory, you will notice <code>config.ini</code> file has been created, below is its content.</p>
+<p>Our first example shows how to get the elements in the numbers list that are over 10 units in difference. I do this by using <code>each_cons</code> to give me a sliding window of 2 elements at a time. This give me:</p>
 
-<pre><code class="language-text">[USERINFO]
-admin = Chankey Pathak
-password = tutswiki
-loginid = chankeypathak
+<p>At each step on the way I check b-a and see if that is greater than 10. If so, the <code>select</code> will return those groups of elements.</p>
 
-[SERVERCONFIG]
-host = tutswiki.com
-ipaddr = 8.8.8.8
-port = 8080
-</code></pre>
+<p>The second example simply sorts a set of &lsquo;cards&rsquo; and then looking at all 5 cards through <code>each_cons</code> and comparing the scores to see if they are in order and in sequence <code>(a+1==b)</code>.</p>
 
-<h2 id="reading-a-key-from-config-file">Reading a key from config file</h2>
+<p>Let’s play off this example a bit more, this time with dice. If we have to implement small and large straights, we have a similar problem, with a similar solution:</p>
 
-<p>So we have created a config file, now in your code you have to read the configuration data so that you can use it by &ldquo;keyname&rdquo; to avoid hardcoded data, let&rsquo;s see how to do that.</p>
+<p>For the small straight we get 2 windows, becuase there are 5 values in the list and we are calling <code>each_cons(4)</code>. Therefore we want a postfix of <code>any</code>? because either of the windows can be a run of 4.</p>
 
-<pre><code class="language-python">from configparser import ConfigParser
+<p>In the second example we use <code>all</code>? to be more explicit, yet <code>any</code>? would have worked as well, because in the large straight, we only have one sliding window, 2,3,4,5,6.</p>
 
-#Read config.ini file
-config_object = ConfigParser()
-config_object.read(&quot;config.ini&quot;)
+<h3 id="any-all-none">any? all? none?</h3>
 
-#Get the password
-userinfo = config_object[&quot;USERINFO&quot;]
-print &quot;Password is {}&quot;.format(userinfo[&quot;password&quot;])
-</code></pre>
+<p>These have to be a few of my favorite methods in enumerable.</p>
 
-<p>Output:</p>
+<p>Given no args, they take a list of bool values and returns a bool. So <code>[true, true, false].all? #=&gt; false</code>.</p>
 
-<pre><code class="language-sh">Password is tutswiki
-</code></pre>
+<p>Kinda useful, but not really. If we pass it a block of code however.. now we can do something useful. Consider this example:</p>
 
-<h2 id="updating-a-key-in-config-file">Updating a key in config file</h2>
+<p><code>.any?</code> and <code>.none?</code> do what you probably think. Where <code>.all?</code> only returns true if ALL the conditions and elements match up, <code>.any?</code> returns true if ANY of them match, and <code>.none?</code> returns true if there were NO matches.</p>
 
-<p>Suppose you have updated the password for chankeypathak user. You can update the same in config file using below:</p>
+<h3 id="weird-things-like-look-ahead">Weird things like look-ahead?</h3>
 
-<pre><code class="language-python">from configparser import ConfigParser
+<p>Say you have a file to read in line by line. You need to compare the current line to the next line to look for duplicates. <code>each_cons(2)</code> to the rescue!</p>
 
-#Read config.ini file
-config_object = ConfigParser()
-config_object.read(&quot;config.ini&quot;)
+<p>This will tell us of the current line and the following line are the same.</p>
 
-#Get the USERINFO section
-userinfo = config_object[&quot;USERINFO&quot;]
+<ul>
+<li>More uses for each_cons</li>
+<li>averages</li>
+<li>distances</li>
+<li>smoothing plots</li>
+<li>graphing</li>
+<li>geometry</li>
+</ul>
 
-#Update the password
-userinfo[&quot;password&quot;] = &quot;newpassword&quot;
+<h2 id="help-improve-this-content">Help improve this content</h2>
 
-#Write changes back to file
-with open('config.ini', 'w') as conf:
-    config_object.write(conf)
-</code></pre>
+<p>Feel free to <a href="https://github.com/TutsWiki/source/edit/master/content/blog/rest-api-in-clojure.md">edit this page</a> to fix any typos or add more insights.</p>
 
-<p>Now if you open the <code>config.ini</code> file, you will notice that the password has been updated.</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 
@@ -959,6 +955,42 @@ with open('config.ini', 'w') as conf:
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -1135,42 +1167,6 @@ with open('config.ini', 'w') as conf:
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1336,10 +1332,10 @@ with open('config.ini', 'w') as conf:
 
 
         
-            <a class="nav nav-prev" href="/print-same-line-python" title="How to print on same line with print in Python"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/run-module-as-script-python" title="How to run a Python module as script?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/rest-api-in-clojure" title="A REST API in Clojure" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

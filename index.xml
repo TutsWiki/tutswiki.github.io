@@ -44,6 +44,17 @@ echo &#39;export PATH=$HOME/local/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.bashrc . ~/
     </item>
     
     <item>
+      <title>A Deeper Look at Ruby&#39;s Enumerable</title>
+      <link>http://tutswiki.com/ruby-enumerable/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/ruby-enumerable/</guid>
+      <description>Have you ever needed to load a VERY large file in ruby? No I don’t mean your 500 line rails model. I mean a several gig binary or text file.
+Try it. Watch your machine become unresponsive. Cry a little inside. Then reach for enumerable.
+Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that.</description>
+    </item>
+    
+    <item>
       <title>A REST API in Clojure</title>
       <link>http://tutswiki.com/rest-api-in-clojure/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
