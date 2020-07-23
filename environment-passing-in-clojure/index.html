@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="To fix this, we need to “pass the environment” of the calling thread to the computation thread.">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="clojure,environment,env,programming">
@@ -17,17 +17,17 @@
     <title>Environment Passing in Clojure - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595484064" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595484064" rel="stylesheet">
-    <link href="/css/hybrid.css?1595484064" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595484064" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595484064" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595484064" rel="stylesheet">
-    <link href="/css/theme.css?1595484064" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595484064" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
+    <link href="/css/theme.css?1595485593" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595484064"></script>
+    <script src="/js/jquery-2.x.min.js?1595485593"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595484064"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595484064"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595484064"></script>
+<script type="text/javascript" src="/js/search.js?1595485593"></script>
 
     
   </div>
@@ -133,9 +133,9 @@
  
   
     
-      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
-        <a href="/yet-another-lousy-monad-tutorial/">
-        Yet another lousy monad tutorial
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
         
         </a>
     </li>
@@ -152,9 +152,9 @@
  
   
     
-      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
-        <a href="/how-to-fix-sudo-node-command-not-found-error/">
-        sudo and node
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
         
         </a>
     </li>
@@ -722,12 +722,9 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#help-improve-this-content">Help improve this content</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#help-improve-this-content">Help improve this content</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -746,102 +743,66 @@
         
 
 
-
-
-<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Environment Passing in Clojure" />
-<meta name=”twitter:description” content="To fix this, we need to “pass the environment” of the calling thread to the computation thread." /></p>
-
+<!-- raw HTML omitted -->
 <p>Clojure’s <a href="https://clojure.org/reference/vars">vars</a> provide a nice mechanism for managing dynamically bound state, but you need to be careful with vars when moving computations across thread boundaries. For example, suppose we implement the following timeout function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(import <span style="color:#f92672">&#39;</span>(<span style="color:#a6e22e">java.util.concurrent</span> Future TimeUnit))
 
-<pre><code class="language-clojure">(import '(java.util.concurrent Future TimeUnit))
+(<span style="color:#66d9ef">defn </span>timeout1 [millis op]
+  (<span style="color:#a6e22e">.get</span> (<span style="color:#a6e22e">future-call</span> op) millis TimeUnit/MILLISECONDS))
+</code></pre></div><p>The function <code>timeout1</code> sends the operation <code>op</code> to be computed in a separate, timeout-bound thread. If the operation completes within <code>millis</code> milliseconds, <code>timeout1</code> returns the result of that operation, otherwise it throws an exception:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">timeout1</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">#</span>(inc <span style="color:#ae81ff">1</span>))
+=&gt; <span style="color:#ae81ff">2</span>
 
-(defn timeout1 [millis op]
-  (.get (future-call op) millis TimeUnit/MILLISECONDS))
-</code></pre>
+(<span style="color:#a6e22e">timeout1</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">#</span>(<span style="color:#a6e22e">Thread/sleep</span> <span style="color:#ae81ff">2000</span>))
+<span style="color:#75715e">; throws java.util.concurrent.TimeoutException </span>
+</code></pre></div><p>This timeout implementation demonstrates the potential problem with using vars and threads:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>a-var <span style="color:#ae81ff">3</span>)
 
-<p>The function <code>timeout1</code> sends the operation <code>op</code> to be computed in a separate, timeout-bound thread. If the operation completes within <code>millis</code> milliseconds, <code>timeout1</code> returns the result of that operation, otherwise it throws an exception:</p>
+(binding [a-var <span style="color:#ae81ff">4</span>] (inc a-var))
+=&gt; <span style="color:#ae81ff">5</span>
 
-<pre><code class="language-clojure">(timeout1 1000 #(inc 1))
-=&gt; 2
+(<span style="color:#a6e22e">timeout1</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">#</span>(binding [a-var <span style="color:#ae81ff">4</span>] (inc a-var)))
+=&gt; <span style="color:#ae81ff">5</span>
 
-(timeout1 1000 #(Thread/sleep 2000))
-; throws java.util.concurrent.TimeoutException 
-</code></pre>
-
-<p>This timeout implementation demonstrates the potential problem with using vars and threads:</p>
-
-<pre><code class="language-clojure">(def a-var 3)
-
-(binding [a-var 4] (inc a-var))
-=&gt; 5
-
-(timeout1 1000 #(binding [a-var 4] (inc a-var)))
-=&gt; 5
-
-(binding [a-var 4] (timeout1 1000 #(inc a-var)))
-=&gt; 4
-</code></pre>
-
-<p>If we rebind <code>a-var</code> within the timeout thread, we get the expected result of <code>5</code>. But if we rebind <code>a-var</code> outside of the timeout thread, the computation sees the root value of <code>3</code> for <code>a-var</code>, not the thread-local value of <code>4</code>.</p>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="5842766387"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+(binding [a-var <span style="color:#ae81ff">4</span>] (<span style="color:#a6e22e">timeout1</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">#</span>(inc a-var)))
+=&gt; <span style="color:#ae81ff">4</span>
+</code></pre></div><p>If we rebind <code>a-var</code> within the timeout thread, we get the expected result of <code>5</code>. But if we rebind <code>a-var</code> outside of the timeout thread, the computation sees the root value of <code>3</code> for <code>a-var</code>, not the thread-local value of <code>4</code>.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>To fix this, we need to “pass the environment” of the calling thread to the computation thread:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>timeout2 [millis op]
+  (<span style="color:#66d9ef">let </span>[env    (<span style="color:#a6e22e">get-thread-bindings</span>)
+        env-op <span style="color:#f92672">#</span>(<span style="color:#a6e22e">with-bindings*</span> env op)]
+    (<span style="color:#a6e22e">.get</span> (<span style="color:#a6e22e">future-call</span> env-op) millis TimeUnit/MILLISECONDS)))
 
-<pre><code class="language-clojure">(defn timeout2 [millis op]
-  (let [env    (get-thread-bindings)
-        env-op #(with-bindings* env op)]
-    (.get (future-call env-op) millis TimeUnit/MILLISECONDS)))
+(<span style="color:#a6e22e">timeout2</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">#</span>(binding [a-var <span style="color:#ae81ff">4</span>] (inc a-var)))
+=&gt; <span style="color:#ae81ff">5</span>
 
-(timeout2 1000 #(binding [a-var 4] (inc a-var)))
-=&gt; 5
-
-(binding [a-var 4] (timeout2 1000 #(inc a-var)))
-=&gt; 5
-</code></pre>
-
-<p>Here we capture the environment in the context of the caller and inject it into the timeout thread using <code>with-bindings*</code>. Now that the timeout thread sees the same thread-local environment as the caller, the external binding of <code>a-var</code> works as expected.</p>
-
+(binding [a-var <span style="color:#ae81ff">4</span>] (<span style="color:#a6e22e">timeout2</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">#</span>(inc a-var)))
+=&gt; <span style="color:#ae81ff">5</span>
+</code></pre></div><p>Here we capture the environment in the context of the caller and inject it into the timeout thread using <code>with-bindings*</code>. Now that the timeout thread sees the same thread-local environment as the caller, the external binding of <code>a-var</code> works as expected.</p>
 <p>Finally, we can extract this pattern into a macro <code>passing-bindings</code> that can be used to pass an environment across thread boundaries:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defmacro </span>passing-bindings [[in-env-sym] body]
+  <span style="color:#f92672">`</span>(<span style="color:#66d9ef">let </span>[env# (<span style="color:#a6e22e">get-thread-bindings</span>)
+         <span style="color:#f92672">~</span>in-env-sym (<span style="color:#66d9ef">fn </span>[op#] <span style="color:#f92672">#</span>(<span style="color:#a6e22e">with-bindings*</span> env# op#))]
+     <span style="color:#f92672">~</span>body))
 
-<pre><code class="language-clojure">(defmacro passing-bindings [[in-env-sym] body]
-  `(let [env# (get-thread-bindings)
-         ~in-env-sym (fn [op#] #(with-bindings* env# op#))]
-     ~body))
+(<span style="color:#66d9ef">defn </span>timeout3 [millis op]
+  (<span style="color:#a6e22e">passing-bindings</span> [in-env]
+    (<span style="color:#a6e22e">.get</span> (<span style="color:#a6e22e">future-call</span> (<span style="color:#a6e22e">in-env</span> op)) millis TimeUnit/MILLISECONDS)))
 
-(defn timeout3 [millis op]
-  (passing-bindings [in-env]
-    (.get (future-call (in-env op)) millis TimeUnit/MILLISECONDS)))
-
-(binding [a-var 4] (timeout3 1000 #(inc a-var)))
-=&gt; 5
-</code></pre>
-
-<h2 id="help-improve-this-content">Help improve this content</h2>
-
-<p>Feel free to <a href="https://github.com/TutsWiki/source/edit/master/content/blog/env-passing-in-clojure.md">edit this page</a> to fix any typos or add more insights.</p>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="5842766387"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+(binding [a-var <span style="color:#ae81ff">4</span>] (<span style="color:#a6e22e">timeout3</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">#</span>(inc a-var)))
+=&gt; <span style="color:#ae81ff">5</span>
+</code></pre></div><h2 id="help-improve-this-content">Help improve this content</h2>
+<p>Feel free to <!-- raw HTML omitted -->edit this page<!-- raw HTML omitted --> to fix any typos or add more insights.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
 
 
 
@@ -1332,7 +1293,7 @@
             <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1341,20 +1302,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595484064"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595484064"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595484064"></script>
-    <script src="/js/jquery.sticky.js?1595484064"></script>
-    <script src="/js/featherlight.min.js?1595484064"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595484064"></script>
-    <script src="/js/highlight.pack.js?1595484064"></script>
+    <script src="/js/clipboard.min.js?1595485593"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
+    <script src="/js/jquery.sticky.js?1595485593"></script>
+    <script src="/js/featherlight.min.js?1595485593"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
+    <script src="/js/highlight.pack.js?1595485593"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595484064"></script>
-    <script src="/js/learn.js?1595484064"></script>
-    <script src="/js/hugo-learn.js?1595484064"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
+    <script src="/js/learn.js?1595485593"></script>
+    <script src="/js/hugo-learn.js?1595485593"></script>
 
-    <link href="/mermaid/mermaid.css?1595484064" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595484064"></script>
+    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485593"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

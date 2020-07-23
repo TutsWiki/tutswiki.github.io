@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on TutsWiki Beta</title>
+    <title>python on TutsWiki Beta</title>
     <link>http://tutswiki.com/tags/python/</link>
-    <description>Recent content in Python on TutsWiki Beta</description>
+    <description>Recent content in python on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Jun 2017 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/what-is-the-use-of-yield-in-python/</guid>
-      <description> References  What does the “yield” keyword do in Python? Yield expressions  </description>
+      <description>References  What does the “yield” keyword do in Python? Yield expressions  </description>
     </item>
     
     <item>
@@ -28,8 +28,8 @@
       <guid>http://tutswiki.com/append-vs-extend-python/</guid>
       <description>append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&amp;rsquo;s find out.
 The official documentation describes them as:
- list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
- list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
+  list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
+  list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
     </item>
     
     <item>
@@ -40,9 +40,9 @@ The official documentation describes them as:
       <guid>http://tutswiki.com/print-same-line-python/</guid>
       <description>In Python, when you use the print function, it prints a new line at the end.
 For example:
-print &amp;quot;This is some line.&amp;quot; print &amp;quot;This is another line.&amp;quot;  Output:
-This is some line. This is another line.  What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
-   (adsbygoogle = window.adsbygoogle || []).</description>
+print &amp;#34;This is some line.&amp;#34; print &amp;#34;This is another line.&amp;#34; Output:
+This is some line. This is another line. What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
+Add comma at the end of print print &amp;#34;This is some line.</description>
     </item>
     
     <item>
@@ -62,9 +62,9 @@ Imagine if you migrate your server to a new host and suddenly your application s
       
       <guid>http://tutswiki.com/run-module-as-script-python/</guid>
       <description>Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
-def int_sum(a, b): print a+b def some_other_function(): pass  But, what if you want to run the module itself as a script?
+def int_sum(a, b): print a+b def some_other_function(): pass But, what if you want to run the module itself as a script?
 Well, if you want to use a Python module as script then you just have to use the conditional for __name__.
-def int_sum(a, b): print a+b if __name__ == &amp;quot;__main__&amp;quot;: import sys int_sum(int(sys.</description>
+def int_sum(a, b): print a+b if __name__ == &amp;#34;__main__&amp;#34;: import sys int_sum(int(sys.</description>
     </item>
     
     <item>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="String Operations">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="pandas,string,subplots">
@@ -17,17 +17,17 @@
     <title>Chapter 6 - String Operations - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595484064" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595484064" rel="stylesheet">
-    <link href="/css/hybrid.css?1595484064" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595484064" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595484064" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595484064" rel="stylesheet">
-    <link href="/css/theme.css?1595484064" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595484064" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
+    <link href="/css/theme.css?1595485593" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595484064"></script>
+    <script src="/js/jquery-2.x.min.js?1595485593"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595484064"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595484064"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595484064"></script>
+<script type="text/javascript" src="/js/search.js?1595485593"></script>
 
     
   </div>
@@ -133,9 +133,9 @@
  
   
     
-      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
-        <a href="/yet-another-lousy-monad-tutorial/">
-        Yet another lousy monad tutorial
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
         
         </a>
     </li>
@@ -152,9 +152,9 @@
  
   
     
-      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
-        <a href="/how-to-fix-sudo-node-command-not-found-error/">
-        sudo and node
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
         
         </a>
     </li>
@@ -722,14 +722,11 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#6-1-string-operations">6.1 String operations</a></li>
-<li><a href="#6-2-use-resampling-to-find-the-snowiest-month">6.2 Use resampling to find the snowiest month</a></li>
-<li><a href="#6-3-plotting-temperature-and-snowiness-stats-together">6.3 Plotting temperature and snowiness stats together</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#61-string-operations">6.1 String operations</a></li>
+    <li><a href="#62-use-resampling-to-find-the-snowiest-month">6.2 Use resampling to find the snowiest month</a></li>
+    <li><a href="#63-plotting-temperature-and-snowiness-stats-together">6.3 Plotting temperature and snowiness stats together</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -748,190 +745,65 @@
         
 
 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>matplotlib inline
 
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
 
-<pre><code class="language-python">%matplotlib inline
-
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-
-pd.set_option('display.mpl_style', 'default')
-plt.rcParams['figure.figsize'] = (15, 3)
-plt.rcParams['font.family'] = 'sans-serif'
-</code></pre>
-
-<p>We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&rsquo;re going to go back to our weather data from Chapter 5, here.</p>
-
-<pre><code class="language-python">weather_2012 = pd.read_csv('weather_2012.csv', parse_dates=True, index_col='Date/Time')
-weather_2012[:5]
-</code></pre>
-
-<p>Output:</p>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Temp (C)</th>
-      <th>Dew Point Temp (C)</th>
-      <th>Rel Hum (%)</th>
-      <th>Wind Spd (km/h)</th>
-      <th>Visibility (km)</th>
-      <th>Stn Press (kPa)</th>
-      <th>Weather</th>
-    </tr>
-    <tr>
-      <th>Date/Time</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2012-01-01 00:00:00</th>
-      <td>-1.8</td>
-      <td>-3.9</td>
-      <td> 86</td>
-      <td> 4</td>
-      <td> 8.0</td>
-      <td> 101.24</td>
-      <td>                  Fog</td>
-    </tr>
-    <tr>
-      <th>2012-01-01 01:00:00</th>
-      <td>-1.8</td>
-      <td>-3.7</td>
-      <td> 87</td>
-      <td> 4</td>
-      <td> 8.0</td>
-      <td> 101.24</td>
-      <td>                  Fog</td>
-    </tr>
-    <tr>
-      <th>2012-01-01 02:00:00</th>
-      <td>-1.8</td>
-      <td>-3.4</td>
-      <td> 89</td>
-      <td> 7</td>
-      <td> 4.0</td>
-      <td> 101.26</td>
-      <td> Freezing Drizzle,Fog</td>
-    </tr>
-    <tr>
-      <th>2012-01-01 03:00:00</th>
-      <td>-1.5</td>
-      <td>-3.2</td>
-      <td> 88</td>
-      <td> 6</td>
-      <td> 4.0</td>
-      <td> 101.27</td>
-      <td> Freezing Drizzle,Fog</td>
-    </tr>
-    <tr>
-      <th>2012-01-01 04:00:00</th>
-      <td>-1.5</td>
-      <td>-3.3</td>
-      <td> 88</td>
-      <td> 7</td>
-      <td> 4.8</td>
-      <td> 101.23</td>
-      <td>                  Fog</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 7 columns</p>
-</div>
-</div>
-
-<h2 id="6-1-string-operations">6.1 String operations</h2>
-
+pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.mpl_style&#39;</span>, <span style="color:#e6db74">&#39;default&#39;</span>)
+plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">3</span>)
+plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.family&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sans-serif&#39;</span>
+</code></pre></div><p>We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&rsquo;re going to go back to our weather data from Chapter 5, here.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_2012 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;weather_2012.csv&#39;</span>, parse_dates<span style="color:#f92672">=</span>True, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date/Time&#39;</span>)
+weather_2012[:<span style="color:#ae81ff">5</span>]
+</code></pre></div><p>Output:</p>
+<!-- raw HTML omitted -->
+<h2 id="61-string-operations">6.1 String operations</h2>
 <p>You&rsquo;ll see that the &lsquo;Weather&rsquo; column has a text description of the weather that was going on each hour. We&rsquo;ll assume it&rsquo;s snowing if the text description contains &ldquo;Snow&rdquo;.</p>
-
 <p>pandas provides vectorized string functions, to make it easy to operate on columns containing text. There are some great <a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#vectorized-string-methods">examples</a> in the documentation.</p>
-
-<pre><code class="language-python">weather_description = weather_2012['Weather']
-is_snowing = weather_description.str.contains('Snow')
-</code></pre>
-
-<p>This gives us a binary vector, which is a bit hard to look at, so we&rsquo;ll plot it.</p>
-
-<pre><code class="language-python"># Not super useful
-is_snowing[:5]
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-bash">Date/Time
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_description <span style="color:#f92672">=</span> weather_2012[<span style="color:#e6db74">&#39;Weather&#39;</span>]
+is_snowing <span style="color:#f92672">=</span> weather_description<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>contains(<span style="color:#e6db74">&#39;Snow&#39;</span>)
+</code></pre></div><p>This gives us a binary vector, which is a bit hard to look at, so we&rsquo;ll plot it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Not super useful</span>
+is_snowing[:<span style="color:#ae81ff">5</span>]
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Date/Time
 2012-01-01 00:00:00    False
 2012-01-01 01:00:00    False
 2012-01-01 02:00:00    False
 2012-01-01 03:00:00    False
 2012-01-01 04:00:00    False
 Name: Weather, dtype: bool
-</code></pre>
-
-<pre><code class="language-python"># More useful!
-is_snowing.plot()
-</code></pre>
-
-<p>Output:</p>
-
-<div>
-<img src="/img/snow_plot.png" alt="Plot which borough has the most noise complaints" />
-</div>
-
-<h2 id="6-2-use-resampling-to-find-the-snowiest-month">6.2 Use resampling to find the snowiest month</h2>
-
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># More useful!</span>
+is_snowing<span style="color:#f92672">.</span>plot()
+</code></pre></div><p>Output:</p>
+<!-- raw HTML omitted -->
+<h2 id="62-use-resampling-to-find-the-snowiest-month">6.2 Use resampling to find the snowiest month</h2>
 <p>If we wanted the median temperature each month, we could use the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html">resample()</a> method like this:</p>
-
-<pre><code class="language-python">weather_2012['Temp (C)'].resample('M').apply(np.median).plot(kind='bar')
-</code></pre>
-
-<p>Output:</p>
-
-<div>
-<img src="/img/resample_plot.png" alt="Plot which borough has the most noise complaints" />
-</div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_2012[<span style="color:#e6db74">&#39;Temp (C)&#39;</span>]<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)<span style="color:#f92672">.</span>apply(np<span style="color:#f92672">.</span>median)<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bar&#39;</span>)
+</code></pre></div><p>Output:</p>
+<!-- raw HTML omitted -->
 <p>Unsurprisingly, July and August are the warmest.</p>
-
 <p>So we can think of snowiness as being a bunch of 1s and 0s instead of Trues and Falses:</p>
-
-<pre><code class="language-python">is_snowing.astype(float)[:10]
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-bash">Date/Time
-2012-01-01 00:00:00    0
-2012-01-01 01:00:00    0
-2012-01-01 02:00:00    0
-2012-01-01 03:00:00    0
-2012-01-01 04:00:00    0
-2012-01-01 05:00:00    0
-2012-01-01 06:00:00    0
-2012-01-01 07:00:00    0
-2012-01-01 08:00:00    0
-2012-01-01 09:00:00    0
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">is_snowing<span style="color:#f92672">.</span>astype(float)[:<span style="color:#ae81ff">10</span>]
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Date/Time
+2012-01-01 00:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 01:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 02:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 03:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 04:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 05:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 06:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 07:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 08:00:00    <span style="color:#ae81ff">0</span>
+2012-01-01 09:00:00    <span style="color:#ae81ff">0</span>
 Name: Weather, dtype: float64
-</code></pre>
-
-<p>and then use resample to find the percentage of time it was snowing each month</p>
-
-<pre><code class="language-python">is_snowing.astype(float).resample('M').apply(np.mean)
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-bash">Date/Time
+</code></pre></div><p>and then use resample to find the percentage of time it was snowing each month</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">is_snowing<span style="color:#f92672">.</span>astype(float)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)<span style="color:#f92672">.</span>apply(np<span style="color:#f92672">.</span>mean)
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Date/Time
 2012-01-31    0.240591
 2012-02-29    0.162356
 2012-03-31    0.087366
@@ -945,136 +817,31 @@ Name: Weather, dtype: float64
 2012-11-30    0.038889
 2012-12-31    0.251344
 Freq: M, Name: Weather, dtype: float64
-</code></pre>
-
-<pre><code class="language-python">is_snowing.astype(float).resample('M').apply(np.mean).plot(kind='bar')
-</code></pre>
-
-<p>Output:</p>
-
-<div>
-<img src="/img/astype_resample_plot.png" alt="Plot which borough has the most noise complaints" />
-</div>
-
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">is_snowing<span style="color:#f92672">.</span>astype(float)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)<span style="color:#f92672">.</span>apply(np<span style="color:#f92672">.</span>mean)<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bar&#39;</span>)
+</code></pre></div><p>Output:</p>
+<!-- raw HTML omitted -->
 <p>So now we know! In 2012, December was the snowiest month. Also, this graph suggests something that I feel &ndash; it starts snowing pretty abruptly in November, and then tapers off slowly and takes a long time to stop, with the last snow usually being in April or May.</p>
-
-<h2 id="6-3-plotting-temperature-and-snowiness-stats-together">6.3 Plotting temperature and snowiness stats together</h2>
-
+<h2 id="63-plotting-temperature-and-snowiness-stats-together">6.3 Plotting temperature and snowiness stats together</h2>
 <p>We can also combine these two statistics (temperature, and snowiness) into one dataframe and plot them together:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">temperature <span style="color:#f92672">=</span> weather_2012[<span style="color:#e6db74">&#39;Temp (C)&#39;</span>]<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)<span style="color:#f92672">.</span>apply(np<span style="color:#f92672">.</span>median)
+is_snowing <span style="color:#f92672">=</span> weather_2012[<span style="color:#e6db74">&#39;Weather&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>contains(<span style="color:#e6db74">&#39;Snow&#39;</span>)
+snowiness <span style="color:#f92672">=</span> is_snowing<span style="color:#f92672">.</span>astype(float)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)<span style="color:#f92672">.</span>apply(np<span style="color:#f92672">.</span>mean)
 
-<pre><code class="language-python">temperature = weather_2012['Temp (C)'].resample('M').apply(np.median)
-is_snowing = weather_2012['Weather'].str.contains('Snow')
-snowiness = is_snowing.astype(float).resample('M').apply(np.mean)
-
-# Name the columns
-temperature.name = &quot;Temperature&quot;
-snowiness.name = &quot;Snowiness&quot;
-</code></pre>
-
-<p>We&rsquo;ll use concat again to combine the two statistics into a single dataframe.</p>
-
-<pre><code class="language-python">stats = pd.concat([temperature, snowiness], axis=1)
+<span style="color:#75715e"># Name the columns</span>
+temperature<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Temperature&#34;</span>
+snowiness<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Snowiness&#34;</span>
+</code></pre></div><p>We&rsquo;ll use concat again to combine the two statistics into a single dataframe.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stats <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([temperature, snowiness], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
 stats
-</code></pre>
-
-<p>Output:</p>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Temperature</th>
-      <th>Snowiness</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2012-01-31</th>
-      <td> -7.05</td>
-      <td> 0.240591</td>
-    </tr>
-    <tr>
-      <th>2012-02-29</th>
-      <td> -4.10</td>
-      <td> 0.162356</td>
-    </tr>
-    <tr>
-      <th>2012-03-31</th>
-      <td>  2.60</td>
-      <td> 0.087366</td>
-    </tr>
-    <tr>
-      <th>2012-04-30</th>
-      <td>  6.30</td>
-      <td> 0.015278</td>
-    </tr>
-    <tr>
-      <th>2012-05-31</th>
-      <td> 16.05</td>
-      <td> 0.000000</td>
-    </tr>
-    <tr>
-      <th>2012-06-30</th>
-      <td> 19.60</td>
-      <td> 0.000000</td>
-    </tr>
-    <tr>
-      <th>2012-07-31</th>
-      <td> 22.90</td>
-      <td> 0.000000</td>
-    </tr>
-    <tr>
-      <th>2012-08-31</th>
-      <td> 22.20</td>
-      <td> 0.000000</td>
-    </tr>
-    <tr>
-      <th>2012-09-30</th>
-      <td> 16.10</td>
-      <td> 0.000000</td>
-    </tr>
-    <tr>
-      <th>2012-10-31</th>
-      <td> 11.30</td>
-      <td> 0.000000</td>
-    </tr>
-    <tr>
-      <th>2012-11-30</th>
-      <td>  1.05</td>
-      <td> 0.038889</td>
-    </tr>
-    <tr>
-      <th>2012-12-31</th>
-      <td> -2.85</td>
-      <td> 0.251344</td>
-    </tr>
-  </tbody>
-</table>
-<p>12 rows × 2 columns</p>
-</div>
-</div>
-
-<pre><code class="language-python">stats.plot(kind='bar')
-</code></pre>
-
-<p>Output:</p>
-
-<div>
-<img src="/img/temp_snow.png" alt="Plot which borough has the most noise complaints" />
-</div>
-
+</code></pre></div><p>Output:</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stats<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bar&#39;</span>)
+</code></pre></div><p>Output:</p>
+<!-- raw HTML omitted -->
 <p>Uh, that didn&rsquo;t work so well because the scale was wrong. We can do better by plotting them on two separate graphs:</p>
-
-<pre><code class="language-python">stats.plot(kind='bar', subplots=True, figsize=(15, 10))
-</code></pre>
-
-<p>Output:</p>
-
-<div>
-<img src="/img/temp_snow_subplots.png" alt="Plot which borough has the most noise complaints" />
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stats<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bar&#39;</span>, subplots<span style="color:#f92672">=</span>True, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">10</span>))
+</code></pre></div><p>Output:</p>
+<!-- raw HTML omitted -->
 
 
 
@@ -1578,20 +1345,20 @@ stats
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595484064"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595484064"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595484064"></script>
-    <script src="/js/jquery.sticky.js?1595484064"></script>
-    <script src="/js/featherlight.min.js?1595484064"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595484064"></script>
-    <script src="/js/highlight.pack.js?1595484064"></script>
+    <script src="/js/clipboard.min.js?1595485593"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
+    <script src="/js/jquery.sticky.js?1595485593"></script>
+    <script src="/js/featherlight.min.js?1595485593"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
+    <script src="/js/highlight.pack.js?1595485593"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595484064"></script>
-    <script src="/js/learn.js?1595484064"></script>
-    <script src="/js/hugo-learn.js?1595484064"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
+    <script src="/js/learn.js?1595485593"></script>
+    <script src="/js/hugo-learn.js?1595485593"></script>
 
-    <link href="/mermaid/mermaid.css?1595484064" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595484064"></script>
+    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485593"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

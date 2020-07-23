@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="I&#39;m not a big fan of monads, but I understand them.">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="monad,fp,functionalprogramming,programming">
@@ -17,17 +17,17 @@
     <title>Yet another lousy monad tutorial - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595484064" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595484064" rel="stylesheet">
-    <link href="/css/hybrid.css?1595484064" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595484064" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595484064" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595484064" rel="stylesheet">
-    <link href="/css/theme.css?1595484064" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595484064" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
+    <link href="/css/theme.css?1595485593" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595484064"></script>
+    <script src="/js/jquery-2.x.min.js?1595485593"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595484064"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595484064"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595484064"></script>
+<script type="text/javascript" src="/js/search.js?1595485593"></script>
 
     
   </div>
@@ -133,9 +133,9 @@
  
   
     
-      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item active">
-        <a href="/yet-another-lousy-monad-tutorial/">
-        Yet another lousy monad tutorial
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
         
         </a>
     </li>
@@ -152,9 +152,9 @@
  
   
     
-      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
-        <a href="/how-to-fix-sudo-node-command-not-found-error/">
-        sudo and node
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item active">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
         
         </a>
     </li>
@@ -722,12 +722,9 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#help-improve-this-content">Help improve this content</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#help-improve-this-content">Help improve this content</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -746,122 +743,92 @@
         
 
 
-
-
-<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Yet another lousy monad tutorial" />
-<meta name=”twitter:description” content="I'm not a big fan of monads, but I understand them." />
-I&rsquo;m not a big fan of monads, but I understand them. They&rsquo;re not rocket science. Let me try to write a monad tutorial that would&rsquo;ve helped my past self understand what the fuss was about. I like concrete explanations that start with practical examples, without any annoying metaphors, and especially without any Haskell code. So here&rsquo;s five examples that have something in common:</p>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="5842766387"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<p>1) If a function has type <code>A → B</code>, and another function has type <code>B → C</code>, then we can &ldquo;compose&rdquo; them into a new function of type A → C.</p>
-
-<p>2) Let&rsquo;s talk about functions that can return multiple values. We can model these as functions of type <code>A → List&lt;B&gt;</code>. There is a natural way to &ldquo;compose&rdquo; two such functions. If one function has type <code>A → List&lt;B&gt;</code>, and another function has type <code>B → List&lt;C&gt;</code>, then we can &ldquo;compose&rdquo; them into a new function of type <code>A → List&lt;C&gt;</code>. The &ldquo;composition&rdquo; works by joining together all the intermediate lists of values into one. This is similar to MapReduce, which also collects together lists of results returned by individual workers.</p>
-
-<p>3) Let&rsquo;s talk about functions that either return a value, or fail somewhere along the way. We can model these as functions of type <code>A → Option&lt;B&gt;</code>, where <code>Option&lt;B&gt;</code> is a type that contains either a value of type B, or a special value None. There is a natural way to &ldquo;compose&rdquo; two such functions. If one function has type <code>A → Option&lt;B&gt;</code>, and another function has type <code>B → Option&lt;C&gt;</code>, then we can &ldquo;compose&rdquo; them into a new function of type <code>A → Option&lt;C&gt;</code>. The &ldquo;composition&rdquo; works just like regular function composition, except if the first function returns None, then it gets passed along and the second function doesn&rsquo;t get called. This way you can have a &ldquo;happy path&rdquo; in your code, and check for None only at the end.</p>
-
-<p>4) Let&rsquo;s talk about functions that call a remote machine asynchronously. We can model these as functions of type <code>A → Promise&lt;B&gt;</code>, where <code>Promise&lt;B&gt;</code> is a type that will eventually contain a value of type B, which you can wait for. There is a natural way to &ldquo;compose&rdquo; two such functions. If one function has type <code>A → Promise&lt;B&gt;</code>, and another function has type <code>B → Promise&lt;C&gt;</code>, then we can &ldquo;compose&rdquo; them into a new function of type <code>A → Promise&lt;C&gt;</code>. The &ldquo;composition&rdquo; is an asynchronous operation that waits for the first promise to return a value, then calls the second function on that value. This is known in some languages as &ldquo;promise pipelining&rdquo;. It can sometimes make remote calls faster, because you can send both calls to the remote machine in the same request.</p>
-
-<p>5) Let&rsquo;s talk about functions that do input or output in a pure functional language, like Haskell. We can define <code>IO&lt;A&gt;</code> as the type of opaque &ldquo;IO instructions&rdquo; that describe how to do some IO and return a value of type A. These &ldquo;instructions&rdquo; might eventually be executed by the runtime, but can also be freely passed around and manipulated before that. For example, to create instructions for reading a String from standard input, we&rsquo;d have a function of type <code>Void → IO&lt;String&gt;</code>, and to create instructions for writing a String to standard output, we&rsquo;d have <code>String → IO&lt;Void&gt;</code>. There is a natural way to &ldquo;compose&rdquo; two such functions. If one function has type <code>A → IO&lt;B&gt;</code>, and another function has type <code>B → IO&lt;C&gt;</code>, then we can &ldquo;compose&rdquo; them into a new function of type <code>A → IO&lt;C&gt;</code>. The &ldquo;composition&rdquo; works by just doing the IO in sequence. Eventually the whole program returns one huge complicated IO instruction with explicit sequencing inside, which is then passed to the runtime for execution. That&rsquo;s how Haskell works.</p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol>
+<li>
+<p>If a function has type <code>A → B</code>, and another function has type <code>B → C</code>, then we can &ldquo;compose&rdquo; them into a new function of type A → C.</p>
+</li>
+<li>
+<p>Let&rsquo;s talk about functions that can return multiple values. We can model these as functions of type <code>A → List&lt;B&gt;</code>. There is a natural way to &ldquo;compose&rdquo; two such functions. If one function has type <code>A → List&lt;B&gt;</code>, and another function has type <code>B → List&lt;C&gt;</code>, then we can &ldquo;compose&rdquo; them into a new function of type <code>A → List&lt;C&gt;</code>. The &ldquo;composition&rdquo; works by joining together all the intermediate lists of values into one. This is similar to MapReduce, which also collects together lists of results returned by individual workers.</p>
+</li>
+<li>
+<p>Let&rsquo;s talk about functions that either return a value, or fail somewhere along the way. We can model these as functions of type <code>A → Option&lt;B&gt;</code>, where <code>Option&lt;B&gt;</code> is a type that contains either a value of type B, or a special value None. There is a natural way to &ldquo;compose&rdquo; two such functions. If one function has type <code>A → Option&lt;B&gt;</code>, and another function has type <code>B → Option&lt;C&gt;</code>, then we can &ldquo;compose&rdquo; them into a new function of type <code>A → Option&lt;C&gt;</code>. The &ldquo;composition&rdquo; works just like regular function composition, except if the first function returns None, then it gets passed along and the second function doesn&rsquo;t get called. This way you can have a &ldquo;happy path&rdquo; in your code, and check for None only at the end.</p>
+</li>
+<li>
+<p>Let&rsquo;s talk about functions that call a remote machine asynchronously. We can model these as functions of type <code>A → Promise&lt;B&gt;</code>, where <code>Promise&lt;B&gt;</code> is a type that will eventually contain a value of type B, which you can wait for. There is a natural way to &ldquo;compose&rdquo; two such functions. If one function has type <code>A → Promise&lt;B&gt;</code>, and another function has type <code>B → Promise&lt;C&gt;</code>, then we can &ldquo;compose&rdquo; them into a new function of type <code>A → Promise&lt;C&gt;</code>. The &ldquo;composition&rdquo; is an asynchronous operation that waits for the first promise to return a value, then calls the second function on that value. This is known in some languages as &ldquo;promise pipelining&rdquo;. It can sometimes make remote calls faster, because you can send both calls to the remote machine in the same request.</p>
+</li>
+<li>
+<p>Let&rsquo;s talk about functions that do input or output in a pure functional language, like Haskell. We can define <code>IO&lt;A&gt;</code> as the type of opaque &ldquo;IO instructions&rdquo; that describe how to do some IO and return a value of type A. These &ldquo;instructions&rdquo; might eventually be executed by the runtime, but can also be freely passed around and manipulated before that. For example, to create instructions for reading a String from standard input, we&rsquo;d have a function of type <code>Void → IO&lt;String&gt;</code>, and to create instructions for writing a String to standard output, we&rsquo;d have <code>String → IO&lt;Void&gt;</code>. There is a natural way to &ldquo;compose&rdquo; two such functions. If one function has type <code>A → IO&lt;B&gt;</code>, and another function has type <code>B → IO&lt;C&gt;</code>, then we can &ldquo;compose&rdquo; them into a new function of type <code>A → IO&lt;C&gt;</code>. The &ldquo;composition&rdquo; works by just doing the IO in sequence. Eventually the whole program returns one huge complicated IO instruction with explicit sequencing inside, which is then passed to the runtime for execution. That&rsquo;s how Haskell works.</p>
+</li>
+</ol>
 <p>Another thing to note is that each of the examples above also has a natural &ldquo;identity&rdquo; function, such that &ldquo;composing&rdquo; it with any other function F gives you F again. For ordinary function composition, it&rsquo;s the ordinary identity function A → A. For lists, it&rsquo;s the function <code>A → List&lt;A&gt;</code> that creates a single-element list. For options, it&rsquo;s the function <code>A → Option&lt;A&gt;</code> that takes a value and returns an option containing that value. For promises, it&rsquo;s the function <code>A → Promise&lt;A&gt;</code> that takes a value and makes an immediately fulfilled promise out of it. And for IO, it&rsquo;s the function <code>A → IO&lt;A&gt;</code> that doesn&rsquo;t actually do any IO.</p>
-
 <p>At this point we could go all mathematical and talk about how &ldquo;compose&rdquo; is like number multiplication, and &ldquo;identity&rdquo; is like the number 1, and then go off into monoids and categories and functors and other things that are frankly boring to me. So let&rsquo;s not go there! Whew!</p>
-
-<p>Instead, to stay more on the programming track, let&rsquo;s use a Java-like syntax to define an interface Monad<T> with two methods &ldquo;identity&rdquo; and &ldquo;compose&rdquo;. The five examples above will correspond to five different concrete classes that implement that interface, for different choices of the type parameter T.</p>
-
+<p>Instead, to stay more on the programming track, let&rsquo;s use a Java-like syntax to define an interface Monad<!-- raw HTML omitted --> with two methods &ldquo;identity&rdquo; and &ldquo;compose&rdquo;. The five examples above will correspond to five different concrete classes that implement that interface, for different choices of the type parameter T.</p>
 <p>The main complication is that the type parameter T must not be a simple type, like String. Instead it must be itself a generic type, like List, Option or Promise. The reason is that we want to have a single implementation of <code>Monad&lt;Option&gt;</code>, not separate implementations like <code>Monad&lt;Option&lt;Integer&gt;&gt;</code>, <code>Monad&lt;Option&lt;String&gt;&gt;</code> and so on. Java and C# don&rsquo;t support generic types whose parameters are themselves generic types (the technical term is &ldquo;higher-kinded types&rdquo;), but C++ has some support for them, called &ldquo;template template parameters&rdquo;. Some functional languages have higher-kinded types, like Haskell, while others don&rsquo;t have them, like ML.</p>
-
 <p>Anyway, here&rsquo;s what it would look like in Java, if Java supported such things:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Monad</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+  <span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;</span> Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> T<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">identity</span><span style="color:#f92672">();</span>
+  <span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> B<span style="color:#f92672">,</span> C<span style="color:#f92672">&gt;</span> Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> T<span style="color:#f92672">&lt;</span>C<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">compose</span><span style="color:#f92672">(</span>
+    Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> T<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;&gt;</span> first<span style="color:#f92672">,</span>
+    Function<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">,</span> T<span style="color:#f92672">&lt;</span>C<span style="color:#f92672">&gt;&gt;</span> second
+  <span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span> 
 
-<pre><code class="language-java">interface Monad&lt;T&gt; {
-  &lt;A&gt; Function&lt;A, T&lt;A&gt;&gt; identity();
-  &lt;A, B, C&gt; Function&lt;A, T&lt;C&gt;&gt; compose(
-    Function&lt;A, T&lt;B&gt;&gt; first,
-    Function&lt;B, T&lt;C&gt;&gt; second
-  );
-} 
-
-class OptionMonad implements Monad&lt;Option&gt; {
-  public &lt;A&gt; Function&lt;A, Option&lt;A&gt;&gt; identity() {
-    // Implementation omitted, figure it out
-  }
-  public &lt;A, B, C&gt; Function&lt;A, Option&lt;C&gt;&gt; compose(
-    Function&lt;A, Option&lt;B&gt;&gt; first,
-    Function&lt;B, Option&lt;C&gt;&gt; second
-  ) {
-    // Implementation omitted, do it yourself
-  }
-}
-</code></pre>
-
-<p>Defining Monad as an interface allows us to implement some general functionality that will work on all monads. For example, there&rsquo;s a well known function &ldquo;liftM&rdquo; that converts a function of type <code>A → B</code> into a function of type <code>List&lt;A&gt; → List&lt;B&gt;</code>, or <code>Promise&lt;A&gt; → Promise&lt;B&gt;</code>, or anything else along these lines. For different monads, liftM will do different useful things, e.g. liftM on lists is just the familiar &ldquo;map&rdquo; function in disguise. The implementation of liftM with lambda expressions would be very short, though a little abstract:</p>
-
-<pre><code class="language-java">&lt;T, A, B&gt; Function&lt;T&lt;A&gt;, T&lt;B&gt;&gt; liftM(
-  Function&lt;A, B&gt; func,
-  Monad&lt;T&gt; monad
-) {
-  return (T&lt;A&gt; ta) -&gt; monad.compose(
-    () -&gt; ta,
-    (A a) -&gt; monad.identity().apply(func.apply(a))
-  ).apply(void);
-}
-</code></pre>
-
-<p>Or if you don&rsquo;t like lambda expressions, here&rsquo;s a version without them:</p>
-
-<pre><code class="language-java">&lt;T, A, B&gt; Function&lt;T&lt;A&gt;, T&lt;B&gt;&gt; liftM(
-  Function&lt;A, B&gt; func,
-  Monad&lt;T&gt; monad
-) {
-  return new Function&lt;T&lt;A&gt;, T&lt;B&gt;&gt;() {
-    public T&lt;B&gt; apply (T&lt;A&gt; ta) {
-      return monad.compose(
-        new Function&lt;Void, T&lt;A&gt;&gt;() {
-          public T&lt;A&gt; apply() {
-            return ta;
-          }
-        },
-        new Function&lt;A, T&lt;B&gt;&gt;() {
-          public T&lt;B&gt; apply(A a) {
-            return monad.identity().apply(func.apply(a));
-          }
-        }
-      ).apply(void);
-    }
-  }
-}
-</code></pre>
-
-<p>Monads first became popular as a nice way to deal with IO instructions in a pure language, treating them as first-class values that can be passed around, like in my example 5. Imperative languages don&rsquo;t need monads for IO, but they often face a similar problem of &ldquo;option chaining&rdquo; or &ldquo;error chaining&rdquo;, like in my example 3. For example, the option types in Rust or Swift would benefit from having a &ldquo;happy path&rdquo; through the code and a centralized place to handle errors, which is exactly the thing that monads would give you.</p>
-
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OptionMonad</span> <span style="color:#66d9ef">implements</span> Monad<span style="color:#f92672">&lt;</span>Option<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;</span> Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> Option<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">identity</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// Implementation omitted, figure it out
+</span><span style="color:#75715e"></span>  <span style="color:#f92672">}</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> B<span style="color:#f92672">,</span> C<span style="color:#f92672">&gt;</span> Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> Option<span style="color:#f92672">&lt;</span>C<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">compose</span><span style="color:#f92672">(</span>
+    Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> Option<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;&gt;</span> first<span style="color:#f92672">,</span>
+    Function<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">,</span> Option<span style="color:#f92672">&lt;</span>C<span style="color:#f92672">&gt;&gt;</span> second
+  <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// Implementation omitted, do it yourself
+</span><span style="color:#75715e"></span>  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Defining Monad as an interface allows us to implement some general functionality that will work on all monads. For example, there&rsquo;s a well known function &ldquo;liftM&rdquo; that converts a function of type <code>A → B</code> into a function of type <code>List&lt;A&gt; → List&lt;B&gt;</code>, or <code>Promise&lt;A&gt; → Promise&lt;B&gt;</code>, or anything else along these lines. For different monads, liftM will do different useful things, e.g. liftM on lists is just the familiar &ldquo;map&rdquo; function in disguise. The implementation of liftM with lambda expressions would be very short, though a little abstract:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> A<span style="color:#f92672">,</span> B<span style="color:#f92672">&gt;</span> Function<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;,</span> T<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">liftM</span><span style="color:#f92672">(</span>
+  Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> B<span style="color:#f92672">&gt;</span> func<span style="color:#f92672">,</span>
+  Monad<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> monad
+<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>T<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;</span> ta<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> monad<span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">(</span>
+    <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> ta<span style="color:#f92672">,</span>
+    <span style="color:#f92672">(</span>A a<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> monad<span style="color:#f92672">.</span><span style="color:#a6e22e">identity</span><span style="color:#f92672">().</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>func<span style="color:#f92672">.</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>a<span style="color:#f92672">))</span>
+  <span style="color:#f92672">).</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span><span style="color:#66d9ef">void</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Or if you don&rsquo;t like lambda expressions, here&rsquo;s a version without them:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> A<span style="color:#f92672">,</span> B<span style="color:#f92672">&gt;</span> Function<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;,</span> T<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">liftM</span><span style="color:#f92672">(</span>
+  Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> B<span style="color:#f92672">&gt;</span> func<span style="color:#f92672">,</span>
+  Monad<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> monad
+<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Function<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;,</span> T<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> T<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">apply</span> <span style="color:#f92672">(</span>T<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;</span> ta<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> monad<span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">(</span>
+        <span style="color:#66d9ef">new</span> Function<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">,</span> T<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;&gt;()</span> <span style="color:#f92672">{</span>
+          <span style="color:#66d9ef">public</span> T<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">apply</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> ta<span style="color:#f92672">;</span>
+          <span style="color:#f92672">}</span>
+        <span style="color:#f92672">},</span>
+        <span style="color:#66d9ef">new</span> Function<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">,</span> T<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;&gt;()</span> <span style="color:#f92672">{</span>
+          <span style="color:#66d9ef">public</span> T<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>A a<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> monad<span style="color:#f92672">.</span><span style="color:#a6e22e">identity</span><span style="color:#f92672">().</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>func<span style="color:#f92672">.</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>a<span style="color:#f92672">));</span>
+          <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+      <span style="color:#f92672">).</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span><span style="color:#66d9ef">void</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Monads first became popular as a nice way to deal with IO instructions in a pure language, treating them as first-class values that can be passed around, like in my example 5. Imperative languages don&rsquo;t need monads for IO, but they often face a similar problem of &ldquo;option chaining&rdquo; or &ldquo;error chaining&rdquo;, like in my example 3. For example, the option types in Rust or Swift would benefit from having a &ldquo;happy path&rdquo; through the code and a centralized place to handle errors, which is exactly the thing that monads would give you.</p>
 <p>Some people think that monads are about side effects, like some sort of escape hatch for Haskell. That&rsquo;s wrong, because you could always do IO without monads, and in fact the first version of Haskell didn&rsquo;t use them. In any case, only two of my five examples involve side effects. Monads are more like a design pattern for composing functions, which shows up in many places. I think the jury is still out on whether imperative/OO languages need to use monads explicitly, but it might be useful to notice them when they appear in your code implicitly.</p>
-
 <h2 id="help-improve-this-content">Help improve this content</h2>
-
-<p>Feel free to <a href="https://github.com/TutsWiki/source/edit/master/content/blog/monad-tutorial.md">edit this page</a> to fix any typos or add more insights.</p>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="5842766387"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<p>Feel free to <!-- raw HTML omitted -->edit this page<!-- raw HTML omitted --> to fix any typos or add more insights.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
 
 
@@ -940,6 +907,22 @@ class OptionMonad implements Monad&lt;Option&gt; {
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1179,22 +1162,6 @@ class OptionMonad implements Monad&lt;Option&gt; {
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1349,10 +1316,10 @@ class OptionMonad implements Monad&lt;Option&gt; {
 
 
         
-            <a class="nav nav-prev" href="/environment-passing-in-clojure" title="Environment Passing in Clojure"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1361,20 +1328,20 @@ class OptionMonad implements Monad&lt;Option&gt; {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595484064"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595484064"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595484064"></script>
-    <script src="/js/jquery.sticky.js?1595484064"></script>
-    <script src="/js/featherlight.min.js?1595484064"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595484064"></script>
-    <script src="/js/highlight.pack.js?1595484064"></script>
+    <script src="/js/clipboard.min.js?1595485593"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
+    <script src="/js/jquery.sticky.js?1595485593"></script>
+    <script src="/js/featherlight.min.js?1595485593"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
+    <script src="/js/highlight.pack.js?1595485593"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595484064"></script>
-    <script src="/js/learn.js?1595484064"></script>
-    <script src="/js/hugo-learn.js?1595484064"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
+    <script src="/js/learn.js?1595485593"></script>
+    <script src="/js/hugo-learn.js?1595485593"></script>
 
-    <link href="/mermaid/mermaid.css?1595484064" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595484064"></script>
+    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485593"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

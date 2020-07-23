@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TutsWiki Beta</title>
@@ -18,17 +18,7 @@
       
       <guid>http://tutswiki.com/environment-passing-in-clojure/</guid>
       <description>Clojure’s vars provide a nice mechanism for managing dynamically bound state, but you need to be careful with vars when moving computations across thread boundaries. For example, suppose we implement the following timeout function:
-(import &#39;(java.util.concurrent Future TimeUnit)) (defn timeout1 [millis op] (.get (future-call op) millis TimeUnit/MILLISECONDS))  The function timeout1 sends the operation op to be computed in a separate, timeout-bound thread. If the operation completes within millis milliseconds, timeout1 returns the result of that operation, otherwise it throws an exception:</description>
-    </item>
-    
-    <item>
-      <title>Yet another lousy monad tutorial</title>
-      <link>http://tutswiki.com/yet-another-lousy-monad-tutorial/</link>
-      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://tutswiki.com/yet-another-lousy-monad-tutorial/</guid>
-      <description>I&amp;rsquo;m not a big fan of monads, but I understand them. They&amp;rsquo;re not rocket science. Let me try to write a monad tutorial that would&amp;rsquo;ve helped my past self understand what the fuss was about. I like concrete explanations that start with practical examples, without any annoying metaphors, and especially without any Haskell code. So here&amp;rsquo;s five examples that have something in common:
-   (adsbygoogle = window.adsbygoogle || []).</description>
+(import &amp;#39;(java.util.concurrent Future TimeUnit)) (defn timeout1 [millis op] (.get (future-call op) millis TimeUnit/MILLISECONDS)) The function timeout1 sends the operation op to be computed in a separate, timeout-bound thread. If the operation completes within millis milliseconds, timeout1 returns the result of that operation, otherwise it throws an exception:</description>
     </item>
     
     <item>
@@ -40,7 +30,17 @@
       <description>Getting permission errors when installing a module?
 Are &amp;lsquo;sudo: node: command not found&amp;rsquo; errors taking away your precious sleeping hours?
 How to fix? You have to remove any trace of node on your system, and reinstall it. It will soothe your pain:
-echo &#39;export PATH=$HOME/local/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install  You are one/two steps/commands away from success.</description>
+echo &amp;#39;export PATH=$HOME/local/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install You are one/two steps/commands away from success.</description>
+    </item>
+    
+    <item>
+      <title>Yet another lousy monad tutorial</title>
+      <link>http://tutswiki.com/yet-another-lousy-monad-tutorial/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/yet-another-lousy-monad-tutorial/</guid>
+      <description>If a function has type A → B, and another function has type B → C, then we can &amp;ldquo;compose&amp;rdquo; them into a new function of type A → C.
+  Let&amp;rsquo;s talk about functions that can return multiple values. We can model these as functions of type A → List&amp;lt;B&amp;gt;. There is a natural way to &amp;ldquo;compose&amp;rdquo; two such functions. If one function has type A → List&amp;lt;B&amp;gt;, and another function has type B → List&amp;lt;C&amp;gt;, then we can &amp;ldquo;compose&amp;rdquo; them into a new function of type A → List&amp;lt;C&amp;gt;.</description>
     </item>
     
     <item>
@@ -82,7 +82,7 @@ Python is a very flexible language. One facet of this flexibility is the possibi
       <guid>http://tutswiki.com/deep-learning-cardiovascular-imaging/</guid>
       <description>Bay Labs, a San Francisco-based medical technology company which focuses on using artificial intelligence to improve cardiovascular imaging, has released a new software EchoMD AutoEF. It is being claimed that this software will help to reduce the variability in cardiovascular imaging.
 The software uses deep learning techniques to accurately calculate the left ventricular ejection fraction.
-What is Ejection Fraction? During each pumping cycle of our heart, it contracts and relaxes.</description>
+What is Ejection Fraction? During each pumping cycle of our heart, it contracts and relaxes. When it contracts it passes the blood to ventricles.</description>
     </item>
     
     <item>
@@ -91,7 +91,7 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/google-engineers-boycott-security-tool-military/</guid>
-      <description>A group of 9 cloud engineers at Google has refused to work on a project called air-gap due to which Google may lose a deal worth $10 billion. Google needs air-gap if it has to do some sensitive work with government agencies involving sensitive data (obviously military implications there). So this group of 9 basically just said they weren&amp;rsquo;t gonna do it. About 10-12 employees have resigned so far as part of this work strike.</description>
+      <description>On the one hand this is good as it shows that employees get ample space to air grievances, but on the other hand, the shareholders will get angry as it hampers Google&amp;rsquo;s ability to compete. In order to get government contracts especially those which involves sensitive data and military require some certifications, which Google&amp;rsquo;s competitors like Microsoft and Amazon have but Google doesn&amp;rsquo;t. This air-gap feature was supposed to help Google with that but it seems it&amp;rsquo;ll be abandoned.</description>
     </item>
     
     <item>
@@ -100,7 +100,8 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/nodejs-google-app-engine/</guid>
-      <description>Google App Engine is a part of the Google Cloud Suite which provides a cloud platform for developers where they can develop and host their apps. It provides easily configurable, fast and secure programming environments/tools with the help of which developers can setup a development environment in just a few minutes. Therefore developers don&amp;rsquo;t need to worry about configuring the environment, they can just focus on writing code. It supports all the popular programming languages Java, PHP, Node.</description>
+      <description>Till now there was no support for Node.js, but Google has just announced that developers will now be able to deploy their Node.js apps to the App Engine. Steps to deploy Node.js web service on App Engine Prerequisites   You must have a project on the Google Cloud Platform. If you don&amp;rsquo;t, create one using the GCP Console.
+  The development environment should be configured. You have 2 options here.</description>
     </item>
     
     <item>
@@ -109,8 +110,7 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/angular6-features/</guid>
-      <description>Angular 6 is out with all new features. It is a major release in which Angular team has synchronized many of the important framework packages to make most out of cross compatibility. All the major framework packages like @angular/core, @angular/compiler, @angular/common etc., are reworked and released as version 6.0.0. Below is the list of major changes in Angular 6, let&amp;rsquo;s explore them one by one.
-Angular 6 Features:  New CLI commands  ng update ng add  Referencing providers Angular Elements Angular Material + CDK Components  Tree Badge Bottom-Sheet Overlay  Starter Components  Dashboard Side-Nav Datatable  Library Support CLI Workspaces RxJS v6 Long Term Support  ng update A new command is introduced in Angular CLI which analyzes package.</description>
+      <description>Angular 6 Features:  New CLI commands  ng update ng add   Referencing providers Angular Elements Angular Material + CDK Components  Tree Badge Bottom-Sheet Overlay   Starter Components  Dashboard Side-Nav Datatable   Library Support CLI Workspaces RxJS v6 Long Term Support  ng update A new command is introduced in Angular CLI which analyzes package.json and recommends any updates (if needed) on the installed packages.</description>
     </item>
     
     <item>
@@ -119,9 +119,10 @@ Angular 6 Features:  New CLI commands  ng update ng add  Referencing providers A
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/github-alternatives/</guid>
-      <description>The trending news of yesterday was the acquisition of GitHub (the world&amp;rsquo;s leading software development platform) by Microsoft. This is a great deal for Microsoft which might put it in the position it was about 10 years ago in the software market. But a lot of open-source fans are unhappy with this.
-A couple of years ago Microsoft was anti-open-source.
- &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.</description>
+      <description>A couple of years ago Microsoft was anti-open-source.
+ &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.&amp;rdquo; - Jim Allchin (Former Windows chief), 2001
+  &amp;ldquo;Linux is a cancer that attaches itself in an intellectual property sense to everything it touches.&amp;rdquo; - Steve Ballmer (Former CEO)
+ However, in recent years Microsoft has tried hard to catch up with the open-source world.</description>
     </item>
     
     <item>
@@ -130,7 +131,7 @@ A couple of years ago Microsoft was anti-open-source.
       <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/what-is-the-use-of-yield-in-python/</guid>
-      <description> References  What does the “yield” keyword do in Python? Yield expressions  </description>
+      <description>References  What does the “yield” keyword do in Python? Yield expressions  </description>
     </item>
     
     <item>
@@ -141,8 +142,8 @@ A couple of years ago Microsoft was anti-open-source.
       <guid>http://tutswiki.com/append-vs-extend-python/</guid>
       <description>append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&amp;rsquo;s find out.
 The official documentation describes them as:
- list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
- list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
+  list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
+  list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
     </item>
     
     <item>
@@ -153,9 +154,9 @@ The official documentation describes them as:
       <guid>http://tutswiki.com/print-same-line-python/</guid>
       <description>In Python, when you use the print function, it prints a new line at the end.
 For example:
-print &amp;quot;This is some line.&amp;quot; print &amp;quot;This is another line.&amp;quot;  Output:
-This is some line. This is another line.  What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
-   (adsbygoogle = window.adsbygoogle || []).</description>
+print &amp;#34;This is some line.&amp;#34; print &amp;#34;This is another line.&amp;#34; Output:
+This is some line. This is another line. What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
+Add comma at the end of print print &amp;#34;This is some line.</description>
     </item>
     
     <item>
@@ -175,9 +176,9 @@ Imagine if you migrate your server to a new host and suddenly your application s
       
       <guid>http://tutswiki.com/run-module-as-script-python/</guid>
       <description>Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
-def int_sum(a, b): print a+b def some_other_function(): pass  But, what if you want to run the module itself as a script?
+def int_sum(a, b): print a+b def some_other_function(): pass But, what if you want to run the module itself as a script?
 Well, if you want to use a Python module as script then you just have to use the conditional for __name__.
-def int_sum(a, b): print a+b if __name__ == &amp;quot;__main__&amp;quot;: import sys int_sum(int(sys.</description>
+def int_sum(a, b): print a+b if __name__ == &amp;#34;__main__&amp;#34;: import sys int_sum(int(sys.</description>
     </item>
     
     <item>
@@ -198,8 +199,8 @@ In Python all modules have some built-in attributes.</description>
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter1/</guid>
-      <description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) # Make the graphs a bit prettier plt.rcParams[&#39;figure.figsize&#39;] = (15, 5)     (adsbygoogle = window.adsbygoogle || []).push({});  1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
-We&amp;rsquo;re going to be looking some cyclist data from Montréal.</description>
+      <description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) 1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
+We&amp;rsquo;re going to be looking some cyclist data from Montréal. Here&amp;rsquo;s the original page (in French).</description>
     </item>
     
     <item>
@@ -208,7 +209,7 @@ We&amp;rsquo;re going to be looking some cyclist data from Montréal.</descripti
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter2/</guid>
-      <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt # Make the graphs a bit prettier, and bigger pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) # This is necessary to show lots of columns in pandas 0.12. # Not necessary in pandas 0.13. pd.set_option(&#39;display.width&#39;, 5000) pd.set_option(&#39;display.max_columns&#39;, 60) plt.rcParams[&#39;figure.figsize&#39;] = (15, 5)  We&amp;rsquo;re going to use a new dataset here, to demonstrate how to deal with larger datasets. This is a subset of the of 311 service requests from NYC Open Data.</description>
+      <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) We&amp;rsquo;re going to use a new dataset here, to demonstrate how to deal with larger datasets. This is a subset of the of 311 service requests from NYC Open Data.</description>
     </item>
     
     <item>
@@ -217,8 +218,8 @@ We&amp;rsquo;re going to be looking some cyclist data from Montréal.</descripti
       <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter3/</guid>
-      <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np # Make the graphs a bit prettier, and bigger pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) plt.rcParams[&#39;figure.figsize&#39;] = (15, 5) # This is necessary to show lots of columns in pandas 0.12. # Not necessary in pandas 0.13. pd.set_option(&#39;display.width&#39;, 5000) pd.set_option(&#39;display.max_columns&#39;, 60)  Let&amp;rsquo;s continue with our NYC 311 service requests example.
-complaints = pd.read_csv(&#39;311-service-requests.csv&#39;)     (adsbygoogle = window.</description>
+      <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Let&amp;rsquo;s continue with our NYC 311 service requests example.
+complaints = pd.read_csv(&amp;#39;311-service-requests.csv&amp;#39;) 3.1 Selecting only noise complaints I&amp;rsquo;d like to know which borough has the most noise complaints.</description>
     </item>
     
     <item>
@@ -227,7 +228,7 @@ complaints = pd.read_csv(&#39;311-service-requests.csv&#39;)     (adsbygoogle = 
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter4/</guid>
-      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) # Make the graphs a bit prettier plt.rcParams[&#39;figure.figsize&#39;] = (15, 5) plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39; # This is necessary to show lots of columns in pandas 0.12. # Not necessary in pandas 0.13. pd.set_option(&#39;display.width&#39;, 5000) pd.set_option(&#39;display.max_columns&#39;, 60)  Okay! We&amp;rsquo;re going back to our bike path dataset here. I live in Montreal, and I was curious about whether we&amp;rsquo;re more of a commuter city or a biking-for-fun city &amp;ndash; do people bike more on weekends, or on weekdays?</description>
+      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Okay! We&amp;rsquo;re going back to our bike path dataset here. I live in Montreal, and I was curious about whether we&amp;rsquo;re more of a commuter city or a biking-for-fun city &amp;ndash; do people bike more on weekends, or on weekdays?</description>
     </item>
     
     <item>
@@ -236,7 +237,7 @@ complaints = pd.read_csv(&#39;311-service-requests.csv&#39;)     (adsbygoogle = 
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter5/</guid>
-      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) plt.rcParams[&#39;figure.figsize&#39;] = (15, 3) plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39;  Summary By the end of this chapter, we&amp;rsquo;re going to have downloaded all of Canada&amp;rsquo;s weather data for 2012, and saved it to a CSV.
+      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; Summary By the end of this chapter, we&amp;rsquo;re going to have downloaded all of Canada&amp;rsquo;s weather data for 2012, and saved it to a CSV.
 We&amp;rsquo;ll do this by downloading it one month at a time, and then combining all the months together.
 Here&amp;rsquo;s the temperature every hour for 2012!</description>
     </item>
@@ -247,9 +248,9 @@ Here&amp;rsquo;s the temperature every hour for 2012!</description>
       <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter6/</guid>
-      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) plt.rcParams[&#39;figure.figsize&#39;] = (15, 3) plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39;  We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.
-weather_2012 = pd.read_csv(&#39;weather_2012.csv&#39;, parse_dates=True, index_col=&#39;Date/Time&#39;) weather_2012[:5]  Output:
-  Temp (C) Dew Point Temp (C) Rel Hum (%) Wind Spd (km/h) Visibility (km) Stn Press (kPa) Weather   Date/Time            2012-01-01 00:00:00 -1.</description>
+      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.
+weather_2012 = pd.read_csv(&amp;#39;weather_2012.csv&amp;#39;, parse_dates=True, index_col=&amp;#39;Date/Time&amp;#39;) weather_2012[:5] Output:
+6.1 String operations You&amp;rsquo;ll see that the &amp;lsquo;Weather&amp;rsquo; column has a text description of the weather that was going on each hour.</description>
     </item>
     
     <item>
@@ -258,8 +259,9 @@ weather_2012 = pd.read_csv(&#39;weather_2012.csv&#39;, parse_dates=True, index_c
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter7/</guid>
-      <description># The usual preamble import pandas as pd # Make the graphs a bit prettier, and bigger pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;) figsize(15, 5) # Always display all the columns pd.set_option(&#39;display.line_width&#39;, 5000) pd.set_option(&#39;display.max_columns&#39;, 60)  One of the main problems with messy data is: how do you know if it&amp;rsquo;s messy or not?
-We&amp;rsquo;re going to use the NYC 311 service request dataset again here, since it&amp;rsquo;s big and a bit unwieldy.</description>
+      <description># The usual preamble import pandas as pd # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) figsize(15, 5) # Always display all the columns pd.set_option(&amp;#39;display.line_width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) One of the main problems with messy data is: how do you know if it&amp;rsquo;s messy or not?
+We&amp;rsquo;re going to use the NYC 311 service request dataset again here, since it&amp;rsquo;s big and a bit unwieldy.
+requests = pd.</description>
     </item>
     
     <item>

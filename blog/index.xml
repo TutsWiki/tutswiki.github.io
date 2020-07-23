@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on TutsWiki Beta</title>
@@ -18,17 +18,7 @@
       
       <guid>http://tutswiki.com/environment-passing-in-clojure/</guid>
       <description>Clojure’s vars provide a nice mechanism for managing dynamically bound state, but you need to be careful with vars when moving computations across thread boundaries. For example, suppose we implement the following timeout function:
-(import &#39;(java.util.concurrent Future TimeUnit)) (defn timeout1 [millis op] (.get (future-call op) millis TimeUnit/MILLISECONDS))  The function timeout1 sends the operation op to be computed in a separate, timeout-bound thread. If the operation completes within millis milliseconds, timeout1 returns the result of that operation, otherwise it throws an exception:</description>
-    </item>
-    
-    <item>
-      <title>Yet another lousy monad tutorial</title>
-      <link>http://tutswiki.com/yet-another-lousy-monad-tutorial/</link>
-      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://tutswiki.com/yet-another-lousy-monad-tutorial/</guid>
-      <description>I&amp;rsquo;m not a big fan of monads, but I understand them. They&amp;rsquo;re not rocket science. Let me try to write a monad tutorial that would&amp;rsquo;ve helped my past self understand what the fuss was about. I like concrete explanations that start with practical examples, without any annoying metaphors, and especially without any Haskell code. So here&amp;rsquo;s five examples that have something in common:
-   (adsbygoogle = window.adsbygoogle || []).</description>
+(import &amp;#39;(java.util.concurrent Future TimeUnit)) (defn timeout1 [millis op] (.get (future-call op) millis TimeUnit/MILLISECONDS)) The function timeout1 sends the operation op to be computed in a separate, timeout-bound thread. If the operation completes within millis milliseconds, timeout1 returns the result of that operation, otherwise it throws an exception:</description>
     </item>
     
     <item>
@@ -40,7 +30,17 @@
       <description>Getting permission errors when installing a module?
 Are &amp;lsquo;sudo: node: command not found&amp;rsquo; errors taking away your precious sleeping hours?
 How to fix? You have to remove any trace of node on your system, and reinstall it. It will soothe your pain:
-echo &#39;export PATH=$HOME/local/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install  You are one/two steps/commands away from success.</description>
+echo &amp;#39;export PATH=$HOME/local/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install You are one/two steps/commands away from success.</description>
+    </item>
+    
+    <item>
+      <title>Yet another lousy monad tutorial</title>
+      <link>http://tutswiki.com/yet-another-lousy-monad-tutorial/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/yet-another-lousy-monad-tutorial/</guid>
+      <description>If a function has type A → B, and another function has type B → C, then we can &amp;ldquo;compose&amp;rdquo; them into a new function of type A → C.
+  Let&amp;rsquo;s talk about functions that can return multiple values. We can model these as functions of type A → List&amp;lt;B&amp;gt;. There is a natural way to &amp;ldquo;compose&amp;rdquo; two such functions. If one function has type A → List&amp;lt;B&amp;gt;, and another function has type B → List&amp;lt;C&amp;gt;, then we can &amp;ldquo;compose&amp;rdquo; them into a new function of type A → List&amp;lt;C&amp;gt;.</description>
     </item>
     
     <item>
@@ -82,7 +82,7 @@ Python is a very flexible language. One facet of this flexibility is the possibi
       <guid>http://tutswiki.com/deep-learning-cardiovascular-imaging/</guid>
       <description>Bay Labs, a San Francisco-based medical technology company which focuses on using artificial intelligence to improve cardiovascular imaging, has released a new software EchoMD AutoEF. It is being claimed that this software will help to reduce the variability in cardiovascular imaging.
 The software uses deep learning techniques to accurately calculate the left ventricular ejection fraction.
-What is Ejection Fraction? During each pumping cycle of our heart, it contracts and relaxes.</description>
+What is Ejection Fraction? During each pumping cycle of our heart, it contracts and relaxes. When it contracts it passes the blood to ventricles.</description>
     </item>
     
     <item>
@@ -91,7 +91,7 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/google-engineers-boycott-security-tool-military/</guid>
-      <description>A group of 9 cloud engineers at Google has refused to work on a project called air-gap due to which Google may lose a deal worth $10 billion. Google needs air-gap if it has to do some sensitive work with government agencies involving sensitive data (obviously military implications there). So this group of 9 basically just said they weren&amp;rsquo;t gonna do it. About 10-12 employees have resigned so far as part of this work strike.</description>
+      <description>On the one hand this is good as it shows that employees get ample space to air grievances, but on the other hand, the shareholders will get angry as it hampers Google&amp;rsquo;s ability to compete. In order to get government contracts especially those which involves sensitive data and military require some certifications, which Google&amp;rsquo;s competitors like Microsoft and Amazon have but Google doesn&amp;rsquo;t. This air-gap feature was supposed to help Google with that but it seems it&amp;rsquo;ll be abandoned.</description>
     </item>
     
     <item>
@@ -100,7 +100,8 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/nodejs-google-app-engine/</guid>
-      <description>Google App Engine is a part of the Google Cloud Suite which provides a cloud platform for developers where they can develop and host their apps. It provides easily configurable, fast and secure programming environments/tools with the help of which developers can setup a development environment in just a few minutes. Therefore developers don&amp;rsquo;t need to worry about configuring the environment, they can just focus on writing code. It supports all the popular programming languages Java, PHP, Node.</description>
+      <description>Till now there was no support for Node.js, but Google has just announced that developers will now be able to deploy their Node.js apps to the App Engine. Steps to deploy Node.js web service on App Engine Prerequisites   You must have a project on the Google Cloud Platform. If you don&amp;rsquo;t, create one using the GCP Console.
+  The development environment should be configured. You have 2 options here.</description>
     </item>
     
     <item>
@@ -109,8 +110,7 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/angular6-features/</guid>
-      <description>Angular 6 is out with all new features. It is a major release in which Angular team has synchronized many of the important framework packages to make most out of cross compatibility. All the major framework packages like @angular/core, @angular/compiler, @angular/common etc., are reworked and released as version 6.0.0. Below is the list of major changes in Angular 6, let&amp;rsquo;s explore them one by one.
-Angular 6 Features:  New CLI commands  ng update ng add  Referencing providers Angular Elements Angular Material + CDK Components  Tree Badge Bottom-Sheet Overlay  Starter Components  Dashboard Side-Nav Datatable  Library Support CLI Workspaces RxJS v6 Long Term Support  ng update A new command is introduced in Angular CLI which analyzes package.</description>
+      <description>Angular 6 Features:  New CLI commands  ng update ng add   Referencing providers Angular Elements Angular Material + CDK Components  Tree Badge Bottom-Sheet Overlay   Starter Components  Dashboard Side-Nav Datatable   Library Support CLI Workspaces RxJS v6 Long Term Support  ng update A new command is introduced in Angular CLI which analyzes package.json and recommends any updates (if needed) on the installed packages.</description>
     </item>
     
     <item>
@@ -119,9 +119,10 @@ Angular 6 Features:  New CLI commands  ng update ng add  Referencing providers A
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/github-alternatives/</guid>
-      <description>The trending news of yesterday was the acquisition of GitHub (the world&amp;rsquo;s leading software development platform) by Microsoft. This is a great deal for Microsoft which might put it in the position it was about 10 years ago in the software market. But a lot of open-source fans are unhappy with this.
-A couple of years ago Microsoft was anti-open-source.
- &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.</description>
+      <description>A couple of years ago Microsoft was anti-open-source.
+ &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.&amp;rdquo; - Jim Allchin (Former Windows chief), 2001
+  &amp;ldquo;Linux is a cancer that attaches itself in an intellectual property sense to everything it touches.&amp;rdquo; - Steve Ballmer (Former CEO)
+ However, in recent years Microsoft has tried hard to catch up with the open-source world.</description>
     </item>
     
     <item>
@@ -130,7 +131,7 @@ A couple of years ago Microsoft was anti-open-source.
       <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/what-is-the-use-of-yield-in-python/</guid>
-      <description> References  What does the “yield” keyword do in Python? Yield expressions  </description>
+      <description>References  What does the “yield” keyword do in Python? Yield expressions  </description>
     </item>
     
     <item>
@@ -141,8 +142,8 @@ A couple of years ago Microsoft was anti-open-source.
       <guid>http://tutswiki.com/append-vs-extend-python/</guid>
       <description>append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&amp;rsquo;s find out.
 The official documentation describes them as:
- list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
- list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
+  list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
+  list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
     </item>
     
     <item>
@@ -153,9 +154,9 @@ The official documentation describes them as:
       <guid>http://tutswiki.com/print-same-line-python/</guid>
       <description>In Python, when you use the print function, it prints a new line at the end.
 For example:
-print &amp;quot;This is some line.&amp;quot; print &amp;quot;This is another line.&amp;quot;  Output:
-This is some line. This is another line.  What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
-   (adsbygoogle = window.adsbygoogle || []).</description>
+print &amp;#34;This is some line.&amp;#34; print &amp;#34;This is another line.&amp;#34; Output:
+This is some line. This is another line. What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
+Add comma at the end of print print &amp;#34;This is some line.</description>
     </item>
     
     <item>
@@ -175,9 +176,9 @@ Imagine if you migrate your server to a new host and suddenly your application s
       
       <guid>http://tutswiki.com/run-module-as-script-python/</guid>
       <description>Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
-def int_sum(a, b): print a+b def some_other_function(): pass  But, what if you want to run the module itself as a script?
+def int_sum(a, b): print a+b def some_other_function(): pass But, what if you want to run the module itself as a script?
 Well, if you want to use a Python module as script then you just have to use the conditional for __name__.
-def int_sum(a, b): print a+b if __name__ == &amp;quot;__main__&amp;quot;: import sys int_sum(int(sys.</description>
+def int_sum(a, b): print a+b if __name__ == &amp;#34;__main__&amp;#34;: import sys int_sum(int(sys.</description>
     </item>
     
     <item>

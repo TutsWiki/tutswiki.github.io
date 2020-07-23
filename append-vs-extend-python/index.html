@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="What is the difference between list methods append and extend in Python?">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="python,list,append,extend,combine,merge">
@@ -17,17 +17,17 @@
     <title>Difference between append and extend in Python - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595484064" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595484064" rel="stylesheet">
-    <link href="/css/hybrid.css?1595484064" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595484064" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595484064" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595484064" rel="stylesheet">
-    <link href="/css/theme.css?1595484064" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595484064" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
+    <link href="/css/theme.css?1595485593" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595484064"></script>
+    <script src="/js/jquery-2.x.min.js?1595485593"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595484064"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595484064"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595484064"></script>
+<script type="text/javascript" src="/js/search.js?1595485593"></script>
 
     
   </div>
@@ -133,9 +133,9 @@
  
   
     
-      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
-        <a href="/yet-another-lousy-monad-tutorial/">
-        Yet another lousy monad tutorial
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
         
         </a>
     </li>
@@ -152,9 +152,9 @@
  
   
     
-      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
-        <a href="/how-to-fix-sudo-node-command-not-found-error/">
-        sudo and node
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
         
         </a>
     </li>
@@ -722,14 +722,11 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#append-a-list-to-another-list-in-python">append a list to another list in Python</a></li>
-<li><a href="#extend-a-list-with-another-list-in-python">extend a list with another list in Python</a></li>
-<li><a href="#quiz">Quiz</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#append-a-list-to-another-list-in-python">append a list to another list in Python</a></li>
+    <li><a href="#extend-a-list-with-another-list-in-python">extend a list with another list in Python</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -748,78 +745,48 @@
         
 
 
-
-
 <p><code>append</code> and <code>extend</code> are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&rsquo;s find out.</p>
-
 <p>The <a href="https://docs.python.org/2/tutorial/datastructures.html#more-on-lists">official documentation</a> describes them as:</p>
-
 <ul>
-<li><p><code>list.append(x)</code>: Add <strong>an item</strong> to the end of the list; equivalent to <code>a[len(a):] = [x]</code>.</p></li>
-
-<li><p><code>list.extend(L)</code>: Extend the list by appending <strong>all the items</strong> in the given list; equivalent to <code>a[len(a):] = L</code>.</p></li>
+<li>
+<p><code>list.append(x)</code>: Add <strong>an item</strong> to the end of the list; equivalent to <code>a[len(a):] = [x]</code>.</p>
+</li>
+<li>
+<p><code>list.extend(L)</code>: Extend the list by appending <strong>all the items</strong> in the given list; equivalent to <code>a[len(a):] = L</code>.</p>
+</li>
 </ul>
-
 <p>Notice the bold words in the definition. append adds <code>an item</code> and extend <code>appends all the items of the given list</code>.</p>
-
 <p>Let&rsquo;s take an example:</p>
-
 <h2 id="append-a-list-to-another-list-in-python">append a list to another list in Python</h2>
-
-<pre><code class="language-python">some_list = ['string', 1, 'another string', 6.5]
-another_list = ['new data', 12]
-some_list.append(another_list)
-print some_list
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-sh">['string', 1, 'another string', 6.5, ['new data', 12]]
-</code></pre>
-
-<p>As you can see, the <code>append</code> method took <code>an item</code> i.e. the object of another list and added it to <code>some_list</code> as it is.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">some_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;string&#39;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;another string&#39;</span>, <span style="color:#ae81ff">6.5</span>]
+another_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;new data&#39;</span>, <span style="color:#ae81ff">12</span>]
+some_list<span style="color:#f92672">.</span>append(another_list)
+<span style="color:#66d9ef">print</span> some_list
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;string&#39;</span>, 1, <span style="color:#e6db74">&#39;another string&#39;</span>, 6.5, <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;new data&#39;</span>, 12<span style="color:#f92672">]]</span>
+</code></pre></div><p>As you can see, the <code>append</code> method took <code>an item</code> i.e. the object of another list and added it to <code>some_list</code> as it is.</p>
 <h2 id="extend-a-list-with-another-list-in-python">extend a list with another list in Python</h2>
-
-<pre><code class="language-python">some_list = ['string', 1, 'another string', 6.5]
-another_list = ['new data', 12]
-some_list.extend(another_list)
-print some_list
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code class="language-sh">['string', 1, 'another string', 6.5, 'new data', 12]
-</code></pre>
-
-<p>In case of <code>extend</code> you can see that all the items from <code>another_list</code> were appended to <code>some_list</code> one by one. So you can say extend method concatenates one list with another list.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">some_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;string&#39;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;another string&#39;</span>, <span style="color:#ae81ff">6.5</span>]
+another_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;new data&#39;</span>, <span style="color:#ae81ff">12</span>]
+some_list<span style="color:#f92672">.</span>extend(another_list)
+<span style="color:#66d9ef">print</span> some_list
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;string&#39;</span>, 1, <span style="color:#e6db74">&#39;another string&#39;</span>, 6.5, <span style="color:#e6db74">&#39;new data&#39;</span>, 12<span style="color:#f92672">]</span>
+</code></pre></div><p>In case of <code>extend</code> you can see that all the items from <code>another_list</code> were appended to <code>some_list</code> one by one. So you can say extend method concatenates one list with another list.</p>
 <h2 id="quiz">Quiz</h2>
-
 <p>Q: What will be the output of below code:</p>
-
-<pre><code class="language-python">some_list = ['string', 1, 'another string', 6.5]
-data = 'hello'
-some_list.extend(data)
-print some_list
-</code></pre>
-
-<p>A: Output is</p>
-
-<pre><code class="language-sh">['string', 1, 'another string', 6.5, 'h', 'e', 'l', 'l', 'o']
-</code></pre>
-
-<p>Explanation: If you notice carefully, <code>data</code> is a string and <code>strings in Python are iterable</code>. Therefore the <code>extend</code> method iterated over all characters in the string one by one and appended them to the list.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">some_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;string&#39;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;another string&#39;</span>, <span style="color:#ae81ff">6.5</span>]
+data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span>
+some_list<span style="color:#f92672">.</span>extend(data)
+<span style="color:#66d9ef">print</span> some_list
+</code></pre></div><p>A: Output is</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;string&#39;</span>, 1, <span style="color:#e6db74">&#39;another string&#39;</span>, 6.5, <span style="color:#e6db74">&#39;h&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;l&#39;</span>, <span style="color:#e6db74">&#39;l&#39;</span>, <span style="color:#e6db74">&#39;o&#39;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>Explanation: If you notice carefully, <code>data</code> is a string and <code>strings in Python are iterable</code>. Therefore the <code>extend</code> method iterated over all characters in the string one by one and appended them to the list.</p>
 <p>So based on above we can say that below 2 code snippets are equivalent:</p>
-
-<pre><code class="language-python">for data in iterator:
-    some_list.append(data)
-</code></pre>
-
-<pre><code class="language-python">some_list.extend(iterator)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> iterator:
+    some_list<span style="color:#f92672">.</span>append(data)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">some_list<span style="color:#f92672">.</span>extend(iterator)
+</code></pre></div>
 
 
 <br />
@@ -1318,20 +1285,20 @@ print some_list
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595484064"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595484064"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595484064"></script>
-    <script src="/js/jquery.sticky.js?1595484064"></script>
-    <script src="/js/featherlight.min.js?1595484064"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595484064"></script>
-    <script src="/js/highlight.pack.js?1595484064"></script>
+    <script src="/js/clipboard.min.js?1595485593"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
+    <script src="/js/jquery.sticky.js?1595485593"></script>
+    <script src="/js/featherlight.min.js?1595485593"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
+    <script src="/js/highlight.pack.js?1595485593"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595484064"></script>
-    <script src="/js/learn.js?1595484064"></script>
-    <script src="/js/hugo-learn.js?1595484064"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
+    <script src="/js/learn.js?1595485593"></script>
+    <script src="/js/hugo-learn.js?1595485593"></script>
 
-    <link href="/mermaid/mermaid.css?1595484064" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595484064"></script>
+    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485593"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
