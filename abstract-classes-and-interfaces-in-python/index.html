@@ -17,17 +17,17 @@
     <title>Abstract classes and interfaces in Python - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
-    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
-    <link href="/css/theme.css?1595485593" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485893" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485893" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485893" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485893" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485893" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485893" rel="stylesheet">
+    <link href="/css/theme.css?1595485893" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485893" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595485593"></script>
+    <script src="/js/jquery-2.x.min.js?1595485893"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485893"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485893"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595485593"></script>
+<script type="text/javascript" src="/js/search.js?1595485893"></script>
 
     
   </div>
@@ -722,13 +722,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#abstract-base-classes-abc">Abstract base classes (abc)</a></li>
-    <li><a href="#interfaces-zopeinterfaces">Interfaces (zope.interfaces)</a></li>
-    <li><a href="#adapters">Adapters</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-    <li><a href="#help-improve-this-content">Help improve this content</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#abstract-base-classes-abc">Abstract base classes (abc)</a></li>
+<li><a href="#interfaces-zope-interfaces">Interfaces (zope.interfaces)</a></li>
+<li><a href="#adapters">Adapters</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#help-improve-this-content">Help improve this content</a></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -747,16 +750,34 @@
         
 
 
-<!-- raw HTML omitted -->
+
+
+<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Abstract classes and interfaces in Python" />
+<meta name=”twitter:description” content="Abstract classes, methods and Zope interfaces, adapters in Python" /></p>
+
 <p>Abstract base classes and interfaces are entities that are similar in purpose and meaning. Both the first and second are a peculiar way of documenting the code and help to limit (decouple) the interaction of individual abstractions in the program (classes).</p>
+
 <p>Python is a very flexible language. One facet of this flexibility is the possibilities provided by metaprogramming. And although abstract classes and interfaces are not represented in the core of the language, the former were implemented in the standard abc module, and the latter in the Zope project (the zope.interfaces module).</p>
+
 <p>It makes no sense to use both at the same time, and therefore each programmer must determine for himself which tool to use when designing applications.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <h2 id="abstract-base-classes-abc">Abstract base classes (abc)</h2>
+
 <p>Starting from version 2.6 of the language, the <code>abc</code> module is included in the standard library, which adds abstract base classes (hereinafter ABC) to the language.</p>
+
 <p>ABC allows you to define a class, indicating which methods or properties must be overridden in inherited classes:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> abc <span style="color:#f92672">import</span> ABCMeta, abstractmethod, abstractproperty
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movable</span>():
@@ -768,8 +789,9 @@
     
     <span style="color:#a6e22e">@abstractproperty</span>
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speed</span>():
-    <span style="color:#e6db74">&#34;&#34;&#34;Object speed&#34;&#34;&#34;</span>
-</code></pre></div><p>Thus, if we want to use an object with the ability to move and a certain speed in the code, then we should use the <code>Movable</code> class as one of the base classes.</p>
+    <span style="color:#e6db74">&#34;&#34;&#34;Object speed&#34;&#34;&#34;</span></code></pre></div>
+<p>Thus, if we want to use an object with the ability to move and a certain speed in the code, then we should use the <code>Movable</code> class as one of the base classes.</p>
+
 <p>The presence of the necessary methods and attributes of the object is now guaranteed by the presence of <code>abstractmethod</code> and <code>abstractproperty</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span>(Movable):
     <span style="color:#66d9ef">def</span> __init__:
@@ -782,13 +804,18 @@
             <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>speed
     
 <span style="color:#66d9ef">assert</span> issubclass (Car, Movable)
-<span style="color:#66d9ef">assert</span> ininstance (Car(), Movable)
-</code></pre></div><p>It can be seen that the concept of ABC fits well into the class inheritance hierarchy, it is easy to use them, and the implementation, if you look into the source code of the abc module, is very simple. Abstract classes are used in the standard collections and number modules, defining the methods of custom
+<span style="color:#66d9ef">assert</span> ininstance (Car(), Movable)</code></pre></div>
+<p>It can be seen that the concept of ABC fits well into the class inheritance hierarchy, it is easy to use them, and the implementation, if you look into the source code of the abc module, is very simple. Abstract classes are used in the standard collections and number modules, defining the methods of custom
 inherited classes necessary for definition.</p>
+
 <p>Details and considerations for using ABC can be found in <a href="http://www.python.org/dev/peps/pep-3119/">PEP-3119</a>.</p>
-<h2 id="interfaces-zopeinterfaces">Interfaces (zope.interfaces)</h2>
+
+<h2 id="interfaces-zope-interfaces">Interfaces (zope.interfaces)</h2>
+
 <p>The Zope Toolkit (ZTK) is a set of libraries intended for reuse by projects to develop web applications or web frameworks. It is developed by the contributors of the Zope Foundation. The zope framework has evolved into a set of almost independent components. The glue that holds the components together is the interfaces and the adapters based on them.</p>
+
 <p>The zope.interfaces module is the result of this work.</p>
+
 <p>In the simplest case, using interfaces is similar to ABC:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> zope.interface
 
@@ -810,9 +837,11 @@ inherited classes necessary for definition.</p>
         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;moved!&#34;</span>)
     
 <span style="color:#66d9ef">assert</span> IVehicle<span style="color:#f92672">.</span>implementedBy (Car)
-<span style="color:#66d9ef">assert</span> IVehicle<span style="color:#f92672">.</span>providedBy (Car ())
-</code></pre></div><p>The interface declaratively shows what attributes and methods the object should have. Moreover, the class implements the interface, and the object of the class provides. You should pay attention to the difference between these concepts!</p>
+<span style="color:#66d9ef">assert</span> IVehicle<span style="color:#f92672">.</span>providedBy (Car ())</code></pre></div>
+<p>The interface declaratively shows what attributes and methods the object should have. Moreover, the class implements the interface, and the object of the class provides. You should pay attention to the difference between these concepts!</p>
+
 <p>&ldquo;Implementing&rdquo; an interface means that only the &ldquo;produced&rdquo; entity will have the required properties; and &ldquo;providing&rdquo; an interface speaks of the specific capabilities of the entity being evaluated. Accordingly, in Python, classes, by the way, can both implement and provide an interface.</p>
+
 <p>In fact, the implementation declaration (IVehicle) is a convention; just a promise that a given class and its objects behave that way. No real checks will be made.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IVehicle</span> (zope<span style="color:#f92672">.</span>interface<span style="color:#f92672">.</span>Interface):
     <span style="color:#e6db74">&#34;&#34;&#34;Any moving thing&#34;&#34;&#34;</span>
@@ -825,10 +854,13 @@ inherited classes necessary for definition.</p>
     zope<span style="color:#f92672">.</span>interface<span style="color:#f92672">.</span>implements(IVehicle)
 
 <span style="color:#66d9ef">assert</span> IVehicle<span style="color:#f92672">.</span>implementedBy(Car)
-<span style="color:#66d9ef">assert</span> IVehicle<span style="color:#f92672">.</span>providedBy(Car())
-</code></pre></div><p>The component architecture of Zope includes another important concept - adapters. Generally speaking, this is a simple design pattern that corrects one class for use somewhere where a different set of methods and attributes is required.</p>
+<span style="color:#66d9ef">assert</span> IVehicle<span style="color:#f92672">.</span>providedBy(Car())</code></pre></div>
+<p>The component architecture of Zope includes another important concept - adapters. Generally speaking, this is a simple design pattern that corrects one class for use somewhere where a different set of methods and attributes is required.</p>
+
 <h2 id="adapters">Adapters</h2>
+
 <p>Consider a simple an example from the <a href="https://bluebream.zope.org/doc/1.0/manual/componentarchitecture.html">Comprehensive Guide to Zope Component Architecture</a>.</p>
+
 <p>Suppose there are a couple of classes, Guest and Desk. Let&rsquo;s define interfaces to them, plus a class that implements the Guest interface:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> zope.interface
 <span style="color:#f92672">from</span> zope.interface <span style="color:#f92672">import</span> implements
@@ -845,8 +877,8 @@ inherited classes necessary for definition.</p>
     implements(IGuest)
 
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init</span> __ (self, name):
-        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-</code></pre></div><p>The adapter must account for the anonymous guest by registering in the list of names:</p>
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name</code></pre></div>
+<p>The adapter must account for the anonymous guest by registering in the list of names:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GuestToDeskAdapter</span> (object):
     adapts(IGuest)
     implements(IDesk)
@@ -855,8 +887,8 @@ inherited classes necessary for definition.</p>
         self<span style="color:#f92672">.</span>guest <span style="color:#f92672">=</span> guest
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">register</span> (self):
-        guest_name_db<span style="color:#f92672">.</span>append (self<span style="color:#f92672">.</span>guest<span style="color:#f92672">.</span>name)
-</code></pre></div><p>There is a registry that keeps track of adapters by interface. Thanks to it, you can get an adapter by passing an adaptable object to the call of the interface class. If the adapter is not registered, the second argument to the interface will be returned:</p>
+        guest_name_db<span style="color:#f92672">.</span>append (self<span style="color:#f92672">.</span>guest<span style="color:#f92672">.</span>name)</code></pre></div>
+<p>There is a registry that keeps track of adapters by interface. Thanks to it, you can get an adapter by passing an adaptable object to the call of the interface class. If the adapter is not registered, the second argument to the interface will be returned:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">guest <span style="color:#f92672">=</span> Guest <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Ivan&#34;</span><span style="color:#f92672">)</span>
 adapter <span style="color:#f92672">=</span> IDesk <span style="color:#f92672">(</span>guest, alternate <span style="color:#f92672">=</span> None<span style="color:#f92672">)</span>
 print adapter
@@ -868,21 +900,37 @@ gsm.registerAdapter <span style="color:#f92672">(</span>GuestToDeskAdapter<span 
 adapter <span style="color:#f92672">=</span> IDesk <span style="color:#f92672">(</span>guest, alternate <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;None found&#34;</span><span style="color:#f92672">)</span>
 print adapter
 
-&gt;&gt;&gt;&gt; __ main __. GuestToDeskAdapter object at 0xb7beb64c&gt;
-</code></pre></div><p>This infrastructure is useful for splitting code into components and linking them together.</p>
+&gt;&gt;&gt;&gt; __ main __. GuestToDeskAdapter object at 0xb7beb64c&gt;</code></pre></div>
+<p>This infrastructure is useful for splitting code into components and linking them together.</p>
+
 <p>One of the most striking examples of using this approach besides Zope itself is the Twisted network framework, where a fair amount of the architecture relies on zope.interfaces interfaces.</p>
+
 <h2 id="conclusion">Conclusion</h2>
+
 <p>Upon closer inspection, it turns out that interfaces and abstract base classes are two different things.</p>
+
 <p>Abstract classes basically hardcode the required front-end part. Checking an object against the interface of an abstract class is checked using the built-in isinstance function; class - issubclass. An abstract base class should be included in the hierarchy as a base class or mixin.</p>
+
 <p>The downside is the semantics of checks issubclass, isinstance, which intersect with ordinary classes (their inheritance hierarchy). No additional abstractions are built on the ABC.</p>
+
 <p>Interfaces are a declarative entity, they do not set any boundaries; simply asserts that the class implements and its object provides the interface. Semantically, the statements implementedBy, providedBy are more correct. On such a simple basis, it is convenient to build a component architecture using adapters and other derived entities, which is what the large Zope and Twisted frameworks do.</p>
+
 <p>It should be understood that the use of both tools makes sense only when building and using relatively large OOP systems - frameworks and libraries, in small programs they can only confuse and complicate the code with unnecessary abstractions.</p>
+
 <h2 id="help-improve-this-content">Help improve this content</h2>
+
 <p>Please fix any typos or add more insights by <a href="https://github.com/TutsWiki/source/edit/master/content/blog/abstract-classes-and-interfaces-in-python.md">editing this page</a>.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 
@@ -1382,20 +1430,20 @@ print adapter
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
-    <script src="/js/jquery.sticky.js?1595485593"></script>
-    <script src="/js/featherlight.min.js?1595485593"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
-    <script src="/js/highlight.pack.js?1595485593"></script>
+    <script src="/js/clipboard.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485893"></script>
+    <script src="/js/jquery.sticky.js?1595485893"></script>
+    <script src="/js/featherlight.min.js?1595485893"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485893"></script>
+    <script src="/js/highlight.pack.js?1595485893"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
-    <script src="/js/learn.js?1595485593"></script>
-    <script src="/js/hugo-learn.js?1595485593"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485893"></script>
+    <script src="/js/learn.js?1595485893"></script>
+    <script src="/js/hugo-learn.js?1595485893"></script>
 
-    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595485593"></script>
+    <link href="/mermaid/mermaid.css?1595485893" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485893"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

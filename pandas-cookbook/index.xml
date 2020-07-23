@@ -17,8 +17,8 @@
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter1/</guid>
-      <description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) 1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
-We&amp;rsquo;re going to be looking some cyclist data from Montréal. Here&amp;rsquo;s the original page (in French).</description>
+      <description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5)    (adsbygoogle = window.adsbygoogle || []).push({});  1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
+We&amp;rsquo;re going to be looking some cyclist data from Montréal.</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ We&amp;rsquo;re going to be looking some cyclist data from Montréal. Here&amp;r
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter3/</guid>
       <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Let&amp;rsquo;s continue with our NYC 311 service requests example.
-complaints = pd.read_csv(&amp;#39;311-service-requests.csv&amp;#39;) 3.1 Selecting only noise complaints I&amp;rsquo;d like to know which borough has the most noise complaints.</description>
+complaints = pd.read_csv(&amp;#39;311-service-requests.csv&amp;#39;)    (adsbygoogle = window.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ Here&amp;rsquo;s the temperature every hour for 2012!</description>
       <guid>http://tutswiki.com/pandas-cookbook/chapter6/</guid>
       <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.
 weather_2012 = pd.read_csv(&amp;#39;weather_2012.csv&amp;#39;, parse_dates=True, index_col=&amp;#39;Date/Time&amp;#39;) weather_2012[:5] Output:
-6.1 String operations You&amp;rsquo;ll see that the &amp;lsquo;Weather&amp;rsquo; column has a text description of the weather that was going on each hour.</description>
+  Temp (C) Dew Point Temp (C) Rel Hum (%) Wind Spd (km/h) Visibility (km) Stn Press (kPa) Weather   Date/Time            2012-01-01 00:00:00 -1.</description>
     </item>
     
     <item>
@@ -77,9 +77,8 @@ weather_2012 = pd.read_csv(&amp;#39;weather_2012.csv&amp;#39;, parse_dates=True,
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/pandas-cookbook/chapter7/</guid>
-      <description># The usual preamble import pandas as pd # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) figsize(15, 5) # Always display all the columns pd.set_option(&amp;#39;display.line_width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) One of the main problems with messy data is: how do you know if it&amp;rsquo;s messy or not?
-We&amp;rsquo;re going to use the NYC 311 service request dataset again here, since it&amp;rsquo;s big and a bit unwieldy.
-requests = pd.</description>
+      <description># The usual preamble import pandas as pd # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) figsize(15, 5) # Always display all the columns pd.set_option(&amp;#39;display.line_width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60)  One of the main problems with messy data is: how do you know if it&amp;rsquo;s messy or not?
+We&amp;rsquo;re going to use the NYC 311 service request dataset again here, since it&amp;rsquo;s big and a bit unwieldy.</description>
     </item>
     
     <item>

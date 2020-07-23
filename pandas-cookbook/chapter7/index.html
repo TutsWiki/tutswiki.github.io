@@ -17,17 +17,17 @@
     <title>Chapter 7 - Cleanup messy data - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
-    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
-    <link href="/css/theme.css?1595485593" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485893" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485893" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485893" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485893" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485893" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485893" rel="stylesheet">
+    <link href="/css/theme.css?1595485893" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485893" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595485593"></script>
+    <script src="/js/jquery-2.x.min.js?1595485893"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485893"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485893"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595485593"></script>
+<script type="text/javascript" src="/js/search.js?1595485893"></script>
 
     
   </div>
@@ -722,12 +722,15 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#71-how-do-we-know-if-its-messy">7.1 How do we know if it&rsquo;s messy?</a></li>
-    <li><a href="#72-fixing-the-nan-values-and-stringfloat-confusion">7.2 Fixing the nan values and string/float confusion</a></li>
-    <li><a href="#73-whats-up-with-the-dashes">7.3 What&rsquo;s up with the dashes?</a></li>
-    <li><a href="#74-putting-it-together">7.4 Putting it together</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#7-1-how-do-we-know-if-it-s-messy">7.1 How do we know if it&rsquo;s messy?</a></li>
+<li><a href="#7-2-fixing-the-nan-values-and-string-float-confusion">7.2 Fixing the nan values and string/float confusion</a></li>
+<li><a href="#7-3-what-s-up-with-the-dashes">7.3 What&rsquo;s up with the dashes?</a></li>
+<li><a href="#7-4-putting-it-together">7.4 Putting it together</a></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -746,6 +749,8 @@
         
 
 
+
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># The usual preamble</span>
 <span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
 
@@ -755,29 +760,39 @@ figsize(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</sp
 
 <span style="color:#75715e"># Always display all the columns</span>
 pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.line_width&#39;</span>, <span style="color:#ae81ff">5000</span>) 
-pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.max_columns&#39;</span>, <span style="color:#ae81ff">60</span>) 
-</code></pre></div><p>One of the main problems with messy data is: how do you know if it&rsquo;s messy or not?</p>
+pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.max_columns&#39;</span>, <span style="color:#ae81ff">60</span>) </code></pre></div>
+<p>One of the main problems with messy data is: how do you know if it&rsquo;s messy or not?</p>
+
 <p>We&rsquo;re going to use the NYC 311 service request dataset again here, since it&rsquo;s big and a bit unwieldy.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;311-service-requests.csv&#39;</span>)
-</code></pre></div><h2 id="71-how-do-we-know-if-its-messy">7.1 How do we know if it&rsquo;s messy?</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;311-service-requests.csv&#39;</span>)</code></pre></div>
+<h2 id="7-1-how-do-we-know-if-it-s-messy">7.1 How do we know if it&rsquo;s messy?</h2>
+
 <p>We&rsquo;re going to look at a few columns here. I know already that there are some problems with the zip code, so let&rsquo;s look at that first.</p>
+
 <p>To get a sense for whether a column has problems, I usually use <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.unique.html">.unique()</a> to look at all its values. If it&rsquo;s a numeric column, I&rsquo;ll instead plot a histogram to get a sense of the distribution.</p>
+
 <p>When we look at the unique values in &ldquo;Incident Zip&rdquo;, it quickly becomes clear that this is a mess.</p>
+
 <p>Some of the problems:</p>
+
 <ul>
 <li>Some have been parsed as strings, and some as floats</li>
 <li>There are nans</li>
 <li>Some of the zip codes are 29616-0759 or 83</li>
 <li>There are some N/A values that pandas didn&rsquo;t recognize, like &lsquo;N/A&rsquo; and &lsquo;NO CLUE&rsquo;</li>
 </ul>
+
 <p>What we can do:</p>
+
 <ul>
 <li>Normalize &lsquo;N/A&rsquo; and &lsquo;NO CLUE&rsquo; into regular nan values</li>
 <li>Look at what&rsquo;s up with the 83, and decide what to do</li>
-<li>Make everything strings</li>
+
+<li><p>Make everything strings</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()
-</code></pre></div><p>Output:</p>
+
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span><span style="color:#e6db74">&#39;11432&#39;</span>, <span style="color:#e6db74">&#39;11378&#39;</span>, <span style="color:#e6db74">&#39;10032&#39;</span>, <span style="color:#e6db74">&#39;10023&#39;</span>, <span style="color:#e6db74">&#39;10027&#39;</span>, <span style="color:#e6db74">&#39;11372&#39;</span>, <span style="color:#e6db74">&#39;11419&#39;</span>,
        <span style="color:#e6db74">&#39;11417&#39;</span>, <span style="color:#e6db74">&#39;10011&#39;</span>, <span style="color:#e6db74">&#39;11225&#39;</span>, <span style="color:#e6db74">&#39;11218&#39;</span>, <span style="color:#e6db74">&#39;10003&#39;</span>, <span style="color:#e6db74">&#39;10029&#39;</span>, <span style="color:#e6db74">&#39;10466&#39;</span>,
        <span style="color:#e6db74">&#39;11219&#39;</span>, <span style="color:#e6db74">&#39;10025&#39;</span>, <span style="color:#e6db74">&#39;10310&#39;</span>, <span style="color:#e6db74">&#39;11236&#39;</span>, nan, <span style="color:#e6db74">&#39;10033&#39;</span>, <span style="color:#e6db74">&#39;11216&#39;</span>, <span style="color:#e6db74">&#39;10016&#39;</span>,
@@ -840,13 +855,14 @@ pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#3
        <span style="color:#e6db74">&#39;07114&#39;</span>, <span style="color:#e6db74">&#39;11003&#39;</span>, <span style="color:#e6db74">&#39;07201&#39;</span>, <span style="color:#e6db74">&#39;11563&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>, <span style="color:#e6db74">&#39;10103&#39;</span>, <span style="color:#e6db74">&#39;29616-0759&#39;</span>,
        <span style="color:#e6db74">&#39;35209-3114&#39;</span>, <span style="color:#e6db74">&#39;11520&#39;</span>, <span style="color:#e6db74">&#39;11735&#39;</span>, <span style="color:#e6db74">&#39;10129&#39;</span>, <span style="color:#e6db74">&#39;11005&#39;</span>, <span style="color:#e6db74">&#39;41042&#39;</span>, <span style="color:#e6db74">&#39;11590&#39;</span>,
        6901.0, 7208.0, 10048.0, 11530.0, 13221.0, 10954.0, 11001.0,
-       11735.0, 10103.0, 10044.0, 7114.0, 11111.0, 10107.0<span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span>
-</code></pre></div><h2 id="72-fixing-the-nan-values-and-stringfloat-confusion">7.2 Fixing the nan values and string/float confusion</h2>
+       11735.0, 10103.0, 10044.0, 7114.0, 11111.0, 10107.0<span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
+<h2 id="7-2-fixing-the-nan-values-and-string-float-confusion">7.2 Fixing the nan values and string/float confusion</h2>
+
 <p>We can pass a <code>na_values</code> option to <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">pd.read_csv</a> to clean this up a little bit. We can also specify that the type of Incident Zip is a string, not a float.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">na_values <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;NO CLUE&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>, <span style="color:#e6db74">&#39;0&#39;</span>]
 requests <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/311-service-requests.csv&#39;</span>, na_values<span style="color:#f92672">=</span>na_values, dtype<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Incident Zip&#39;</span>: str})
-requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()
-</code></pre></div><p>Output:</p>
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()</code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span><span style="color:#e6db74">&#39;11432&#39;</span>, <span style="color:#e6db74">&#39;11378&#39;</span>, <span style="color:#e6db74">&#39;10032&#39;</span>, <span style="color:#e6db74">&#39;10023&#39;</span>, <span style="color:#e6db74">&#39;10027&#39;</span>, <span style="color:#e6db74">&#39;11372&#39;</span>, <span style="color:#e6db74">&#39;11419&#39;</span>,
        <span style="color:#e6db74">&#39;11417&#39;</span>, <span style="color:#e6db74">&#39;10011&#39;</span>, <span style="color:#e6db74">&#39;11225&#39;</span>, <span style="color:#e6db74">&#39;11218&#39;</span>, <span style="color:#e6db74">&#39;10003&#39;</span>, <span style="color:#e6db74">&#39;10029&#39;</span>, <span style="color:#e6db74">&#39;10466&#39;</span>,
        <span style="color:#e6db74">&#39;11219&#39;</span>, <span style="color:#e6db74">&#39;10025&#39;</span>, <span style="color:#e6db74">&#39;10310&#39;</span>, <span style="color:#e6db74">&#39;11236&#39;</span>, nan, <span style="color:#e6db74">&#39;10033&#39;</span>, <span style="color:#e6db74">&#39;11216&#39;</span>, <span style="color:#e6db74">&#39;10016&#39;</span>,
@@ -882,38 +898,555 @@ requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="
        <span style="color:#e6db74">&#39;07020&#39;</span>, <span style="color:#e6db74">&#39;08807&#39;</span>, <span style="color:#e6db74">&#39;11577&#39;</span>, <span style="color:#e6db74">&#39;07114&#39;</span>, <span style="color:#e6db74">&#39;11003&#39;</span>, <span style="color:#e6db74">&#39;07201&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>,
        <span style="color:#e6db74">&#39;10103&#39;</span>, <span style="color:#e6db74">&#39;29616-0759&#39;</span>, <span style="color:#e6db74">&#39;35209-3114&#39;</span>, <span style="color:#e6db74">&#39;11520&#39;</span>, <span style="color:#e6db74">&#39;11735&#39;</span>, <span style="color:#e6db74">&#39;10129&#39;</span>,
        <span style="color:#e6db74">&#39;11005&#39;</span>, <span style="color:#e6db74">&#39;41042&#39;</span>, <span style="color:#e6db74">&#39;11590&#39;</span>, <span style="color:#e6db74">&#39;06901&#39;</span>, <span style="color:#e6db74">&#39;07208&#39;</span>, <span style="color:#e6db74">&#39;11530&#39;</span>, <span style="color:#e6db74">&#39;13221&#39;</span>,
-       <span style="color:#e6db74">&#39;10954&#39;</span>, <span style="color:#e6db74">&#39;11111&#39;</span>, <span style="color:#e6db74">&#39;10107&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span>
-</code></pre></div><h2 id="73-whats-up-with-the-dashes">7.3 What&rsquo;s up with the dashes?</h2>
+       <span style="color:#e6db74">&#39;10954&#39;</span>, <span style="color:#e6db74">&#39;11111&#39;</span>, <span style="color:#e6db74">&#39;10107&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
+<h2 id="7-3-what-s-up-with-the-dashes">7.3 What&rsquo;s up with the dashes?</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rows_with_dashes <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>contains(<span style="color:#e6db74">&#39;-&#39;</span>)<span style="color:#f92672">.</span>fillna(False)
-len(requests[rows_with_dashes])
-</code></pre></div><p>Output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">5</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[rows_with_dashes]
-</code></pre></div><p>Output:</p>
-<!-- raw HTML omitted -->
+len(requests[rows_with_dashes])</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">5</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[rows_with_dashes]</code></pre></div>
+<p>Output:</p>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unique Key</th>
+      <th>Created Date</th>
+      <th>Closed Date</th>
+      <th>Agency</th>
+      <th>Agency Name</th>
+      <th>Complaint Type</th>
+      <th>Descriptor</th>
+      <th>Location Type</th>
+      <th>Incident Zip</th>
+      <th>Incident Address</th>
+      <th>Street Name</th>
+      <th>Cross Street 1</th>
+      <th>Cross Street 2</th>
+      <th>Intersection Street 1</th>
+      <th>Intersection Street 2</th>
+      <th>Address Type</th>
+      <th>City</th>
+      <th>Landmark</th>
+      <th>Facility Type</th>
+      <th>Status</th>
+      <th>Due Date</th>
+      <th>Resolution Action Updated Date</th>
+      <th>Community Board</th>
+      <th>Borough</th>
+      <th>X Coordinate (State Plane)</th>
+      <th>Y Coordinate (State Plane)</th>
+      <th>Park Facility Name</th>
+      <th>Park Borough</th>
+      <th>School Name</th>
+      <th>School Number</th>
+      <th>School Region</th>
+      <th>School Code</th>
+      <th>School Phone Number</th>
+      <th>School Address</th>
+      <th>School City</th>
+      <th>School State</th>
+      <th>School Zip</th>
+      <th>School Not Found</th>
+      <th>School or Citywide Complaint</th>
+      <th>Vehicle Type</th>
+      <th>Taxi Company Borough</th>
+      <th>Taxi Pick Up Location</th>
+      <th>Bridge Highway Name</th>
+      <th>Bridge Highway Direction</th>
+      <th>Road Ramp</th>
+      <th>Bridge Highway Segment</th>
+      <th>Garage Lot Name</th>
+      <th>Ferry Direction</th>
+      <th>Ferry Terminal Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>29136</th>
+      <td> 26550551</td>
+      <td> 10/24/2013 06:16:34 PM</td>
+      <td>                    NaN</td>
+      <td> DCA</td>
+      <td> Department of Consumer Affairs</td>
+      <td> Consumer Complaint</td>
+      <td> False Advertising</td>
+      <td>    NaN</td>
+      <td> 77092-2016</td>
+      <td>  2700 EAST SELTICE WAY</td>
+      <td>   EAST SELTICE WAY</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>    HOUSTON</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> Assigned</td>
+      <td> 11/13/2013 11:15:20 AM</td>
+      <td> 10/29/2013 11:16:16 AM</td>
+      <td> 0 Unspecified</td>
+      <td> Unspecified</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>                NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>30939</th>
+      <td> 26548831</td>
+      <td> 10/24/2013 09:35:10 AM</td>
+      <td>                    NaN</td>
+      <td> DCA</td>
+      <td> Department of Consumer Affairs</td>
+      <td> Consumer Complaint</td>
+      <td>        Harassment</td>
+      <td>    NaN</td>
+      <td> 55164-0737</td>
+      <td>         P.O. BOX 64437</td>
+      <td>              64437</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>   ST. PAUL</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> Assigned</td>
+      <td> 11/13/2013 02:30:21 PM</td>
+      <td> 10/29/2013 02:31:06 PM</td>
+      <td> 0 Unspecified</td>
+      <td> Unspecified</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>                NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>70539</th>
+      <td> 26488417</td>
+      <td> 10/15/2013 03:40:33 PM</td>
+      <td>                    NaN</td>
+      <td> TLC</td>
+      <td>  Taxi and Limousine Commission</td>
+      <td>     Taxi Complaint</td>
+      <td>  Driver Complaint</td>
+      <td> Street</td>
+      <td> 11549-3650</td>
+      <td> 365 HOFSTRA UNIVERSITY</td>
+      <td> HOFSTRA UNIVERSITY</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>   HEMSTEAD</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> Assigned</td>
+      <td> 11/30/2013 01:20:33 PM</td>
+      <td> 10/16/2013 01:21:39 PM</td>
+      <td> 0 Unspecified</td>
+      <td> Unspecified</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> La Guardia Airport</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>85821</th>
+      <td> 26468296</td>
+      <td> 10/10/2013 12:36:43 PM</td>
+      <td> 10/26/2013 01:07:07 AM</td>
+      <td> DCA</td>
+      <td> Department of Consumer Affairs</td>
+      <td> Consumer Complaint</td>
+      <td>     Debt Not Owed</td>
+      <td>    NaN</td>
+      <td> 29616-0759</td>
+      <td>           PO BOX 25759</td>
+      <td>          BOX 25759</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> GREENVILLE</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>   Closed</td>
+      <td> 10/26/2013 09:20:28 AM</td>
+      <td> 10/26/2013 01:07:07 AM</td>
+      <td> 0 Unspecified</td>
+      <td> Unspecified</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>                NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>89304</th>
+      <td> 26461137</td>
+      <td> 10/09/2013 05:23:46 PM</td>
+      <td> 10/25/2013 01:06:41 AM</td>
+      <td> DCA</td>
+      <td> Department of Consumer Affairs</td>
+      <td> Consumer Complaint</td>
+      <td>        Harassment</td>
+      <td>    NaN</td>
+      <td> 35209-3114</td>
+      <td>        600 BEACON PKWY</td>
+      <td>        BEACON PKWY</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> BIRMINGHAM</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>   Closed</td>
+      <td> 10/25/2013 02:43:42 PM</td>
+      <td> 10/25/2013 01:06:41 AM</td>
+      <td> 0 Unspecified</td>
+      <td> Unspecified</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>                NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 <p>I thought these were missing data and originally deleted them like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][rows_with_dashes] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>nan
-</code></pre></div><p>But then my friend pointed out that 9-digit zip codes are normal. Let&rsquo;s look at all the zip codes with more than 5 digits, make sure they&rsquo;re okay, and then truncate them.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][rows_with_dashes] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>nan</code></pre></div>
+<p>But then my friend pointed out that 9-digit zip codes are normal. Let&rsquo;s look at all the zip codes with more than 5 digits, make sure they&rsquo;re okay, and then truncate them.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">long_zip_codes <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>len() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>
-requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][long_zip_codes]<span style="color:#f92672">.</span>unique()
-</code></pre></div><p>Output:</p>
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][long_zip_codes]<span style="color:#f92672">.</span>unique()</code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span><span style="color:#e6db74">&#39;77092-2016&#39;</span>, <span style="color:#e6db74">&#39;55164-0737&#39;</span>, <span style="color:#e6db74">&#39;000000&#39;</span>, <span style="color:#e6db74">&#39;11549-3650&#39;</span>, <span style="color:#e6db74">&#39;29616-0759&#39;</span>,
-       <span style="color:#e6db74">&#39;35209-3114&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span>
-</code></pre></div><p>Those all look okay to truncate to me.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>slice(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)
-</code></pre></div><p>Done.</p>
+       <span style="color:#e6db74">&#39;35209-3114&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
+<p>Those all look okay to truncate to me.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>slice(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)</code></pre></div>
+<p>Done.</p>
+
 <p>Earlier I thought 00083 was a broken zip code, but turns out Central Park&rsquo;s zip code 00083! Shows what I know. I&rsquo;m still concerned about the 00000 zip codes, though: let&rsquo;s look at that.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;00000&#39;</span>]
-</code></pre></div><p>Output:</p>
-<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;00000&#39;</span>]</code></pre></div>
+<p>Output:</p>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unique Key</th>
+      <th>Created Date</th>
+      <th>Closed Date</th>
+      <th>Agency</th>
+      <th>Agency Name</th>
+      <th>Complaint Type</th>
+      <th>Descriptor</th>
+      <th>Location Type</th>
+      <th>Incident Zip</th>
+      <th>Incident Address</th>
+      <th>Street Name</th>
+      <th>Cross Street 1</th>
+      <th>Cross Street 2</th>
+      <th>Intersection Street 1</th>
+      <th>Intersection Street 2</th>
+      <th>Address Type</th>
+      <th>City</th>
+      <th>Landmark</th>
+      <th>Facility Type</th>
+      <th>Status</th>
+      <th>Due Date</th>
+      <th>Resolution Action Updated Date</th>
+      <th>Community Board</th>
+      <th>Borough</th>
+      <th>X Coordinate (State Plane)</th>
+      <th>Y Coordinate (State Plane)</th>
+      <th>Park Facility Name</th>
+      <th>Park Borough</th>
+      <th>School Name</th>
+      <th>School Number</th>
+      <th>School Region</th>
+      <th>School Code</th>
+      <th>School Phone Number</th>
+      <th>School Address</th>
+      <th>School City</th>
+      <th>School State</th>
+      <th>School Zip</th>
+      <th>School Not Found</th>
+      <th>School or Citywide Complaint</th>
+      <th>Vehicle Type</th>
+      <th>Taxi Company Borough</th>
+      <th>Taxi Pick Up Location</th>
+      <th>Bridge Highway Name</th>
+      <th>Bridge Highway Direction</th>
+      <th>Road Ramp</th>
+      <th>Bridge Highway Segment</th>
+      <th>Garage Lot Name</th>
+      <th>Ferry Direction</th>
+      <th>Ferry Terminal Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>42600</th>
+      <td> 26529313</td>
+      <td> 10/22/2013 02:51:06 PM</td>
+      <td> NaN</td>
+      <td> TLC</td>
+      <td> Taxi and Limousine Commission</td>
+      <td> Taxi Complaint</td>
+      <td> Driver Complaint</td>
+      <td>    NaN</td>
+      <td> 00000</td>
+      <td>          EWR EWR</td>
+      <td>            EWR</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NEWARK</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> Assigned</td>
+      <td> 12/07/2013 09:53:51 AM</td>
+      <td> 10/23/2013 09:54:43 AM</td>
+      <td> 0 Unspecified</td>
+      <td> Unspecified</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> Other</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>60843</th>
+      <td> 26507389</td>
+      <td> 10/17/2013 05:48:44 PM</td>
+      <td> NaN</td>
+      <td> TLC</td>
+      <td> Taxi and Limousine Commission</td>
+      <td> Taxi Complaint</td>
+      <td> Driver Complaint</td>
+      <td> Street</td>
+      <td> 00000</td>
+      <td> 1 NEWARK AIRPORT</td>
+      <td> NEWARK AIRPORT</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NEWARK</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> Assigned</td>
+      <td> 12/02/2013 11:59:46 AM</td>
+      <td> 10/18/2013 12:01:08 PM</td>
+      <td> 0 Unspecified</td>
+      <td> Unspecified</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> Unspecified</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> Other</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td> NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 <p>This looks bad to me. Let&rsquo;s set these to nan.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">zero_zips <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;00000&#39;</span>
-requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][zero_zips] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>nan
-</code></pre></div><p>Great. Let&rsquo;s see where we are now:</p>
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][zero_zips] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>nan</code></pre></div>
+<p>Great. Let&rsquo;s see where we are now:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unique_zips <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()
 unique_zips<span style="color:#f92672">.</span>sort()
-unique_zips
-</code></pre></div><p>Output:</p>
+unique_zips</code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span>nan, <span style="color:#e6db74">&#39;00083&#39;</span>, <span style="color:#e6db74">&#39;02061&#39;</span>, <span style="color:#e6db74">&#39;06901&#39;</span>, <span style="color:#e6db74">&#39;07020&#39;</span>, <span style="color:#e6db74">&#39;07087&#39;</span>, <span style="color:#e6db74">&#39;07093&#39;</span>, <span style="color:#e6db74">&#39;07109&#39;</span>,
        <span style="color:#e6db74">&#39;07114&#39;</span>, <span style="color:#e6db74">&#39;07201&#39;</span>, <span style="color:#e6db74">&#39;07208&#39;</span>, <span style="color:#e6db74">&#39;07306&#39;</span>, <span style="color:#e6db74">&#39;07604&#39;</span>, <span style="color:#e6db74">&#39;08807&#39;</span>, <span style="color:#e6db74">&#39;10000&#39;</span>,
        <span style="color:#e6db74">&#39;10001&#39;</span>, <span style="color:#e6db74">&#39;10002&#39;</span>, <span style="color:#e6db74">&#39;10003&#39;</span>, <span style="color:#e6db74">&#39;10004&#39;</span>, <span style="color:#e6db74">&#39;10005&#39;</span>, <span style="color:#e6db74">&#39;10006&#39;</span>, <span style="color:#e6db74">&#39;10007&#39;</span>,
@@ -948,16 +1481,17 @@ unique_zips
        <span style="color:#e6db74">&#39;11590&#39;</span>, <span style="color:#e6db74">&#39;11691&#39;</span>, <span style="color:#e6db74">&#39;11692&#39;</span>, <span style="color:#e6db74">&#39;11693&#39;</span>, <span style="color:#e6db74">&#39;11694&#39;</span>, <span style="color:#e6db74">&#39;11697&#39;</span>, <span style="color:#e6db74">&#39;11716&#39;</span>,
        <span style="color:#e6db74">&#39;11722&#39;</span>, <span style="color:#e6db74">&#39;11735&#39;</span>, <span style="color:#e6db74">&#39;11747&#39;</span>, <span style="color:#e6db74">&#39;11776&#39;</span>, <span style="color:#e6db74">&#39;11788&#39;</span>, <span style="color:#e6db74">&#39;11797&#39;</span>, <span style="color:#e6db74">&#39;13221&#39;</span>,
        <span style="color:#e6db74">&#39;14225&#39;</span>, <span style="color:#e6db74">&#39;19711&#39;</span>, <span style="color:#e6db74">&#39;23502&#39;</span>, <span style="color:#e6db74">&#39;23541&#39;</span>, <span style="color:#e6db74">&#39;29616&#39;</span>, <span style="color:#e6db74">&#39;35209&#39;</span>, <span style="color:#e6db74">&#39;41042&#39;</span>,
-       <span style="color:#e6db74">&#39;55164&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>, <span style="color:#e6db74">&#39;70711&#39;</span>, <span style="color:#e6db74">&#39;77056&#39;</span>, <span style="color:#e6db74">&#39;77092&#39;</span>, <span style="color:#e6db74">&#39;90010&#39;</span>, <span style="color:#e6db74">&#39;92123&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span>
-</code></pre></div><p>Amazing! This is much cleaner. There&rsquo;s something a bit weird here, though &ndash; I looked up 77056 on Google maps, and that&rsquo;s in Texas.</p>
+       <span style="color:#e6db74">&#39;55164&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>, <span style="color:#e6db74">&#39;70711&#39;</span>, <span style="color:#e6db74">&#39;77056&#39;</span>, <span style="color:#e6db74">&#39;77092&#39;</span>, <span style="color:#e6db74">&#39;90010&#39;</span>, <span style="color:#e6db74">&#39;92123&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
+<p>Amazing! This is much cleaner. There&rsquo;s something a bit weird here, though &ndash; I looked up 77056 on Google maps, and that&rsquo;s in Texas.</p>
+
 <p>Let&rsquo;s take a closer look:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">zips <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]
 <span style="color:#75715e"># Let&#39;s say the zips starting with &#39;0&#39; and &#39;1&#39; are okay, for now. (this isn&#39;t actually true -- 13221 is in Syracuse, and why?)</span>
 is_close <span style="color:#f92672">=</span> zips<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">|</span> zips<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;1&#39;</span>)
 <span style="color:#75715e"># There are a bunch of NaNs, but we&#39;re not interested in them right now, so we&#39;ll say they&#39;re True</span>
 is_far <span style="color:#f92672">=</span> <span style="color:#f92672">~</span>(is_close<span style="color:#f92672">.</span>fillna(True)<span style="color:#f92672">.</span>astype(bool))
-zips[is_far]
-</code></pre></div><p>Output:</p>
+zips[is_far]</code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">12102</span>    <span style="color:#ae81ff">77056</span>
 <span style="color:#ae81ff">13450</span>    <span style="color:#ae81ff">70711</span>
 <span style="color:#ae81ff">29136</span>    <span style="color:#ae81ff">77092</span>
@@ -971,13 +1505,107 @@ zips[is_far]
 <span style="color:#ae81ff">85821</span>    <span style="color:#ae81ff">29616</span>
 <span style="color:#ae81ff">89304</span>    <span style="color:#ae81ff">35209</span>
 <span style="color:#ae81ff">94201</span>    <span style="color:#ae81ff">41042</span>
-Name: Incident Zip, dtype: object
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[is_far][[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>, <span style="color:#e6db74">&#39;Descriptor&#39;</span>, <span style="color:#e6db74">&#39;City&#39;</span>]]<span style="color:#f92672">.</span>sort(<span style="color:#e6db74">&#39;Incident Zip&#39;</span>)
-</code></pre></div><p>Output:</p>
-<!-- raw HTML omitted -->
+Name: Incident Zip, dtype: object</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[is_far][[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>, <span style="color:#e6db74">&#39;Descriptor&#39;</span>, <span style="color:#e6db74">&#39;City&#39;</span>]]<span style="color:#f92672">.</span>sort(<span style="color:#e6db74">&#39;Incident Zip&#39;</span>)</code></pre></div>
+<p>Output:</p>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Incident Zip</th>
+      <th>Descriptor</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>71834</th>
+      <td> 23502</td>
+      <td>        Harassment</td>
+      <td>     NORFOLK</td>
+    </tr>
+    <tr>
+      <th>47048</th>
+      <td> 23541</td>
+      <td>        Harassment</td>
+      <td>     NORFOLK</td>
+    </tr>
+    <tr>
+      <th>85821</th>
+      <td> 29616</td>
+      <td>     Debt Not Owed</td>
+      <td>  GREENVILLE</td>
+    </tr>
+    <tr>
+      <th>89304</th>
+      <td> 35209</td>
+      <td>        Harassment</td>
+      <td>  BIRMINGHAM</td>
+    </tr>
+    <tr>
+      <th>94201</th>
+      <td> 41042</td>
+      <td>        Harassment</td>
+      <td>    FLORENCE</td>
+    </tr>
+    <tr>
+      <th>30939</th>
+      <td> 55164</td>
+      <td>        Harassment</td>
+      <td>    ST. PAUL</td>
+    </tr>
+    <tr>
+      <th>80573</th>
+      <td> 61702</td>
+      <td>   Billing Dispute</td>
+      <td>  BLOOMIGTON</td>
+    </tr>
+    <tr>
+      <th>13450</th>
+      <td> 70711</td>
+      <td>  Contract Dispute</td>
+      <td>     CLIFTON</td>
+    </tr>
+    <tr>
+      <th>12102</th>
+      <td> 77056</td>
+      <td>     Debt Not Owed</td>
+      <td>     HOUSTON</td>
+    </tr>
+    <tr>
+      <th>29136</th>
+      <td> 77092</td>
+      <td> False Advertising</td>
+      <td>     HOUSTON</td>
+    </tr>
+    <tr>
+      <th>44008</th>
+      <td> 90010</td>
+      <td>   Billing Dispute</td>
+      <td> LOS ANGELES</td>
+    </tr>
+    <tr>
+      <th>57636</th>
+      <td> 92123</td>
+      <td>        Harassment</td>
+      <td>   SAN DIEGO</td>
+    </tr>
+    <tr>
+      <th>71001</th>
+      <td> 92123</td>
+      <td>   Billing Dispute</td>
+      <td>   SAN DIEGO</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 <p>Okay, there really are requests coming from LA and Houston! Good to know. Filtering by zip code is probably a bad way to handle this &ndash; we should really be looking at the city instead.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;City&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>upper()<span style="color:#f92672">.</span>value_counts()
-</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;City&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>upper()<span style="color:#f92672">.</span>value_counts()</code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">BROOKLYN            <span style="color:#ae81ff">31662</span>
 NEW YORK            <span style="color:#ae81ff">22664</span>
 BRONX               <span style="color:#ae81ff">18438</span>
@@ -1009,9 +1637,11 @@ COL.ANVURES               <span style="color:#ae81ff">1</span>
 EDGEWATER                 <span style="color:#ae81ff">1</span>
 ROSELYN                   <span style="color:#ae81ff">1</span>
 CENTRAL ISLIP             <span style="color:#ae81ff">1</span>
-Length: 100, dtype: int64
-</code></pre></div><p>It looks like these are legitimate complaints, so we&rsquo;ll just leave them alone.</p>
-<h2 id="74-putting-it-together">7.4 Putting it together</h2>
+Length: 100, dtype: int64</code></pre></div>
+<p>It looks like these are legitimate complaints, so we&rsquo;ll just leave them alone.</p>
+
+<h2 id="7-4-putting-it-together">7.4 Putting it together</h2>
+
 <p>Here&rsquo;s what we ended up doing to clean up our zip codes, all together:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">na_values <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;NO CLUE&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>, <span style="color:#e6db74">&#39;0&#39;</span>]
 requests <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;311-service-requests.csv&#39;</span>, 
@@ -1029,8 +1659,8 @@ requests <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</s
     <span style="color:#66d9ef">return</span> zips
     
 requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">=</span> fix_zip_codes(requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>])
-requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()
-</code></pre></div><p>Output:</p>
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()</code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span><span style="color:#e6db74">&#39;11432&#39;</span>, <span style="color:#e6db74">&#39;11378&#39;</span>, <span style="color:#e6db74">&#39;10032&#39;</span>, <span style="color:#e6db74">&#39;10023&#39;</span>, <span style="color:#e6db74">&#39;10027&#39;</span>, <span style="color:#e6db74">&#39;11372&#39;</span>, <span style="color:#e6db74">&#39;11419&#39;</span>,
        <span style="color:#e6db74">&#39;11417&#39;</span>, <span style="color:#e6db74">&#39;10011&#39;</span>, <span style="color:#e6db74">&#39;11225&#39;</span>, <span style="color:#e6db74">&#39;11218&#39;</span>, <span style="color:#e6db74">&#39;10003&#39;</span>, <span style="color:#e6db74">&#39;10029&#39;</span>, <span style="color:#e6db74">&#39;10466&#39;</span>,
        <span style="color:#e6db74">&#39;11219&#39;</span>, <span style="color:#e6db74">&#39;10025&#39;</span>, <span style="color:#e6db74">&#39;10310&#39;</span>, <span style="color:#e6db74">&#39;11236&#39;</span>, nan, <span style="color:#e6db74">&#39;10033&#39;</span>, <span style="color:#e6db74">&#39;11216&#39;</span>, <span style="color:#e6db74">&#39;10016&#39;</span>,
@@ -1065,8 +1695,7 @@ requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="
        <span style="color:#e6db74">&#39;11722&#39;</span>, <span style="color:#e6db74">&#39;11549&#39;</span>, <span style="color:#e6db74">&#39;10162&#39;</span>, <span style="color:#e6db74">&#39;23502&#39;</span>, <span style="color:#e6db74">&#39;11518&#39;</span>, <span style="color:#e6db74">&#39;07020&#39;</span>, <span style="color:#e6db74">&#39;08807&#39;</span>,
        <span style="color:#e6db74">&#39;11577&#39;</span>, <span style="color:#e6db74">&#39;07114&#39;</span>, <span style="color:#e6db74">&#39;11003&#39;</span>, <span style="color:#e6db74">&#39;07201&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>, <span style="color:#e6db74">&#39;10103&#39;</span>, <span style="color:#e6db74">&#39;29616&#39;</span>,
        <span style="color:#e6db74">&#39;35209&#39;</span>, <span style="color:#e6db74">&#39;11520&#39;</span>, <span style="color:#e6db74">&#39;11735&#39;</span>, <span style="color:#e6db74">&#39;10129&#39;</span>, <span style="color:#e6db74">&#39;11005&#39;</span>, <span style="color:#e6db74">&#39;41042&#39;</span>, <span style="color:#e6db74">&#39;11590&#39;</span>,
-       <span style="color:#e6db74">&#39;06901&#39;</span>, <span style="color:#e6db74">&#39;07208&#39;</span>, <span style="color:#e6db74">&#39;11530&#39;</span>, <span style="color:#e6db74">&#39;13221&#39;</span>, <span style="color:#e6db74">&#39;10954&#39;</span>, <span style="color:#e6db74">&#39;11111&#39;</span>, <span style="color:#e6db74">&#39;10107&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span>
-</code></pre></div>
+       <span style="color:#e6db74">&#39;06901&#39;</span>, <span style="color:#e6db74">&#39;07208&#39;</span>, <span style="color:#e6db74">&#39;11530&#39;</span>, <span style="color:#e6db74">&#39;13221&#39;</span>, <span style="color:#e6db74">&#39;10954&#39;</span>, <span style="color:#e6db74">&#39;11111&#39;</span>, <span style="color:#e6db74">&#39;10107&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
 
 
 <br />
@@ -1569,20 +2198,20 @@ requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
-    <script src="/js/jquery.sticky.js?1595485593"></script>
-    <script src="/js/featherlight.min.js?1595485593"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
-    <script src="/js/highlight.pack.js?1595485593"></script>
+    <script src="/js/clipboard.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485893"></script>
+    <script src="/js/jquery.sticky.js?1595485893"></script>
+    <script src="/js/featherlight.min.js?1595485893"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485893"></script>
+    <script src="/js/highlight.pack.js?1595485893"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
-    <script src="/js/learn.js?1595485593"></script>
-    <script src="/js/hugo-learn.js?1595485593"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485893"></script>
+    <script src="/js/learn.js?1595485893"></script>
+    <script src="/js/hugo-learn.js?1595485893"></script>
 
-    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595485593"></script>
+    <link href="/mermaid/mermaid.css?1595485893" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485893"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

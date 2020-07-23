@@ -17,17 +17,17 @@
     <title>What is if __name__ == &#34;__main__&#34; in Python? - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
-    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
-    <link href="/css/theme.css?1595485593" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485893" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485893" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485893" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485893" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485893" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485893" rel="stylesheet">
+    <link href="/css/theme.css?1595485893" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485893" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595485593"></script>
+    <script src="/js/jquery-2.x.min.js?1595485893"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485893"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485893"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595485593"></script>
+<script type="text/javascript" src="/js/search.js?1595485893"></script>
 
     
   </div>
@@ -722,14 +722,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#case-1-running-the-module-directly">Case 1: Running the module directly</a></li>
-    <li><a href="#case-2-using-the-module-with-import">Case 2: Using the module with import</a>
-      <ul>
-        <li><a href="#references">References</a></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#case-1-running-the-module-directly">Case 1: Running the module directly</a></li>
+<li><a href="#case-2-using-the-module-with-import">Case 2: Using the module with import</a>
+<ul>
+<li><a href="#references">References</a></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -748,45 +750,66 @@
         
 
 
+
+
 <p>If you are new to Python then you may have noticed <code>if __name__ == &quot;__main__&quot;</code> line in some python codes.</p>
+
 <p>You may be wondering:</p>
+
 <ul>
 <li>What does that mean?</li>
 <li>What purpose does it serve?</li>
 <li>I don&rsquo;t see it in all Python codes, so when should I use it exactly?</li>
 <li>Can you give me some examples?</li>
 </ul>
+
 <p>Let me try to explain the above to you.</p>
+
 <p>In Python all modules have some built-in attributes. <code>__name__</code> is one of them. Now the question is what does <code>__name__</code> contain?</p>
+
 <p>Well, that depends actually. It depends on how you use the module.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <h2 id="case-1-running-the-module-directly">Case 1: Running the module directly</h2>
+
 <p>If you run the module directly in a standalone program then in that case the value of <code>__name__</code> attribute is set to <code>__main__</code>.</p>
+
 <p>For example, create a file <code>main.py</code> and enter below code.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Directly called from python interpreter&#34;</span>
 	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Value of __name__ attribute is &#34;</span><span style="color:#f92672">+</span>__name__
 <span style="color:#66d9ef">else</span>:
 	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Not directly called&#34;</span>
-	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Value of __name__ attribute is &#34;</span><span style="color:#f92672">+</span>__name__
-</code></pre></div><p>Now run the above code as below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python main.py
-</code></pre></div><p>Output:</p>
+	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Value of __name__ attribute is &#34;</span><span style="color:#f92672">+</span>__name__</code></pre></div>
+<p>Now run the above code as below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python main.py</code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Directly called from Python interpreter
-Value of __name__ attribute is __main__
-</code></pre></div><p>Notice that when we ran the program directly from python interpreter the conditional <code>__name__ == __main__</code> returned <code>True</code> and the print statement inside the if block got executed.</p>
+Value of __name__ attribute is __main__</code></pre></div>
+<p>Notice that when we ran the program directly from python interpreter the conditional <code>__name__ == __main__</code> returned <code>True</code> and the print statement inside the if block got executed.</p>
+
 <h2 id="case-2-using-the-module-with-import">Case 2: Using the module with import</h2>
+
 <p>If you use the module in another program (using the <code>import</code> function), then in that case the value of <code>__name__</code> attribute is set to the filename of the module.</p>
+
 <p>Let&rsquo;s try to import the above created <code>main.py</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python
-&gt;&gt;&gt; import main.py
-</code></pre></div><p>Output:</p>
+&gt;&gt;&gt; import main.py</code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Not directly called
-Value of __name__ attribute is main
-</code></pre></div><h3 id="references">References</h3>
+Value of __name__ attribute is main</code></pre></div>
+<h3 id="references">References</h3>
+
 <ul>
 <li><a href="https://docs.python.org/3/library/__main__.html">__main__ — Top-level script environment</a></li>
 <li><a href="https://stackoverflow.com/questions/419163/what-does-if-name-main-do">What does if __name__ == “__main__”: do?</a></li>
@@ -1290,20 +1313,20 @@ Value of __name__ attribute is main
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
-    <script src="/js/jquery.sticky.js?1595485593"></script>
-    <script src="/js/featherlight.min.js?1595485593"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
-    <script src="/js/highlight.pack.js?1595485593"></script>
+    <script src="/js/clipboard.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485893"></script>
+    <script src="/js/jquery.sticky.js?1595485893"></script>
+    <script src="/js/featherlight.min.js?1595485893"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485893"></script>
+    <script src="/js/highlight.pack.js?1595485893"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
-    <script src="/js/learn.js?1595485593"></script>
-    <script src="/js/hugo-learn.js?1595485593"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485893"></script>
+    <script src="/js/learn.js?1595485893"></script>
+    <script src="/js/hugo-learn.js?1595485893"></script>
 
-    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595485593"></script>
+    <link href="/mermaid/mermaid.css?1595485893" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485893"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

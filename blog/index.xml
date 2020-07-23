@@ -39,8 +39,8 @@ echo &amp;#39;export PATH=$HOME/local/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bas
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/yet-another-lousy-monad-tutorial/</guid>
-      <description>If a function has type A → B, and another function has type B → C, then we can &amp;ldquo;compose&amp;rdquo; them into a new function of type A → C.
-  Let&amp;rsquo;s talk about functions that can return multiple values. We can model these as functions of type A → List&amp;lt;B&amp;gt;. There is a natural way to &amp;ldquo;compose&amp;rdquo; two such functions. If one function has type A → List&amp;lt;B&amp;gt;, and another function has type B → List&amp;lt;C&amp;gt;, then we can &amp;ldquo;compose&amp;rdquo; them into a new function of type A → List&amp;lt;C&amp;gt;.</description>
+      <description>I&amp;rsquo;m not a big fan of monads, but I understand them. They&amp;rsquo;re not rocket science. Let me try to write a monad tutorial that would&amp;rsquo;ve helped my past self understand what the fuss was about. I like concrete explanations that start with practical examples, without any annoying metaphors, and especially without any Haskell code. So here&amp;rsquo;s five examples that have something in common:
+   (adsbygoogle = window.adsbygoogle || []).</description>
     </item>
     
     <item>
@@ -82,7 +82,7 @@ Python is a very flexible language. One facet of this flexibility is the possibi
       <guid>http://tutswiki.com/deep-learning-cardiovascular-imaging/</guid>
       <description>Bay Labs, a San Francisco-based medical technology company which focuses on using artificial intelligence to improve cardiovascular imaging, has released a new software EchoMD AutoEF. It is being claimed that this software will help to reduce the variability in cardiovascular imaging.
 The software uses deep learning techniques to accurately calculate the left ventricular ejection fraction.
-What is Ejection Fraction? During each pumping cycle of our heart, it contracts and relaxes. When it contracts it passes the blood to ventricles.</description>
+What is Ejection Fraction? During each pumping cycle of our heart, it contracts and relaxes.</description>
     </item>
     
     <item>
@@ -91,7 +91,7 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/google-engineers-boycott-security-tool-military/</guid>
-      <description>On the one hand this is good as it shows that employees get ample space to air grievances, but on the other hand, the shareholders will get angry as it hampers Google&amp;rsquo;s ability to compete. In order to get government contracts especially those which involves sensitive data and military require some certifications, which Google&amp;rsquo;s competitors like Microsoft and Amazon have but Google doesn&amp;rsquo;t. This air-gap feature was supposed to help Google with that but it seems it&amp;rsquo;ll be abandoned.</description>
+      <description>A group of 9 cloud engineers at Google has refused to work on a project called air-gap due to which Google may lose a deal worth $10 billion. Google needs air-gap if it has to do some sensitive work with government agencies involving sensitive data (obviously military implications there). So this group of 9 basically just said they weren&amp;rsquo;t gonna do it. About 10-12 employees have resigned so far as part of this work strike.</description>
     </item>
     
     <item>
@@ -100,8 +100,7 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/nodejs-google-app-engine/</guid>
-      <description>Till now there was no support for Node.js, but Google has just announced that developers will now be able to deploy their Node.js apps to the App Engine. Steps to deploy Node.js web service on App Engine Prerequisites   You must have a project on the Google Cloud Platform. If you don&amp;rsquo;t, create one using the GCP Console.
-  The development environment should be configured. You have 2 options here.</description>
+      <description>Google App Engine is a part of the Google Cloud Suite which provides a cloud platform for developers where they can develop and host their apps. It provides easily configurable, fast and secure programming environments/tools with the help of which developers can setup a development environment in just a few minutes. Therefore developers don&amp;rsquo;t need to worry about configuring the environment, they can just focus on writing code. It supports all the popular programming languages Java, PHP, Node.</description>
     </item>
     
     <item>
@@ -110,7 +109,8 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/angular6-features/</guid>
-      <description>Angular 6 Features:  New CLI commands  ng update ng add   Referencing providers Angular Elements Angular Material + CDK Components  Tree Badge Bottom-Sheet Overlay   Starter Components  Dashboard Side-Nav Datatable   Library Support CLI Workspaces RxJS v6 Long Term Support  ng update A new command is introduced in Angular CLI which analyzes package.json and recommends any updates (if needed) on the installed packages.</description>
+      <description>Angular 6 is out with all new features. It is a major release in which Angular team has synchronized many of the important framework packages to make most out of cross compatibility. All the major framework packages like @angular/core, @angular/compiler, @angular/common etc., are reworked and released as version 6.0.0. Below is the list of major changes in Angular 6, let&amp;rsquo;s explore them one by one.
+Angular 6 Features:  New CLI commands  ng update ng add  Referencing providers Angular Elements Angular Material + CDK Components  Tree Badge Bottom-Sheet Overlay  Starter Components  Dashboard Side-Nav Datatable  Library Support CLI Workspaces RxJS v6 Long Term Support  ng update A new command is introduced in Angular CLI which analyzes package.</description>
     </item>
     
     <item>
@@ -119,10 +119,9 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/github-alternatives/</guid>
-      <description>A couple of years ago Microsoft was anti-open-source.
- &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.&amp;rdquo; - Jim Allchin (Former Windows chief), 2001
-  &amp;ldquo;Linux is a cancer that attaches itself in an intellectual property sense to everything it touches.&amp;rdquo; - Steve Ballmer (Former CEO)
- However, in recent years Microsoft has tried hard to catch up with the open-source world.</description>
+      <description>The trending news of yesterday was the acquisition of GitHub (the world&amp;rsquo;s leading software development platform) by Microsoft. This is a great deal for Microsoft which might put it in the position it was about 10 years ago in the software market. But a lot of open-source fans are unhappy with this.
+A couple of years ago Microsoft was anti-open-source.
+ &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.</description>
     </item>
     
     <item>
@@ -131,7 +130,7 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/what-is-the-use-of-yield-in-python/</guid>
-      <description>References  What does the “yield” keyword do in Python? Yield expressions  </description>
+      <description> References  What does the “yield” keyword do in Python? Yield expressions  </description>
     </item>
     
     <item>
@@ -142,8 +141,8 @@ What is Ejection Fraction? During each pumping cycle of our heart, it contracts 
       <guid>http://tutswiki.com/append-vs-extend-python/</guid>
       <description>append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&amp;rsquo;s find out.
 The official documentation describes them as:
-  list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
-  list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
+ list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
+ list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
     </item>
     
     <item>
@@ -156,7 +155,7 @@ The official documentation describes them as:
 For example:
 print &amp;#34;This is some line.&amp;#34; print &amp;#34;This is another line.&amp;#34; Output:
 This is some line. This is another line. What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
-Add comma at the end of print print &amp;#34;This is some line.</description>
+   (adsbygoogle = window.adsbygoogle || []).push({});  Add comma at the end of print print &amp;#34;This is some line.</description>
     </item>
     
     <item>

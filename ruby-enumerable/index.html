@@ -17,17 +17,17 @@
     <title>A Deeper Look at Ruby&#39;s Enumerable - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
-    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
-    <link href="/css/theme.css?1595485593" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485893" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485893" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485893" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485893" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485893" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485893" rel="stylesheet">
+    <link href="/css/theme.css?1595485893" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485893" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595485593"></script>
+    <script src="/js/jquery-2.x.min.js?1595485893"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485893"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485893"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595485593"></script>
+<script type="text/javascript" src="/js/search.js?1595485893"></script>
 
     
   </div>
@@ -722,16 +722,18 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#each_cons-any-all-none">each_cons, any?, all?, none?</a></li>
-        <li><a href="#any-all-none">any? all? none?</a></li>
-        <li><a href="#weird-things-like-look-ahead">Weird things like look-ahead?</a></li>
-      </ul>
-    </li>
-    <li><a href="#help-improve-this-content">Help improve this content</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#each-cons-any-all-none">each_cons, any?, all?, none?</a></li>
+<li><a href="#any-all-none">any? all? none?</a></li>
+<li><a href="#weird-things-like-look-ahead">Weird things like look-ahead?</a></li>
+</ul></li>
+<li><a href="#help-improve-this-content">Help improve this content</a></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -750,16 +752,34 @@
         
 
 
-<!-- raw HTML omitted -->
+
+
+<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="A Deeper Look at Ruby's Enumerable" />
+<meta name=”twitter:description” content="Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that." /></p>
+
 <p>Have you ever needed to load a VERY large file in ruby? No I don’t mean your 500 line rails model. I mean a several gig binary or text file.</p>
+
 <p>Try it. Watch your machine become unresponsive. Cry a little inside. Then reach for enumerable.</p>
+
 <p>Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that.</p>
+
 <p>Today I am going to walk you through a couple of highly useful methods from Enumerable that has come up in a few coding challenges I have done over the years.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h3 id="each_cons-any-all-none">each_cons, any?, all?, none?</h3>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<h3 id="each-cons-any-all-none">each_cons, any?, all?, none?</h3>
+
 <p>I use these methods when I need to determine the &lsquo;distance or difference&rsquo; in a set of numbers or objects. <code>each_cons</code> simply gives us a &lsquo;sliding&rsquo; window of our list so we can compare multiple items in our list.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">numbers <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">54</span>,<span style="color:#ae81ff">99</span><span style="color:#f92672">]</span>
 cards   <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>
@@ -770,21 +790,35 @@ numbers<span style="color:#f92672">.</span>each_cons(<span style="color:#ae81ff"
 <span style="color:#75715e"># determine if the hand is a straight</span>
 cards<span style="color:#f92672">.</span>sort<span style="color:#f92672">.</span>each_cons(<span style="color:#ae81ff">5</span>)<span style="color:#f92672">.</span>all? <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>series<span style="color:#f92672">|</span> 
              (series<span style="color:#f92672">.</span>first<span style="color:#f92672">..</span>series<span style="color:#f92672">.</span>last)<span style="color:#f92672">.</span>to_a <span style="color:#f92672">==</span> series
-           <span style="color:#66d9ef">end</span> <span style="color:#75715e">#=&gt; true</span>
-</code></pre></div><p>Our first example shows how to get the elements in the numbers list that are over 10 units in difference. I do this by using <code>each_cons</code> to give me a sliding window of 2 elements at a time. This give me:</p>
+           <span style="color:#66d9ef">end</span> <span style="color:#75715e">#=&gt; true</span></code></pre></div>
+<p>Our first example shows how to get the elements in the numbers list that are over 10 units in difference. I do this by using <code>each_cons</code> to give me a sliding window of 2 elements at a time. This give me:</p>
+
 <p>At each step on the way I check b-a and see if that is greater than 10. If so, the <code>select</code> will return those groups of elements.</p>
+
 <p>The second example simply sorts a set of &lsquo;cards&rsquo; and then looking at all 5 cards through <code>each_cons</code> and comparing the scores to see if they are in order and in sequence <code>(a+1==b)</code>.</p>
+
 <p>Let’s play off this example a bit more, this time with dice. If we have to implement small and large straights, we have a similar problem, with a similar solution:</p>
+
 <p>For the small straight we get 2 windows, becuase there are 5 values in the list and we are calling <code>each_cons(4)</code>. Therefore we want a postfix of <code>any</code>? because either of the windows can be a run of 4.</p>
+
 <p>In the second example we use <code>all</code>? to be more explicit, yet <code>any</code>? would have worked as well, because in the large straight, we only have one sliding window, 2,3,4,5,6.</p>
+
 <h3 id="any-all-none">any? all? none?</h3>
+
 <p>These have to be a few of my favorite methods in enumerable.</p>
+
 <p>Given no args, they take a list of bool values and returns a bool. So <code>[true, true, false].all? #=&gt; false</code>.</p>
+
 <p>Kinda useful, but not really. If we pass it a block of code however.. now we can do something useful. Consider this example:</p>
+
 <p><code>.any?</code> and <code>.none?</code> do what you probably think. Where <code>.all?</code> only returns true if ALL the conditions and elements match up, <code>.any?</code> returns true if ANY of them match, and <code>.none?</code> returns true if there were NO matches.</p>
+
 <h3 id="weird-things-like-look-ahead">Weird things like look-ahead?</h3>
+
 <p>Say you have a file to read in line by line. You need to compare the current line to the next line to look for duplicates. <code>each_cons(2)</code> to the rescue!</p>
+
 <p>This will tell us of the current line and the following line are the same.</p>
+
 <ul>
 <li>More uses for each_cons</li>
 <li>averages</li>
@@ -793,12 +827,21 @@ cards<span style="color:#f92672">.</span>sort<span style="color:#f92672">.</span
 <li>graphing</li>
 <li>geometry</li>
 </ul>
+
 <h2 id="help-improve-this-content">Help improve this content</h2>
-<p>Feel free to <!-- raw HTML omitted -->edit this page<!-- raw HTML omitted --> to fix any typos or add more insights.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+<p>Feel free to <a href="https://github.com/TutsWiki/source/edit/master/content/blog/rest-api-in-clojure.md">edit this page</a> to fix any typos or add more insights.</p>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 
@@ -1298,20 +1341,20 @@ cards<span style="color:#f92672">.</span>sort<span style="color:#f92672">.</span
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
-    <script src="/js/jquery.sticky.js?1595485593"></script>
-    <script src="/js/featherlight.min.js?1595485593"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
-    <script src="/js/highlight.pack.js?1595485593"></script>
+    <script src="/js/clipboard.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485893"></script>
+    <script src="/js/jquery.sticky.js?1595485893"></script>
+    <script src="/js/featherlight.min.js?1595485893"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485893"></script>
+    <script src="/js/highlight.pack.js?1595485893"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
-    <script src="/js/learn.js?1595485593"></script>
-    <script src="/js/hugo-learn.js?1595485593"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485893"></script>
+    <script src="/js/learn.js?1595485893"></script>
+    <script src="/js/hugo-learn.js?1595485893"></script>
 
-    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595485593"></script>
+    <link href="/mermaid/mermaid.css?1595485893" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485893"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

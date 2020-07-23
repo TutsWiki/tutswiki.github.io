@@ -17,17 +17,17 @@
     <title>How to print on same line with print in Python - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
-    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
-    <link href="/css/theme.css?1595485593" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485893" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485893" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485893" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485893" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485893" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485893" rel="stylesheet">
+    <link href="/css/theme.css?1595485893" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485893" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595485593"></script>
+    <script src="/js/jquery-2.x.min.js?1595485893"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485893"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485893"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595485593"></script>
+<script type="text/javascript" src="/js/search.js?1595485893"></script>
 
     
   </div>
@@ -722,10 +722,13 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#add-comma-at-the-end-of-print">Add comma at the end of print</a></li>
-    <li><a href="#use-sys-module">Use sys module</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#add-comma-at-the-end-of-print">Add comma at the end of print</a></li>
+<li><a href="#use-sys-module">Use sys module</a></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -744,31 +747,41 @@
         
 
 
+
+
 <p>In Python, when you use the print function, it prints a new line at the end.</p>
+
 <p>For example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;This is some line.&#34;</span>
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;This is another line.&#34;</span>
-</code></pre></div><p>Output:</p>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;This is another line.&#34;</span></code></pre></div>
+<p>Output:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">This is some line.
-This is another line.
-</code></pre></div><p>What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+This is another line.</code></pre></div>
+<p>What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.</p>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <h2 id="add-comma-at-the-end-of-print">Add comma at the end of print</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;This is some line.&#34;</span>,
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;This is another line.&#34;</span>
-</code></pre></div><p>Output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">This is some line. This is another line.
-</code></pre></div><p>If you are using Python 3 then use the below:</p>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;This is another line.&#34;</span></code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">This is some line. This is another line.</code></pre></div>
+<p>If you are using Python 3 then use the below:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> (<span style="color:#e6db74">&#34;This is some line.&#34;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
-<span style="color:#66d9ef">print</span> (<span style="color:#e6db74">&#34;This is another line.&#34;</span>)
-</code></pre></div><h2 id="use-sys-module">Use sys module</h2>
+<span style="color:#66d9ef">print</span> (<span style="color:#e6db74">&#34;This is another line.&#34;</span>)</code></pre></div>
+<h2 id="use-sys-module">Use sys module</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
 sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;This is some line.&#34;</span>)
-sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;This is another line.&#34;</span>)
-</code></pre></div>
+sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;This is another line.&#34;</span>)</code></pre></div>
 
 
 <br />
@@ -1267,20 +1280,20 @@ sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
-    <script src="/js/jquery.sticky.js?1595485593"></script>
-    <script src="/js/featherlight.min.js?1595485593"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
-    <script src="/js/highlight.pack.js?1595485593"></script>
+    <script src="/js/clipboard.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485893"></script>
+    <script src="/js/jquery.sticky.js?1595485893"></script>
+    <script src="/js/featherlight.min.js?1595485893"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485893"></script>
+    <script src="/js/highlight.pack.js?1595485893"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
-    <script src="/js/learn.js?1595485593"></script>
-    <script src="/js/hugo-learn.js?1595485593"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485893"></script>
+    <script src="/js/learn.js?1595485893"></script>
+    <script src="/js/hugo-learn.js?1595485893"></script>
 
-    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595485593"></script>
+    <link href="/mermaid/mermaid.css?1595485893" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485893"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

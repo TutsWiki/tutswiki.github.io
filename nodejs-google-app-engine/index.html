@@ -17,17 +17,17 @@
     <title>How to deploy Node.js app on Google App Engine - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595485593" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595485593" rel="stylesheet">
-    <link href="/css/hybrid.css?1595485593" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595485593" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595485593" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595485593" rel="stylesheet">
-    <link href="/css/theme.css?1595485593" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595485593" rel="stylesheet">
+    <link href="/css/nucleus.css?1595485893" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595485893" rel="stylesheet">
+    <link href="/css/hybrid.css?1595485893" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595485893" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595485893" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595485893" rel="stylesheet">
+    <link href="/css/theme.css?1595485893" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595485893" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595485593"></script>
+    <script src="/js/jquery-2.x.min.js?1595485893"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595485593"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595485593"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595485893"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595485893"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595485593"></script>
+<script type="text/javascript" src="/js/search.js?1595485893"></script>
 
     
   </div>
@@ -722,15 +722,17 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#steps-to-deploy-nodejs-web-service-on-app-engine">Steps to deploy Node.js web service on App Engine</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#hello-world">Hello world!</a></li>
-        <li><a href="#deploy-on-app-engine">Deploy on App Engine</a></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#steps-to-deploy-node-js-web-service-on-app-engine">Steps to deploy Node.js web service on App Engine</a>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#hello-world">Hello world!</a></li>
+<li><a href="#deploy-on-app-engine">Deploy on App Engine</a></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -749,104 +751,136 @@
         
 
 
-<!-- raw HTML omitted -->
+
+
+<p><meta property="og:image" content="https://tutswiki.com/images/nodejs-google-cloud.png"/>
+<a href="https://cloud.google.com/appengine/">Google App Engine</a> is a part of the Google Cloud Suite which provides a cloud platform for developers where they can develop and host their apps. It provides easily configurable, fast and secure programming environments/tools with the help of which developers can setup a development environment in just a few minutes. Therefore developers don&rsquo;t need to worry about configuring the environment, they can just focus on writing code. It supports all the popular programming languages Java, PHP, Node.js, Python, C#, .Net, Ruby and Go.</p>
+
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/2PRciDpqpko" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
+
 <p>Till now there was no support for Node.js, but Google has just <a href="https://cloudplatform.googleblog.com/2018/06/Now-you-can-deploy-your-Node-js-app-to-App-Engine-standard-environment.html">announced</a> that developers will now be able to deploy their <a href="https://cloud.google.com/nodejs/">Node.js apps to the App Engine</a>.
-<img src="/images/nodejs-google-cloud.png" alt="NodeJS on Google Cloud App Engine" title="NodeJs on Google Cloud"></p>
-<h2 id="steps-to-deploy-nodejs-web-service-on-app-engine">Steps to deploy Node.js web service on App Engine</h2>
+<img src="/images/nodejs-google-cloud.png" alt="NodeJS on Google Cloud App Engine" title="NodeJs on Google Cloud" /></p>
+
+<h2 id="steps-to-deploy-node-js-web-service-on-app-engine">Steps to deploy Node.js web service on App Engine</h2>
+
 <h3 id="prerequisites">Prerequisites</h3>
+
 <ol>
-<li>
-<p>You must have a project on the Google Cloud Platform. If you don&rsquo;t, create one using the <a href="https://console.cloud.google.com/projectselector/appengine/create?lang=nodejs&amp;st=true&amp;_ga=2.136419507.-245729952.1528854239">GCP Console</a>.</p>
-</li>
-<li>
-<p>The development environment should be configured. You have 2 options here.</p>
+<li><p>You must have a project on the Google Cloud Platform. If you don&rsquo;t, create one using the <a href="https://console.cloud.google.com/projectselector/appengine/create?lang=nodejs&amp;st=true&amp;_ga=2.136419507.-245729952.1528854239">GCP Console</a>.</p></li>
+
+<li><p>The development environment should be configured. You have 2 options here.</p>
+
 <ul>
 <li>Configure it on the cloud using <a href="https://console.cloud.google.com/appengine?cloudshell=true&amp;_ga=2.72119440.-245729952.1528854239">Cloud Shell</a></li>
 <li>Setup your local machine
+
 <ul>
-<li>Download and install Node.js and Node Package Manager <!-- raw HTML omitted --></li>
-</ul>
-</li>
-</ul>
-</li>
+<li>Download and install Node.js and Node Package Manager <a  href="https://nodejs.org/en/download/" target="_blank"  class="btn btn-default">
+<br />
+<br />
+<br />
+<br />
+<br /></li>
+</ul></li>
+</ul></li>
 </ol>
+
 <p>Get Node.js and npm</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<pre><code>     &lt;div class=&quot;notices note&quot; &gt;
-</code></pre>
+
+<p><i class="fa fa-download"></i></p>
+
+<p></a></p>
+<pre><code>     &lt;div class=&#34;notices note&#34; &gt;</code></pre>
 <p>Only Node.js version 8 or greater is supported on App Engine.
-<!-- raw HTML omitted --></p>
-<pre><code>    * Download and install Google Cloud SDK &lt;a  href=&quot;https://cloud.google.com/sdk/docs/#install_the_latest_cloud_tools_version_cloudsdk_current_version&quot; target=&quot;_blank&quot;  class=&quot;btn btn-default&quot;&gt;
-</code></pre>
+        </div></p>
+<pre><code>    * Download and install Google Cloud SDK &lt;a  href=&#34;https://cloud.google.com/sdk/docs/#install_the_latest_cloud_tools_version_cloudsdk_current_version&#34; target=&#34;_blank&#34;  class=&#34;btn btn-default&#34;&gt;</code></pre>
 <p>Get Google Cloud SDK</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<pre><code>     &lt;div class=&quot;notices note&quot; &gt;
-</code></pre>
+
+<p><i class="fa fa-download"></i></p>
+
+<p></a></p>
+<pre><code>     &lt;div class=&#34;notices note&#34; &gt;</code></pre>
 <p>Google Cloud SDK also installs gcloud command line tool.
-<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        </div></p>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <h3 id="hello-world">Hello world!</h3>
+
 <ol>
-<li>There&rsquo;s a sample Node.js repository on GitHub. Either clone it using <a href="https://www.youtube.com/watch?v=kTXksoxWClw&amp;list=PLndX_e9bdotV7vq2NoTwR0OPCNaA9jBEN&amp;index=10">git</a> or <a href="https://github.com/GoogleCloudPlatform/nodejs-docs-samples/archive/master.zip">download the zip</a>.</li>
-</ol>
-<pre><code>&lt;!-- language: lang-sh --&gt;
-    git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples
-</code></pre>
-<ol start="2">
-<li>Navigate to the below directory</li>
-</ol>
-<pre><code>&lt;!-- language: lang-sh --&gt;
-    cd nodejs-docs-samples/appengine/hello-world/standard
-</code></pre>
-<ol start="3">
-<li>Install the required dependencies using npm utility</li>
-</ol>
-<pre><code>&lt;!-- language: lang-js --&gt;
-    npm install
-</code></pre>
-<ol start="4">
-<li>Start the web server</li>
-</ol>
-<pre><code>&lt;!-- language: lang-js --&gt;
-    npm start
-</code></pre>
-<ol start="5">
-<li>Check output
+<li><p>There&rsquo;s a sample Node.js repository on GitHub. Either clone it using <a href="https://www.youtube.com/watch?v=kTXksoxWClw&amp;list=PLndX_e9bdotV7vq2NoTwR0OPCNaA9jBEN&amp;index=10">git</a> or <a href="https://github.com/GoogleCloudPlatform/nodejs-docs-samples/archive/master.zip">download the zip</a>.</p>
+
+<!-- language: lang-sh -->
+<pre><code>git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples</code></pre></li>
+
+<li><p>Navigate to the below directory</p>
+
+<!-- language: lang-sh -->
+<pre><code>cd nodejs-docs-samples/appengine/hello-world/standard</code></pre></li>
+
+<li><p>Install the required dependencies using npm utility</p>
+
+<!-- language: lang-js -->
+<pre><code>npm install</code></pre></li>
+
+<li><p>Start the web server</p>
+
+<!-- language: lang-js -->
+<pre><code>npm start</code></pre></li>
+
+<li><p>Check output</p>
+
 <ul>
 <li>If you are using Cloud Shell then click on Web preview</li>
-<li>If you are on Local Machine then navigate to http://localhost:8080/</li>
-</ul>
-</li>
+<li>If you are on Local Machine then navigate to <a href="http://localhost:8080/">http://localhost:8080/</a>
+<br /></li>
+</ul></li>
 </ol>
+
 <h3 id="deploy-on-app-engine">Deploy on App Engine</h3>
+
 <p>Since we have verified that our Hello World program is working fine, it&rsquo;s time to deploy it.</p>
+
 <ol>
-<li>If you had installed <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a> properly (as mentioned in <a href="#prerequisites">Prerequisites</a>), you&rsquo;ll have access to the gcloud command. Run it as below</li>
+<li><p>If you had installed <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a> properly (as mentioned in <a href="#prerequisites">Prerequisites</a>), you&rsquo;ll have access to the gcloud command. Run it as below</p>
+
+<!-- language: lang-sh -->
+<pre><code>gcloud app deploy</code></pre></li>
+
+<li><p>Your app should now be live at https://&lt;PROJECT_ID&gt;.appspot.com/</p>
+
+<!-- language: lang-sh -->
+<pre><code>gcloud app browse   </code></pre></li>
 </ol>
-<pre><code>&lt;!-- language: lang-sh --&gt;
-    gcloud app deploy
-</code></pre>
-<ol start="2">
-<li>Your app should now be live at https://&lt;PROJECT_ID&gt;.appspot.com/</li>
-</ol>
-<pre><code>&lt;!-- language: lang-sh --&gt;
-    gcloud app browse   
-</code></pre>
+
 <p>That&rsquo;s it. You have successfully deployed your sample Node.js app on the Google App Engine.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+<div class="notices tip" >
+Refer Google's official guide on [Building a Node.js App on App Engine](https://cloud.google.com/appengine/docs/standard/nodejs/building-app/)
+</div>
+
+<div class="notices info" >
+You can try out [Google App Engine's free tier](
+https://cloud.google.com/free/docs/always-free-usage-limits) to deploy your Node.js app and see if you like it.
+</div>
+
+<style>
+div.notices {
+margin: 0.3rem 0;
+</style>
 
 
 
@@ -1346,20 +1380,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595485593"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595485593"></script>
-    <script src="/js/jquery.sticky.js?1595485593"></script>
-    <script src="/js/featherlight.min.js?1595485593"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595485593"></script>
-    <script src="/js/highlight.pack.js?1595485593"></script>
+    <script src="/js/clipboard.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595485893"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595485893"></script>
+    <script src="/js/jquery.sticky.js?1595485893"></script>
+    <script src="/js/featherlight.min.js?1595485893"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595485893"></script>
+    <script src="/js/highlight.pack.js?1595485893"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595485593"></script>
-    <script src="/js/learn.js?1595485593"></script>
-    <script src="/js/hugo-learn.js?1595485593"></script>
+    <script src="/js/modernizr.custom.71422.js?1595485893"></script>
+    <script src="/js/learn.js?1595485893"></script>
+    <script src="/js/hugo-learn.js?1595485893"></script>
 
-    <link href="/mermaid/mermaid.css?1595485593" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595485593"></script>
+    <link href="/mermaid/mermaid.css?1595485893" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595485893"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

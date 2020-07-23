@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://tutswiki.com/what-is-the-use-of-yield-in-python/</guid>
-      <description>References  What does the “yield” keyword do in Python? Yield expressions  </description>
+      <description> References  What does the “yield” keyword do in Python? Yield expressions  </description>
     </item>
     
     <item>
@@ -28,8 +28,8 @@
       <guid>http://tutswiki.com/append-vs-extend-python/</guid>
       <description>append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&amp;rsquo;s find out.
 The official documentation describes them as:
-  list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
-  list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
+ list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
+ list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@ The official documentation describes them as:
 For example:
 print &amp;#34;This is some line.&amp;#34; print &amp;#34;This is another line.&amp;#34; Output:
 This is some line. This is another line. What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
-Add comma at the end of print print &amp;#34;This is some line.</description>
+   (adsbygoogle = window.adsbygoogle || []).push({});  Add comma at the end of print print &amp;#34;This is some line.</description>
     </item>
     
     <item>
