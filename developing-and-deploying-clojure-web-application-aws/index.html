@@ -17,17 +17,17 @@
     <title>Developing a Simple Clojure Web Application and Deploying to AWS - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595678645" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595678645" rel="stylesheet">
-    <link href="/css/hybrid.css?1595678645" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595678645" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595678645" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595678645" rel="stylesheet">
-    <link href="/css/theme.css?1595678645" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595678645" rel="stylesheet">
+    <link href="/css/nucleus.css?1595678890" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595678890" rel="stylesheet">
+    <link href="/css/hybrid.css?1595678890" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595678890" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595678890" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595678890" rel="stylesheet">
+    <link href="/css/theme.css?1595678890" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595678890" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595678645"></script>
+    <script src="/js/jquery-2.x.min.js?1595678890"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595678645"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595678645"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595678890"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595678890"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595678645"></script>
+<script type="text/javascript" src="/js/search.js?1595678890"></script>
 
     
   </div>
@@ -740,7 +740,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#deploying-to-amazon-ec2">Deploying to Amazon EC2</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -756,6 +766,8 @@
           
 
         
+
+
 
 
 <p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
@@ -1043,6 +1055,8 @@ open http<span style="color:#e6db74">://localhost:8080/</span></code></pre></div
 <p>The site will not run on port <code>8080</code> in production, so we&rsquo;ll need a way to specify the port to the run script. We&rsquo;ll use the <code>PORT</code> environment variable. Update the body of <code>script/run.clj</code> to the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[port (<span style="color:#a6e22e">Integer/parseInt</span> (get (<span style="color:#a6e22e">System/getenv</span>) <span style="color:#e6db74">&#34;PORT&#34;</span> <span style="color:#e6db74">&#34;8080&#34;</span>))]
   (<span style="color:#a6e22e">run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;adder.core/app</span> {<span style="color:#e6db74">:port</span> port}))</code></pre></div>
+<h3 id="deploying-to-amazon-ec2">Deploying to Amazon EC2</h3>
+
 <p>Now we’re ready to put this app into production. I&rsquo;ll walk through the steps needed for to deploying to EC2 using the standard <a href="https://aws.amazon.com/cli/">EC2 command line tools</a>, but the process would be similar for other hosting providers.</p>
 
 <p>Start be allocating by setting up a security group and SSH keypair for the application:</p>
@@ -1615,20 +1629,20 @@ classes</code></pre>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595678645"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595678645"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595678645"></script>
-    <script src="/js/jquery.sticky.js?1595678645"></script>
-    <script src="/js/featherlight.min.js?1595678645"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595678645"></script>
-    <script src="/js/highlight.pack.js?1595678645"></script>
+    <script src="/js/clipboard.min.js?1595678890"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595678890"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595678890"></script>
+    <script src="/js/jquery.sticky.js?1595678890"></script>
+    <script src="/js/featherlight.min.js?1595678890"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595678890"></script>
+    <script src="/js/highlight.pack.js?1595678890"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595678645"></script>
-    <script src="/js/learn.js?1595678645"></script>
-    <script src="/js/hugo-learn.js?1595678645"></script>
+    <script src="/js/modernizr.custom.71422.js?1595678890"></script>
+    <script src="/js/learn.js?1595678890"></script>
+    <script src="/js/hugo-learn.js?1595678890"></script>
 
-    <link href="/mermaid/mermaid.css?1595678645" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595678645"></script>
+    <link href="/mermaid/mermaid.css?1595678890" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595678890"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
