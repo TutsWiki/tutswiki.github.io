@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="description" content="The process of developing and deploying a simple web application in Clojure. After reading this you should be able to build your own app and deploy it to a production server.">
+	<meta name="author" content="Chankey Pathak">
+	<meta name="keywords" content="clojure,deploy,develop,programming,webapp,aws,ec2">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+	<meta property="og:title" content="Developing a Simple Clojure Web Application and Deploying to AWS" />
+	<meta property="og:description" content="The process of developing and deploying a simple web application in Clojure. After reading this you should be able to build your own app and deploy it to a production server." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://tutswiki.com/developing-and-deploying-clojure-web-application-aws/" />
+	<meta property="og:locale" content="en" />
+    <title>Developing a Simple Clojure Web Application and Deploying to AWS - TutsWiki Beta</title>
+    
+    
+    <link href="/css/nucleus.css?1595678223" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595678223" rel="stylesheet">
+    <link href="/css/hybrid.css?1595678223" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595678223" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595678223" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595678223" rel="stylesheet">
+    <link href="/css/theme.css?1595678223" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595678223" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1595678223"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12858299-25"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12858299-25');
+</script>
+
+  </head>
+  <body class="" data-url="/developing-and-deploying-clojure-web-application-aws/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/"><img src="https://tutswiki.com/img/tutswiki-logo.png" style="width:70%"/></a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1595678223"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595678223"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1595678223"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/blog/" title="Blog" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/blog/">
+          <b></b>Blog
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/developing-and-deploying-clojure-web-application-aws" title="Developing a Simple Clojure Web Application and Deploying to AWS" class="dd-item active">
+        <a href="/developing-and-deploying-clojure-web-application-aws/">
+        Developing a Simple Clojure Web Application and Deploying to AWS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/environment-passing-in-clojure" title="Environment Passing in Clojure" class="dd-item ">
+        <a href="/environment-passing-in-clojure/">
+        Environment Passing in Clojure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
+        <a href="/ruby-enumerable/">
+        A Deeper Look at Ruby&#39;s Enumerable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
+        <a href="/rest-api-in-clojure/">
+        A REST API in Clojure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
+        <a href="/abstract-classes-and-interfaces-in-python/">
+        Abstract classes and interfaces in Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/deep-learning-cardiovascular-imaging" title="How Deep Learning Helped Reducing Variability in Cardiovascular Imaging" class="dd-item ">
+        <a href="/deep-learning-cardiovascular-imaging/">
+        Deep Learning helped reducing variability in Cardiovascular Imaging
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/google-engineers-boycott-security-tool-military" title="Google Engineers Boycott Against Security Tool for Military" class="dd-item ">
+        <a href="/google-engineers-boycott-security-tool-military/">
+        Google engineers boycott
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nodejs-google-app-engine" title="How to deploy Node.js app on Google App Engine" class="dd-item ">
+        <a href="/nodejs-google-app-engine/">
+        Node.js on Google App Engine
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/angular6-features" title="What&#39;s new in Angular 6 (Features List)" class="dd-item ">
+        <a href="/angular6-features/">
+        Angular 6 features
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/github-alternatives" title="GitHub Alternatives (Free, Paid, Self-Hosted)" class="dd-item ">
+        <a href="/github-alternatives/">
+        Github alternatives
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/what-is-the-use-of-yield-in-python" title="What is the use of yield in Python?" class="dd-item ">
+        <a href="/what-is-the-use-of-yield-in-python/">
+        What is the use of yield in Python?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/append-vs-extend-python" title="Difference between append and extend in Python" class="dd-item ">
+        <a href="/append-vs-extend-python/">
+        Difference between append and extend in Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/print-same-line-python" title="How to print on same line with print in Python" class="dd-item ">
+        <a href="/print-same-line-python/">
+        How to print on same line with print in Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/read-write-config-files-in-python" title="Writing and Reading config files in Python" class="dd-item ">
+        <a href="/read-write-config-files-in-python/">
+        Writing and Reading config files in Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/run-module-as-script-python" title="How to run a Python module as script?" class="dd-item ">
+        <a href="/run-module-as-script-python/">
+        How to run a Python module as script?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/if-name-main-in-python" title="What is if __name__ == &#34;__main__&#34; in Python?" class="dd-item ">
+        <a href="/if-name-main-in-python/">
+        What is if __name__ == &#34;__main__&#34; in Python?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/pandas-cookbook/" title="Pandas Cookbook" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pandas-cookbook/">
+          <b></b>Pandas Cookbook
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pandas-cookbook/chapter1" title="Chapter 1 - Reading from a CSV" class="dd-item ">
+        <a href="/pandas-cookbook/chapter1/">
+        Chapter 1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pandas-cookbook/chapter2" title="Chapter 2 - Selecting and finding desired data" class="dd-item ">
+        <a href="/pandas-cookbook/chapter2/">
+        Chapter 2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pandas-cookbook/chapter3" title="Chapter 3 - Filtering dataframes" class="dd-item ">
+        <a href="/pandas-cookbook/chapter3/">
+        Chapter 3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pandas-cookbook/chapter4" title="Chapter 4 - Groupby and Aggregate" class="dd-item ">
+        <a href="/pandas-cookbook/chapter4/">
+        Chapter 4
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pandas-cookbook/chapter5" title="Chapter 5 - Web scraping with Pandas" class="dd-item ">
+        <a href="/pandas-cookbook/chapter5/">
+        Chapter 5
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pandas-cookbook/chapter6" title="Chapter 6 - String Operations" class="dd-item ">
+        <a href="/pandas-cookbook/chapter6/">
+        Chapter 6
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pandas-cookbook/chapter7" title="Chapter 7 - Cleanup messy data" class="dd-item ">
+        <a href="/pandas-cookbook/chapter7/">
+        Chapter 7
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pandas-cookbook/chapter8" title="Chapter 8 - Parsing Unix timestamps" class="dd-item ">
+        <a href="/pandas-cookbook/chapter8/">
+        Chapter 8
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TutsWiki/source/"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TutsWiki/source/graphs/contributors"><i class='fa fa-fw fa-bullhorn'></i> Credits</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/TutsWiki/"><i class='fa fa-fw fa-facebook'></i> Facebook</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/TutsWiki/source/" data-icon="octicon-star" data-show-count="true" aria-label="Star TutsWiki/source on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/TutsWiki/source/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork TutsWiki/source on GitHub">Fork</a>
+
+    <p>Built by Community with <a href="https://github.com/TutsWiki/source/graphs/contributors"><i class="fa fa-heart"></i></a>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/developing-and-deploying-clojure-web-application.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > Developing a Simple Clojure Web Application and Deploying to AWS
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Developing a Simple Clojure Web Application and Deploying to AWS</h1>
+          
+
+        
+
+
+<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Developing and Deploying a Simple Clojure Web Application" />
+<meta name=”twitter:description” content="The process of developing and deploying a simple web application in Clojure. After reading this you should be able to build your own app and deploy it to a production server." />
+The post walks through the process of developing and deploying a simple web application in Clojure. After reading this you should be able to build your own app and deploy it to a production server.</p>
+
+<p>Our sample app performs addition for the user. The user enters a value in each of two text fields, the values are submitted to the app, and the app returns the corresponding sum. Eventually it will look like this:</p>
+
+<p><img src="/images/adder.png" alt="adder webapp" title="adder webapp" />
+<img src="/images/adder2.png" alt="adder webapp" title="adder webapp result" /></p>
+
+<p>Before beginning on the app, make sure that you have <a href="https://leiningen.org/">Leiningen</a> installed.</p>
+
+<p>We’ll start with a minimal first version of the app. In a new directory <code>adder</code>, create a file <code>project.clj</code> with the following contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>adder <span style="color:#e6db74">&#34;0.0.1&#34;</span>
+  <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Add two numbers.&#34;</span>
+  <span style="color:#e6db74">:dependencies</span>
+    [[org.clojure/clojure <span style="color:#e6db74">&#34;1.2.0-beta1&#34;</span>]
+     [org.clojure/clojure-contrib <span style="color:#e6db74">&#34;1.2.0-beta1&#34;</span>]
+     [ring/ring-core <span style="color:#e6db74">&#34;0.2.5&#34;</span>]
+     [ring/ring-devel <span style="color:#e6db74">&#34;0.2.5&#34;</span>]
+     [ring/ring-jetty-adapter <span style="color:#e6db74">&#34;0.2.5&#34;</span>]
+     [compojure <span style="color:#e6db74">&#34;0.4.0&#34;</span>]
+     [hiccup <span style="color:#e6db74">&#34;0.2.6&#34;</span>]]
+  <span style="color:#e6db74">:dev-dependencies</span>
+    [[lein-run <span style="color:#e6db74">&#34;1.0.0-SNAPSHOT&#34;</span>]])</code></pre></div>
+<p>We’ll put the main app logic in the namespace <code>adder.core</code>. Create a file at <code>src/adder/core.clj</code> with this code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>adder.core
+  (<span style="color:#e6db74">:use</span> compojure.core)
+  (<span style="color:#e6db74">:use</span> hiccup.core)
+  (<span style="color:#e6db74">:use</span> hiccup.page-helpers))
+
+(<span style="color:#66d9ef">defn </span>view-layout [<span style="color:#f92672">&amp;</span> content]
+  (<span style="color:#a6e22e">html</span>
+    (<span style="color:#a6e22e">doctype</span> <span style="color:#e6db74">:xhtml-strict</span>)
+    (<span style="color:#a6e22e">xhtml-tag</span> <span style="color:#e6db74">&#34;en&#34;</span>
+      [<span style="color:#e6db74">:head</span>
+        [<span style="color:#e6db74">:meta</span> {<span style="color:#e6db74">:http-equiv</span> <span style="color:#e6db74">&#34;Content-type&#34;</span>
+                <span style="color:#e6db74">:content</span> <span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span>}]
+        [<span style="color:#e6db74">:title</span> <span style="color:#e6db74">&#34;adder&#34;</span>]]
+      [<span style="color:#e6db74">:body</span> content])))
+
+(<span style="color:#66d9ef">defn </span>view-input []
+  (<span style="color:#a6e22e">view-layout</span>
+    [<span style="color:#e6db74">:h2</span> <span style="color:#e6db74">&#34;add two numbers&#34;</span>]
+    [<span style="color:#e6db74">:form</span> {<span style="color:#e6db74">:method</span> <span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#e6db74">:action</span> <span style="color:#e6db74">&#34;/&#34;</span>}
+      [<span style="color:#e6db74">:input.math</span> {<span style="color:#e6db74">:type</span> <span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;a&#34;</span>}] [<span style="color:#e6db74">:span.math</span> <span style="color:#e6db74">&#34; + &#34;</span>]
+      [<span style="color:#e6db74">:input.math</span> {<span style="color:#e6db74">:type</span> <span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;b&#34;</span>}] [<span style="color:#e6db74">:br</span>]
+      [<span style="color:#e6db74">:input.action</span> {<span style="color:#e6db74">:type</span> <span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#e6db74">:value</span> <span style="color:#e6db74">&#34;add&#34;</span>}]]))
+
+(<span style="color:#66d9ef">defn </span>view-output [a b sum]
+  (<span style="color:#a6e22e">view-layout</span>
+    [<span style="color:#e6db74">:h2</span> <span style="color:#e6db74">&#34;two numbers added&#34;</span>]
+    [<span style="color:#e6db74">:p.math</span> a <span style="color:#e6db74">&#34; + &#34;</span> b <span style="color:#e6db74">&#34; = &#34;</span> sum]
+    [<span style="color:#e6db74">:a.action</span> {<span style="color:#e6db74">:href</span> <span style="color:#e6db74">&#34;/&#34;</span>} <span style="color:#e6db74">&#34;add more numbers&#34;</span>]))
+
+(<span style="color:#66d9ef">defn </span>parse-input [a b]
+  [(<span style="color:#a6e22e">Integer/parseInt</span> a) (<span style="color:#a6e22e">Integer/parseInt</span> b)])
+
+(<span style="color:#a6e22e">defroutes</span> app
+  (<span style="color:#a6e22e">GET</span> <span style="color:#e6db74">&#34;/&#34;</span> []
+    (<span style="color:#a6e22e">view-input</span>))
+
+  (<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/&#34;</span> [a b]
+    (<span style="color:#66d9ef">let </span>[[a b] (<span style="color:#a6e22e">parse-input</span> a b)
+          sum   (+ a b)]
+      (<span style="color:#a6e22e">view-output</span> a b sum))))</code></pre></div>
+<p>Also, put the following in <code>script/run.clj</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">use</span> <span style="color:#e6db74">&#39;ring.adapter.jetty</span>)
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;adder.core</span>)
+
+(<span style="color:#a6e22e">run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;adder.core/app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>})</code></pre></div>
+<p>Now you’re ready to test the first version of the app:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">lein deps
+lein run script/run.clj
+open http<span style="color:#e6db74">://localhost:8080/</span></code></pre></div>
+<p>Check out your app in the browser. You should be to perform the simple addition described above.</p>
+
+<p>As you use the app you’ll probably notice changes that you&rsquo;d like to make. You might also notice that errors like giving <code>foo</code> as an input are not handled well. To fix this let&rsquo;s apply some reloading and stacktrace middleware.</p>
+
+<p>Start by including the appropriate Ring middlewares into the <code>adder.core</code> namespace definition:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:use</span> ring.middleware.reload)
+(<span style="color:#e6db74">:use</span> ring.middleware.stacktrace)</code></pre></div>
+<p>We’ll want to separate out the main app logic that we wrote earlier from the full, middleware wrapped application, so change (defroutes app to (defroutes handler and add the following at the bottom of the file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>app
+  (-&gt; <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;handler</span>
+    (<span style="color:#a6e22e">wrap-reload</span> <span style="color:#f92672">&#39;</span>[adder.core])
+    (<span style="color:#a6e22e">wrap-stacktrace</span>)))</code></pre></div>
+<p>After stopping your running server and restarting it with <code>lein run script/run.clj</code>, you should be able to see changes to your code in <code>adder.core</code> reflected immediately in the web interface. Also, if your application encounters any errors you will see a stacktrace indicating what went wrong:</p>
+
+<p><img src="/images/numberformatexception.png" alt="NumberFormatException" title="NumberFormatException" /></p>
+
+<p>Speaking of errors, we may want to address some of those in our application. If a user enters something other than a number into one of the fields, we should respond with a useful error message. Update the <code>view-input</code> function to:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>view-input [<span style="color:#f92672">&amp;</span> [a b]]
+  (<span style="color:#a6e22e">view-layout</span>
+    [<span style="color:#e6db74">:h2</span> <span style="color:#e6db74">&#34;add two numbers&#34;</span>]
+    [<span style="color:#e6db74">:form</span> {<span style="color:#e6db74">:method</span> <span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#e6db74">:action</span> <span style="color:#e6db74">&#34;/&#34;</span>}
+      (<span style="color:#66d9ef">if </span>(and a b)
+        [<span style="color:#e6db74">:p</span> <span style="color:#e6db74">&#34;those are not both numbers!&#34;</span>])
+      [<span style="color:#e6db74">:input.math</span> {<span style="color:#e6db74">:type</span> <span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">:value</span> a}] [<span style="color:#e6db74">:span.math</span> <span style="color:#e6db74">&#34; + &#34;</span>]
+      [<span style="color:#e6db74">:input.math</span> {<span style="color:#e6db74">:type</span> <span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#e6db74">:value</span> b}] [<span style="color:#e6db74">:br</span>]
+      [<span style="color:#e6db74">:input.action</span> {<span style="color:#e6db74">:type</span> <span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#e6db74">:value</span> <span style="color:#e6db74">&#34;add&#34;</span>}]]))</code></pre></div>
+<p>and update the <code>POST</code> route to:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/&#34;</span> [a b]
+  (<span style="color:#a6e22e">try</span>
+    (<span style="color:#66d9ef">let </span>[[a b] (<span style="color:#a6e22e">parse-input</span> a b)
+          sum   (+ a b)]
+      (<span style="color:#a6e22e">view-output</span> a b sum))
+    (<span style="color:#a6e22e">catch</span> NumberFormatException e
+      (<span style="color:#a6e22e">view-input</span> a b))))</code></pre></div>
+<p>You can immediately verify that your changes worked by trying some invalid input:</p>
+
+<p><img src="/images/adder3.png" alt="adder webapp" title="adder webapp" /></p>
+
+<p>We should also handle the case where the user enters an unrecognized URL. To do that, require the Ring response middleware with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:use</span> ring.util.response)</code></pre></div>
+<p>and then add a catchall route to the bottom of the routes list:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">ANY</span> <span style="color:#e6db74">&#34;/*&#34;</span> [path]
+  (<span style="color:#a6e22e">redirect</span> <span style="color:#e6db74">&#34;/&#34;</span>))</code></pre></div>
+<p>Now when you visit e.g. <code>/foo</code>, you should be redirected back to the app&rsquo;s main page at <code>/</code>.</p>
+
+<p>Our app is starting to shape up, but we’re missing some necessary application infrastructure. For one, the application is not doing any logging, which makes it hard to understand what it is doing. Lets fix that with some request logging middleware. Create a new file <code>src/adder/middleware.clj</code> with these contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>adder.middleware)
+
+(<span style="color:#66d9ef">defn- </span>log [msg <span style="color:#f92672">&amp;</span> vals]
+  (<span style="color:#66d9ef">let </span>[line (apply format msg vals)]
+    (locking System/out (println line))))
+
+(<span style="color:#66d9ef">defn </span>wrap-request-logging [handler]
+  (<span style="color:#66d9ef">fn </span>[{<span style="color:#e6db74">:keys</span> [request-method uri] <span style="color:#e6db74">:as</span> req}]
+    (<span style="color:#66d9ef">let </span>[start  (<span style="color:#a6e22e">System/currentTimeMillis</span>)
+          resp   (<span style="color:#a6e22e">handler</span> req)
+          finish (<span style="color:#a6e22e">System/currentTimeMillis</span>)
+          total  (- finish start)]
+      (<span style="color:#a6e22e">log</span> <span style="color:#e6db74">&#34;request %s %s (%dms)&#34;</span> request-method uri total)
+      resp)))</code></pre></div>
+<p>Then pull this middleware into <code>core</code> with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:use</span> adder.middleware)</code></pre></div>
+<p>and add it to the app by updating the middleware stack to look like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>app
+  (-&gt; <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;handler</span>
+    (<span style="color:#a6e22e">wrap-request-logging</span>)
+    (<span style="color:#a6e22e">wrap-reload</span> <span style="color:#f92672">&#39;</span>[adder.middleware adder.core])
+    (<span style="color:#a6e22e">wrap-stacktrace</span>)))</code></pre></div>
+<p>Now each request will be noted in the app&rsquo;s logs, along with the time it takes.</p>
+
+<p>As soon as you try out the logging you&rsquo;ll probably notice requests to <code>/favicon.ico</code>. Since our simple app doesn&rsquo;t have a favicon, let&rsquo;s let the browser know with a 404 response. Add a <code>wrap-bounce-favicon</code> function to the <code>adder.middleware</code> namespace:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>wrap-bounce-favicon [handler]
+  (<span style="color:#66d9ef">fn </span>[req]
+    (<span style="color:#66d9ef">if </span>(= [<span style="color:#e6db74">:get</span> <span style="color:#e6db74">&#34;/favicon.ico&#34;</span>] [(<span style="color:#e6db74">:request-method</span> req) (<span style="color:#e6db74">:uri</span> req)])
+      {<span style="color:#e6db74">:status</span> <span style="color:#ae81ff">404</span>
+       <span style="color:#e6db74">:headers</span> {}
+       <span style="color:#e6db74">:body</span> <span style="color:#e6db74">&#34;&#34;</span>}
+      (<span style="color:#a6e22e">handler</span> req))))</code></pre></div>
+<p>and then include it in the middleware stack by adding (<code>wrap-bounce-favicon</code>) immediately above (<code>wrap-stacktrace</code>).</p>
+
+<p>Now let’s add a bit of styling to our utilitarian app. To do this we’ll create and apply a CSS file that is served statically by the application. Put the following in public/adder.css:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">math</span> {
+  <span style="color:#66d9ef">font-family</span>: Monaco, <span style="color:#66d9ef">monospace</span>; }
+
+.<span style="color:#a6e22e">action</span> {
+  <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>; }</code></pre></div>
+<p>and update the <code>:head</code> markup in <code>view-layout</code> to look like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">[<span style="color:#e6db74">:head</span>
+  [<span style="color:#e6db74">:meta</span> {<span style="color:#e6db74">:http-equiv</span> <span style="color:#e6db74">&#34;Content-type&#34;</span>
+          <span style="color:#e6db74">:content</span> <span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span>}]
+  [<span style="color:#e6db74">:title</span> <span style="color:#e6db74">&#34;adder&#34;</span>]
+  [<span style="color:#e6db74">:link</span> {<span style="color:#e6db74">:href</span> <span style="color:#e6db74">&#34;/adder.css&#34;</span> <span style="color:#e6db74">:rel</span> <span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#e6db74">:type</span> <span style="color:#e6db74">&#34;text/css&#34;</span>}]]</code></pre></div>
+<p>Next, include the necessary Ring middleware:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:use</span> ring.middleware.file)
+(<span style="color:#e6db74">:use</span> ring.middleware.file-info)</code></pre></div>
+<p>and update the middleware stack to look like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>app
+  (-&gt; <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;handler</span>
+    (<span style="color:#a6e22e">wrap-file</span> <span style="color:#e6db74">&#34;public&#34;</span>)
+    (<span style="color:#a6e22e">wrap-file-info</span>)
+    (<span style="color:#a6e22e">wrap-request-logging</span>)
+    (<span style="color:#a6e22e">wrap-reload</span> <span style="color:#f92672">&#39;</span>[adder.middleware adder.core])
+    (<span style="color:#a6e22e">wrap-bounce-favicon</span>)
+    (<span style="color:#a6e22e">wrap-stacktrace</span>)))</code></pre></div>
+<p>We should also write a few tests for our newly developed application. Create a file at <code>test/adder/core_test.clj</code> with the following contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>adder.core-test
+  (<span style="color:#e6db74">:use</span> clojure.test)
+  (<span style="color:#e6db74">:use</span> adder.core))
+
+(<span style="color:#a6e22e">deftest</span> parse-input-valid
+  (<span style="color:#a6e22e">is</span> (= [<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>] (<span style="color:#a6e22e">parse-input</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#e6db74">&#34;2&#34;</span>))))
+
+(<span style="color:#a6e22e">deftest</span> parse-input-invalid
+  (<span style="color:#a6e22e">is</span> (<span style="color:#a6e22e">thrown?</span> NumberFormatException
+    (<span style="color:#a6e22e">parse-input</span> <span style="color:#e6db74">&#34;foo&#34;</span> <span style="color:#e6db74">&#34;bar&#34;</span>))))
+
+(<span style="color:#a6e22e">deftest</span> view-output-valid
+  (<span style="color:#66d9ef">let </span>[html (<span style="color:#a6e22e">view-output</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>)]
+    (<span style="color:#a6e22e">is</span> (re-find <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;two numbers added&#34;</span> html))))
+
+(<span style="color:#a6e22e">deftest</span> handle-input-valid
+  (<span style="color:#66d9ef">let </span>[resp (<span style="color:#a6e22e">handler</span> {<span style="color:#e6db74">:uri</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#e6db74">:request-method</span> <span style="color:#e6db74">:get</span>})]
+    (<span style="color:#a6e22e">is</span> (= <span style="color:#ae81ff">200</span> (<span style="color:#e6db74">:status</span> resp)))
+    (<span style="color:#a6e22e">is</span> (re-find <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;add two numbers&#34;</span> (<span style="color:#e6db74">:body</span> resp)))))
+
+(<span style="color:#a6e22e">deftest</span> handle-add-valid
+  (<span style="color:#66d9ef">let </span>[resp (<span style="color:#a6e22e">handler</span> {<span style="color:#e6db74">:uri</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#e6db74">:request-method</span> <span style="color:#e6db74">:post</span>
+                       <span style="color:#e6db74">:params</span> {<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#e6db74">&#34;2&#34;</span>}})]
+    (<span style="color:#a6e22e">is</span> (= <span style="color:#ae81ff">200</span> (<span style="color:#e6db74">:status</span> resp)))
+    (<span style="color:#a6e22e">is</span> (re-find <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;1 \+ 2 = 3&#34;</span> (<span style="color:#e6db74">:body</span> resp)))))
+
+(<span style="color:#a6e22e">deftest</span> handle-add-invalid
+  (<span style="color:#66d9ef">let </span>[resp (<span style="color:#a6e22e">handler</span> {<span style="color:#e6db74">:uri</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#e6db74">:request-method</span> <span style="color:#e6db74">:post</span>
+                       <span style="color:#e6db74">:params</span> {<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#34;foo&#34;</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#e6db74">&#34;bar&#34;</span>}})]
+    (<span style="color:#a6e22e">is</span> (= <span style="color:#ae81ff">200</span> (<span style="color:#e6db74">:status</span> resp)))
+    (<span style="color:#a6e22e">is</span> (re-find <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;those are not both numbers&#34;</span> (<span style="color:#e6db74">:body</span> resp)))))
+
+(<span style="color:#a6e22e">deftest</span> handle-catchall
+  (<span style="color:#66d9ef">let </span>[resp (<span style="color:#a6e22e">handler</span> {<span style="color:#e6db74">:uri</span> <span style="color:#e6db74">&#34;/foo&#34;</span> <span style="color:#e6db74">:request-method</span> <span style="color:#e6db74">:get</span>})]
+    (<span style="color:#a6e22e">is</span> (= <span style="color:#ae81ff">302</span> (<span style="color:#e6db74">:status</span> resp)))
+    (<span style="color:#a6e22e">is</span> (= <span style="color:#e6db74">&#34;/&#34;</span> (<span style="color:#a6e22e">get-in</span> resp [<span style="color:#e6db74">:headers</span> <span style="color:#e6db74">&#34;Location&#34;</span>])))))</code></pre></div>
+<p>You can verify that they all pass by running <code>lein test</code>.</p>
+
+<p>Now that we have some tests we’re ready to start thinking about deploying this app to production. We’ll want the app to behave slightly differently in production and development, so we’ll need a way to differentiate between the two environments. I&rsquo;ll use the environment variable <code>APP_ENV</code> to define <code>production?</code> and <code>development?</code> vars in the <code>adder.core</code> namespace:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>production?
+  (= <span style="color:#e6db74">&#34;production&#34;</span> (get (<span style="color:#a6e22e">System/getenv</span>) <span style="color:#e6db74">&#34;APP_ENV&#34;</span>)))
+
+(<span style="color:#66d9ef">def </span>development?
+  (not production?))</code></pre></div>
+<p>Use this var to update the middleware stack to look like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>app
+  (-&gt; <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;handler</span>
+    (<span style="color:#a6e22e">wrap-file</span> <span style="color:#e6db74">&#34;public&#34;</span>)
+    (<span style="color:#a6e22e">wrap-file-info</span>)
+    (<span style="color:#a6e22e">wrap-request-logging</span>)
+    (<span style="color:#a6e22e">wrap-if</span> development? wrap-reload <span style="color:#f92672">&#39;</span>[adder.middleware adder.core])
+    (<span style="color:#a6e22e">wrap-bounce-favicon</span>)
+    (<span style="color:#a6e22e">wrap-exception-logging</span>)
+    (<span style="color:#a6e22e">wrap-if</span> production?  wrap-failsafe)
+    (<span style="color:#a6e22e">wrap-if</span> development? wrap-stacktrace)))</code></pre></div>
+<p>This code will enable a public-facing failsafe middleware in production while keeping the stacktrace middleware in development. We’ll also limit code reloading to development. Finally, we’ll add exception logging in both cases for additional visibility. This updated stack relies on several new functions in <code>adder.middleware</code>. Add the following to the <code>adder.middleware</code> namespace declaration:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:require</span> [clj-stacktrace.repl <span style="color:#e6db74">:as</span> strp])</code></pre></div>
+<p>and to the <code>adder.middleware</code> body:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>wrap-if [handler pred wrapper <span style="color:#f92672">&amp;</span> args]
+  (<span style="color:#66d9ef">if </span>pred
+    (apply wrapper handler args)
+    handler))
+
+(<span style="color:#66d9ef">defn </span>wrap-exception-logging [handler]
+  (<span style="color:#66d9ef">fn </span>[req]
+    (<span style="color:#a6e22e">try</span>
+      (<span style="color:#a6e22e">handler</span> req)
+      (<span style="color:#a6e22e">catch</span> Exception e
+        (<span style="color:#a6e22e">log</span> <span style="color:#e6db74">&#34;Exception:\n%s&#34;</span> (<span style="color:#a6e22e">strp/pst-str</span> e))
+        (<span style="color:#a6e22e">throw</span> e)))))
+
+(<span style="color:#66d9ef">defn </span>wrap-failsafe [handler]
+  (<span style="color:#66d9ef">fn </span>[req]
+    (<span style="color:#a6e22e">try</span>
+      (<span style="color:#a6e22e">handler</span> req)
+      (<span style="color:#a6e22e">catch</span> Exception e
+        {<span style="color:#e6db74">:status</span> <span style="color:#ae81ff">500</span>
+         <span style="color:#e6db74">:headers</span> {<span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#e6db74">&#34;text/plain&#34;</span>}
+         <span style="color:#e6db74">:body</span> <span style="color:#e6db74">&#34;We&#39;re sorry, something went wrong.&#34;</span>}))))</code></pre></div>
+<p>The site will not run on port <code>8080</code> in production, so we&rsquo;ll need a way to specify the port to the run script. We&rsquo;ll use the <code>PORT</code> environment variable. Update the body of <code>script/run.clj</code> to the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[port (<span style="color:#a6e22e">Integer/parseInt</span> (get (<span style="color:#a6e22e">System/getenv</span>) <span style="color:#e6db74">&#34;PORT&#34;</span> <span style="color:#e6db74">&#34;8080&#34;</span>))]
+  (<span style="color:#a6e22e">run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;adder.core/app</span> {<span style="color:#e6db74">:port</span> port}))</code></pre></div>
+<p>Now we’re ready to put this app into production. I&rsquo;ll walk through the steps needed for to deploying to EC2 using the standard <a href="https://aws.amazon.com/cli/">EC2 command line tools</a>, but the process would be similar for other hosting providers.</p>
+
+<p>Start be allocating by setting up a security group and SSH keypair for the application:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ec2-add-group adder -d <span style="color:#e6db74">&#34;adder deployment&#34;</span>
+ec2-authorize adder -P tcp -p <span style="color:#ae81ff">22</span>
+ec2-authorize adder -P tcp -p <span style="color:#ae81ff">80</span>
+
+mkdir -p dev
+ec2-add-keypair adder | tail -n +2 &gt; dev/adder.pem
+chmod <span style="color:#ae81ff">600</span> dev/adder.pem</code></pre></div>
+<p>Then allocate a server based on a public Ubunut AMI and wait for it to come up:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ec2-run-instances ami-2d4aa444 -g adder -k adder <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -n <span style="color:#ae81ff">1</span> -t m1.small -z us-east-1a
+watch ec2-describe-instances</code></pre></div>
+<p>Set some local environment variables to make subsequent commands easier:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ADDER_PEM<span style="color:#f92672">=</span>dev/adder.pem
+export ADDER_HOST<span style="color:#f92672">=</span>&lt;ec2-public-ip&gt;</code></pre></div>
+<p>To set up the server, SSH in</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i $ADDER_PEM ubuntu@$ADDER_HOST</code></pre></div>
+<p>and run a few commands to install Java and set up the directory structure:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo su root
+curl -L -o install-java.sh http://bit.ly/b5lesP
+bash install-java.sh
+mkdir -p /var/log/adder /var/adder
+chown -R ubuntu:ubuntu /var/adder</code></pre></div>
+<p>We&rsquo;ll control the server process using Ubuntu&rsquo;s <a href="http://upstart.ubuntu.com/">upstart</a>. Put the following upstart configuration file in <code>deploy/adder.conf</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">script
+  export PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>
+  export APP_ENV<span style="color:#f92672">=</span>production
+  cd /var/adder
+  java -cp <span style="color:#e6db74">&#34;lib/*:src/&#34;</span> clojure.main script/run.clj <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    &gt;&gt; /var/log/adder/adder.log 2&gt;&amp;<span style="color:#ae81ff">1</span>
+end script</code></pre></div>
+<p>and then place it in the appropriate spot on the server with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp -i $ADDER_PEM deploy/adder.conf <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  ubuntu@$ADDER_HOST:/tmp/adder.conf
+ssh -i $ADDER_PEM ubuntu@$ADDER_HOST <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;sudo mv /tmp/adder.conf /etc/init/adder.conf&#34;</span></code></pre></div>
+<p>Create a list in <code>deploy/exclude.txt</code> of files that should not be deployed to the production server:</p>
+<pre><code>.git
+.gitignore
+deploy
+test
+classes</code></pre>
+<p>Now install the app’s files on the server with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync --rsh<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ssh -i &#39;</span>$ADDER_PEM <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      -vr --delete --exclude-from deploy/exclude.txt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      ./ ubuntu@$ADDER_HOST:/var/adder/</code></pre></div>
+<p>After the first <code>rsync</code> completes, start the server with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i $ADDER_PEM ubuntu@$ADDER_HOST <span style="color:#e6db74">&#34;sudo start adder&#34;</span></code></pre></div>
+<p>and check that it works by opening the production site from your local machine:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">open http://$ADDER_HOST/</code></pre></div>
+<p><img src="/images/adder4.png" alt="adder webapp" title="adder webapp result" /></p>
+
+<p>If you want to deploy a change, <code>rsync</code> up your code and then run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i $ADDER_PEM ubuntu@$ADDER_HOST <span style="color:#e6db74">&#34;sudo restart adder&#34;</span></code></pre></div>
+<p>I hope this post helps you develop and deploy your own Clojure web applications.</p>
+
+
+
+<br />
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_reddit"></a>
+<a class="a2a_button_hacker_news"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_linkedin"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
+<br />
+
+        
+        </div>
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/environment-passing-in-clojure" title="Environment Passing in Clojure" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1595678224"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595678224"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595678224"></script>
+    <script src="/js/jquery.sticky.js?1595678224"></script>
+    <script src="/js/featherlight.min.js?1595678224"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595678224"></script>
+    <script src="/js/highlight.pack.js?1595678224"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1595678224"></script>
+    <script src="/js/learn.js?1595678224"></script>
+    <script src="/js/hugo-learn.js?1595678224"></script>
+
+    <link href="/mermaid/mermaid.css?1595678224" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595678224"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
