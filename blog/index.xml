@@ -22,6 +22,16 @@ Our sample app performs addition for the user. The user enters a value in each o
     </item>
     
     <item>
+      <title>Threaded vs Evented Servers</title>
+      <link>http://tutswiki.com/threaded-vs-evented-servers/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/threaded-vs-evented-servers/</guid>
+      <description>Broadly speaking, there are two ways to handle concurrent requests to a server. Threaded servers use multiple concurrently-executing threads that each handle one client request, while evented servers run a single event loop that handles events for all connected clients.
+To chose between the threaded and evented approaches you need to consider the load profile of the server. This post describes a simple mathematical model for reasoning about these load profiles and their implications for server design.</description>
+    </item>
+    
+    <item>
       <title>Environment Passing in Clojure</title>
       <link>http://tutswiki.com/environment-passing-in-clojure/</link>
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
