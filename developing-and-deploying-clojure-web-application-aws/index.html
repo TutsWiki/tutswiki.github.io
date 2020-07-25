@@ -17,17 +17,17 @@
     <title>Developing a Simple Clojure Web Application and Deploying to AWS - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1595678277" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1595678277" rel="stylesheet">
-    <link href="/css/hybrid.css?1595678277" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595678277" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595678277" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595678277" rel="stylesheet">
-    <link href="/css/theme.css?1595678277" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595678277" rel="stylesheet">
+    <link href="/css/nucleus.css?1595678645" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1595678645" rel="stylesheet">
+    <link href="/css/hybrid.css?1595678645" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595678645" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595678645" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595678645" rel="stylesheet">
+    <link href="/css/theme.css?1595678645" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595678645" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1595678277"></script>
+    <script src="/js/jquery-2.x.min.js?1595678645"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595678277"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595678277"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595678645"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595678645"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595678277"></script>
+<script type="text/javascript" src="/js/search.js?1595678645"></script>
 
     
   </div>
@@ -782,7 +782,7 @@ The post walks through the process of developing and deploying a simple web appl
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<p>We’ll start with a minimal first version of the app. In a new directory <code>adder</code>, create a file <code>project.clj</code> with the following contents:</p>
+<p>We&rsquo;ll start with a minimal first version of the app. In a new directory <code>adder</code>, create a file <code>project.clj</code> with the following contents:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>adder <span style="color:#e6db74">&#34;0.0.1&#34;</span>
   <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Add two numbers.&#34;</span>
   <span style="color:#e6db74">:dependencies</span>
@@ -795,7 +795,7 @@ The post walks through the process of developing and deploying a simple web appl
      [hiccup <span style="color:#e6db74">&#34;0.2.6&#34;</span>]]
   <span style="color:#e6db74">:dev-dependencies</span>
     [[lein-run <span style="color:#e6db74">&#34;1.0.0-SNAPSHOT&#34;</span>]])</code></pre></div>
-<p>We’ll put the main app logic in the namespace <code>adder.core</code>. Create a file at <code>src/adder/core.clj</code> with this code:</p>
+<p>We&rsquo;ll put the main app logic in the namespace <code>adder.core</code>. Create a file at <code>src/adder/core.clj</code> with this code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>adder.core
   (<span style="color:#e6db74">:use</span> compojure.core)
   (<span style="color:#e6db74">:use</span> hiccup.core)
@@ -841,18 +841,18 @@ The post walks through the process of developing and deploying a simple web appl
 (<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;adder.core</span>)
 
 (<span style="color:#a6e22e">run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;adder.core/app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>})</code></pre></div>
-<p>Now you’re ready to test the first version of the app:</p>
+<p>Now you&rsquo;re ready to test the first version of the app:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">lein deps
 lein run script/run.clj
 open http<span style="color:#e6db74">://localhost:8080/</span></code></pre></div>
 <p>Check out your app in the browser. You should be to perform the simple addition described above.</p>
 
-<p>As you use the app you’ll probably notice changes that you&rsquo;d like to make. You might also notice that errors like giving <code>foo</code> as an input are not handled well. To fix this let&rsquo;s apply some reloading and stacktrace middleware.</p>
+<p>As you use the app you&rsquo;ll probably notice changes that you&rsquo;d like to make. You might also notice that errors like giving <code>foo</code> as an input are not handled well. To fix this let&rsquo;s apply some reloading and stacktrace middleware.</p>
 
 <p>Start by including the appropriate Ring middlewares into the <code>adder.core</code> namespace definition:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:use</span> ring.middleware.reload)
 (<span style="color:#e6db74">:use</span> ring.middleware.stacktrace)</code></pre></div>
-<p>We’ll want to separate out the main app logic that we wrote earlier from the full, middleware wrapped application, so change (defroutes app to (defroutes handler and add the following at the bottom of the file:</p>
+<p>We&rsquo;ll want to separate out the main app logic that we wrote earlier from the full, middleware wrapped application, so change (defroutes app to (defroutes handler and add the following at the bottom of the file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>app
   (-&gt; <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;handler</span>
     (<span style="color:#a6e22e">wrap-reload</span> <span style="color:#f92672">&#39;</span>[adder.core])
@@ -890,6 +890,17 @@ open http<span style="color:#e6db74">://localhost:8080/</span></code></pre></div
   (<span style="color:#a6e22e">redirect</span> <span style="color:#e6db74">&#34;/&#34;</span>))</code></pre></div>
 <p>Now when you visit e.g. <code>/foo</code>, you should be redirected back to the app&rsquo;s main page at <code>/</code>.</p>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <p>Our app is starting to shape up, but we’re missing some necessary application infrastructure. For one, the application is not doing any logging, which makes it hard to understand what it is doing. Lets fix that with some request logging middleware. Create a new file <code>src/adder/middleware.clj</code> with these contents:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>adder.middleware)
 
@@ -925,7 +936,7 @@ open http<span style="color:#e6db74">://localhost:8080/</span></code></pre></div
       (<span style="color:#a6e22e">handler</span> req))))</code></pre></div>
 <p>and then include it in the middleware stack by adding (<code>wrap-bounce-favicon</code>) immediately above (<code>wrap-stacktrace</code>).</p>
 
-<p>Now let’s add a bit of styling to our utilitarian app. To do this we’ll create and apply a CSS file that is served statically by the application. Put the following in public/adder.css:</p>
+<p>Now let&rsquo;s add a bit of styling to our utilitarian app. To do this we&rsquo;ll create and apply a CSS file that is served statically by the application. Put the following in public/adder.css:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">math</span> {
   <span style="color:#66d9ef">font-family</span>: Monaco, <span style="color:#66d9ef">monospace</span>; }
 
@@ -988,7 +999,7 @@ open http<span style="color:#e6db74">://localhost:8080/</span></code></pre></div
     (<span style="color:#a6e22e">is</span> (= <span style="color:#e6db74">&#34;/&#34;</span> (<span style="color:#a6e22e">get-in</span> resp [<span style="color:#e6db74">:headers</span> <span style="color:#e6db74">&#34;Location&#34;</span>])))))</code></pre></div>
 <p>You can verify that they all pass by running <code>lein test</code>.</p>
 
-<p>Now that we have some tests we’re ready to start thinking about deploying this app to production. We’ll want the app to behave slightly differently in production and development, so we’ll need a way to differentiate between the two environments. I&rsquo;ll use the environment variable <code>APP_ENV</code> to define <code>production?</code> and <code>development?</code> vars in the <code>adder.core</code> namespace:</p>
+<p>Now that we have some tests we&rsquo;re ready to start thinking about deploying this app to production. We&rsquo;ll want the app to behave slightly differently in production and development, so we&rsquo;ll need a way to differentiate between the two environments. I&rsquo;ll use the environment variable <code>APP_ENV</code> to define <code>production?</code> and <code>development?</code> vars in the <code>adder.core</code> namespace:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>production?
   (= <span style="color:#e6db74">&#34;production&#34;</span> (get (<span style="color:#a6e22e">System/getenv</span>) <span style="color:#e6db74">&#34;APP_ENV&#34;</span>)))
 
@@ -1005,7 +1016,7 @@ open http<span style="color:#e6db74">://localhost:8080/</span></code></pre></div
     (<span style="color:#a6e22e">wrap-exception-logging</span>)
     (<span style="color:#a6e22e">wrap-if</span> production?  wrap-failsafe)
     (<span style="color:#a6e22e">wrap-if</span> development? wrap-stacktrace)))</code></pre></div>
-<p>This code will enable a public-facing failsafe middleware in production while keeping the stacktrace middleware in development. We’ll also limit code reloading to development. Finally, we’ll add exception logging in both cases for additional visibility. This updated stack relies on several new functions in <code>adder.middleware</code>. Add the following to the <code>adder.middleware</code> namespace declaration:</p>
+<p>This code will enable a public-facing failsafe middleware in production while keeping the stacktrace middleware in development. We&rsquo;ll also limit code reloading to development. Finally, we&rsquo;ll add exception logging in both cases for additional visibility. This updated stack relies on several new functions in <code>adder.middleware</code>. Add the following to the <code>adder.middleware</code> namespace declaration:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:require</span> [clj-stacktrace.repl <span style="color:#e6db74">:as</span> strp])</code></pre></div>
 <p>and to the <code>adder.middleware</code> body:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>wrap-if [handler pred wrapper <span style="color:#f92672">&amp;</span> args]
@@ -1076,7 +1087,7 @@ ssh -i $ADDER_PEM ubuntu@$ADDER_HOST <span style="color:#ae81ff">\
 deploy
 test
 classes</code></pre>
-<p>Now install the app’s files on the server with:</p>
+<p>Now install the app&rsquo;s files on the server with:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync --rsh<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ssh -i &#39;</span>$ADDER_PEM <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      -vr --delete --exclude-from deploy/exclude.txt <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      ./ ubuntu@$ADDER_HOST:/var/adder/</code></pre></div>
@@ -1604,20 +1615,20 @@ classes</code></pre>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595678277"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595678277"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595678277"></script>
-    <script src="/js/jquery.sticky.js?1595678277"></script>
-    <script src="/js/featherlight.min.js?1595678277"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1595678277"></script>
-    <script src="/js/highlight.pack.js?1595678277"></script>
+    <script src="/js/clipboard.min.js?1595678645"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595678645"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595678645"></script>
+    <script src="/js/jquery.sticky.js?1595678645"></script>
+    <script src="/js/featherlight.min.js?1595678645"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1595678645"></script>
+    <script src="/js/highlight.pack.js?1595678645"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1595678277"></script>
-    <script src="/js/learn.js?1595678277"></script>
-    <script src="/js/hugo-learn.js?1595678277"></script>
+    <script src="/js/modernizr.custom.71422.js?1595678645"></script>
+    <script src="/js/learn.js?1595678645"></script>
+    <script src="/js/hugo-learn.js?1595678645"></script>
 
-    <link href="/mermaid/mermaid.css?1595678277" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595678277"></script>
+    <link href="/mermaid/mermaid.css?1595678645" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595678645"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
