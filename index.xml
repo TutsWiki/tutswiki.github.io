@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Developing a Simple Clojure Web Application and Deploying to AWS</title>
-      <link>http://tutswiki.com/developing-and-deploying-clojure-web-application-aws/</link>
-      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://tutswiki.com/developing-and-deploying-clojure-web-application-aws/</guid>
-      <description>The post walks through the process of developing and deploying a simple web application in Clojure. After reading this you should be able to build your own app and deploy it to a production server.
-Our sample app performs addition for the user. The user enters a value in each of two text fields, the values are submitted to the app, and the app returns the corresponding sum. Eventually it will look like this:</description>
-    </item>
-    
-    <item>
       <title>noprocrast</title>
       <link>http://tutswiki.com/noprocrast/</link>
       <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
