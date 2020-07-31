@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="generator" content="Hugo 0.41" />
     <meta name="description" content="Learn how to deploy your Node.js app on the Google App Engine.">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="nodejs,node,npm,google cloud,app engine,gcloud,deploy">
@@ -17,26 +17,22 @@
     <title>How to deploy Node.js app on Google App Engine - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596092920" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596092920" rel="stylesheet">
-    <link href="/css/hybrid.css?1596092920" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596092920" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596092920" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596092920" rel="stylesheet">
-    <link href="/css/theme.css?1596092920" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596092920" rel="stylesheet">
+    <link href="/css/nucleus.css?1596200831" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596200831" rel="stylesheet">
+    <link href="/css/hybrid.css?1596200831" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596200831" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596200831" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596200831" rel="stylesheet">
+    <link href="/css/theme.css?1596200831" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596200831" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596092920"></script>
+    <script src="/js/jquery-2.x.min.js?1596200831"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
-      
-        :not(pre) > code + span.copy-to-clipboard {
-            display: none;
-        }
       
     </style>
     
@@ -66,14 +62,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596092920"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596092920"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596200831"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596200831"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596092920"></script>
+<script type="text/javascript" src="/js/search.js?1596200831"></script>
 
     
   </div>
@@ -106,120 +102,6 @@
           
           
         
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/noprocrast" title="noprocrast" class="dd-item ">
-        <a href="/noprocrast/">
-        noprocrast
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
-        <a href="/how-to-fix-sudo-node-command-not-found-error/">
-        sudo and node
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
-        <a href="/yet-another-lousy-monad-tutorial/">
-        Yet another lousy monad tutorial
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
-        <a href="/ruby-enumerable/">
-        A Deeper Look at Ruby&#39;s Enumerable
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
-        <a href="/rest-api-in-clojure/">
-        A REST API in Clojure
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
-        <a href="/abstract-classes-and-interfaces-in-python/">
-        Abstract classes and interfaces in Python
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -757,8 +639,8 @@
 <a href="https://cloud.google.com/appengine/">Google App Engine</a> is a part of the Google Cloud Suite which provides a cloud platform for developers where they can develop and host their apps. It provides easily configurable, fast and secure programming environments/tools with the help of which developers can setup a development environment in just a few minutes. Therefore developers don&rsquo;t need to worry about configuring the environment, they can just focus on writing code. It supports all the popular programming languages Java, PHP, Node.js, Python, C#, .Net, Ruby and Go.</p>
 
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/2PRciDpqpko" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/2PRciDpqpko" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
 </div>
 
 
@@ -780,43 +662,38 @@
 
 <ul>
 <li>Download and install Node.js and Node Package Manager <a  href="https://nodejs.org/en/download/" target="_blank"  class="btn btn-default">
-<br />
-<br />
-<br />
-<br />
-<br /></li>
+  
+  
+  
+    
+  
+  Get Node.js and npm
+  
+  <i class="fa fa-download"></i>
+  
+</a>
+
+<div class="notices note" ><p>Only Node.js version 8 or greater is supported on App Engine.</p>
+</div>
+</li>
+<li>Download and install Google Cloud SDK <a  href="https://cloud.google.com/sdk/docs/#install_the_latest_cloud_tools_version_cloudsdk_current_version" target="_blank"  class="btn btn-default">
+  
+  
+  
+    
+  
+  Get Google Cloud SDK
+  
+  <i class="fa fa-download"></i>
+  
+</a>
+
+<div class="notices note" ><p>Google Cloud SDK also installs gcloud command line tool.</p>
+</div>
+</li>
 </ul></li>
 </ul></li>
 </ol>
-
-<p>Get Node.js and npm</p>
-
-<p><i class="fa fa-download"></i></p>
-
-<p></a></p>
-<pre><code>     &lt;div class=&#34;notices note&#34; &gt;</code></pre>
-<p>Only Node.js version 8 or greater is supported on App Engine.
-        </div></p>
-<pre><code>    * Download and install Google Cloud SDK &lt;a  href=&#34;https://cloud.google.com/sdk/docs/#install_the_latest_cloud_tools_version_cloudsdk_current_version&#34; target=&#34;_blank&#34;  class=&#34;btn btn-default&#34;&gt;</code></pre>
-<p>Get Google Cloud SDK</p>
-
-<p><i class="fa fa-download"></i></p>
-
-<p></a></p>
-<pre><code>     &lt;div class=&#34;notices note&#34; &gt;</code></pre>
-<p>Google Cloud SDK also installs gcloud command line tool.
-        </div></p>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="5842766387"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 <h3 id="hello-world">Hello world!</h3>
 
@@ -824,22 +701,30 @@
 <li><p>There&rsquo;s a sample Node.js repository on GitHub. Either clone it using <a href="https://www.youtube.com/watch?v=kTXksoxWClw&amp;list=PLndX_e9bdotV7vq2NoTwR0OPCNaA9jBEN&amp;index=10">git</a> or <a href="https://github.com/GoogleCloudPlatform/nodejs-docs-samples/archive/master.zip">download the zip</a>.</p>
 
 <!-- language: lang-sh -->
-<pre><code>git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples</code></pre></li>
+
+<pre><code>git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples
+</code></pre></li>
 
 <li><p>Navigate to the below directory</p>
 
 <!-- language: lang-sh -->
-<pre><code>cd nodejs-docs-samples/appengine/hello-world/standard</code></pre></li>
+
+<pre><code>cd nodejs-docs-samples/appengine/hello-world/standard
+</code></pre></li>
 
 <li><p>Install the required dependencies using npm utility</p>
 
 <!-- language: lang-js -->
-<pre><code>npm install</code></pre></li>
+
+<pre><code>npm install
+</code></pre></li>
 
 <li><p>Start the web server</p>
 
 <!-- language: lang-js -->
-<pre><code>npm start</code></pre></li>
+
+<pre><code>npm start
+</code></pre></li>
 
 <li><p>Check output</p>
 
@@ -858,24 +743,26 @@
 <li><p>If you had installed <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a> properly (as mentioned in <a href="#prerequisites">Prerequisites</a>), you&rsquo;ll have access to the gcloud command. Run it as below</p>
 
 <!-- language: lang-sh -->
-<pre><code>gcloud app deploy</code></pre></li>
+
+<pre><code>gcloud app deploy
+</code></pre></li>
 
 <li><p>Your app should now be live at https://&lt;PROJECT_ID&gt;.appspot.com/</p>
 
 <!-- language: lang-sh -->
-<pre><code>gcloud app browse   </code></pre></li>
+
+<pre><code>gcloud app browse   
+</code></pre></li>
 </ol>
 
 <p>That&rsquo;s it. You have successfully deployed your sample Node.js app on the Google App Engine.</p>
 
-<div class="notices tip" >
-Refer Google's official guide on [Building a Node.js App on App Engine](https://cloud.google.com/appengine/docs/standard/nodejs/building-app/)
+<p><div class="notices tip" ><p>Refer Google&rsquo;s official guide on <a href="https://cloud.google.com/appengine/docs/standard/nodejs/building-app/">Building a Node.js App on App Engine</a></p>
 </div>
 
-<div class="notices info" >
-You can try out [Google App Engine's free tier](
-https://cloud.google.com/free/docs/always-free-usage-limits) to deploy your Node.js app and see if you like it.
+<div class="notices info" ><p>You can try out <a href="https://cloud.google.com/free/docs/always-free-usage-limits">Google App Engine&rsquo;s free tier</a> to deploy your Node.js app and see if you like it.</p>
 </div>
+</p>
 
 <style>
 div.notices {
@@ -897,6 +784,16 @@ margin: 0.3rem 0;
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
 <br />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="1203265687"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
         
         </div>
@@ -937,102 +834,6 @@ margin: 0.3rem 0;
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1380,20 +1181,20 @@ margin: 0.3rem 0;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596092920"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596092920"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596092920"></script>
-    <script src="/js/jquery.sticky.js?1596092920"></script>
-    <script src="/js/featherlight.min.js?1596092920"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596092920"></script>
-    <script src="/js/highlight.pack.js?1596092920"></script>
+    <script src="/js/clipboard.min.js?1596200831"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596200831"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596200831"></script>
+    <script src="/js/jquery.sticky.js?1596200831"></script>
+    <script src="/js/featherlight.min.js?1596200831"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596200831"></script>
+    <script src="/js/highlight.pack.js?1596200831"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596092920"></script>
-    <script src="/js/learn.js?1596092920"></script>
-    <script src="/js/hugo-learn.js?1596092920"></script>
+    <script src="/js/modernizr.custom.71422.js?1596200831"></script>
+    <script src="/js/learn.js?1596200831"></script>
+    <script src="/js/hugo-learn.js?1596200831"></script>
 
-    <link href="/mermaid/mermaid.css?1596092920" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596092920"></script>
+    <link href="/mermaid/mermaid.css?1596200831" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596200831"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="generator" content="Hugo 0.41" />
     <meta name="description" content="Web scraping with Pandas">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="pandas,Groupby,Aggregate,numpy,matplotlib">
@@ -17,26 +17,22 @@
     <title>Chapter 5 - Web scraping with Pandas - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596092920" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596092920" rel="stylesheet">
-    <link href="/css/hybrid.css?1596092920" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596092920" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596092920" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596092920" rel="stylesheet">
-    <link href="/css/theme.css?1596092920" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596092920" rel="stylesheet">
+    <link href="/css/nucleus.css?1596200831" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596200831" rel="stylesheet">
+    <link href="/css/hybrid.css?1596200831" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596200831" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596200831" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596200831" rel="stylesheet">
+    <link href="/css/theme.css?1596200831" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596200831" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596092920"></script>
+    <script src="/js/jquery-2.x.min.js?1596200831"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
-      
-        :not(pre) > code + span.copy-to-clipboard {
-            display: none;
-        }
       
     </style>
     
@@ -66,14 +62,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596092920"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596092920"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596200831"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596200831"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596092920"></script>
+<script type="text/javascript" src="/js/search.js?1596200831"></script>
 
     
   </div>
@@ -106,120 +102,6 @@
           
           
         
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/noprocrast" title="noprocrast" class="dd-item ">
-        <a href="/noprocrast/">
-        noprocrast
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
-        <a href="/how-to-fix-sudo-node-command-not-found-error/">
-        sudo and node
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
-        <a href="/yet-another-lousy-monad-tutorial/">
-        Yet another lousy monad tutorial
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
-        <a href="/ruby-enumerable/">
-        A Deeper Look at Ruby&#39;s Enumerable
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
-        <a href="/rest-api-in-clojure/">
-        A REST API in Clojure
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
-        <a href="/abstract-classes-and-interfaces-in-python/">
-        Abstract classes and interfaces in Python
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -752,14 +634,16 @@
 
 
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>matplotlib inline
-<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
-<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<pre><code class="language-python">%matplotlib inline
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
-pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.mpl_style&#39;</span>, <span style="color:#e6db74">&#39;default&#39;</span>)
-plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">3</span>)
-plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.family&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sans-serif&#39;</span></code></pre></div>
+pd.set_option('display.mpl_style', 'default')
+plt.rcParams['figure.figsize'] = (15, 3)
+plt.rcParams['font.family'] = 'sans-serif'
+</code></pre>
+
 <h2 id="summary">Summary</h2>
 
 <p>By the end of this chapter, we&rsquo;re going to have downloaded all of Canada&rsquo;s weather data for 2012, and saved it to a CSV.</p>
@@ -767,8 +651,11 @@ plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39
 <p>We&rsquo;ll do this by downloading it one month at a time, and then combining all the months together.</p>
 
 <p>Here&rsquo;s the temperature every hour for 2012! Download <a href="https://tutswiki.com/weather_2012.csv">weather_2012.csv</a> and try yourself.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_2012_final <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;weather_2012.csv&#39;</span>, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date/Time&#39;</span>)
-weather_2012_final[<span style="color:#e6db74">&#39;Temp (C)&#39;</span>]<span style="color:#f92672">.</span>plot(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">6</span>))</code></pre></div>
+
+<pre><code class="language-python">weather_2012_final = pd.read_csv('weather_2012.csv', index_col='Date/Time')
+weather_2012_final['Temp (C)'].plot(figsize=(15, 6))
+</code></pre>
+
 <p>Output:</p>
 
 <div>
@@ -782,14 +669,23 @@ weather_2012_final[<span style="color:#e6db74">&#39;Temp (C)&#39;</span>]<span s
 <p>Here we&rsquo;re going to get the data for March 2012, and clean it up</p>
 
 <p>Here&rsquo;s an URL template you can use to get data in Montreal.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url_template <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://climate.weather.gc.ca/climate_data/bulk_data_e.html?format=csv&amp;stationID=5415&amp;Year={year}&amp;Month={month}&amp;timeframe=1&amp;submit=Download+Data&#34;</span></code></pre></div>
+
+<pre><code class="language-python">url_template = &quot;http://climate.weather.gc.ca/climate_data/bulk_data_e.html?format=csv&amp;stationID=5415&amp;Year={year}&amp;Month={month}&amp;timeframe=1&amp;submit=Download+Data&quot;
+</code></pre>
+
 <p>To get the data for March 2013, we need to format it with month=3, year=2012.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url <span style="color:#f92672">=</span> url_template<span style="color:#f92672">.</span>format(month<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, year<span style="color:#f92672">=</span><span style="color:#ae81ff">2012</span>)
-weather_mar2012 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date/Time&#39;</span>, parse_dates<span style="color:#f92672">=</span>True)</code></pre></div>
+
+<pre><code class="language-python">url = url_template.format(month=3, year=2012)
+weather_mar2012 = pd.read_csv(url, index_col='Date/Time', parse_dates=True)
+</code></pre>
+
 <p>This is super great! We can just use the same read_csv function as before, and just give it a URL as a filename. Awesome.</p>
 
 <p>There are 16 rows of metadata at the top of this CSV, but pandas knows CSVs are weird, so there&rsquo;s a skiprows options. We parse the dates again, and set &lsquo;Date/Time&rsquo; to be the index column. Here&rsquo;s the resulting dataframe.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_mar2012</code></pre></div>
+
+<pre><code class="language-python">weather_mar2012
+</code></pre>
+
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -2317,7 +2213,10 @@ weather_mar2012 <span style="color:#f92672">=</span> pd<span style="color:#f9267
 </div>
 
 <p>Let&rsquo;s plot it!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_mar2012[<span style="color:#e6db74">u</span><span style="color:#e6db74">&#34;Temp (</span><span style="color:#ae81ff">\xc2\xb0</span><span style="color:#e6db74">C)&#34;</span>]<span style="color:#f92672">.</span>plot(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</span>))</code></pre></div>
+
+<pre><code class="language-python">weather_mar2012[u&quot;Temp (\xc2\xb0C)&quot;].plot(figsize=(15, 5))
+</code></pre>
+
 <p>Output:</p>
 
 <div>
@@ -2329,20 +2228,26 @@ weather_mar2012 <span style="color:#f92672">=</span> pd<span style="color:#f9267
 <p>And I was out of town and I missed it. Still sad, humans.</p>
 
 <p>I had to write &lsquo;\xb0&rsquo; for that degree character °. Let&rsquo;s fix up the columns. We&rsquo;re going to just print them out, copy, and fix them up by hand.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_mar2012<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [
-    <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Year&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Month&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Day&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Time&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Data Quality&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Temp (C)&#39;</span>, 
-    <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Temp Flag&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Dew Point Temp (C)&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Dew Point Temp Flag&#39;</span>, 
-    <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Rel Hum (%)&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Rel Hum Flag&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Wind Dir (10s deg)&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Wind Dir Flag&#39;</span>, 
-    <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Wind Spd (km/h)&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Wind Spd Flag&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Visibility (km)&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Visibility Flag&#39;</span>,
-    <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Stn Press (kPa)&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Stn Press Flag&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Hmdx&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Hmdx Flag&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Wind Chill&#39;</span>, 
-    <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Wind Chill Flag&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Weather&#39;</span>]</code></pre></div>
+
+<pre><code class="language-python">weather_mar2012.columns = [
+    u'Year', u'Month', u'Day', u'Time', u'Data Quality', u'Temp (C)', 
+    u'Temp Flag', u'Dew Point Temp (C)', u'Dew Point Temp Flag', 
+    u'Rel Hum (%)', u'Rel Hum Flag', u'Wind Dir (10s deg)', u'Wind Dir Flag', 
+    u'Wind Spd (km/h)', u'Wind Spd Flag', u'Visibility (km)', u'Visibility Flag',
+    u'Stn Press (kPa)', u'Stn Press Flag', u'Hmdx', u'Hmdx Flag', u'Wind Chill', 
+    u'Wind Chill Flag', u'Weather']
+</code></pre>
+
 <p>You&rsquo;ll notice in the summary above that there are a few columns which are are either entirely empty or only have a few values in them. Let&rsquo;s get rid of all of those with dropna.</p>
 
 <p>The argument <code>axis=1</code> to <code>dropna</code> means &ldquo;drop columns&rdquo;, not rows&rdquo;, and <code>how='any'</code> means &ldquo;drop the column if any value is null&rdquo;.</p>
 
 <p>This is much better now &ndash; we only have columns with real data.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_mar2012 <span style="color:#f92672">=</span> weather_mar2012<span style="color:#f92672">.</span>dropna(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;any&#39;</span>)
-weather_mar2012[:<span style="color:#ae81ff">5</span>]</code></pre></div>
+
+<pre><code class="language-python">weather_mar2012 = weather_mar2012.dropna(axis=1, how='any')
+weather_mar2012[:5]
+</code></pre>
+
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -2464,8 +2369,11 @@ weather_mar2012[:<span style="color:#ae81ff">5</span>]</code></pre></div>
 <p>The Year/Month/Day/Time columns are redundant, though, and the Data Quality column doesn&rsquo;t look too useful. Let&rsquo;s get rid of those.</p>
 
 <p>The <code>axis=1</code> argument means &ldquo;Drop columns&rdquo;, like before. The default for operations like <code>dropna</code> and <code>drop</code> is always to operate on rows.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_mar2012 <span style="color:#f92672">=</span> weather_mar2012<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;Year&#39;</span>, <span style="color:#e6db74">&#39;Month&#39;</span>, <span style="color:#e6db74">&#39;Day&#39;</span>, <span style="color:#e6db74">&#39;Time&#39;</span>, <span style="color:#e6db74">&#39;Data Quality&#39;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-weather_mar2012[:<span style="color:#ae81ff">5</span>]</code></pre></div>
+
+<pre><code class="language-python">weather_mar2012 = weather_mar2012.drop(['Year', 'Month', 'Day', 'Time', 'Data Quality'], axis=1)
+weather_mar2012[:5]
+</code></pre>
+
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -2554,12 +2462,16 @@ weather_mar2012[:<span style="color:#ae81ff">5</span>]</code></pre></div>
 <h2 id="5-2-plotting-the-temperature-by-hour-of-day">5.2 Plotting the temperature by hour of day</h2>
 
 <p>This one&rsquo;s just for fun &ndash; we&rsquo;ve already done this before, using groupby and aggregate! We will learn whether or not it gets colder at night. Well, obviously. But let&rsquo;s do it anyway.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">temperatures <span style="color:#f92672">=</span> weather_mar2012[[<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;Temp (C)&#39;</span>]]<span style="color:#f92672">.</span>copy()
-<span style="color:#66d9ef">print</span>(temperatures<span style="color:#f92672">.</span>head)
-temperatures<span style="color:#f92672">.</span>loc[:,<span style="color:#e6db74">&#39;Hour&#39;</span>] <span style="color:#f92672">=</span> weather_mar2012<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>hour
-temperatures<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Hour&#39;</span>)<span style="color:#f92672">.</span>aggregate(np<span style="color:#f92672">.</span>median)<span style="color:#f92672">.</span>plot()</code></pre></div>
+
+<pre><code class="language-python">temperatures = weather_mar2012[[u'Temp (C)']].copy()
+print(temperatures.head)
+temperatures.loc[:,'Hour'] = weather_mar2012.index.hour
+temperatures.groupby('Hour').aggregate(np.median).plot()
+</code></pre>
+
 <p>Output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Date/Time                    
+
+<pre><code class="language-bash">Date/Time                    
 2012-03-01 00:00:00      -5.5
 2012-03-01 01:00:00      -5.7
 2012-03-01 02:00:00      -5.4
@@ -2622,7 +2534,9 @@ temperatures<span style="color:#f92672">.</span>groupby(<span style="color:#e6db
 2012-03-31 22:00:00       2.7
 2012-03-31 23:00:00       1.5
 
-<span style="color:#f92672">[</span><span style="color:#ae81ff">744</span> rows x <span style="color:#ae81ff">1</span> columns<span style="color:#f92672">]</span>&gt;</code></pre></div>
+[744 rows x 1 columns]&gt;
+</code></pre>
+
 <div>
     <img src="/img/lowest_temp_plot.png" alt="Plot dataframe as per weekdays" />
 </div>
@@ -2636,17 +2550,23 @@ temperatures<span style="color:#f92672">.</span>groupby(<span style="color:#e6db
 <p>First, let&rsquo;s put our work from above into a function that gets the weather for a given month.</p>
 
 <p>I noticed that there&rsquo;s an irritating bug where when I ask for January, it gives me data for the previous year, so we&rsquo;ll fix that too. [no, really. You can check =)]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">download_weather_month</span>(year, month):
-    <span style="color:#66d9ef">if</span> month <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-        year <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    url <span style="color:#f92672">=</span> url_template<span style="color:#f92672">.</span>format(year<span style="color:#f92672">=</span>year, month<span style="color:#f92672">=</span>month)
-    weather_data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url, skiprows<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date/Time&#39;</span>, parse_dates<span style="color:#f92672">=</span>True, header<span style="color:#f92672">=</span>True)
-    weather_data <span style="color:#f92672">=</span> weather_data<span style="color:#f92672">.</span>dropna(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-    weather_data<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [col<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\xb0</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> weather_data<span style="color:#f92672">.</span>columns]
-    weather_data <span style="color:#f92672">=</span> weather_data<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;Year&#39;</span>, <span style="color:#e6db74">&#39;Day&#39;</span>, <span style="color:#e6db74">&#39;Month&#39;</span>, <span style="color:#e6db74">&#39;Time&#39;</span>, <span style="color:#e6db74">&#39;Data Quality&#39;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-    <span style="color:#66d9ef">return</span> weather_data</code></pre></div>
+
+<pre><code class="language-python">def download_weather_month(year, month):
+    if month == 1:
+        year += 1
+    url = url_template.format(year=year, month=month)
+    weather_data = pd.read_csv(url, skiprows=15, index_col='Date/Time', parse_dates=True, header=True)
+    weather_data = weather_data.dropna(axis=1)
+    weather_data.columns = [col.replace('\xb0', '') for col in weather_data.columns]
+    weather_data = weather_data.drop(['Year', 'Day', 'Month', 'Time', 'Data Quality'], axis=1)
+    return weather_data
+</code></pre>
+
 <p>We can test that this function does the right thing:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">download_weather_month(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">1</span>)[:<span style="color:#ae81ff">5</span>]</code></pre></div>
+
+<pre><code class="language-python">download_weather_month(2012, 1)[:5]
+</code></pre>
+
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -2731,10 +2651,16 @@ temperatures<span style="color:#f92672">.</span>groupby(<span style="color:#e6db
 </div>
 
 <p>Now we can get all the months at once. This will take a little while to run.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_by_month <span style="color:#f92672">=</span> [download_weather_month(<span style="color:#ae81ff">2012</span>, i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">13</span>)]</code></pre></div>
+
+<pre><code class="language-python">data_by_month = [download_weather_month(2012, i) for i in range(1, 13)]
+</code></pre>
+
 <p>Once we have this, it&rsquo;s easy to concatenate all the dataframes together into one big dataframe using <a href="http://pandas.pydata.org/pandas-docs/version/0.20/generated/pandas.concat.html">pd.concat</a>. And now we have the whole year&rsquo;s data!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_2012 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat(data_by_month)
-weather_2012</code></pre></div>
+
+<pre><code class="language-python">weather_2012 = pd.concat(data_by_month)
+weather_2012
+</code></pre>
+
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -3382,7 +3308,10 @@ weather_2012</code></pre></div>
 <h2 id="5-4-saving-to-a-csv">5.4 Saving to a CSV</h2>
 
 <p>It&rsquo;s slow and unnecessary to download the data every time, so let&rsquo;s save our dataframe for later use!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weather_2012<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;weather_2012.csv&#39;</span>)</code></pre></div>
+
+<pre><code class="language-python">weather_2012.to_csv('weather_2012.csv')
+</code></pre>
+
 <p>And we&rsquo;re done!</p>
 
 
@@ -3400,6 +3329,16 @@ weather_2012</code></pre></div>
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
 <br />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="1203265687"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
         
         </div>
@@ -3440,102 +3379,6 @@ weather_2012</code></pre></div>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -3887,20 +3730,20 @@ weather_2012</code></pre></div>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596092920"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596092920"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596092920"></script>
-    <script src="/js/jquery.sticky.js?1596092920"></script>
-    <script src="/js/featherlight.min.js?1596092920"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596092920"></script>
-    <script src="/js/highlight.pack.js?1596092920"></script>
+    <script src="/js/clipboard.min.js?1596200831"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596200831"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596200831"></script>
+    <script src="/js/jquery.sticky.js?1596200831"></script>
+    <script src="/js/featherlight.min.js?1596200831"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596200831"></script>
+    <script src="/js/highlight.pack.js?1596200831"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596092920"></script>
-    <script src="/js/learn.js?1596092920"></script>
-    <script src="/js/hugo-learn.js?1596092920"></script>
+    <script src="/js/modernizr.custom.71422.js?1596200831"></script>
+    <script src="/js/learn.js?1596200831"></script>
+    <script src="/js/hugo-learn.js?1596200831"></script>
 
-    <link href="/mermaid/mermaid.css?1596092920" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596092920"></script>
+    <link href="/mermaid/mermaid.css?1596200831" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596200831"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

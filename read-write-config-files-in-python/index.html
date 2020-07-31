@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="generator" content="Hugo 0.41" />
     <meta name="description" content="Learn how to write and read config files in Python using configparser module.">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="python,config,read config file,write config file,configparser">
@@ -17,26 +17,22 @@
     <title>Writing and Reading config files in Python - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596092920" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596092920" rel="stylesheet">
-    <link href="/css/hybrid.css?1596092920" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596092920" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596092920" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596092920" rel="stylesheet">
-    <link href="/css/theme.css?1596092920" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596092920" rel="stylesheet">
+    <link href="/css/nucleus.css?1596200831" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596200831" rel="stylesheet">
+    <link href="/css/hybrid.css?1596200831" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596200831" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596200831" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596200831" rel="stylesheet">
+    <link href="/css/theme.css?1596200831" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596200831" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596092920"></script>
+    <script src="/js/jquery-2.x.min.js?1596200831"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
-      
-        :not(pre) > code + span.copy-to-clipboard {
-            display: none;
-        }
       
     </style>
     
@@ -66,14 +62,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596092920"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596092920"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596200831"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596200831"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596092920"></script>
+<script type="text/javascript" src="/js/search.js?1596200831"></script>
 
     
   </div>
@@ -106,120 +102,6 @@
           
           
         
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/noprocrast" title="noprocrast" class="dd-item ">
-        <a href="/noprocrast/">
-        noprocrast
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
-        <a href="/how-to-fix-sudo-node-command-not-found-error/">
-        sudo and node
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
-        <a href="/yet-another-lousy-monad-tutorial/">
-        Yet another lousy monad tutorial
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
-        <a href="/ruby-enumerable/">
-        A Deeper Look at Ruby&#39;s Enumerable
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
-        <a href="/rest-api-in-clojure/">
-        A REST API in Clojure
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
-        <a href="/abstract-classes-and-interfaces-in-python/">
-        Abstract classes and interfaces in Python
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -756,43 +638,36 @@
 
 <p>Let&rsquo;s see how can we create and read config files in Python.</p>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="5842766387"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 <h2 id="creating-config-file-in-python">Creating config file in Python</h2>
 
 <p>In Python we have <a href="https://docs.python.org/3/library/configparser.html">configparser</a> module which can help us with creation of config files (.ini format).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> configparser <span style="color:#f92672">import</span> ConfigParser
 
-<span style="color:#75715e">#Get the configparser object</span>
-config_object <span style="color:#f92672">=</span> ConfigParser()
+<pre><code class="language-python">from configparser import ConfigParser
 
-<span style="color:#75715e">#Assume we need 2 sections in the config file, let&#39;s call them USERINFO and SERVERCONFIG</span>
-config_object[<span style="color:#e6db74">&#34;USERINFO&#34;</span>] <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#34;admin&#34;</span>: <span style="color:#e6db74">&#34;Chankey Pathak&#34;</span>,
-    <span style="color:#e6db74">&#34;loginid&#34;</span>: <span style="color:#e6db74">&#34;chankeypathak&#34;</span>,
-    <span style="color:#e6db74">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;tutswiki&#34;</span>
+#Get the configparser object
+config_object = ConfigParser()
+
+#Assume we need 2 sections in the config file, let's call them USERINFO and SERVERCONFIG
+config_object[&quot;USERINFO&quot;] = {
+    &quot;admin&quot;: &quot;Chankey Pathak&quot;,
+    &quot;loginid&quot;: &quot;chankeypathak&quot;,
+    &quot;password&quot;: &quot;tutswiki&quot;
 }
 
-config_object[<span style="color:#e6db74">&#34;SERVERCONFIG&#34;</span>] <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;tutswiki.com&#34;</span>,
-    <span style="color:#e6db74">&#34;port&#34;</span>: <span style="color:#e6db74">&#34;8080&#34;</span>,
-    <span style="color:#e6db74">&#34;ipaddr&#34;</span>: <span style="color:#e6db74">&#34;8.8.8.8&#34;</span>
+config_object[&quot;SERVERCONFIG&quot;] = {
+    &quot;host&quot;: &quot;tutswiki.com&quot;,
+    &quot;port&quot;: &quot;8080&quot;,
+    &quot;ipaddr&quot;: &quot;8.8.8.8&quot;
 }
 
-<span style="color:#75715e">#Write the above sections to config.ini file</span>
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;config.ini&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> conf:
-    config_object<span style="color:#f92672">.</span>write(conf)</code></pre></div>
+#Write the above sections to config.ini file
+with open('config.ini', 'w') as conf:
+    config_object.write(conf)
+</code></pre>
+
 <p>Now if you check the working directory, you will notice <code>config.ini</code> file has been created, below is its content.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[USERINFO]
+
+<pre><code class="language-text">[USERINFO]
 admin = Chankey Pathak
 password = tutswiki
 loginid = chankeypathak
@@ -800,39 +675,50 @@ loginid = chankeypathak
 [SERVERCONFIG]
 host = tutswiki.com
 ipaddr = 8.8.8.8
-port = 8080</code></pre></div>
+port = 8080
+</code></pre>
+
 <h2 id="reading-a-key-from-config-file">Reading a key from config file</h2>
 
 <p>So we have created a config file, now in your code you have to read the configuration data so that you can use it by &ldquo;keyname&rdquo; to avoid hardcoded data, let&rsquo;s see how to do that.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> configparser <span style="color:#f92672">import</span> ConfigParser
 
-<span style="color:#75715e">#Read config.ini file</span>
-config_object <span style="color:#f92672">=</span> ConfigParser()
-config_object<span style="color:#f92672">.</span>read(<span style="color:#e6db74">&#34;config.ini&#34;</span>)
+<pre><code class="language-python">from configparser import ConfigParser
 
-<span style="color:#75715e">#Get the password</span>
-userinfo <span style="color:#f92672">=</span> config_object[<span style="color:#e6db74">&#34;USERINFO&#34;</span>]
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Password is {}&#34;</span><span style="color:#f92672">.</span>format(userinfo[<span style="color:#e6db74">&#34;password&#34;</span>])</code></pre></div>
+#Read config.ini file
+config_object = ConfigParser()
+config_object.read(&quot;config.ini&quot;)
+
+#Get the password
+userinfo = config_object[&quot;USERINFO&quot;]
+print &quot;Password is {}&quot;.format(userinfo[&quot;password&quot;])
+</code></pre>
+
 <p>Output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Password is tutswiki</code></pre></div>
+
+<pre><code class="language-sh">Password is tutswiki
+</code></pre>
+
 <h2 id="updating-a-key-in-config-file">Updating a key in config file</h2>
 
 <p>Suppose you have updated the password for chankeypathak user. You can update the same in config file using below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> configparser <span style="color:#f92672">import</span> ConfigParser
 
-<span style="color:#75715e">#Read config.ini file</span>
-config_object <span style="color:#f92672">=</span> ConfigParser()
-config_object<span style="color:#f92672">.</span>read(<span style="color:#e6db74">&#34;config.ini&#34;</span>)
+<pre><code class="language-python">from configparser import ConfigParser
 
-<span style="color:#75715e">#Get the USERINFO section</span>
-userinfo <span style="color:#f92672">=</span> config_object[<span style="color:#e6db74">&#34;USERINFO&#34;</span>]
+#Read config.ini file
+config_object = ConfigParser()
+config_object.read(&quot;config.ini&quot;)
 
-<span style="color:#75715e">#Update the password</span>
-userinfo[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;newpassword&#34;</span>
+#Get the USERINFO section
+userinfo = config_object[&quot;USERINFO&quot;]
 
-<span style="color:#75715e">#Write changes back to file</span>
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;config.ini&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> conf:
-    config_object<span style="color:#f92672">.</span>write(conf)</code></pre></div>
+#Update the password
+userinfo[&quot;password&quot;] = &quot;newpassword&quot;
+
+#Write changes back to file
+with open('config.ini', 'w') as conf:
+    config_object.write(conf)
+</code></pre>
+
 <p>Now if you open the <code>config.ini</code> file, you will notice that the password has been updated.</p>
 
 
@@ -850,6 +736,16 @@ userinfo[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="col
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
 <br />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="1203265687"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
         
         </div>
@@ -890,102 +786,6 @@ userinfo[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="col
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1333,20 +1133,20 @@ userinfo[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="col
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596092920"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596092920"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596092920"></script>
-    <script src="/js/jquery.sticky.js?1596092920"></script>
-    <script src="/js/featherlight.min.js?1596092920"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596092920"></script>
-    <script src="/js/highlight.pack.js?1596092920"></script>
+    <script src="/js/clipboard.min.js?1596200831"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596200831"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596200831"></script>
+    <script src="/js/jquery.sticky.js?1596200831"></script>
+    <script src="/js/featherlight.min.js?1596200831"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596200831"></script>
+    <script src="/js/highlight.pack.js?1596200831"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596092920"></script>
-    <script src="/js/learn.js?1596092920"></script>
-    <script src="/js/hugo-learn.js?1596092920"></script>
+    <script src="/js/modernizr.custom.71422.js?1596200831"></script>
+    <script src="/js/learn.js?1596200831"></script>
+    <script src="/js/hugo-learn.js?1596200831"></script>
 
-    <link href="/mermaid/mermaid.css?1596092920" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596092920"></script>
+    <link href="/mermaid/mermaid.css?1596200831" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596200831"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

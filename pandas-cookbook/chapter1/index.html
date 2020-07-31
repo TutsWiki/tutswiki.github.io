@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="generator" content="Hugo 0.41" />
     <meta name="description" content="Read data from a CSV using pandas dataframe">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="pandas,csv,read csv pandas,read column pandas,select column,plot column">
@@ -17,26 +17,22 @@
     <title>Chapter 1 - Reading from a CSV - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596092920" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596092920" rel="stylesheet">
-    <link href="/css/hybrid.css?1596092920" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596092920" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596092920" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596092920" rel="stylesheet">
-    <link href="/css/theme.css?1596092920" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596092920" rel="stylesheet">
+    <link href="/css/nucleus.css?1596200831" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596200831" rel="stylesheet">
+    <link href="/css/hybrid.css?1596200831" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596200831" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596200831" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596200831" rel="stylesheet">
+    <link href="/css/theme.css?1596200831" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596200831" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596092920"></script>
+    <script src="/js/jquery-2.x.min.js?1596200831"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
-      
-        :not(pre) > code + span.copy-to-clipboard {
-            display: none;
-        }
       
     </style>
     
@@ -66,14 +62,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596092920"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596092920"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596200831"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596200831"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596092920"></script>
+<script type="text/javascript" src="/js/search.js?1596200831"></script>
 
     
   </div>
@@ -106,120 +102,6 @@
           
           
         
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/noprocrast" title="noprocrast" class="dd-item ">
-        <a href="/noprocrast/">
-        noprocrast
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
-        <a href="/how-to-fix-sudo-node-command-not-found-error/">
-        sudo and node
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
-        <a href="/yet-another-lousy-monad-tutorial/">
-        Yet another lousy monad tutorial
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
-        <a href="/ruby-enumerable/">
-        A Deeper Look at Ruby&#39;s Enumerable
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
-        <a href="/rest-api-in-clojure/">
-        A REST API in Clojure
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
-        <a href="/abstract-classes-and-interfaces-in-python/">
-        Abstract classes and interfaces in Python
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -751,24 +633,15 @@
 
 
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Render our plots inline</span>
-<span style="color:#f92672">%</span>matplotlib inline
+<pre><code class="language-python"># Render our plots inline
+%matplotlib inline
 
-<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+import pandas as pd
+import matplotlib.pyplot as plt
 
-pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.mpl_style&#39;</span>, <span style="color:#e6db74">&#39;default&#39;</span>) <span style="color:#75715e"># Make the graphs a bit prettier</span>
-plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</span>)</code></pre></div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="5842766387"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+pd.set_option('display.mpl_style', 'default') # Make the graphs a bit prettier
+plt.rcParams['figure.figsize'] = (15, 5)
+</code></pre>
 
 <h2 id="1-1-reading-data-from-a-csv-file">1.1 Reading data from a CSV file</h2>
 
@@ -777,11 +650,14 @@ plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39
 <p>We&rsquo;re going to be looking some cyclist data from Montréal. Here&rsquo;s the <a href="http://donnees.ville.montreal.qc.ca/dataset/velos-comptage">original page</a> (in French). We&rsquo;re using the data from 2012. Download the <a href="/bikes.csv">bikes.csv</a> file to try out the below examples.</p>
 
 <p>This dataset is a list of how many people were on 7 different bike paths in Montreal, each day.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
 
-broken_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;bikes.csv&#39;</span>)
-<span style="color:#75715e"># Look at the first 3 rows</span>
-broken_df[:<span style="color:#ae81ff">3</span>]</code></pre></div>
+<pre><code class="language-python">import pandas as pd
+
+broken_df = pd.read_csv('bikes.csv')
+# Look at the first 3 rows
+broken_df[:3]
+</code></pre>
+
 <p>Output:</p>
 
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -819,11 +695,12 @@ broken_df[:<span style="color:#ae81ff">3</span>]</code></pre></div>
 <li>Set the encoding to <code>'_latin1_'</code> (the default is <code>'_utf8_'</code>)</li>
 <li>Parse the dates in the <code>'Date'</code> column</li>
 <li>Tell it that our dates have the date first instead of the month first</li>
-
-<li><p>Set the index to be the <code>'Date'</code> column</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fixed_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;bikes.csv&#39;</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;;&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;latin1&#39;</span>, parse_dates<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Date&#39;</span>], dayfirst<span style="color:#f92672">=</span>True, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>)
-fixed_df[:<span style="color:#ae81ff">3</span>]</code></pre></div></li>
+<li>Set the index to be the <code>'Date'</code> column</li>
 </ul>
+
+<pre><code class="language-python">fixed_df = pd.read_csv('bikes.csv', sep=';', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
+fixed_df[:3]
+</code></pre>
 
 <p>Output:</p>
 
@@ -902,58 +779,70 @@ fixed_df[:<span style="color:#ae81ff">3</span>]</code></pre></div></li>
 <p>When you read a CSV, you get a kind of object called a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">DataFrame</a>, which is made up of rows and columns. You get columns out of a DataFrame the same way you get elements out of a dictionary.</p>
 
 <p>Here&rsquo;s an example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fixed_df[<span style="color:#e6db74">&#39;Berri 1&#39;</span>]</code></pre></div>
+
+<pre><code class="language-python">fixed_df['Berri 1']
+</code></pre>
+
 <p>Output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Date
-2012-01-01     <span style="color:#ae81ff">35</span>
-2012-01-02     <span style="color:#ae81ff">83</span>
-2012-01-03    <span style="color:#ae81ff">135</span>
-2012-01-04    <span style="color:#ae81ff">144</span>
-2012-01-05    <span style="color:#ae81ff">197</span>
-2012-01-06    <span style="color:#ae81ff">146</span>
-2012-01-07     <span style="color:#ae81ff">98</span>
-2012-01-08     <span style="color:#ae81ff">95</span>
-2012-01-09    <span style="color:#ae81ff">244</span>
-2012-01-10    <span style="color:#ae81ff">397</span>
-2012-01-11    <span style="color:#ae81ff">273</span>
-2012-01-12    <span style="color:#ae81ff">157</span>
-2012-01-13     <span style="color:#ae81ff">75</span>
-2012-01-14     <span style="color:#ae81ff">32</span>
-2012-01-15     <span style="color:#ae81ff">54</span>
+
+<pre><code class="language-bash">Date
+2012-01-01     35
+2012-01-02     83
+2012-01-03    135
+2012-01-04    144
+2012-01-05    197
+2012-01-06    146
+2012-01-07     98
+2012-01-08     95
+2012-01-09    244
+2012-01-10    397
+2012-01-11    273
+2012-01-12    157
+2012-01-13     75
+2012-01-14     32
+2012-01-15     54
 ...
-2012-10-22    <span style="color:#ae81ff">3650</span>
-2012-10-23    <span style="color:#ae81ff">4177</span>
-2012-10-24    <span style="color:#ae81ff">3744</span>
-2012-10-25    <span style="color:#ae81ff">3735</span>
-2012-10-26    <span style="color:#ae81ff">4290</span>
-2012-10-27    <span style="color:#ae81ff">1857</span>
-2012-10-28    <span style="color:#ae81ff">1310</span>
-2012-10-29    <span style="color:#ae81ff">2919</span>
-2012-10-30    <span style="color:#ae81ff">2887</span>
-2012-10-31    <span style="color:#ae81ff">2634</span>
-2012-11-01    <span style="color:#ae81ff">2405</span>
-2012-11-02    <span style="color:#ae81ff">1582</span>
-2012-11-03     <span style="color:#ae81ff">844</span>
-2012-11-04     <span style="color:#ae81ff">966</span>
-2012-11-05    <span style="color:#ae81ff">2247</span>
-Name: Berri 1, Length: 310, dtype: int64</code></pre></div>
+2012-10-22    3650
+2012-10-23    4177
+2012-10-24    3744
+2012-10-25    3735
+2012-10-26    4290
+2012-10-27    1857
+2012-10-28    1310
+2012-10-29    2919
+2012-10-30    2887
+2012-10-31    2634
+2012-11-01    2405
+2012-11-02    1582
+2012-11-03     844
+2012-11-04     966
+2012-11-05    2247
+Name: Berri 1, Length: 310, dtype: int64
+</code></pre>
+
 <h2 id="1-3-plotting-a-column">1.3 Plotting a column</h2>
 
 <p>Just add <code>.plot()</code> to the end! How could it be easier? =)</p>
 
 <p>We can see that, unsurprisingly, not many people are biking in January, February, and March.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 
-fixed_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;bikes.csv&#39;</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;;&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;latin1&#39;</span>, parse_dates<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Date&#39;</span>], dayfirst<span style="color:#f92672">=</span>True, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>)
-fixed_df[<span style="color:#e6db74">&#39;Berri 1&#39;</span>]<span style="color:#f92672">.</span>plot()</code></pre></div>
+<pre><code class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+
+fixed_df = pd.read_csv('bikes.csv', sep=';', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
+fixed_df['Berri 1'].plot()
+</code></pre>
+
 <p>Output:
 <div>
 <img src="/img/plot_single_column.png" alt="Plotting CSV column with Matplotlib" />
 </div>
 We can also plot all the columns just as easily. We&rsquo;ll make it a little bigger, too. You can see that it&rsquo;s more squished together, but all the bike paths behave basically the same &ndash; if it&rsquo;s a bad day for cyclists, it&rsquo;s a bad day everywhere.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fixed_df<span style="color:#f92672">.</span>plot(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">10</span>))
-plt<span style="color:#f92672">.</span>show()</code></pre></div>
+
+<pre><code class="language-python">fixed_df.plot(figsize=(15, 10))
+plt.show()
+</code></pre>
+
 <p>Output:</p>
 
 <div>
@@ -963,8 +852,11 @@ plt<span style="color:#f92672">.</span>show()</code></pre></div>
 <h2 id="1-4-putting-all-that-together">1.4 Putting all that together</h2>
 
 <p>Here&rsquo;s the code we needed to write do draw that graph, all together:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;bikes.csv&#39;</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;;&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;latin1&#39;</span>, parse_dates<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Date&#39;</span>], dayfirst<span style="color:#f92672">=</span>True, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>)
-df[<span style="color:#e6db74">&#39;Berri 1&#39;</span>]<span style="color:#f92672">.</span>plot()</code></pre></div>
+
+<pre><code class="language-python">df = pd.read_csv('bikes.csv', sep=';', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
+df['Berri 1'].plot()
+</code></pre>
+
 <p>Output:
 <div>
 <img src="/img/plot_single_column.png" alt="Plotting CSV column with Matplotlib" />
@@ -985,6 +877,16 @@ df[<span style="color:#e6db74">&#39;Berri 1&#39;</span>]<span style="color:#f926
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
 <br />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="1203265687"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
         
         </div>
@@ -1025,102 +927,6 @@ df[<span style="color:#e6db74">&#39;Berri 1&#39;</span>]<span style="color:#f926
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1469,20 +1275,20 @@ df[<span style="color:#e6db74">&#39;Berri 1&#39;</span>]<span style="color:#f926
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596092920"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596092920"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596092920"></script>
-    <script src="/js/jquery.sticky.js?1596092920"></script>
-    <script src="/js/featherlight.min.js?1596092920"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596092920"></script>
-    <script src="/js/highlight.pack.js?1596092920"></script>
+    <script src="/js/clipboard.min.js?1596200831"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596200831"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596200831"></script>
+    <script src="/js/jquery.sticky.js?1596200831"></script>
+    <script src="/js/featherlight.min.js?1596200831"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596200831"></script>
+    <script src="/js/highlight.pack.js?1596200831"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596092920"></script>
-    <script src="/js/learn.js?1596092920"></script>
-    <script src="/js/hugo-learn.js?1596092920"></script>
+    <script src="/js/modernizr.custom.71422.js?1596200831"></script>
+    <script src="/js/learn.js?1596200831"></script>
+    <script src="/js/hugo-learn.js?1596200831"></script>
 
-    <link href="/mermaid/mermaid.css?1596092920" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596092920"></script>
+    <link href="/mermaid/mermaid.css?1596200831" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596200831"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
