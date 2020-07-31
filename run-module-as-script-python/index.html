@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="If you want to run the module itself as a script then you should use the __name__ variable.">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="python,name,main,script,module,import">
@@ -17,22 +17,26 @@
     <title>How to run a Python module as script? - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596200831" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596200831" rel="stylesheet">
-    <link href="/css/hybrid.css?1596200831" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596200831" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596200831" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596200831" rel="stylesheet">
-    <link href="/css/theme.css?1596200831" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596200831" rel="stylesheet">
+    <link href="/css/nucleus.css?1596200839" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596200839" rel="stylesheet">
+    <link href="/css/hybrid.css?1596200839" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596200839" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596200839" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596200839" rel="stylesheet">
+    <link href="/css/theme.css?1596200839" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596200839" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596200831"></script>
+    <script src="/js/jquery-2.x.min.js?1596200839"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
       
     </style>
     
@@ -62,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596200831"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596200831"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596200839"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596200839"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596200831"></script>
+<script type="text/javascript" src="/js/search.js?1596200839"></script>
 
     
   </div>
@@ -102,6 +106,120 @@
           
           
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/noprocrast" title="noprocrast" class="dd-item ">
+        <a href="/noprocrast/">
+        noprocrast
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
+        <a href="/ruby-enumerable/">
+        A Deeper Look at Ruby&#39;s Enumerable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
+        <a href="/rest-api-in-clojure/">
+        A REST API in Clojure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
+        <a href="/abstract-classes-and-interfaces-in-python/">
+        Abstract classes and interfaces in Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -634,32 +752,23 @@
 
 
 <p>Suppose you have a module named <code>mymath.py</code>, which has a couple of functions. You can import this module in your script and call these functions.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">int_sum</span>(a, b):
+    <span style="color:#66d9ef">print</span> a<span style="color:#f92672">+</span>b
 
-<pre><code class="language-python">def int_sum(a, b):
-    print a+b
-
-def some_other_function():
-    pass
-</code></pre>
-
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">some_other_function</span>():
+    <span style="color:#66d9ef">pass</span></code></pre></div>
 <p>But, what if you want to run the module itself as a script?</p>
 
 <p>Well, if you want to use a Python module as script then you just have to use the conditional for <code>__name__</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">int_sum</span>(a, b):
+    <span style="color:#66d9ef">print</span> a<span style="color:#f92672">+</span>b
 
-<pre><code class="language-python">def int_sum(a, b):
-    print a+b
-
-if __name__ == &quot;__main__&quot;:
-    import sys
-    int_sum(int(sys.argv[1]),int(sys.argv[2]))
-</code></pre>
-
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    <span style="color:#f92672">import</span> sys
+    int_sum(int(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>]),int(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">2</span>]))</code></pre></div>
 <p>Now you can run the above as:</p>
-
-<pre><code class="language-sh">$ python mymath.py 1 2
-3
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python mymath.py <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">3</span></code></pre></div>
 <p>This works because the value of built-in <code>__name__</code> variable is set to <code>__main__</code> if the Python code is executed directly through the interpreter. If you use the above module in a script using <code>import</code> then in that case the value of <code>__name__</code> is the filename of module.</p>
 
 <h3 id="also-see">Also see</h3>
@@ -685,16 +794,6 @@ if __name__ == &quot;__main__&quot;:
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
 <br />
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="1203265687"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
         
         </div>
@@ -735,6 +834,102 @@ if __name__ == &quot;__main__&quot;:
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1082,20 +1277,20 @@ if __name__ == &quot;__main__&quot;:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596200831"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596200831"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596200831"></script>
-    <script src="/js/jquery.sticky.js?1596200831"></script>
-    <script src="/js/featherlight.min.js?1596200831"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596200831"></script>
-    <script src="/js/highlight.pack.js?1596200831"></script>
+    <script src="/js/clipboard.min.js?1596200839"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596200839"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596200839"></script>
+    <script src="/js/jquery.sticky.js?1596200839"></script>
+    <script src="/js/featherlight.min.js?1596200839"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596200839"></script>
+    <script src="/js/highlight.pack.js?1596200839"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596200831"></script>
-    <script src="/js/learn.js?1596200831"></script>
-    <script src="/js/hugo-learn.js?1596200831"></script>
+    <script src="/js/modernizr.custom.71422.js?1596200839"></script>
+    <script src="/js/learn.js?1596200839"></script>
+    <script src="/js/hugo-learn.js?1596200839"></script>
 
-    <link href="/mermaid/mermaid.css?1596200831" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596200831"></script>
+    <link href="/mermaid/mermaid.css?1596200839" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596200839"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

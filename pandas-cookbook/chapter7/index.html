@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="Cleanup messy data using Pandas">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="pandas,cleanup,messy data">
@@ -17,22 +17,26 @@
     <title>Chapter 7 - Cleanup messy data - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596200831" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596200831" rel="stylesheet">
-    <link href="/css/hybrid.css?1596200831" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596200831" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596200831" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596200831" rel="stylesheet">
-    <link href="/css/theme.css?1596200831" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596200831" rel="stylesheet">
+    <link href="/css/nucleus.css?1596200839" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596200839" rel="stylesheet">
+    <link href="/css/hybrid.css?1596200839" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596200839" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596200839" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596200839" rel="stylesheet">
+    <link href="/css/theme.css?1596200839" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596200839" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596200831"></script>
+    <script src="/js/jquery-2.x.min.js?1596200839"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
       
     </style>
     
@@ -62,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596200831"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596200831"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596200839"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596200839"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596200831"></script>
+<script type="text/javascript" src="/js/search.js?1596200839"></script>
 
     
   </div>
@@ -102,6 +106,120 @@
           
           
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/noprocrast" title="noprocrast" class="dd-item ">
+        <a href="/noprocrast/">
+        noprocrast
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
+        <a href="/ruby-enumerable/">
+        A Deeper Look at Ruby&#39;s Enumerable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
+        <a href="/rest-api-in-clojure/">
+        A REST API in Clojure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
+        <a href="/abstract-classes-and-interfaces-in-python/">
+        Abstract classes and interfaces in Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -633,25 +751,20 @@
 
 
 
-<pre><code class="language-python"># The usual preamble
-import pandas as pd
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># The usual preamble</span>
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
 
-# Make the graphs a bit prettier, and bigger
-pd.set_option('display.mpl_style', 'default')
-figsize(15, 5)
+<span style="color:#75715e"># Make the graphs a bit prettier, and bigger</span>
+pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.mpl_style&#39;</span>, <span style="color:#e6db74">&#39;default&#39;</span>)
+figsize(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</span>)
 
-# Always display all the columns
-pd.set_option('display.line_width', 5000) 
-pd.set_option('display.max_columns', 60) 
-</code></pre>
-
+<span style="color:#75715e"># Always display all the columns</span>
+pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.line_width&#39;</span>, <span style="color:#ae81ff">5000</span>) 
+pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.max_columns&#39;</span>, <span style="color:#ae81ff">60</span>) </code></pre></div>
 <p>One of the main problems with messy data is: how do you know if it&rsquo;s messy or not?</p>
 
 <p>We&rsquo;re going to use the NYC 311 service request dataset again here, since it&rsquo;s big and a bit unwieldy.</p>
-
-<pre><code class="language-python">requests = pd.read_csv('311-service-requests.csv')
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;311-service-requests.csv&#39;</span>)</code></pre></div>
 <h2 id="7-1-how-do-we-know-if-it-s-messy">7.1 How do we know if it&rsquo;s messy?</h2>
 
 <p>We&rsquo;re going to look at a few columns here. I know already that there are some problems with the zip code, so let&rsquo;s look at that first.</p>
@@ -674,44 +787,42 @@ pd.set_option('display.max_columns', 60)
 <ul>
 <li>Normalize &lsquo;N/A&rsquo; and &lsquo;NO CLUE&rsquo; into regular nan values</li>
 <li>Look at what&rsquo;s up with the 83, and decide what to do</li>
-<li>Make everything strings</li>
+
+<li><p>Make everything strings</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()</code></pre></div></li>
 </ul>
 
-<pre><code class="language-python">requests['Incident Zip'].unique()
-</code></pre>
-
 <p>Output:</p>
-
-<pre><code class="language-bash">array(['11432', '11378', '10032', '10023', '10027', '11372', '11419',
-       '11417', '10011', '11225', '11218', '10003', '10029', '10466',
-       '11219', '10025', '10310', '11236', nan, '10033', '11216', '10016',
-       '10305', '10312', '10026', '10309', '10036', '11433', '11235',
-       '11213', '11379', '11101', '10014', '11231', '11234', '10457',
-       '10459', '10465', '11207', '10002', '10034', '11233', '10453',
-       '10456', '10469', '11374', '11221', '11421', '11215', '10007',
-       '10019', '11205', '11418', '11369', '11249', '10005', '10009',
-       '11211', '11412', '10458', '11229', '10065', '10030', '11222',
-       '10024', '10013', '11420', '11365', '10012', '11214', '11212',
-       '10022', '11232', '11040', '11226', '10281', '11102', '11208',
-       '10001', '10472', '11414', '11223', '10040', '11220', '11373',
-       '11203', '11691', '11356', '10017', '10452', '10280', '11217',
-       '10031', '11201', '11358', '10128', '11423', '10039', '10010',
-       '11209', '10021', '10037', '11413', '11375', '11238', '10473',
-       '11103', '11354', '11361', '11106', '11385', '10463', '10467',
-       '11204', '11237', '11377', '11364', '11434', '11435', '11210',
-       '11228', '11368', '11694', '10464', '11415', '10314', '10301',
-       '10018', '10038', '11105', '11230', '10468', '11104', '10471',
-       '11416', '10075', '11422', '11355', '10028', '10462', '10306',
-       '10461', '11224', '11429', '10035', '11366', '11362', '11206',
-       '10460', '10304', '11360', '11411', '10455', '10475', '10069',
-       '10303', '10308', '10302', '11357', '10470', '11367', '11370',
-       '10454', '10451', '11436', '11426', '10153', '11004', '11428',
-       '11427', '11001', '11363', '10004', '10474', '11430', '10000',
-       '10307', '11239', '10119', '10006', '10048', '11697', '11692',
-       '11693', '10573', '00083', 'N/A', '11559', '10020', '77056',
-       '11776', '70711', '10282', '11109', '10044', '02061', '77092-2016',
-       '14225', '55164-0737', '19711', '07306', '000000', 'NO CLUE',
-       '90010', '11747', '23541', '11788', '07604', 11203.0, 11217.0,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span><span style="color:#e6db74">&#39;11432&#39;</span>, <span style="color:#e6db74">&#39;11378&#39;</span>, <span style="color:#e6db74">&#39;10032&#39;</span>, <span style="color:#e6db74">&#39;10023&#39;</span>, <span style="color:#e6db74">&#39;10027&#39;</span>, <span style="color:#e6db74">&#39;11372&#39;</span>, <span style="color:#e6db74">&#39;11419&#39;</span>,
+       <span style="color:#e6db74">&#39;11417&#39;</span>, <span style="color:#e6db74">&#39;10011&#39;</span>, <span style="color:#e6db74">&#39;11225&#39;</span>, <span style="color:#e6db74">&#39;11218&#39;</span>, <span style="color:#e6db74">&#39;10003&#39;</span>, <span style="color:#e6db74">&#39;10029&#39;</span>, <span style="color:#e6db74">&#39;10466&#39;</span>,
+       <span style="color:#e6db74">&#39;11219&#39;</span>, <span style="color:#e6db74">&#39;10025&#39;</span>, <span style="color:#e6db74">&#39;10310&#39;</span>, <span style="color:#e6db74">&#39;11236&#39;</span>, nan, <span style="color:#e6db74">&#39;10033&#39;</span>, <span style="color:#e6db74">&#39;11216&#39;</span>, <span style="color:#e6db74">&#39;10016&#39;</span>,
+       <span style="color:#e6db74">&#39;10305&#39;</span>, <span style="color:#e6db74">&#39;10312&#39;</span>, <span style="color:#e6db74">&#39;10026&#39;</span>, <span style="color:#e6db74">&#39;10309&#39;</span>, <span style="color:#e6db74">&#39;10036&#39;</span>, <span style="color:#e6db74">&#39;11433&#39;</span>, <span style="color:#e6db74">&#39;11235&#39;</span>,
+       <span style="color:#e6db74">&#39;11213&#39;</span>, <span style="color:#e6db74">&#39;11379&#39;</span>, <span style="color:#e6db74">&#39;11101&#39;</span>, <span style="color:#e6db74">&#39;10014&#39;</span>, <span style="color:#e6db74">&#39;11231&#39;</span>, <span style="color:#e6db74">&#39;11234&#39;</span>, <span style="color:#e6db74">&#39;10457&#39;</span>,
+       <span style="color:#e6db74">&#39;10459&#39;</span>, <span style="color:#e6db74">&#39;10465&#39;</span>, <span style="color:#e6db74">&#39;11207&#39;</span>, <span style="color:#e6db74">&#39;10002&#39;</span>, <span style="color:#e6db74">&#39;10034&#39;</span>, <span style="color:#e6db74">&#39;11233&#39;</span>, <span style="color:#e6db74">&#39;10453&#39;</span>,
+       <span style="color:#e6db74">&#39;10456&#39;</span>, <span style="color:#e6db74">&#39;10469&#39;</span>, <span style="color:#e6db74">&#39;11374&#39;</span>, <span style="color:#e6db74">&#39;11221&#39;</span>, <span style="color:#e6db74">&#39;11421&#39;</span>, <span style="color:#e6db74">&#39;11215&#39;</span>, <span style="color:#e6db74">&#39;10007&#39;</span>,
+       <span style="color:#e6db74">&#39;10019&#39;</span>, <span style="color:#e6db74">&#39;11205&#39;</span>, <span style="color:#e6db74">&#39;11418&#39;</span>, <span style="color:#e6db74">&#39;11369&#39;</span>, <span style="color:#e6db74">&#39;11249&#39;</span>, <span style="color:#e6db74">&#39;10005&#39;</span>, <span style="color:#e6db74">&#39;10009&#39;</span>,
+       <span style="color:#e6db74">&#39;11211&#39;</span>, <span style="color:#e6db74">&#39;11412&#39;</span>, <span style="color:#e6db74">&#39;10458&#39;</span>, <span style="color:#e6db74">&#39;11229&#39;</span>, <span style="color:#e6db74">&#39;10065&#39;</span>, <span style="color:#e6db74">&#39;10030&#39;</span>, <span style="color:#e6db74">&#39;11222&#39;</span>,
+       <span style="color:#e6db74">&#39;10024&#39;</span>, <span style="color:#e6db74">&#39;10013&#39;</span>, <span style="color:#e6db74">&#39;11420&#39;</span>, <span style="color:#e6db74">&#39;11365&#39;</span>, <span style="color:#e6db74">&#39;10012&#39;</span>, <span style="color:#e6db74">&#39;11214&#39;</span>, <span style="color:#e6db74">&#39;11212&#39;</span>,
+       <span style="color:#e6db74">&#39;10022&#39;</span>, <span style="color:#e6db74">&#39;11232&#39;</span>, <span style="color:#e6db74">&#39;11040&#39;</span>, <span style="color:#e6db74">&#39;11226&#39;</span>, <span style="color:#e6db74">&#39;10281&#39;</span>, <span style="color:#e6db74">&#39;11102&#39;</span>, <span style="color:#e6db74">&#39;11208&#39;</span>,
+       <span style="color:#e6db74">&#39;10001&#39;</span>, <span style="color:#e6db74">&#39;10472&#39;</span>, <span style="color:#e6db74">&#39;11414&#39;</span>, <span style="color:#e6db74">&#39;11223&#39;</span>, <span style="color:#e6db74">&#39;10040&#39;</span>, <span style="color:#e6db74">&#39;11220&#39;</span>, <span style="color:#e6db74">&#39;11373&#39;</span>,
+       <span style="color:#e6db74">&#39;11203&#39;</span>, <span style="color:#e6db74">&#39;11691&#39;</span>, <span style="color:#e6db74">&#39;11356&#39;</span>, <span style="color:#e6db74">&#39;10017&#39;</span>, <span style="color:#e6db74">&#39;10452&#39;</span>, <span style="color:#e6db74">&#39;10280&#39;</span>, <span style="color:#e6db74">&#39;11217&#39;</span>,
+       <span style="color:#e6db74">&#39;10031&#39;</span>, <span style="color:#e6db74">&#39;11201&#39;</span>, <span style="color:#e6db74">&#39;11358&#39;</span>, <span style="color:#e6db74">&#39;10128&#39;</span>, <span style="color:#e6db74">&#39;11423&#39;</span>, <span style="color:#e6db74">&#39;10039&#39;</span>, <span style="color:#e6db74">&#39;10010&#39;</span>,
+       <span style="color:#e6db74">&#39;11209&#39;</span>, <span style="color:#e6db74">&#39;10021&#39;</span>, <span style="color:#e6db74">&#39;10037&#39;</span>, <span style="color:#e6db74">&#39;11413&#39;</span>, <span style="color:#e6db74">&#39;11375&#39;</span>, <span style="color:#e6db74">&#39;11238&#39;</span>, <span style="color:#e6db74">&#39;10473&#39;</span>,
+       <span style="color:#e6db74">&#39;11103&#39;</span>, <span style="color:#e6db74">&#39;11354&#39;</span>, <span style="color:#e6db74">&#39;11361&#39;</span>, <span style="color:#e6db74">&#39;11106&#39;</span>, <span style="color:#e6db74">&#39;11385&#39;</span>, <span style="color:#e6db74">&#39;10463&#39;</span>, <span style="color:#e6db74">&#39;10467&#39;</span>,
+       <span style="color:#e6db74">&#39;11204&#39;</span>, <span style="color:#e6db74">&#39;11237&#39;</span>, <span style="color:#e6db74">&#39;11377&#39;</span>, <span style="color:#e6db74">&#39;11364&#39;</span>, <span style="color:#e6db74">&#39;11434&#39;</span>, <span style="color:#e6db74">&#39;11435&#39;</span>, <span style="color:#e6db74">&#39;11210&#39;</span>,
+       <span style="color:#e6db74">&#39;11228&#39;</span>, <span style="color:#e6db74">&#39;11368&#39;</span>, <span style="color:#e6db74">&#39;11694&#39;</span>, <span style="color:#e6db74">&#39;10464&#39;</span>, <span style="color:#e6db74">&#39;11415&#39;</span>, <span style="color:#e6db74">&#39;10314&#39;</span>, <span style="color:#e6db74">&#39;10301&#39;</span>,
+       <span style="color:#e6db74">&#39;10018&#39;</span>, <span style="color:#e6db74">&#39;10038&#39;</span>, <span style="color:#e6db74">&#39;11105&#39;</span>, <span style="color:#e6db74">&#39;11230&#39;</span>, <span style="color:#e6db74">&#39;10468&#39;</span>, <span style="color:#e6db74">&#39;11104&#39;</span>, <span style="color:#e6db74">&#39;10471&#39;</span>,
+       <span style="color:#e6db74">&#39;11416&#39;</span>, <span style="color:#e6db74">&#39;10075&#39;</span>, <span style="color:#e6db74">&#39;11422&#39;</span>, <span style="color:#e6db74">&#39;11355&#39;</span>, <span style="color:#e6db74">&#39;10028&#39;</span>, <span style="color:#e6db74">&#39;10462&#39;</span>, <span style="color:#e6db74">&#39;10306&#39;</span>,
+       <span style="color:#e6db74">&#39;10461&#39;</span>, <span style="color:#e6db74">&#39;11224&#39;</span>, <span style="color:#e6db74">&#39;11429&#39;</span>, <span style="color:#e6db74">&#39;10035&#39;</span>, <span style="color:#e6db74">&#39;11366&#39;</span>, <span style="color:#e6db74">&#39;11362&#39;</span>, <span style="color:#e6db74">&#39;11206&#39;</span>,
+       <span style="color:#e6db74">&#39;10460&#39;</span>, <span style="color:#e6db74">&#39;10304&#39;</span>, <span style="color:#e6db74">&#39;11360&#39;</span>, <span style="color:#e6db74">&#39;11411&#39;</span>, <span style="color:#e6db74">&#39;10455&#39;</span>, <span style="color:#e6db74">&#39;10475&#39;</span>, <span style="color:#e6db74">&#39;10069&#39;</span>,
+       <span style="color:#e6db74">&#39;10303&#39;</span>, <span style="color:#e6db74">&#39;10308&#39;</span>, <span style="color:#e6db74">&#39;10302&#39;</span>, <span style="color:#e6db74">&#39;11357&#39;</span>, <span style="color:#e6db74">&#39;10470&#39;</span>, <span style="color:#e6db74">&#39;11367&#39;</span>, <span style="color:#e6db74">&#39;11370&#39;</span>,
+       <span style="color:#e6db74">&#39;10454&#39;</span>, <span style="color:#e6db74">&#39;10451&#39;</span>, <span style="color:#e6db74">&#39;11436&#39;</span>, <span style="color:#e6db74">&#39;11426&#39;</span>, <span style="color:#e6db74">&#39;10153&#39;</span>, <span style="color:#e6db74">&#39;11004&#39;</span>, <span style="color:#e6db74">&#39;11428&#39;</span>,
+       <span style="color:#e6db74">&#39;11427&#39;</span>, <span style="color:#e6db74">&#39;11001&#39;</span>, <span style="color:#e6db74">&#39;11363&#39;</span>, <span style="color:#e6db74">&#39;10004&#39;</span>, <span style="color:#e6db74">&#39;10474&#39;</span>, <span style="color:#e6db74">&#39;11430&#39;</span>, <span style="color:#e6db74">&#39;10000&#39;</span>,
+       <span style="color:#e6db74">&#39;10307&#39;</span>, <span style="color:#e6db74">&#39;11239&#39;</span>, <span style="color:#e6db74">&#39;10119&#39;</span>, <span style="color:#e6db74">&#39;10006&#39;</span>, <span style="color:#e6db74">&#39;10048&#39;</span>, <span style="color:#e6db74">&#39;11697&#39;</span>, <span style="color:#e6db74">&#39;11692&#39;</span>,
+       <span style="color:#e6db74">&#39;11693&#39;</span>, <span style="color:#e6db74">&#39;10573&#39;</span>, <span style="color:#e6db74">&#39;00083&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>, <span style="color:#e6db74">&#39;11559&#39;</span>, <span style="color:#e6db74">&#39;10020&#39;</span>, <span style="color:#e6db74">&#39;77056&#39;</span>,
+       <span style="color:#e6db74">&#39;11776&#39;</span>, <span style="color:#e6db74">&#39;70711&#39;</span>, <span style="color:#e6db74">&#39;10282&#39;</span>, <span style="color:#e6db74">&#39;11109&#39;</span>, <span style="color:#e6db74">&#39;10044&#39;</span>, <span style="color:#e6db74">&#39;02061&#39;</span>, <span style="color:#e6db74">&#39;77092-2016&#39;</span>,
+       <span style="color:#e6db74">&#39;14225&#39;</span>, <span style="color:#e6db74">&#39;55164-0737&#39;</span>, <span style="color:#e6db74">&#39;19711&#39;</span>, <span style="color:#e6db74">&#39;07306&#39;</span>, <span style="color:#e6db74">&#39;000000&#39;</span>, <span style="color:#e6db74">&#39;NO CLUE&#39;</span>,
+       <span style="color:#e6db74">&#39;90010&#39;</span>, <span style="color:#e6db74">&#39;11747&#39;</span>, <span style="color:#e6db74">&#39;23541&#39;</span>, <span style="color:#e6db74">&#39;11788&#39;</span>, <span style="color:#e6db74">&#39;07604&#39;</span>, 11203.0, 11217.0,
        11418.0, 11385.0, 10461.0, 11236.0, 11223.0, 11205.0, 11218.0,
        11207.0, 11234.0, 11215.0, 11420.0, 10463.0, 11213.0, 10014.0,
        10011.0, 11421.0, 10029.0, 11433.0, 11691.0, 11358.0, 11368.0,
@@ -739,77 +850,60 @@ pd.set_option('display.max_columns', 60)
        11788.0, 11563.0, 11580.0, 11427.0, 11428.0, 10000.0, 7087.0,
        10282.0, 11360.0, 10020.0, 83.0, 10004.0, 11363.0, 11042.0, 11040.0,
        7093.0, 10119.0, 11501.0, 92123.0, 11697.0, 0.0, 11575.0, 11239.0,
-       7109.0, 11797.0, 10069.0, '10803', '11716', '11722', '11549-3650',
-       '10162', '92123', '23502', '11518', '07020', '08807', '11577',
-       '07114', '11003', '07201', '11563', '61702', '10103', '29616-0759',
-       '35209-3114', '11520', '11735', '10129', '11005', '41042', '11590',
+       7109.0, 11797.0, 10069.0, <span style="color:#e6db74">&#39;10803&#39;</span>, <span style="color:#e6db74">&#39;11716&#39;</span>, <span style="color:#e6db74">&#39;11722&#39;</span>, <span style="color:#e6db74">&#39;11549-3650&#39;</span>,
+       <span style="color:#e6db74">&#39;10162&#39;</span>, <span style="color:#e6db74">&#39;92123&#39;</span>, <span style="color:#e6db74">&#39;23502&#39;</span>, <span style="color:#e6db74">&#39;11518&#39;</span>, <span style="color:#e6db74">&#39;07020&#39;</span>, <span style="color:#e6db74">&#39;08807&#39;</span>, <span style="color:#e6db74">&#39;11577&#39;</span>,
+       <span style="color:#e6db74">&#39;07114&#39;</span>, <span style="color:#e6db74">&#39;11003&#39;</span>, <span style="color:#e6db74">&#39;07201&#39;</span>, <span style="color:#e6db74">&#39;11563&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>, <span style="color:#e6db74">&#39;10103&#39;</span>, <span style="color:#e6db74">&#39;29616-0759&#39;</span>,
+       <span style="color:#e6db74">&#39;35209-3114&#39;</span>, <span style="color:#e6db74">&#39;11520&#39;</span>, <span style="color:#e6db74">&#39;11735&#39;</span>, <span style="color:#e6db74">&#39;10129&#39;</span>, <span style="color:#e6db74">&#39;11005&#39;</span>, <span style="color:#e6db74">&#39;41042&#39;</span>, <span style="color:#e6db74">&#39;11590&#39;</span>,
        6901.0, 7208.0, 10048.0, 11530.0, 13221.0, 10954.0, 11001.0,
-       11735.0, 10103.0, 10044.0, 7114.0, 11111.0, 10107.0], dtype=object)
-</code></pre>
-
+       11735.0, 10103.0, 10044.0, 7114.0, 11111.0, 10107.0<span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
 <h2 id="7-2-fixing-the-nan-values-and-string-float-confusion">7.2 Fixing the nan values and string/float confusion</h2>
 
 <p>We can pass a <code>na_values</code> option to <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">pd.read_csv</a> to clean this up a little bit. We can also specify that the type of Incident Zip is a string, not a float.</p>
-
-<pre><code class="language-python">na_values = ['NO CLUE', 'N/A', '0']
-requests = pd.read_csv('../data/311-service-requests.csv', na_values=na_values, dtype={'Incident Zip': str})
-requests['Incident Zip'].unique()
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">na_values <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;NO CLUE&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>, <span style="color:#e6db74">&#39;0&#39;</span>]
+requests <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/311-service-requests.csv&#39;</span>, na_values<span style="color:#f92672">=</span>na_values, dtype<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Incident Zip&#39;</span>: str})
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">array(['11432', '11378', '10032', '10023', '10027', '11372', '11419',
-       '11417', '10011', '11225', '11218', '10003', '10029', '10466',
-       '11219', '10025', '10310', '11236', nan, '10033', '11216', '10016',
-       '10305', '10312', '10026', '10309', '10036', '11433', '11235',
-       '11213', '11379', '11101', '10014', '11231', '11234', '10457',
-       '10459', '10465', '11207', '10002', '10034', '11233', '10453',
-       '10456', '10469', '11374', '11221', '11421', '11215', '10007',
-       '10019', '11205', '11418', '11369', '11249', '10005', '10009',
-       '11211', '11412', '10458', '11229', '10065', '10030', '11222',
-       '10024', '10013', '11420', '11365', '10012', '11214', '11212',
-       '10022', '11232', '11040', '11226', '10281', '11102', '11208',
-       '10001', '10472', '11414', '11223', '10040', '11220', '11373',
-       '11203', '11691', '11356', '10017', '10452', '10280', '11217',
-       '10031', '11201', '11358', '10128', '11423', '10039', '10010',
-       '11209', '10021', '10037', '11413', '11375', '11238', '10473',
-       '11103', '11354', '11361', '11106', '11385', '10463', '10467',
-       '11204', '11237', '11377', '11364', '11434', '11435', '11210',
-       '11228', '11368', '11694', '10464', '11415', '10314', '10301',
-       '10018', '10038', '11105', '11230', '10468', '11104', '10471',
-       '11416', '10075', '11422', '11355', '10028', '10462', '10306',
-       '10461', '11224', '11429', '10035', '11366', '11362', '11206',
-       '10460', '10304', '11360', '11411', '10455', '10475', '10069',
-       '10303', '10308', '10302', '11357', '10470', '11367', '11370',
-       '10454', '10451', '11436', '11426', '10153', '11004', '11428',
-       '11427', '11001', '11363', '10004', '10474', '11430', '10000',
-       '10307', '11239', '10119', '10006', '10048', '11697', '11692',
-       '11693', '10573', '00083', '11559', '10020', '77056', '11776',
-       '70711', '10282', '11109', '10044', '02061', '77092-2016', '14225',
-       '55164-0737', '19711', '07306', '000000', '90010', '11747', '23541',
-       '11788', '07604', '10112', '11563', '11580', '07087', '11042',
-       '07093', '11501', '92123', '00000', '11575', '07109', '11797',
-       '10803', '11716', '11722', '11549-3650', '10162', '23502', '11518',
-       '07020', '08807', '11577', '07114', '11003', '07201', '61702',
-       '10103', '29616-0759', '35209-3114', '11520', '11735', '10129',
-       '11005', '41042', '11590', '06901', '07208', '11530', '13221',
-       '10954', '11111', '10107'], dtype=object)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span><span style="color:#e6db74">&#39;11432&#39;</span>, <span style="color:#e6db74">&#39;11378&#39;</span>, <span style="color:#e6db74">&#39;10032&#39;</span>, <span style="color:#e6db74">&#39;10023&#39;</span>, <span style="color:#e6db74">&#39;10027&#39;</span>, <span style="color:#e6db74">&#39;11372&#39;</span>, <span style="color:#e6db74">&#39;11419&#39;</span>,
+       <span style="color:#e6db74">&#39;11417&#39;</span>, <span style="color:#e6db74">&#39;10011&#39;</span>, <span style="color:#e6db74">&#39;11225&#39;</span>, <span style="color:#e6db74">&#39;11218&#39;</span>, <span style="color:#e6db74">&#39;10003&#39;</span>, <span style="color:#e6db74">&#39;10029&#39;</span>, <span style="color:#e6db74">&#39;10466&#39;</span>,
+       <span style="color:#e6db74">&#39;11219&#39;</span>, <span style="color:#e6db74">&#39;10025&#39;</span>, <span style="color:#e6db74">&#39;10310&#39;</span>, <span style="color:#e6db74">&#39;11236&#39;</span>, nan, <span style="color:#e6db74">&#39;10033&#39;</span>, <span style="color:#e6db74">&#39;11216&#39;</span>, <span style="color:#e6db74">&#39;10016&#39;</span>,
+       <span style="color:#e6db74">&#39;10305&#39;</span>, <span style="color:#e6db74">&#39;10312&#39;</span>, <span style="color:#e6db74">&#39;10026&#39;</span>, <span style="color:#e6db74">&#39;10309&#39;</span>, <span style="color:#e6db74">&#39;10036&#39;</span>, <span style="color:#e6db74">&#39;11433&#39;</span>, <span style="color:#e6db74">&#39;11235&#39;</span>,
+       <span style="color:#e6db74">&#39;11213&#39;</span>, <span style="color:#e6db74">&#39;11379&#39;</span>, <span style="color:#e6db74">&#39;11101&#39;</span>, <span style="color:#e6db74">&#39;10014&#39;</span>, <span style="color:#e6db74">&#39;11231&#39;</span>, <span style="color:#e6db74">&#39;11234&#39;</span>, <span style="color:#e6db74">&#39;10457&#39;</span>,
+       <span style="color:#e6db74">&#39;10459&#39;</span>, <span style="color:#e6db74">&#39;10465&#39;</span>, <span style="color:#e6db74">&#39;11207&#39;</span>, <span style="color:#e6db74">&#39;10002&#39;</span>, <span style="color:#e6db74">&#39;10034&#39;</span>, <span style="color:#e6db74">&#39;11233&#39;</span>, <span style="color:#e6db74">&#39;10453&#39;</span>,
+       <span style="color:#e6db74">&#39;10456&#39;</span>, <span style="color:#e6db74">&#39;10469&#39;</span>, <span style="color:#e6db74">&#39;11374&#39;</span>, <span style="color:#e6db74">&#39;11221&#39;</span>, <span style="color:#e6db74">&#39;11421&#39;</span>, <span style="color:#e6db74">&#39;11215&#39;</span>, <span style="color:#e6db74">&#39;10007&#39;</span>,
+       <span style="color:#e6db74">&#39;10019&#39;</span>, <span style="color:#e6db74">&#39;11205&#39;</span>, <span style="color:#e6db74">&#39;11418&#39;</span>, <span style="color:#e6db74">&#39;11369&#39;</span>, <span style="color:#e6db74">&#39;11249&#39;</span>, <span style="color:#e6db74">&#39;10005&#39;</span>, <span style="color:#e6db74">&#39;10009&#39;</span>,
+       <span style="color:#e6db74">&#39;11211&#39;</span>, <span style="color:#e6db74">&#39;11412&#39;</span>, <span style="color:#e6db74">&#39;10458&#39;</span>, <span style="color:#e6db74">&#39;11229&#39;</span>, <span style="color:#e6db74">&#39;10065&#39;</span>, <span style="color:#e6db74">&#39;10030&#39;</span>, <span style="color:#e6db74">&#39;11222&#39;</span>,
+       <span style="color:#e6db74">&#39;10024&#39;</span>, <span style="color:#e6db74">&#39;10013&#39;</span>, <span style="color:#e6db74">&#39;11420&#39;</span>, <span style="color:#e6db74">&#39;11365&#39;</span>, <span style="color:#e6db74">&#39;10012&#39;</span>, <span style="color:#e6db74">&#39;11214&#39;</span>, <span style="color:#e6db74">&#39;11212&#39;</span>,
+       <span style="color:#e6db74">&#39;10022&#39;</span>, <span style="color:#e6db74">&#39;11232&#39;</span>, <span style="color:#e6db74">&#39;11040&#39;</span>, <span style="color:#e6db74">&#39;11226&#39;</span>, <span style="color:#e6db74">&#39;10281&#39;</span>, <span style="color:#e6db74">&#39;11102&#39;</span>, <span style="color:#e6db74">&#39;11208&#39;</span>,
+       <span style="color:#e6db74">&#39;10001&#39;</span>, <span style="color:#e6db74">&#39;10472&#39;</span>, <span style="color:#e6db74">&#39;11414&#39;</span>, <span style="color:#e6db74">&#39;11223&#39;</span>, <span style="color:#e6db74">&#39;10040&#39;</span>, <span style="color:#e6db74">&#39;11220&#39;</span>, <span style="color:#e6db74">&#39;11373&#39;</span>,
+       <span style="color:#e6db74">&#39;11203&#39;</span>, <span style="color:#e6db74">&#39;11691&#39;</span>, <span style="color:#e6db74">&#39;11356&#39;</span>, <span style="color:#e6db74">&#39;10017&#39;</span>, <span style="color:#e6db74">&#39;10452&#39;</span>, <span style="color:#e6db74">&#39;10280&#39;</span>, <span style="color:#e6db74">&#39;11217&#39;</span>,
+       <span style="color:#e6db74">&#39;10031&#39;</span>, <span style="color:#e6db74">&#39;11201&#39;</span>, <span style="color:#e6db74">&#39;11358&#39;</span>, <span style="color:#e6db74">&#39;10128&#39;</span>, <span style="color:#e6db74">&#39;11423&#39;</span>, <span style="color:#e6db74">&#39;10039&#39;</span>, <span style="color:#e6db74">&#39;10010&#39;</span>,
+       <span style="color:#e6db74">&#39;11209&#39;</span>, <span style="color:#e6db74">&#39;10021&#39;</span>, <span style="color:#e6db74">&#39;10037&#39;</span>, <span style="color:#e6db74">&#39;11413&#39;</span>, <span style="color:#e6db74">&#39;11375&#39;</span>, <span style="color:#e6db74">&#39;11238&#39;</span>, <span style="color:#e6db74">&#39;10473&#39;</span>,
+       <span style="color:#e6db74">&#39;11103&#39;</span>, <span style="color:#e6db74">&#39;11354&#39;</span>, <span style="color:#e6db74">&#39;11361&#39;</span>, <span style="color:#e6db74">&#39;11106&#39;</span>, <span style="color:#e6db74">&#39;11385&#39;</span>, <span style="color:#e6db74">&#39;10463&#39;</span>, <span style="color:#e6db74">&#39;10467&#39;</span>,
+       <span style="color:#e6db74">&#39;11204&#39;</span>, <span style="color:#e6db74">&#39;11237&#39;</span>, <span style="color:#e6db74">&#39;11377&#39;</span>, <span style="color:#e6db74">&#39;11364&#39;</span>, <span style="color:#e6db74">&#39;11434&#39;</span>, <span style="color:#e6db74">&#39;11435&#39;</span>, <span style="color:#e6db74">&#39;11210&#39;</span>,
+       <span style="color:#e6db74">&#39;11228&#39;</span>, <span style="color:#e6db74">&#39;11368&#39;</span>, <span style="color:#e6db74">&#39;11694&#39;</span>, <span style="color:#e6db74">&#39;10464&#39;</span>, <span style="color:#e6db74">&#39;11415&#39;</span>, <span style="color:#e6db74">&#39;10314&#39;</span>, <span style="color:#e6db74">&#39;10301&#39;</span>,
+       <span style="color:#e6db74">&#39;10018&#39;</span>, <span style="color:#e6db74">&#39;10038&#39;</span>, <span style="color:#e6db74">&#39;11105&#39;</span>, <span style="color:#e6db74">&#39;11230&#39;</span>, <span style="color:#e6db74">&#39;10468&#39;</span>, <span style="color:#e6db74">&#39;11104&#39;</span>, <span style="color:#e6db74">&#39;10471&#39;</span>,
+       <span style="color:#e6db74">&#39;11416&#39;</span>, <span style="color:#e6db74">&#39;10075&#39;</span>, <span style="color:#e6db74">&#39;11422&#39;</span>, <span style="color:#e6db74">&#39;11355&#39;</span>, <span style="color:#e6db74">&#39;10028&#39;</span>, <span style="color:#e6db74">&#39;10462&#39;</span>, <span style="color:#e6db74">&#39;10306&#39;</span>,
+       <span style="color:#e6db74">&#39;10461&#39;</span>, <span style="color:#e6db74">&#39;11224&#39;</span>, <span style="color:#e6db74">&#39;11429&#39;</span>, <span style="color:#e6db74">&#39;10035&#39;</span>, <span style="color:#e6db74">&#39;11366&#39;</span>, <span style="color:#e6db74">&#39;11362&#39;</span>, <span style="color:#e6db74">&#39;11206&#39;</span>,
+       <span style="color:#e6db74">&#39;10460&#39;</span>, <span style="color:#e6db74">&#39;10304&#39;</span>, <span style="color:#e6db74">&#39;11360&#39;</span>, <span style="color:#e6db74">&#39;11411&#39;</span>, <span style="color:#e6db74">&#39;10455&#39;</span>, <span style="color:#e6db74">&#39;10475&#39;</span>, <span style="color:#e6db74">&#39;10069&#39;</span>,
+       <span style="color:#e6db74">&#39;10303&#39;</span>, <span style="color:#e6db74">&#39;10308&#39;</span>, <span style="color:#e6db74">&#39;10302&#39;</span>, <span style="color:#e6db74">&#39;11357&#39;</span>, <span style="color:#e6db74">&#39;10470&#39;</span>, <span style="color:#e6db74">&#39;11367&#39;</span>, <span style="color:#e6db74">&#39;11370&#39;</span>,
+       <span style="color:#e6db74">&#39;10454&#39;</span>, <span style="color:#e6db74">&#39;10451&#39;</span>, <span style="color:#e6db74">&#39;11436&#39;</span>, <span style="color:#e6db74">&#39;11426&#39;</span>, <span style="color:#e6db74">&#39;10153&#39;</span>, <span style="color:#e6db74">&#39;11004&#39;</span>, <span style="color:#e6db74">&#39;11428&#39;</span>,
+       <span style="color:#e6db74">&#39;11427&#39;</span>, <span style="color:#e6db74">&#39;11001&#39;</span>, <span style="color:#e6db74">&#39;11363&#39;</span>, <span style="color:#e6db74">&#39;10004&#39;</span>, <span style="color:#e6db74">&#39;10474&#39;</span>, <span style="color:#e6db74">&#39;11430&#39;</span>, <span style="color:#e6db74">&#39;10000&#39;</span>,
+       <span style="color:#e6db74">&#39;10307&#39;</span>, <span style="color:#e6db74">&#39;11239&#39;</span>, <span style="color:#e6db74">&#39;10119&#39;</span>, <span style="color:#e6db74">&#39;10006&#39;</span>, <span style="color:#e6db74">&#39;10048&#39;</span>, <span style="color:#e6db74">&#39;11697&#39;</span>, <span style="color:#e6db74">&#39;11692&#39;</span>,
+       <span style="color:#e6db74">&#39;11693&#39;</span>, <span style="color:#e6db74">&#39;10573&#39;</span>, <span style="color:#e6db74">&#39;00083&#39;</span>, <span style="color:#e6db74">&#39;11559&#39;</span>, <span style="color:#e6db74">&#39;10020&#39;</span>, <span style="color:#e6db74">&#39;77056&#39;</span>, <span style="color:#e6db74">&#39;11776&#39;</span>,
+       <span style="color:#e6db74">&#39;70711&#39;</span>, <span style="color:#e6db74">&#39;10282&#39;</span>, <span style="color:#e6db74">&#39;11109&#39;</span>, <span style="color:#e6db74">&#39;10044&#39;</span>, <span style="color:#e6db74">&#39;02061&#39;</span>, <span style="color:#e6db74">&#39;77092-2016&#39;</span>, <span style="color:#e6db74">&#39;14225&#39;</span>,
+       <span style="color:#e6db74">&#39;55164-0737&#39;</span>, <span style="color:#e6db74">&#39;19711&#39;</span>, <span style="color:#e6db74">&#39;07306&#39;</span>, <span style="color:#e6db74">&#39;000000&#39;</span>, <span style="color:#e6db74">&#39;90010&#39;</span>, <span style="color:#e6db74">&#39;11747&#39;</span>, <span style="color:#e6db74">&#39;23541&#39;</span>,
+       <span style="color:#e6db74">&#39;11788&#39;</span>, <span style="color:#e6db74">&#39;07604&#39;</span>, <span style="color:#e6db74">&#39;10112&#39;</span>, <span style="color:#e6db74">&#39;11563&#39;</span>, <span style="color:#e6db74">&#39;11580&#39;</span>, <span style="color:#e6db74">&#39;07087&#39;</span>, <span style="color:#e6db74">&#39;11042&#39;</span>,
+       <span style="color:#e6db74">&#39;07093&#39;</span>, <span style="color:#e6db74">&#39;11501&#39;</span>, <span style="color:#e6db74">&#39;92123&#39;</span>, <span style="color:#e6db74">&#39;00000&#39;</span>, <span style="color:#e6db74">&#39;11575&#39;</span>, <span style="color:#e6db74">&#39;07109&#39;</span>, <span style="color:#e6db74">&#39;11797&#39;</span>,
+       <span style="color:#e6db74">&#39;10803&#39;</span>, <span style="color:#e6db74">&#39;11716&#39;</span>, <span style="color:#e6db74">&#39;11722&#39;</span>, <span style="color:#e6db74">&#39;11549-3650&#39;</span>, <span style="color:#e6db74">&#39;10162&#39;</span>, <span style="color:#e6db74">&#39;23502&#39;</span>, <span style="color:#e6db74">&#39;11518&#39;</span>,
+       <span style="color:#e6db74">&#39;07020&#39;</span>, <span style="color:#e6db74">&#39;08807&#39;</span>, <span style="color:#e6db74">&#39;11577&#39;</span>, <span style="color:#e6db74">&#39;07114&#39;</span>, <span style="color:#e6db74">&#39;11003&#39;</span>, <span style="color:#e6db74">&#39;07201&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>,
+       <span style="color:#e6db74">&#39;10103&#39;</span>, <span style="color:#e6db74">&#39;29616-0759&#39;</span>, <span style="color:#e6db74">&#39;35209-3114&#39;</span>, <span style="color:#e6db74">&#39;11520&#39;</span>, <span style="color:#e6db74">&#39;11735&#39;</span>, <span style="color:#e6db74">&#39;10129&#39;</span>,
+       <span style="color:#e6db74">&#39;11005&#39;</span>, <span style="color:#e6db74">&#39;41042&#39;</span>, <span style="color:#e6db74">&#39;11590&#39;</span>, <span style="color:#e6db74">&#39;06901&#39;</span>, <span style="color:#e6db74">&#39;07208&#39;</span>, <span style="color:#e6db74">&#39;11530&#39;</span>, <span style="color:#e6db74">&#39;13221&#39;</span>,
+       <span style="color:#e6db74">&#39;10954&#39;</span>, <span style="color:#e6db74">&#39;11111&#39;</span>, <span style="color:#e6db74">&#39;10107&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
 <h2 id="7-3-what-s-up-with-the-dashes">7.3 What&rsquo;s up with the dashes?</h2>
-
-<pre><code class="language-python">rows_with_dashes = requests['Incident Zip'].str.contains('-').fillna(False)
-len(requests[rows_with_dashes])
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rows_with_dashes <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>contains(<span style="color:#e6db74">&#39;-&#39;</span>)<span style="color:#f92672">.</span>fillna(False)
+len(requests[rows_with_dashes])</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">5
-</code></pre>
-
-<pre><code class="language-python">requests[rows_with_dashes]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">5</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[rows_with_dashes]</code></pre></div>
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -1154,34 +1248,19 @@ len(requests[rows_with_dashes])
 </div>
 
 <p>I thought these were missing data and originally deleted them like this:</p>
-
-<pre><code class="language-python">requests['Incident Zip'][rows_with_dashes] = np.nan
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][rows_with_dashes] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>nan</code></pre></div>
 <p>But then my friend pointed out that 9-digit zip codes are normal. Let&rsquo;s look at all the zip codes with more than 5 digits, make sure they&rsquo;re okay, and then truncate them.</p>
-
-<pre><code class="language-python">long_zip_codes = requests['Incident Zip'].str.len() &gt; 5
-requests['Incident Zip'][long_zip_codes].unique()
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">long_zip_codes <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>len() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][long_zip_codes]<span style="color:#f92672">.</span>unique()</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">array(['77092-2016', '55164-0737', '000000', '11549-3650', '29616-0759',
-       '35209-3114'], dtype=object)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span><span style="color:#e6db74">&#39;77092-2016&#39;</span>, <span style="color:#e6db74">&#39;55164-0737&#39;</span>, <span style="color:#e6db74">&#39;000000&#39;</span>, <span style="color:#e6db74">&#39;11549-3650&#39;</span>, <span style="color:#e6db74">&#39;29616-0759&#39;</span>,
+       <span style="color:#e6db74">&#39;35209-3114&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
 <p>Those all look okay to truncate to me.</p>
-
-<pre><code class="language-python">requests['Incident Zip'] = requests['Incident Zip'].str.slice(0, 5)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>slice(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)</code></pre></div>
 <p>Done.</p>
 
 <p>Earlier I thought 00083 was a broken zip code, but turns out Central Park&rsquo;s zip code 00083! Shows what I know. I&rsquo;m still concerned about the 00000 zip codes, though: let&rsquo;s look at that.</p>
-
-<pre><code class="language-python">requests[requests['Incident Zip'] == '00000']
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;00000&#39;</span>]</code></pre></div>
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -1361,90 +1440,72 @@ requests['Incident Zip'][long_zip_codes].unique()
 </div>
 
 <p>This looks bad to me. Let&rsquo;s set these to nan.</p>
-
-<pre><code class="language-python">zero_zips = requests['Incident Zip'] == '00000'
-requests['Incident Zip'][zero_zips] = np.nan
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">zero_zips <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;00000&#39;</span>
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>][zero_zips] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>nan</code></pre></div>
 <p>Great. Let&rsquo;s see where we are now:</p>
-
-<pre><code class="language-python">unique_zips = requests['Incident Zip'].unique()
-unique_zips.sort()
-unique_zips
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unique_zips <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()
+unique_zips<span style="color:#f92672">.</span>sort()
+unique_zips</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">array([nan, '00083', '02061', '06901', '07020', '07087', '07093', '07109',
-       '07114', '07201', '07208', '07306', '07604', '08807', '10000',
-       '10001', '10002', '10003', '10004', '10005', '10006', '10007',
-       '10009', '10010', '10011', '10012', '10013', '10014', '10016',
-       '10017', '10018', '10019', '10020', '10021', '10022', '10023',
-       '10024', '10025', '10026', '10027', '10028', '10029', '10030',
-       '10031', '10032', '10033', '10034', '10035', '10036', '10037',
-       '10038', '10039', '10040', '10044', '10048', '10065', '10069',
-       '10075', '10103', '10107', '10112', '10119', '10128', '10129',
-       '10153', '10162', '10280', '10281', '10282', '10301', '10302',
-       '10303', '10304', '10305', '10306', '10307', '10308', '10309',
-       '10310', '10312', '10314', '10451', '10452', '10453', '10454',
-       '10455', '10456', '10457', '10458', '10459', '10460', '10461',
-       '10462', '10463', '10464', '10465', '10466', '10467', '10468',
-       '10469', '10470', '10471', '10472', '10473', '10474', '10475',
-       '10573', '10803', '10954', '11001', '11003', '11004', '11005',
-       '11040', '11042', '11101', '11102', '11103', '11104', '11105',
-       '11106', '11109', '11111', '11201', '11203', '11204', '11205',
-       '11206', '11207', '11208', '11209', '11210', '11211', '11212',
-       '11213', '11214', '11215', '11216', '11217', '11218', '11219',
-       '11220', '11221', '11222', '11223', '11224', '11225', '11226',
-       '11228', '11229', '11230', '11231', '11232', '11233', '11234',
-       '11235', '11236', '11237', '11238', '11239', '11249', '11354',
-       '11355', '11356', '11357', '11358', '11360', '11361', '11362',
-       '11363', '11364', '11365', '11366', '11367', '11368', '11369',
-       '11370', '11372', '11373', '11374', '11375', '11377', '11378',
-       '11379', '11385', '11411', '11412', '11413', '11414', '11415',
-       '11416', '11417', '11418', '11419', '11420', '11421', '11422',
-       '11423', '11426', '11427', '11428', '11429', '11430', '11432',
-       '11433', '11434', '11435', '11436', '11501', '11518', '11520',
-       '11530', '11549', '11559', '11563', '11575', '11577', '11580',
-       '11590', '11691', '11692', '11693', '11694', '11697', '11716',
-       '11722', '11735', '11747', '11776', '11788', '11797', '13221',
-       '14225', '19711', '23502', '23541', '29616', '35209', '41042',
-       '55164', '61702', '70711', '77056', '77092', '90010', '92123'], dtype=object)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span>nan, <span style="color:#e6db74">&#39;00083&#39;</span>, <span style="color:#e6db74">&#39;02061&#39;</span>, <span style="color:#e6db74">&#39;06901&#39;</span>, <span style="color:#e6db74">&#39;07020&#39;</span>, <span style="color:#e6db74">&#39;07087&#39;</span>, <span style="color:#e6db74">&#39;07093&#39;</span>, <span style="color:#e6db74">&#39;07109&#39;</span>,
+       <span style="color:#e6db74">&#39;07114&#39;</span>, <span style="color:#e6db74">&#39;07201&#39;</span>, <span style="color:#e6db74">&#39;07208&#39;</span>, <span style="color:#e6db74">&#39;07306&#39;</span>, <span style="color:#e6db74">&#39;07604&#39;</span>, <span style="color:#e6db74">&#39;08807&#39;</span>, <span style="color:#e6db74">&#39;10000&#39;</span>,
+       <span style="color:#e6db74">&#39;10001&#39;</span>, <span style="color:#e6db74">&#39;10002&#39;</span>, <span style="color:#e6db74">&#39;10003&#39;</span>, <span style="color:#e6db74">&#39;10004&#39;</span>, <span style="color:#e6db74">&#39;10005&#39;</span>, <span style="color:#e6db74">&#39;10006&#39;</span>, <span style="color:#e6db74">&#39;10007&#39;</span>,
+       <span style="color:#e6db74">&#39;10009&#39;</span>, <span style="color:#e6db74">&#39;10010&#39;</span>, <span style="color:#e6db74">&#39;10011&#39;</span>, <span style="color:#e6db74">&#39;10012&#39;</span>, <span style="color:#e6db74">&#39;10013&#39;</span>, <span style="color:#e6db74">&#39;10014&#39;</span>, <span style="color:#e6db74">&#39;10016&#39;</span>,
+       <span style="color:#e6db74">&#39;10017&#39;</span>, <span style="color:#e6db74">&#39;10018&#39;</span>, <span style="color:#e6db74">&#39;10019&#39;</span>, <span style="color:#e6db74">&#39;10020&#39;</span>, <span style="color:#e6db74">&#39;10021&#39;</span>, <span style="color:#e6db74">&#39;10022&#39;</span>, <span style="color:#e6db74">&#39;10023&#39;</span>,
+       <span style="color:#e6db74">&#39;10024&#39;</span>, <span style="color:#e6db74">&#39;10025&#39;</span>, <span style="color:#e6db74">&#39;10026&#39;</span>, <span style="color:#e6db74">&#39;10027&#39;</span>, <span style="color:#e6db74">&#39;10028&#39;</span>, <span style="color:#e6db74">&#39;10029&#39;</span>, <span style="color:#e6db74">&#39;10030&#39;</span>,
+       <span style="color:#e6db74">&#39;10031&#39;</span>, <span style="color:#e6db74">&#39;10032&#39;</span>, <span style="color:#e6db74">&#39;10033&#39;</span>, <span style="color:#e6db74">&#39;10034&#39;</span>, <span style="color:#e6db74">&#39;10035&#39;</span>, <span style="color:#e6db74">&#39;10036&#39;</span>, <span style="color:#e6db74">&#39;10037&#39;</span>,
+       <span style="color:#e6db74">&#39;10038&#39;</span>, <span style="color:#e6db74">&#39;10039&#39;</span>, <span style="color:#e6db74">&#39;10040&#39;</span>, <span style="color:#e6db74">&#39;10044&#39;</span>, <span style="color:#e6db74">&#39;10048&#39;</span>, <span style="color:#e6db74">&#39;10065&#39;</span>, <span style="color:#e6db74">&#39;10069&#39;</span>,
+       <span style="color:#e6db74">&#39;10075&#39;</span>, <span style="color:#e6db74">&#39;10103&#39;</span>, <span style="color:#e6db74">&#39;10107&#39;</span>, <span style="color:#e6db74">&#39;10112&#39;</span>, <span style="color:#e6db74">&#39;10119&#39;</span>, <span style="color:#e6db74">&#39;10128&#39;</span>, <span style="color:#e6db74">&#39;10129&#39;</span>,
+       <span style="color:#e6db74">&#39;10153&#39;</span>, <span style="color:#e6db74">&#39;10162&#39;</span>, <span style="color:#e6db74">&#39;10280&#39;</span>, <span style="color:#e6db74">&#39;10281&#39;</span>, <span style="color:#e6db74">&#39;10282&#39;</span>, <span style="color:#e6db74">&#39;10301&#39;</span>, <span style="color:#e6db74">&#39;10302&#39;</span>,
+       <span style="color:#e6db74">&#39;10303&#39;</span>, <span style="color:#e6db74">&#39;10304&#39;</span>, <span style="color:#e6db74">&#39;10305&#39;</span>, <span style="color:#e6db74">&#39;10306&#39;</span>, <span style="color:#e6db74">&#39;10307&#39;</span>, <span style="color:#e6db74">&#39;10308&#39;</span>, <span style="color:#e6db74">&#39;10309&#39;</span>,
+       <span style="color:#e6db74">&#39;10310&#39;</span>, <span style="color:#e6db74">&#39;10312&#39;</span>, <span style="color:#e6db74">&#39;10314&#39;</span>, <span style="color:#e6db74">&#39;10451&#39;</span>, <span style="color:#e6db74">&#39;10452&#39;</span>, <span style="color:#e6db74">&#39;10453&#39;</span>, <span style="color:#e6db74">&#39;10454&#39;</span>,
+       <span style="color:#e6db74">&#39;10455&#39;</span>, <span style="color:#e6db74">&#39;10456&#39;</span>, <span style="color:#e6db74">&#39;10457&#39;</span>, <span style="color:#e6db74">&#39;10458&#39;</span>, <span style="color:#e6db74">&#39;10459&#39;</span>, <span style="color:#e6db74">&#39;10460&#39;</span>, <span style="color:#e6db74">&#39;10461&#39;</span>,
+       <span style="color:#e6db74">&#39;10462&#39;</span>, <span style="color:#e6db74">&#39;10463&#39;</span>, <span style="color:#e6db74">&#39;10464&#39;</span>, <span style="color:#e6db74">&#39;10465&#39;</span>, <span style="color:#e6db74">&#39;10466&#39;</span>, <span style="color:#e6db74">&#39;10467&#39;</span>, <span style="color:#e6db74">&#39;10468&#39;</span>,
+       <span style="color:#e6db74">&#39;10469&#39;</span>, <span style="color:#e6db74">&#39;10470&#39;</span>, <span style="color:#e6db74">&#39;10471&#39;</span>, <span style="color:#e6db74">&#39;10472&#39;</span>, <span style="color:#e6db74">&#39;10473&#39;</span>, <span style="color:#e6db74">&#39;10474&#39;</span>, <span style="color:#e6db74">&#39;10475&#39;</span>,
+       <span style="color:#e6db74">&#39;10573&#39;</span>, <span style="color:#e6db74">&#39;10803&#39;</span>, <span style="color:#e6db74">&#39;10954&#39;</span>, <span style="color:#e6db74">&#39;11001&#39;</span>, <span style="color:#e6db74">&#39;11003&#39;</span>, <span style="color:#e6db74">&#39;11004&#39;</span>, <span style="color:#e6db74">&#39;11005&#39;</span>,
+       <span style="color:#e6db74">&#39;11040&#39;</span>, <span style="color:#e6db74">&#39;11042&#39;</span>, <span style="color:#e6db74">&#39;11101&#39;</span>, <span style="color:#e6db74">&#39;11102&#39;</span>, <span style="color:#e6db74">&#39;11103&#39;</span>, <span style="color:#e6db74">&#39;11104&#39;</span>, <span style="color:#e6db74">&#39;11105&#39;</span>,
+       <span style="color:#e6db74">&#39;11106&#39;</span>, <span style="color:#e6db74">&#39;11109&#39;</span>, <span style="color:#e6db74">&#39;11111&#39;</span>, <span style="color:#e6db74">&#39;11201&#39;</span>, <span style="color:#e6db74">&#39;11203&#39;</span>, <span style="color:#e6db74">&#39;11204&#39;</span>, <span style="color:#e6db74">&#39;11205&#39;</span>,
+       <span style="color:#e6db74">&#39;11206&#39;</span>, <span style="color:#e6db74">&#39;11207&#39;</span>, <span style="color:#e6db74">&#39;11208&#39;</span>, <span style="color:#e6db74">&#39;11209&#39;</span>, <span style="color:#e6db74">&#39;11210&#39;</span>, <span style="color:#e6db74">&#39;11211&#39;</span>, <span style="color:#e6db74">&#39;11212&#39;</span>,
+       <span style="color:#e6db74">&#39;11213&#39;</span>, <span style="color:#e6db74">&#39;11214&#39;</span>, <span style="color:#e6db74">&#39;11215&#39;</span>, <span style="color:#e6db74">&#39;11216&#39;</span>, <span style="color:#e6db74">&#39;11217&#39;</span>, <span style="color:#e6db74">&#39;11218&#39;</span>, <span style="color:#e6db74">&#39;11219&#39;</span>,
+       <span style="color:#e6db74">&#39;11220&#39;</span>, <span style="color:#e6db74">&#39;11221&#39;</span>, <span style="color:#e6db74">&#39;11222&#39;</span>, <span style="color:#e6db74">&#39;11223&#39;</span>, <span style="color:#e6db74">&#39;11224&#39;</span>, <span style="color:#e6db74">&#39;11225&#39;</span>, <span style="color:#e6db74">&#39;11226&#39;</span>,
+       <span style="color:#e6db74">&#39;11228&#39;</span>, <span style="color:#e6db74">&#39;11229&#39;</span>, <span style="color:#e6db74">&#39;11230&#39;</span>, <span style="color:#e6db74">&#39;11231&#39;</span>, <span style="color:#e6db74">&#39;11232&#39;</span>, <span style="color:#e6db74">&#39;11233&#39;</span>, <span style="color:#e6db74">&#39;11234&#39;</span>,
+       <span style="color:#e6db74">&#39;11235&#39;</span>, <span style="color:#e6db74">&#39;11236&#39;</span>, <span style="color:#e6db74">&#39;11237&#39;</span>, <span style="color:#e6db74">&#39;11238&#39;</span>, <span style="color:#e6db74">&#39;11239&#39;</span>, <span style="color:#e6db74">&#39;11249&#39;</span>, <span style="color:#e6db74">&#39;11354&#39;</span>,
+       <span style="color:#e6db74">&#39;11355&#39;</span>, <span style="color:#e6db74">&#39;11356&#39;</span>, <span style="color:#e6db74">&#39;11357&#39;</span>, <span style="color:#e6db74">&#39;11358&#39;</span>, <span style="color:#e6db74">&#39;11360&#39;</span>, <span style="color:#e6db74">&#39;11361&#39;</span>, <span style="color:#e6db74">&#39;11362&#39;</span>,
+       <span style="color:#e6db74">&#39;11363&#39;</span>, <span style="color:#e6db74">&#39;11364&#39;</span>, <span style="color:#e6db74">&#39;11365&#39;</span>, <span style="color:#e6db74">&#39;11366&#39;</span>, <span style="color:#e6db74">&#39;11367&#39;</span>, <span style="color:#e6db74">&#39;11368&#39;</span>, <span style="color:#e6db74">&#39;11369&#39;</span>,
+       <span style="color:#e6db74">&#39;11370&#39;</span>, <span style="color:#e6db74">&#39;11372&#39;</span>, <span style="color:#e6db74">&#39;11373&#39;</span>, <span style="color:#e6db74">&#39;11374&#39;</span>, <span style="color:#e6db74">&#39;11375&#39;</span>, <span style="color:#e6db74">&#39;11377&#39;</span>, <span style="color:#e6db74">&#39;11378&#39;</span>,
+       <span style="color:#e6db74">&#39;11379&#39;</span>, <span style="color:#e6db74">&#39;11385&#39;</span>, <span style="color:#e6db74">&#39;11411&#39;</span>, <span style="color:#e6db74">&#39;11412&#39;</span>, <span style="color:#e6db74">&#39;11413&#39;</span>, <span style="color:#e6db74">&#39;11414&#39;</span>, <span style="color:#e6db74">&#39;11415&#39;</span>,
+       <span style="color:#e6db74">&#39;11416&#39;</span>, <span style="color:#e6db74">&#39;11417&#39;</span>, <span style="color:#e6db74">&#39;11418&#39;</span>, <span style="color:#e6db74">&#39;11419&#39;</span>, <span style="color:#e6db74">&#39;11420&#39;</span>, <span style="color:#e6db74">&#39;11421&#39;</span>, <span style="color:#e6db74">&#39;11422&#39;</span>,
+       <span style="color:#e6db74">&#39;11423&#39;</span>, <span style="color:#e6db74">&#39;11426&#39;</span>, <span style="color:#e6db74">&#39;11427&#39;</span>, <span style="color:#e6db74">&#39;11428&#39;</span>, <span style="color:#e6db74">&#39;11429&#39;</span>, <span style="color:#e6db74">&#39;11430&#39;</span>, <span style="color:#e6db74">&#39;11432&#39;</span>,
+       <span style="color:#e6db74">&#39;11433&#39;</span>, <span style="color:#e6db74">&#39;11434&#39;</span>, <span style="color:#e6db74">&#39;11435&#39;</span>, <span style="color:#e6db74">&#39;11436&#39;</span>, <span style="color:#e6db74">&#39;11501&#39;</span>, <span style="color:#e6db74">&#39;11518&#39;</span>, <span style="color:#e6db74">&#39;11520&#39;</span>,
+       <span style="color:#e6db74">&#39;11530&#39;</span>, <span style="color:#e6db74">&#39;11549&#39;</span>, <span style="color:#e6db74">&#39;11559&#39;</span>, <span style="color:#e6db74">&#39;11563&#39;</span>, <span style="color:#e6db74">&#39;11575&#39;</span>, <span style="color:#e6db74">&#39;11577&#39;</span>, <span style="color:#e6db74">&#39;11580&#39;</span>,
+       <span style="color:#e6db74">&#39;11590&#39;</span>, <span style="color:#e6db74">&#39;11691&#39;</span>, <span style="color:#e6db74">&#39;11692&#39;</span>, <span style="color:#e6db74">&#39;11693&#39;</span>, <span style="color:#e6db74">&#39;11694&#39;</span>, <span style="color:#e6db74">&#39;11697&#39;</span>, <span style="color:#e6db74">&#39;11716&#39;</span>,
+       <span style="color:#e6db74">&#39;11722&#39;</span>, <span style="color:#e6db74">&#39;11735&#39;</span>, <span style="color:#e6db74">&#39;11747&#39;</span>, <span style="color:#e6db74">&#39;11776&#39;</span>, <span style="color:#e6db74">&#39;11788&#39;</span>, <span style="color:#e6db74">&#39;11797&#39;</span>, <span style="color:#e6db74">&#39;13221&#39;</span>,
+       <span style="color:#e6db74">&#39;14225&#39;</span>, <span style="color:#e6db74">&#39;19711&#39;</span>, <span style="color:#e6db74">&#39;23502&#39;</span>, <span style="color:#e6db74">&#39;23541&#39;</span>, <span style="color:#e6db74">&#39;29616&#39;</span>, <span style="color:#e6db74">&#39;35209&#39;</span>, <span style="color:#e6db74">&#39;41042&#39;</span>,
+       <span style="color:#e6db74">&#39;55164&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>, <span style="color:#e6db74">&#39;70711&#39;</span>, <span style="color:#e6db74">&#39;77056&#39;</span>, <span style="color:#e6db74">&#39;77092&#39;</span>, <span style="color:#e6db74">&#39;90010&#39;</span>, <span style="color:#e6db74">&#39;92123&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
 <p>Amazing! This is much cleaner. There&rsquo;s something a bit weird here, though &ndash; I looked up 77056 on Google maps, and that&rsquo;s in Texas.</p>
 
 <p>Let&rsquo;s take a closer look:</p>
-
-<pre><code class="language-python">zips = requests['Incident Zip']
-# Let's say the zips starting with '0' and '1' are okay, for now. (this isn't actually true -- 13221 is in Syracuse, and why?)
-is_close = zips.str.startswith('0') | zips.str.startswith('1')
-# There are a bunch of NaNs, but we're not interested in them right now, so we'll say they're True
-is_far = ~(is_close.fillna(True).astype(bool))
-zips[is_far]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">zips <span style="color:#f92672">=</span> requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]
+<span style="color:#75715e"># Let&#39;s say the zips starting with &#39;0&#39; and &#39;1&#39; are okay, for now. (this isn&#39;t actually true -- 13221 is in Syracuse, and why?)</span>
+is_close <span style="color:#f92672">=</span> zips<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">|</span> zips<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;1&#39;</span>)
+<span style="color:#75715e"># There are a bunch of NaNs, but we&#39;re not interested in them right now, so we&#39;ll say they&#39;re True</span>
+is_far <span style="color:#f92672">=</span> <span style="color:#f92672">~</span>(is_close<span style="color:#f92672">.</span>fillna(True)<span style="color:#f92672">.</span>astype(bool))
+zips[is_far]</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">12102    77056
-13450    70711
-29136    77092
-30939    55164
-44008    90010
-47048    23541
-57636    92123
-71001    92123
-71834    23502
-80573    61702
-85821    29616
-89304    35209
-94201    41042
-Name: Incident Zip, dtype: object
-</code></pre>
-
-<pre><code class="language-python">requests[is_far][['Incident Zip', 'Descriptor', 'City']].sort('Incident Zip')
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">12102</span>    <span style="color:#ae81ff">77056</span>
+<span style="color:#ae81ff">13450</span>    <span style="color:#ae81ff">70711</span>
+<span style="color:#ae81ff">29136</span>    <span style="color:#ae81ff">77092</span>
+<span style="color:#ae81ff">30939</span>    <span style="color:#ae81ff">55164</span>
+<span style="color:#ae81ff">44008</span>    <span style="color:#ae81ff">90010</span>
+<span style="color:#ae81ff">47048</span>    <span style="color:#ae81ff">23541</span>
+<span style="color:#ae81ff">57636</span>    <span style="color:#ae81ff">92123</span>
+<span style="color:#ae81ff">71001</span>    <span style="color:#ae81ff">92123</span>
+<span style="color:#ae81ff">71834</span>    <span style="color:#ae81ff">23502</span>
+<span style="color:#ae81ff">80573</span>    <span style="color:#ae81ff">61702</span>
+<span style="color:#ae81ff">85821</span>    <span style="color:#ae81ff">29616</span>
+<span style="color:#ae81ff">89304</span>    <span style="color:#ae81ff">35209</span>
+<span style="color:#ae81ff">94201</span>    <span style="color:#ae81ff">41042</span>
+Name: Incident Zip, dtype: object</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[is_far][[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>, <span style="color:#e6db74">&#39;Descriptor&#39;</span>, <span style="color:#e6db74">&#39;City&#39;</span>]]<span style="color:#f92672">.</span>sort(<span style="color:#e6db74">&#39;Incident Zip&#39;</span>)</code></pre></div>
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -1543,110 +1604,98 @@ Name: Incident Zip, dtype: object
 </div>
 
 <p>Okay, there really are requests coming from LA and Houston! Good to know. Filtering by zip code is probably a bad way to handle this &ndash; we should really be looking at the city instead.</p>
-
-<pre><code class="language-python">requests['City'].str.upper().value_counts()
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests[<span style="color:#e6db74">&#39;City&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>upper()<span style="color:#f92672">.</span>value_counts()</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">BROOKLYN            31662
-NEW YORK            22664
-BRONX               18438
-STATEN ISLAND        4766
-JAMAICA              2246
-FLUSHING             1803
-ASTORIA              1568
-RIDGEWOOD            1073
-CORONA                707
-OZONE PARK            693
-LONG ISLAND CITY      678
-FAR ROCKAWAY          652
-ELMHURST              647
-WOODSIDE              609
-EAST ELMHURST         562
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">BROOKLYN            <span style="color:#ae81ff">31662</span>
+NEW YORK            <span style="color:#ae81ff">22664</span>
+BRONX               <span style="color:#ae81ff">18438</span>
+STATEN ISLAND        <span style="color:#ae81ff">4766</span>
+JAMAICA              <span style="color:#ae81ff">2246</span>
+FLUSHING             <span style="color:#ae81ff">1803</span>
+ASTORIA              <span style="color:#ae81ff">1568</span>
+RIDGEWOOD            <span style="color:#ae81ff">1073</span>
+CORONA                <span style="color:#ae81ff">707</span>
+OZONE PARK            <span style="color:#ae81ff">693</span>
+LONG ISLAND CITY      <span style="color:#ae81ff">678</span>
+FAR ROCKAWAY          <span style="color:#ae81ff">652</span>
+ELMHURST              <span style="color:#ae81ff">647</span>
+WOODSIDE              <span style="color:#ae81ff">609</span>
+EAST ELMHURST         <span style="color:#ae81ff">562</span>
 ...
-MELVILLE                  1
-PORT JEFFERSON STATION    1
-NORWELL                   1
-EAST ROCKAWAY             1
-BIRMINGHAM                1
-ROSLYN                    1
-LOS ANGELES               1
-MINEOLA                   1
-JERSEY CITY               1
-ST. PAUL                  1
-CLIFTON                   1
-COL.ANVURES               1
-EDGEWATER                 1
-ROSELYN                   1
-CENTRAL ISLIP             1
-Length: 100, dtype: int64
-</code></pre>
-
+MELVILLE                  <span style="color:#ae81ff">1</span>
+PORT JEFFERSON STATION    <span style="color:#ae81ff">1</span>
+NORWELL                   <span style="color:#ae81ff">1</span>
+EAST ROCKAWAY             <span style="color:#ae81ff">1</span>
+BIRMINGHAM                <span style="color:#ae81ff">1</span>
+ROSLYN                    <span style="color:#ae81ff">1</span>
+LOS ANGELES               <span style="color:#ae81ff">1</span>
+MINEOLA                   <span style="color:#ae81ff">1</span>
+JERSEY CITY               <span style="color:#ae81ff">1</span>
+ST. PAUL                  <span style="color:#ae81ff">1</span>
+CLIFTON                   <span style="color:#ae81ff">1</span>
+COL.ANVURES               <span style="color:#ae81ff">1</span>
+EDGEWATER                 <span style="color:#ae81ff">1</span>
+ROSELYN                   <span style="color:#ae81ff">1</span>
+CENTRAL ISLIP             <span style="color:#ae81ff">1</span>
+Length: 100, dtype: int64</code></pre></div>
 <p>It looks like these are legitimate complaints, so we&rsquo;ll just leave them alone.</p>
 
 <h2 id="7-4-putting-it-together">7.4 Putting it together</h2>
 
 <p>Here&rsquo;s what we ended up doing to clean up our zip codes, all together:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">na_values <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;NO CLUE&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>, <span style="color:#e6db74">&#39;0&#39;</span>]
+requests <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;311-service-requests.csv&#39;</span>, 
+                       na_values<span style="color:#f92672">=</span>na_values, 
+                       dtype<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Incident Zip&#39;</span>: str})
 
-<pre><code class="language-python">na_values = ['NO CLUE', 'N/A', '0']
-requests = pd.read_csv('311-service-requests.csv', 
-                       na_values=na_values, 
-                       dtype={'Incident Zip': str})
-
-def fix_zip_codes(zips):
-    # Truncate everything to length 5 
-    zips = zips.str.slice(0, 5)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fix_zip_codes</span>(zips):
+    <span style="color:#75715e"># Truncate everything to length 5 </span>
+    zips <span style="color:#f92672">=</span> zips<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>slice(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)
     
-    # Set 00000 zip codes to nan
-    zero_zips = zips == '00000'
-    zips[zero_zips] = np.nan
+    <span style="color:#75715e"># Set 00000 zip codes to nan</span>
+    zero_zips <span style="color:#f92672">=</span> zips <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;00000&#39;</span>
+    zips[zero_zips] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>nan
     
-    return zips
+    <span style="color:#66d9ef">return</span> zips
     
-requests['Incident Zip'] = fix_zip_codes(requests['Incident Zip'])
-requests['Incident Zip'].unique()
-</code></pre>
-
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>] <span style="color:#f92672">=</span> fix_zip_codes(requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>])
+requests[<span style="color:#e6db74">&#39;Incident Zip&#39;</span>]<span style="color:#f92672">.</span>unique()</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">array(['11432', '11378', '10032', '10023', '10027', '11372', '11419',
-       '11417', '10011', '11225', '11218', '10003', '10029', '10466',
-       '11219', '10025', '10310', '11236', nan, '10033', '11216', '10016',
-       '10305', '10312', '10026', '10309', '10036', '11433', '11235',
-       '11213', '11379', '11101', '10014', '11231', '11234', '10457',
-       '10459', '10465', '11207', '10002', '10034', '11233', '10453',
-       '10456', '10469', '11374', '11221', '11421', '11215', '10007',
-       '10019', '11205', '11418', '11369', '11249', '10005', '10009',
-       '11211', '11412', '10458', '11229', '10065', '10030', '11222',
-       '10024', '10013', '11420', '11365', '10012', '11214', '11212',
-       '10022', '11232', '11040', '11226', '10281', '11102', '11208',
-       '10001', '10472', '11414', '11223', '10040', '11220', '11373',
-       '11203', '11691', '11356', '10017', '10452', '10280', '11217',
-       '10031', '11201', '11358', '10128', '11423', '10039', '10010',
-       '11209', '10021', '10037', '11413', '11375', '11238', '10473',
-       '11103', '11354', '11361', '11106', '11385', '10463', '10467',
-       '11204', '11237', '11377', '11364', '11434', '11435', '11210',
-       '11228', '11368', '11694', '10464', '11415', '10314', '10301',
-       '10018', '10038', '11105', '11230', '10468', '11104', '10471',
-       '11416', '10075', '11422', '11355', '10028', '10462', '10306',
-       '10461', '11224', '11429', '10035', '11366', '11362', '11206',
-       '10460', '10304', '11360', '11411', '10455', '10475', '10069',
-       '10303', '10308', '10302', '11357', '10470', '11367', '11370',
-       '10454', '10451', '11436', '11426', '10153', '11004', '11428',
-       '11427', '11001', '11363', '10004', '10474', '11430', '10000',
-       '10307', '11239', '10119', '10006', '10048', '11697', '11692',
-       '11693', '10573', '00083', '11559', '10020', '77056', '11776',
-       '70711', '10282', '11109', '10044', '02061', '77092', '14225',
-       '55164', '19711', '07306', '90010', '11747', '23541', '11788',
-       '07604', '10112', '11563', '11580', '07087', '11042', '07093',
-       '11501', '92123', '11575', '07109', '11797', '10803', '11716',
-       '11722', '11549', '10162', '23502', '11518', '07020', '08807',
-       '11577', '07114', '11003', '07201', '61702', '10103', '29616',
-       '35209', '11520', '11735', '10129', '11005', '41042', '11590',
-       '06901', '07208', '11530', '13221', '10954', '11111', '10107'], dtype=object)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array<span style="color:#f92672">([</span><span style="color:#e6db74">&#39;11432&#39;</span>, <span style="color:#e6db74">&#39;11378&#39;</span>, <span style="color:#e6db74">&#39;10032&#39;</span>, <span style="color:#e6db74">&#39;10023&#39;</span>, <span style="color:#e6db74">&#39;10027&#39;</span>, <span style="color:#e6db74">&#39;11372&#39;</span>, <span style="color:#e6db74">&#39;11419&#39;</span>,
+       <span style="color:#e6db74">&#39;11417&#39;</span>, <span style="color:#e6db74">&#39;10011&#39;</span>, <span style="color:#e6db74">&#39;11225&#39;</span>, <span style="color:#e6db74">&#39;11218&#39;</span>, <span style="color:#e6db74">&#39;10003&#39;</span>, <span style="color:#e6db74">&#39;10029&#39;</span>, <span style="color:#e6db74">&#39;10466&#39;</span>,
+       <span style="color:#e6db74">&#39;11219&#39;</span>, <span style="color:#e6db74">&#39;10025&#39;</span>, <span style="color:#e6db74">&#39;10310&#39;</span>, <span style="color:#e6db74">&#39;11236&#39;</span>, nan, <span style="color:#e6db74">&#39;10033&#39;</span>, <span style="color:#e6db74">&#39;11216&#39;</span>, <span style="color:#e6db74">&#39;10016&#39;</span>,
+       <span style="color:#e6db74">&#39;10305&#39;</span>, <span style="color:#e6db74">&#39;10312&#39;</span>, <span style="color:#e6db74">&#39;10026&#39;</span>, <span style="color:#e6db74">&#39;10309&#39;</span>, <span style="color:#e6db74">&#39;10036&#39;</span>, <span style="color:#e6db74">&#39;11433&#39;</span>, <span style="color:#e6db74">&#39;11235&#39;</span>,
+       <span style="color:#e6db74">&#39;11213&#39;</span>, <span style="color:#e6db74">&#39;11379&#39;</span>, <span style="color:#e6db74">&#39;11101&#39;</span>, <span style="color:#e6db74">&#39;10014&#39;</span>, <span style="color:#e6db74">&#39;11231&#39;</span>, <span style="color:#e6db74">&#39;11234&#39;</span>, <span style="color:#e6db74">&#39;10457&#39;</span>,
+       <span style="color:#e6db74">&#39;10459&#39;</span>, <span style="color:#e6db74">&#39;10465&#39;</span>, <span style="color:#e6db74">&#39;11207&#39;</span>, <span style="color:#e6db74">&#39;10002&#39;</span>, <span style="color:#e6db74">&#39;10034&#39;</span>, <span style="color:#e6db74">&#39;11233&#39;</span>, <span style="color:#e6db74">&#39;10453&#39;</span>,
+       <span style="color:#e6db74">&#39;10456&#39;</span>, <span style="color:#e6db74">&#39;10469&#39;</span>, <span style="color:#e6db74">&#39;11374&#39;</span>, <span style="color:#e6db74">&#39;11221&#39;</span>, <span style="color:#e6db74">&#39;11421&#39;</span>, <span style="color:#e6db74">&#39;11215&#39;</span>, <span style="color:#e6db74">&#39;10007&#39;</span>,
+       <span style="color:#e6db74">&#39;10019&#39;</span>, <span style="color:#e6db74">&#39;11205&#39;</span>, <span style="color:#e6db74">&#39;11418&#39;</span>, <span style="color:#e6db74">&#39;11369&#39;</span>, <span style="color:#e6db74">&#39;11249&#39;</span>, <span style="color:#e6db74">&#39;10005&#39;</span>, <span style="color:#e6db74">&#39;10009&#39;</span>,
+       <span style="color:#e6db74">&#39;11211&#39;</span>, <span style="color:#e6db74">&#39;11412&#39;</span>, <span style="color:#e6db74">&#39;10458&#39;</span>, <span style="color:#e6db74">&#39;11229&#39;</span>, <span style="color:#e6db74">&#39;10065&#39;</span>, <span style="color:#e6db74">&#39;10030&#39;</span>, <span style="color:#e6db74">&#39;11222&#39;</span>,
+       <span style="color:#e6db74">&#39;10024&#39;</span>, <span style="color:#e6db74">&#39;10013&#39;</span>, <span style="color:#e6db74">&#39;11420&#39;</span>, <span style="color:#e6db74">&#39;11365&#39;</span>, <span style="color:#e6db74">&#39;10012&#39;</span>, <span style="color:#e6db74">&#39;11214&#39;</span>, <span style="color:#e6db74">&#39;11212&#39;</span>,
+       <span style="color:#e6db74">&#39;10022&#39;</span>, <span style="color:#e6db74">&#39;11232&#39;</span>, <span style="color:#e6db74">&#39;11040&#39;</span>, <span style="color:#e6db74">&#39;11226&#39;</span>, <span style="color:#e6db74">&#39;10281&#39;</span>, <span style="color:#e6db74">&#39;11102&#39;</span>, <span style="color:#e6db74">&#39;11208&#39;</span>,
+       <span style="color:#e6db74">&#39;10001&#39;</span>, <span style="color:#e6db74">&#39;10472&#39;</span>, <span style="color:#e6db74">&#39;11414&#39;</span>, <span style="color:#e6db74">&#39;11223&#39;</span>, <span style="color:#e6db74">&#39;10040&#39;</span>, <span style="color:#e6db74">&#39;11220&#39;</span>, <span style="color:#e6db74">&#39;11373&#39;</span>,
+       <span style="color:#e6db74">&#39;11203&#39;</span>, <span style="color:#e6db74">&#39;11691&#39;</span>, <span style="color:#e6db74">&#39;11356&#39;</span>, <span style="color:#e6db74">&#39;10017&#39;</span>, <span style="color:#e6db74">&#39;10452&#39;</span>, <span style="color:#e6db74">&#39;10280&#39;</span>, <span style="color:#e6db74">&#39;11217&#39;</span>,
+       <span style="color:#e6db74">&#39;10031&#39;</span>, <span style="color:#e6db74">&#39;11201&#39;</span>, <span style="color:#e6db74">&#39;11358&#39;</span>, <span style="color:#e6db74">&#39;10128&#39;</span>, <span style="color:#e6db74">&#39;11423&#39;</span>, <span style="color:#e6db74">&#39;10039&#39;</span>, <span style="color:#e6db74">&#39;10010&#39;</span>,
+       <span style="color:#e6db74">&#39;11209&#39;</span>, <span style="color:#e6db74">&#39;10021&#39;</span>, <span style="color:#e6db74">&#39;10037&#39;</span>, <span style="color:#e6db74">&#39;11413&#39;</span>, <span style="color:#e6db74">&#39;11375&#39;</span>, <span style="color:#e6db74">&#39;11238&#39;</span>, <span style="color:#e6db74">&#39;10473&#39;</span>,
+       <span style="color:#e6db74">&#39;11103&#39;</span>, <span style="color:#e6db74">&#39;11354&#39;</span>, <span style="color:#e6db74">&#39;11361&#39;</span>, <span style="color:#e6db74">&#39;11106&#39;</span>, <span style="color:#e6db74">&#39;11385&#39;</span>, <span style="color:#e6db74">&#39;10463&#39;</span>, <span style="color:#e6db74">&#39;10467&#39;</span>,
+       <span style="color:#e6db74">&#39;11204&#39;</span>, <span style="color:#e6db74">&#39;11237&#39;</span>, <span style="color:#e6db74">&#39;11377&#39;</span>, <span style="color:#e6db74">&#39;11364&#39;</span>, <span style="color:#e6db74">&#39;11434&#39;</span>, <span style="color:#e6db74">&#39;11435&#39;</span>, <span style="color:#e6db74">&#39;11210&#39;</span>,
+       <span style="color:#e6db74">&#39;11228&#39;</span>, <span style="color:#e6db74">&#39;11368&#39;</span>, <span style="color:#e6db74">&#39;11694&#39;</span>, <span style="color:#e6db74">&#39;10464&#39;</span>, <span style="color:#e6db74">&#39;11415&#39;</span>, <span style="color:#e6db74">&#39;10314&#39;</span>, <span style="color:#e6db74">&#39;10301&#39;</span>,
+       <span style="color:#e6db74">&#39;10018&#39;</span>, <span style="color:#e6db74">&#39;10038&#39;</span>, <span style="color:#e6db74">&#39;11105&#39;</span>, <span style="color:#e6db74">&#39;11230&#39;</span>, <span style="color:#e6db74">&#39;10468&#39;</span>, <span style="color:#e6db74">&#39;11104&#39;</span>, <span style="color:#e6db74">&#39;10471&#39;</span>,
+       <span style="color:#e6db74">&#39;11416&#39;</span>, <span style="color:#e6db74">&#39;10075&#39;</span>, <span style="color:#e6db74">&#39;11422&#39;</span>, <span style="color:#e6db74">&#39;11355&#39;</span>, <span style="color:#e6db74">&#39;10028&#39;</span>, <span style="color:#e6db74">&#39;10462&#39;</span>, <span style="color:#e6db74">&#39;10306&#39;</span>,
+       <span style="color:#e6db74">&#39;10461&#39;</span>, <span style="color:#e6db74">&#39;11224&#39;</span>, <span style="color:#e6db74">&#39;11429&#39;</span>, <span style="color:#e6db74">&#39;10035&#39;</span>, <span style="color:#e6db74">&#39;11366&#39;</span>, <span style="color:#e6db74">&#39;11362&#39;</span>, <span style="color:#e6db74">&#39;11206&#39;</span>,
+       <span style="color:#e6db74">&#39;10460&#39;</span>, <span style="color:#e6db74">&#39;10304&#39;</span>, <span style="color:#e6db74">&#39;11360&#39;</span>, <span style="color:#e6db74">&#39;11411&#39;</span>, <span style="color:#e6db74">&#39;10455&#39;</span>, <span style="color:#e6db74">&#39;10475&#39;</span>, <span style="color:#e6db74">&#39;10069&#39;</span>,
+       <span style="color:#e6db74">&#39;10303&#39;</span>, <span style="color:#e6db74">&#39;10308&#39;</span>, <span style="color:#e6db74">&#39;10302&#39;</span>, <span style="color:#e6db74">&#39;11357&#39;</span>, <span style="color:#e6db74">&#39;10470&#39;</span>, <span style="color:#e6db74">&#39;11367&#39;</span>, <span style="color:#e6db74">&#39;11370&#39;</span>,
+       <span style="color:#e6db74">&#39;10454&#39;</span>, <span style="color:#e6db74">&#39;10451&#39;</span>, <span style="color:#e6db74">&#39;11436&#39;</span>, <span style="color:#e6db74">&#39;11426&#39;</span>, <span style="color:#e6db74">&#39;10153&#39;</span>, <span style="color:#e6db74">&#39;11004&#39;</span>, <span style="color:#e6db74">&#39;11428&#39;</span>,
+       <span style="color:#e6db74">&#39;11427&#39;</span>, <span style="color:#e6db74">&#39;11001&#39;</span>, <span style="color:#e6db74">&#39;11363&#39;</span>, <span style="color:#e6db74">&#39;10004&#39;</span>, <span style="color:#e6db74">&#39;10474&#39;</span>, <span style="color:#e6db74">&#39;11430&#39;</span>, <span style="color:#e6db74">&#39;10000&#39;</span>,
+       <span style="color:#e6db74">&#39;10307&#39;</span>, <span style="color:#e6db74">&#39;11239&#39;</span>, <span style="color:#e6db74">&#39;10119&#39;</span>, <span style="color:#e6db74">&#39;10006&#39;</span>, <span style="color:#e6db74">&#39;10048&#39;</span>, <span style="color:#e6db74">&#39;11697&#39;</span>, <span style="color:#e6db74">&#39;11692&#39;</span>,
+       <span style="color:#e6db74">&#39;11693&#39;</span>, <span style="color:#e6db74">&#39;10573&#39;</span>, <span style="color:#e6db74">&#39;00083&#39;</span>, <span style="color:#e6db74">&#39;11559&#39;</span>, <span style="color:#e6db74">&#39;10020&#39;</span>, <span style="color:#e6db74">&#39;77056&#39;</span>, <span style="color:#e6db74">&#39;11776&#39;</span>,
+       <span style="color:#e6db74">&#39;70711&#39;</span>, <span style="color:#e6db74">&#39;10282&#39;</span>, <span style="color:#e6db74">&#39;11109&#39;</span>, <span style="color:#e6db74">&#39;10044&#39;</span>, <span style="color:#e6db74">&#39;02061&#39;</span>, <span style="color:#e6db74">&#39;77092&#39;</span>, <span style="color:#e6db74">&#39;14225&#39;</span>,
+       <span style="color:#e6db74">&#39;55164&#39;</span>, <span style="color:#e6db74">&#39;19711&#39;</span>, <span style="color:#e6db74">&#39;07306&#39;</span>, <span style="color:#e6db74">&#39;90010&#39;</span>, <span style="color:#e6db74">&#39;11747&#39;</span>, <span style="color:#e6db74">&#39;23541&#39;</span>, <span style="color:#e6db74">&#39;11788&#39;</span>,
+       <span style="color:#e6db74">&#39;07604&#39;</span>, <span style="color:#e6db74">&#39;10112&#39;</span>, <span style="color:#e6db74">&#39;11563&#39;</span>, <span style="color:#e6db74">&#39;11580&#39;</span>, <span style="color:#e6db74">&#39;07087&#39;</span>, <span style="color:#e6db74">&#39;11042&#39;</span>, <span style="color:#e6db74">&#39;07093&#39;</span>,
+       <span style="color:#e6db74">&#39;11501&#39;</span>, <span style="color:#e6db74">&#39;92123&#39;</span>, <span style="color:#e6db74">&#39;11575&#39;</span>, <span style="color:#e6db74">&#39;07109&#39;</span>, <span style="color:#e6db74">&#39;11797&#39;</span>, <span style="color:#e6db74">&#39;10803&#39;</span>, <span style="color:#e6db74">&#39;11716&#39;</span>,
+       <span style="color:#e6db74">&#39;11722&#39;</span>, <span style="color:#e6db74">&#39;11549&#39;</span>, <span style="color:#e6db74">&#39;10162&#39;</span>, <span style="color:#e6db74">&#39;23502&#39;</span>, <span style="color:#e6db74">&#39;11518&#39;</span>, <span style="color:#e6db74">&#39;07020&#39;</span>, <span style="color:#e6db74">&#39;08807&#39;</span>,
+       <span style="color:#e6db74">&#39;11577&#39;</span>, <span style="color:#e6db74">&#39;07114&#39;</span>, <span style="color:#e6db74">&#39;11003&#39;</span>, <span style="color:#e6db74">&#39;07201&#39;</span>, <span style="color:#e6db74">&#39;61702&#39;</span>, <span style="color:#e6db74">&#39;10103&#39;</span>, <span style="color:#e6db74">&#39;29616&#39;</span>,
+       <span style="color:#e6db74">&#39;35209&#39;</span>, <span style="color:#e6db74">&#39;11520&#39;</span>, <span style="color:#e6db74">&#39;11735&#39;</span>, <span style="color:#e6db74">&#39;10129&#39;</span>, <span style="color:#e6db74">&#39;11005&#39;</span>, <span style="color:#e6db74">&#39;41042&#39;</span>, <span style="color:#e6db74">&#39;11590&#39;</span>,
+       <span style="color:#e6db74">&#39;06901&#39;</span>, <span style="color:#e6db74">&#39;07208&#39;</span>, <span style="color:#e6db74">&#39;11530&#39;</span>, <span style="color:#e6db74">&#39;13221&#39;</span>, <span style="color:#e6db74">&#39;10954&#39;</span>, <span style="color:#e6db74">&#39;11111&#39;</span>, <span style="color:#e6db74">&#39;10107&#39;</span><span style="color:#f92672">]</span>, dtype<span style="color:#f92672">=</span>object<span style="color:#f92672">)</span></code></pre></div>
 
 
 <br />
@@ -1662,16 +1711,6 @@ requests['Incident Zip'].unique()
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
 <br />
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="1203265687"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
         
         </div>
@@ -1712,6 +1751,102 @@ requests['Incident Zip'].unique()
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -2063,20 +2198,20 @@ requests['Incident Zip'].unique()
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596200831"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596200831"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596200831"></script>
-    <script src="/js/jquery.sticky.js?1596200831"></script>
-    <script src="/js/featherlight.min.js?1596200831"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596200831"></script>
-    <script src="/js/highlight.pack.js?1596200831"></script>
+    <script src="/js/clipboard.min.js?1596200839"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596200839"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596200839"></script>
+    <script src="/js/jquery.sticky.js?1596200839"></script>
+    <script src="/js/featherlight.min.js?1596200839"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596200839"></script>
+    <script src="/js/highlight.pack.js?1596200839"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596200831"></script>
-    <script src="/js/learn.js?1596200831"></script>
-    <script src="/js/hugo-learn.js?1596200831"></script>
+    <script src="/js/modernizr.custom.71422.js?1596200839"></script>
+    <script src="/js/learn.js?1596200839"></script>
+    <script src="/js/hugo-learn.js?1596200839"></script>
 
-    <link href="/mermaid/mermaid.css?1596200831" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596200831"></script>
+    <link href="/mermaid/mermaid.css?1596200839" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596200839"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

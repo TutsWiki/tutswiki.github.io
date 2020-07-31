@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="List of major changes in Angular 6. ng-add, ng-update, material, cdk and starter components.">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="angular 6,angular 6 features,angular 6 release date,angular cli,angular cdk,bootstrap,ng update,ng add,rxjs,material,release notes,components">
@@ -17,22 +17,26 @@
     <title>What&#39;s new in Angular 6 (Features List) - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596200831" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596200831" rel="stylesheet">
-    <link href="/css/hybrid.css?1596200831" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596200831" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596200831" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596200831" rel="stylesheet">
-    <link href="/css/theme.css?1596200831" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596200831" rel="stylesheet">
+    <link href="/css/nucleus.css?1596200839" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596200839" rel="stylesheet">
+    <link href="/css/hybrid.css?1596200839" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596200839" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596200839" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596200839" rel="stylesheet">
+    <link href="/css/theme.css?1596200839" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596200839" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596200831"></script>
+    <script src="/js/jquery-2.x.min.js?1596200839"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
       
     </style>
     
@@ -62,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596200831"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596200831"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596200839"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596200839"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596200831"></script>
+<script type="text/javascript" src="/js/search.js?1596200839"></script>
 
     
   </div>
@@ -102,6 +106,120 @@
           
           
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/noprocrast" title="noprocrast" class="dd-item ">
+        <a href="/noprocrast/">
+        noprocrast
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
+        <a href="/ruby-enumerable/">
+        A Deeper Look at Ruby&#39;s Enumerable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
+        <a href="/rest-api-in-clojure/">
+        A REST API in Clojure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
+        <a href="/abstract-classes-and-interfaces-in-python/">
+        Abstract classes and interfaces in Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -695,11 +813,9 @@
 <h3 id="ng-add">ng add</h3>
 
 <p>This is another CLI command added in Angular 6. This will be helpful in adding new packages to your project. It downloads the packages (with their dependencies) using the package manager and installs them with the help of Schematics.</p>
-
-<pre><code class="language-javascript">ng add @angular/material // Install and configure Angular Material
-ng add @ng-bootstrap/schematics // Add ng-bootstrap in your application
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ng</span> <span style="color:#a6e22e">add</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">angular</span><span style="color:#f92672">/</span><span style="color:#a6e22e">material</span> <span style="color:#75715e">// Install and configure Angular Material
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ng</span> <span style="color:#a6e22e">add</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">ng</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bootstrap</span><span style="color:#f92672">/</span><span style="color:#a6e22e">schematics</span> <span style="color:#75715e">// Add ng-bootstrap in your application
+</span></code></pre></div>
 <p><img src="/images/ng-add.png" alt="ng-add in angular 6" title="ng-add" /></p>
 
 <p>This area will flourish with increase in packages supporting <code>ng add</code>. Refer <a href="https://github.com/angular/material2/blob/master/src/lib/schematics/collection.json">Material&rsquo;s ng-add schematic</a> to get an idea on how to write one for your application.</p>
@@ -747,39 +863,34 @@ ng add @ng-bootstrap/schematics // Add ng-bootstrap in your application
 <p>With Angular 6 you get 3 new starter components after running <code>ng add @angular/material</code>. With this update in place, it&rsquo;s very easy to create simple UI.</p>
 
 <ul>
-<li>Create a dashboard</li>
+<li><p>Create a dashboard</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ng</span> <span style="color:#a6e22e">generate</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">angular</span><span style="color:#f92672">/</span><span style="color:#a6e22e">material</span><span style="color:#f92672">:</span><span style="color:#a6e22e">material</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#a6e22e">test</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dashboard</span>
+</code></pre></div></li>
 </ul>
-
-<pre><code class="language-javascript">ng generate @angular/material:material-dashboard --name=test-dashboard
-</code></pre>
 
 <p><img src="/images/dashboard.png" alt="dashboard in Angular 6" title="Material Dashboard" /></p>
 
 <ul>
-<li>Create side navigation</li>
+<li><p>Create side navigation</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ng</span> <span style="color:#a6e22e">generate</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">angular</span><span style="color:#f92672">/</span><span style="color:#a6e22e">material</span><span style="color:#f92672">:</span><span style="color:#a6e22e">material</span><span style="color:#f92672">-</span><span style="color:#a6e22e">nav</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#a6e22e">test</span><span style="color:#f92672">-</span><span style="color:#a6e22e">nav</span>
+</code></pre></div></li>
 </ul>
-
-<pre><code class="language-javascript">ng generate @angular/material:material-nav --name=test-nav
-</code></pre>
 
 <p><img src="/images/side-navigation.png" alt="side navigation in Angular 6" title="side navigation" /></p>
 
 <ul>
-<li>Create a datatable</li>
+<li><p>Create a datatable</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ng</span> <span style="color:#a6e22e">generate</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">angular</span><span style="color:#f92672">/</span><span style="color:#a6e22e">material</span><span style="color:#f92672">:</span><span style="color:#a6e22e">material</span><span style="color:#f92672">-</span><span style="color:#a6e22e">table</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#a6e22e">test</span><span style="color:#f92672">-</span><span style="color:#a6e22e">table</span>
+</code></pre></div></li>
 </ul>
-
-<pre><code class="language-javascript">ng generate @angular/material:material-table --name=test-table
-</code></pre>
 
 <p><img src="/images/datatable.png" alt="material datatable in Angular 6" title="datatable" /></p>
 
 <h3 id="library-support">Library Support</h3>
 
 <p>Library support has been added in 6.0.0. You can easily create a library using below command. <a href="https://github.com/angular/angular-cli/wiki/stories-create-library">See details</a>.</p>
-
-<pre><code class="language-javascript">ng generate library &lt;name&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ng</span> <span style="color:#a6e22e">generate</span> <span style="color:#a6e22e">library</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">&gt;</span>
+</code></pre></div>
 <h3 id="cli-workspaces">CLI Workspaces</h3>
 
 <p>CLI can now support workspaces with multiple projects. <code>angular-cli.json</code> has been renamed to <code>angular.json</code>. Each workspace can have multiple projects, each project can have targets and each target can have a configuration.</p>
@@ -797,13 +908,13 @@ ng add @ng-bootstrap/schematics // Add ng-bootstrap in your application
 <h3 id="other-changes">Other Changes:</h3>
 
 <ul>
-<li><code>&lt;template&gt;</code> tag has been removed so now you have to use <code>&lt;ng-template&gt;</code> instead.</li>
-<li><code>@angular/http</code> is deprecated, <code>@angular/common/http</code> is the recommended alternative.</li>
+<li><code>&lt;template&gt;</code> tag has been removed so now you have to use <code>&lt;ng-template&gt;</code> instead.
+- <code>@angular/http</code> is deprecated, <code>@angular/common/http</code> is the recommended alternative.
+
+<div class="notices note" >
+If above-listed features look promising to you and you want to use Angular 6 for your existing project, then follow <a href="https://update.angular.io/">https://update.angular.io/</a>.
+</div></li>
 </ul>
-
-<div class="notices note" ><p>If above-listed features look promising to you and you want to use Angular 6 for your existing project, then follow <a href="https://update.angular.io/">https://update.angular.io/</a>.</p>
-</div>
-
 
 
 
@@ -820,16 +931,6 @@ ng add @ng-bootstrap/schematics // Add ng-bootstrap in your application
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
 <br />
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="1203265687"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
         
         </div>
@@ -870,6 +971,102 @@ ng add @ng-bootstrap/schematics // Add ng-bootstrap in your application
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1217,20 +1414,20 @@ ng add @ng-bootstrap/schematics // Add ng-bootstrap in your application
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596200831"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596200831"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596200831"></script>
-    <script src="/js/jquery.sticky.js?1596200831"></script>
-    <script src="/js/featherlight.min.js?1596200831"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596200831"></script>
-    <script src="/js/highlight.pack.js?1596200831"></script>
+    <script src="/js/clipboard.min.js?1596200839"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596200839"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596200839"></script>
+    <script src="/js/jquery.sticky.js?1596200839"></script>
+    <script src="/js/featherlight.min.js?1596200839"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596200839"></script>
+    <script src="/js/highlight.pack.js?1596200839"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596200831"></script>
-    <script src="/js/learn.js?1596200831"></script>
-    <script src="/js/hugo-learn.js?1596200831"></script>
+    <script src="/js/modernizr.custom.71422.js?1596200839"></script>
+    <script src="/js/learn.js?1596200839"></script>
+    <script src="/js/hugo-learn.js?1596200839"></script>
 
-    <link href="/mermaid/mermaid.css?1596200831" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596200831"></script>
+    <link href="/mermaid/mermaid.css?1596200839" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596200839"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

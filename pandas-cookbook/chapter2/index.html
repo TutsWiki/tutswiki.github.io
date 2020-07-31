@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="Select data from a pandas dataframe, take slices and get columns">
 	<meta name="author" content="Chankey Pathak">
 	<meta name="keywords" content="pandas,csv,read csv pandas,read column pandas,select column,plot column">
@@ -17,22 +17,26 @@
     <title>Chapter 2 - Selecting and finding desired data - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596200831" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596200831" rel="stylesheet">
-    <link href="/css/hybrid.css?1596200831" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596200831" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596200831" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596200831" rel="stylesheet">
-    <link href="/css/theme.css?1596200831" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596200831" rel="stylesheet">
+    <link href="/css/nucleus.css?1596200839" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596200839" rel="stylesheet">
+    <link href="/css/hybrid.css?1596200839" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596200839" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596200839" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596200839" rel="stylesheet">
+    <link href="/css/theme.css?1596200839" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596200839" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596200831"></script>
+    <script src="/js/jquery-2.x.min.js?1596200839"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
       
     </style>
     
@@ -62,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596200831"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596200831"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596200839"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596200839"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596200831"></script>
+<script type="text/javascript" src="/js/search.js?1596200839"></script>
 
     
   </div>
@@ -102,6 +106,120 @@
           
           
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/noprocrast" title="noprocrast" class="dd-item ">
+        <a href="/noprocrast/">
+        noprocrast
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/how-to-fix-sudo-node-command-not-found-error" title="How to fix sudo node command not found error" class="dd-item ">
+        <a href="/how-to-fix-sudo-node-command-not-found-error/">
+        sudo and node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/yet-another-lousy-monad-tutorial" title="Yet another lousy monad tutorial" class="dd-item ">
+        <a href="/yet-another-lousy-monad-tutorial/">
+        Yet another lousy monad tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ruby-enumerable" title="A Deeper Look at Ruby&#39;s Enumerable" class="dd-item ">
+        <a href="/ruby-enumerable/">
+        A Deeper Look at Ruby&#39;s Enumerable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rest-api-in-clojure" title="A REST API in Clojure" class="dd-item ">
+        <a href="/rest-api-in-clojure/">
+        A REST API in Clojure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/abstract-classes-and-interfaces-in-python" title="Abstract classes and interfaces in Python" class="dd-item ">
+        <a href="/abstract-classes-and-interfaces-in-python/">
+        Abstract classes and interfaces in Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -633,39 +751,42 @@
 
 
 
-<pre><code class="language-python"># The usual preamble
-%matplotlib inline
-import pandas as pd
-import matplotlib.pyplot as plt
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># The usual preamble</span>
+<span style="color:#f92672">%</span>matplotlib inline
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 
-# Make the graphs a bit prettier, and bigger
-pd.set_option('display.mpl_style', 'default')
+<span style="color:#75715e"># Make the graphs a bit prettier, and bigger</span>
+pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.mpl_style&#39;</span>, <span style="color:#e6db74">&#39;default&#39;</span>)
 
-# This is necessary to show lots of columns in pandas 0.12. 
-# Not necessary in pandas 0.13.
-pd.set_option('display.width', 5000) 
-pd.set_option('display.max_columns', 60)
+<span style="color:#75715e"># This is necessary to show lots of columns in pandas 0.12. </span>
+<span style="color:#75715e"># Not necessary in pandas 0.13.</span>
+pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.width&#39;</span>, <span style="color:#ae81ff">5000</span>) 
+pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.max_columns&#39;</span>, <span style="color:#ae81ff">60</span>)
 
-plt.rcParams['figure.figsize'] = (15, 5)
-</code></pre>
-
+plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</span>)</code></pre></div>
 <p>We&rsquo;re going to use a new dataset here, to demonstrate how to deal with larger datasets. This is a subset of the of 311 service requests from <a href="https://nycopendata.socrata.com/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9">NYC Open Data</a>. Download the file <a href="/311-service-requests.csv">311-service-requests.csv</a>.</p>
-
-<pre><code class="language-python">complaints = pd.read_csv('311-service-requests.csv')
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;311-service-requests.csv&#39;</span>)</code></pre></div>
 <p>Depending on your pandas version, you might see an error like <code>&quot;DtypeWarning: Columns (8) have mixed types&quot;</code>. This means that it&rsquo;s encountered a problem reading in our data. In this case it almost certainly means that it has columns where some of the entries are strings and some are integers.</p>
 
 <p>For now we&rsquo;re going to ignore it and hope we don&rsquo;t run into a problem, but in the long run we&rsquo;d need to investigate this warning.</p>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 <h2 id="2-1-what-s-even-in-it-the-summary">2.1 What&rsquo;s even in it? (the summary)</h2>
 
 <p>When you print a large dataframe, it will only show you the first few rows.
 If you don&rsquo;t see this, don&rsquo;t panic! The default behavior for large dataframes changed between pandas 0.12 and 0.13. Previous to 0.13 it would show you a summary of the dataframe. This includes all the columns, and how many non-null values there are in each column.</p>
-
-<pre><code class="language-python">complaints
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints</code></pre></div>
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -4093,53 +4214,43 @@ If you don&rsquo;t see this, don&rsquo;t panic! The default behavior for large d
 <h2 id="2-2-selecting-columns-and-rows">2.2 Selecting columns and rows</h2>
 
 <p>To select a column, we index with the name of the column, like this:</p>
-
-<pre><code class="language-python">complaints['Complaint Type']
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints[<span style="color:#e6db74">&#39;Complaint Type&#39;</span>]</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">
-0      Noise - Street/Sidewalk
-1              Illegal Parking
-2           Noise - Commercial
-3              Noise - Vehicle
-4                       Rodent
-5           Noise - Commercial
-6             Blocked Driveway
-7           Noise - Commercial
-8           Noise - Commercial
-9           Noise - Commercial
-10    Noise - House of Worship
-11          Noise - Commercial
-12             Illegal Parking
-13             Noise - Vehicle
-14                      Rodent
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">0</span>      Noise - Street/Sidewalk
+<span style="color:#ae81ff">1</span>              Illegal Parking
+<span style="color:#ae81ff">2</span>           Noise - Commercial
+<span style="color:#ae81ff">3</span>              Noise - Vehicle
+<span style="color:#ae81ff">4</span>                       Rodent
+<span style="color:#ae81ff">5</span>           Noise - Commercial
+<span style="color:#ae81ff">6</span>             Blocked Driveway
+<span style="color:#ae81ff">7</span>           Noise - Commercial
+<span style="color:#ae81ff">8</span>           Noise - Commercial
+<span style="color:#ae81ff">9</span>           Noise - Commercial
+<span style="color:#ae81ff">10</span>    Noise - House of Worship
+<span style="color:#ae81ff">11</span>          Noise - Commercial
+<span style="color:#ae81ff">12</span>             Illegal Parking
+<span style="color:#ae81ff">13</span>             Noise - Vehicle
+<span style="color:#ae81ff">14</span>                      Rodent
 ...
-111054    Noise - Street/Sidewalk
-111055         Noise - Commercial
-111056      Street Sign - Missing
-111057                      Noise
-111058         Noise - Commercial
-111059    Noise - Street/Sidewalk
-111060                      Noise
-111061         Noise - Commercial
-111062               Water System
-111063               Water System
-111064    Maintenance or Facility
-111065            Illegal Parking
-111066    Noise - Street/Sidewalk
-111067         Noise - Commercial
-111068           Blocked Driveway
-Name: Complaint Type, Length: 111069, dtype: object
-</code></pre>
-
+<span style="color:#ae81ff">111054</span>    Noise - Street/Sidewalk
+<span style="color:#ae81ff">111055</span>         Noise - Commercial
+<span style="color:#ae81ff">111056</span>      Street Sign - Missing
+<span style="color:#ae81ff">111057</span>                      Noise
+<span style="color:#ae81ff">111058</span>         Noise - Commercial
+<span style="color:#ae81ff">111059</span>    Noise - Street/Sidewalk
+<span style="color:#ae81ff">111060</span>                      Noise
+<span style="color:#ae81ff">111061</span>         Noise - Commercial
+<span style="color:#ae81ff">111062</span>               Water System
+<span style="color:#ae81ff">111063</span>               Water System
+<span style="color:#ae81ff">111064</span>    Maintenance or Facility
+<span style="color:#ae81ff">111065</span>            Illegal Parking
+<span style="color:#ae81ff">111066</span>    Noise - Street/Sidewalk
+<span style="color:#ae81ff">111067</span>         Noise - Commercial
+<span style="color:#ae81ff">111068</span>           Blocked Driveway
+Name: Complaint Type, Length: 111069, dtype: object</code></pre></div>
 <p>To get the first 5 rows of a dataframe, we can use a slice: df[:5].
 This is a great way to get a sense for what kind of information is in the dataframe &ndash; take a minute to look at the contents and get a feel for this dataset.</p>
-
-<pre><code class="language-python">complaints[:5]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints[:<span style="color:#ae81ff">5</span>]</code></pre></div>
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -4485,42 +4596,27 @@ This is a great way to get a sense for what kind of information is in the datafr
 </div>
 
 <p>We can combine these to get the first 5 rows of a column:</p>
-
-<pre><code class="language-python">complaints['Complaint Type'][:5]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints[<span style="color:#e6db74">&#39;Complaint Type&#39;</span>][:<span style="color:#ae81ff">5</span>]</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">0    Noise - Street/Sidewalk
-1            Illegal Parking
-2         Noise - Commercial
-3            Noise - Vehicle
-4                     Rodent
-Name: Complaint Type, dtype: object
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">0</span>    Noise - Street/Sidewalk
+<span style="color:#ae81ff">1</span>            Illegal Parking
+<span style="color:#ae81ff">2</span>         Noise - Commercial
+<span style="color:#ae81ff">3</span>            Noise - Vehicle
+<span style="color:#ae81ff">4</span>                     Rodent
+Name: Complaint Type, dtype: object</code></pre></div>
 <p>and it doesn&rsquo;t matter which direction we do it in:</p>
-
-<pre><code class="language-python">complaints['Complaint Type'][:5]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints[<span style="color:#e6db74">&#39;Complaint Type&#39;</span>][:<span style="color:#ae81ff">5</span>]</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">0    Noise - Street/Sidewalk
-1            Illegal Parking
-2         Noise - Commercial
-3            Noise - Vehicle
-4                     Rodent
-Name: Complaint Type, dtype: object
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">0</span>    Noise - Street/Sidewalk
+<span style="color:#ae81ff">1</span>            Illegal Parking
+<span style="color:#ae81ff">2</span>         Noise - Commercial
+<span style="color:#ae81ff">3</span>            Noise - Vehicle
+<span style="color:#ae81ff">4</span>                     Rodent
+Name: Complaint Type, dtype: object</code></pre></div>
 <h2 id="2-3-selecting-multiple-columns">2.3 Selecting multiple columns</h2>
 
 <p>What if we just want to know the complaint type and the borough, but not the rest of the information? Pandas makes it really easy to select a subset of the columns: just index with list of columns you want.</p>
-
-<pre><code class="language-python">complaints[['Complaint Type', 'Borough']]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints[[<span style="color:#e6db74">&#39;Complaint Type&#39;</span>, <span style="color:#e6db74">&#39;Borough&#39;</span>]]</code></pre></div>
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -4846,10 +4942,7 @@ Name: Complaint Type, dtype: object
 </div>
 
 <p>That showed us a summary, and then we can look at the first 10 rows:</p>
-
-<pre><code class="language-python">complaints[['Complaint Type', 'Borough']][:10]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints[[<span style="color:#e6db74">&#39;Complaint Type&#39;</span>, <span style="color:#e6db74">&#39;Borough&#39;</span>]][:<span style="color:#ae81ff">10</span>]</code></pre></div>
 <p>Output:</p>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -4922,72 +5015,57 @@ Name: Complaint Type, dtype: object
 <h2 id="2-4-what-s-the-most-common-complaint-type">2.4 What&rsquo;s the most common complaint type?</h2>
 
 <p>This is a really easy question to answer! There&rsquo;s a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html">.value_counts()</a> method that we can use:</p>
-
-<pre><code class="language-python">complaints['Complaint Type'].value_counts()
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaints[<span style="color:#e6db74">&#39;Complaint Type&#39;</span>]<span style="color:#f92672">.</span>value_counts()</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">HEATING                     14200
-GENERAL CONSTRUCTION         7471
-Street Light Condition       7117
-DOF Literature Request       5797
-PLUMBING                     5373
-PAINT - PLASTER              5149
-Blocked Driveway             4590
-NONCONST                     3998
-Street Condition             3473
-Illegal Parking              3343
-Noise                        3321
-Traffic Signal Condition     3145
-Dirty Conditions             2653
-Water System                 2636
-Noise - Commercial           2578
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HEATING                     <span style="color:#ae81ff">14200</span>
+GENERAL CONSTRUCTION         <span style="color:#ae81ff">7471</span>
+Street Light Condition       <span style="color:#ae81ff">7117</span>
+DOF Literature Request       <span style="color:#ae81ff">5797</span>
+PLUMBING                     <span style="color:#ae81ff">5373</span>
+PAINT - PLASTER              <span style="color:#ae81ff">5149</span>
+Blocked Driveway             <span style="color:#ae81ff">4590</span>
+NONCONST                     <span style="color:#ae81ff">3998</span>
+Street Condition             <span style="color:#ae81ff">3473</span>
+Illegal Parking              <span style="color:#ae81ff">3343</span>
+Noise                        <span style="color:#ae81ff">3321</span>
+Traffic Signal Condition     <span style="color:#ae81ff">3145</span>
+Dirty Conditions             <span style="color:#ae81ff">2653</span>
+Water System                 <span style="color:#ae81ff">2636</span>
+Noise - Commercial           <span style="color:#ae81ff">2578</span>
 ...
-Opinion for the Mayor                2
-Window Guard                         2
-DFTA Literature Request              2
-Legal Services Provider Complaint    2
-Open Flame Permit                    1
-Snow                                 1
-Municipal Parking Facility           1
-X-Ray Machine/Equipment              1
-Stalled Sites                        1
-DHS Income Savings Requirement       1
-Tunnel Condition                     1
-Highway Sign - Damaged               1
-Ferry Permit                         1
-Trans Fat                            1
-DWD                                  1
-Length: 165, dtype: int64
-</code></pre>
-
+Opinion <span style="color:#66d9ef">for</span> the Mayor                <span style="color:#ae81ff">2</span>
+Window Guard                         <span style="color:#ae81ff">2</span>
+DFTA Literature Request              <span style="color:#ae81ff">2</span>
+Legal Services Provider Complaint    <span style="color:#ae81ff">2</span>
+Open Flame Permit                    <span style="color:#ae81ff">1</span>
+Snow                                 <span style="color:#ae81ff">1</span>
+Municipal Parking Facility           <span style="color:#ae81ff">1</span>
+X-Ray Machine/Equipment              <span style="color:#ae81ff">1</span>
+Stalled Sites                        <span style="color:#ae81ff">1</span>
+DHS Income Savings Requirement       <span style="color:#ae81ff">1</span>
+Tunnel Condition                     <span style="color:#ae81ff">1</span>
+Highway Sign - Damaged               <span style="color:#ae81ff">1</span>
+Ferry Permit                         <span style="color:#ae81ff">1</span>
+Trans Fat                            <span style="color:#ae81ff">1</span>
+DWD                                  <span style="color:#ae81ff">1</span>
+Length: 165, dtype: int64</code></pre></div>
 <p>If we just wanted the top 10 most common complaints, we can do this:</p>
-
-<pre><code class="language-python">complaint_counts = complaints['Complaint Type'].value_counts()
-complaint_counts[:10]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaint_counts <span style="color:#f92672">=</span> complaints[<span style="color:#e6db74">&#39;Complaint Type&#39;</span>]<span style="color:#f92672">.</span>value_counts()
+complaint_counts[:<span style="color:#ae81ff">10</span>]</code></pre></div>
 <p>Output:</p>
-
-<pre><code class="language-bash">HEATING                   14200
-GENERAL CONSTRUCTION       7471
-Street Light Condition     7117
-DOF Literature Request     5797
-PLUMBING                   5373
-PAINT - PLASTER            5149
-Blocked Driveway           4590
-NONCONST                   3998
-Street Condition           3473
-Illegal Parking            3343
-dtype: int64
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HEATING                   <span style="color:#ae81ff">14200</span>
+GENERAL CONSTRUCTION       <span style="color:#ae81ff">7471</span>
+Street Light Condition     <span style="color:#ae81ff">7117</span>
+DOF Literature Request     <span style="color:#ae81ff">5797</span>
+PLUMBING                   <span style="color:#ae81ff">5373</span>
+PAINT - PLASTER            <span style="color:#ae81ff">5149</span>
+Blocked Driveway           <span style="color:#ae81ff">4590</span>
+NONCONST                   <span style="color:#ae81ff">3998</span>
+Street Condition           <span style="color:#ae81ff">3473</span>
+Illegal Parking            <span style="color:#ae81ff">3343</span>
+dtype: int64</code></pre></div>
 <p>But it gets better! We can plot them!</p>
-
-<pre><code class="language-python">complaint_counts[:10].plot(kind='bar')
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">complaint_counts[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bar&#39;</span>)</code></pre></div>
 <p>Output:
 <div>
 <img src="/img/plot_complaints.png" alt="Plotting complaints with Matplotlib" />
@@ -5008,16 +5086,6 @@ dtype: int64
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
 <br />
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9878675755379402"
-     data-ad-slot="1203265687"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
         
         </div>
@@ -5058,6 +5126,102 @@ dtype: int64
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -5409,20 +5573,20 @@ dtype: int64
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596200831"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596200831"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596200831"></script>
-    <script src="/js/jquery.sticky.js?1596200831"></script>
-    <script src="/js/featherlight.min.js?1596200831"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596200831"></script>
-    <script src="/js/highlight.pack.js?1596200831"></script>
+    <script src="/js/clipboard.min.js?1596200839"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596200839"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596200839"></script>
+    <script src="/js/jquery.sticky.js?1596200839"></script>
+    <script src="/js/featherlight.min.js?1596200839"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596200839"></script>
+    <script src="/js/highlight.pack.js?1596200839"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596200831"></script>
-    <script src="/js/learn.js?1596200831"></script>
-    <script src="/js/hugo-learn.js?1596200831"></script>
+    <script src="/js/modernizr.custom.71422.js?1596200839"></script>
+    <script src="/js/learn.js?1596200839"></script>
+    <script src="/js/hugo-learn.js?1596200839"></script>
 
-    <link href="/mermaid/mermaid.css?1596200831" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596200831"></script>
+    <link href="/mermaid/mermaid.css?1596200839" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596200839"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

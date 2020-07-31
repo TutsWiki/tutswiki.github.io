@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on TutsWiki Beta</title>
@@ -6,10 +6,75 @@
     <description>Recent content in Blog on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>noprocrast</title>
+      <link>http://tutswiki.com/noprocrast/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/noprocrast/</guid>
+      <description>I wrote a command line script called noprocrast. This script updates /etc/hosts to make distracting websites unreachable from my machine:
+sudo cp /etc/noprocrast_hosts /etc/hosts The corresponding /etc/noprocrast_hosts:
+127.0.0.1 localhost db001 db002 db003 db004 web030 web048 255.255.255.255 broadcasthost ::1 localhost fe80::1%lo0 localhost 127.0.0.1 news.ycombinator.com 127.0.0.1 reddit.com www.reddit.com 127.0.0.1 twitter.com 127.0.0.1 nytimes.com www.nytimes.com In case I really need to visit one of these sites, I use the following procrast script:
+sudo cp /etc/procrast_hosts /etc/hosts echo `date` &amp;gt;&amp;gt; ~/.</description>
+    </item>
+    
+    <item>
+      <title>How to fix sudo node command not found error</title>
+      <link>http://tutswiki.com/how-to-fix-sudo-node-command-not-found-error/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/how-to-fix-sudo-node-command-not-found-error/</guid>
+      <description>Getting permission errors when installing a module?
+Are &amp;lsquo;sudo: node: command not found&amp;rsquo; errors taking away your precious sleeping hours?
+How to fix? You have to remove any trace of node on your system, and reinstall it. It will soothe your pain:
+echo &amp;#39;export PATH=$HOME/local/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install You are one/two steps/commands away from success.</description>
+    </item>
+    
+    <item>
+      <title>Yet another lousy monad tutorial</title>
+      <link>http://tutswiki.com/yet-another-lousy-monad-tutorial/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/yet-another-lousy-monad-tutorial/</guid>
+      <description>I&amp;rsquo;m not a big fan of monads, but I understand them. They&amp;rsquo;re not rocket science. Let me try to write a monad tutorial that would&amp;rsquo;ve helped my past self understand what the fuss was about. I like concrete explanations that start with practical examples, without any annoying metaphors, and especially without any Haskell code. So here&amp;rsquo;s five examples that have something in common:
+   (adsbygoogle = window.adsbygoogle || []).</description>
+    </item>
+    
+    <item>
+      <title>A Deeper Look at Ruby&#39;s Enumerable</title>
+      <link>http://tutswiki.com/ruby-enumerable/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/ruby-enumerable/</guid>
+      <description>Have you ever needed to load a VERY large file in ruby? No I don’t mean your 500 line rails model. I mean a several gig binary or text file.
+Try it. Watch your machine become unresponsive. Cry a little inside. Then reach for enumerable.
+Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that.</description>
+    </item>
+    
+    <item>
+      <title>A REST API in Clojure</title>
+      <link>http://tutswiki.com/rest-api-in-clojure/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/rest-api-in-clojure/</guid>
+      <description>Clojure is one of the most interesting new languages targeting the JVM. Initially only the JVM, in the meantime it is also available for JavaScript. Essentially, you can write Clojure and either execute it as Java program or JavaScript program, of course each flavor has its unique features as well.
+Clojure is a Lisp, thus the syntax may be foreign, but it is really, really easy since there are very few syntactic variations.</description>
+    </item>
+    
+    <item>
+      <title>Abstract classes and interfaces in Python</title>
+      <link>http://tutswiki.com/abstract-classes-and-interfaces-in-python/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/abstract-classes-and-interfaces-in-python/</guid>
+      <description>Abstract base classes and interfaces are entities that are similar in purpose and meaning. Both the first and second are a peculiar way of documenting the code and help to limit (decouple) the interaction of individual abstractions in the program (classes).
+Python is a very flexible language. One facet of this flexibility is the possibilities provided by metaprogramming. And although abstract classes and interfaces are not represented in the core of the language, the former were implemented in the standard abc module, and the latter in the Zope project (the zope.</description>
+    </item>
     
     <item>
       <title>How Deep Learning Helped Reducing Variability in Cardiovascular Imaging</title>
@@ -90,9 +155,9 @@ The official documentation describes them as:
       <guid>http://tutswiki.com/print-same-line-python/</guid>
       <description>In Python, when you use the print function, it prints a new line at the end.
 For example:
-print &amp;quot;This is some line.&amp;quot; print &amp;quot;This is another line.&amp;quot;  Output:
-This is some line. This is another line.  What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
-Add comma at the end of print print &amp;quot;This is some line.</description>
+print &amp;#34;This is some line.&amp;#34; print &amp;#34;This is another line.&amp;#34; Output:
+This is some line. This is another line. What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
+   (adsbygoogle = window.adsbygoogle || []).push({});  Add comma at the end of print print &amp;#34;This is some line.</description>
     </item>
     
     <item>
@@ -112,9 +177,9 @@ Imagine if you migrate your server to a new host and suddenly your application s
       
       <guid>http://tutswiki.com/run-module-as-script-python/</guid>
       <description>Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
-def int_sum(a, b): print a+b def some_other_function(): pass  But, what if you want to run the module itself as a script?
+def int_sum(a, b): print a+b def some_other_function(): pass But, what if you want to run the module itself as a script?
 Well, if you want to use a Python module as script then you just have to use the conditional for __name__.
-def int_sum(a, b): print a+b if __name__ == &amp;quot;__main__&amp;quot;: import sys int_sum(int(sys.</description>
+def int_sum(a, b): print a+b if __name__ == &amp;#34;__main__&amp;#34;: import sys int_sum(int(sys.</description>
     </item>
     
     <item>
