@@ -17,17 +17,17 @@
     <title>Grunt Tutorial with Live Example - TutsWiki Beta</title>
     
     
-    <link href="/css/nucleus.css?1596202006" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1596202006" rel="stylesheet">
-    <link href="/css/hybrid.css?1596202006" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1596202006" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1596202006" rel="stylesheet">
-    <link href="/css/auto-complete.css?1596202006" rel="stylesheet">
-    <link href="/css/theme.css?1596202006" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1596202006" rel="stylesheet">
+    <link href="/css/nucleus.css?1596202518" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1596202518" rel="stylesheet">
+    <link href="/css/hybrid.css?1596202518" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596202518" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596202518" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596202518" rel="stylesheet">
+    <link href="/css/theme.css?1596202518" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596202518" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1596202006"></script>
+    <script src="/js/jquery-2.x.min.js?1596202518"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1596202006"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1596202006"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596202518"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596202518"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1596202006"></script>
+<script type="text/javascript" src="/js/search.js?1596202518"></script>
 
     
   </div>
@@ -777,8 +777,11 @@
 
 <p>So, what is this thing called Grunt and how can it help you?</p>
 
-<p>From the <a href="http://gruntjs.com/">grunt documentation</a>:
-&gt; “A task-based command line build tool for JavaScript projects”</p>
+<p>From the <a href="http://gruntjs.com/">grunt documentation</a>:</p>
+
+<blockquote>
+<p>“A task-based command line build tool for JavaScript projects”</p>
+</blockquote>
 
 <p>This means one simple thing. Stop repeating yourself and let Grunt do stuff for you. The <a href="http://gruntjs.com/plugins">Grunt ecosystem</a> is constantly growing and being improved by open source contributors.</p>
 
@@ -798,9 +801,9 @@
 <p>You can find plugins for almost everything. Examples of tasks could be:</p>
 
 <ul>
-<li>compile <a href="https://npmjs.org/package/grunt-contrib-coffee">CoffeeScript</a>, <a href="ttps://npmjs.org/package/grunt-contrib-jade">Jade</a>, <a href="https://npmjs.org/package/grunt-contrib-sass">Sass</a>, <a href="https://npmjs.org/package/grunt-contrib-stylus">Stylus</a>, <a href="https://npmjs.org/package/grunt-mustache">Mustache</a>,…</li>
-<li><a href="https://npmjs.org/package/grunt-imagemin">optimize</a> images</li>
-<li><a href="https://npmjs.org/package/grunt-jshint">run jshint</a> on your code</li>
+<li>compile <a href="https://npmjs.org/package/grunt-contrib-coffee">CoffeeScript</a>, <a href="https://npmjs.org/package/grunt-contrib-jade">Jade</a>, <a href="https://npmjs.org/package/grunt-contrib-sass">Sass</a>, <a href="https://npmjs.org/package/grunt-contrib-stylus">Stylus</a>, <a href="https://npmjs.org/package/grunt-mustache">Mustache</a>,…</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-imagemin">optimize</a> images</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-jshint">run jshint</a> on your code</li>
 <li><a href="https://npmjs.org/package/grunt-contrib-uglify">uglify</a> your code</li>
 </ul>
 
@@ -851,7 +854,7 @@ It&rsquo;s cross-platform out of the box, free as in <a href="https://github.com
 <p>This will concate all <code>.js</code> files inside the <code>/js</code> folder and concatenate them to <code>/jsmin</code> in the filename of your choice.</p>
 
 <p>The only thing you need to do is run <code>grunt</code> inside your project.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ grunt</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grunt</code></pre></div>
 <h2 id="multiple-tasks">Multiple tasks</h2>
 
 <p>Next step is to show that multiple tasks are possible. You can see below that I added concatenation for the CSS files and the concatenated JavaScript gets uglified.</p>
@@ -1426,20 +1429,20 @@ It&rsquo;s cross-platform out of the box, free as in <a href="https://github.com
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596202006"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596202006"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596202006"></script>
-    <script src="/js/jquery.sticky.js?1596202006"></script>
-    <script src="/js/featherlight.min.js?1596202006"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596202006"></script>
-    <script src="/js/highlight.pack.js?1596202006"></script>
+    <script src="/js/clipboard.min.js?1596202518"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596202518"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596202518"></script>
+    <script src="/js/jquery.sticky.js?1596202518"></script>
+    <script src="/js/featherlight.min.js?1596202518"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596202518"></script>
+    <script src="/js/highlight.pack.js?1596202518"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596202006"></script>
-    <script src="/js/learn.js?1596202006"></script>
-    <script src="/js/hugo-learn.js?1596202006"></script>
+    <script src="/js/modernizr.custom.71422.js?1596202518"></script>
+    <script src="/js/learn.js?1596202518"></script>
+    <script src="/js/hugo-learn.js?1596202518"></script>
 
-    <link href="/mermaid/mermaid.css?1596202006" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596202006"></script>
+    <link href="/mermaid/mermaid.css?1596202518" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596202518"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
