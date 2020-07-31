@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.69.2" />
-    <meta name="description" content="A group of 9 cloud engineers at Google has refused to work on air-gap due to which Google may lose a deal worth $10 billion.">
+    <meta name="description" content="So, what is this thing called Grunt and how can it help you?">
 	<meta name="author" content="Chankey Pathak">
-	<meta name="keywords" content="google,maven,air gap,huawei,government,sensitive,cloud,amazon,microsoft,weapons,surveillance,drones">
+	<meta name="keywords" content="grunt,tools,automation,javascript">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-	<meta property="og:title" content="Google Engineers Boycott Against Security Tool for Military" />
-	<meta property="og:description" content="A group of 9 cloud engineers at Google has refused to work on air-gap due to which Google may lose a deal worth $10 billion." />
+	<meta property="og:title" content="Grunt Tutorial with Live Example" />
+	<meta property="og:description" content="So, what is this thing called Grunt and how can it help you?" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="http://tutswiki.com/google-engineers-boycott-security-tool-military/" />
+	<meta property="og:url" content="http://tutswiki.com/grunt-tutorial-example/" />
 	<meta property="og:locale" content="en" />
-    <title>Google Engineers Boycott Against Security Tool for Military - TutsWiki Beta</title>
+    <title>Grunt Tutorial with Live Example - TutsWiki Beta</title>
     
     
     <link href="/css/nucleus.css?1596201956" rel="stylesheet">
@@ -50,7 +50,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/google-engineers-boycott-security-tool-military/">
+  <body class="" data-url="/grunt-tutorial-example/">
     <nav id="sidebar" class="">
 
 
@@ -114,7 +114,7 @@
  
   
     
-      <li data-nav-id="/grunt-tutorial-example" title="Grunt Tutorial with Live Example" class="dd-item ">
+      <li data-nav-id="/grunt-tutorial-example" title="Grunt Tutorial with Live Example" class="dd-item active">
         <a href="/grunt-tutorial-example/">
         Grunt Tutorial
         
@@ -266,7 +266,7 @@
  
   
     
-      <li data-nav-id="/google-engineers-boycott-security-tool-military" title="Google Engineers Boycott Against Security Tool for Military" class="dd-item active">
+      <li data-nav-id="/google-engineers-boycott-security-tool-military" title="Google Engineers Boycott Against Security Tool for Military" class="dd-item ">
         <a href="/google-engineers-boycott-security-tool-military/">
         Google engineers boycott
         
@@ -699,7 +699,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/google-engineers-boycott.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/grunt-tutorial.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -728,7 +728,7 @@
             
           
           
-            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > Google Engineers Boycott Against Security Tool for Military
+            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > Grunt Tutorial with Live Example
           
          
           
@@ -744,10 +744,10 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#what-is-air-gap">What is air-gap?</a></li>
-</ul></li>
+<li><a href="#plugins">Plugins</a></li>
+<li><a href="#first-use">First use</a></li>
+<li><a href="#demo-setup">Demo setup</a></li>
+<li><a href="#multiple-tasks">Multiple tasks</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -762,7 +762,7 @@
         
         <div id="body-inner">
           
-            <h1>Google Engineers Boycott Against Security Tool for Military</h1>
+            <h1>Grunt Tutorial with Live Example</h1>
           
 
         
@@ -770,29 +770,147 @@
 
 
 
-<p><meta property="og:image" content="https://tutswiki.com/images/google-air-gap.png"/>
-<img src="/images/google-air-gap.png" alt="Google Military Project Air Gap" title="Google Military Project" />
-A group of 9 cloud engineers at Google has refused to work on a project called air-gap due to which Google may lose a deal worth $10 billion. Google needs air-gap if it has to do some sensitive work with government agencies involving sensitive data (obviously military implications there).
-So this group of 9 basically just said they weren&rsquo;t gonna do it. About 10-12 employees have resigned so far as part of this work strike. Google spends a lot of time making sure their top talent is happy so that they stick around and don&rsquo;t go to other companies, so Google just stood down on this one. <a href="https://ai.google/research/people/author79">Urs Hölzle</a>, the senior VP of technical infrastructure at Google said that the feature would be postponed.</p>
+<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Grunt Tutorial with Live Example" />
+<meta name=”twitter:description” content="So, what is this thing called Grunt and how can it help you?" /></p>
 
-<p>On the one hand this is good as it shows that employees get ample space to air grievances, but on the other hand, the shareholders will get angry as it hampers Google&rsquo;s ability to compete. In order to get government contracts especially those which involves sensitive data and military require some certifications, which Google&rsquo;s competitors like Microsoft and Amazon have but Google doesn&rsquo;t. This air-gap feature was supposed to help Google with that but it seems it&rsquo;ll be abandoned.</p>
+<p>So, what is this thing called Grunt and how can it help you?</p>
 
-<h3 id="what-is-air-gap">What is air-gap?</h3>
+<p>From the <a href="http://gruntjs.com/">grunt documentation</a>:
+&gt; “A task-based command line build tool for JavaScript projects”</p>
 
-<p>Microsoft and Amazon have set-up a service called Government Cloud (<a href="https://azure.microsoft.com/en-in/global-infrastructure/government/">Azure Government</a> and <a href="https://aws.amazon.com/govcloud-us/">AWS GovCloud</a>) where the sensitive government information can be stored. An important feature of this service is <a href="https://en.wikipedia.org/wiki/Air_gap_(networking)">air-gap</a>. It is a security measure which ensures that a secured computer network is physically isolated from unsecured networks. Therefore, instead of storing data from multiple sources in a single server/system you store it in a separate isolated hardware. This is helpful for the government if they want to know where their data reside (physically) so that they can wipe it immediately.</p>
+<p>This means one simple thing. Stop repeating yourself and let Grunt do stuff for you. The <a href="http://gruntjs.com/plugins">Grunt ecosystem</a> is constantly growing and being improved by open source contributors.</p>
 
-<p>Although the feature is not that difficult to implement, Google can form a new team to work on it but looking at the fate of Project Maven which got similar boycott, it&rsquo;d be difficult for Google.</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
-<p>Besides, U.S. Congress is accusing Google over the partnership with Huawei, a Chinese manufacturer which makes Android phones. They said
-<img src="/images/google-huawei-partnership.png" alt="Google Huawei Partnership" title="Google Partners with Huawei" /></p>
+<h2 id="plugins">Plugins</h2>
 
-<blockquote>
-<p>You were not with the <a href="https://www.nytimes.com/2018/06/01/technology/google-pentagon-project-maven.html">Pentagon on an AI project</a> but you&rsquo;ll <a href="https://www.cnbc.com/2018/06/21/google-huawei-partnership-poses-threat-to-us-national-security-lawmakers.html">work with the Chinese handset manufacturer</a>.</p>
-</blockquote>
+<p>You can find plugins for almost everything. Examples of tasks could be:</p>
 
-<p>That is a very difficult situation for Google and I think they are right now working on how to handle this.</p>
+<ul>
+<li>compile <a href="https://npmjs.org/package/grunt-contrib-coffee">CoffeeScript</a>, <a href="ttps://npmjs.org/package/grunt-contrib-jade">Jade</a>, <a href="https://npmjs.org/package/grunt-contrib-sass">Sass</a>, <a href="https://npmjs.org/package/grunt-contrib-stylus">Stylus</a>, <a href="https://npmjs.org/package/grunt-mustache">Mustache</a>,…</li>
+<li><a href="https://npmjs.org/package/grunt-imagemin">optimize</a> images</li>
+<li><a href="https://npmjs.org/package/grunt-jshint">run jshint</a> on your code</li>
+<li><a href="https://npmjs.org/package/grunt-contrib-uglify">uglify</a> your code</li>
+</ul>
 
-<p>Source: <a href="https://www.bloomberg.com/news/articles/2018-06-21/google-engineers-refused-to-build-security-tool-to-win-military-contracts">Bloomberg</a></p>
+<p>This allows you to optimize your workflow to the limit.
+If you save a file you can have your tests run or your code minified.
+This means you can stop worrying about this stuff. You don&rsquo;t need to issue commands in the command line constantly. Just code and <em>let Grunt work for you</em>.</p>
+
+<p>If you think about it Grunt is like <a href="http://incident57.com/codekit/">Codekit</a> but with nothing but a CLI.
+It&rsquo;s cross-platform out of the box, free as in <a href="https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT">MIT licensed</a> and extensible as hell.</p>
+
+<h2 id="first-use">First use</h2>
+
+<p>Grunt is able to set up a project for you by scaffolding a template based on your input in the commandline. This is nice but not needed for this simple demo. I want to show you how Grunt can help you in all your projects by adding just two files!</p>
+
+<p>Grunt only needs two files to work in your project directory: <code>package.json</code> and <code>Gruntfile</code>.</p>
+
+<p>I&rsquo;m not going to talk about this in detail. <a href="http://gruntjs.com/getting-started">Read up</a> if you want to know more.</p>
+
+<h2 id="demo-setup">Demo setup</h2>
+
+<p>I made a <a href="https://github.com/chankeypathak/grunt-tutorial">demo repository</a> that shows Grunt usage in it&rsquo;s most basic form with only one task. This makes it easy to understand what&rsquo;s actually going on.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">grunt</span>){
+  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">initConfig</span>({
+	<span style="color:#a6e22e">pkg</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">readJSON</span>(<span style="color:#e6db74">&#39;package.json&#39;</span>),
+	<span style="color:#75715e">// set up first custom task: concat
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// the options depend on the task you want to use
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">concat</span><span style="color:#f92672">:</span> {
+	  <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> {
+		<span style="color:#75715e">// string to put between concatenated files
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">separator</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;;&#39;</span>
+	  },
+	  <span style="color:#a6e22e">dist</span><span style="color:#f92672">:</span> {
+		<span style="color:#75715e">// files to concat together
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">src</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;js/*.js&#39;</span>],
+		<span style="color:#75715e">// location of result file
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dest</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jsmin/&lt;%= pkg.name %&gt;.js&#39;</span>
+	  }
+	}
+  });
+
+  <span style="color:#75715e">// load contrib task files
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// note: these should be installed from npm
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">loadNpmTasks</span>(<span style="color:#e6db74">&#39;grunt-contrib-concat&#39;</span>);
+  <span style="color:#75715e">// register what to do when using the default &#39;grunt&#39; command
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">registerTask</span>(<span style="color:#e6db74">&#39;default&#39;</span>, [<span style="color:#e6db74">&#39;concat&#39;</span>]);
+};
+</code></pre></div>
+<p>This will concate all <code>.js</code> files inside the <code>/js</code> folder and concatenate them to <code>/jsmin</code> in the filename of your choice.</p>
+
+<p>The only thing you need to do is run <code>grunt</code> inside your project.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ grunt</code></pre></div>
+<h2 id="multiple-tasks">Multiple tasks</h2>
+
+<p>Next step is to show that multiple tasks are possible. You can see below that I added concatenation for the CSS files and the concatenated JavaScript gets uglified.</p>
+
+<p>Final gruntfile looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">grunt</span>){
+  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">initConfig</span>({
+	<span style="color:#a6e22e">pkg</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">readJSON</span>(<span style="color:#e6db74">&#39;package.json&#39;</span>),
+	<span style="color:#75715e">// set up first custom task: concat
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// the options depend on the task you want to use
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">concat</span><span style="color:#f92672">:</span> {
+	  <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> {
+		<span style="color:#75715e">// string to put between concatenated files
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// can be necessary when processing minified js code
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//separator: &#39;;&#39;
+</span><span style="color:#75715e"></span>	  },
+	  <span style="color:#a6e22e">js</span><span style="color:#f92672">:</span> {
+		<span style="color:#75715e">// files to concat together
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">src</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;js/*.js&#39;</span>],
+		<span style="color:#75715e">// location of result file
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dest</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jsmin/&lt;%= pkg.name %&gt;.min.js&#39;</span>
+	  },
+	  <span style="color:#a6e22e">css</span><span style="color:#f92672">:</span> {
+		<span style="color:#75715e">// files to concat together
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">src</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;css/*.css&#39;</span>],
+		<span style="color:#75715e">// location of result file
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dest</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;cssmin/all.min.css&#39;</span>
+	  }
+	},
+	<span style="color:#a6e22e">uglify</span><span style="color:#f92672">:</span> {
+	  <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> {
+		<span style="color:#a6e22e">banner</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/*! &lt;%= pkg.name %&gt; &lt;%= grunt.template.today(&#34;yyyy-mm-dd&#34;) %&gt; */\n&#39;</span>
+	  },
+	  <span style="color:#a6e22e">build</span><span style="color:#f92672">:</span> {
+		<span style="color:#a6e22e">src</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jsmin/&lt;%= pkg.name %&gt;.min.js&#39;</span>,
+		<span style="color:#a6e22e">dest</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jsmin/&lt;%= pkg.name %&gt;.min.js&#39;</span>
+	  }
+	}
+  });
+
+  <span style="color:#75715e">// load contrib task files
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// note: these should be installed from npm
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">loadNpmTasks</span>(<span style="color:#e6db74">&#39;grunt-contrib-concat&#39;</span>);
+  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">loadNpmTasks</span>(<span style="color:#e6db74">&#39;grunt-contrib-uglify&#39;</span>);
+
+  <span style="color:#75715e">// a custom task
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// no configuration for this task, it just logs stuff
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">registerTask</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#e6db74">&#39;Log stuff.&#39;</span>, <span style="color:#66d9ef">function</span>() {
+	  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;I am a custom task...&#39;</span>).<span style="color:#a6e22e">ok</span>();
+	});
+  <span style="color:#75715e">// register what to do when using the default &#39;grunt&#39; command
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">grunt</span>.<span style="color:#a6e22e">registerTask</span>(<span style="color:#e6db74">&#39;default&#39;</span>, [<span style="color:#e6db74">&#39;concat&#39;</span>, <span style="color:#e6db74">&#39;uglify&#39;</span>]);
+};
+</code></pre></div>
+<p>I ran this file through <a href="http://jashkenas.github.com/docco/">Docco</a> which generated a documentation file based on the inline comments. You could even let <a href="https://github.com/DavidSouther/grunt-docco">grunt-docco plugin</a> do this for you. Check this out in the <code>/docs</code> folder or <a href="https://github.com/chankeypathak/grunt-tutorial/blob/master/docs/Gruntfile.html">see it live</a>.</p>
+
+<p>The latest working code can be found in the <a href="https://github.com/chankeypathak/grunt-tutorial/">repo</a> on GitHub.</p>
+
+<p><img src="https://raw.githubusercontent.com/chankeypathak/grunt-tutorial/master/screenshot.png" alt="grunt command in terminal" /></p>
 
 
 
@@ -855,134 +973,6 @@ So this group of 9 basically just said they weren&rsquo;t gonna do it. About 10-
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1142,6 +1132,134 @@ So this group of 9 basically just said they weren&rsquo;t gonna do it. About 10-
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1296,10 +1414,10 @@ So this group of 9 basically just said they weren&rsquo;t gonna do it. About 10-
 
 
         
-            <a class="nav nav-prev" href="/deep-learning-cardiovascular-imaging" title="How Deep Learning Helped Reducing Variability in Cardiovascular Imaging"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/nodejs-google-app-engine" title="How to deploy Node.js app on Google App Engine" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/noprocrast" title="noprocrast" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1308,20 +1426,20 @@ So this group of 9 basically just said they weren&rsquo;t gonna do it. About 10-
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1596201956"></script>
-    <script src="/js/perfect-scrollbar.min.js?1596201956"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1596201956"></script>
-    <script src="/js/jquery.sticky.js?1596201956"></script>
-    <script src="/js/featherlight.min.js?1596201956"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1596201956"></script>
-    <script src="/js/highlight.pack.js?1596201956"></script>
+    <script src="/js/clipboard.min.js?1596201957"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596201957"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596201957"></script>
+    <script src="/js/jquery.sticky.js?1596201957"></script>
+    <script src="/js/featherlight.min.js?1596201957"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1596201957"></script>
+    <script src="/js/highlight.pack.js?1596201957"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1596201956"></script>
-    <script src="/js/learn.js?1596201956"></script>
-    <script src="/js/hugo-learn.js?1596201956"></script>
+    <script src="/js/modernizr.custom.71422.js?1596201957"></script>
+    <script src="/js/learn.js?1596201957"></script>
+    <script src="/js/hugo-learn.js?1596201957"></script>
 
-    <link href="/mermaid/mermaid.css?1596201956" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1596201956"></script>
+    <link href="/mermaid/mermaid.css?1596201957" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596201957"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
