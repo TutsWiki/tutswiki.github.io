@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.69.2" />
-    <meta name="description" content="Learn how to write and read config files in Python using configparser module.">
+    <meta name="description" content="How can we import the functions (or classes) from a script without having the script start doing something?">
 	<meta name="author" content="Chankey Pathak">
-	<meta name="keywords" content="python,config,read config file,write config file,configparser">
+	<meta name="keywords" content="python,name,main,script,module,import">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-	<meta property="og:title" content="Writing and Reading config files in Python" />
-	<meta property="og:description" content="Learn how to write and read config files in Python using configparser module." />
+	<meta property="og:title" content="How to convert a Python script to module" />
+	<meta property="og:description" content="How can we import the functions (or classes) from a script without having the script start doing something?" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="http://tutswiki.com/read-write-config-files-in-python/" />
+	<meta property="og:url" content="http://tutswiki.com/convert-python-script-to-module/" />
 	<meta property="og:locale" content="en" />
-    <title>Writing and Reading config files in Python - TutsWiki Beta</title>
+    <title>How to convert a Python script to module - TutsWiki Beta</title>
     
     
     <link href="/css/nucleus.css?1596627375" rel="stylesheet">
@@ -50,7 +50,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/read-write-config-files-in-python/">
+  <body class="" data-url="/convert-python-script-to-module/">
     <nav id="sidebar" class="">
 
 
@@ -114,7 +114,7 @@
  
   
     
-      <li data-nav-id="/convert-python-script-to-module" title="How to convert a Python script to module" class="dd-item ">
+      <li data-nav-id="/convert-python-script-to-module" title="How to convert a Python script to module" class="dd-item active">
         <a href="/convert-python-script-to-module/">
         How to convert a Python script to module
         
@@ -418,7 +418,7 @@
  
   
     
-      <li data-nav-id="/read-write-config-files-in-python" title="Writing and Reading config files in Python" class="dd-item active">
+      <li data-nav-id="/read-write-config-files-in-python" title="Writing and Reading config files in Python" class="dd-item ">
         <a href="/read-write-config-files-in-python/">
         Writing and Reading config files in Python
         
@@ -718,7 +718,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/python/write-read-config-file-python.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/python/convert-python-script-to-module.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -747,7 +747,7 @@
             
           
           
-            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > Writing and Reading config files in Python
+            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > How to convert a Python script to module
           
          
           
@@ -763,9 +763,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#creating-config-file-in-python">Creating config file in Python</a></li>
-<li><a href="#reading-a-key-from-config-file">Reading a key from config file</a></li>
-<li><a href="#updating-a-key-in-config-file">Updating a key in config file</a></li>
+<li><a href="#getting-ready">Getting ready</a></li>
+<li><a href="#how-to-do-it">How to do it&hellip;</a></li>
+<li><a href="#how-it-works">How it works&hellip;</a></li>
+<li><a href="#there-s-more">There&rsquo;s more&hellip;</a>
+<ul>
+<li><a href="#also-see">Also see</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -780,7 +784,7 @@
         
         <div id="body-inner">
           
-            <h1>Writing and Reading config files in Python</h1>
+            <h1>How to convert a Python script to module</h1>
           
 
         
@@ -788,11 +792,19 @@
 
 
 
-<p>I&rsquo;m sure you must be aware about the importance of <a href="https://www.wikiwand.com/en/Configuration_file">configuration files</a>. Config files help creating the initial settings for any project, they help avoiding the hardcoded data.</p>
+<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How to convert a Python script to module" />
+<meta name=”twitter:description” content="How can we import the functions (or classes) from a file without having the script start doing something?" /></p>
 
-<p>Imagine if you migrate your server to a new host and suddenly your application stops working, now you have to go through your code and search/replace IP address of host at all the places. Config file comes to the rescue in such situation. You define the IP address key in config file and use it throughout your code. Later when you want to change any attribute, just change it in the config file. So helpful, isn&rsquo;t it?</p>
+<p>It&rsquo;s common to create small scripts which we want to combine into a larger script. We don&rsquo;t want to copy and paste the code. We want to leave the working code in one file and use it in multiple places. Often we want to combine elements from multiple files to create more sophisticated scripts.</p>
 
-<p>Let&rsquo;s see how can we create and read config files in Python.</p>
+<p>The problem we have is that when we import a script it actually starts running. This is generally not what we expect when we import a script so that we can reuse it.
+How can we import the functions (or classes) from a file without having the script start doing something?</p>
+
+<h2 id="getting-ready">Getting ready</h2>
+
+<p>Let&rsquo;s say that we have a handy implementation of the haversine distance function called <code>haversine()</code>, and it&rsquo;s in a file named <code>script.py</code>.</p>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -805,73 +817,137 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<h2 id="creating-config-file-in-python">Creating config file in Python</h2>
+<p>Initially, the file might look like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> csv 
+<span style="color:#f92672">import</span> pathlib 
+<span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> radians, sin, cos, sqrt, asin 
+<span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial 
 
-<p>In Python we have <a href="https://docs.python.org/3/library/configparser.html">configparser</a> module which can help us with creation of config files (.ini format).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> configparser <span style="color:#f92672">import</span> ConfigParser
+MI<span style="color:#f92672">=</span> <span style="color:#ae81ff">3959</span> 
+NM<span style="color:#f92672">=</span> <span style="color:#ae81ff">3440</span> 
+KM<span style="color:#f92672">=</span> <span style="color:#ae81ff">6373</span> 
 
-<span style="color:#75715e">#Get the configparser object</span>
-config_object <span style="color:#f92672">=</span> ConfigParser()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">haversine</span>( lat_1: float, lon_1: float, 
+    lat_2: float, lon_2: float, <span style="color:#f92672">*</span>, R: float ) <span style="color:#f92672">-&gt;</span> float: 
+    <span style="color:#f92672">...</span> <span style="color:#f92672">and</span> more <span style="color:#f92672">...</span> 
 
-<span style="color:#75715e">#Assume we need 2 sections in the config file, let&#39;s call them USERINFO and SERVERCONFIG</span>
-config_object[<span style="color:#e6db74">&#34;USERINFO&#34;</span>] <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#34;admin&#34;</span>: <span style="color:#e6db74">&#34;Chankey Pathak&#34;</span>,
-    <span style="color:#e6db74">&#34;loginid&#34;</span>: <span style="color:#e6db74">&#34;chankeypathak&#34;</span>,
-    <span style="color:#e6db74">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;tutswiki&#34;</span>
-}
+nm_haversine <span style="color:#f92672">=</span> partial(haversine, R<span style="color:#f92672">=</span>NM) 
 
-config_object[<span style="color:#e6db74">&#34;SERVERCONFIG&#34;</span>] <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;tutswiki.com&#34;</span>,
-    <span style="color:#e6db74">&#34;port&#34;</span>: <span style="color:#e6db74">&#34;8080&#34;</span>,
-    <span style="color:#e6db74">&#34;ipaddr&#34;</span>: <span style="color:#e6db74">&#34;8.8.8.8&#34;</span>
-}
+source_path <span style="color:#f92672">=</span> pathlib<span style="color:#f92672">.</span>Path(<span style="color:#e6db74">&#34;waypoints.csv&#34;</span>) 
+<span style="color:#66d9ef">with</span> source_path<span style="color:#f92672">.</span>open() <span style="color:#66d9ef">as</span> source_file: 
+    reader<span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>DictReader(source_file) 
+    start <span style="color:#f92672">=</span> next(reader) 
+    <span style="color:#66d9ef">for</span> point <span style="color:#f92672">in</span> reader: 
+        d <span style="color:#f92672">=</span> nm_haversine( 
+            float(start[<span style="color:#e6db74">&#39;lat&#39;</span>]), float(start[<span style="color:#e6db74">&#39;lon&#39;</span>]), 
+            float(point[<span style="color:#e6db74">&#39;lat&#39;</span>]), float(point[<span style="color:#e6db74">&#39;lon&#39;</span>]) 
+        ) 
+        <span style="color:#66d9ef">print</span>(start, point, d) 
+        start<span style="color:#f92672">=</span> point </code></pre></div>
+<p>We&rsquo;ve omitted the body of the <code>haversine()</code> function, showing only &hellip; and more&hellip;, since the full source is available on <a href="https://gist.github.com/chankeypathak/f51642a66792e8a0fca52446d3697349">github</a>. We&rsquo;ve focused on the context in which the function is in a Python script that also opens a file, <code>wapypoints.csv</code>, and does some processing on that file.</p>
 
-<span style="color:#75715e">#Write the above sections to config.ini file</span>
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;config.ini&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> conf:
-    config_object<span style="color:#f92672">.</span>write(conf)</code></pre></div>
-<p>Now if you check the working directory, you will notice <code>config.ini</code> file has been created, below is its content.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[USERINFO]
-admin = Chankey Pathak
-password = tutswiki
-loginid = chankeypathak
+<p>How can we import this module without it printing a display of distances between waypoints in our <code>waypoints.csv</code> file?</p>
 
-[SERVERCONFIG]
-host = tutswiki.com
-ipaddr = 8.8.8.8
-port = 8080</code></pre></div>
-<h2 id="reading-a-key-from-config-file">Reading a key from config file</h2>
+<h2 id="how-to-do-it">How to do it&hellip;</h2>
 
-<p>So we have created a config file, now in your code you have to read the configuration data so that you can use it by &ldquo;keyname&rdquo; to avoid hardcoded data, let&rsquo;s see how to do that.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> configparser <span style="color:#f92672">import</span> ConfigParser
+<p>Python scripts can be simple to write. Indeed, it&rsquo;s often too simple to create a working script. Here&rsquo;s how we transform a simple script into a reusable library:</p>
 
-<span style="color:#75715e">#Read config.ini file</span>
-config_object <span style="color:#f92672">=</span> ConfigParser()
-config_object<span style="color:#f92672">.</span>read(<span style="color:#e6db74">&#34;config.ini&#34;</span>)
+<ol>
+<li><p>Identify the statements that do the work of the script: we&rsquo;ll distinguish between definition and action. Statements such as <code>import</code>, <code>def</code>, and <code>class</code> are clearly definitional—they support the work but they don&rsquo;t do the work. Almost all other statements take action. In our example, we have four assignment statements that are more definition than action. The distinction is entirely one of intent. All statements, by definition, take an action. These actions, though, are more like the action of the def statement than they are like the action of the <code>with</code> statement later in the script. Here are the generally definitional statements:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">MI<span style="color:#f92672">=</span> <span style="color:#ae81ff">3959</span> 
+NM<span style="color:#f92672">=</span> <span style="color:#ae81ff">3440</span> 
+KM<span style="color:#f92672">=</span> <span style="color:#ae81ff">6373</span> 
 
-<span style="color:#75715e">#Get the password</span>
-userinfo <span style="color:#f92672">=</span> config_object[<span style="color:#e6db74">&#34;USERINFO&#34;</span>]
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Password is {}&#34;</span><span style="color:#f92672">.</span>format(userinfo[<span style="color:#e6db74">&#34;password&#34;</span>])</code></pre></div>
-<p>Output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Password is tutswiki</code></pre></div>
-<h2 id="updating-a-key-in-config-file">Updating a key in config file</h2>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">haversine</span>( lat_1: float, lon_1: float, 
+lat_2: float, lon_2: float, <span style="color:#f92672">*</span>, R: float ) <span style="color:#f92672">-&gt;</span> float: 
+<span style="color:#f92672">...</span> <span style="color:#f92672">and</span> more <span style="color:#f92672">...</span> 
 
-<p>Suppose you have updated the password for chankeypathak user. You can update the same in config file using below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> configparser <span style="color:#f92672">import</span> ConfigParser
+nm_haversine <span style="color:#f92672">=</span> partial(haversine, R<span style="color:#f92672">=</span>NM) </code></pre></div></li>
+</ol>
 
-<span style="color:#75715e">#Read config.ini file</span>
-config_object <span style="color:#f92672">=</span> ConfigParser()
-config_object<span style="color:#f92672">.</span>read(<span style="color:#e6db74">&#34;config.ini&#34;</span>)
+<p>The rest of the statements clearly take an action toward producing the printed results.</p>
 
-<span style="color:#75715e">#Get the USERINFO section</span>
-userinfo <span style="color:#f92672">=</span> config_object[<span style="color:#e6db74">&#34;USERINFO&#34;</span>]
+<ol>
+<li><p>Wrap the actions into a function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">analyze</span>(): 
+source_path <span style="color:#f92672">=</span> pathlib<span style="color:#f92672">.</span>Path(<span style="color:#e6db74">&#34;waypoints.csv&#34;</span>) 
+<span style="color:#66d9ef">with</span> source_path<span style="color:#f92672">.</span>open() <span style="color:#66d9ef">as</span> source_file: 
+    reader<span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>DictReader(source_file) 
+    start <span style="color:#f92672">=</span> next(reader) 
+    <span style="color:#66d9ef">for</span> point <span style="color:#f92672">in</span> reader: 
+        d <span style="color:#f92672">=</span> nm_haversine( 
+            float(start[<span style="color:#e6db74">&#39;lat&#39;</span>]), float(start[<span style="color:#e6db74">&#39;lon&#39;</span>]), 
+            float(point[<span style="color:#e6db74">&#39;lat&#39;</span>]), float(point[<span style="color:#e6db74">&#39;lon&#39;</span>]) 
+            ) 
+        <span style="color:#66d9ef">print</span>(start, point, d) 
+        start<span style="color:#f92672">=</span> point </code></pre></div></li>
 
-<span style="color:#75715e">#Update the password</span>
-userinfo[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;newpassword&#34;</span>
+<li><p>Where possible, extract literals and make them into parameters. This is often a simple movement of the literal to a parameter with a default value. From this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">analyze</span>(): 
+source_path <span style="color:#f92672">=</span> pathlib<span style="color:#f92672">.</span>Path(<span style="color:#e6db74">&#34;waypoints.csv&#34;</span>) </code></pre></div></li>
+</ol>
 
-<span style="color:#75715e">#Write changes back to file</span>
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;config.ini&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> conf:
-    config_object<span style="color:#f92672">.</span>write(conf)</code></pre></div>
-<p>Now if you open the <code>config.ini</code> file, you will notice that the password has been updated.</p>
+<p>To this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">analyze</span>(source_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;waypoints.csv&#34;</span>): 
+    source_path <span style="color:#f92672">=</span> pathlib<span style="color:#f92672">.</span>Path(source_name) </code></pre></div>
+<ol>
+<li><p>Include the following as the only high-level action statements in the script file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>: 
+analyze() </code></pre></div></li>
+</ol>
+
+<p>We&rsquo;ve packaged the action of the script as a function. The top-level action script is now wrapped in an if statement so that it isn&rsquo;t executed during import.</p>
+
+<h2 id="how-it-works">How it works&hellip;</h2>
+
+<p>The most important rule for Python is that an <code>import</code> of a module is essentially the same as running the module as a script. The statements in the file are executed in order from top to bottom.</p>
+
+<p>When we import a file, we&rsquo;re generally interested in executing the <code>def</code> and <code>class</code> statements. We might be interested in some assignment statements.</p>
+
+<p>When Python runs a script, it sets a number of built-in special variables. One of these is <code>__name__</code>. This variable has two different values, depending on the context in which the file is being executed:</p>
+
+<ul>
+<li><p>The top-level script, executed from the command line: In this case, the value of the built-in special name of <code>__name__</code> is set to <code>__main__</code>.</p></li>
+
+<li><p>A file being executed because of an import statement: In this case, the value of <code>__name__</code> is the name of the module being created.</p></li>
+</ul>
+
+<p>The standard name of <code>__main__</code> may seem a little odd at first. Why not use the filename in all cases? This special name is assigned because a Python script can be read from one of many sources. It can be a file. Python can also be read from the <code>stdin</code> pipeline, or it can be provided on the Python command line using the <code>-c</code> option.</p>
+
+<p>When a file is being imported, however, the value of <code>__name__</code> is set to the name of the module. It will not be <code>__main__</code>. In our example, the value <code>__name__</code> during import processing will be <code>script</code>.</p>
+
+<h2 id="there-s-more">There&rsquo;s more&hellip;</h2>
+
+<p>We can now build useful work around a reusable library. We might make several files that look like this:</p>
+
+<p>File <code>trip_1.py</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> script <span style="color:#f92672">import</span> analyze 
+analyze(<span style="color:#e6db74">&#39;trip_1.csv&#39;</span>) </code></pre></div>
+<p>Or perhaps something even more complex:</p>
+
+<p>File <code>all_trips.py</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> script <span style="color:#f92672">import</span> analyze 
+<span style="color:#66d9ef">for</span> trip <span style="color:#f92672">in</span> <span style="color:#e6db74">&#39;trip_1.csv&#39;</span>, <span style="color:#e6db74">&#39;trip_2.csv&#39;</span>: 
+    analyze(trip) </code></pre></div>
+<p>The goal is to decompose a practical solution into two collections of features:</p>
+
+<ul>
+<li>The definition of classes and functions</li>
+<li>A very small action-oriented script that uses the definitions to do useful work</li>
+</ul>
+
+<p>To get to this goal, we&rsquo;ll often start with a script that conflates both sets of features. This kind of script can be viewed as a <strong>spike solution</strong>. Our spike solution should evolve towards a more refined solution as soon as we&rsquo;re sure that it works.</p>
+
+<p>A <em>spike</em> or <em>piton</em> is a piece of removable mountain-climbing gear that doesn&rsquo;t get us any higher on the route, but it enables us to climb safely.</p>
+
+<h3 id="also-see">Also see</h3>
+
+<ul>
+<li><a href="https://tutswiki.com/run-module-as-script-python">How to run a Python module as script?</a></li>
+<li><a href="https://www.python.org/dev/peps/pep-0338/">PEP 338 &ndash; Executing modules as scripts</a></li>
+<li><a href="/if-name-main-in-python/">What is if <strong>name</strong> == &ldquo;<strong>main</strong>&rdquo; in Python?</a></li>
+<li><a href="https://stackoverflow.com/questions/2996110/what-is-the-difference-between-a-module-and-a-script-in-python">What is the difference between a module and a script in Python?</a></li>
+</ul>
 
 
 
@@ -934,6 +1010,42 @@ userinfo[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="col
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -1190,42 +1302,6 @@ userinfo[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="col
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1391,10 +1467,10 @@ userinfo[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="col
 
 
         
-            <a class="nav nav-prev" href="/print-same-line-python" title="How to print on same line with print in Python"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/run-module-as-script-python" title="How to run a Python module as script?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/grunt-tutorial-example" title="Grunt Tutorial with Live Example" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

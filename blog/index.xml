@@ -6,10 +6,20 @@
     <description>Recent content in Blog on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tutswiki.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to convert a Python script to module</title>
+      <link>http://tutswiki.com/convert-python-script-to-module/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://tutswiki.com/convert-python-script-to-module/</guid>
+      <description>It&amp;rsquo;s common to create small scripts which we want to combine into a larger script. We don&amp;rsquo;t want to copy and paste the code. We want to leave the working code in one file and use it in multiple places. Often we want to combine elements from multiple files to create more sophisticated scripts.
+The problem we have is that when we import a script it actually starts running. This is generally not what we expect when we import a script so that we can reuse it.</description>
+    </item>
     
     <item>
       <title>Grunt Tutorial with Live Example</title>
@@ -191,8 +201,7 @@ Imagine if you migrate your server to a new host and suddenly your application s
       <guid>http://tutswiki.com/run-module-as-script-python/</guid>
       <description>Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
 def int_sum(a, b): print a+b def some_other_function(): pass But, what if you want to run the module itself as a script?
-Well, if you want to use a Python module as script then you just have to use the conditional for __name__.
-def int_sum(a, b): print a+b if __name__ == &amp;#34;__main__&amp;#34;: import sys int_sum(int(sys.</description>
+   (adsbygoogle = window.adsbygoogle || []).push({});  Well, if you want to use a Python module as script then you just have to use the conditional for __name__.</description>
     </item>
     
     <item>

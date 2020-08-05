@@ -4,12 +4,17 @@
   
   <url>
     <loc>http://tutswiki.com/blog/</loc>
-    <lastmod>2020-07-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://tutswiki.com/pandas-cookbook/</loc>
     <lastmod>2017-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/convert-python-script-to-module/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -143,18 +148,18 @@
   </url>
   
   <url>
-    <loc>http://tutswiki.com/</loc>
-    <lastmod>2020-07-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://tutswiki.com/tags/python/</loc>
-    <lastmod>2017-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://tutswiki.com/tags/</loc>
-    <lastmod>2017-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tutswiki.com/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
