@@ -55,7 +55,7 @@ sudo cp /etc/procrast_hosts /etc/hosts echo `date` &amp;gt;&amp;gt; ~/.</descrip
       <description>Getting permission errors when installing a module?
 Are &amp;lsquo;sudo: node: command not found&amp;rsquo; errors taking away your precious sleeping hours?
 How to fix? You have to remove any trace of node on your system, and reinstall it. It will soothe your pain:
-echo &amp;#39;export PATH=$HOME/local/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install You are one/two steps/commands away from success.</description>
+echo &amp;#39;export PATH=$HOME/local/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl https://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install You are one/two steps/commands away from success.</description>
     </item>
     
     <item>
