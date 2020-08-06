@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pandas Cookbook on TutsWiki Beta</title>
-    <link>http://tutswiki.com/pandas-cookbook/</link>
+    <link>https://tutswiki.com/pandas-cookbook/</link>
     <description>Recent content in Pandas Cookbook on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 31 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://tutswiki.com/pandas-cookbook/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tutswiki.com/pandas-cookbook/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Chapter 1 - Reading from a CSV</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter1/</link>
+      <link>https://tutswiki.com/pandas-cookbook/chapter1/</link>
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/pandas-cookbook/chapter1/</guid>
+      <guid>https://tutswiki.com/pandas-cookbook/chapter1/</guid>
       <description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5)    (adsbygoogle = window.adsbygoogle || []).push({});  1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
 We&amp;rsquo;re going to be looking some cyclist data from Montréal.</description>
     </item>
     
     <item>
       <title>Chapter 2 - Selecting and finding desired data</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter2/</link>
+      <link>https://tutswiki.com/pandas-cookbook/chapter2/</link>
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/pandas-cookbook/chapter2/</guid>
+      <guid>https://tutswiki.com/pandas-cookbook/chapter2/</guid>
       <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) We&amp;rsquo;re going to use a new dataset here, to demonstrate how to deal with larger datasets. This is a subset of the of 311 service requests from NYC Open Data.</description>
     </item>
     
     <item>
       <title>Chapter 3 - Filtering dataframes</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter3/</link>
+      <link>https://tutswiki.com/pandas-cookbook/chapter3/</link>
       <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/pandas-cookbook/chapter3/</guid>
+      <guid>https://tutswiki.com/pandas-cookbook/chapter3/</guid>
       <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Let&amp;rsquo;s continue with our NYC 311 service requests example.
 complaints = pd.read_csv(&amp;#39;311-service-requests.csv&amp;#39;)    (adsbygoogle = window.</description>
     </item>
     
     <item>
       <title>Chapter 4 - Groupby and Aggregate</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter4/</link>
+      <link>https://tutswiki.com/pandas-cookbook/chapter4/</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/pandas-cookbook/chapter4/</guid>
+      <guid>https://tutswiki.com/pandas-cookbook/chapter4/</guid>
       <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Okay! We&amp;rsquo;re going back to our bike path dataset here. I live in Montreal, and I was curious about whether we&amp;rsquo;re more of a commuter city or a biking-for-fun city &amp;ndash; do people bike more on weekends, or on weekdays?</description>
     </item>
     
     <item>
       <title>Chapter 5 - Web scraping with Pandas</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter5/</link>
+      <link>https://tutswiki.com/pandas-cookbook/chapter5/</link>
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/pandas-cookbook/chapter5/</guid>
+      <guid>https://tutswiki.com/pandas-cookbook/chapter5/</guid>
       <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; Summary By the end of this chapter, we&amp;rsquo;re going to have downloaded all of Canada&amp;rsquo;s weather data for 2012, and saved it to a CSV.
 We&amp;rsquo;ll do this by downloading it one month at a time, and then combining all the months together.
 Here&amp;rsquo;s the temperature every hour for 2012!</description>
@@ -62,10 +62,10 @@ Here&amp;rsquo;s the temperature every hour for 2012!</description>
     
     <item>
       <title>Chapter 6 - String Operations</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter6/</link>
+      <link>https://tutswiki.com/pandas-cookbook/chapter6/</link>
       <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/pandas-cookbook/chapter6/</guid>
+      <guid>https://tutswiki.com/pandas-cookbook/chapter6/</guid>
       <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.
 weather_2012 = pd.read_csv(&amp;#39;weather_2012.csv&amp;#39;, parse_dates=True, index_col=&amp;#39;Date/Time&amp;#39;) weather_2012[:5] Output:
   Temp (C) Dew Point Temp (C) Rel Hum (%) Wind Spd (km/h) Visibility (km) Stn Press (kPa) Weather   Date/Time            2012-01-01 00:00:00 -1.</description>
@@ -73,20 +73,20 @@ weather_2012 = pd.read_csv(&amp;#39;weather_2012.csv&amp;#39;, parse_dates=True,
     
     <item>
       <title>Chapter 7 - Cleanup messy data</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter7/</link>
+      <link>https://tutswiki.com/pandas-cookbook/chapter7/</link>
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/pandas-cookbook/chapter7/</guid>
+      <guid>https://tutswiki.com/pandas-cookbook/chapter7/</guid>
       <description># The usual preamble import pandas as pd # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) figsize(15, 5) # Always display all the columns pd.set_option(&amp;#39;display.line_width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60)  One of the main problems with messy data is: how do you know if it&amp;rsquo;s messy or not?
 We&amp;rsquo;re going to use the NYC 311 service request dataset again here, since it&amp;rsquo;s big and a bit unwieldy.</description>
     </item>
     
     <item>
       <title>Chapter 8 - Parsing Unix timestamps</title>
-      <link>http://tutswiki.com/pandas-cookbook/chapter8/</link>
+      <link>https://tutswiki.com/pandas-cookbook/chapter8/</link>
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tutswiki.com/pandas-cookbook/chapter8/</guid>
+      <guid>https://tutswiki.com/pandas-cookbook/chapter8/</guid>
       <description>8.1 Parsing Unix timestamps It&amp;rsquo;s not obvious how to deal with Unix timestamps in pandas &amp;ndash; it took me quite a while to figure this out. The file we&amp;rsquo;re using here is a popularity-contest file I found on my system at /var/log/popularity-contest.
 Here&amp;rsquo;s an explanation of how this file works.
 I&amp;rsquo;m going to hope that nothing in it is sensitive :)
