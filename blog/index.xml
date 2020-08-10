@@ -6,10 +6,19 @@
     <description>Recent content in Blog on TutsWiki Beta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tutswiki.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Approximating Randomness</title>
+      <link>https://tutswiki.com/approximating-randomness/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tutswiki.com/approximating-randomness/</guid>
+      <description>Generating random numbers from computers is essential to the development of certain kinds of software. Anything from modelling the environment, to a lottery machine, to determining the value of loot in a chest in an RPG, will require random number generation. At first it may seem strange that computers, which are capable of producing massive amounts of digits in a short time, would not be able to produce random numbers. The difficulty is that the computers we use, are constructed specifically to follow logical steps deterministically, so to generate numbers that are truly random from a system like our computers is virtually impossible.</description>
+    </item>
     
     <item>
       <title>How to convert a Python script to module</title>

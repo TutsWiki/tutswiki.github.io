@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.69.2" />
-    <meta name="description" content="TutsWiki :: Collaborative tutorials for the internet">
+    <meta name="description" content="Generating random numbers from computers is essential to the development of certain kinds of software. Anything from modelling the environment, to a lottery machine, to determining the value of loot in a chest in an RPG, will require random number generation.">
 	<meta name="author" content="Chankey Pathak">
-	<meta name="keywords" content="">
-    <link rel="canonical" href="https://tutswiki.com/pandas-cookbook/" itemprop="url" /> 
+	<meta name="keywords" content="random,programming,languages">
+    <link rel="canonical" href="https://tutswiki.com/approximating-randomness/" itemprop="url" /> 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-	<meta property="og:title" content="Pandas Cookbook" />
-	<meta property="og:description" content="TutsWiki :: Collaborative tutorials for the internet" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://tutswiki.com/pandas-cookbook/" />
+	<meta property="og:title" content="Approximating Randomness" />
+	<meta property="og:description" content="Generating random numbers from computers is essential to the development of certain kinds of software. Anything from modelling the environment, to a lottery machine, to determining the value of loot in a chest in an RPG, will require random number generation." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://tutswiki.com/approximating-randomness/" />
 	<meta property="og:locale" content="en" />
-    <title>Pandas Cookbook - TutsWiki Beta</title>
+    <title>Approximating Randomness - TutsWiki Beta</title>
     
     
     <link href="/css/nucleus.css?1597044300" rel="stylesheet">
@@ -51,7 +51,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/pandas-cookbook/">
+  <body class="" data-url="/approximating-randomness/">
     <nav id="sidebar" class="">
 
 
@@ -91,7 +91,7 @@
   
     
     <li data-nav-id="/blog/" title="Blog" class="dd-item 
-        
+        parent
         
         
         ">
@@ -115,7 +115,7 @@
  
   
     
-      <li data-nav-id="/approximating-randomness" title="Approximating Randomness" class="dd-item ">
+      <li data-nav-id="/approximating-randomness" title="Approximating Randomness" class="dd-item active">
         <a href="/approximating-randomness/">
         Approximating Randomness
         
@@ -503,8 +503,8 @@
   
     
     <li data-nav-id="/pandas-cookbook/" title="Pandas Cookbook" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/pandas-cookbook/">
@@ -738,7 +738,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/pandas%20cookbook/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/TutsWiki/source/edit/master/content/blog/approximating-randomness.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -753,6 +753,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
                   <span class="links">
                     
           
@@ -761,7 +763,13 @@
             
           
           
-            <a href='/'>TutsWiki Beta</a> > Pandas Cookbook
+            
+            
+          
+          
+            <a href='/'>TutsWiki Beta</a> > <a href='/blog/'>Blog</a> > Approximating Randomness
+          
+         
           
          
           
@@ -769,34 +777,127 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
               </div>
             </div>
             
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>Approximating Randomness</h1>
           
 
         
 
 
+<p><meta property="og:image" content="https://tutswiki.com/img/tutswiki-logo.png"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Approximating Randomness" />
+<meta name=”twitter:description” content="Generating random numbers from computers is essential to the development
+of certain kinds of software. Anything from modelling the environment, to a
+lottery machine, to determining the value of loot in a chest in an RPG, will
+require random number generation." /></p>
+
+<p>Generating random numbers from computers is essential to the development
+of certain kinds of software. Anything from modelling the environment, to a
+lottery machine, to determining the value of loot in a chest in an RPG, will
+require random number generation. At first it may seem strange that computers,
+which are capable of producing massive amounts of digits in a short time,
+would not be able to produce random numbers. The difficulty is that the
+computers we use, are constructed specifically to follow logical steps
+deterministically, so to generate numbers that are truly random from a system
+like our computers is virtually impossible. True randomness cannot be obtained
+using arithmetic operations, which is exactly what our computers perform. When
+some sequence of numbers is random then it is not possible to predict what the
+next digit will be, and since computers use a set of logical steps to create
+any new number it is theoretically possible to predict it. Nonetheless
+programmers take advantage of features for creating random numbers all the
+time, the most widely used programming languages, provide libraries that can
+generate &lsquo;random&rsquo; values. Any role-playing game for example, that you might
+use, needs random values to determine the number of gold you&rsquo;ll find from some
+locations, what items dead enemies will drop, etc. So how is it possible that
+even though the very nature of computers makes it impossible to exhibit random
+behaviour, that many programs include simulations of randomness?</p>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9878675755379402"
+     data-ad-slot="5842766387"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<p>The answer is pseudo-random number generators(PRNG), these are programs that
+follow a certain algorithm to simulate random behaviour. The numbers they
+generate, cannot be by definition truly random, however for many uses it is a
+good enough approximation. The libraries in many of todays programming
+languages that generate random digits use PRNG&rsquo;s. The basic idea is to perform
+some arithmetic operations on a number in sequence, to make it seem like it&rsquo;s
+random. A PRNG always starts with an initial value called a seed. It will then
+perform operations on the seed to make the final number different from the
+original value. So when the PRNG is supplied with seeds that are in sequence,
+it will return numbers that seem random, because the operations that are
+performed on each number should change it to make it so the returned numbers
+are no longer following any pattern. PRNG&rsquo;s are also periodical, they have a certain
+amount of numbers they produce, and after that the sequence starts to repeat
+itself. It is usually not a problem to make the period very large, so that the
+application that relies on it will never start to get repeated sequences.</p>
+
+<p>A very well known PRNG is the Mersenne Twister(1), it is the default PRNG for
+Python, Ruby, PHP and many others. It has a period of 2^(19937−1), which is a
+Mersenne prime number, hence the name of the generator. Invented in 1997 it
+was largely superior to PRNG&rsquo;s like C&rsquo;s rand or Java&rsquo;s Random. Furthermore it
+passes certain statistical tests for randomness so it is a very reliable
+generator as it is very successful at simulating genuine randomness.</p>
+
+<p>These programs have been used extensively and are relied upon by many applications,
+it is important to note that when truly random behaviour is needed then PRNG&rsquo;s
+are not sufficient. John von Neumann famously said:</p>
+
+<blockquote>
+<p>Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin.</p>
+</blockquote>
+
+<p>In this situation he was referring to depending on PRNG&rsquo;s or other
+arithmetic approaches to create truly random digits, which is not a good idea.
+Rather it is possible to use true random number generators, that are based on
+the idea of extracting physical phenomena that are believed to be random and
+using them to generate random numbers. For example atmospheric noise, or
+radioactive decay, etc. Even though it is possible to extract truly random
+numbers from the outside world, most applications that use random numbers use
+PRNG&rsquo;s. It is because of their convenience, there is no need for any extra
+devices, or input, all it needs is a sequence of numbers that it later
+transforms into a pseudo-random sequence.</p>
+
+<p>1: Link to the implementation of Mersenne Twister. This is the latest version from the original creators:
+<a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/CODES/mt19937ar.c">http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/CODES/mt19937ar.c</a></p>
 
 
-<h3 id="pandas-cookbook">Pandas Cookbook</h3>
 
-<h1 id="introduction">Introduction</h1>
+<br />
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_reddit"></a>
+<a class="a2a_button_hacker_news"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_linkedin"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
 
-<p>A newbie friendly introduction to Pandas with real life examples.</p>
+<br />
 
-
-<footer class=" footline" >
-	
-</footer>
-
-        
-            </div> 
         
         </div>
       </div>
@@ -842,6 +943,138 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -1029,6 +1262,22 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -1160,154 +1409,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
             
         
         
@@ -1315,10 +1416,10 @@
 
 
         
-            <a class="nav nav-prev" href="/if-name-main-in-python" title="What is if __name__ == &#34;__main__&#34; in Python?"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/pandas-cookbook/chapter1" title="Chapter 1 - Reading from a CSV" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/convert-python-script-to-module" title="How to convert a Python script to module" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1348,3 +1449,4 @@
 
   </body>
 </html>
+
