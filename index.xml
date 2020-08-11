@@ -1,311 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>TutsWiki Beta</title>
-    <link>https://tutswiki.com/</link>
-    <description>Recent content on TutsWiki Beta</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tutswiki.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Approximating Randomness</title>
-      <link>https://tutswiki.com/approximating-randomness/</link>
-      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/approximating-randomness/</guid>
-      <description>Generating random numbers from computers is essential to the development of certain kinds of software. Anything from modelling the environment, to a lottery machine, to determining the value of loot in a chest in an RPG, will require random number generation. At first it may seem strange that computers, which are capable of producing massive amounts of digits in a short time, would not be able to produce random numbers. The difficulty is that the computers we use, are constructed specifically to follow logical steps deterministically, so to generate numbers that are truly random from a system like our computers is virtually impossible.</description>
-    </item>
-    
-    <item>
-      <title>How to convert a Python script to module</title>
-      <link>https://tutswiki.com/convert-python-script-to-module/</link>
-      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/convert-python-script-to-module/</guid>
-      <description>It&amp;rsquo;s common to create small scripts which we want to combine into a larger script. We don&amp;rsquo;t want to copy and paste the code. We want to leave the working code in one file and use it in multiple places. Often we want to combine elements from multiple files to create more sophisticated scripts.
-The problem we have is that when we import a script it actually starts running. This is generally not what we expect when we import a script so that we can reuse it.</description>
-    </item>
-    
-    <item>
-      <title>Grunt Tutorial with Live Example</title>
-      <link>https://tutswiki.com/grunt-tutorial-example/</link>
-      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/grunt-tutorial-example/</guid>
-      <description>So, what is this thing called Grunt and how can it help you?
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TutsWiki Beta</title><link>https://tutswiki.com/</link><description>Recent content on TutsWiki Beta</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tutswiki.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Approximating Randomness</title><link>https://tutswiki.com/approximating-randomness/</link><pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/approximating-randomness/</guid><description>Generating random numbers from computers is essential to the development of certain kinds of software. Anything from modelling the environment, to a lottery machine, to determining the value of loot in a chest in an RPG, will require random number generation. At first it may seem strange that computers, which are capable of producing massive amounts of digits in a short time, would not be able to produce random numbers. The difficulty is that the computers we use, are constructed specifically to follow logical steps deterministically, so to generate numbers that are truly random from a system like our computers is virtually impossible.</description></item><item><title>How to convert a Python script to module</title><link>https://tutswiki.com/convert-python-script-to-module/</link><pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/convert-python-script-to-module/</guid><description>It&amp;rsquo;s common to create small scripts which we want to combine into a larger script. We don&amp;rsquo;t want to copy and paste the code. We want to leave the working code in one file and use it in multiple places. Often we want to combine elements from multiple files to create more sophisticated scripts.
+The problem we have is that when we import a script it actually starts running. This is generally not what we expect when we import a script so that we can reuse it.</description></item><item><title>Grunt Tutorial with Live Example</title><link>https://tutswiki.com/grunt-tutorial-example/</link><pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/grunt-tutorial-example/</guid><description>So, what is this thing called Grunt and how can it help you?
 From the grunt documentation:
- “A task-based command line build tool for JavaScript projects”
- This means one simple thing. Stop repeating yourself and let Grunt do stuff for you. The Grunt ecosystem is constantly growing and being improved by open source contributors.
-   (adsbygoogle = window.adsbygoogle || []).push({});  Plugins You can find plugins for almost everything.</description>
-    </item>
-    
-    <item>
-      <title>noprocrast</title>
-      <link>https://tutswiki.com/noprocrast/</link>
-      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/noprocrast/</guid>
-      <description>I wrote a command line script called noprocrast. This script updates /etc/hosts to make distracting websites unreachable from my machine:
+“A task-based command line build tool for JavaScript projects”
+This means one simple thing. Stop repeating yourself and let Grunt do stuff for you. The Grunt ecosystem is constantly growing and being improved by open source contributors.
+(adsbygoogle = window.adsbygoogle || []).push({}); Plugins You can find plugins for almost everything.</description></item><item><title>noprocrast</title><link>https://tutswiki.com/noprocrast/</link><pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/noprocrast/</guid><description>I wrote a command line script called noprocrast. This script updates /etc/hosts to make distracting websites unreachable from my machine:
 sudo cp /etc/noprocrast_hosts /etc/hosts The corresponding /etc/noprocrast_hosts:
 127.0.0.1 localhost db001 db002 db003 db004 web030 web048 255.255.255.255 broadcasthost ::1 localhost fe80::1%lo0 localhost 127.0.0.1 news.ycombinator.com 127.0.0.1 reddit.com www.reddit.com 127.0.0.1 twitter.com 127.0.0.1 nytimes.com www.nytimes.com In case I really need to visit one of these sites, I use the following procrast script:
-sudo cp /etc/procrast_hosts /etc/hosts echo `date` &amp;gt;&amp;gt; ~/.</description>
-    </item>
-    
-    <item>
-      <title>How to fix sudo node command not found error</title>
-      <link>https://tutswiki.com/how-to-fix-sudo-node-command-not-found-error/</link>
-      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/how-to-fix-sudo-node-command-not-found-error/</guid>
-      <description>Getting permission errors when installing a module?
+sudo cp /etc/procrast_hosts /etc/hosts echo `date` &amp;gt;&amp;gt; ~/.</description></item><item><title>How to fix sudo node command not found error</title><link>https://tutswiki.com/how-to-fix-sudo-node-command-not-found-error/</link><pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/how-to-fix-sudo-node-command-not-found-error/</guid><description>Getting permission errors when installing a module?
 Are &amp;lsquo;sudo: node: command not found&amp;rsquo; errors taking away your precious sleeping hours?
 How to fix? You have to remove any trace of node on your system, and reinstall it. It will soothe your pain:
-echo &amp;#39;export PATH=$HOME/local/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl https://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install You are one/two steps/commands away from success.</description>
-    </item>
-    
-    <item>
-      <title>Yet another lousy monad tutorial</title>
-      <link>https://tutswiki.com/yet-another-lousy-monad-tutorial/</link>
-      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/yet-another-lousy-monad-tutorial/</guid>
-      <description>I&amp;rsquo;m not a big fan of monads, but I understand them. They&amp;rsquo;re not rocket science. Let me try to write a monad tutorial that would&amp;rsquo;ve helped my past self understand what the fuss was about. I like concrete explanations that start with practical examples, without any annoying metaphors, and especially without any Haskell code. So here&amp;rsquo;s five examples that have something in common:
-   (adsbygoogle = window.adsbygoogle || []).</description>
-    </item>
-    
-    <item>
-      <title>A Deeper Look at Ruby&#39;s Enumerable</title>
-      <link>https://tutswiki.com/ruby-enumerable/</link>
-      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/ruby-enumerable/</guid>
-      <description>Have you ever needed to load a VERY large file in ruby? No I don’t mean your 500 line rails model. I mean a several gig binary or text file.
+echo &amp;#39;export PATH=$HOME/local/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bashrc . ~/.bashrc mkdir ~/local &amp;amp;&amp;amp; ~/node-latest-install &amp;amp;&amp;amp; ~/node-latest-install curl https://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 ./configure --prefix=~/local &amp;amp;&amp;amp; make install curl https://npmjs.org/install.sh | sh rm -rf ~/node-latest-install You are one/two steps/commands away from success.</description></item><item><title>Yet another lousy monad tutorial</title><link>https://tutswiki.com/yet-another-lousy-monad-tutorial/</link><pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/yet-another-lousy-monad-tutorial/</guid><description>I&amp;rsquo;m not a big fan of monads, but I understand them. They&amp;rsquo;re not rocket science. Let me try to write a monad tutorial that would&amp;rsquo;ve helped my past self understand what the fuss was about. I like concrete explanations that start with practical examples, without any annoying metaphors, and especially without any Haskell code. So here&amp;rsquo;s five examples that have something in common:
+(adsbygoogle = window.adsbygoogle || []).</description></item><item><title>A Deeper Look at Ruby's Enumerable</title><link>https://tutswiki.com/ruby-enumerable/</link><pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/ruby-enumerable/</guid><description>Have you ever needed to load a VERY large file in ruby? No I don’t mean your 500 line rails model. I mean a several gig binary or text file.
 Try it. Watch your machine become unresponsive. Cry a little inside. Then reach for enumerable.
-Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that.</description>
-    </item>
-    
-    <item>
-      <title>A REST API in Clojure</title>
-      <link>https://tutswiki.com/rest-api-in-clojure/</link>
-      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/rest-api-in-clojure/</guid>
-      <description>Clojure is one of the most interesting new languages targeting the JVM. Initially only the JVM, in the meantime it is also available for JavaScript. Essentially, you can write Clojure and either execute it as Java program or JavaScript program, of course each flavor has its unique features as well.
-Clojure is a Lisp, thus the syntax may be foreign, but it is really, really easy since there are very few syntactic variations.</description>
-    </item>
-    
-    <item>
-      <title>Abstract classes and interfaces in Python</title>
-      <link>https://tutswiki.com/abstract-classes-and-interfaces-in-python/</link>
-      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/abstract-classes-and-interfaces-in-python/</guid>
-      <description>Abstract base classes and interfaces are entities that are similar in purpose and meaning. Both the first and second are a peculiar way of documenting the code and help to limit (decouple) the interaction of individual abstractions in the program (classes).
-Python is a very flexible language. One facet of this flexibility is the possibilities provided by metaprogramming. And although abstract classes and interfaces are not represented in the core of the language, the former were implemented in the standard abc module, and the latter in the Zope project (the zope.</description>
-    </item>
-    
-    <item>
-      <title>How Deep Learning Helped Reducing Variability in Cardiovascular Imaging</title>
-      <link>https://tutswiki.com/deep-learning-cardiovascular-imaging/</link>
-      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/deep-learning-cardiovascular-imaging/</guid>
-      <description>Bay Labs, a San Francisco-based medical technology company which focuses on using artificial intelligence to improve cardiovascular imaging, has released a new software EchoMD AutoEF. It is being claimed that this software will help to reduce the variability in cardiovascular imaging.
+Ruby’s Enumerable module gives you a way of iterating over collections in a lazy manner, loading only what you need, when you need it. But it gives us so much more than that.</description></item><item><title>A REST API in Clojure</title><link>https://tutswiki.com/rest-api-in-clojure/</link><pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/rest-api-in-clojure/</guid><description>Clojure is one of the most interesting new languages targeting the JVM. Initially only the JVM, in the meantime it is also available for JavaScript. Essentially, you can write Clojure and either execute it as Java program or JavaScript program, of course each flavor has its unique features as well.
+Clojure is a Lisp, thus the syntax may be foreign, but it is really, really easy since there are very few syntactic variations.</description></item><item><title>Abstract classes and interfaces in Python</title><link>https://tutswiki.com/abstract-classes-and-interfaces-in-python/</link><pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate><guid>https://tutswiki.com/abstract-classes-and-interfaces-in-python/</guid><description>Abstract base classes and interfaces are entities that are similar in purpose and meaning. Both the first and second are a peculiar way of documenting the code and help to limit (decouple) the interaction of individual abstractions in the program (classes).
+Python is a very flexible language. One facet of this flexibility is the possibilities provided by metaprogramming. And although abstract classes and interfaces are not represented in the core of the language, the former were implemented in the standard abc module, and the latter in the Zope project (the zope.</description></item><item><title>How Deep Learning Helped Reducing Variability in Cardiovascular Imaging</title><link>https://tutswiki.com/deep-learning-cardiovascular-imaging/</link><pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate><guid>https://tutswiki.com/deep-learning-cardiovascular-imaging/</guid><description>Bay Labs, a San Francisco-based medical technology company which focuses on using artificial intelligence to improve cardiovascular imaging, has released a new software EchoMD AutoEF. It is being claimed that this software will help to reduce the variability in cardiovascular imaging.
 The software uses deep learning techniques to accurately calculate the left ventricular ejection fraction.
-What is Ejection Fraction? During each pumping cycle of our heart, it contracts and relaxes.</description>
-    </item>
-    
-    <item>
-      <title>Google Engineers Boycott Against Security Tool for Military</title>
-      <link>https://tutswiki.com/google-engineers-boycott-security-tool-military/</link>
-      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/google-engineers-boycott-security-tool-military/</guid>
-      <description>A group of 9 cloud engineers at Google has refused to work on a project called air-gap due to which Google may lose a deal worth $10 billion. Google needs air-gap if it has to do some sensitive work with government agencies involving sensitive data (obviously military implications there). So this group of 9 basically just said they weren&amp;rsquo;t gonna do it. About 10-12 employees have resigned so far as part of this work strike.</description>
-    </item>
-    
-    <item>
-      <title>How to deploy Node.js app on Google App Engine</title>
-      <link>https://tutswiki.com/nodejs-google-app-engine/</link>
-      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/nodejs-google-app-engine/</guid>
-      <description>Google App Engine is a part of the Google Cloud Suite which provides a cloud platform for developers where they can develop and host their apps. It provides easily configurable, fast and secure programming environments/tools with the help of which developers can setup a development environment in just a few minutes. Therefore developers don&amp;rsquo;t need to worry about configuring the environment, they can just focus on writing code. It supports all the popular programming languages Java, PHP, Node.</description>
-    </item>
-    
-    <item>
-      <title>What&#39;s new in Angular 6 (Features List)</title>
-      <link>https://tutswiki.com/angular6-features/</link>
-      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/angular6-features/</guid>
-      <description>Angular 6 is out with all new features. It is a major release in which Angular team has synchronized many of the important framework packages to make most out of cross compatibility. All the major framework packages like @angular/core, @angular/compiler, @angular/common etc., are reworked and released as version 6.0.0. Below is the list of major changes in Angular 6, let&amp;rsquo;s explore them one by one.
-Angular 6 Features:  New CLI commands  ng update ng add  Referencing providers Angular Elements Angular Material + CDK Components  Tree Badge Bottom-Sheet Overlay  Starter Components  Dashboard Side-Nav Datatable  Library Support CLI Workspaces RxJS v6 Long Term Support  ng update A new command is introduced in Angular CLI which analyzes package.</description>
-    </item>
-    
-    <item>
-      <title>GitHub Alternatives (Free, Paid, Self-Hosted)</title>
-      <link>https://tutswiki.com/github-alternatives/</link>
-      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/github-alternatives/</guid>
-      <description>The trending news of yesterday was the acquisition of GitHub (the world&amp;rsquo;s leading software development platform) by Microsoft. This is a great deal for Microsoft which might put it in the position it was about 10 years ago in the software market. But a lot of open-source fans are unhappy with this.
+What is Ejection Fraction? During each pumping cycle of our heart, it contracts and relaxes.</description></item><item><title>Google Engineers Boycott Against Security Tool for Military</title><link>https://tutswiki.com/google-engineers-boycott-security-tool-military/</link><pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate><guid>https://tutswiki.com/google-engineers-boycott-security-tool-military/</guid><description>A group of 9 cloud engineers at Google has refused to work on a project called air-gap due to which Google may lose a deal worth $10 billion. Google needs air-gap if it has to do some sensitive work with government agencies involving sensitive data (obviously military implications there). So this group of 9 basically just said they weren&amp;rsquo;t gonna do it. About 10-12 employees have resigned so far as part of this work strike.</description></item><item><title>How to deploy Node.js app on Google App Engine</title><link>https://tutswiki.com/nodejs-google-app-engine/</link><pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate><guid>https://tutswiki.com/nodejs-google-app-engine/</guid><description>Google App Engine is a part of the Google Cloud Suite which provides a cloud platform for developers where they can develop and host their apps. It provides easily configurable, fast and secure programming environments/tools with the help of which developers can setup a development environment in just a few minutes. Therefore developers don&amp;rsquo;t need to worry about configuring the environment, they can just focus on writing code. It supports all the popular programming languages Java, PHP, Node.</description></item><item><title>What's new in Angular 6 (Features List)</title><link>https://tutswiki.com/angular6-features/</link><pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate><guid>https://tutswiki.com/angular6-features/</guid><description>Angular 6 is out with all new features. It is a major release in which Angular team has synchronized many of the important framework packages to make most out of cross compatibility. All the major framework packages like @angular/core, @angular/compiler, @angular/common etc., are reworked and released as version 6.0.0. Below is the list of major changes in Angular 6, let&amp;rsquo;s explore them one by one.
+Angular 6 Features: New CLI commands ng update ng add Referencing providers Angular Elements Angular Material + CDK Components Tree Badge Bottom-Sheet Overlay Starter Components Dashboard Side-Nav Datatable Library Support CLI Workspaces RxJS v6 Long Term Support ng update A new command is introduced in Angular CLI which analyzes package.</description></item><item><title>GitHub Alternatives (Free, Paid, Self-Hosted)</title><link>https://tutswiki.com/github-alternatives/</link><pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate><guid>https://tutswiki.com/github-alternatives/</guid><description>The trending news of yesterday was the acquisition of GitHub (the world&amp;rsquo;s leading software development platform) by Microsoft. This is a great deal for Microsoft which might put it in the position it was about 10 years ago in the software market. But a lot of open-source fans are unhappy with this.
 A couple of years ago Microsoft was anti-open-source.
- &amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.</description>
-    </item>
-    
-    <item>
-      <title>What is the use of yield in Python?</title>
-      <link>https://tutswiki.com/what-is-the-use-of-yield-in-python/</link>
-      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/what-is-the-use-of-yield-in-python/</guid>
-      <description> References  What does the “yield” keyword do in Python? Yield expressions  </description>
-    </item>
-    
-    <item>
-      <title>Difference between append and extend in Python</title>
-      <link>https://tutswiki.com/append-vs-extend-python/</link>
-      <pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/append-vs-extend-python/</guid>
-      <description>append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&amp;rsquo;s find out.
+&amp;ldquo;Open source is an intellectual-property destroyer. I can&amp;rsquo;t imagine something that could be worse than this for the software business and the intellectual-property business.</description></item><item><title>What is the use of yield in Python?</title><link>https://tutswiki.com/what-is-the-use-of-yield-in-python/</link><pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/what-is-the-use-of-yield-in-python/</guid><description> References What does the “yield” keyword do in Python? Yield expressions</description></item><item><title>Difference between append and extend in Python</title><link>https://tutswiki.com/append-vs-extend-python/</link><pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/append-vs-extend-python/</guid><description>append and extend are list methods in Python which can be used to combine multiple lists. But what is the difference between them? When should you use one over another, let&amp;rsquo;s find out.
 The official documentation describes them as:
- list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
- list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description>
-    </item>
-    
-    <item>
-      <title>How to print on same line with print in Python</title>
-      <link>https://tutswiki.com/print-same-line-python/</link>
-      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/print-same-line-python/</guid>
-      <description>In Python, when you use the print function, it prints a new line at the end.
+list.append(x): Add an item to the end of the list; equivalent to a[len(a):] = [x].
+list.extend(L): Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</description></item><item><title>How to print on same line with print in Python</title><link>https://tutswiki.com/print-same-line-python/</link><pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/print-same-line-python/</guid><description>In Python, when you use the print function, it prints a new line at the end.
 For example:
 print &amp;#34;This is some line.&amp;#34; print &amp;#34;This is another line.&amp;#34; Output:
 This is some line. This is another line. What if you want to avoid the newline and want to print both statements on same line? Well, there are 2 possible solutions.
-   (adsbygoogle = window.adsbygoogle || []).push({});  Add comma at the end of print print &amp;#34;This is some line.</description>
-    </item>
-    
-    <item>
-      <title>Writing and Reading config files in Python</title>
-      <link>https://tutswiki.com/read-write-config-files-in-python/</link>
-      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/read-write-config-files-in-python/</guid>
-      <description>I&amp;rsquo;m sure you must be aware about the importance of configuration files. Config files help creating the initial settings for any project, they help avoiding the hardcoded data.
-Imagine if you migrate your server to a new host and suddenly your application stops working, now you have to go through your code and search/replace IP address of host at all the places. Config file comes to the rescue in such situation.</description>
-    </item>
-    
-    <item>
-      <title>How to run a Python module as script?</title>
-      <link>https://tutswiki.com/run-module-as-script-python/</link>
-      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/run-module-as-script-python/</guid>
-      <description>Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
+(adsbygoogle = window.adsbygoogle || []).push({}); Add comma at the end of print print &amp;#34;This is some line.</description></item><item><title>Writing and Reading config files in Python</title><link>https://tutswiki.com/read-write-config-files-in-python/</link><pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/read-write-config-files-in-python/</guid><description>I&amp;rsquo;m sure you must be aware about the importance of configuration files. Config files help creating the initial settings for any project, they help avoiding the hardcoded data.
+Imagine if you migrate your server to a new host and suddenly your application stops working, now you have to go through your code and search/replace IP address of host at all the places. Config file comes to the rescue in such situation.</description></item><item><title>How to run a Python module as script?</title><link>https://tutswiki.com/run-module-as-script-python/</link><pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/run-module-as-script-python/</guid><description>Suppose you have a module named mymath.py, which has a couple of functions. You can import this module in your script and call these functions.
 def int_sum(a, b): print a+b def some_other_function(): pass But, what if you want to run the module itself as a script?
-   (adsbygoogle = window.adsbygoogle || []).push({});  Well, if you want to use a Python module as script then you just have to use the conditional for __name__.</description>
-    </item>
-    
-    <item>
-      <title>What is if __name__ == &#34;__main__&#34; in Python?</title>
-      <link>https://tutswiki.com/if-name-main-in-python/</link>
-      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/if-name-main-in-python/</guid>
-      <description>If you are new to Python then you may have noticed if __name__ == &amp;quot;__main__&amp;quot; line in some python codes.
+(adsbygoogle = window.adsbygoogle || []).push({}); Well, if you want to use a Python module as script then you just have to use the conditional for __name__.</description></item><item><title>What is if __name__ == "__main__" in Python?</title><link>https://tutswiki.com/if-name-main-in-python/</link><pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/if-name-main-in-python/</guid><description>If you are new to Python then you may have noticed if __name__ == &amp;quot;__main__&amp;quot; line in some python codes.
 You may be wondering:
- What does that mean? What purpose does it serve? I don&amp;rsquo;t see it in all Python codes, so when should I use it exactly? Can you give me some examples?  Let me try to explain the above to you.
-In Python all modules have some built-in attributes.</description>
-    </item>
-    
-    <item>
-      <title>Chapter 1 - Reading from a CSV</title>
-      <link>https://tutswiki.com/pandas-cookbook/chapter1/</link>
-      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/pandas-cookbook/chapter1/</guid>
-      <description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5)    (adsbygoogle = window.adsbygoogle || []).push({});  1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
-We&amp;rsquo;re going to be looking some cyclist data from Montréal.</description>
-    </item>
-    
-    <item>
-      <title>Chapter 2 - Selecting and finding desired data</title>
-      <link>https://tutswiki.com/pandas-cookbook/chapter2/</link>
-      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/pandas-cookbook/chapter2/</guid>
-      <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) We&amp;rsquo;re going to use a new dataset here, to demonstrate how to deal with larger datasets. This is a subset of the of 311 service requests from NYC Open Data.</description>
-    </item>
-    
-    <item>
-      <title>Chapter 3 - Filtering dataframes</title>
-      <link>https://tutswiki.com/pandas-cookbook/chapter3/</link>
-      <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/pandas-cookbook/chapter3/</guid>
-      <description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Let&amp;rsquo;s continue with our NYC 311 service requests example.
-complaints = pd.read_csv(&amp;#39;311-service-requests.csv&amp;#39;)    (adsbygoogle = window.</description>
-    </item>
-    
-    <item>
-      <title>Chapter 4 - Groupby and Aggregate</title>
-      <link>https://tutswiki.com/pandas-cookbook/chapter4/</link>
-      <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/pandas-cookbook/chapter4/</guid>
-      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; # This is necessary to show lots of columns in pandas 0.12.  # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Okay! We&amp;rsquo;re going back to our bike path dataset here. I live in Montreal, and I was curious about whether we&amp;rsquo;re more of a commuter city or a biking-for-fun city &amp;ndash; do people bike more on weekends, or on weekdays?</description>
-    </item>
-    
-    <item>
-      <title>Chapter 5 - Web scraping with Pandas</title>
-      <link>https://tutswiki.com/pandas-cookbook/chapter5/</link>
-      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/pandas-cookbook/chapter5/</guid>
-      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; Summary By the end of this chapter, we&amp;rsquo;re going to have downloaded all of Canada&amp;rsquo;s weather data for 2012, and saved it to a CSV.
+What does that mean? What purpose does it serve? I don&amp;rsquo;t see it in all Python codes, so when should I use it exactly? Can you give me some examples? Let me try to explain the above to you.
+In Python all modules have some built-in attributes.</description></item><item><title>Chapter 1 - Reading from a CSV</title><link>https://tutswiki.com/pandas-cookbook/chapter1/</link><pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/pandas-cookbook/chapter1/</guid><description># Render our plots inline %matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) (adsbygoogle = window.adsbygoogle || []).push({}); 1.1 Reading data from a CSV file You can read data from a CSV file using the read_csv function. By default, it assumes that the fields are comma-separated.
+We&amp;rsquo;re going to be looking some cyclist data from Montréal.</description></item><item><title>Chapter 2 - Selecting and finding desired data</title><link>https://tutswiki.com/pandas-cookbook/chapter2/</link><pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/pandas-cookbook/chapter2/</guid><description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # This is necessary to show lots of columns in pandas 0.12. # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) We&amp;rsquo;re going to use a new dataset here, to demonstrate how to deal with larger datasets. This is a subset of the of 311 service requests from NYC Open Data.</description></item><item><title>Chapter 3 - Filtering dataframes</title><link>https://tutswiki.com/pandas-cookbook/chapter3/</link><pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/pandas-cookbook/chapter3/</guid><description># The usual preamble %matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) # This is necessary to show lots of columns in pandas 0.12. # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Let&amp;rsquo;s continue with our NYC 311 service requests example.
+complaints = pd.read_csv(&amp;#39;311-service-requests.csv&amp;#39;) (adsbygoogle = window.</description></item><item><title>Chapter 4 - Groupby and Aggregate</title><link>https://tutswiki.com/pandas-cookbook/chapter4/</link><pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/pandas-cookbook/chapter4/</guid><description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) # Make the graphs a bit prettier plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 5) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; # This is necessary to show lots of columns in pandas 0.12. # Not necessary in pandas 0.13. pd.set_option(&amp;#39;display.width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) Okay! We&amp;rsquo;re going back to our bike path dataset here. I live in Montreal, and I was curious about whether we&amp;rsquo;re more of a commuter city or a biking-for-fun city &amp;ndash; do people bike more on weekends, or on weekdays?</description></item><item><title>Chapter 5 - Web scraping with Pandas</title><link>https://tutswiki.com/pandas-cookbook/chapter5/</link><pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/pandas-cookbook/chapter5/</guid><description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; Summary By the end of this chapter, we&amp;rsquo;re going to have downloaded all of Canada&amp;rsquo;s weather data for 2012, and saved it to a CSV.
 We&amp;rsquo;ll do this by downloading it one month at a time, and then combining all the months together.
-Here&amp;rsquo;s the temperature every hour for 2012!</description>
-    </item>
-    
-    <item>
-      <title>Chapter 6 - String Operations</title>
-      <link>https://tutswiki.com/pandas-cookbook/chapter6/</link>
-      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/pandas-cookbook/chapter6/</guid>
-      <description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.
+Here&amp;rsquo;s the temperature every hour for 2012!</description></item><item><title>Chapter 6 - String Operations</title><link>https://tutswiki.com/pandas-cookbook/chapter6/</link><pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/pandas-cookbook/chapter6/</guid><description>%matplotlib inline import pandas as pd import matplotlib.pyplot as plt import numpy as np pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (15, 3) plt.rcParams[&amp;#39;font.family&amp;#39;] = &amp;#39;sans-serif&amp;#39; We saw earlier that pandas is really good at dealing with dates. It is also amazing with strings! We&amp;rsquo;re going to go back to our weather data from Chapter 5, here.
 weather_2012 = pd.read_csv(&amp;#39;weather_2012.csv&amp;#39;, parse_dates=True, index_col=&amp;#39;Date/Time&amp;#39;) weather_2012[:5] Output:
-  Temp (C) Dew Point Temp (C) Rel Hum (%) Wind Spd (km/h) Visibility (km) Stn Press (kPa) Weather   Date/Time            2012-01-01 00:00:00 -1.</description>
-    </item>
-    
-    <item>
-      <title>Chapter 7 - Cleanup messy data</title>
-      <link>https://tutswiki.com/pandas-cookbook/chapter7/</link>
-      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/pandas-cookbook/chapter7/</guid>
-      <description># The usual preamble import pandas as pd # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) figsize(15, 5) # Always display all the columns pd.set_option(&amp;#39;display.line_width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60)  One of the main problems with messy data is: how do you know if it&amp;rsquo;s messy or not?
-We&amp;rsquo;re going to use the NYC 311 service request dataset again here, since it&amp;rsquo;s big and a bit unwieldy.</description>
-    </item>
-    
-    <item>
-      <title>Chapter 8 - Parsing Unix timestamps</title>
-      <link>https://tutswiki.com/pandas-cookbook/chapter8/</link>
-      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://tutswiki.com/pandas-cookbook/chapter8/</guid>
-      <description>8.1 Parsing Unix timestamps It&amp;rsquo;s not obvious how to deal with Unix timestamps in pandas &amp;ndash; it took me quite a while to figure this out. The file we&amp;rsquo;re using here is a popularity-contest file I found on my system at /var/log/popularity-contest.
+Temp (C) Dew Point Temp (C) Rel Hum (%) Wind Spd (km/h) Visibility (km) Stn Press (kPa) Weather Date/Time 2012-01-01 00:00:00 -1.</description></item><item><title>Chapter 7 - Cleanup messy data</title><link>https://tutswiki.com/pandas-cookbook/chapter7/</link><pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/pandas-cookbook/chapter7/</guid><description># The usual preamble import pandas as pd # Make the graphs a bit prettier, and bigger pd.set_option(&amp;#39;display.mpl_style&amp;#39;, &amp;#39;default&amp;#39;) figsize(15, 5) # Always display all the columns pd.set_option(&amp;#39;display.line_width&amp;#39;, 5000) pd.set_option(&amp;#39;display.max_columns&amp;#39;, 60) One of the main problems with messy data is: how do you know if it&amp;rsquo;s messy or not?
+We&amp;rsquo;re going to use the NYC 311 service request dataset again here, since it&amp;rsquo;s big and a bit unwieldy.</description></item><item><title>Chapter 8 - Parsing Unix timestamps</title><link>https://tutswiki.com/pandas-cookbook/chapter8/</link><pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate><guid>https://tutswiki.com/pandas-cookbook/chapter8/</guid><description>8.1 Parsing Unix timestamps It&amp;rsquo;s not obvious how to deal with Unix timestamps in pandas &amp;ndash; it took me quite a while to figure this out. The file we&amp;rsquo;re using here is a popularity-contest file I found on my system at /var/log/popularity-contest.
 Here&amp;rsquo;s an explanation of how this file works.
 I&amp;rsquo;m going to hope that nothing in it is sensitive :)
-import pandas as pd # Read it, and remove the last row popcon = pd.</description>
-    </item>
-    
-  </channel>
-</rss>
+import pandas as pd # Read it, and remove the last row popcon = pd.</description></item></channel></rss>
